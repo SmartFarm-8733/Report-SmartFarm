@@ -1,12 +1,6 @@
 # Capítulo II: Requirements Elicitation & Analysis
 ## 2.1. Competidores.
 ### 2.1.1. Análisis competitivo.
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Competitive Analysis Landscape - BoviTrack IoT</title>
 <style>
     * { box-sizing: border-box; }
     body {
@@ -100,7 +94,7 @@
 </style>
 </head>
 <body>
-<div class="container">
+<div class="container" >
     <h1>Se debe desarrollar el siguiente Landscape:</h1>
     <table class="landscape">
         <colgroup>
@@ -448,7 +442,21 @@ Este segmento proporciona el sustento técnico-científico del dominio de salud.
 ### 2.2.2. Registro de entrevistas.
 ### 2.2.3. Análisis de entrevistas.
 ## 2.3. Needfinding.
+En esta sección se consolidan y sintetizan los hallazgos cualitativos y cuantitativos obtenidos durante la fase de investigación de campo, entrevistas en profundidad y análisis competitivo. El proceso de Needfinding nos permite transformar los datos brutos recolectados de los actores del sector ganadero en artefactos visuales y estructurados de diseño de experiencia de usuario (UX), garantizando que el desarrollo del ecosistema de software ICHU responda de manera directa a las necesidades reales, dolores operativos y metas estratégicas de cada perfil de usuario.
+
+
 ### 2.3.1. User Personas.
+
+Introducción y Metodología
+Para la construcción de los arquetipos de usuario (User Personas), el equipo procesó la información recolectada en la fase de entrevistas y análisis del mercado ganadero. Se identificaron tres patrones de comportamiento distintivos que representan fielmente a los tres segmentos objetivo definidos para el ecosistema de software ICHU:
+
+**Segmento 1:** Propietarios y Administradores Ganaderos, enfocados en la rentabilidad, reducción de pérdidas por mortalidad/abigeato y la toma de decisiones estratégicas basadas en indicadores clave expresados en la ICHU Web Application.
+**Segmento 2:** Capataces y Operarios de Campo, centrados en la usabilidad en terreno, la rápida localización de los animales y el registro ágil de eventos mediante la ICHU Mobile Application con soporte para modo sin conexión (offline).
+**Segmento 3:** Médicos Veterinarios y Consultores, orientados al monitoreo biométrico continuo, diagnóstico clínico temprano y la revisión de historiales de salud consolidados a través de vistas especializadas y la integración con la API RESTful de desarrollo interno.  
+
+Cada ficha de User Persona ha sido especificada considerando todos los atributos recomendados para arquetipos UX (datos demográficos, biografía, personalidad, objetivos, frustraciones, tecnología de preferencia, marcas/influencias y necesidades específicas de software), habiendo sido modeladas estructuralmente en la herramienta UXPressia.
+
+
 ### 2.3.2. User Task Matrix.
 ### 2.3.3. User Journey Mapping.
 ### 2.3.4. Empathy Mapping.
