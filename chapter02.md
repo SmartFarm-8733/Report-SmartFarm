@@ -380,47 +380,70 @@ A continuación, se presenta la relación de preguntas principales y complementa
 **Segmento 1:** Medianos y Grandes Ganaderos (Propietarios y Administradores de Estancias)
 Este segmento representa al comprador principal (Buyer Persona) y tomador de decisiones financieras de la estancia. El objetivo es identificar la viabilidad de la plataforma web administrativa, el modelo de suscripción SaaS y los indicadores clave (KPIs) de productividad que desean ver en pantalla .
 
-**A. Datos Demográficos y de Perfil (Información Complementaria)**
-1. ¿Cuál es su nombre, edad, nivel de instrucción y en qué distrito/región se encuentra su estancia ganadera?  
-2. ¿Cuántas personas conforman su familia y de qué manera participan en el negocio ganadero?  
-3. ¿Cuál es su ocupación o rol principal en el día a día del rancho ganadero?  
-4. ¿Qué dispositivos digitales prefiere utilizar en su rutina diaria (computadora de escritorio, laptop, tablet, teléfono inteligente)?  
-5. ¿Qué canales digitales y redes sociales utiliza con mayor frecuencia para comunicarse o informarse sobre temas ganaderos?  
-6. ¿Cuáles son sus marcas e influencias tecnológicas preferidas (ej. marcas de celulares, herramientas de gestión)?  
-**B. Preguntas de Comportamiento e Infraestructura**  
-7. ¿Cuántas cabezas de ganado maneja actualmente en su unidad productiva y bajo qué régimen (pastoreo extensivo, estabulado o semi-intensivo)?  
-8. ¿Qué herramientas o sistemas de software utiliza actualmente para llevar el control del inventario de animales, partos, muertes e historial médico?  
-9. ¿Cómo es el estado de la conectividad a internet (red celular 3G/4G/5G, internet satelital, etc.) en la casa del rancho y en las zonas de pastoreo?  
-**C. Preguntas sobre Dolores y Frustraciones**  
-10. ¿Cuál ha sido la pérdida económica más significativa que ha tenido en el último año debido a enfermedades no detectadas a tiempo o muerte súbita de animales?  
-11. ¿Cómo le afecta el robo de ganado (abigeato) o el extravío de animales en términos de costos de búsqueda y pérdida patrimonial?  
-12. Al contratar consultorías veterinarias externas, ¿cuáles son los principales problemas de comunicación o falta de datos históricos que experimenta?  
-**D. Validación de la Propuesta de Software (ICHU)**
-13. Si existiera una plataforma web que centralizara el historial de salud, ubicación y alertas térmicas de cada animal sin que usted tenga que estar físicamente en el corral, ¿cómo cambiaría su proceso de toma de decisiones?  
-14. ¿Qué información cuantitativa (gráficos de temperatura, horas de actividad, alertas de celo) consideraría indispensable visualizar en un tablero de control ejecutivo?  
-15. ¿Bajo qué condiciones o modelo de suscripción (ej. un pago mensual por cabeza de ganado monitoreada) consideraría rentable implementar esta solución de software en su negocio?   
+# BLOQUE 1: Datos Demográficos y de Perfil (Información Complementaria)
 
-**Segmento 2:** Capataces y Operarios Ganaderos de Campo  
-Este segmento representa al usuario operativo directo que interactuará con la aplicación móvil nativa en el terreno. El objetivo es validar la usabilidad móvil bajo condiciones climáticas adversas, el alfabetismo digital y la relevancia del sistema de alertas push/SMS en tiempo real.
+**Objetivo:** Construir el arquetipo recolectando características demográficas, ocupación, biografía y canales digitales de interacción.
 
-**A. Datos Demográficos y de Perfil (Información Complementaria)**
-1. ¿Cuál es su nombre, edad, nivel de instrucción y dónde reside actualmente?  
-2. ¿Cuánto tiempo lleva trabajando en el cuidado de ganado en campo abierto y cuál es su experiencia en estas tareas?  
-3. ¿Qué tipo de teléfono celular utiliza actualmente para su trabajo diario y de qué marca es?  
-4. ¿Qué aplicaciones utiliza todos los días (ej. WhatsApp, redes sociales, herramientas de clima) y qué tan cómodo se siente aprendiendo a usar nuevas aplicaciones?  
-5. ¿Prefiere interactuar con interfaces visuales (iconos, mapas, colores) o prefiere la lectura de textos detallados?  
-**B. Preguntas de Comportamiento y Dolores en el Campo**  
-5. ¿Cómo realiza el recorrido diario de pastoreo para verificar que todos los animales estén completos y sanos?  
-7. ¿Qué hace cuando nota que un animal no se encuentra con el grupo o se ha apartado en una zona de difícil acceso? Describa el esfuerzo físico y de tiempo que le toma encontrarlo.  
-8. ¿Cuál es su procedimiento cuando identifica visualmente que un bovino muestra signos de decaimiento o fiebre?  
-9. ¿Cómo lo registra y a quién se lo reporta?  
-10. ¿Qué dificultades experimenta cuando el teléfono celular pierde la cobertura de red mientras realiza labores en las zonas más alejadas del pastizal?  
-**C. Validación de la Usabilidad de la Aplicación Móvil (ICHU Mobile)**  
-11. Si la aplicación móvil de ICHU le permitiera ver en un mapa digital interactivo la última posición registrada de un animal extraviado, ¿cómo facilitaría esto su labor diaria de búsqueda?  
-12. En una zona sin señal celular, ¿qué valor tendría para usted que la aplicación móvil guarde de forma local en su teléfono las alertas y datos ingresados, para luego sincronizarlos automáticamente cuando recupere la señal?  
-13. Para la gestión de alertas en campo, ¿qué tipo de aviso prefiere recibir (un mensaje de texto SMS automático, una notificación push con sonido fuerte, o una alerta visual de color rojo en pantalla)?  
-14. ¿Qué tan simple e intuitiva debe ser la interfaz de la aplicación para que pueda registrar un evento de salud en menos de tres toques, considerando que suele estar expuesto al sol o usando guantes?  
+1. ¿Cuál es su nombre, edad, nivel de instrucción y en qué distrito/región se encuentra su estancia ganadera?
+2. ¿Cuál es su ocupación o rol principal en el día a día en torno al ganado?
+3. ¿Qué dispositivos digitales prefiere utilizar en su rutina diaria (computadora de escritorio, laptop, tablet, teléfono inteligente)?
 
+---
+
+# BLOQUE 2: Comportamiento, Infraestructura y Frustraciones
+
+**Objetivo:** Entender el contexto operativo actual del rancho, sus cuellos de botella tecnológicos y sus principales puntos de dolor.
+
+1. ¿Cuántas cabezas de ganado maneja actualmente en su unidad productiva y bajo qué régimen (pastoreo extensivo, estabulado o semi-intensivo)?
+2. ¿Qué herramientas o sistemas de software utiliza actualmente para llevar el control del inventario de animales, partos, muertes e historial médico?
+3. ¿Cómo es el estado de la conectividad a internet (red celular 3G/4G/5G, internet satelital, etc.) en la casa del rancho y en las zonas de pastoreo?
+4. ¿Cuál ha sido la pérdida económica más significativa que ha tenido en el último año debido a enfermedades no detectadas a tiempo o muerte súbita de animales?
+5. ¿Cómo le afecta el robo de ganado (abigeato) o el extravío de animales en términos de costos de búsqueda y pérdida patrimonial?
+6. Al contratar consultorías veterinarias externas, ¿cuáles son los principales problemas de comunicación o falta de datos históricos que experimenta?
+
+---
+
+# BLOQUE 3: Validación de la Propuesta de Software (ICHU)
+
+**Objetivo:** Validar el modelo de negocio, el hardware y los indicadores clave (KPIs) del proyecto.
+
+1. Si existiera una plataforma web que centralizara el historial de salud, ubicación y alertas térmicas de cada animal sin que usted tenga que estar físicamente en el corral, ¿cómo cambiaría su proceso de toma de decisiones?
+2. ¿Qué información cuantitativa (gráficos de temperatura, horas de actividad, alertas de celo) consideraría indispensable visualizar en un tablero de control ejecutivo?
+3. ¿Bajo qué condiciones o modelo de suscripción (ej. un pago mensual por cabeza de ganado monitoreada) consideraría rentable implementar esta solución de software en su negocio?
+
+---
+
+# BLOQUE 4: Captura de Funcionalidades
+
+**Objetivo:** Obtener los requerimientos técnicos y módulos específicos que deben programarse en el sistema.
+
+## 1. Funcionalidades de Sanidad y Trazabilidad (El Historial del Animal)
+
+1. En su trabajo diario controlando la salud del ganado, ¿qué datos médicos necesita registrar sí o sí en el sistema? (Ej. tipo de vacuna, fecha, dosis, nombre del veterinario).
+2. Si el software tuviera un perfil individual por cada vaca, ¿qué información específica le gustaría encontrar al abrir ese perfil?
+3. ¿Le gustaría que el sistema le envíe notificaciones automáticas? De ser así, ¿de qué tipo? (Ej. recordatorios de revacunación, alertas de parto, periodos de cuarentena).
+
+## 2. Funcionalidades de Inventario y Movimientos (Control de Stock)
+
+1. Para llevar el control de cuántas cabezas de ganado tiene, ¿qué funciones específicas le pediría a la plataforma? ¿Le sirve poder agruparlos por lotes, por edad, por raza o por potrero?
+2. Cuando ocurre un nacimiento o una muerte en el campo, ¿qué campos obligatorios le gustaría que el capataz llene en la aplicación para que usted tenga la información completa?
+3. ¿Necesita que el software le permita registrar el movimiento de animales de un potrero a otro? ¿Qué datos le gustaría ver en esa función? (Ej. días de descanso del pasto, carga animal).
+
+## 3. Funcionalidades Financieras y de Insumos (El Negocio)
+
+**Objetivo:** Capturar las herramientas de administración económica que espera encontrar.
+
+1. En la parte administrativa de su trabajo, ¿qué funcionalidades le gustaría tener para controlar sus gastos? ¿Necesita un módulo para registrar la compra de alimento y medicinas?
+2. ¿Le interesaría que el sistema descuente automáticamente el stock de su inventario cada vez que se aplica una medicina a un animal?
+3. Como administrador, ¿qué reportes exactos necesita exportar a fin de mes? (Ej. un reporte en Excel de mortalidad mensual, gráficos de ganancia de peso, costos operativos por cabeza).
+
+## 4. Usabilidad en el Campo (La Interfaz de Trabajo)
+
+**Objetivo:** Capturar cómo debe ser la herramienta física para que no entorpezca su trabajo en el corral.
+
+1. Cuando usted o su equipo están en la manga (corral) trabajando directamente con el animal, ¿qué botones o funciones necesitan que estén más a la mano en la pantalla del celular para no perder tiempo?
+2. Sabiendo que muchas veces no hay internet en el potrero, ¿qué acciones específicas necesita poder guardar en la aplicación sin conexión (modo offline) para que se actualicen cuando regrese a la casa?
+   
 **Segmento 3:** Médicos Veterinarios y Consultores de Salud Animal  
 Este segmento proporciona el sustento técnico-científico del dominio de salud. El objetivo es validar qué variables cuantitativas de telemetría biométrica (temperatura, acelerometría) requiere el veterinario para predecir anomalías de salud y cómo la API RESTful de ICHU debe estructurar los historiales clínicos para consumo de sistemas externos .
 
