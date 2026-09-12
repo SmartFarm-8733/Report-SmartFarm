@@ -444,23 +444,46 @@ Este segmento representa al comprador principal (Buyer Persona) y tomador de dec
 1. Cuando usted o su equipo están en la manga (corral) trabajando directamente con el animal, ¿qué botones o funciones necesitan que estén más a la mano en la pantalla del celular para no perder tiempo?
 2. Sabiendo que muchas veces no hay internet en el potrero, ¿qué acciones específicas necesita poder guardar en la aplicación sin conexión (modo offline) para que se actualicen cuando regrese a la casa?
    
-**Segmento 3:** Médicos Veterinarios y Consultores de Salud Animal  
+**Segmento 2:** Médicos Veterinarios y Consultores de Salud Animal  
 Este segmento proporciona el sustento técnico-científico del dominio de salud. El objetivo es validar qué variables cuantitativas de telemetría biométrica (temperatura, acelerometría) requiere el veterinario para predecir anomalías de salud y cómo la API RESTful de ICHU debe estructurar los historiales clínicos para consumo de sistemas externos .
 
-**A. Datos Demográficos y de Perfil (Información Complementaria)**< 
-1. ¿Cuál es su nombre, especialidad médica veterinaria, años de ejercicio profesional y ámbito geográfico de atención?  
-2. ¿A cuántos establos o estancias ganaderas brinda consultoría o servicio médico clínico actualmente? 
-3. ¿Qué dispositivos informáticos y sistemas de gestión veterinaria utiliza habitualmente para registrar el  historial de tratamientos y diagnósticos?  
-4. ¿Cuáles son sus principales fuentes de actualización profesional y canales de comunicación digital preferidos con sus clientes?  
-**B. Preguntas de Comportamiento y dolores de Diagnóstico**
-5. ¿Cuáles son los principales retos clínicos que enfrenta al diagnosticar enfermedades infecciosas comunes (ej. neumonía bovina, mastitis o problemas reproductivos) bajo esquemas de pastoreo extensivo?  
-6. ¿Qué tan común es que los ganaderos lo llamen para atender una emergencia médica cuando el animal ya se encuentra en una etapa clínica crítica o irreversible? ¿Cómo impacta esto en la tasa de mortalidad?  
-7. Al realizar un diagnóstico, ¿qué parámetros cuantitativos continuos (ej. cambios en la temperatura rectal, niveles de actividad física diaria, ciclos de rumia) desearía conocer del animal pero que actualmente le es imposible medir de forma manual?
-8. ¿Cómo gestiona hoy en día los historiales de vacunación, inseminación y aplicación de medicamentos de los establos que asesora? ¿Qué tan confiables son esos registros manuales?
-**C. Validación de la Plataforma Analítica y APIs (ICHU Web/Services)**
-9. Si pudiera acceder de forma remota a una plataforma web con el historial de temperatura y patrones de comportamiento de las últimas 2 semanas de un bovino reportado con alertas de decaimiento, ¿cómo optimizaría esto su diagnóstico y la prescripción de tratamientos?
-10. ¿Qué gráficos cuantitativos históricos consideraría indispensables que nuestro sistema de software genere para facilitar su análisis epidemiológico a nivel de todo el lote de ganado?  
-11. Dado que trabajamos bajo un enfoque de ingeniería de software estructurado, ¿qué tan importante es para usted que la información recopilada por ICHU se pueda exportar en formatos estándar o integrar mediante servicios web seguros (APIs) con laboratorios clínicos o sistemas de registro oficial del Estado?  
+# GUÍA DE ENTREVISTA: Médicos Veterinarios y Consultores
+
+## BLOQUE 1: Sobre Él/Ella y su Ecosistema de Trabajo (Rompehielos y Perfil)
+
+**Objetivo:** Entender quién es el usuario, cómo se mueve en su día a día y qué nivel de adopción tecnológica tiene.
+
+- "Para empezar, me encantaría conocer un poco sobre usted y su trayectoria. **¿Cómo decidió especializarse en esta área y cuántos años lleva ejerciendo en la asesoría ganadera?**"
+- "En una semana típica de trabajo, **¿cómo distribuye su tiempo entre el trabajo de escritorio, el laboratorio y las visitas físicas a los establos o estancias?**"
+- "Cuando está en el corral trabajando directamente con los animales, **¿qué dispositivo tecnológico utiliza más, y cuál prefiere usar cuando llega a su oficina para analizar datos o redactar informes médicos?**"
+- "**¿En qué fuentes, canales o comunidades (foros, asociaciones, WhatsApp) se apoya** cuando necesita discutir un caso clínico complejo o investigar sobre nuevas herramientas para su profesión?"
+
+---
+
+## BLOQUE 2: Casos Clínicos y Captura de Parámetros Biométricos (El Algoritmo)
+
+**Objetivo:** Que el veterinario te dicte los números, variables y reglas médicas que el sistema y el hardware deben medir y procesar.
+
+- "Pensando en las enfermedades infecciosas más críticas de esta zona (como Anaplasmosis, Piroplasmosis o el Complejo Respiratorio), **¿a partir de qué grado exacto de temperatura corporal, o tras cuántas horas de alteración continua, usted determina que un bovino entra en una fase de riesgo inminente?**"
+- "Descríbame un caso clínico reciente donde un trastorno digestivo o metabólico haya pasado desapercibido por el personal. **Si usted hubiera tenido un registro exacto de la caída en las horas de rumia o inactividad del animal, ¿cómo habría cambiado su intervención?**"
+- "Desde el punto de vista reproductivo, para detectar un celo silencioso con precisión, **¿qué combinación exacta de datos biométricos (por ejemplo, cruzar picos de actividad física con variaciones de temperatura) le daría la certeza clínica para indicar una inseminación?**"
+- "Después de aplicar un protocolo de antibióticos fuerte para un cuadro grave, **¿qué parámetros vitales necesita monitorear obligatoriamente en las siguientes 12, 24 o 48 horas para confirmar que el fármaco está funcionando?**"
+
+---
+
+## BLOQUE 3: Captura de Funcionalidades para el Software (La Interfaz)
+
+**Objetivo:** Descubrir los módulos, botones, reportes y alertas que tu equipo de desarrollo debe programar en la aplicación web y móvil.
+
+- "Si tuviera nuestra aplicación móvil abierta mientras evalúa a un paciente en la manga, **¿qué datos médicos específicos necesita poder registrar rápidamente en el historial digital de ese animal con un par de clics?** (Ej. diagnóstico, dosis, fármaco, tiempo de retiro de leche/carne)."
+- "Imagínese que abre la plataforma web en su computadora un lunes por la mañana. Para hacer un análisis epidemiológico rápido de todo un lote, **¿qué gráficos, filtros de búsqueda o cruces de variables necesita ver obligatoriamente en la pantalla principal?**"
+- "Pensando en la prevención de mortalidad, **¿qué tipo de alertas automáticas le gustaría que el sistema le envíe directamente a su celular como una 'Alerta Roja'?** (Ej. notificaciones de partos distócicos, caídas abruptas de temperatura)."
+- "A la hora de entregar resultados o justificar sus tratamientos ante el dueño de la estancia, **¿qué tipo de reportes automatizados le gustaría que el software genere para que usted pueda exportarlos o imprimirlos directamente?**"
+- "Para evitar que usted haga un doble trabajo de registro (interoperabilidad), **¿con qué otros sistemas de laboratorios, software de nutrición o entidades estatales de sanidad necesitaría que nuestra plataforma se conecte en el futuro?"
+
+---
+
+Con esta estructura, el veterinario te hablará de su vida, luego te dará la "matemática" de las enfermedades para calibrar tus sensores, y finalmente te diseñará los botones y pantallas de tu software. 
 
 ### 2.2.2. Registro de entrevistas.
 ### 2.2.3. Análisis de entrevistas.
