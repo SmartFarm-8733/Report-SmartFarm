@@ -1,381 +1,53 @@
 # Capítulo II: Requirements Elicitation & Analysis
 ## 2.1. Competidores.
 ### 2.1.1. Análisis competitivo.
-<style>
-    * { box-sizing: border-box; }
-    body {
-        margin: 0;
-        padding: 24px;
-        background: #fff;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #000;
-    }
-    .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    h1 {
-        font-size: 22px;
-        margin: 0 0 12px 0;
-        font-weight: 700;
-    }
-    .landscape {
-        width: 100%;
-        border-collapse: collapse;
-        table-layout: fixed;
-        font-size: 12px;
-    }
-    .landscape th,
-    .landscape td {
-        border: 1px solid #000;
-        padding: 8px;
-        vertical-align: top;
-        line-height: 1.3;
-    }
-    .landscape th {
-        text-align: center;
-        font-weight: 700;
-        background: #fff;
-    }
-    .analysis-question {
-        text-align: left !important;
-        font-weight: 400 !important;
-    }
-    .section {
-        width: 8%;
-        text-align: center;
-        vertical-align: middle !important;
-        font-weight: 700;
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-    }
-    .criterion {
-        width: 15%;
-        font-weight: 700;
-        vertical-align: middle !important;
-    }
-    .company {
-        width: 19.25%;
-        text-align: center;
-        vertical-align: middle !important;
-        font-weight: 700;
-    }
-    .logo-cell {
-        text-align: center;
-        vertical-align: middle !important;
-        height: 75px;
-    }
-    .logo-placeholder {
-        border: 1px dashed #777;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 125px;
-        height: 48px;
-        font-size: 11px;
-        color: #555;
-    }
-    .overview { min-height: 120px; }
-    .normal { font-weight: 400; }
-    .swot-intro {
-        font-weight: 400;
-        text-align: left;
-    }
-    .swot-title {
-        font-weight: 700;
-    }
-    @media print {
-        body { padding: 0; }
-        .container { max-width: none; }
-        .landscape { font-size: 10px; }
-        .landscape th, .landscape td { padding: 6px; }
-    }
-</style>
-</head>
-<body>
-<div class="container" >
-    <h1>Se debe desarrollar el siguiente Landscape:</h1>
-    <table class="landscape">
-        <colgroup>
-            <col style="width:8%">
-            <col style="width:15%">
-            <col style="width:19.25%">
-            <col style="width:19.25%">
-            <col style="width:19.25%">
-            <col style="width:19.25%">
-        </colgroup>
-        <tr>
-            <th colspan="6" style="font-size:15px; text-align:left;">Competitive Analysis Landscape</th>
-        </tr>
-        <tr>
-            <th colspan="2">¿Por qué llevar a cabo este análisis?</th>
-            <td colspan="4" class="analysis-question">
-                Comparar BoviTrack IoT con sus principales competidores para identificar fortalezas,
-                debilidades, oportunidades y amenazas, y determinar una ventaja competitiva clara
-                y sostenible en el mercado de monitoreo inteligente de ganado.
-            </td>
-        </tr>
-        <tr>
-            <th colspan="2">(En la cabecera colocar por cada competidor nombre y logo)</th>
-            <th class="company">Su startup<br><br>ICHU IoT</th>
-            <th class="company">Competidor 1<br><br>Allflex SenseHub</th>
-            <th class="company">Competidor 2<br><br>Digitanimal</th>
-            <th class="company">Competidor 3<br><br>Moocall</th>
-        </tr>
-        <tr>
-            <td rowspan="2" class="section">Perfil</td>
-            <td class="criterion">Overview</td>
-            <td class="overview">
-                Solución digital basada en collares y aretes inteligentes IoT con conectividad
-                LoRaWAN y celular híbrida, integrada a una plataforma web y móvil nativa para el
-                monitoreo biométrico y localización en tiempo real de ganado en pastoreo extensivo.
-            </td>
-            <td class="overview">
-                Líder global en identificación animal y monitoreo inteligente de ganado lechero y
-                de carne, perteneciente al grupo MSD Animal Health, con infraestructura propietaria robusta.
-            </td>
-            <td class="overview">
-                Empresa de base tecnológica española que ofrece collares GPS y sensores para el
-                monitoreo de la ubicación, temperatura y comportamiento de animales en pastoreo extensivo.
-            </td>
-            <td class="overview">
-                Compañía irlandesa especializada en dispositivos IoT acoplados a la cola del animal
-                para la detección temprana del parto y collares para el monitoreo de celo.
-            </td>
-        </tr>
-        <tr>
-            <td class="criterion">Ventaja competitiva<br><span class="normal">¿Qué valor ofrece a los clientes?</span></td>
-            <td>
-                Conectividad híbrida adaptable (LoRaWAN/Red Celular) con modo offline para
-                sincronización retrasada; algoritmos locales de bajo consumo; costo accesible sin
-                necesidad de costosas antenas propietarias locales en cada rancho ganadero.
-            </td>
-            <td>
-                Monitoreo biométrico de altísima precisión (rumia, estrés por calor, celo) respaldado
-                por décadas de investigación veterinaria y validación clínica a nivel industrial.
-            </td>
-            <td>
-                Alta durabilidad y resistencia del dispositivo GPS, geocofencing de gran precisión
-                geográfica y mapeo visual avanzado de rutas de pastoreo sin antenas locales intermedias.
-            </td>
-            <td>
-                Especialización extrema y 100% enfocada en el parto y celo con alertas directas por
-                SMS independientes de red local, con alta tasa de éxito preventivo en ganado gestante.
-            </td>
-        </tr>
-        <tr>
-            <td rowspan="2" class="section">Perfil de Marketing</td>
-            <td class="criterion">Mercado objetivo</td>
-            <td>
-                Medianos y grandes productores ganaderos en América Latina con ganado de carne y
-                doble propósito bajo esquemas de pastoreo extensivo o semi-intensivo.
-            </td>
-            <td>
-                Megaproductores de ganado lechero e industrial de alta producción bajo confinamiento
-                o pastoreo intensivo que pueden costear alta infraestructura.
-            </td>
-            <td>
-                Ganaderos de montaña o pastoreo extensivo en Europa y América Latina que sufren
-                pérdidas frecuentes por extravío o depredadores.
-            </td>
-            <td>
-                Criadores de ganado vacuno enfocados en la reproducción y mejora genética, con
-                rodeos medianos que requieren monitoreo crítico en época de parición.
-            </td>
-        </tr>
-        <tr>
-            <td class="criterion">Estrategias de marketing</td>
-            <td>
-                Demostraciones prácticas en asociaciones ganaderas locales, marketing digital enfocado
-                en el ahorro de mano de obra y reducción de tasas de mortalidad animal, alianzas con
-                veterinarias locales.
-            </td>
-            <td>
-                Venta consultiva directa corporativa, presencia imponente en ferias internacionales
-                agropecuarias, marketing científico con publicaciones respaldadas por veterinarios.
-            </td>
-            <td>
-                Marketing de contenidos enfocado en la prevención del robo de ganado (abigeato),
-                campañas digitales basadas en casos de éxito de recuperación de animales extraviados.
-            </td>
-            <td>
-                Publicidad de nicho en revistas y foros especializados en inseminación y cría,
-                demostraciones de "antes y después" del parto, y distribución mediante veterinarias aliadas.
-            </td>
-        </tr>
-        <tr>
-            <td rowspan="3" class="section">Perfil de Producto</td>
-            <td class="criterion">Productos &amp; Servicios</td>
-            <td>
-                Arete y collar inteligente con acelerómetro y sensor de temperatura; aplicación móvil
-                nativa (Android/iOS); plataforma web de gestión analítica; API RESTful para servicios veterinarios.
-            </td>
-            <td>
-                Collares y aretes inteligentes SenseHub, antenas receptoras propietarias fijas de largo
-                alcance, software SaaS de escritorio y aplicación móvil de alertas en tiempo real.
-            </td>
-            <td>
-                Collares de localización GPS con sensores de temperatura, plataforma web de visualización
-                cartográfica, y aplicaciones para dispositivos móviles de rastreo y geocofencing.
-            </td>
-            <td>
-                Sensor Moocall Calving (acoplado a la cola), collar Moocall HEAT, servicio SaaS de envío
-                de alertas por mensajes de texto integrados y aplicación para teléfonos inteligentes.
-            </td>
-        </tr>
-        <tr>
-            <td class="criterion">Precios &amp; Costos</td>
-            <td>
-                Dispositivos de bajo costo de adquisición única; plan de suscripción mensual flexible por
-                escala de ganado (Premium y Básico) adaptado al volumen real del ganadero.
-            </td>
-            <td>
-                Costo de adquisición de hardware muy elevado; tarifas de instalación de antenas propietarias
-                muy costosas; contrato de licenciamiento SaaS anual rígido y de alto valor.
-            </td>
-            <td>
-                Costo moderado por dispositivo collar; suscripción anual obligatoria por la conectividad
-                Sigfox/celular integrada en cada collar de forma independiente.
-            </td>
-            <td>
-                Costo único por el sensor de parto; cuota de servicio anual fija obligatoria para cubrir
-                el costo de las alertas de telefonía celular global por SMS.
-            </td>
-        </tr>
-        <tr>
-            <td class="criterion">Canales de distribución<br>(Web y/o Móvil)</td>
-            <td>
-                Plataforma web (Landing Page) con e-commerce integrado; distribuidores regionales de
-                insumos agropecuarios; y tiendas oficiales de aplicaciones móviles nativas.
-            </td>
-            <td>
-                Red global de distribuidores autorizados exclusivos de MSD Animal Health y representantes
-                de ventas técnicas directas en zonas ganaderas industriales.
-            </td>
-            <td>
-                Sitio web con tienda en línea directa; envíos internacionales; alianzas de distribución
-                con redes de telecomunicaciones IoT (como Sigfox y Telefónica).
-            </td>
-            <td>
-                Tienda en línea oficial, marketplaces especializados (Amazon, agro-tiendas), y cooperativas
-                ganaderas autorizadas con presencia física internacional.
-            </td>
-        </tr>
-        <tr>
-            <td rowspan="5" class="section">Análisis SWOT</td>
-            <td colspan="5" class="swot-intro">
-                <span class="swot-title">Realice esto para su startup y sus competidores.</span>
-                Sus fortalezas deberían apoyar sus oportunidades y contribuir a lo que ustedes definen
-                como su posible ventaja competitiva.
-            </td>
-        </tr>
-        <tr>
-            <td class="criterion">Fortalezas</td>
-            <td>
-                Conectividad híbrida LoRaWAN/celular de bajo consumo, soporte nativo de modo sin conexión
-                (offline) para guardado local en zonas remotas, arquitectura de software basada en
-                microservicios ágiles que facilita la integración rápida mediante API RESTful con laboratorios
-                y veterinarias.
-            </td>
-            <td>
-                Respaldo de una multinacional farmacéutica veterinaria, algoritmos de rumia probados
-                científicamente a nivel mundial, red de soporte técnico in situ de alta presencia.
-            </td>
-            <td>
-                Dispositivos muy resistentes con excelente diseño industrial hermético, fuerte presencia
-                de marca en el mercado ganadero de habla hispana.
-            </td>
-            <td>
-                Solución sumamente específica y validada para la reducción de mortalidad de terneros durante
-                el parto, sin necesidad de configuraciones de red complejas por parte del usuario.
-            </td>
-        </tr>
-        <tr>
-            <td class="criterion">Debilidades</td>
-            <td>
-                Marca nueva en el mercado sin posicionamiento previo, presupuesto de marketing inicialmente
-                limitado, dependencia de la capacidad de ensamblaje inicial para los lotes de collares y aretes físicos.
-            </td>
-            <td>
-                Costo de inversión restrictivo para productores pequeños y medianos, obligatoriedad de instalar
-                antenas fijas receptoras en el terreno (inviable para grandes pastizales extensivos sin energía eléctrica).
-            </td>
-            <td>
-                Elevado consumo de batería debido al uso intensivo de GPS directo por collar, falta de integración
-                directa y amigable con servicios locales de atención de salud animal del sector.
-            </td>
-            <td>
-                Alcance funcional muy limitado (no sirve para geolocalización, control de pastoreo diario,
-                ni detección generalizada de enfermedades comunes del ganado).
-            </td>
-        </tr>
-        <tr>
-            <td class="criterion">Oportunidades</td>
-            <td>
-                Creciente necesidad de digitalización en el sector ganadero latinoamericano para mitigar el
-                robo de ganado (abigeato); alta disponibilidad de redes de comunicación IoT abiertas de largo alcance (LoRaWAN).
-            </td>
-            <td>
-                Migración de medianos ganaderos hacia ganaderías intensivas de alta eficiencia donde el
-                retorno de inversión se percibe más rápido.
-            </td>
-            <td>
-                Expansión de redes de conectividad celular de banda estrecha (NB-IoT) en América Latina
-                que podrían reducir el consumo de sus baterías.
-            </td>
-            <td>
-                Alianzas con proveedores de semen y genética bovina para empaquetar el dispositivo en
-                programas de reproducción bovina de alta gama.
-            </td>
-        </tr>
-        <tr>
-            <td class="criterion">Amenazas</td>
-            <td>
-                Fluctuación de precios de los componentes electrónicos para la fabricación de los collares;
-                posibilidad de ingreso rápido de competidores chinos de bajo costo con hardware genérico sin valor analítico.
-            </td>
-            <td>
-                Desintermediación del mercado por soluciones de software de código abierto e integraciones
-                de sensores genéricos.
-            </td>
-            <td>
-                Lanzamiento de collares inteligentes de bajo costo por parte de startups locales latinoamericanas
-                con mejor soporte al cliente y tarifas flexibles.
-            </td>
-            <td>
-                Obsolescencia del dispositivo de cola si los collares biométricos de la competencia logran
-                predecir el parto con la misma o mayor precisión a menor costo general.
-            </td>
-        </tr>
-    </table>
-</div>
-</body>
-</html>
+
+**Competitive Analysis Landscape**
+
+**¿Por qué llevar a cabo este análisis?**
+Comparar ICHU IoT con sus principales competidores para identificar fortalezas, debilidades, oportunidades y amenazas, y determinar una ventaja competitiva clara y sostenible en el mercado de monitoreo inteligente de ganado.
+
+| Sección | Criterio | ICHU IoT (nuestra startup) | Competidor 1: Allflex SenseHub | Competidor 2: Digitanimal | Competidor 3: Moocall |
+|---|---|---|---|---|---|
+| **Perfil** | Overview | Solución digital basada en collares y aretes inteligentes IoT con conectividad LoRaWAN y celular híbrida, integrada a una plataforma web y móvil nativa para el monitoreo biométrico y localización en tiempo real de ganado en pastoreo extensivo. | Líder global en identificación animal y monitoreo inteligente de ganado lechero y de carne, perteneciente al grupo MSD Animal Health, con infraestructura propietaria robusta. | Empresa de base tecnológica española que ofrece collares GPS y sensores para el monitoreo de la ubicación, temperatura y comportamiento de animales en pastoreo extensivo. | Compañía irlandesa especializada en dispositivos IoT acoplados a la cola del animal para la detección temprana del parto y collares para el monitoreo de celo. |
+| **Perfil** | Ventaja competitiva — ¿Qué valor ofrece a los clientes? | Conectividad híbrida adaptable (LoRaWAN/Red Celular) con modo offline para sincronización retrasada; algoritmos locales de bajo consumo; costo accesible sin necesidad de costosas antenas propietarias locales en cada rancho ganadero. | Monitoreo biométrico de altísima precisión (rumia, estrés por calor, celo) respaldado por décadas de investigación veterinaria y validación clínica a nivel industrial. | Alta durabilidad y resistencia del dispositivo GPS, geocofencing de gran precisión geográfica y mapeo visual avanzado de rutas de pastoreo sin antenas locales intermedias. | Especialización extrema y 100% enfocada en el parto y celo con alertas directas por SMS independientes de red local, con alta tasa de éxito preventivo en ganado gestante. |
+| **Perfil de Marketing** | Mercado objetivo | Medianos y grandes productores ganaderos en América Latina con ganado de carne y doble propósito bajo esquemas de pastoreo extensivo o semi-intensivo. | Megaproductores de ganado lechero y de carne de alta producción bajo confinamiento o pastoreo intensivo que pueden costear alta infraestructura. | Ganaderos de montaña o pastoreo extensivo en Europa y América Latina que sufren pérdidas frecuentes por extravío o depredadores. | Criadores de ganado vacuno enfocados en la reproducción y mejora genética, con rodeos medianos que requieren monitoreo crítico en época de parición. |
+| **Perfil de Marketing** | Estrategias de marketing | Demostraciones prácticas en asociaciones ganaderas locales, marketing digital enfocado en el ahorro de mano de obra y reducción de tasas de mortalidad animal, alianzas con veterinarias locales. | Venta consultiva directa corporativa, presencia imponente en ferias internacionales agropecuarias, marketing científico con publicaciones respaldadas por veterinarios. | Marketing de contenidos enfocado en la prevención del robo de ganado (abigeato), campañas digitales basadas en casos de éxito de recuperación de animales extraviados. | Publicidad de nicho en revistas y foros especializados en inseminación y cría, demostraciones de "antes y después" del parto, y distribución mediante veterinarias aliadas. |
+| **Perfil de Producto** | Productos & Servicios | Arete y collar inteligente con acelerómetro y sensor de temperatura; aplicación móvil nativa (Android/iOS); plataforma web de gestión analítica; API RESTful para servicios veterinarios. | Collares y aretes inteligentes SenseHub, antenas receptoras propietarias fijas de largo alcance, software SaaS de escritorio y aplicación móvil de alertas en tiempo real. | Collares de localización GPS con sensores de temperatura, plataforma web de visualización cartográfica, y aplicaciones para dispositivos móviles de rastreo y geocofencing. | Sensor Moocall Calving (acoplado a la cola), collar Moocall HEAT, servicio SaaS de envío de alertas por mensajes de texto integrados y aplicación para teléfonos inteligentes. |
+| **Perfil de Producto** | Precios & Costos | Dispositivos de bajo costo de adquisición única; plan de suscripción mensual flexible por escala de ganado (Premium y Básico) adaptado al volumen real del ganadero. | Costo de adquisición de hardware muy elevado; tarifas de instalación de antenas propietarias muy costosas; contrato de licenciamiento SaaS anual rígido y de alto valor. | Costo moderado por dispositivo collar; suscripción mensual obligatoria por la conectividad celular/NB-IoT integrada en cada collar de forma independiente. | Costo único por el sensor de parto; cuota de servicio anual fija obligatoria para cubrir el costo de las alertas de telefonía celular global por SMS. |
+| **Perfil de Producto** | Canales de distribución (Web y/o Móvil) | Plataforma web (Landing Page) con e-commerce integrado; distribuidores regionales de insumos agropecuarios; y tiendas oficiales de aplicaciones móviles nativas. | Red global de distribuidores autorizados exclusivos de MSD Animal Health y representantes de ventas técnicas directas en zonas ganaderas industriales. | Sitio web con tienda en línea directa; envíos internacionales; alianzas de distribución con operadores de redes de telecomunicaciones IoT (como Telefónica) y conectividad satelital NB-NTN. | Tienda en línea oficial, marketplaces especializados (Amazon, agro-tiendas), y cooperativas ganaderas autorizadas con presencia física internacional. |
+| **Análisis SWOT** | Fortalezas | Conectividad híbrida LoRaWAN/celular de bajo consumo, soporte nativo de modo sin conexión (offline) para guardado local en zonas remotas, arquitectura de software basada en microservicios ágiles que facilita la integración rápida mediante API RESTful con laboratorios y veterinarias. | Respaldo de una multinacional farmacéutica veterinaria, algoritmos de rumia probados científicamente a nivel mundial, red de soporte técnico in situ de alta presencia. | Dispositivos muy resistentes con excelente diseño industrial hermético, fuerte presencia de marca en el mercado ganadero de habla hispana. | Solución sumamente específica y validada para la reducción de mortalidad de terneros durante el parto, sin necesidad de configuraciones de red complejas por parte del usuario. |
+| **Análisis SWOT** | Debilidades | Marca nueva en el mercado sin posicionamiento previo, presupuesto de marketing inicialmente limitado, dependencia de la capacidad de ensamblaje inicial para los lotes de collares y aretes físicos. | Costo de inversión restrictivo para productores pequeños y medianos, obligatoriedad de instalar antenas fijas receptoras en el terreno (inviable para grandes pastizales extensivos sin energía eléctrica). | Fuerte dependencia de la conectividad de redes de telecomunicaciones de terceros para la transmisión de datos, falta de integración directa y amigable con servicios locales de atención de salud animal del sector. | Alcance funcional muy limitado (no sirve para geolocalización, control de pastoreo diario, ni detección generalizada de enfermedades comunes del ganado). |
+| **Análisis SWOT** | Oportunidades | Creciente necesidad de digitalización en el sector ganadero latinoamericano para mitigar el robo de ganado (abigeato); alta disponibilidad de redes de comunicación IoT abiertas de largo alcance (LoRaWAN). | Migración de medianos ganaderos hacia ganaderías intensivas de alta eficiencia donde el retorno de inversión se percibe más rápido. | Expansión de redes de conectividad celular de banda estrecha (NB-IoT) en América Latina que podrían reducir el consumo de sus baterías. | Alianzas con proveedores de semen y genética bovina para empaquetar el dispositivo en programas de reproducción bovina de alta gama. |
+| **Análisis SWOT** | Amenazas | Fluctuación de precios de los componentes electrónicos para la fabricación de los collares; posibilidad de ingreso rápido de competidores chinos de bajo costo con hardware genérico sin valor analítico. | Desintermediación del mercado por soluciones de software de código abierto e integraciones de sensores genéricos. | Lanzamiento de collares inteligentes de bajo costo por parte de startups locales latinoamericanas con mejor soporte al cliente y tarifas flexibles. | Obsolescencia del dispositivo de cola si los collares biométricos de la competencia logran predecir el parto con la misma o mayor precisión a menor costo general. |
 
 ### 2.1.2. Estrategias y tácticas frente a competidores.
 
 Para posicionar a ICHU IoT con éxito, nuestra startup implementará un conjunto de estrategias y tácticas comerciales y de ingeniería de software orientadas a contrarrestar las fortalezas de los competidores establecidos y capitalizar sus debilidades en el contexto ganadero latinoamericano:
 
-**Estrategia 1:** Reducción de Barreras Económicas y Tecnológicas de Infraestructura
-Táctica Comercial: Eliminar la necesidad de costosas antenas fijas propietarias en el rancho ganadero (la gran debilidad de Allflex). El ganadero podrá optar por aretes inteligentes que transmiten de forma local a un único collar maestro (que actúa como dispositivo gateway en el animal líder de la manada), reduciendo a una fracción los costos de instalación física.
-Táctica de Ingeniería: Diseñar el collar inteligente con conectividad híbrida que almacene la telemetría en memoria flash local cuando el ganado se encuentre en "zonas ciegas" sin señal. Una vez que el ganado retorne a áreas de cobertura o se aproxime al corral principal, los datos se sincronizarán de forma transparente y asíncrona hacia nuestro Edge API.
+#### Estrategia 1: Reducción de Barreras Económicas y Tecnológicas de Infraestructura
 
-**Estrategia 2:** Optimización Energética de los Dispositivos Físicos
-Táctica Comercial: Promocionar una vida útil de la batería de los aretes y collares de hasta 3 años, reduciendo drásticamente las horas de mano de obra asociadas al cambio de baterías y manipulación estresante del ganado (superando la debilidad de Digitanimal).
-Táctica de Ingeniería: Implementar en los dispositivos embebidos un algoritmo inteligente de transmisión dinámica. Si el ganado se encuentra en reposo (determinado por el acelerómetro local), el módulo GPS/transmisor entra en modo de ultra bajo consumo (Deep Sleep), transmitiendo únicamente cuando se detecten patrones de actividad inusual, geocofencing cruzado o anomalías térmicas en el animal.
+- **Táctica Comercial:** Eliminar la necesidad de costosas antenas fijas propietarias en el rancho ganadero (la gran debilidad de Allflex). El ganadero podrá optar por aretes inteligentes que transmiten de forma local a un único collar maestro (que actúa como dispositivo gateway en el animal líder de la manada), reduciendo a una fracción los costos de instalación física.
+- **Táctica de Ingeniería:** Diseñar el collar inteligente con conectividad híbrida que almacene la telemetría en memoria flash local cuando el ganado se encuentre en "zonas ciegas" sin señal. Una vez que el ganado retorne a áreas de cobertura o se aproxime al corral principal, los datos se sincronizarán de forma transparente y asíncrona hacia nuestro Edge API.
 
-**Estrategia 3:** Flexibilidad de Suscripción y Monetización Adaptativa
-Táctica Comercial: Ofrecer un modelo de negocio SaaS con planes escalables basados en el tamaño real de la unidad ganadera (por cabeza de ganado), permitiendo a los medianos productores adoptar la tecnología de forma incremental. Esto contrasta directamente con los planes de pago anuales rígidos e inaccesibles de Allflex y Digitanimal.
-Táctica de Ingeniería: Implementar en nuestro backend de servicios web un módulo dinámico de suscripciones y facturación asimilado por el microservicio correspondiente, permitiendo habilitar o deshabilitar de forma automática características del software (como reportes avanzados o alertas SMS críticas) basándose en el plan activo del usuario.
+#### Estrategia 2: Optimización Energética de los Dispositivos Físicos
 
-**Estrategia 4:** Integración del Ecosistema de Salud mediante API RESTful de Desarrollo Interno
-Táctica Comercial: Posicionar a ICHU IoT no solo como un rastreador o un sensor aislado, sino como una plataforma abierta que conecta al ganadero con su médico veterinario de confianza. El veterinario podrá visualizar análisis clínicos e históricos de salud de manera remota para prescribir tratamientos oportunos, reduciendo las visitas físicas improductivas.
-Táctica de Ingeniería: Diseñar y documentar rigurosamente los endpoints de nuestro RESTful API con OpenAPI/Swagger, permitiendo que sistemas externos de laboratorios o software de gestión de terceros se integren de forma segura mediante protocolos estandarizados, expandiendo el valor del ecosistema sin comprometer la seguridad de la información.
+- **Táctica Comercial:** Promocionar una vida útil de la batería de los aretes y collares de hasta 3 años, reduciendo drásticamente las horas de mano de obra asociadas al cambio de baterías y manipulación estresante del ganado (superando la debilidad de Digitanimal).
+- **Táctica de Ingeniería:** Implementar en los dispositivos embebidos un algoritmo inteligente de transmisión dinámica. Si el ganado se encuentra en reposo (determinado por el acelerómetro local), el módulo GPS/transmisor entra en modo de ultra bajo consumo (Deep Sleep), transmitiendo únicamente cuando se detecten patrones de actividad inusual, geocofencing cruzado o anomalías térmicas en el animal.
+
+#### Estrategia 3: Flexibilidad de Suscripción y Monetización Adaptativa
+
+- **Táctica Comercial:** Ofrecer un modelo de negocio SaaS con planes escalables basados en el tamaño real de la unidad ganadera (por cabeza de ganado), permitiendo a los medianos productores adoptar la tecnología de forma incremental. Esto contrasta directamente con los planes de pago anuales rígidos e inaccesibles de Allflex y Digitanimal.
+- **Táctica de Ingeniería:** Implementar en nuestro backend de servicios web un módulo dinámico de suscripciones y facturación asimilado por el microservicio correspondiente, permitiendo habilitar o deshabilitar de forma automática características del software (como reportes avanzados o alertas SMS críticas) basándose en el plan activo del usuario.
+
+#### Estrategia 4: Integración del Ecosistema de Salud mediante API RESTful de Desarrollo Interno
+
+- **Táctica Comercial:** Posicionar a ICHU IoT no solo como un rastreador o un sensor aislado, sino como una plataforma abierta que conecta al ganadero con su médico veterinario de confianza. El veterinario podrá visualizar análisis clínicos e históricos de salud de manera remota para prescribir tratamientos oportunos, reduciendo las visitas físicas improductivas.
+- **Táctica de Ingeniería:** Diseñar y documentar rigurosamente los endpoints de nuestro RESTful API con OpenAPI/Swagger, permitiendo que sistemas externos de laboratorios o software de gestión de terceros se integren de forma segura mediante protocolos estandarizados, expandiendo el valor del ecosistema sin comprometer la seguridad de la información.
 
 ## 2.2. Entrevistas.
 ### 2.2.1. Diseño de entrevistas.
-A continuación, se presenta la relación de preguntas principales y complementarias estructuradas para cada uno de los tres segmentos objetivo identificados. El cuestionario recopila tanto la información demográfica y de perfil requerida para construir los User Personas (arquetipos) como la información operativa y de dolor para mapear los requisitos de software del sistema.
+A continuación, se presenta la relación de preguntas principales y complementarias estructuradas para cada uno de los dos segmentos objetivo identificados. El cuestionario recopila tanto la información demográfica y de perfil requerida para construir los User Personas (arquetipos) como la información operativa y de dolor para mapear los requisitos de software del sistema.
 
 **Segmento 1:** Medianos y Grandes Ganaderos (Propietarios y Administradores de Estancias)
 Este segmento representa al comprador principal (Buyer Persona) y tomador de decisiones financieras de la estancia. El objetivo es identificar la viabilidad de la plataforma web administrativa, el modelo de suscripción SaaS y los indicadores clave (KPIs) de productividad que desean ver en pantalla .
@@ -494,11 +166,10 @@ En esta sección se consolidan y sintetizan los hallazgos cualitativos y cuantit
 ### 2.3.1. User Personas.
 
 Introducción y Metodología
-Para la construcción de los arquetipos de usuario (User Personas), el equipo procesó la información recolectada en la fase de entrevistas y análisis del mercado ganadero. Se identificaron tres patrones de comportamiento distintivos que representan fielmente a los tres segmentos objetivo definidos para el ecosistema de software ICHU:
+Para la construcción de los arquetipos de usuario (User Personas), el equipo procesó la información recolectada en la fase de entrevistas y análisis del mercado ganadero. Se identificaron dos patrones de comportamiento distintivos que representan fielmente a los dos segmentos objetivo definidos para el ecosistema de software ICHU:
 
 **Segmento 1:** Propietarios y Administradores Ganaderos, enfocados en la rentabilidad, reducción de pérdidas por mortalidad/abigeato y la toma de decisiones estratégicas basadas en indicadores clave expresados en la ICHU Web Application.
-**Segmento 2:** Capataces y Operarios de Campo, centrados en la usabilidad en terreno, la rápida localización de los animales y el registro ágil de eventos mediante la ICHU Mobile Application con soporte para modo sin conexión (offline).
-**Segmento 3:** Médicos Veterinarios y Consultores, orientados al monitoreo biométrico continuo, diagnóstico clínico temprano y la revisión de historiales de salud consolidados a través de vistas especializadas y la integración con la API RESTful de desarrollo interno.  
+**Segmento 2:** Zootecnistas y Médicos Veterinarios, orientados al monitoreo biométrico continuo, diagnóstico clínico temprano y la revisión de historiales de salud consolidados a través de vistas especializadas y la integración con la API RESTful de desarrollo interno.  
 
 Cada ficha de User Persona ha sido especificada considerando todos los atributos recomendados para arquetipos UX (datos demográficos, biografía, personalidad, objetivos, frustraciones, tecnología de preferencia, marcas/influencias y necesidades específicas de software), habiendo sido modeladas estructuralmente en la herramienta UXPressia.
 
