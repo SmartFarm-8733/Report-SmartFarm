@@ -158,6 +158,20 @@ Este segmento proporciona el sustento técnico-científico del dominio de salud.
 Con esta estructura, el veterinario te hablará de su vida, luego te dará la "matemática" de las enfermedades para calibrar tus sensores, y finalmente te diseñará los botones y pantallas de tu software. 
 
 ### 2.2.2. Registro de entrevistas.
+
+#### Entrevista 1 — Segmento 1: Medianos y Grandes Ganaderos
+
+**Entrevistado:** Próspero Contreras Flores
+**Cargo/Rol:** Ganadero — Propietario de predio ganadero
+**Ubicación:** Región Apurímac, Perú
+**Duración:** 00:22:45
+**Entrevistador:** Diego Avalos
+
+![Entrevista a Próspero Contreras Flores](images/entrevista-segmento1-prospero-contreras.png)
+
+**Resumen:**
+La entrevista realizada a Próspero Contreras Flores, ganadero ubicado en la región de Apurímac, describe la dinámica operativa y los desafíos clave en la gestión de un predio con aproximadamente 100 cabezas de ganado bajo un régimen de pastoreo extensivo. Actualmente, la administración del inventario y el registro de eventos de salud se realizan de forma rudimentaria mediante hojas de cálculo en Excel y cuadernos de notas, lo que genera vacíos significativos en la trazabilidad médica individual del hato y propicia pérdidas económicas por partos prematuros no supervisados y casos de abigeato (robo de ganado). La infraestructura local presenta una cobertura de internet intermitente (aproximadamente 50% de señal en los potreros), por lo que el productor requiere una herramienta digital multidispositivo (smartphone en campo y laptop en oficina) con capacidad de almacenamiento offline. La solución ideal demandada debe centralizar las fichas clínicas individuales, emitir notificaciones preventivas ajustadas al calendario sanitario andino (vacunación contra carbúnculo, desparasitación), predecir eventos reproductivos (detección de celos y proximidad de partos) y consolidar reportes administrativos de costos y mortalidad bajo un modelo de suscripción anual.
+
 ### 2.2.3. Análisis de entrevistas.
 ## 2.3. Needfinding.
 En esta sección se consolidan y sintetizan los hallazgos cualitativos y cuantitativos obtenidos durante la fase de investigación de campo, entrevistas en profundidad y análisis competitivo. El proceso de Needfinding nos permite transformar los datos brutos recolectados de los actores del sector ganadero en artefactos visuales y estructurados de diseño de experiencia de usuario (UX), garantizando que el desarrollo del ecosistema de software ICHU responda de manera directa a las necesidades reales, dolores operativos y metas estratégicas de cada perfil de usuario.
