@@ -165,7 +165,7 @@ Con esta estructura, el veterinario te hablará de su vida, luego te dará la "m
 **Cargo/Rol:** Ganadero — Propietario de predio ganadero
 **Ubicación:** Región Apurímac, Perú
 **Duración:** 00:22:45
-**Entrevistador:** Diego Avalos
+**Entrevistador:** Flor Contreras
 
 ![Entrevista a Próspero Contreras Flores](images/entrevista-segmento1-prospero-contreras.png)
 
