@@ -159,18 +159,61 @@ Con esta estructura, el veterinario te hablará de su vida, luego te dará la "m
 
 ### 2.2.2. Registro de entrevistas.
 
-#### Entrevista 1 — Segmento 1: Medianos y Grandes Ganaderos
+#### Segmento 1: Medianos y Grandes Ganaderos
 
-**Entrevistado:** Próspero Contreras Flores
-**Cargo/Rol:** Ganadero — Propietario de predio ganadero
-**Ubicación:** Región Apurímac, Perú
-**Duración:** 00:22:45
-**Entrevistador:** Flor Contreras
+##### Entrevista 1
+
+> **Entrevistado:** Próspero Contreras Flores
+> **Cargo/Rol:** Ganadero — Propietario de predio ganadero
+> **Ubicación:** Región Apurímac, Perú
+> **Duración:** 00:22:45
+> **Entrevistador:** Flor Contreras
 
 ![Entrevista a Próspero Contreras Flores](images/entrevista-segmento1-prospero-contreras.png)
 
-**Resumen:**
-La entrevista realizada a Próspero Contreras Flores, ganadero ubicado en la región de Apurímac, describe la dinámica operativa y los desafíos clave en la gestión de un predio con aproximadamente 100 cabezas de ganado bajo un régimen de pastoreo extensivo. Actualmente, la administración del inventario y el registro de eventos de salud se realizan de forma rudimentaria mediante hojas de cálculo en Excel y cuadernos de notas, lo que genera vacíos significativos en la trazabilidad médica individual del hato y propicia pérdidas económicas por partos prematuros no supervisados y casos de abigeato (robo de ganado). La infraestructura local presenta una cobertura de internet intermitente (aproximadamente 50% de señal en los potreros), por lo que el productor requiere una herramienta digital multidispositivo (smartphone en campo y laptop en oficina) con capacidad de almacenamiento offline. La solución ideal demandada debe centralizar las fichas clínicas individuales, emitir notificaciones preventivas ajustadas al calendario sanitario andino (vacunación contra carbúnculo, desparasitación), predecir eventos reproductivos (detección de celos y proximidad de partos) y consolidar reportes administrativos de costos y mortalidad bajo un modelo de suscripción anual.
+> **Resumen:**
+> La entrevista realizada a Próspero Contreras Flores, ganadero ubicado en la región de Apurímac, describe la dinámica operativa y los desafíos clave en la gestión de un predio con aproximadamente 100 cabezas de ganado bajo un régimen de pastoreo extensivo. Actualmente, la administración del inventario y el registro de eventos de salud se realizan de forma rudimentaria mediante hojas de cálculo en Excel y cuadernos de notas, lo que genera vacíos significativos en la trazabilidad médica individual del hato y propicia pérdidas económicas por partos prematuros no supervisados y casos de abigeato (robo de ganado). La infraestructura local presenta una cobertura de internet intermitente (aproximadamente 50% de señal en los potreros), por lo que el productor requiere una herramienta digital multidispositivo (smartphone en campo y laptop en oficina) con capacidad de almacenamiento offline. La solución ideal demandada debe centralizar las fichas clínicas individuales, emitir notificaciones preventivas ajustadas al calendario sanitario andino (vacunación contra carbúnculo, desparasitación), predecir eventos reproductivos (detección de celos y proximidad de partos) y consolidar reportes administrativos de costos y mortalidad bajo un modelo de suscripción anual.
+
+#### Segmento 2: Zootecnistas y Médicos Veterinarios
+
+##### Entrevista 2
+
+> **Entrevistado:** Darwin Carbajal Vilca
+> **Cargo/Rol:** Médico Veterinario Zootecnista — Criador de ganado Brown Swiss
+> **Ubicación:** Puno, Perú
+> **Duración:** 00:21:28
+> **Entrevistador:** Flor Contreras
+
+![Entrevista a Darwin Carbajal Vilca](images/entrevista-segmento2-darwin-carbajal.png)
+
+> **Resumen:**
+> Darwin Carbajal Vilca, médico veterinario zootecnista y criador de ganado vacuno Brown Swiss en Puno con más de 18 años de experiencia en inseminación artificial, administra el fundo "Flores de Coña" con 26 animales de pedigree y PPC. Su jornada combina labor de campo e inspección en establo en primeras y últimas horas del día con trabajo de escritorio e investigación clínica. En su práctica médica identifica desafíos clave como la detección tardía del celo silencioso —reconocible habitualmente al segundo o tercer día por sangrado vulvar— y el impacto fatal de trastornos metabólicos de rápida evolución como el timpanismo o la intoxicación por ensilado alterado. Para optimizar su gestión, requiere una solución tecnológica integrada que permita registrar historias clínicas digitales en campo para validar fármacos administrados, recibir alertas preventivas sobre caídas en la rumia o alzas térmicas, analizar curvas epidemiológicas a nivel de hato y adjuntar evidencia ecográfica para agilizar los registros de gestación ante ASCRIGAR Perú.
+
+##### Entrevista 3
+
+> **Entrevistado:** Eliseo Ramírez Mena
+> **Cargo/Rol:** Bachiller en Medicina Veterinaria y Zootecnia
+> **Ubicación:** Perú
+> **Duración:** 00:17:24
+> **Entrevistador:** Flor Contreras
+
+![Entrevista a Eliseo Ramírez Mena](images/entrevista-segmento2-eliseo-ramirez.png)
+
+> **Resumen:**
+> La entrevista expone la rutina laboral y las necesidades tecnológicas de Eliseo Ramírez Mena, bachiller en Medicina Veterinaria y Zootecnia con más de dos años de experiencia en el manejo de ganado vacuno y ovino. Su jornada diaria distribuye la mañana en labores de campo con los animales y la tarde en trabajo de oficina, registro de datos en computadora e impresión de informes para clientes. En el aspecto sanitario y reproductivo, Eliseo enfatiza que los tratamientos dependen del diagnóstico clínico observable —como la variación de temperatura, el apetito, la alteración de rumiación o conductas en celo— y del apoyo de colegas en casos complejos, así como del uso de intervenciones inmediatas ante emergencias metabólicas como el timpanismo gaseoso. Frente a la propuesta de un software y aplicativo móvil veterinario, el especialista prioriza la utilidad de sincronizar imágenes de ecógrafos para evaluar la gestación en tiempo real desde el celular, la emisión de alertas rojas automáticas cuando decaen las constantes vitales del animal, la automatización de reportes ejecutivos para sustituir el llenado manual en Excel, y la integración de módulos nutricionales que identifiquen deficiencias minerales o de nutrientes en la dieta del ganado.
+
+##### Entrevista 4
+
+> **Entrevistado:** Dionisio Rodríguez
+> **Cargo/Rol:** Zootecnista
+> **Ubicación:** Chile (con trabajo de campo en Perú)
+> **Duración:** 00:16:31
+> **Entrevistador:** Flor Contreras
+
+![Entrevista a Dionisio Rodríguez](images/entrevista-segmento2-dionisio-rodriguez.png)
+
+> **Resumen:**
+> Esta entrevista explora las necesidades operativas y tecnológicas de Dionisio Rodríguez, zootecnista chileno con trabajo de campo en Perú, para guiar el desarrollo de la plataforma ganadera Ichu de Smart Farm. Rodríguez explica que pasa la mayor parte de su jornada en el terreno registrando datos y fotos en su teléfono inteligente, reservando la computadora de oficina para la elaboración de informes. Para la detección temprana de enfermedades metabólicas o infecciosas y la identificación de celos silenciosos, fundamenta su diagnóstico en el seguimiento continuo de la temperatura corporal, la inactividad, la disminución de la rumia y los cambios de conducta, recurriendo a exámenes de laboratorio solo en casos complejos. En cuanto al diseño de la plataforma, solicita alertas automáticas ante fiebres o partos, reportes exportables a Excel o PDF, e integración directa con equipos de campo como ecógrafos portátiles y software de nutrición para evitar la duplicidad en el registro de información.
 
 ### 2.2.3. Análisis de entrevistas.
 ## 2.3. Needfinding.
