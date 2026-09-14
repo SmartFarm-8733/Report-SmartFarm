@@ -176,7 +176,7 @@ Con esta estructura, el veterinario te hablará de su vida, luego te dará la "m
 
 #### Segmento 2: Zootecnistas y Médicos Veterinarios
 
-##### Entrevista 2
+##### Entrevista 1
 
 > **Entrevistado:** Darwin Carbajal Vilca
 > **Cargo/Rol:** Médico Veterinario Zootecnista — Criador de ganado Brown Swiss
@@ -189,7 +189,7 @@ Con esta estructura, el veterinario te hablará de su vida, luego te dará la "m
 > **Resumen:**
 > Darwin Carbajal Vilca, médico veterinario zootecnista y criador de ganado vacuno Brown Swiss en Puno con más de 18 años de experiencia en inseminación artificial, administra el fundo "Flores de Coña" con 26 animales de pedigree y PPC. Su jornada combina labor de campo e inspección en establo en primeras y últimas horas del día con trabajo de escritorio e investigación clínica. En su práctica médica identifica desafíos clave como la detección tardía del celo silencioso —reconocible habitualmente al segundo o tercer día por sangrado vulvar— y el impacto fatal de trastornos metabólicos de rápida evolución como el timpanismo o la intoxicación por ensilado alterado. Para optimizar su gestión, requiere una solución tecnológica integrada que permita registrar historias clínicas digitales en campo para validar fármacos administrados, recibir alertas preventivas sobre caídas en la rumia o alzas térmicas, analizar curvas epidemiológicas a nivel de hato y adjuntar evidencia ecográfica para agilizar los registros de gestación ante ASCRIGAR Perú.
 
-##### Entrevista 3
+##### Entrevista 2
 
 > **Entrevistado:** Eliseo Ramírez Mena
 > **Cargo/Rol:** Bachiller en Medicina Veterinaria y Zootecnia
@@ -202,7 +202,7 @@ Con esta estructura, el veterinario te hablará de su vida, luego te dará la "m
 > **Resumen:**
 > La entrevista expone la rutina laboral y las necesidades tecnológicas de Eliseo Ramírez Mena, bachiller en Medicina Veterinaria y Zootecnia con más de dos años de experiencia en el manejo de ganado vacuno y ovino. Su jornada diaria distribuye la mañana en labores de campo con los animales y la tarde en trabajo de oficina, registro de datos en computadora e impresión de informes para clientes. En el aspecto sanitario y reproductivo, Eliseo enfatiza que los tratamientos dependen del diagnóstico clínico observable —como la variación de temperatura, el apetito, la alteración de rumiación o conductas en celo— y del apoyo de colegas en casos complejos, así como del uso de intervenciones inmediatas ante emergencias metabólicas como el timpanismo gaseoso. Frente a la propuesta de un software y aplicativo móvil veterinario, el especialista prioriza la utilidad de sincronizar imágenes de ecógrafos para evaluar la gestación en tiempo real desde el celular, la emisión de alertas rojas automáticas cuando decaen las constantes vitales del animal, la automatización de reportes ejecutivos para sustituir el llenado manual en Excel, y la integración de módulos nutricionales que identifiquen deficiencias minerales o de nutrientes en la dieta del ganado.
 
-##### Entrevista 4
+##### Entrevista 3
 
 > **Entrevistado:** Dionisio Rodríguez
 > **Cargo/Rol:** Zootecnista
