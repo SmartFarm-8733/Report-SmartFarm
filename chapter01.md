@@ -11,9 +11,11 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
 <table style="width:100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 12px; table-layout: fixed;">
   <thead>
     <tr>
-      <th style="padding: 10px; border: 1px solid #aaa; background:#f2f2f2; width: 28%;">Integrantes</th>
-      <th style="padding: 10px; border: 1px solid #aaa; background:#f2f2f2; width: 18%;">Foto</th>
-      <th style="padding: 10px; border: 1px solid #aaa; background:#f2f2f2;">Descripción del perfil</th>
+      <th style="padding: 10px; border: 1px solid #aaa; background:#f2f2f2; width: 28%;">Diego Andres Avalos Cordova (U2023139222)</th> 
+      <th style="padding: 10px; border: 1px solid #aaa; background:#f2f2f2; width: 18%;">
+        <img src="images/members/DiegoAndresAvalos.png" alt="Foto de Diego" style="max-width:80px; border-radius:6px;">
+      </th>
+      <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">Ingeniería de Software - Mi nombre es Diego Ávalos, tengo 20 años y actualmente estudio Ingeniería de Software. Me interesa especializarme en Desarrollo FullStack, Ciberseguridad y Hacking Ético. Tengo experiencia usando sistemas operativos GNU/Linux y conocimientos en desarrollo web. También me interesan los temas relacionados con tecnología e inteligencia artificial, por lo que busco investigar y aprender constantemente sobre nuevas herramientas que aporten valor al proyecto.</th>
     </tr>
   </thead>
 
