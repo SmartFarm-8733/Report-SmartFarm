@@ -1,4 +1,4 @@
-# Chapter IV: Solution Software Design
+# Capítulo IV: Solution Software Design
 
 ## 4.1. Strategic-Level Domain-Driven Design
 
@@ -38,6 +38,6 @@
 
 #### 4.2.X.6. Bounded Context Software Architecture Code Level Diagrams
 
-##### 4.2.X.6.1. Bounded Context Domain Model Class Diagrams
+##### 4.2.X.6.1. Bounded Context Domain Layer Class Diagrams
 
 ##### 4.2.X.6.2. Bounded Context Database Design Diagram
