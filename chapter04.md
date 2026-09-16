@@ -499,6 +499,65 @@ The Interface Layer therefore acts as a protective boundary around the domain. T
 
 #### 4.2.1.3. Application Layer
 
+La Application Layer coordina los casos de uso de Livestock Monitoring. Recibe una solicitud desde un controller o un evento desde un consumer, obtiene el contexto de autorización, carga los objetos necesarios, invoca el comportamiento del dominio y coordina la persistencia y publicación de eventos. Esta capa define el orden de las operaciones, pero no contiene las reglas que determinan el significado de un animal o de una lectura.
+
+**Use cases and handlers**
+
+| Use case | Handler type | Main steps | Related stories |
+| --- | --- | --- | --- |
+| `GetAnimalProfile` | Query handler | Authorize scope, load `Animal`, obtain active assignment and map a read model. | US-01. |
+| `GetRecentTelemetry` | Query handler | Validate period, query ordered readings and report the last available timestamp. | US-02. |
+| `GetAnimalHistory` | Query handler | Authorize clinical or operational view, query readings and status events, preserve missing-data information. | US-03 and US-11. |
+| `AcceptTelemetry` | Command handler | Validate message identity, load the aggregate, accept the reading idempotently, save and publish domain events. | TS-04 and US-02. |
+| `UpdateAnimalStatus` | Event handler | React to an accepted reading, evaluate the monitoring policy and publish `AnimalStatusUpdated` when the status changes. | US-01, US-02 and EP-02 integration. |
+| `PublishMonitoringEvents` | Application service | Deliver status and telemetry events through the port without depending on a broker implementation. | Alerts and Security and Analytics and Reporting. |
+
+The queries are intentionally separated from commands. A query does not change the aggregate or publish a domain event. A command owns the transaction that changes the monitoring model and must return a result that distinguishes accepted, rejected and duplicate messages.
+
+**Application ports**
+
+| Port | Direction | Purpose |
+| --- | --- | --- |
+| `AnimalRepository` | Output | Load and save the `Animal` aggregate. |
+| `TelemetryReadingRepository` | Output | Append accepted readings and query history by animal and period. |
+| `DomainEventPublisher` | Output | Publish `TelemetryRecorded` and `AnimalStatusUpdated`. |
+| `AuthorizationContext` | Input | Provide user, role, ranch scope and audit identity. |
+| `IdempotencyStore` | Output | Record processed message identifiers and their outcome. |
+| `Clock` | Output | Provide a testable current time for temporal policies and audit records. |
+
+**Command processing flow**
+
+```mermaid
+flowchart LR
+    Message[Validated telemetry message] --> Handler[AcceptTelemetry Command Handler]
+    Handler --> Auth[Authorization and source validation]
+    Auth --> Idempotency[Check message identity]
+    Idempotency --> Aggregate[Load Animal aggregate]
+    Aggregate --> Policy[Apply TelemetryAcceptancePolicy]
+    Policy --> Save[Save aggregate and reading]
+    Save --> Publish[Publish TelemetryRecorded]
+    Publish --> Status[UpdateAnimalStatus Handler]
+    Status --> Event[Publish AnimalStatusUpdated]
+```
+
+The command handler must not acknowledge a message before the persistence result and idempotency record are durable. If event delivery fails after the domain transaction succeeds, an outbox or equivalent reliable publication mechanism should preserve the event for retry. This prevents the alerting and analytics contexts from silently missing an accepted reading.
+
+**Application responsibilities and limits**
+
+- Coordinate transaction boundaries and define the order in which repositories and domain services are invoked.
+- Enforce authorization at the use-case boundary before returning animal or historical data.
+- Translate domain outcomes into application results such as `Accepted`, `Rejected` and `Duplicate`.
+- Preserve correlation identifiers and audit metadata across commands, queries and published events.
+- Apply pagination, time-window limits and projection selection for history queries.
+- Keep external provider retries, ORM details, HTTP status codes and broker clients outside the application layer.
+- Avoid calling another bounded context's repository directly; use a documented contract or published event.
+
+**Consistency strategy**
+
+The update of an animal and the acceptance of its reading is strongly consistent within Livestock Monitoring. The propagation of `TelemetryRecorded` and `AnimalStatusUpdated` to Alerts and Security or Analytics and Reporting is eventually consistent and must expose processing status and retry information. This distinction matches the business need for a trustworthy individual history while allowing notifications and analytical projections to scale independently.
+
+The application design provides a direct traceability path from the current Product Backlog: US-01, US-02 and US-03 are served by query handlers; TS-04 is served by `AcceptTelemetry`; and the resulting events enable US-04, US-05, US-13 and US-14 in downstream contexts without moving their rules into Livestock Monitoring.
+
 #### 4.2.1.4. Infrastructure Layer
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
