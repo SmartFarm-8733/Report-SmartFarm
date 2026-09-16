@@ -637,6 +637,94 @@ The project statement permits multiple technologies for the REST API, edge servi
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
+El Component Level Diagram descompone el container `Central REST API` para mostrar los bloques estructurales principales de Livestock Monitoring. El diagrama mantiene el límite del bounded context y diferencia los componentes de entrada, aplicación, dominio, persistencia y publicación de eventos. Cada componente tiene una responsabilidad única y una dirección de dependencia explícita.
+
+```mermaid
+flowchart LR
+    subgraph Interface[Interface components]
+        AnimalController[AnimalQueryController]
+        TelemetryController[TelemetryQueryController]
+        TelemetryConsumer[TelemetryValidatedConsumer]
+        ResponseMapper[Response DTO Mapper]
+    end
+
+    subgraph Application[Application components]
+        ProfileHandler[GetAnimalProfile Handler]
+        RecentHandler[GetRecentTelemetry Handler]
+        HistoryHandler[GetAnimalHistory Handler]
+        AcceptHandler[AcceptTelemetry Handler]
+        StatusHandler[UpdateAnimalStatus Handler]
+    end
+
+    subgraph Domain[Domain components]
+        Animal[Animal Aggregate]
+        Acceptance[TelemetryAcceptancePolicy]
+        StatusPolicy[AnimalStatusPolicy]
+        DomainEvents[Domain Events]
+    end
+
+    subgraph Ports[Output ports]
+        AnimalRepo[AnimalRepository]
+        TelemetryRepo[TelemetryReadingRepository]
+        Publisher[DomainEventPublisher]
+        Idempotency[IdempotencyStore]
+    end
+
+    subgraph Adapters[Infrastructure adapters]
+        SqlAnimal[SqlAnimalRepository]
+        SqlTelemetry[SqlTelemetryReadingRepository]
+        Outbox[OutboxEventStore]
+        EventTransport[MonitoringEventPublisher]
+    end
+
+    AnimalController --> ProfileHandler
+    TelemetryController --> RecentHandler
+    TelemetryController --> HistoryHandler
+    TelemetryConsumer --> AcceptHandler
+    ProfileHandler --> AnimalRepo
+    RecentHandler --> TelemetryRepo
+    HistoryHandler --> TelemetryRepo
+    AcceptHandler --> Idempotency
+    AcceptHandler --> Animal
+    AcceptHandler --> Acceptance
+    AcceptHandler --> AnimalRepo
+    AcceptHandler --> TelemetryRepo
+    AcceptHandler --> Publisher
+    StatusHandler --> Animal
+    StatusHandler --> StatusPolicy
+    StatusHandler --> Publisher
+    ProfileHandler --> ResponseMapper
+    RecentHandler --> ResponseMapper
+    HistoryHandler --> ResponseMapper
+    AnimalRepo --> SqlAnimal
+    TelemetryRepo --> SqlTelemetry
+    Publisher --> Outbox
+    Outbox --> EventTransport
+    EventTransport --> DomainEvents
+```
+
+| Component | Category | Responsibility | Does not own |
+| --- | --- | --- | --- |
+| `AnimalQueryController` | Interface | Receive profile requests and invoke `GetAnimalProfile`. | Aggregate rules or SQL queries. |
+| `TelemetryQueryController` | Interface | Receive recent and historical telemetry requests. | Authorization policy implementation or persistence mapping. |
+| `TelemetryValidatedConsumer` | Interface | Convert an integration message into an application command. | Device protocol handling or alert generation. |
+| `Response DTO Mapper` | Interface | Produce stable representations for web and mobile clients. | Domain state changes. |
+| `GetAnimalProfile Handler` | Application | Coordinate profile retrieval and access context. | Animal identity rules. |
+| `GetRecentTelemetry Handler` | Application | Validate the query window and obtain recent readings. | Telemetry acceptance or status interpretation. |
+| `GetAnimalHistory Handler` | Application | Coordinate bounded history queries and completeness metadata. | Clinical authorization rules owned by another context. |
+| `AcceptTelemetry Handler` | Application | Orchestrate idempotency, aggregate update, persistence and event publication. | Device buffering or external notifications. |
+| `UpdateAnimalStatus Handler` | Application | Invoke the status policy after an accepted reading. | Health or security alert policy. |
+| `Animal Aggregate` | Domain | Protect identity, active assignment and monitoring status invariants. | HTTP, ORM or broker details. |
+| `TelemetryAcceptancePolicy` | Domain | Apply monitoring-specific acceptance rules. | Clinical interpretation. |
+| `AnimalStatusPolicy` | Domain | Derive monitoring status changes from trusted data. | Notification delivery. |
+| `AnimalRepository` and `TelemetryReadingRepository` | Output ports | Abstract persistence required by use cases. | Concrete database technology. |
+| `DomainEventPublisher` | Output port | Abstract reliable publication of domain events. | Provider-specific transport. |
+| SQL repositories and outbox adapters | Infrastructure | Implement persistence and reliable event delivery. | Domain decisions. |
+
+The diagram demonstrates the dependency direction required by the tactical design: interface components call application handlers; handlers use domain behavior and output ports; infrastructure implements the ports. Domain components never call controllers, databases or external providers directly.
+
+The formal architecture evidence should include one component diagram for every relevant container. For this bounded context, the `Central REST API` is the primary container. If the team later places monitoring projections in a separate executable or read-store service, that container must receive its own component diagram rather than being hidden in this one.
+
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
