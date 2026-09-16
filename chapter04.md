@@ -883,3 +883,55 @@ classDiagram
 The associations use composition when the element has no independent meaning outside the owning object and aggregation when historical data may be retained and queried as part of the monitoring history. The relationship labels and multiplicities are part of the model contract and must be preserved in the formal UML diagram.
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
+
+El Database Design Diagram representa el almacenamiento lógico propiedad de Livestock Monitoring. Solo se incluyen objetos necesarios para la identidad de monitoreo, las asignaciones de dispositivos y la historia de telemetría. Las tablas clínicas, de alertas, de operaciones de campo y de analítica pertenecen a otros bounded contexts y no deben agregarse a este modelo como atajos de integración.
+
+```mermaid
+erDiagram
+    ANIMAL ||--o{ DEVICE_ASSIGNMENT : has
+    ANIMAL ||--o{ TELEMETRY_READING : records
+
+    ANIMAL {
+        string animal_id PK
+        string ranch_id
+        string current_status
+        datetime last_status_at
+        datetime created_at
+        datetime updated_at
+    }
+
+    DEVICE_ASSIGNMENT {
+        string assignment_id PK
+        string animal_id FK
+        string device_id
+        datetime assigned_at
+        datetime unassigned_at
+    }
+
+    TELEMETRY_READING {
+        string telemetry_id PK
+        string source_reading_id UK
+        string animal_id FK
+        string device_id
+        decimal temperature_c
+        string activity_level
+        decimal latitude
+        decimal longitude
+        datetime captured_at
+        datetime received_at
+    }
+```
+
+**Logical schema and constraints**
+
+| Table | Purpose | Key constraints and indexes |
+| --- | --- | --- |
+| `ANIMAL` | Store the stable identity and current monitoring summary of a monitored animal. | `animal_id` is the primary key; `ranch_id` is required for authorization scope; `current_status` uses the domain enumeration; `last_status_at` cannot precede the accepted event that produced it. |
+| `DEVICE_ASSIGNMENT` | Preserve the active and historical association between an animal and a device. | `assignment_id` is the primary key; `animal_id` references `ANIMAL`; `assigned_at` is required; `unassigned_at` must be later than `assigned_at`; at most one active assignment is allowed per animal. |
+| `TELEMETRY_READING` | Append accepted measurements with source and capture provenance. | `telemetry_id` is the primary key; `source_reading_id` is unique for idempotency; `animal_id` references `ANIMAL`; coordinates and temperature require valid ranges; indexes support `(animal_id, captured_at)` and `source_reading_id`. |
+
+`device_id` is retained as a reference value because the device registry and transport lifecycle belong to IoT Data Integration. It must not become an implicit foreign key to a table owned by another bounded context. Cross-context validation is performed through an application contract before a reading is accepted.
+
+The schema supports the current use cases without storing derived clinical diagnoses or alert decisions in the monitoring tables. An alerting context may consume `TelemetryRecorded` and `AnimalStatusUpdated` to build its own model, while Analytics and Reporting may create a separate read store. This ownership rule makes schema evolution explicit and avoids the shared-database coupling rejected by the Context Mapping decision.
+
+The final physical design must add the selected engine's syntax, collation, partitioning or retention policy, migration strategy and backup requirements. It must also document how telemetry volume, historical queries and synchronization retries will be handled. Until those choices are approved, this diagram remains a logical database design rather than a vendor-specific implementation.
