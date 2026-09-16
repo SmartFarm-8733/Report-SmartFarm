@@ -4,17 +4,11 @@
 
 ### 4.1.1. Design-Level EventStorming
 
-El Design-Level EventStorming se utiliza para construir una primera representación compartida del dominio de SmartFarm. El modelo parte de los problemas y segmentos identificados en los capítulos I y II y de las User Stories y Technical Stories especificadas en el capítulo III. El objetivo de esta sesión no es definir todavía clases o tablas, sino descubrir los eventos relevantes del negocio, las capacidades que los producen, los actores involucrados y los límites naturales que posteriormente se convertirán en bounded contexts.
-
-El dominio principal de SmartFarm es el monitoreo preventivo y la gestión operativa de ganado mediante dispositivos IoT, un servicio de borde, un servicio central y aplicaciones web y móviles. El flujo debe responder a tres necesidades principales: conocer el estado del animal, actuar frente a riesgos de salud o seguridad y conservar información confiable para las decisiones del administrador y del médico veterinario.
-
-Como buena práctica, los eventos del dominio se expresan como hechos que ya ocurrieron y se mantienen independientes de la tecnología. Los eventos técnicos, como la recepción de un mensaje o la sincronización de datos, se conservan como soporte del flujo, pero no reemplazan a los eventos de negocio que representan cambios relevantes para los usuarios.
+El Design-Level EventStorming construye una vista compartida del dominio de SmartFarm a partir de los capítulos I-III. Identifica eventos de negocio, capacidades, actores y límites de bounded contexts para el monitoreo preventivo, la respuesta ante riesgos y la gestión operativa del ganado. Los eventos se redactan como hechos independientes de la tecnología; los eventos técnicos solo sirven como soporte del flujo.
 
 #### 4.1.1.1. Candidate Context Discovery
 
-La identificación de candidate bounded contexts se realizó aplicando tres heurísticas recomendadas para el descubrimiento: `start-with-value`, para comenzar por las capacidades con mayor valor para el negocio; `start-with-simple`, para observar el proceso como una secuencia de pasos; y `look-for-pivotal-events`, para localizar eventos que cambian el estado del animal, de la alerta o de la operación.
-
-El punto de partida es el valor establecido en el capítulo I: reducir pérdidas prevenibles, responder oportunamente a alertas y facilitar decisiones basadas en telemetría. Los capítulos II y III agregan las necesidades de los tres actores principales: administrador ganadero, operario de campo y médico veterinario.
+La identificación de candidate bounded contexts aplica start-with-value, start-with-simple y look-for-pivotal-events. Así se conectan el valor del capítulo I -reducir pérdidas, responder alertas y apoyar decisiones- con las necesidades del administrador, el operario y el médico veterinario descritas en los capítulos II y III.
 
 | Candidate Bounded Context | Capacidad principal | Evidencia en los capítulos I-III | Clasificación inicial |
 | --- | --- | --- | --- |
@@ -28,7 +22,7 @@ El punto de partida es el valor establecido en el capítulo I: reducir pérdidas
 
 Identity and Access Management aparece como una capacidad transversal pendiente de formalizar. Las User Stories ya exigen autorización para consultar o modificar información clínica, pero el capítulo III todavía no contiene un epic independiente para identidad, roles y permisos. Esta observación se mantiene como una decisión abierta para la siguiente iteración del EventStorming y no se convierte todavía en un bounded context definitivo.
 
-El siguiente timeline resume el flujo de negocio inicial desde el registro del animal hasta la toma de decisiones. Los eventos en color conceptual representan hechos del dominio; los pasos de integración se muestran únicamente para hacer visible la relación entre el dispositivo, el servicio de borde y el servicio central.
+El timeline resume el flujo desde el registro del animal hasta la toma de decisiones y distingue eventos de negocio de pasos de integración.
 
 ```mermaid
 flowchart LR
@@ -49,11 +43,11 @@ flowchart LR
     E13 --> E14[Decision indicators recalculated]
 ```
 
-El descubrimiento identifica tres eventos pivote que ayudan a separar responsabilidades: `Telemetry stored`, porque establece la información confiable que consumen otros contextos; `Health alert generated` o `Security alert generated`, porque inicia una respuesta operativa; y `Field or veterinary action recorded`, porque incorpora evidencia humana al historial del animal. Estos eventos sirven como puntos de discusión para confirmar o modificar los límites candidatos.
+Los eventos pivote son Telemetry stored, Health alert generated o Security alert generated, y Field or veterinary action recorded. Separan la información confiable, la respuesta operativa y la evidencia humana que actualiza el historial.
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
-El modelado de Domain Message Flows representa cómo los bounded contexts colaboran para resolver escenarios del negocio. De acuerdo con la guía, se utiliza Domain Storytelling para explicar quién actúa, qué información utiliza, qué decisión toma y qué resultado se produce. En esta primera versión se modelan tres flujos que concentran las User Stories con mayor prioridad del Product Backlog: captura de telemetría y alerta, operación offline y atención veterinaria.
+Los Domain Message Flows aplican Domain Storytelling para mostrar actores, información, decisiones y resultados en tres escenarios prioritarios: alerta preventiva, operación offline y atención veterinaria.
 
 **Flow A: telemetry capture and preventive alert**
 
@@ -77,7 +71,7 @@ sequenceDiagram
     Notify-->>Admin: Deliver health or security alert
 ```
 
-The flow makes explicit that the Edge Service is responsible for continuity of capture, while the central service validates and persists information. Livestock Monitoring owns the interpretation of the animal state, and Alerts and Security owns the decision to generate an alert. This separation avoids placing clinical or notification rules inside the device integration layer.
+El Edge Service conserva la captura durante una interrupción; el servicio central valida y persiste. Livestock Monitoring interpreta el estado y Alerts and Security decide cuándo generar una alerta.
 
 **Flow B: offline field operation**
 
@@ -96,11 +90,11 @@ The flow makes explicit that the Edge Service is responsible for continuity of c
 4. El sistema actualiza el historial clínico y conserva quién realizó la modificación.
 5. Un servicio autorizado puede consultar o exportar la información, respetando las reglas de acceso y trazabilidad.
 
-Estos flujos muestran mensajes de negocio y no constituyen todavía contratos técnicos definitivos. En una iteración posterior se deberán validar nombres, ownership, eventos duplicados, políticas de reintento, autorización y consistencia entre los contextos.
+Estos flujos son una base de validación; los contratos, ownership, reintentos, autorización e idempotencia se confirmarán en la siguiente iteración.
 
 #### 4.1.1.3. Bounded Context Canvases
 
-La selección de bounded contexts debe seguir un proceso iterativo. Para cada candidato se documentarán el contexto, sus reglas, el ubiquitous language, las capacidades, las dependencias y los riesgos. La siguiente tabla constituye el primer resumen de canvas y se refinará después de la crítica de diseño.
+La tabla resume el primer Bounded Context Canvas: propósito, lenguaje, capacidades y dependencias. Cada canvas debe refinarse mediante crítica de diseño.
 
 | Context | Business purpose | Core domain language | Main capabilities | Dependencies to validate |
 | --- | --- | --- | --- | --- |
@@ -121,13 +115,11 @@ The first design critique identifies the following business rules that must rema
 - Offline field events must be synchronized without creating duplicate records after a retry.
 - Group indicators must identify insufficient or missing data instead of presenting an unsupported conclusion.
 
-The current recommendation is to treat Livestock Monitoring, Health and Veterinary Care, and Alerts and Security as the core business contexts. Field Operations and Analytics and Reporting are supporting contexts, while IoT Data Integration is an enabling context. This classification is a candidate decision and must be confirmed by the team during the next EventStorming iteration.
+La clasificación propuesta es: core, Livestock Monitoring, Health and Veterinary Care y Alerts and Security; supporting, Field Operations y Analytics and Reporting; enabling, IoT Data Integration. Debe validarse en la siguiente sesión.
 
 ### 4.1.2. Context Mapping
 
-El Context Mapping describe las relaciones estructurales entre los candidate bounded contexts descubiertos en el EventStorming. Su propósito es hacer explícitos los flujos de información, la dirección de la dependencia, el contrato que debe protegerse y el patrón de integración que utilizará cada relación. El mapa no representa todavía clases ni endpoints concretos; representa las decisiones de colaboración que deberán respetarse durante el diseño táctico.
-
-La propuesta se basa en los límites identificados en la sección 4.1.1 y en las necesidades de SmartFarm. Livestock Monitoring concentra el estado confiable del animal; IoT Data Integration habilita la recepción de datos; Alerts and Security coordina la reacción frente a riesgos; Health and Veterinary Care conserva el modelo clínico; Field Operations atiende el trabajo en campo; y Analytics and Reporting construye vistas para la toma de decisiones.
+El Context Mapping hace explícitos los límites, dependencias, contratos y patrones de integración identificados en 4.1.1. Livestock Monitoring concentra el estado del animal; los demás contextos reciben información mediante contratos, eventos o adaptadores propios.
 
 ```mermaid
 flowchart LR
@@ -147,13 +139,13 @@ flowchart LR
     Visitor[Visitor] -->|Value proposition and plans| Landing[Landing Page and Subscriptions]
 ```
 
-La dirección de cada flecha indica quién publica o provee información y quién la consume. Los proveedores externos se mantienen fuera de los bounded contexts de SmartFarm. La Landing Page and Subscriptions se conserva aislada del flujo operativo porque sus historias se relacionan con adquisición, planes y condiciones del servicio, no con la gestión transaccional del ganado.
+Las flechas indican proveedor y consumidor. Los proveedores externos permanecen fuera de SmartFarm y Landing Page and Subscriptions queda aislada del flujo operativo.
 
 **Initial context relationships**
 
 | Upstream context or system | Downstream context | Candidate pattern | Contract or information exchanged | Design rationale |
 | --- | --- | --- | --- | --- |
-| IoT Data Integration | Livestock Monitoring | Customer/Supplier with Published Language | `TelemetryReading`, animal identifier, timestamp and source status. | The domain context receives normalized data without depending on device protocols or edge storage. |
+| IoT Data Integration | Livestock Monitoring | Customer/Supplier with Published Language | TelemetryReading, animal identifier, timestamp and source status. | The domain context receives normalized data without depending on device protocols or edge storage. |
 | Livestock Monitoring | Alerts and Security | Customer/Supplier with Published Language | Animal status changes, measurements, thresholds and location events. | Alert rules consume trusted domain information and do not own telemetry ingestion. |
 | Livestock Monitoring | Health and Veterinary Care | Anti-corruption Layer | Clinical view of animal identity, history and relevant measurements. | The clinical model must not inherit the technical structure of telemetry storage. |
 | Livestock Monitoring | Field Operations | Customer/Supplier | Animal profile, last known location and operational status. | Field work consumes a stable operational view while preserving offline behavior locally. |
@@ -167,12 +159,12 @@ La dirección de cada flecha indica quién publica o provee información y quié
 
 The recommended integration strategy uses the following principles:
 
-- `Published Language` is reserved for stable domain messages such as telemetry, animal status and actionable alerts. The message contract must use terms from the ubiquitous language and must not expose persistence details.
-- `Anti-corruption Layer` is required when a downstream context has a different model or when an external provider controls the contract. The translation protects the clinical, alerting and field models from changes in technical schemas.
-- `Customer/Supplier` is used when the downstream context depends on a capability delivered by an upstream context. The supplier must negotiate a contract that supports the consumer's needs without transferring ownership of the consumer's model.
-- `Open Host Service` is appropriate for Analytics and Reporting when several consumers need consistent read access. Its views should be optimized for analysis and should not become a shared transactional database.
-- `Shared Kernel` is not recommended in the initial design because shared code or tables would couple the contexts and make clinical, operational and telemetry changes harder to evolve independently.
-- `Conformist` should be used only for an external service whose contract cannot be influenced by SmartFarm. The adapter must still keep the external vocabulary out of the core domain model.
+- Published Language is reserved for stable domain messages such as telemetry, animal status and actionable alerts. The message contract must use terms from the ubiquitous language and must not expose persistence details.
+- Anti-corruption Layer is required when a downstream context has a different model or when an external provider controls the contract. The translation protects the clinical, alerting and field models from changes in technical schemas.
+- Customer/Supplier is used when the downstream context depends on a capability delivered by an upstream context. The supplier must negotiate a contract that supports the consumer's needs without transferring ownership of the consumer's model.
+- Open Host Service is appropriate for Analytics and Reporting when several consumers need consistent read access. Its views should be optimized for analysis and should not become a shared transactional database.
+- Shared Kernel is not recommended in the initial design because shared code or tables would couple the contexts and make clinical, operational and telemetry changes harder to evolve independently.
+- Conformist should be used only for an external service whose contract cannot be influenced by SmartFarm. The adapter must still keep the external vocabulary out of the core domain model.
 
 **Alternatives considered**
 
@@ -183,7 +175,7 @@ The recommended integration strategy uses the following principles:
 | Separate contexts connected by shared database tables | Fast read access for dashboards. | Creates hidden coupling, weak ownership and inconsistent business rules. | Rejected; use contracts and downstream read models. |
 | Separate core contexts with explicit messages and adapters | Preserves domain boundaries and supports independent evolution. | Requires contract versioning, observability and synchronization handling. | Selected as the current direction. |
 
-The selected map establishes that no bounded context may write directly into another context's database. Inter-context communication must occur through explicit commands, published domain events or documented query contracts. The first contracts to refine are `TelemetryReading`, `AnimalStatusUpdated`, `HealthAlertGenerated`, `SecurityAlertGenerated`, `FieldHealthEventRecorded` and `ClinicalInformationUpdated`.
+El mapa prohíbe escrituras directas entre bases de datos. La comunicación usa comandos, eventos publicados o contratos de consulta; los primeros contratos a refinar son TelemetryReading, AnimalStatusUpdated, HealthAlertGenerated, SecurityAlertGenerated, FieldHealthEventRecorded y ClinicalInformationUpdated.
 
 **Open decisions for the next iteration**
 
@@ -193,13 +185,11 @@ The selected map establishes that no bounded context may write directly into ano
 4. Define the authorization contract for clinical data, including audit information and export restrictions.
 5. Validate the external notification and mapping providers before freezing adapter interfaces.
 
-This context map is an initial, versionable diagram-as-code representation. For the formal submission, it should be reproduced or exported with the approved architecture tool and included as an image with its legend, source, assumptions and explanation.
+Este mapa es una fuente versionable; para la entrega formal debe exportarse con la herramienta aprobada, incluir leyenda, supuestos y explicación.
 
 ### 4.1.3. Software Architecture
 
-La arquitectura de software traduce los límites de dominio y las relaciones de la sección 4.1.2 en una representación técnica comprensible para el equipo. Se utiliza el C4 Model porque permite explicar la solución progresivamente, desde el entorno general hasta los elementos desplegables, sin mezclar decisiones de implementación de bajo nivel con decisiones estratégicas.
-
-La solución debe responder a las restricciones identificadas en los capítulos I y II: conectividad intermitente en zonas rurales, necesidad de alertas oportunas, trazabilidad clínica, integración con dispositivos IoT y acceso desde aplicaciones web y móviles. Por ello, las decisiones iniciales priorizan continuidad operativa, separación de responsabilidades, seguridad de la información, observabilidad, sincronización idempotente y posibilidad de evolución independiente.
+La arquitectura de software traduce los límites de 4.1.2 mediante el C4 Model y responde a las restricciones de SmartFarm: conectividad rural intermitente, alertas oportunas, trazabilidad clínica, integración IoT y acceso web/móvil. Las decisiones priorizan continuidad operativa, separación de responsabilidades, seguridad, observabilidad e idempotencia.
 
 Los siguientes principios orientan la arquitectura:
 
@@ -211,11 +201,11 @@ Los siguientes principios orientan la arquitectura:
 - Las operaciones de sincronización y reintento deben ser idempotentes y observables.
 - La autorización, la privacidad de la información clínica, la internacionalización y la accesibilidad se consideran preocupaciones transversales desde el diseño.
 
-Para la entrega formal, cada diagrama debe exportarse desde la herramienta aprobada, incluir una leyenda y acompañarse de una explicación. Los diagramas Mermaid de esta versión son fuentes versionables y trazables que sirven como borrador técnico; posteriormente pueden reproducirse en Structurizr, LucidChart u otra herramienta permitida por el curso.
+Para la entrega formal, cada diagrama debe exportarse desde la herramienta aprobada con leyenda y explicación. Mermaid funciona aquí como fuente versionable y trazable.
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
-El System Landscape presenta SmartFarm dentro de su entorno de operación. En este nivel se muestran las personas, dispositivos y sistemas externos que interactúan con la solución, sin describir todavía sus containers internos. El objetivo es establecer el alcance del sistema y evitar que una dependencia externa se confunda con una responsabilidad propia de SmartFarm.
+El System Landscape ubica SmartFarm en su entorno y muestra personas, dispositivos y sistemas externos sin detallar containers internos. Su objetivo es fijar el alcance y separar dependencias externas de responsabilidades propias.
 
 ```mermaid
 flowchart LR
@@ -239,13 +229,11 @@ flowchart LR
     SmartFarm <-->|Authorized clinical information| Clinical
 ```
 
-El límite de SmartFarm incluye el ecosistema digital que recibe telemetría, procesa información y presenta capacidades a los actores del negocio. Los dispositivos IoT son fuentes de datos externas al software central, aunque su firmware y protocolo deben respetar el contrato de integración. El proveedor de notificaciones, el proveedor de mapas y los sistemas clínicos autorizados se aíslan mediante adapters para evitar que sus APIs definan el lenguaje del dominio.
-
-El diagrama también evidencia que el visitante de la Landing Page pertenece al entorno de la solución, pero no al flujo de monitoreo operativo. Esta separación permite mantener el producto de adquisición desacoplado de la información sensible del ganado.
+SmartFarm recibe telemetría, procesa información y atiende a los actores del negocio. Dispositivos IoT, notificaciones, mapas y sistemas clínicos son externos y se aíslan mediante adapters. La Landing Page pertenece al entorno del producto, pero permanece separada del monitoreo y de sus datos sensibles.
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
-El Context Diagram muestra a SmartFarm como un sistema único y explica sus interacciones directas. Los actores representan roles del negocio y los sistemas externos representan dependencias fuera del control del equipo. Las relaciones se expresan con verbos y con el propósito del intercambio, de modo que el diagrama pueda ser entendido sin conocer la implementación interna.
+El Context Diagram muestra SmartFarm como un sistema único, sus actores y sus dependencias externas. Las relaciones usan verbos y propósito de intercambio, sin revelar implementación interna.
 
 ```mermaid
 flowchart LR
@@ -269,13 +257,11 @@ flowchart LR
     SmartFarm -->|Provides or receives authorized clinical data| ExternalClinical
 ```
 
-El contexto confirma que los tres actores operativos tienen necesidades diferentes: el administrador prioriza indicadores y seguridad; el operario necesita continuidad y acciones rápidas en campo; y el médico veterinario requiere información histórica, clínica y autorizada. Estas diferencias justifican la separación de los bounded contexts y también guían las interfaces de las aplicaciones.
-
-El Context Diagram no debe mostrar tablas, frameworks, endpoints ni clases. Esas decisiones pertenecen a los niveles inferiores. La explicación formal deberá indicar el alcance, las suposiciones y las relaciones que fueron validadas con las User Stories US-01 a US-18 y las Technical Stories TS-01 a TS-05.
+El administrador prioriza indicadores y seguridad; el operario, continuidad en campo; y el veterinario, información histórica, clínica y autorizada. Por eso el Context Diagram no muestra tablas, frameworks, endpoints ni clases. Su explicación debe relacionarlo con US-01 a US-18 y TS-01 a TS-05.
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
-En C4, un container es una unidad ejecutable o almacenable que cumple una responsabilidad clara y puede desplegarse de manera independiente. El siguiente diseño propone los containers necesarios para cubrir la captura IoT, la operación web y móvil, los flujos de dominio y las vistas analíticas. Los bounded contexts pertenecen principalmente al Central REST API como módulos de dominio, mientras que la separación de containers responde a responsabilidades de ejecución y comunicación.
+En C4, un container es una unidad ejecutable o almacenable con responsabilidad clara y despliegue independiente. El diseño cubre captura IoT, operación web/móvil, flujos de dominio y vistas analíticas; los bounded contexts se organizan principalmente dentro del Central REST API.
 
 ```mermaid
 flowchart TB
@@ -327,13 +313,11 @@ flowchart TB
 | Mapping Adapter | Isolate provider-specific geospatial APIs from Field Operations. | Field Operations and location queries. | Provider API through an adapter boundary. |
 | Landing Page | Present the value proposition, plans, contact actions and terms. | Landing Page and Subscriptions, EP-07. | Public web content and optional API integration. |
 
-The candidate technology choices must be recorded as decisions rather than assumed facts. The project statement permits alternatives such as Angular or Vue for web applications, Kotlin, Swift, Flutter or other approved options for mobile, Flask for edge services, and Spring Boot, ASP.NET Core or Nest for RESTful services. The final choice must be justified by the team's constraints, documented in the repository and kept consistent with the diagrams.
-
-The container design deliberately separates the Analytics Read Store from transactional domain data. This prevents dashboards from imposing reporting queries on the operational model and permits the team to identify incomplete data, refresh delays and projection failures explicitly.
+Las tecnologías candidatas deben registrarse como decisiones justificadas y mantenerse consistentes con los diagramas. Analytics Read Store se separa de los datos transaccionales para evitar que los reportes afecten el modelo operativo y para hacer visibles datos incompletos, retrasos y fallas de proyección.
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
-El Deployment Diagram muestra dónde se ejecutan los containers y cómo se comunican en condiciones normales y de falla. SmartFarm debe soportar una operación distribuida: los dispositivos y el servicio de borde se encuentran en la unidad ganadera, mientras que los servicios centrales pueden ejecutarse en una infraestructura cloud. La aplicación móvil debe continuar con las operaciones permitidas cuando la conectividad sea intermitente.
+El Deployment Diagram muestra la ubicación y comunicación de los containers en condiciones normales y de falla. Los dispositivos, el servicio de borde y la caché móvil operan en la unidad ganadera; los servicios centrales pueden ejecutarse en la nube y sincronizarse cuando vuelve la conectividad.
 
 ```mermaid
 flowchart LR
@@ -380,21 +364,17 @@ flowchart LR
 | Reporting load | Analytics Read Store isolates indicators and trends from transactional writes. | Container relationship and refresh policy. |
 | Independent evolution | Containers communicate through documented contracts and do not share internal persistence structures. | C4 legend and context map consistency check. |
 
-The deployment diagram is intentionally technology-neutral at this stage. Once the team selects a cloud provider, database engine, mobile platform and edge hardware, the diagram must be updated with the concrete deployment nodes, runtime technology, network boundaries, secrets management and monitoring components. The final diagram should make clear which elements are independently deployable, which data is local, and how recovery occurs after a connection failure.
-
-The three C4 levels must remain consistent: every system or external dependency in the Context Diagram must be explainable in the Container Diagram, and every container in the Deployment Diagram must have a defined runtime location. This traceability check will be repeated before the chapter is considered complete.
+El diagrama es tecnológico-neutral hasta aprobar proveedor cloud, motor de base de datos, plataforma móvil y hardware de borde. Después debe mostrar nodos, redes, secretos, monitoreo y recuperación. Los niveles C4 deben conservar trazabilidad: cada dependencia del contexto debe explicarse en containers y cada container debe tener una ubicación de despliegue.
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
-El diseño táctico traduce las decisiones estratégicas en modelos internos para cada bounded context. Esta primera sección desarrolla `Livestock Monitoring`, clasificado como core context por su relación directa con el valor principal de SmartFarm: ofrecer información confiable sobre la identidad, el estado y la telemetría de cada animal. Los siguientes bounded contexts deberán documentarse con la misma estructura cuando el equipo valide sus límites y responsabilidades.
-
-El contexto es responsable de mantener el modelo de monitoreo del animal y de publicar cambios relevantes para otros contextos. No es responsable de reglas clínicas, de la política de alertas ni del almacenamiento temporal en el borde. Esas responsabilidades permanecen en Health and Veterinary Care, Alerts and Security e IoT Data Integration, respectivamente.
+El diseño táctico traduce las decisiones estratégicas en modelos internos. Esta sección desarrolla Livestock Monitoring como core context: mantiene identidad, estado y telemetría del animal, y publica cambios relevantes. Las reglas clínicas, de alertas y de almacenamiento en el borde pertenecen a sus respectivos contextos.
 
 ### 4.2.1. Bounded Context: Livestock Monitoring
 
 #### 4.2.1.1. Domain Layer
 
-La Domain Layer contiene el modelo que representa el estado confiable del animal y sus lecturas de monitoreo. Sus clases deben ser independientes de frameworks, bases de datos, controladores y proveedores externos. La capa recibe información ya identificada por IoT Data Integration, aplica invariantes propias del monitoreo y publica eventos del dominio para los consumidores autorizados.
+La Domain Layer contiene el estado confiable del animal y sus lecturas. Es independiente de frameworks, bases de datos y proveedores; recibe telemetría identificada, aplica invariantes de monitoreo y publica eventos para consumidores autorizados.
 
 **Domain language**
 
@@ -410,59 +390,57 @@ La Domain Layer contiene el modelo que representa el estado confiable del animal
 
 | Type | Candidate class | Responsibility |
 | --- | --- | --- |
-| Aggregate Root | `Animal` | Protect animal identity, active assignment and current monitoring status. |
-| Entity | `DeviceAssignment` | Record which device is associated with an animal and during which period. |
-| Entity | `TelemetryReading` | Preserve an accepted reading and its provenance. |
-| Value Object | `AnimalId` | Guarantee the format and identity semantics of an animal reference. |
-| Value Object | `DeviceId` | Represent the identity of a collar or ear tag without device-protocol details. |
-| Value Object | `Temperature` | Represent a temperature measurement with unit and valid range. |
-| Value Object | `ActivityLevel` | Represent normalized activity data used by monitoring views. |
-| Value Object | `GeoCoordinate` | Represent latitude and longitude with geospatial validation. |
-| Value Object | `CapturedAt` | Represent the timestamp of the measurement and its temporal rules. |
-| Domain Service | `AnimalStatusPolicy` | Derive monitoring status from accepted readings without creating alert policies. |
-| Domain Service | `TelemetryAcceptancePolicy` | Check monitoring-specific invariants before a reading is attached to the animal. |
-| Repository Port | `AnimalRepository` | Define persistence operations required by the aggregate. |
-| Repository Port | `TelemetryReadingRepository` | Define history queries without coupling the domain to a database. |
-| Domain Event | `TelemetryRecorded` | Announce that an accepted reading was added to monitoring history. |
-| Domain Event | `AnimalStatusUpdated` | Announce a change in the monitoring status. |
+| Aggregate Root | Animal | Protect animal identity, active assignment and current monitoring status. |
+| Entity | DeviceAssignment | Record which device is associated with an animal and during which period. |
+| Entity | TelemetryReading | Preserve an accepted reading and its provenance. |
+| Value Object | AnimalId | Guarantee the format and identity semantics of an animal reference. |
+| Value Object | DeviceId | Represent the identity of a collar or ear tag without device-protocol details. |
+| Value Object | Temperature | Represent a temperature measurement with unit and valid range. |
+| Value Object | ActivityLevel | Represent normalized activity data used by monitoring views. |
+| Value Object | GeoCoordinate | Represent latitude and longitude with geospatial validation. |
+| Value Object | CapturedAt | Represent the timestamp of the measurement and its temporal rules. |
+| Domain Service | AnimalStatusPolicy | Derive monitoring status from accepted readings without creating alert policies. |
+| Domain Service | TelemetryAcceptancePolicy | Check monitoring-specific invariants before a reading is attached to the animal. |
+| Repository Port | AnimalRepository | Define persistence operations required by the aggregate. |
+| Repository Port | TelemetryReadingRepository | Define history queries without coupling the domain to a database. |
+| Domain Event | TelemetryRecorded | Announce that an accepted reading was added to monitoring history. |
+| Domain Event | AnimalStatusUpdated | Announce a change in the monitoring status. |
 
 **Domain invariants**
 
-- Every `Animal` has one stable `AnimalId`; the identity cannot be replaced by a device identifier.
-- An active `DeviceAssignment` cannot be active for two animals at the same time.
-- A `TelemetryReading` must contain an animal identifier, device identifier, capture timestamp and valid measurement data.
+- Every Animal has one stable AnimalId; the identity cannot be replaced by a device identifier.
+- An active DeviceAssignment cannot be active for two animals at the same time.
+- A TelemetryReading must contain an animal identifier, device identifier, capture timestamp and valid measurement data.
 - A reading received more than once with the same source identifier must be handled idempotently.
 - A reading that violates the monitoring range or provenance rules is rejected and does not update the animal status.
-- `Livestock Monitoring` publishes the status change but does not decide whether it is a clinical or security alert.
+- Livestock Monitoring publishes the status change but does not decide whether it is a clinical or security alert.
 - Historical readings are append-oriented; corrections must be represented as traceable domain actions rather than silent overwrites.
 
-The model is intentionally narrower than the whole SmartFarm solution. Clinical procedures, alert thresholds, notification channels and offline synchronization metadata are translated at their own boundaries. This keeps the aggregate cohesive and prevents the tactical model from recreating the strategic coupling rejected in the Context Mapping section.
+El modelo se limita al monitoreo. Los procedimientos clínicos, umbrales de alerta, canales de notificación y metadatos offline se traducen en sus propios contextos para mantener cohesivo el aggregate.
 
 #### 4.2.1.2. Interface Layer
 
-La Interface Layer expone las capacidades de Livestock Monitoring a los consumidores externos y transforma mensajes externos en solicitudes comprensibles para la Application Layer. Incluye controllers para las aplicaciones web y móviles y consumers para los eventos publicados por IoT Data Integration. No contiene reglas de negocio ni accede directamente a repositorios; su responsabilidad es validar la forma de la entrada, resolver el contexto de seguridad, invocar un caso de uso y traducir el resultado a un contrato estable.
+La Interface Layer expone Livestock Monitoring a clientes y consumidores de eventos. Valida entradas, resuelve seguridad, invoca casos de uso y traduce resultados a contratos estables; no contiene reglas de negocio ni accede directamente a repositorios.
 
 **Inbound interfaces**
 
 | Interface component | Type | Candidate interaction | Consumer and traceability |
 | --- | --- | --- | --- |
-| `AnimalQueryController` | REST controller | `GET /api/v1/animals/{animalId}` | Web Application and Mobile Application; US-01. |
-| `TelemetryQueryController` | REST controller | `GET /api/v1/animals/{animalId}/telemetry?from=&to=` | Web Application and Mobile Application; US-02 and US-03. |
-| `TelemetryValidatedConsumer` | Domain-event consumer | Receives a validated telemetry message from IoT Data Integration. | Central integration flow; TS-04. |
-| `AnimalStatusUpdatedConsumer` | Internal event consumer | Receives a status update for projection or downstream publication. | Alerts and Security and Analytics and Reporting. |
-| `AnimalHistoryQueryMapper` | DTO mapper | Converts domain results into stable response representations. | Web and mobile clients. |
-| `MonitoringErrorHandler` | Error translator | Converts validation, authorization and not-found failures into documented errors. | All API consumers. |
+| AnimalQueryController | REST controller | GET /api/v1/animals/{animalId} | Web Application and Mobile Application; US-01. |
+| TelemetryQueryController | REST controller | GET /api/v1/animals/{animalId}/telemetry?from=&to= | Web Application and Mobile Application; US-02 and US-03. |
+| TelemetryValidatedConsumer | Domain-event consumer | Receives a validated telemetry message from IoT Data Integration. | Central integration flow; TS-04. |
+| AnimalStatusUpdatedConsumer | Internal event consumer | Receives a status update for projection or downstream publication. | Alerts and Security and Analytics and Reporting. |
+| AnimalHistoryQueryMapper | DTO mapper | Converts domain results into stable response representations. | Web and mobile clients. |
+| MonitoringErrorHandler | Error translator | Converts validation, authorization and not-found failures into documented errors. | All API consumers. |
 
 **Candidate API contracts**
 
 | Operation | Input | Output | Validation and authorization |
 | --- | --- | --- | --- |
-| Get animal profile | `animalId` and user context. | Animal identity, device assignment, current status and last reading timestamp. | The animal must exist and belong to the user's authorized ranch scope. |
-| Get recent telemetry | `animalId`, time range and pagination. | Ordered readings with temperature, activity, location and capture time. | The time range is bounded; the user must be authorized to view the animal. |
-| Get individual history | `animalId`, period and filters. | Readings and status events for the selected period. | The query must preserve data completeness information and access auditability. |
+| Get animal profile | animalId and user context. | Animal identity, device assignment, current status and last reading timestamp. | The animal must exist and belong to the user's authorized ranch scope. |
+| Get recent telemetry | animalId, time range and pagination. | Ordered readings with temperature, activity, location and capture time. | The time range is bounded; the user must be authorized to view the animal. |
+| Get individual history | animalId, period and filters. | Readings and status events for the selected period. | The query must preserve data completeness information and access auditability. |
 | Receive validated telemetry | Message identifier, animal identifier, device identifier and measurement data. | Accepted, rejected or duplicate result. | The message source must be trusted and duplicate processing must be idempotent. |
-
-The interface flow follows this sequence:
 
 ```mermaid
 sequenceDiagram
@@ -495,35 +473,35 @@ sequenceDiagram
 - Versioned API paths and event schemas permit evolution without silently breaking the web, mobile or edge clients.
 - Observability metadata such as correlation identifier, source and processing time must be available without leaking sensitive clinical content.
 
-The Interface Layer therefore acts as a protective boundary around the domain. The Web Application can request recent telemetry, the Mobile Application can request a field-compatible view, and IoT Data Integration can submit a normalized message, while all three clients remain independent of the aggregate implementation.
+La Interface Layer protege el dominio: web y móvil consultan vistas estables, e IoT Data Integration envía mensajes normalizados sin depender de la implementación del aggregate.
 
 #### 4.2.1.3. Application Layer
 
-La Application Layer coordina los casos de uso de Livestock Monitoring. Recibe una solicitud desde un controller o un evento desde un consumer, obtiene el contexto de autorización, carga los objetos necesarios, invoca el comportamiento del dominio y coordina la persistencia y publicación de eventos. Esta capa define el orden de las operaciones, pero no contiene las reglas que determinan el significado de un animal o de una lectura.
+La Application Layer coordina los casos de uso: recibe solicitudes o eventos, valida autorización, carga objetos, invoca el dominio y coordina persistencia y publicación. Define el orden de las operaciones, no el significado de las reglas de dominio.
 
 **Use cases and handlers**
 
 | Use case | Handler type | Main steps | Related stories |
 | --- | --- | --- | --- |
-| `GetAnimalProfile` | Query handler | Authorize scope, load `Animal`, obtain active assignment and map a read model. | US-01. |
-| `GetRecentTelemetry` | Query handler | Validate period, query ordered readings and report the last available timestamp. | US-02. |
-| `GetAnimalHistory` | Query handler | Authorize clinical or operational view, query readings and status events, preserve missing-data information. | US-03 and US-11. |
-| `AcceptTelemetry` | Command handler | Validate message identity, load the aggregate, accept the reading idempotently, save and publish domain events. | TS-04 and US-02. |
-| `UpdateAnimalStatus` | Event handler | React to an accepted reading, evaluate the monitoring policy and publish `AnimalStatusUpdated` when the status changes. | US-01, US-02 and EP-02 integration. |
-| `PublishMonitoringEvents` | Application service | Deliver status and telemetry events through the port without depending on a broker implementation. | Alerts and Security and Analytics and Reporting. |
+| GetAnimalProfile | Query handler | Authorize scope, load Animal, obtain active assignment and map a read model. | US-01. |
+| GetRecentTelemetry | Query handler | Validate period, query ordered readings and report the last available timestamp. | US-02. |
+| GetAnimalHistory | Query handler | Authorize clinical or operational view, query readings and status events, preserve missing-data information. | US-03 and US-11. |
+| AcceptTelemetry | Command handler | Validate message identity, load the aggregate, accept the reading idempotently, save and publish domain events. | TS-04 and US-02. |
+| UpdateAnimalStatus | Event handler | React to an accepted reading, evaluate the monitoring policy and publish AnimalStatusUpdated when the status changes. | US-01, US-02 and EP-02 integration. |
+| PublishMonitoringEvents | Application service | Deliver status and telemetry events through the port without depending on a broker implementation. | Alerts and Security and Analytics and Reporting. |
 
-The queries are intentionally separated from commands. A query does not change the aggregate or publish a domain event. A command owns the transaction that changes the monitoring model and must return a result that distinguishes accepted, rejected and duplicate messages.
+Las queries no cambian el aggregate ni publican eventos; los commands sí gestionan la transacción y distinguen resultados accepted, rejected y duplicate.
 
 **Application ports**
 
 | Port | Direction | Purpose |
 | --- | --- | --- |
-| `AnimalRepository` | Output | Load and save the `Animal` aggregate. |
-| `TelemetryReadingRepository` | Output | Append accepted readings and query history by animal and period. |
-| `DomainEventPublisher` | Output | Publish `TelemetryRecorded` and `AnimalStatusUpdated`. |
-| `AuthorizationContext` | Input | Provide user, role, ranch scope and audit identity. |
-| `IdempotencyStore` | Output | Record processed message identifiers and their outcome. |
-| `Clock` | Output | Provide a testable current time for temporal policies and audit records. |
+| AnimalRepository | Output | Load and save the Animal aggregate. |
+| TelemetryReadingRepository | Output | Append accepted readings and query history by animal and period. |
+| DomainEventPublisher | Output | Publish TelemetryRecorded and AnimalStatusUpdated. |
+| AuthorizationContext | Input | Provide user, role, ranch scope and audit identity. |
+| IdempotencyStore | Output | Record processed message identifiers and their outcome. |
+| Clock | Output | Provide a testable current time for temporal policies and audit records. |
 
 **Command processing flow**
 
@@ -540,13 +518,13 @@ flowchart LR
     Status --> Event[Publish AnimalStatusUpdated]
 ```
 
-The command handler must not acknowledge a message before the persistence result and idempotency record are durable. If event delivery fails after the domain transaction succeeds, an outbox or equivalent reliable publication mechanism should preserve the event for retry. This prevents the alerting and analytics contexts from silently missing an accepted reading.
+El command handler confirma el mensaje solo después de persistir el resultado y la idempotencia. Un outbox conserva eventos si falla la entrega posterior.
 
 **Application responsibilities and limits**
 
 - Coordinate transaction boundaries and define the order in which repositories and domain services are invoked.
 - Enforce authorization at the use-case boundary before returning animal or historical data.
-- Translate domain outcomes into application results such as `Accepted`, `Rejected` and `Duplicate`.
+- Translate domain outcomes into application results such as Accepted, Rejected and Duplicate.
 - Preserve correlation identifiers and audit metadata across commands, queries and published events.
 - Apply pagination, time-window limits and projection selection for history queries.
 - Keep external provider retries, ORM details, HTTP status codes and broker clients outside the application layer.
@@ -554,28 +532,26 @@ The command handler must not acknowledge a message before the persistence result
 
 **Consistency strategy**
 
-The update of an animal and the acceptance of its reading is strongly consistent within Livestock Monitoring. The propagation of `TelemetryRecorded` and `AnimalStatusUpdated` to Alerts and Security or Analytics and Reporting is eventually consistent and must expose processing status and retry information. This distinction matches the business need for a trustworthy individual history while allowing notifications and analytical projections to scale independently.
-
-The application design provides a direct traceability path from the current Product Backlog: US-01, US-02 and US-03 are served by query handlers; TS-04 is served by `AcceptTelemetry`; and the resulting events enable US-04, US-05, US-13 and US-14 in downstream contexts without moving their rules into Livestock Monitoring.
+La actualización del animal y la aceptación de lecturas son consistentes dentro del contexto; la propagación de TelemetryRecorded y AnimalStatusUpdated es eventualmente consistente y debe informar reintentos. Así, US-01, US-02 y US-03 se atienden con queries, TS-04 con AcceptTelemetry y los eventos habilitan US-04, US-05, US-13 y US-14.
 
 #### 4.2.1.4. Infrastructure Layer
 
-La Infrastructure Layer implementa los puertos definidos por la Application Layer y conecta el contexto con bases de datos, mecanismos de mensajería, observabilidad y servicios de soporte. Su código puede depender de frameworks y proveedores, pero esas dependencias no deben filtrarse hacia las entidades, value objects, domain services o casos de uso.
+La Infrastructure Layer implementa los puertos y conecta el contexto con base de datos, mensajería, observabilidad y servicios externos. Sus dependencias no deben filtrarse al dominio ni a los casos de uso.
 
 **Adapters and infrastructure components**
 
 | Component | Implements or supports | Responsibility |
 | --- | --- | --- |
-| `SqlAnimalRepository` | `AnimalRepository` | Persist and retrieve the `Animal` aggregate using the selected relational technology. |
-| `SqlTelemetryReadingRepository` | `TelemetryReadingRepository` | Append accepted readings and execute bounded history queries. |
-| `MonitoringPersistenceMapper` | Persistence adapter | Translate between domain objects and persistence records without exposing ORM annotations in the domain. |
-| `IdempotencyRecordRepository` | `IdempotencyStore` | Store message identifiers, processing outcomes and retention metadata. |
-| `OutboxEventStore` | `DomainEventPublisher` support | Persist events in the same transaction before asynchronous delivery. |
-| `MonitoringEventPublisher` | `DomainEventPublisher` | Publish normalized events to the integration mechanism selected by the team. |
-| `AuthorizationContextAdapter` | `AuthorizationContext` | Translate authenticated identity and ranch scope into the application contract. |
-| `SystemClock` | `Clock` | Provide production time while keeping domain tests deterministic through a replaceable port. |
-| `AuditLogWriter` | Infrastructure service | Record access and changes required for traceability without altering domain behavior. |
-| `MonitoringTelemetry` | Observability support | Emit correlation, latency, rejection, duplicate and synchronization metrics. |
+| SqlAnimalRepository | AnimalRepository | Persist and retrieve the Animal aggregate using the selected relational technology. |
+| SqlTelemetryReadingRepository | TelemetryReadingRepository | Append accepted readings and execute bounded history queries. |
+| MonitoringPersistenceMapper | Persistence adapter | Translate between domain objects and persistence records without exposing ORM annotations in the domain. |
+| IdempotencyRecordRepository | IdempotencyStore | Store message identifiers, processing outcomes and retention metadata. |
+| OutboxEventStore | DomainEventPublisher support | Persist events in the same transaction before asynchronous delivery. |
+| MonitoringEventPublisher | DomainEventPublisher | Publish normalized events to the integration mechanism selected by the team. |
+| AuthorizationContextAdapter | AuthorizationContext | Translate authenticated identity and ranch scope into the application contract. |
+| SystemClock | Clock | Provide production time while keeping domain tests deterministic through a replaceable port. |
+| AuditLogWriter | Infrastructure service | Record access and changes required for traceability without altering domain behavior. |
+| MonitoringTelemetry | Observability support | Emit correlation, latency, rejection, duplicate and synchronization metrics. |
 
 ```mermaid
 flowchart LR
@@ -619,7 +595,7 @@ flowchart LR
 **Persistence and ownership rules**
 
 - The repository implementation may use a relational database, but the domain layer must not know table names, ORM entities or SQL syntax.
-- `SqlAnimalRepository` and `SqlTelemetryReadingRepository` are the only adapters allowed to write Livestock Monitoring records.
+- SqlAnimalRepository and SqlTelemetryReadingRepository are the only adapters allowed to write Livestock Monitoring records.
 - Clinical, alerting, field and analytics data are not persisted through this context's repositories. Consumers use their own models and storage.
 - The persistence mapper must preserve value-object validation and must reject records that cannot be reconstructed as valid domain objects.
 - History queries must use bounded periods and indexes appropriate for the expected telemetry volume; pagination is part of the application contract.
@@ -633,11 +609,11 @@ flowchart LR
 - Correlation identifiers connect device ingestion, API requests, persistence, event publication and downstream processing.
 - Logs must avoid raw clinical data and secrets; identifiers should be sufficient to investigate an operation without exposing unnecessary personal or health information.
 
-The project statement permits multiple technologies for the REST API, edge service, database and messaging. The selected stack must be recorded as an architecture decision with its rationale, operational constraints and impact on deployment. At this stage, the design remains technology-neutral while defining the boundaries that any approved implementation must respect.
+La tecnología final del API, edge service, base de datos y mensajería debe registrarse como una decisión arquitectónica con justificación e impacto de despliegue.
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-El Component Level Diagram descompone el container `Central REST API` para mostrar los bloques estructurales principales de Livestock Monitoring. El diagrama mantiene el límite del bounded context y diferencia los componentes de entrada, aplicación, dominio, persistencia y publicación de eventos. Cada componente tiene una responsabilidad única y una dirección de dependencia explícita.
+El Component Level Diagram descompone el container Central REST API en componentes de entrada, aplicación, dominio, persistencia y publicación de eventos, con responsabilidades y dependencias explícitas.
 
 ```mermaid
 flowchart LR
@@ -705,33 +681,31 @@ flowchart LR
 
 | Component | Category | Responsibility | Does not own |
 | --- | --- | --- | --- |
-| `AnimalQueryController` | Interface | Receive profile requests and invoke `GetAnimalProfile`. | Aggregate rules or SQL queries. |
-| `TelemetryQueryController` | Interface | Receive recent and historical telemetry requests. | Authorization policy implementation or persistence mapping. |
-| `TelemetryValidatedConsumer` | Interface | Convert an integration message into an application command. | Device protocol handling or alert generation. |
-| `Response DTO Mapper` | Interface | Produce stable representations for web and mobile clients. | Domain state changes. |
-| `GetAnimalProfile Handler` | Application | Coordinate profile retrieval and access context. | Animal identity rules. |
-| `GetRecentTelemetry Handler` | Application | Validate the query window and obtain recent readings. | Telemetry acceptance or status interpretation. |
-| `GetAnimalHistory Handler` | Application | Coordinate bounded history queries and completeness metadata. | Clinical authorization rules owned by another context. |
-| `AcceptTelemetry Handler` | Application | Orchestrate idempotency, aggregate update, persistence and event publication. | Device buffering or external notifications. |
-| `UpdateAnimalStatus Handler` | Application | Invoke the status policy after an accepted reading. | Health or security alert policy. |
-| `Animal Aggregate` | Domain | Protect identity, active assignment and monitoring status invariants. | HTTP, ORM or broker details. |
-| `TelemetryAcceptancePolicy` | Domain | Apply monitoring-specific acceptance rules. | Clinical interpretation. |
-| `AnimalStatusPolicy` | Domain | Derive monitoring status changes from trusted data. | Notification delivery. |
-| `AnimalRepository` and `TelemetryReadingRepository` | Output ports | Abstract persistence required by use cases. | Concrete database technology. |
-| `DomainEventPublisher` | Output port | Abstract reliable publication of domain events. | Provider-specific transport. |
+| AnimalQueryController | Interface | Receive profile requests and invoke GetAnimalProfile. | Aggregate rules or SQL queries. |
+| TelemetryQueryController | Interface | Receive recent and historical telemetry requests. | Authorization policy implementation or persistence mapping. |
+| TelemetryValidatedConsumer | Interface | Convert an integration message into an application command. | Device protocol handling or alert generation. |
+| Response DTO Mapper | Interface | Produce stable representations for web and mobile clients. | Domain state changes. |
+| GetAnimalProfile Handler | Application | Coordinate profile retrieval and access context. | Animal identity rules. |
+| GetRecentTelemetry Handler | Application | Validate the query window and obtain recent readings. | Telemetry acceptance or status interpretation. |
+| GetAnimalHistory Handler | Application | Coordinate bounded history queries and completeness metadata. | Clinical authorization rules owned by another context. |
+| AcceptTelemetry Handler | Application | Orchestrate idempotency, aggregate update, persistence and event publication. | Device buffering or external notifications. |
+| UpdateAnimalStatus Handler | Application | Invoke the status policy after an accepted reading. | Health or security alert policy. |
+| Animal Aggregate | Domain | Protect identity, active assignment and monitoring status invariants. | HTTP, ORM or broker details. |
+| TelemetryAcceptancePolicy | Domain | Apply monitoring-specific acceptance rules. | Clinical interpretation. |
+| AnimalStatusPolicy | Domain | Derive monitoring status changes from trusted data. | Notification delivery. |
+| AnimalRepository and TelemetryReadingRepository | Output ports | Abstract persistence required by use cases. | Concrete database technology. |
+| DomainEventPublisher | Output port | Abstract reliable publication of domain events. | Provider-specific transport. |
 | SQL repositories and outbox adapters | Infrastructure | Implement persistence and reliable event delivery. | Domain decisions. |
 
-The diagram demonstrates the dependency direction required by the tactical design: interface components call application handlers; handlers use domain behavior and output ports; infrastructure implements the ports. Domain components never call controllers, databases or external providers directly.
-
-The formal architecture evidence should include one component diagram for every relevant container. For this bounded context, the `Central REST API` is the primary container. If the team later places monitoring projections in a separate executable or read-store service, that container must receive its own component diagram rather than being hidden in this one.
+El diagrama confirma la dirección de dependencias: interfaces llaman a handlers, handlers usan dominio y puertos, e infrastructure implementa esos puertos. Cada container relevante debe tener su propio component diagram; por ahora, el Central REST API es el principal.
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
-Los Code Level Diagrams presentan el detalle de implementación de los componentes del bounded context. En esta primera versión se documenta el Domain Layer de Livestock Monitoring mediante un UML Class Diagram. El modelo muestra clases, interfaces, enumeraciones, atributos, métodos, visibilidad y relaciones con nombre y multiplicidad. No se incluyen anotaciones de ORM ni detalles de frameworks porque pertenecen a Infrastructure Layer.
+Los Code Level Diagrams detallan los componentes del bounded context. Esta versión documenta el Domain Layer mediante UML Class Diagram con clases, interfaces, enumeraciones, miembros, visibilidad, relaciones y multiplicidades; los detalles de ORM pertenecen a Infrastructure Layer.
 
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-El siguiente modelo representa el aggregate `Animal`, sus value objects y los servicios y puertos que participan en la aceptación de telemetría. La relación entre `Animal` y `TelemetryReading` es histórica y de solo agregado; la relación activa con `DeviceAssignment` debe mantener como máximo una asignación vigente por animal.
+El modelo representa Animal, sus value objects y los puertos de aceptación de telemetría. TelemetryReading conserva el historial y DeviceAssignment permite como máximo una asignación activa por animal.
 
 ```mermaid
 classDiagram
@@ -867,24 +841,24 @@ classDiagram
 
 | Element | Attributes or members | Domain design decision |
 | --- | --- | --- |
-| `Animal` | Private identity, ranch scope, current status and active assignment; public behavior for registration, assignment, telemetry and status. | Aggregate root that protects invariants and is the only entry point for changing monitoring state. |
-| `TelemetryReading` | Source identifier, device, temperature, activity, location and capture time. | Append-oriented historical entity; source identifier supports idempotency. |
-| `DeviceAssignment` | Device identity and assignment interval. | Preserves device history and prevents concurrent active assignment. |
-| `AnimalId` and `DeviceId` | Private string value with factory and accessor. | Value objects prevent mixing animal and device identities. |
-| `Temperature` | Private Celsius value with factory validation. | Unit is explicit and range rules remain in the domain. |
-| `ActivityLevel` and `AnimalStatus` | Enumerated domain values. | Avoids arbitrary strings in status and activity decisions. |
-| `GeoCoordinate` | Latitude and longitude with factory validation. | Encapsulates geospatial constraints without depending on a map provider. |
-| `CapturedAt` | Timestamp with controlled construction. | Preserves the temporal meaning of a reading. |
-| `AnimalStatusPolicy` | Public evaluation operation. | Derives monitoring status but does not generate clinical or security alerts. |
-| `TelemetryAcceptancePolicy` | Public validation operation. | Keeps monitoring invariants separate from transport validation. |
-| `TelemetryRecorded` and `AnimalStatusUpdated` | Immutable event data with animal identity and occurrence time. | Publish facts for Alerts and Security and Analytics and Reporting. |
-| `AnimalRepository` and `TelemetryReadingRepository` | Public interfaces with domain-oriented operations. | Ports keep persistence technology outside the Domain Layer. |
+| Animal | Private identity, ranch scope, current status and active assignment; public behavior for registration, assignment, telemetry and status. | Aggregate root that protects invariants and is the only entry point for changing monitoring state. |
+| TelemetryReading | Source identifier, device, temperature, activity, location and capture time. | Append-oriented historical entity; source identifier supports idempotency. |
+| DeviceAssignment | Device identity and assignment interval. | Preserves device history and prevents concurrent active assignment. |
+| AnimalId and DeviceId | Private string value with factory and accessor. | Value objects prevent mixing animal and device identities. |
+| Temperature | Private Celsius value with factory validation. | Unit is explicit and range rules remain in the domain. |
+| ActivityLevel and AnimalStatus | Enumerated domain values. | Avoids arbitrary strings in status and activity decisions. |
+| GeoCoordinate | Latitude and longitude with factory validation. | Encapsulates geospatial constraints without depending on a map provider. |
+| CapturedAt | Timestamp with controlled construction. | Preserves the temporal meaning of a reading. |
+| AnimalStatusPolicy | Public evaluation operation. | Derives monitoring status but does not generate clinical or security alerts. |
+| TelemetryAcceptancePolicy | Public validation operation. | Keeps monitoring invariants separate from transport validation. |
+| TelemetryRecorded and AnimalStatusUpdated | Immutable event data with animal identity and occurrence time. | Publish facts for Alerts and Security and Analytics and Reporting. |
+| AnimalRepository and TelemetryReadingRepository | Public interfaces with domain-oriented operations. | Ports keep persistence technology outside the Domain Layer. |
 
-The associations use composition when the element has no independent meaning outside the owning object and aggregation when historical data may be retained and queried as part of the monitoring history. The relationship labels and multiplicities are part of the model contract and must be preserved in the formal UML diagram.
+Las relaciones usan composición para elementos dependientes y agregación para el historial; sus nombres y multiplicidades forman parte del contrato UML.
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
-El Database Design Diagram representa el almacenamiento lógico propiedad de Livestock Monitoring. Solo se incluyen objetos necesarios para la identidad de monitoreo, las asignaciones de dispositivos y la historia de telemetría. Las tablas clínicas, de alertas, de operaciones de campo y de analítica pertenecen a otros bounded contexts y no deben agregarse a este modelo como atajos de integración.
+El Database Design Diagram representa el almacenamiento lógico de Livestock Monitoring: identidad, asignaciones y telemetría. Las tablas clínicas, de alertas, de campo y de analítica pertenecen a otros bounded contexts.
 
 ```mermaid
 erDiagram
@@ -926,12 +900,8 @@ erDiagram
 
 | Table | Purpose | Key constraints and indexes |
 | --- | --- | --- |
-| `ANIMAL` | Store the stable identity and current monitoring summary of a monitored animal. | `animal_id` is the primary key; `ranch_id` is required for authorization scope; `current_status` uses the domain enumeration; `last_status_at` cannot precede the accepted event that produced it. |
-| `DEVICE_ASSIGNMENT` | Preserve the active and historical association between an animal and a device. | `assignment_id` is the primary key; `animal_id` references `ANIMAL`; `assigned_at` is required; `unassigned_at` must be later than `assigned_at`; at most one active assignment is allowed per animal. |
-| `TELEMETRY_READING` | Append accepted measurements with source and capture provenance. | `telemetry_id` is the primary key; `source_reading_id` is unique for idempotency; `animal_id` references `ANIMAL`; coordinates and temperature require valid ranges; indexes support `(animal_id, captured_at)` and `source_reading_id`. |
+| ANIMAL | Store the stable identity and current monitoring summary of a monitored animal. | animal_id is the primary key; ranch_id is required for authorization scope; current_status uses the domain enumeration; last_status_at cannot precede the accepted event that produced it. |
+| DEVICE_ASSIGNMENT | Preserve the active and historical association between an animal and a device. | assignment_id is the primary key; animal_id references ANIMAL; assigned_at is required; unassigned_at must be later than assigned_at; at most one active assignment is allowed per animal. |
+| TELEMETRY_READING | Append accepted measurements with source and capture provenance. | telemetry_id is the primary key; source_reading_id is unique for idempotency; animal_id references ANIMAL; coordinates and temperature require valid ranges; indexes support (animal_id, captured_at) and source_reading_id. |
 
-`device_id` is retained as a reference value because the device registry and transport lifecycle belong to IoT Data Integration. It must not become an implicit foreign key to a table owned by another bounded context. Cross-context validation is performed through an application contract before a reading is accepted.
-
-The schema supports the current use cases without storing derived clinical diagnoses or alert decisions in the monitoring tables. An alerting context may consume `TelemetryRecorded` and `AnimalStatusUpdated` to build its own model, while Analytics and Reporting may create a separate read store. This ownership rule makes schema evolution explicit and avoids the shared-database coupling rejected by the Context Mapping decision.
-
-The final physical design must add the selected engine's syntax, collation, partitioning or retention policy, migration strategy and backup requirements. It must also document how telemetry volume, historical queries and synchronization retries will be handled. Until those choices are approved, this diagram remains a logical database design rather than a vendor-specific implementation.
+device_id se conserva como referencia porque el registro y ciclo de vida del dispositivo pertenecen a IoT Data Integration; no es una FK implícita entre contextos. El esquema cubre los casos actuales sin diagnósticos ni alertas derivados, que se proyectan en sus propios almacenes. El diseño físico deberá añadir motor, índices, retención, migraciones, respaldos y estrategia para volumen y reintentos.
