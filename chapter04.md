@@ -560,6 +560,81 @@ The application design provides a direct traceability path from the current Prod
 
 #### 4.2.1.4. Infrastructure Layer
 
+La Infrastructure Layer implementa los puertos definidos por la Application Layer y conecta el contexto con bases de datos, mecanismos de mensajería, observabilidad y servicios de soporte. Su código puede depender de frameworks y proveedores, pero esas dependencias no deben filtrarse hacia las entidades, value objects, domain services o casos de uso.
+
+**Adapters and infrastructure components**
+
+| Component | Implements or supports | Responsibility |
+| --- | --- | --- |
+| `SqlAnimalRepository` | `AnimalRepository` | Persist and retrieve the `Animal` aggregate using the selected relational technology. |
+| `SqlTelemetryReadingRepository` | `TelemetryReadingRepository` | Append accepted readings and execute bounded history queries. |
+| `MonitoringPersistenceMapper` | Persistence adapter | Translate between domain objects and persistence records without exposing ORM annotations in the domain. |
+| `IdempotencyRecordRepository` | `IdempotencyStore` | Store message identifiers, processing outcomes and retention metadata. |
+| `OutboxEventStore` | `DomainEventPublisher` support | Persist events in the same transaction before asynchronous delivery. |
+| `MonitoringEventPublisher` | `DomainEventPublisher` | Publish normalized events to the integration mechanism selected by the team. |
+| `AuthorizationContextAdapter` | `AuthorizationContext` | Translate authenticated identity and ranch scope into the application contract. |
+| `SystemClock` | `Clock` | Provide production time while keeping domain tests deterministic through a replaceable port. |
+| `AuditLogWriter` | Infrastructure service | Record access and changes required for traceability without altering domain behavior. |
+| `MonitoringTelemetry` | Observability support | Emit correlation, latency, rejection, duplicate and synchronization metrics. |
+
+```mermaid
+flowchart LR
+    subgraph Application[Application Layer]
+        Ports[Repository, publisher, clock and authorization ports]
+        UseCases[Use cases and handlers]
+    end
+
+    subgraph Infrastructure[Infrastructure Layer]
+        Repositories[SQL repository adapters]
+        Mapper[Persistence mapper]
+        Outbox[Outbox event store]
+        Publisher[Event publisher adapter]
+        AuthAdapter[Authorization adapter]
+        Clock[System clock]
+        Audit[Audit and telemetry]
+    end
+
+    subgraph External[External infrastructure]
+        Database[(Domain data stores)]
+        Broker[Message broker or event transport]
+        Identity[Identity provider]
+        LogStore[Log and metrics platform]
+    end
+
+    UseCases --> Ports
+    Ports --> Repositories
+    Ports --> Outbox
+    Ports --> Publisher
+    Ports --> AuthAdapter
+    Ports --> Clock
+    Repositories --> Mapper
+    Mapper --> Database
+    Outbox --> Database
+    Publisher --> Broker
+    AuthAdapter --> Identity
+    Audit --> LogStore
+    UseCases --> Audit
+```
+
+**Persistence and ownership rules**
+
+- The repository implementation may use a relational database, but the domain layer must not know table names, ORM entities or SQL syntax.
+- `SqlAnimalRepository` and `SqlTelemetryReadingRepository` are the only adapters allowed to write Livestock Monitoring records.
+- Clinical, alerting, field and analytics data are not persisted through this context's repositories. Consumers use their own models and storage.
+- The persistence mapper must preserve value-object validation and must reject records that cannot be reconstructed as valid domain objects.
+- History queries must use bounded periods and indexes appropriate for the expected telemetry volume; pagination is part of the application contract.
+- Database transactions cover aggregate changes, idempotency records and the outbox entry required to publish a resulting domain event.
+
+**Reliability and integration rules**
+
+- Event publication uses an outbox or equivalent mechanism so an accepted reading is not lost when the broker is temporarily unavailable.
+- Consumers can retry a message safely because the message identifier is recorded before an acknowledgement is confirmed.
+- External provider failures are represented as infrastructure errors and are translated into application outcomes; provider-specific exceptions do not cross the boundary.
+- Correlation identifiers connect device ingestion, API requests, persistence, event publication and downstream processing.
+- Logs must avoid raw clinical data and secrets; identifiers should be sufficient to investigate an operation without exposing unnecessary personal or health information.
+
+The project statement permits multiple technologies for the REST API, edge service, database and messaging. The selected stack must be recorded as an architecture decision with its rationale, operational constraints and impact on deployment. At this stage, the design remains technology-neutral while defining the boundaries that any approved implementation must respect.
+
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
