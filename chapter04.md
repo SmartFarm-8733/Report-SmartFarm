@@ -727,6 +727,159 @@ The formal architecture evidence should include one component diagram for every 
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
+Los Code Level Diagrams presentan el detalle de implementación de los componentes del bounded context. En esta primera versión se documenta el Domain Layer de Livestock Monitoring mediante un UML Class Diagram. El modelo muestra clases, interfaces, enumeraciones, atributos, métodos, visibilidad y relaciones con nombre y multiplicidad. No se incluyen anotaciones de ORM ni detalles de frameworks porque pertenecen a Infrastructure Layer.
+
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+El siguiente modelo representa el aggregate `Animal`, sus value objects y los servicios y puertos que participan en la aceptación de telemetría. La relación entre `Animal` y `TelemetryReading` es histórica y de solo agregado; la relación activa con `DeviceAssignment` debe mantener como máximo una asignación vigente por animal.
+
+```mermaid
+classDiagram
+    class Animal {
+        -AnimalId id
+        -String ranchId
+        -AnimalStatus status
+        -DeviceAssignment activeAssignment
+        +register(AnimalId id, String ranchId) Animal
+        +assignDevice(DeviceId deviceId, CapturedAt assignedAt) void
+        +acceptTelemetry(TelemetryReading reading) TelemetryRecorded
+        +updateStatus(AnimalStatus newStatus) AnimalStatusUpdated
+        +hasActiveAssignment() Boolean
+    }
+
+    class AnimalId {
+        -String value
+        +of(String value) AnimalId
+        +value() String
+    }
+
+    class DeviceId {
+        -String value
+        +of(String value) DeviceId
+        +value() String
+    }
+
+    class Temperature {
+        -Decimal celsius
+        +ofCelsius(Decimal value) Temperature
+        +celsius() Decimal
+    }
+
+    class ActivityLevel {
+        <<enumeration>>
+        LOW
+        NORMAL
+        HIGH
+        UNKNOWN
+    }
+
+    class GeoCoordinate {
+        -Decimal latitude
+        -Decimal longitude
+        +of(Decimal latitude, Decimal longitude) GeoCoordinate
+        +latitude() Decimal
+        +longitude() Decimal
+    }
+
+    class CapturedAt {
+        -DateTime value
+        +of(DateTime value) CapturedAt
+        +value() DateTime
+    }
+
+    class AnimalStatus {
+        <<enumeration>>
+        MONITORED
+        NO_RECENT_DATA
+        DATA_REJECTED
+    }
+
+    class DeviceAssignment {
+        -DeviceId deviceId
+        -CapturedAt assignedAt
+        -CapturedAt unassignedAt
+        +isActive() Boolean
+        +close(CapturedAt unassignedAt) void
+    }
+
+    class TelemetryReading {
+        -String sourceReadingId
+        -DeviceId deviceId
+        -Temperature temperature
+        -ActivityLevel activity
+        -GeoCoordinate location
+        -CapturedAt capturedAt
+        +sourceId() String
+        +isDuplicateOf(String sourceReadingId) Boolean
+    }
+
+    class AnimalStatusPolicy {
+        +evaluate(Animal animal, TelemetryReading reading) AnimalStatus
+    }
+
+    class TelemetryAcceptancePolicy {
+        +validate(TelemetryReading reading) Boolean
+    }
+
+    class TelemetryRecorded {
+        <<domain event>>
+        +AnimalId animalId
+        +String sourceReadingId
+        +CapturedAt occurredAt
+    }
+
+    class AnimalStatusUpdated {
+        <<domain event>>
+        +AnimalId animalId
+        +AnimalStatus previousStatus
+        +AnimalStatus currentStatus
+        +CapturedAt occurredAt
+    }
+
+    class AnimalRepository {
+        <<interface>>
+        +findById(AnimalId id) Animal
+        +save(Animal animal) void
+    }
+
+    class TelemetryReadingRepository {
+        <<interface>>
+        +append(TelemetryReading reading) void
+        +findByAnimalAndPeriod(AnimalId id, DateTime from, DateTime to) List
+    }
+
+    Animal "1" *-- "1" AnimalId : identifies
+    Animal "1" o-- "0..1" DeviceAssignment : active assignment
+    Animal "1" o-- "0..*" TelemetryReading : monitoring history
+    DeviceAssignment "1" *-- "1" DeviceId : assigned device
+    TelemetryReading "1" *-- "1" DeviceId : source device
+    TelemetryReading "1" *-- "1" Temperature : measures
+    TelemetryReading "1" *-- "1" ActivityLevel : records
+    TelemetryReading "1" *-- "1" GeoCoordinate : locates
+    TelemetryReading "1" *-- "1" CapturedAt : captured at
+    Animal ..> TelemetryAcceptancePolicy : accepts through
+    Animal ..> AnimalStatusPolicy : evaluates through
+    Animal ..> TelemetryRecorded : emits
+    Animal ..> AnimalStatusUpdated : emits
+    AnimalRepository ..> Animal : persists
+    TelemetryReadingRepository ..> TelemetryReading : persists
+```
+
+| Element | Attributes or members | Domain design decision |
+| --- | --- | --- |
+| `Animal` | Private identity, ranch scope, current status and active assignment; public behavior for registration, assignment, telemetry and status. | Aggregate root that protects invariants and is the only entry point for changing monitoring state. |
+| `TelemetryReading` | Source identifier, device, temperature, activity, location and capture time. | Append-oriented historical entity; source identifier supports idempotency. |
+| `DeviceAssignment` | Device identity and assignment interval. | Preserves device history and prevents concurrent active assignment. |
+| `AnimalId` and `DeviceId` | Private string value with factory and accessor. | Value objects prevent mixing animal and device identities. |
+| `Temperature` | Private Celsius value with factory validation. | Unit is explicit and range rules remain in the domain. |
+| `ActivityLevel` and `AnimalStatus` | Enumerated domain values. | Avoids arbitrary strings in status and activity decisions. |
+| `GeoCoordinate` | Latitude and longitude with factory validation. | Encapsulates geospatial constraints without depending on a map provider. |
+| `CapturedAt` | Timestamp with controlled construction. | Preserves the temporal meaning of a reading. |
+| `AnimalStatusPolicy` | Public evaluation operation. | Derives monitoring status but does not generate clinical or security alerts. |
+| `TelemetryAcceptancePolicy` | Public validation operation. | Keeps monitoring invariants separate from transport validation. |
+| `TelemetryRecorded` and `AnimalStatusUpdated` | Immutable event data with animal identity and occurrence time. | Publish facts for Alerts and Security and Analytics and Reporting. |
+| `AnimalRepository` and `TelemetryReadingRepository` | Public interfaces with domain-oriented operations. | Ports keep persistence technology outside the Domain Layer. |
+
+The associations use composition when the element has no independent meaning outside the owning object and aggregation when historical data may be retained and queried as part of the monitoring history. The relationship labels and multiplicities are part of the model contract and must be preserved in the formal UML diagram.
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
