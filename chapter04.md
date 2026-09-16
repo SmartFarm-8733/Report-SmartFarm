@@ -440,6 +440,63 @@ The model is intentionally narrower than the whole SmartFarm solution. Clinical 
 
 #### 4.2.1.2. Interface Layer
 
+La Interface Layer expone las capacidades de Livestock Monitoring a los consumidores externos y transforma mensajes externos en solicitudes comprensibles para la Application Layer. Incluye controllers para las aplicaciones web y móviles y consumers para los eventos publicados por IoT Data Integration. No contiene reglas de negocio ni accede directamente a repositorios; su responsabilidad es validar la forma de la entrada, resolver el contexto de seguridad, invocar un caso de uso y traducir el resultado a un contrato estable.
+
+**Inbound interfaces**
+
+| Interface component | Type | Candidate interaction | Consumer and traceability |
+| --- | --- | --- | --- |
+| `AnimalQueryController` | REST controller | `GET /api/v1/animals/{animalId}` | Web Application and Mobile Application; US-01. |
+| `TelemetryQueryController` | REST controller | `GET /api/v1/animals/{animalId}/telemetry?from=&to=` | Web Application and Mobile Application; US-02 and US-03. |
+| `TelemetryValidatedConsumer` | Domain-event consumer | Receives a validated telemetry message from IoT Data Integration. | Central integration flow; TS-04. |
+| `AnimalStatusUpdatedConsumer` | Internal event consumer | Receives a status update for projection or downstream publication. | Alerts and Security and Analytics and Reporting. |
+| `AnimalHistoryQueryMapper` | DTO mapper | Converts domain results into stable response representations. | Web and mobile clients. |
+| `MonitoringErrorHandler` | Error translator | Converts validation, authorization and not-found failures into documented errors. | All API consumers. |
+
+**Candidate API contracts**
+
+| Operation | Input | Output | Validation and authorization |
+| --- | --- | --- | --- |
+| Get animal profile | `animalId` and user context. | Animal identity, device assignment, current status and last reading timestamp. | The animal must exist and belong to the user's authorized ranch scope. |
+| Get recent telemetry | `animalId`, time range and pagination. | Ordered readings with temperature, activity, location and capture time. | The time range is bounded; the user must be authorized to view the animal. |
+| Get individual history | `animalId`, period and filters. | Readings and status events for the selected period. | The query must preserve data completeness information and access auditability. |
+| Receive validated telemetry | Message identifier, animal identifier, device identifier and measurement data. | Accepted, rejected or duplicate result. | The message source must be trusted and duplicate processing must be idempotent. |
+
+The interface flow follows this sequence:
+
+```mermaid
+sequenceDiagram
+    participant Client as Web or Mobile Client
+    participant Controller as Interface Controller
+    participant Auth as Authorization Boundary
+    participant Handler as Application Handler
+    participant Aggregate as Animal Aggregate
+    participant Mapper as Response Mapper
+
+    Client->>Controller: Request animal data
+    Controller->>Controller: Validate route, query and format
+    Controller->>Auth: Resolve user and ranch scope
+    Auth-->>Controller: Authorized context
+    Controller->>Handler: Execute query with context
+    Handler->>Aggregate: Request domain data
+    Aggregate-->>Handler: Domain result
+    Handler->>Mapper: Map result to response DTO
+    Mapper-->>Controller: Stable response
+    Controller-->>Client: HTTP response
+```
+
+**Interface rules**
+
+- Controllers validate required fields, formats, ranges, pagination limits and supported content types before invoking the application layer.
+- Authorization is evaluated with the user, role and ranch scope; a valid identifier alone is not sufficient to expose animal or clinical information.
+- Response DTOs expose business concepts and not ORM entities, database keys that are not part of the contract or internal event metadata.
+- Error responses must distinguish invalid input, missing resource, denied access, duplicate message and temporary infrastructure failure.
+- Consumers must read a message identifier and preserve the idempotency result before acknowledging a delivery.
+- Versioned API paths and event schemas permit evolution without silently breaking the web, mobile or edge clients.
+- Observability metadata such as correlation identifier, source and processing time must be available without leaking sensitive clinical content.
+
+The Interface Layer therefore acts as a protective boundary around the domain. The Web Application can request recent telemetry, the Mobile Application can request a field-compatible view, and IoT Data Integration can submit a normalized message, while all three clients remain independent of the aggregate implementation.
+
 #### 4.2.1.3. Application Layer
 
 #### 4.2.1.4. Infrastructure Layer
