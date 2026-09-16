@@ -197,13 +197,192 @@ This context map is an initial, versionable diagram-as-code representation. For 
 
 ### 4.1.3. Software Architecture
 
+La arquitectura de software traduce los límites de dominio y las relaciones de la sección 4.1.2 en una representación técnica comprensible para el equipo. Se utiliza el C4 Model porque permite explicar la solución progresivamente, desde el entorno general hasta los elementos desplegables, sin mezclar decisiones de implementación de bajo nivel con decisiones estratégicas.
+
+La solución debe responder a las restricciones identificadas en los capítulos I y II: conectividad intermitente en zonas rurales, necesidad de alertas oportunas, trazabilidad clínica, integración con dispositivos IoT y acceso desde aplicaciones web y móviles. Por ello, las decisiones iniciales priorizan continuidad operativa, separación de responsabilidades, seguridad de la información, observabilidad, sincronización idempotente y posibilidad de evolución independiente.
+
+Los siguientes principios orientan la arquitectura:
+
+- Las reglas de negocio permanecen dentro de los bounded contexts y no se delegan a la interfaz ni a los dispositivos.
+- El servicio de borde permite capturar y conservar datos cuando la conexión con el servicio central no está disponible.
+- El servicio central expone contratos RESTful y valida toda información antes de incorporarla a los modelos de dominio.
+- Las notificaciones y las actualizaciones de analítica se procesan mediante mensajes o tareas desacopladas cuando el caso de uso lo permita.
+- Cada contexto conserva la propiedad de sus datos; ningún otro contexto escribe directamente en su almacenamiento.
+- Las operaciones de sincronización y reintento deben ser idempotentes y observables.
+- La autorización, la privacidad de la información clínica, la internacionalización y la accesibilidad se consideran preocupaciones transversales desde el diseño.
+
+Para la entrega formal, cada diagrama debe exportarse desde la herramienta aprobada, incluir una leyenda y acompañarse de una explicación. Los diagramas Mermaid de esta versión son fuentes versionables y trazables que sirven como borrador técnico; posteriormente pueden reproducirse en Structurizr, LucidChart u otra herramienta permitida por el curso.
+
 #### 4.1.3.1. Software Architecture System Landscape Diagram
+
+El System Landscape presenta SmartFarm dentro de su entorno de operación. En este nivel se muestran las personas, dispositivos y sistemas externos que interactúan con la solución, sin describir todavía sus containers internos. El objetivo es establecer el alcance del sistema y evitar que una dependencia externa se confunda con una responsabilidad propia de SmartFarm.
+
+```mermaid
+flowchart LR
+    Owner[Ranch Manager]
+    Operator[Field Operator]
+    Vet[Veterinarian]
+    Visitor[Prospective Visitor]
+    Devices[Smart Collars and Ear Tags]
+    SmartFarm[SmartFarm IoT Livestock Management Solution]
+    Notify[External Notification Provider]
+    Maps[External Mapping/GPS Provider]
+    Clinical[Authorized Clinical or Laboratory Systems]
+
+    Owner -->|Monitor herd and make decisions| SmartFarm
+    Operator -->|Operate in the field and record events| SmartFarm
+    Vet -->|Review telemetry and manage clinical history| SmartFarm
+    Visitor -->|Learn about plans and service| SmartFarm
+    Devices -->|Send biometric and location readings| SmartFarm
+    SmartFarm -->|Send health and security notifications| Notify
+    SmartFarm -->|Request geospatial services| Maps
+    SmartFarm <-->|Authorized clinical information| Clinical
+```
+
+El límite de SmartFarm incluye el ecosistema digital que recibe telemetría, procesa información y presenta capacidades a los actores del negocio. Los dispositivos IoT son fuentes de datos externas al software central, aunque su firmware y protocolo deben respetar el contrato de integración. El proveedor de notificaciones, el proveedor de mapas y los sistemas clínicos autorizados se aíslan mediante adapters para evitar que sus APIs definan el lenguaje del dominio.
+
+El diagrama también evidencia que el visitante de la Landing Page pertenece al entorno de la solución, pero no al flujo de monitoreo operativo. Esta separación permite mantener el producto de adquisición desacoplado de la información sensible del ganado.
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
+El Context Diagram muestra a SmartFarm como un sistema único y explica sus interacciones directas. Los actores representan roles del negocio y los sistemas externos representan dependencias fuera del control del equipo. Las relaciones se expresan con verbos y con el propósito del intercambio, de modo que el diagrama pueda ser entendido sin conocer la implementación interna.
+
+```mermaid
+flowchart LR
+    Admin[Ranch Manager]
+    Field[Field Operator]
+    Vet[Veterinarian]
+    Visitor[Visitor]
+    Devices[IoT Devices]
+    SmartFarm[SmartFarm Platform]
+    Notification[Notification Provider]
+    Mapping[Mapping/GPS Provider]
+    ExternalClinical[Authorized External Clinical System]
+
+    Admin -->|Views herd indicators, telemetry and alerts| SmartFarm
+    Field -->|Views locations and records field events| SmartFarm
+    Vet -->|Reviews telemetry and records clinical events| SmartFarm
+    Visitor -->|Views value proposition, plans and terms| SmartFarm
+    Devices -->|Transmits identified telemetry| SmartFarm
+    SmartFarm -->|Requests delivery of critical alerts| Notification
+    SmartFarm -->|Requests map and geospatial data| Mapping
+    SmartFarm -->|Provides or receives authorized clinical data| ExternalClinical
+```
+
+El contexto confirma que los tres actores operativos tienen necesidades diferentes: el administrador prioriza indicadores y seguridad; el operario necesita continuidad y acciones rápidas en campo; y el médico veterinario requiere información histórica, clínica y autorizada. Estas diferencias justifican la separación de los bounded contexts y también guían las interfaces de las aplicaciones.
+
+El Context Diagram no debe mostrar tablas, frameworks, endpoints ni clases. Esas decisiones pertenecen a los niveles inferiores. La explicación formal deberá indicar el alcance, las suposiciones y las relaciones que fueron validadas con las User Stories US-01 a US-18 y las Technical Stories TS-01 a TS-05.
+
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
+En C4, un container es una unidad ejecutable o almacenable que cumple una responsabilidad clara y puede desplegarse de manera independiente. El siguiente diseño propone los containers necesarios para cubrir la captura IoT, la operación web y móvil, los flujos de dominio y las vistas analíticas. Los bounded contexts pertenecen principalmente al Central REST API como módulos de dominio, mientras que la separación de containers responde a responsabilidades de ejecución y comunicación.
+
+```mermaid
+flowchart TB
+    subgraph Clients[User-facing clients]
+        Web[Web Application]
+        Mobile[Mobile Application]
+        Landing[Landing Page]
+    end
+
+    subgraph FieldSite[Livestock operation]
+        DeviceApp[IoT Device Application]
+        Edge[Edge Service and Local Buffer]
+    end
+
+    subgraph SmartFarmPlatform[SmartFarm platform]
+        API[Central REST API]
+        DomainStore[Domain Data Stores]
+        ReadStore[Analytics Read Store]
+        NotificationAdapter[Notification Adapter]
+        MapAdapter[Mapping Adapter]
+    end
+
+    NotificationProvider[Notification Provider]
+    MappingProvider[Mapping/GPS Provider]
+
+    DeviceApp -->|TelemetryReading| Edge
+    Edge -->|HTTPS sync and retry| API
+    Web -->|HTTPS and JSON| API
+    Mobile -->|HTTPS and local cache| API
+    Landing -->|Public content and contact actions| API
+    API -->|Owns domain transactions| DomainStore
+    API -->|Publishes domain events or projections| ReadStore
+    API -->|Notification request| NotificationAdapter
+    NotificationAdapter -->|Provider-specific request| NotificationProvider
+    API -->|Geospatial request| MapAdapter
+    MapAdapter -->|Provider-specific request| MappingProvider
+```
+
+| Container | Responsibility | Main bounded contexts or capabilities | Communication |
+| --- | --- | --- | --- |
+| IoT Device Application | Capture temperature, activity, location and identification data; adapt transmission frequency to the animal state. | IoT Data Integration, TS-01 and TS-03. | Device protocol to Edge Service. |
+| Edge Service and Local Buffer | Receive readings, store pending data during outages and synchronize without duplicates. | IoT Data Integration and Field Operations, TS-02 and US-09. | Local storage plus HTTPS synchronization with Central REST API. |
+| Central REST API | Authenticate requests, execute application use cases, validate data and expose domain contracts. | Livestock Monitoring, Health and Veterinary Care, Alerts and Security and Field Operations. | HTTPS/JSON for clients; commands and events internally. |
+| Domain Data Stores | Persist animal, telemetry, alert, field and clinical information under explicit ownership. | Transactional data for the corresponding bounded contexts. | Access only through the owning application module. |
+| Analytics Read Store | Store projections optimized for indicators, trends, distributions and reports. | Analytics and Reporting. | Consumes published events or scheduled projections. |
+| Web Application | Provide dashboards, history, indicators, alerts and administrative actions. | Ranch Manager and Veterinarian use cases. | RESTful API over HTTPS. |
+| Mobile Application | Provide field views, last known locations, event capture and offline operation. | Field Operations and selected alert actions. | RESTful API plus local cache and synchronization queue. |
+| Notification Adapter | Translate domain notification requests into the external provider contract and manage delivery status. | Alerts and Security, TS-05. | Asynchronous requests with retry and idempotency keys. |
+| Mapping Adapter | Isolate provider-specific geospatial APIs from Field Operations. | Field Operations and location queries. | Provider API through an adapter boundary. |
+| Landing Page | Present the value proposition, plans, contact actions and terms. | Landing Page and Subscriptions, EP-07. | Public web content and optional API integration. |
+
+The candidate technology choices must be recorded as decisions rather than assumed facts. The project statement permits alternatives such as Angular or Vue for web applications, Kotlin, Swift, Flutter or other approved options for mobile, Flask for edge services, and Spring Boot, ASP.NET Core or Nest for RESTful services. The final choice must be justified by the team's constraints, documented in the repository and kept consistent with the diagrams.
+
+The container design deliberately separates the Analytics Read Store from transactional domain data. This prevents dashboards from imposing reporting queries on the operational model and permits the team to identify incomplete data, refresh delays and projection failures explicitly.
+
 #### 4.1.3.4. Software Architecture Deployment Diagrams
+
+El Deployment Diagram muestra dónde se ejecutan los containers y cómo se comunican en condiciones normales y de falla. SmartFarm debe soportar una operación distribuida: los dispositivos y el servicio de borde se encuentran en la unidad ganadera, mientras que los servicios centrales pueden ejecutarse en una infraestructura cloud. La aplicación móvil debe continuar con las operaciones permitidas cuando la conectividad sea intermitente.
+
+```mermaid
+flowchart LR
+    subgraph Ranch[Livestock operation]
+        Collar[Smart Collar or Ear Tag]
+        LocalEdge[Edge Service]
+        FieldPhone[Field Mobile Device]
+        LocalStore[(Local Buffer)]
+        Collar -->|Short-range or device protocol| LocalEdge
+        LocalEdge --> LocalStore
+        FieldPhone -->|Offline cache and queue| FieldCache[(Mobile Local Cache)]
+        LocalEdge -->|Retry when connection returns| Internet((Intermittent Internet))
+        FieldPhone -->|HTTPS when connection returns| Internet
+    end
+
+    subgraph Cloud[Cloud or central infrastructure]
+        Gateway[API Gateway or HTTPS Endpoint]
+        CentralAPI[Central REST API]
+        Stores[(Domain Data Stores)]
+        Reports[(Analytics Read Store)]
+        NotifyAdapter[Notification Adapter]
+        Gateway --> CentralAPI
+        CentralAPI --> Stores
+        CentralAPI --> Reports
+        CentralAPI --> NotifyAdapter
+    end
+
+    Browser[Admin or Veterinarian Browser]
+    NotificationProvider[Notification Provider]
+    MapProvider[Mapping/GPS Provider]
+
+    Internet --> Gateway
+    Browser -->|HTTPS| Gateway
+    NotifyAdapter --> NotificationProvider
+    CentralAPI --> MapProvider
+```
+
+| Deployment concern | Architectural response | Evidence to include later |
+| --- | --- | --- |
+| Intermittent rural connectivity | Edge Service and Mobile Application buffer permitted operations and retry synchronization. | Sequence or deployment annotation showing offline and recovery paths. |
+| Duplicate delivery after retry | Stable identifiers, synchronization status and idempotency keys are required for telemetry, field events and notifications. | Contract or sequence example showing duplicate protection. |
+| Sensitive clinical information | Encrypted transport, authorization by role and auditable clinical access. | Context explanation and security assumptions. |
+| Notification provider failure | Notification Adapter records delivery status and preserves the alert for later consultation. | Failure path and retry policy. |
+| Reporting load | Analytics Read Store isolates indicators and trends from transactional writes. | Container relationship and refresh policy. |
+| Independent evolution | Containers communicate through documented contracts and do not share internal persistence structures. | C4 legend and context map consistency check. |
+
+The deployment diagram is intentionally technology-neutral at this stage. Once the team selects a cloud provider, database engine, mobile platform and edge hardware, the diagram must be updated with the concrete deployment nodes, runtime technology, network boundaries, secrets management and monitoring components. The final diagram should make clear which elements are independently deployable, which data is local, and how recovery occurs after a connection failure.
+
+The three C4 levels must remain consistent: every system or external dependency in the Context Diagram must be explainable in the Container Diagram, and every container in the Deployment Diagram must have a defined runtime location. This traceability check will be repeated before the chapter is considered complete.
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
