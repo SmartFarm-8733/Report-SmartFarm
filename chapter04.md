@@ -125,6 +125,76 @@ The current recommendation is to treat Livestock Monitoring, Health and Veterina
 
 ### 4.1.2. Context Mapping
 
+El Context Mapping describe las relaciones estructurales entre los candidate bounded contexts descubiertos en el EventStorming. Su propósito es hacer explícitos los flujos de información, la dirección de la dependencia, el contrato que debe protegerse y el patrón de integración que utilizará cada relación. El mapa no representa todavía clases ni endpoints concretos; representa las decisiones de colaboración que deberán respetarse durante el diseño táctico.
+
+La propuesta se basa en los límites identificados en la sección 4.1.1 y en las necesidades de SmartFarm. Livestock Monitoring concentra el estado confiable del animal; IoT Data Integration habilita la recepción de datos; Alerts and Security coordina la reacción frente a riesgos; Health and Veterinary Care conserva el modelo clínico; Field Operations atiende el trabajo en campo; y Analytics and Reporting construye vistas para la toma de decisiones.
+
+```mermaid
+flowchart LR
+    Device[IoT devices] -->|Telemetry readings| IoT[IoT Data Integration]
+    IoT -->|Validated telemetry| Monitor[Livestock Monitoring]
+    Monitor -->|Animal status and telemetry events| Alerts[Alerts and Security]
+    Monitor -->|Animal context and history| Health[Health and Veterinary Care]
+    Monitor -->|Profile and last location| Field[Field Operations]
+    Monitor -->|Read models and measurements| Analytics[Analytics and Reporting]
+    Alerts -->|Actionable alerts| Field
+    Alerts -->|Alert context| Health
+    Field -->|Field health events| Health
+    Health -->|Clinical records| Analytics
+    Alerts -->|Alert trends| Analytics
+    Alerts -->|Notification request| Notify[Notification Provider]
+    Field -->|Map request| Maps[Mapping/GPS Provider]
+    Visitor[Visitor] -->|Value proposition and plans| Landing[Landing Page and Subscriptions]
+```
+
+La dirección de cada flecha indica quién publica o provee información y quién la consume. Los proveedores externos se mantienen fuera de los bounded contexts de SmartFarm. La Landing Page and Subscriptions se conserva aislada del flujo operativo porque sus historias se relacionan con adquisición, planes y condiciones del servicio, no con la gestión transaccional del ganado.
+
+**Initial context relationships**
+
+| Upstream context or system | Downstream context | Candidate pattern | Contract or information exchanged | Design rationale |
+| --- | --- | --- | --- | --- |
+| IoT Data Integration | Livestock Monitoring | Customer/Supplier with Published Language | `TelemetryReading`, animal identifier, timestamp and source status. | The domain context receives normalized data without depending on device protocols or edge storage. |
+| Livestock Monitoring | Alerts and Security | Customer/Supplier with Published Language | Animal status changes, measurements, thresholds and location events. | Alert rules consume trusted domain information and do not own telemetry ingestion. |
+| Livestock Monitoring | Health and Veterinary Care | Anti-corruption Layer | Clinical view of animal identity, history and relevant measurements. | The clinical model must not inherit the technical structure of telemetry storage. |
+| Livestock Monitoring | Field Operations | Customer/Supplier | Animal profile, last known location and operational status. | Field work consumes a stable operational view while preserving offline behavior locally. |
+| Alerts and Security | Field Operations | Customer/Supplier | Actionable alert, severity, animal, location and event time. | The field application reacts to an alert but does not decide the alert policy. |
+| Field Operations | Health and Veterinary Care | Anti-corruption Layer | Field health event, observation, actor and synchronization status. | Field records are translated into clinical events with validation and authorization. |
+| Livestock Monitoring, Health and Veterinary Care, Alerts and Security | Analytics and Reporting | Open Host Service with Published Language | Read models for indicators, trends, alert distributions and data quality. | Analytics remains downstream and cannot modify transactional domain state. |
+| Alerts and Security | Notification Provider | Anti-corruption Layer | Notification request, recipient, channel, status and provider error. | External provider details stay outside the alerting model. |
+| Field Operations | Mapping/GPS Provider | Anti-corruption Layer | Map tiles, coordinates and geospatial query results. | Provider-specific APIs are isolated from field operations. |
+
+**Patterns and boundaries**
+
+The recommended integration strategy uses the following principles:
+
+- `Published Language` is reserved for stable domain messages such as telemetry, animal status and actionable alerts. The message contract must use terms from the ubiquitous language and must not expose persistence details.
+- `Anti-corruption Layer` is required when a downstream context has a different model or when an external provider controls the contract. The translation protects the clinical, alerting and field models from changes in technical schemas.
+- `Customer/Supplier` is used when the downstream context depends on a capability delivered by an upstream context. The supplier must negotiate a contract that supports the consumer's needs without transferring ownership of the consumer's model.
+- `Open Host Service` is appropriate for Analytics and Reporting when several consumers need consistent read access. Its views should be optimized for analysis and should not become a shared transactional database.
+- `Shared Kernel` is not recommended in the initial design because shared code or tables would couple the contexts and make clinical, operational and telemetry changes harder to evolve independently.
+- `Conformist` should be used only for an external service whose contract cannot be influenced by SmartFarm. The adapter must still keep the external vocabulary out of the core domain model.
+
+**Alternatives considered**
+
+| Alternative | Advantage | Risk | Decision |
+| --- | --- | --- | --- |
+| One context for telemetry, health, alerts and field operations | Simple initial deployment and fewer interfaces. | Combines technical ingestion, clinical rules and field concerns; changes propagate to every capability. | Rejected for the strategic design. |
+| Livestock Monitoring and Health and Veterinary Care as one context | Easier access to the animal history. | A clinical model becomes coupled to telemetry shape and authorization rules. | Rejected; use an Anti-corruption Layer. |
+| Separate contexts connected by shared database tables | Fast read access for dashboards. | Creates hidden coupling, weak ownership and inconsistent business rules. | Rejected; use contracts and downstream read models. |
+| Separate core contexts with explicit messages and adapters | Preserves domain boundaries and supports independent evolution. | Requires contract versioning, observability and synchronization handling. | Selected as the current direction. |
+
+The selected map establishes that no bounded context may write directly into another context's database. Inter-context communication must occur through explicit commands, published domain events or documented query contracts. The first contracts to refine are `TelemetryReading`, `AnimalStatusUpdated`, `HealthAlertGenerated`, `SecurityAlertGenerated`, `FieldHealthEventRecorded` and `ClinicalInformationUpdated`.
+
+**Open decisions for the next iteration**
+
+1. Confirm whether animal identity belongs entirely to Livestock Monitoring or to a future Identity and Access context that also manages users, roles and permissions.
+2. Define which context owns alert thresholds and geofences when they vary by ranch, animal or user role.
+3. Confirm whether Analytics consumes events asynchronously or reads a materialized reporting model refreshed by scheduled synchronization.
+4. Define the authorization contract for clinical data, including audit information and export restrictions.
+5. Validate the external notification and mapping providers before freezing adapter interfaces.
+
+This context map is an initial, versionable diagram-as-code representation. For the formal submission, it should be reproduced or exported with the approved architecture tool and included as an image with its legend, source, assumptions and explanation.
+
 ### 4.1.3. Software Architecture
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
