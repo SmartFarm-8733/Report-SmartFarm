@@ -386,20 +386,68 @@ The three C4 levels must remain consistent: every system or external dependency 
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
-### 4.2.X. Bounded Context: &lt;Bounded Context Name&gt;
+El diseño táctico traduce las decisiones estratégicas en modelos internos para cada bounded context. Esta primera sección desarrolla `Livestock Monitoring`, clasificado como core context por su relación directa con el valor principal de SmartFarm: ofrecer información confiable sobre la identidad, el estado y la telemetría de cada animal. Los siguientes bounded contexts deberán documentarse con la misma estructura cuando el equipo valide sus límites y responsabilidades.
 
-#### 4.2.X.1. Domain Layer
+El contexto es responsable de mantener el modelo de monitoreo del animal y de publicar cambios relevantes para otros contextos. No es responsable de reglas clínicas, de la política de alertas ni del almacenamiento temporal en el borde. Esas responsabilidades permanecen en Health and Veterinary Care, Alerts and Security e IoT Data Integration, respectivamente.
 
-#### 4.2.X.2. Interface Layer
+### 4.2.1. Bounded Context: Livestock Monitoring
 
-#### 4.2.X.3. Application Layer
+#### 4.2.1.1. Domain Layer
 
-#### 4.2.X.4. Infrastructure Layer
+La Domain Layer contiene el modelo que representa el estado confiable del animal y sus lecturas de monitoreo. Sus clases deben ser independientes de frameworks, bases de datos, controladores y proveedores externos. La capa recibe información ya identificada por IoT Data Integration, aplica invariantes propias del monitoreo y publica eventos del dominio para los consumidores autorizados.
 
-#### 4.2.X.5. Bounded Context Software Architecture Component Level Diagrams
+**Domain language**
 
-#### 4.2.X.6. Bounded Context Software Architecture Code Level Diagrams
+| Term | Meaning in Livestock Monitoring | Ownership |
+| --- | --- | --- |
+| Animal | Monitored livestock subject with a stable identity and current monitoring status. | Livestock Monitoring. |
+| Device Assignment | Active or historical association between an animal and an IoT device. | Livestock Monitoring. |
+| Telemetry Reading | Valid measurement identified by animal, device and capture time. | Livestock Monitoring after structural validation. |
+| Animal Status | Current monitoring state derived from trusted readings and domain policies. | Livestock Monitoring. |
+| Monitoring History | Ordered collection of accepted readings and status changes. | Livestock Monitoring. |
 
-##### 4.2.X.6.1. Bounded Context Domain Layer Class Diagrams
+**Tactical model**
 
-##### 4.2.X.6.2. Bounded Context Database Design Diagram
+| Type | Candidate class | Responsibility |
+| --- | --- | --- |
+| Aggregate Root | `Animal` | Protect animal identity, active assignment and current monitoring status. |
+| Entity | `DeviceAssignment` | Record which device is associated with an animal and during which period. |
+| Entity | `TelemetryReading` | Preserve an accepted reading and its provenance. |
+| Value Object | `AnimalId` | Guarantee the format and identity semantics of an animal reference. |
+| Value Object | `DeviceId` | Represent the identity of a collar or ear tag without device-protocol details. |
+| Value Object | `Temperature` | Represent a temperature measurement with unit and valid range. |
+| Value Object | `ActivityLevel` | Represent normalized activity data used by monitoring views. |
+| Value Object | `GeoCoordinate` | Represent latitude and longitude with geospatial validation. |
+| Value Object | `CapturedAt` | Represent the timestamp of the measurement and its temporal rules. |
+| Domain Service | `AnimalStatusPolicy` | Derive monitoring status from accepted readings without creating alert policies. |
+| Domain Service | `TelemetryAcceptancePolicy` | Check monitoring-specific invariants before a reading is attached to the animal. |
+| Repository Port | `AnimalRepository` | Define persistence operations required by the aggregate. |
+| Repository Port | `TelemetryReadingRepository` | Define history queries without coupling the domain to a database. |
+| Domain Event | `TelemetryRecorded` | Announce that an accepted reading was added to monitoring history. |
+| Domain Event | `AnimalStatusUpdated` | Announce a change in the monitoring status. |
+
+**Domain invariants**
+
+- Every `Animal` has one stable `AnimalId`; the identity cannot be replaced by a device identifier.
+- An active `DeviceAssignment` cannot be active for two animals at the same time.
+- A `TelemetryReading` must contain an animal identifier, device identifier, capture timestamp and valid measurement data.
+- A reading received more than once with the same source identifier must be handled idempotently.
+- A reading that violates the monitoring range or provenance rules is rejected and does not update the animal status.
+- `Livestock Monitoring` publishes the status change but does not decide whether it is a clinical or security alert.
+- Historical readings are append-oriented; corrections must be represented as traceable domain actions rather than silent overwrites.
+
+The model is intentionally narrower than the whole SmartFarm solution. Clinical procedures, alert thresholds, notification channels and offline synchronization metadata are translated at their own boundaries. This keeps the aggregate cohesive and prevents the tactical model from recreating the strategic coupling rejected in the Context Mapping section.
+
+#### 4.2.1.2. Interface Layer
+
+#### 4.2.1.3. Application Layer
+
+#### 4.2.1.4. Infrastructure Layer
+
+#### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+#### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+##### 4.2.1.6.2. Bounded Context Database Design Diagram
