@@ -1,5 +1,7 @@
 # Capítulo II: Requirements Elicitation & Analysis
+
 ## 2.1. Competidores.
+
 ### 2.1.1. Análisis competitivo.
 
 **Competitive Analysis Landscape**
@@ -46,11 +48,14 @@ Para posicionar a ICHU IoT con éxito, nuestra startup implementará un conjunto
 - **Táctica de Ingeniería:** Diseñar y documentar rigurosamente los endpoints de nuestro RESTful API con OpenAPI/Swagger, permitiendo que sistemas externos de laboratorios o software de gestión de terceros se integren de forma segura mediante protocolos estandarizados, expandiendo el valor del ecosistema sin comprometer la seguridad de la información.
 
 ## 2.2. Entrevistas.
+
 ### 2.2.1. Diseño de entrevistas.
+
 A continuación, se presenta la relación de preguntas principales y complementarias estructuradas para cada uno de los dos segmentos objetivo identificados. El cuestionario recopila tanto la información demográfica y de perfil requerida para construir los User Personas (arquetipos) como la información operativa y de dolor para mapear los requisitos de software del sistema.
 
 **Segmento 1:** Medianos y Grandes Ganaderos (Propietarios y Administradores de Estancias)
-Este segmento representa al comprador principal (Buyer Persona) y tomador de decisiones financieras de la estancia. El objetivo es identificar la viabilidad de la plataforma web administrativa, el modelo de suscripción SaaS y los indicadores clave (KPIs) de productividad que desean ver en pantalla .
+
+Este segmento representa al comprador principal (Buyer Persona) y tomador de decisiones financieras de la estancia. El objetivo es identificar la viabilidad de la plataforma web administrativa, el modelo de suscripción SaaS y los indicadores clave (KPIs) de productividad que desean ver en pantalla.
 
 # BLOQUE 1: Datos Demográficos y de Perfil (Información Complementaria)
 
@@ -116,8 +121,9 @@ Este segmento representa al comprador principal (Buyer Persona) y tomador de dec
 1. Cuando usted o su equipo están en la manga (corral) trabajando directamente con el animal, ¿qué botones o funciones necesitan que estén más a la mano en la pantalla del celular para no perder tiempo?
 2. Sabiendo que muchas veces no hay internet en el potrero, ¿qué acciones específicas necesita poder guardar en la aplicación sin conexión (modo offline) para que se actualicen cuando regrese a la casa?
    
-**Segmento 2:** Médicos Veterinarios y Consultores de Salud Animal  
-Este segmento proporciona el sustento técnico-científico del dominio de salud. El objetivo es validar qué variables cuantitativas de telemetría biométrica (temperatura, acelerometría) requiere el veterinario para predecir anomalías de salud y cómo la API RESTful de ICHU debe estructurar los historiales clínicos para consumo de sistemas externos .
+**Segmento 2:** Médicos Veterinarios y Consultores de Salud Animal
+
+Este segmento proporciona el sustento técnico-científico del dominio de salud. El objetivo es validar qué variables cuantitativas de telemetría biométrica (temperatura, acelerometría) requiere el veterinario para predecir anomalías de salud y cómo la API RESTful de ICHU debe estructurar los historiales clínicos para consumo de sistemas externos.
 
 # GUÍA DE ENTREVISTA: Médicos Veterinarios y Consultores
 
@@ -155,7 +161,7 @@ Este segmento proporciona el sustento técnico-científico del dominio de salud.
 
 ---
 
-Con esta estructura, el veterinario te hablará de su vida, luego te dará la "matemática" de las enfermedades para calibrar tus sensores, y finalmente te diseñará los botones y pantallas de tu software. 
+Con esta estructura, la entrevista se aborda en tres fases: primero el perfil del profesional, luego la calibración de los parámetros clínicos para los sensores del sistema y, finalmente, la captura de las funcionalidades que el software debe implementar.
 
 ### 2.2.2. Registro de entrevistas.
 
@@ -243,6 +249,54 @@ Con esta estructura, el veterinario te hablará de su vida, luego te dará la "m
 
 ### 2.2.3. Análisis de entrevistas.
 
+#### Análisis de entrevistas — Segmento 1: Medianos y Grandes Ganaderos
+
+Para complementar las entrevistas en profundidad del Segmento 1, se aplicó un cuestionario estructurado a 2 ganaderos (propietarios y administradores de estancias de Apurímac y Cusco) con el objetivo de cuantificar su contexto operativo, sus pérdidas económicas actuales y sus preferencias sobre el modelo de negocio y las funcionalidades del software. A continuación, se presenta el análisis porcentual de los resultados y, posteriormente, el análisis cualitativo según los resúmenes de las entrevistas realizadas.
+
+##### Análisis porcentual según los gráficos del cuestionario
+
+**1. ¿Qué herramientas utiliza actualmente para el control del inventario de animales? (2 respuestas)**
+
+![Herramientas utilizadas para el control del inventario](images/analisis-segmento1-herramientas.png)
+
+Como muestra el gráfico, el **50% utiliza hojas de cálculo (Excel/Google Sheets) y el 50% restante cuaderno o registro manual**; ningún ganadero emplea software especializado ganadero ni aplicación móvil. Este patrón confirma que el 100% del segmento digitaliza de forma rudimentaria o no digitaliza nada, sin ningún uso de herramientas especializadas. Además, el registro se divide entre lo semi-digital (Excel) y lo totalmente análogo (cuaderno), lo que genera trazabilidad fragmentada. En consecuencia, ICHU debe incorporar una **migración simple desde Excel y cuadernos hacia la ficha digital por animal**, sin exigir competencias técnicas avanzadas a usuarios acostumbrados a registrar en papel.
+
+**2. Si existiera una plataforma web que centralizara el historial de salud, ubicación y alertas de cada animal, ¿qué tan útil sería para su negocio? (2 respuestas)**
+
+![Utilidad percibida de la plataforma centralizada](images/analisis-segmento1-utilidad-plataforma.png)
+
+El gráfico evidencia una validación total de la propuesta de valor: el **100% de los ganaderos calificó la plataforma centralizada como "Muy útil, mejoraría significativamente mis procesos"**, sin ninguna respuesta neutra o negativa. Este dato porcentual respalda directamente el núcleo del producto ICHU: la centralización del historial de salud, la ubicación y las alertas por animal en un único sistema, frente a la dispersión actual en Excel y cuadernos que los propios entrevistados identifican como su principal debilidad de gestión.
+
+##### Contexto operativo del segmento (respuestas complementarias)
+
+Las respuestas del cuestionario complementan el perfil del segmento con los siguientes datos cuantificados:
+
+- **Escala y manejo:** el 100% maneja entre **51 y 200 cabezas** (coincide con los 100 cabezas de Próspero y las 40 + 20 de engorde de Meikoll); el **50% trabaja bajo pastoreo extensivo y el 50% bajo régimen mixto**, confirmando que el modo offline es obligatorio.
+- **Conectividad:** el **100% califica la conectividad en las zonas de pastoreo como regular (solo en algunas zonas)**, evidencia directa que sostiene la conectividad híbrida LoRaWAN/celular con sincronización retrasada del collar.
+- **Pérdidas económicas:** el **100% reportó pérdidas del 5-10% del valor del hato en el último año** por enfermedades no detectadas a tiempo, y el **100% califica el abigeato como un problema frecuente y costoso**. Ambos datos dimensionan el retorno esperado de la solución.
+- **Modelo de suscripción:** el **100% prefiere el pago anual con tarifa fija**, validando el modelo comercial definido en la estrategia 3 y coincidiendo con lo declarado por Próspero y Meikoll en sus entrevistas.
+- **Notificaciones deseadas:** el **100% desea recibir todas las notificaciones automáticas** (alertas de temperatura anormal, recordatorios de revacunación, alertas de parto y celo, avisos de cuarentena), con énfasis explícito en las alertas de parto y celo como grupo prioritario.
+- **Tablero de control:** las preferencias se dividen entre **inventario actualizado y movimientos (50%)** y **horas de actividad y alertas de celo (50%)**; ambas vías corresponden a los contextos de Gestión del Hato y Monitoreo Biométrico.
+- **Monitoreo individual vs. por lotes:** el segmento valora ambos enfoques (50% menciona monitoreo por lote, 50% monitoreo individual), concluyendo que el monitoreo individual "ayuda a tomar mejores decisiones y corregir en el momento oportuno" — la individualización por animal es la apuesta correcta del producto.
+
+##### Análisis cualitativo según los resúmenes de entrevistas
+
+El cruce de los tres resúmenes del Segmento 1 (Próspero Contreras Flores, Meikoll Morell Bosa Cárdenas y Grober Barrientos Talaverano) revela un patrón de necesidades convergente:
+
+- **Registro fragmentado y sin trazabilidad.** Los tres trabajan con Excel y/o cuadernos (Próspero: Excel + cuaderno; Meikoll: fichas individuales en Excel; Grober: Excel en computadora), coincidiendo con el gráfico de herramientas (50% Excel / 50% cuaderno). Próspero lo resume: los servicios veterinarios son "puntuales" y no existe ficha clínica por animal; Meikoll identifica que el problema raíz es la **falta de hábito de registro** inmediato tras el trabajo de campo, lo que deriva en pérdida de historial clínico.
+
+- **Conectividad intermitente como restricción de diseño.** Próspero reporta señal en solo el 50% de sus potreros, Grober enfrenta conectividad intermitente en la zona de pastoreo, y Meikoll —aunque tiene buena señal con Movistar/Claro— experimentó fallas de señal durante la propia entrevista en Apurímac. El 100% del cuestionario lo confirma ("regular, solo en algunas zonas"). Los tres exigen que la aplicación funcione **offline y sincronice automáticamente al recuperar conexión**.
+
+- **Alertas sanitarias y reproductivas como demanda común.** Próspero pide notificaciones ajustadas al calendario sanitario andino (carbúnculo, desparasitación) y predicción de partos con una semana de anticipación; Meikoll exige notificaciones para campañas sanitarias y alertas de tiempo/peso en engorde; Grober solicita alertas sobre variaciones de constantes fisiológicas y patrones de desplazamiento (el mal de altura en terneros, primera causa de mortalidad en su zona, se manifiesta primero como reducción del movimiento y del tiempo de pastoreo). El cuestionario lo cuantifica: el 100% desea el paquete completo de notificaciones, con prioridad en parto y celo.
+
+- **Abigeato y geolocalización como dolor patrimonial.** Próspero ha sufrido robos de 15-20 ganados y lo califica de "golpe a la ganadería"; Meikoll no pudo recuperar 2 de 3 caballos robados pese a tener microchip por falta de señal rural; ambos ganaderos del cuestionario lo califican como problema "frecuente y costoso". Las respuestas abiertas proponen la solución: GPS en el animal con monitoreo automático de movimiento, reemplazando al microchip que ya falló por falta de señal.
+
+- **Control de costos y rentabilidad como lenguaje gerencial.** Próspero pide presupuesto por campaña sanitaria y reportes mensuales de muertes, enfermos, celos e inseminaciones; Meikoll exige control de costo por kilo y balance trimestral del engorde; Grober solicita control de costos e inventario con filtrado por categorías. Los reportes ejecutivos deben incluir producción de leche por día, consumo de alimento y constantes fisiológicas, según las respuestas abiertas.
+
+- **Suscripción anual y valor estratégico.** Los tres aceptan el modelo de suscripción —Próspero y Meikoll lo declaran expresamente anual— y el 100% del cuestionario ratifica "pago anual con tarifa fija". Grober añade el potencial de certificaciones (mejoramiento genético por PPC y su base de datos) y mejoramiento genético a partir de registros multi-generacionales (días abiertos, índice de fertilidad, producción per cápita anual), que amplían el valor del sistema más allá del monitoreo diario.
+
+En síntesis, las entrevistas del Segmento 1 validan los pilares de la solución: **ficha digital individual centralizada (migración desde Excel/cuaderno), conectividad híbrida con modo offline obligatorio, alertas sanitarias y reproductivas basadas en el calendario ganadero, geolocalización contra el abigeato, control de costos por cabeza y modelo de suscripción anual**.
+
 #### Análisis de entrevistas — Segmento 2: Zootecnistas y Médicos Veterinarios
 
 Para complementar las entrevistas en profundidad del Segmento 2, se aplicó un cuestionario estructurado a 3 profesionales del sector (zootecnistas y médicos veterinarios) con el objetivo de cuantificar sus prácticas diagnósticas, sus umbrales clínicos de referencia y sus preferencias sobre las funcionalidades del software. A continuación, se presenta el análisis porcentual de los resultados y, posteriormente, el análisis cualitativo según los resúmenes de las entrevistas realizadas.
@@ -284,13 +338,15 @@ El cruce de los tres resúmenes del Segmento 2 (Darwin Carbajal Vilca, Eliseo Ra
 - **Reportes ejecutivos comparativos.** Dionisio solicita reportes exportables a Excel o PDF y Eliseo automatización de reportes ejecutivos; ambos coinciden con la necesidad expresada en el cuestionario de graficar enfermedades por establecimiento, mortalidad y problemas reproductivos por mes, lo que sustenta el **módulo de analítica del ICHU Web Application**.
 
 En síntesis, las entrevistas del Segmento 2 validan cuantitativa y cualitativamente los pilares de la solución: **telemetría biométrica continua (rumia, temperatura, actividad, frecuencias cardíaca y respiratoria), motor de alertas clínicas configurables, historia clínica digital centralizada con API abierta, soporte móvil offline y reportes exportables**.
-## 2.3. Needfinding.
-En esta sección se consolidan y sintetizan los hallazgos cualitativos y cuantitativos obtenidos durante la fase de investigación de campo, entrevistas en profundidad y análisis competitivo. El proceso de Needfinding nos permite transformar los datos brutos recolectados de los actores del sector ganadero en artefactos visuales y estructurados de diseño de experiencia de usuario (UX), garantizando que el desarrollo del ecosistema de software ICHU responda de manera directa a las necesidades reales, dolores operativos y metas estratégicas de cada perfil de usuario.
 
+## 2.3. Needfinding.
+
+En esta sección se consolidan y sintetizan los hallazgos cualitativos y cuantitativos obtenidos durante la fase de investigación de campo, entrevistas en profundidad y análisis competitivo. El proceso de Needfinding nos permite transformar los datos brutos recolectados de los actores del sector ganadero en artefactos visuales y estructurados de diseño de experiencia de usuario (UX), garantizando que el desarrollo del ecosistema de software ICHU responda de manera directa a las necesidades reales, dolores operativos y metas estratégicas de cada perfil de usuario.
 
 ### 2.3.1. User Personas.
 
-Introducción y Metodología
+**Introducción y Metodología**
+
 Para la construcción de los arquetipos de usuario (User Personas), el equipo procesó la información recolectada en la fase de entrevistas y análisis del mercado ganadero. Se identificaron dos patrones de comportamiento distintivos que representan fielmente a los dos segmentos objetivo definidos para el ecosistema de software ICHU:
 
 **Segmento 1:** Propietarios y Administradores Ganaderos, enfocados en la rentabilidad, reducción de pérdidas por mortalidad/abigeato y la toma de decisiones estratégicas basadas en indicadores clave expresados en la ICHU Web Application.
@@ -300,9 +356,12 @@ Para la construcción de los arquetipos de usuario (User Personas), el equipo pr
 
 Cada ficha de User Persona ha sido especificada considerando todos los atributos recomendados para arquetipos UX (datos demográficos, biografía, personalidad, objetivos, frustraciones, tecnología de preferencia, marcas/influencias y necesidades específicas de software), habiendo sido modeladas estructuralmente en la herramienta UXPressia.
 
-
 ### 2.3.2. User Task Matrix.
+
 ### 2.3.3. User Journey Mapping.
+
 ### 2.3.4. Empathy Mapping.
+
 ## 2.4. Big Picture EventStorming.
+
 ## 2.5. Ubiquitous Language.
