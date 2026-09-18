@@ -365,6 +365,10 @@ Persona arquetípica del Segmento 1, construida a partir de los patrones identif
 
 ![User Persona del Segmento 1: Cesar Flores](images/persona-segmento1-cesar-flores.png)
 
+**Empathy Map del Segmento 1**
+
+![Empathy Map del Segmento 1: Ganadero Administrador](images/empathy-map-segmento1-ganadero.png)
+
 
 **Segmento 2:** Zootecnistas y Médicos Veterinarios, orientados al monitoreo biométrico continuo, diagnóstico clínico temprano y la revisión de historiales de salud consolidados a través de vistas especializadas y la integración con la API RESTful de desarrollo interno.  
 
@@ -373,6 +377,10 @@ Persona arquetípica del Segmento 1, construida a partir de los patrones identif
 Persona arquetípica del Segmento 2, construida a partir de los patrones identificados en las entrevistas a zootecnistas y médicos veterinarios.
 
 ![User Persona del Segmento 2: Leonardo Rosales](images/persona-segmento2-leonardo-rosales.png)
+
+**Empathy Map del Segmento 2**
+
+![Empathy Map del Segmento 2: Profesional de Salud Animal](images/empathy-map-segmento2-veterinario.png)
 
 Cada ficha de User Persona ha sido especificada considerando todos los atributos recomendados para arquetipos UX (datos demográficos, biografía, personalidad, objetivos, frustraciones, tecnología de preferencia, marcas/influencias y necesidades específicas de software), habiendo sido modeladas estructuralmente en la herramienta UXPressia.
 
@@ -407,7 +415,7 @@ El Lenguaje Ubicuo (Ubiquitous Language) es el vocabulario compartido y riguroso
 
 ### Identity & Access Management
 
-| Término | Español equivalente | Descripción |
+| Término | Español | Descripción |
 |---|---|---|
 | **User** | Usuario | Persona registrada en la plataforma que opera el sistema sobre su unidad productiva o sobre los hatos que atiende. |
 | **Role** | Rol | Perfil de permisos asignado a un usuario (propietario ganadero, administrador, médico veterinario, zootecnista) que determina qué puede hacer dentro de la plataforma. |
@@ -415,7 +423,7 @@ El Lenguaje Ubicuo (Ubiquitous Language) es el vocabulario compartido y riguroso
 
 ### Profiles
 
-| Término | Español equivalente | Descripción |
+| Término | Español | Descripción |
 |---|---|---|
 | **Profile** | Perfil | Datos demográficos y profesionales de cada actor: nombre, región, especialidad, años de experiencia, distrito de la estancia. |
 | **Cattle Rancher** | Ganadero propietario | Usuario del Segmento 1 que posee la unidad productiva, compra el plan y decide sobre la operación del hato. |
@@ -425,7 +433,7 @@ El Lenguaje Ubicuo (Ubiquitous Language) es el vocabulario compartido y riguroso
 
 ### Cattle Information
 
-| Término | Español equivalente | Descripción |
+| Término | Español | Descripción |
 |---|---|---|
 | **Cattle** | Ganado vacuno | Entidad central del dominio; el conjunto de bovinos gestionados por una unidad productiva. |
 | **Individual Record** | Ficha individual | Registro único por animal con su identificación, raza, etapa, sexo y datos reproductivos. |
@@ -440,7 +448,7 @@ El Lenguaje Ubicuo (Ubiquitous Language) es el vocabulario compartido y riguroso
 
 ### IoT Assets
 
-| Término | Español equivalente | Descripción |
+| Término | Español | Descripción |
 |---|---|---|
 | **Smart Collar** | Collar inteligente | Dispositivo IoT físico colocado en el cuello del animal que captura temperatura, actividad, rumia y ubicación. |
 | **Device Band** | Banda | Correa/accesorio del collar que se asigna a un animal específico y puede reemplazarse sin cambiar el dispositivo electrónico. |
@@ -451,7 +459,7 @@ El Lenguaje Ubicuo (Ubiquitous Language) es el vocabulario compartido y riguroso
 
 ### Operations & Monitoring
 
-| Término | Español equivalente | Descripción |
+| Término | Español | Descripción |
 |---|---|---|
 | **Telemetry** | Telemetría | Datos capturados por el collar: temperatura corporal, ubicación, actividad física, ciclos de rumia y alimentación, frecuencias cardíaca y respiratoria. |
 | **Rumination** | Rumia | Proceso de masticación regurgitada del bovino; su caída sostenida es la señal temprana más crítica de trastorno metabólico o intoxicación. |
@@ -465,7 +473,7 @@ El Lenguaje Ubicuo (Ubiquitous Language) es el vocabulario compartido y riguroso
 
 ### Planning
 
-| Término | Español equivalente | Descripción |
+| Término | Español | Descripción |
 |---|---|---|
 | **Activity Planning** | Planificación de actividad | Programación de las faenas ganaderas sobre el calendario: vacunación, desparasitación, vitaminación, revisiones. |
 | **Health Campaign** | Campaña sanitaria | Acción colectiva programada sobre el hato o parte de él, según la época del calendario ganadero (ej. campaña contra la piojera). |
@@ -476,7 +484,7 @@ El Lenguaje Ubicuo (Ubiquitous Language) es el vocabulario compartido y riguroso
 
 ### Dashboard & Analytics
 
-| Término | Español equivalente | Descripción |
+| Término | Español | Descripción |
 |---|---|---|
 | **Control Dashboard** | Tablero de control | Vista principal de la plataforma web con los indicadores clave del hato. |
 | **Key Performance Indicator (KPI)** | Indicador clave | Métrica de seguimiento: mortalidad mensual, animales enfermos, celos detectados, inseminaciones, producción de leche por día, costos por cabeza. |
@@ -487,7 +495,7 @@ El Lenguaje Ubicuo (Ubiquitous Language) es el vocabulario compartido y riguroso
 
 ### Subscription Plans
 
-| Término | Español equivalente | Descripción |
+| Término | Español | Descripción |
 |---|---|---|
 | **Plan** | Plan | Modalidad de suscripción contratada por el cliente, con límites de animales y dispositivos. |
 | **Annual Subscription** | Suscripción anual | Modelo de pago anual con tarifa fija preferido por los entrevistados del Segmento 1. |
