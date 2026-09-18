@@ -359,8 +359,20 @@ Para la construcción de los arquetipos de usuario (User Personas), el equipo pr
 
 **Segmento 1:** Propietarios y Administradores Ganaderos, enfocados en la rentabilidad, reducción de pérdidas por mortalidad/abigeato y la toma de decisiones estratégicas basadas en indicadores clave expresados en la ICHU Web Application.
 
+**User Persona 1: Cesar Flores**
+
+Persona arquetípica del Segmento 1, construida a partir de los patrones identificados en las entrevistas a ganaderos propietarios y administradores.
+
+![User Persona del Segmento 1: Cesar Flores](images/persona-segmento1-cesar-flores.png)
+
 
 **Segmento 2:** Zootecnistas y Médicos Veterinarios, orientados al monitoreo biométrico continuo, diagnóstico clínico temprano y la revisión de historiales de salud consolidados a través de vistas especializadas y la integración con la API RESTful de desarrollo interno.  
+
+**User Persona 2: Leonardo Rosales**
+
+Persona arquetípica del Segmento 2, construida a partir de los patrones identificados en las entrevistas a zootecnistas y médicos veterinarios.
+
+![User Persona del Segmento 2: Leonardo Rosales](images/persona-segmento2-leonardo-rosales.png)
 
 Cada ficha de User Persona ha sido especificada considerando todos los atributos recomendados para arquetipos UX (datos demográficos, biografía, personalidad, objetivos, frustraciones, tecnología de preferencia, marcas/influencias y necesidades específicas de software), habiendo sido modeladas estructuralmente en la herramienta UXPressia.
 
