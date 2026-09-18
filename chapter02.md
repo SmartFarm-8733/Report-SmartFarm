@@ -57,7 +57,7 @@ A continuación, se presenta la relación de preguntas principales y complementa
 
 Este segmento representa al comprador principal (Buyer Persona) y tomador de decisiones financieras de la estancia. El objetivo es identificar la viabilidad de la plataforma web administrativa, el modelo de suscripción SaaS y los indicadores clave (KPIs) de productividad que desean ver en pantalla.
 
-# BLOQUE 1: Datos Demográficos y de Perfil (Información Complementaria)
+#### BLOQUE 1: Datos Demográficos y de Perfil (Información Complementaria)
 
 **Objetivo:** Construir el arquetipo recolectando características demográficas, ocupación, biografía y canales digitales de interacción.
 
@@ -67,7 +67,7 @@ Este segmento representa al comprador principal (Buyer Persona) y tomador de dec
 
 ---
 
-# BLOQUE 2: Comportamiento, Infraestructura y Frustraciones
+#### BLOQUE 2: Comportamiento, Infraestructura y Frustraciones
 
 **Objetivo:** Entender el contexto operativo actual del rancho, sus cuellos de botella tecnológicos y sus principales puntos de dolor.
 
@@ -80,7 +80,7 @@ Este segmento representa al comprador principal (Buyer Persona) y tomador de dec
 
 ---
 
-# BLOQUE 3: Validación de la Propuesta de Software (ICHU)
+#### BLOQUE 3: Validación de la Propuesta de Software (ICHU)
 
 **Objetivo:** Validar el modelo de negocio, el hardware y los indicadores clave (KPIs) del proyecto.
 
@@ -90,23 +90,23 @@ Este segmento representa al comprador principal (Buyer Persona) y tomador de dec
 
 ---
 
-# BLOQUE 4: Captura de Funcionalidades
+#### BLOQUE 4: Captura de Funcionalidades
 
 **Objetivo:** Obtener los requerimientos técnicos y módulos específicos que deben programarse en el sistema.
 
-## 1. Funcionalidades de Sanidad y Trazabilidad (El Historial del Animal)
+##### 1. Funcionalidades de Sanidad y Trazabilidad (El Historial del Animal)
 
 1. En su trabajo diario controlando la salud del ganado, ¿qué datos médicos necesita registrar sí o sí en el sistema? (Ej. tipo de vacuna, fecha, dosis, nombre del veterinario).
 2. Si el software tuviera un perfil individual por cada vaca, ¿qué información específica le gustaría encontrar al abrir ese perfil?
 3. ¿Le gustaría que el sistema le envíe notificaciones automáticas? De ser así, ¿de qué tipo? (Ej. recordatorios de revacunación, alertas de parto, periodos de cuarentena).
 
-## 2. Funcionalidades de Inventario y Movimientos (Control de Stock)
+##### 2. Funcionalidades de Inventario y Movimientos (Control de Stock)
 
 1. Para llevar el control de cuántas cabezas de ganado tiene, ¿qué funciones específicas le pediría a la plataforma? ¿Le sirve poder agruparlos por lotes, por edad, por raza o por potrero?
 2. Cuando ocurre un nacimiento o una muerte en el campo, ¿qué campos obligatorios le gustaría que el capataz llene en la aplicación para que usted tenga la información completa?
 3. ¿Necesita que el software le permita registrar el movimiento de animales de un potrero a otro? ¿Qué datos le gustaría ver en esa función? (Ej. días de descanso del pasto, carga animal).
 
-## 3. Funcionalidades Financieras y de Insumos (El Negocio)
+##### 3. Funcionalidades Financieras y de Insumos (El Negocio)
 
 **Objetivo:** Capturar las herramientas de administración económica que espera encontrar.
 
@@ -114,50 +114,48 @@ Este segmento representa al comprador principal (Buyer Persona) y tomador de dec
 2. ¿Le interesaría que el sistema descuente automáticamente el stock de su inventario cada vez que se aplica una medicina a un animal?
 3. Como administrador, ¿qué reportes exactos necesita exportar a fin de mes? (Ej. un reporte en Excel de mortalidad mensual, gráficos de ganancia de peso, costos operativos por cabeza).
 
-## 4. Usabilidad en el Campo (La Interfaz de Trabajo)
+##### 4. Usabilidad en el Campo (La Interfaz de Trabajo)
 
 **Objetivo:** Capturar cómo debe ser la herramienta física para que no entorpezca su trabajo en el corral.
 
 1. Cuando usted o su equipo están en la manga (corral) trabajando directamente con el animal, ¿qué botones o funciones necesitan que estén más a la mano en la pantalla del celular para no perder tiempo?
 2. Sabiendo que muchas veces no hay internet en el potrero, ¿qué acciones específicas necesita poder guardar en la aplicación sin conexión (modo offline) para que se actualicen cuando regrese a la casa?
-   
+
 **Segmento 2:** Médicos Veterinarios y Consultores de Salud Animal
 
 Este segmento proporciona el sustento técnico-científico del dominio de salud. El objetivo es validar qué variables cuantitativas de telemetría biométrica (temperatura, acelerometría) requiere el veterinario para predecir anomalías de salud y cómo la API RESTful de ICHU debe estructurar los historiales clínicos para consumo de sistemas externos.
 
-# GUÍA DE ENTREVISTA: Médicos Veterinarios y Consultores
-
-## BLOQUE 1: Sobre Él/Ella y su Ecosistema de Trabajo (Rompehielos y Perfil)
+#### BLOQUE 1: Sobre Él/Ella y su Ecosistema de Trabajo (Rompehielos y Perfil)
 
 **Objetivo:** Entender quién es el usuario, cómo se mueve en su día a día y qué nivel de adopción tecnológica tiene.
 
-- "Para empezar, me encantaría conocer un poco sobre usted y su trayectoria. **¿Cómo decidió especializarse en esta área y cuántos años lleva ejerciendo en la asesoría ganadera?**"
-- "En una semana típica de trabajo, **¿cómo distribuye su tiempo entre el trabajo de escritorio, el laboratorio y las visitas físicas a los establos o estancias?**"
-- "Cuando está en el corral trabajando directamente con los animales, **¿qué dispositivo tecnológico utiliza más, y cuál prefiere usar cuando llega a su oficina para analizar datos o redactar informes médicos?**"
-- "**¿En qué fuentes, canales o comunidades (foros, asociaciones, WhatsApp) se apoya** cuando necesita discutir un caso clínico complejo o investigar sobre nuevas herramientas para su profesión?"
+1. Para empezar, me encantaría conocer un poco sobre usted y su trayectoria: **¿cómo decidió especializarse en esta área y cuántos años lleva ejerciendo en la asesoría ganadera?**
+2. En una semana típica de trabajo, **¿cómo distribuye su tiempo entre el trabajo de escritorio, el laboratorio y las visitas físicas a los establos o estancias?**
+3. Cuando está en el corral trabajando directamente con los animales, **¿qué dispositivo tecnológico utiliza más**, y cuál prefiere usar cuando llega a su oficina para analizar datos o redactar informes médicos?
+4. **¿En qué fuentes, canales o comunidades (foros, asociaciones, WhatsApp) se apoya** cuando necesita discutir un caso clínico complejo o investigar sobre nuevas herramientas para su profesión?
 
 ---
 
-## BLOQUE 2: Casos Clínicos y Captura de Parámetros Biométricos (El Algoritmo)
+#### BLOQUE 2: Casos Clínicos y Captura de Parámetros Biométricos (El Algoritmo)
 
-**Objetivo:** Que el veterinario te dicte los números, variables y reglas médicas que el sistema y el hardware deben medir y procesar.
+**Objetivo:** Que el veterinario indique los números, variables y reglas médicas que el sistema y el hardware deben medir y procesar.
 
-- "Pensando en las enfermedades infecciosas más críticas de esta zona (como Anaplasmosis, Piroplasmosis o el Complejo Respiratorio), **¿a partir de qué grado exacto de temperatura corporal, o tras cuántas horas de alteración continua, usted determina que un bovino entra en una fase de riesgo inminente?**"
-- "Descríbame un caso clínico reciente donde un trastorno digestivo o metabólico haya pasado desapercibido por el personal. **Si usted hubiera tenido un registro exacto de la caída en las horas de rumia o inactividad del animal, ¿cómo habría cambiado su intervención?**"
-- "Desde el punto de vista reproductivo, para detectar un celo silencioso con precisión, **¿qué combinación exacta de datos biométricos (por ejemplo, cruzar picos de actividad física con variaciones de temperatura) le daría la certeza clínica para indicar una inseminación?**"
-- "Después de aplicar un protocolo de antibióticos fuerte para un cuadro grave, **¿qué parámetros vitales necesita monitorear obligatoriamente en las siguientes 12, 24 o 48 horas para confirmar que el fármaco está funcionando?**"
+1. Pensando en las enfermedades infecciosas más críticas de esta zona (como Anaplasmosis, Piroplasmosis o el Complejo Respiratorio), **¿a partir de qué grado exacto de temperatura corporal, o tras cuántas horas de alteración continua, usted determina que un bovino entra en una fase de riesgo inminente?**
+2. Descríbame un caso clínico reciente donde un trastorno digestivo o metabólico haya pasado desapercibido por el personal. **Si usted hubiera tenido un registro exacto de la caída en las horas de rumia o inactividad del animal, ¿cómo habría cambiado su intervención?**
+3. Desde el punto de vista reproductivo, para detectar un celo silencioso con precisión, **¿qué combinación exacta de datos biométricos (por ejemplo, cruzar picos de actividad física con variaciones de temperatura) le daría la certeza clínica para indicar una inseminación?**
+4. Después de aplicar un protocolo de antibióticos fuerte para un cuadro grave, **¿qué parámetros vitales necesita monitorear obligatoriamente en las siguientes 12, 24 o 48 horas para confirmar que el fármaco está funcionando?**
 
 ---
 
-## BLOQUE 3: Captura de Funcionalidades para el Software (La Interfaz)
+#### BLOQUE 3: Captura de Funcionalidades para el Software (La Interfaz)
 
-**Objetivo:** Descubrir los módulos, botones, reportes y alertas que tu equipo de desarrollo debe programar en la aplicación web y móvil.
+**Objetivo:** Descubrir los módulos, botones, reportes y alertas que el equipo de desarrollo debe programar en la aplicación web y móvil.
 
-- "Si tuviera nuestra aplicación móvil abierta mientras evalúa a un paciente en la manga, **¿qué datos médicos específicos necesita poder registrar rápidamente en el historial digital de ese animal con un par de clics?** (Ej. diagnóstico, dosis, fármaco, tiempo de retiro de leche/carne)."
-- "Imagínese que abre la plataforma web en su computadora un lunes por la mañana. Para hacer un análisis epidemiológico rápido de todo un lote, **¿qué gráficos, filtros de búsqueda o cruces de variables necesita ver obligatoriamente en la pantalla principal?**"
-- "Pensando en la prevención de mortalidad, **¿qué tipo de alertas automáticas le gustaría que el sistema le envíe directamente a su celular como una 'Alerta Roja'?** (Ej. notificaciones de partos distócicos, caídas abruptas de temperatura)."
-- "A la hora de entregar resultados o justificar sus tratamientos ante el dueño de la estancia, **¿qué tipo de reportes automatizados le gustaría que el software genere para que usted pueda exportarlos o imprimirlos directamente?**"
-- "Para evitar que usted haga un doble trabajo de registro (interoperabilidad), **¿con qué otros sistemas de laboratorios, software de nutrición o entidades estatales de sanidad necesitaría que nuestra plataforma se conecte en el futuro?"
+1. Si tuviera nuestra aplicación móvil abierta mientras evalúa a un paciente en la manga, **¿qué datos médicos específicos necesita poder registrar rápidamente en el historial digital de ese animal con un par de clics?** (Ej. diagnóstico, dosis, fármaco, tiempo de retiro de leche/carne).
+2. Imagínese que abre la plataforma web en su computadora un lunes por la mañana. Para hacer un análisis epidemiológico rápido de todo un lote, **¿qué gráficos, filtros de búsqueda o cruces de variables necesita ver obligatoriamente en la pantalla principal?**
+3. Pensando en la prevención de mortalidad, **¿qué tipo de alertas automáticas le gustaría que el sistema le envíe directamente a su celular como una "Alerta Roja"?** (Ej. notificaciones de partos distócicos, caídas abruptas de temperatura).
+4. A la hora de entregar resultados o justificar sus tratamientos ante el dueño de la estancia, **¿qué tipo de reportes automatizados le gustaría que el software genere para que usted pueda exportarlos o imprimirlos directamente?**
+5. Para evitar que usted haga un doble trabajo de registro (interoperabilidad), **¿con qué otros sistemas de laboratorios, software de nutrición o entidades estatales de sanidad necesitaría que nuestra plataforma se conecte en el futuro?**
 
 ---
 
