@@ -257,11 +257,15 @@ Para complementar las entrevistas en profundidad del Segmento 1, se aplicó un c
 
 ![Herramientas utilizadas para el control del inventario](images/analisis-segmento1-herramientas.png)
 
+*Figura 1. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
+
 Como muestra el gráfico, el **50% utiliza hojas de cálculo (Excel/Google Sheets) y el 50% restante cuaderno o registro manual**; ningún ganadero emplea software especializado ganadero ni aplicación móvil. Este patrón confirma que el 100% del segmento digitaliza de forma rudimentaria o no digitaliza nada, sin ningún uso de herramientas especializadas. Además, el registro se divide entre lo semi-digital (Excel) y lo totalmente análogo (cuaderno), lo que genera trazabilidad fragmentada. En consecuencia, ICHU debe incorporar una **migración simple desde Excel y cuadernos hacia la ficha digital por animal**, sin exigir competencias técnicas avanzadas a usuarios acostumbrados a registrar en papel.
 
 **2. Si existiera una plataforma web que centralizara el historial de salud, ubicación y alertas de cada animal, ¿qué tan útil sería para su negocio? (2 respuestas)**
 
 ![Utilidad percibida de la plataforma centralizada](images/analisis-segmento1-utilidad-plataforma.png)
+
+*Figura 2. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
 El gráfico evidencia una validación total de la propuesta de valor: el **100% de los ganaderos calificó la plataforma centralizada como "Muy útil, mejoraría significativamente mis procesos"**, sin ninguna respuesta neutra o negativa. Este dato porcentual respalda directamente el núcleo del producto ICHU: la centralización del historial de salud, la ubicación y las alertas por animal en un único sistema, frente a la dispersión actual en Excel y cuadernos que los propios entrevistados identifican como su principal debilidad de gestión.
 
@@ -305,17 +309,23 @@ Para complementar las entrevistas en profundidad del Segmento 2, se aplicó un c
 
 ![Dispositivos utilizados para registrar historiales](images/analisis-segmento2-dispositivos.png)
 
+*Figura 3. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
+
 Como muestra el gráfico, los dispositivos de registro se distribuyen de forma exactamente equitativa: **33.3% smartphone, 33.3% laptop y 33.3% registros en papel únicamente**. Ningún profesional emplea tablet ni computadora de escritorio como dispositivo principal. Este patrón porcentual evidencia que un tercio del segmento aún no digitaliza su información clínica, mientras que los dos tercios restantes dependen de dispositivos móviles o portátiles. En consecuencia, la plataforma ICHU debe responder con una **aplicación móvil de primera clase** (compatible con smartphones y laptops) que además ofrezca un proceso de migración simple para trasladar los registros en papel hacia el sistema digital centralizado.
 
 **2. ¿Qué tan confiables son los registros manuales de vacunación, inseminación y medicamentos en los establos que asesora? (3 respuestas)**
 
 ![Confiabilidad de los registros manuales](images/analisis-segmento2-confiabilidad-registros.png)
 
+*Figura 4. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
+
 Según el gráfico, el **66.7% de los entrevistados califica los registros manuales como moderadamente confiables (50-70% de precisión)** y el **33.3% restante como confiables (70-90% de precisión)**. Es destacable que **ningún profesional los considera muy confiables ni confiables al 100%**, es decir, el 100% reconoce un margen de error de al menos un 10% en la información clínica que hoy sostiene sus decisiones. Este dato porcentual valida directamente la propuesta de valor de ICHU: historias clínicas digitales con trazabilidad completa (qué se aplicó, cuándo y quién), reduciendo riesgos ya observados por los propios entrevistados, como intoxicaciones por dosificación repetida o fallos de preñez por vacunación omitida.
 
 **3. ¿Qué parámetro cuantitativo continuo desearía conocer del animal pero que actualmente le es imposible medir de forma manual? (3 respuestas)**
 
 ![Parámetros cuantitativos deseados](images/analisis-segmento2-parametros.png)
+
+*Figura 5. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
 El gráfico evidencia un resultado unánime: el **100% de los entrevistados seleccionó "Todos los anteriores"**, es decir, desea medir de forma continua los **ciclos de rumia y alimentación, la frecuencia cardíaca y respiratoria, los niveles de actividad física diaria y la temperatura corporal continua 24/7**. La unanimidad absoluta del segmento convierte a estos cuatro parámetros en el **núcleo obligatorio de telemetría biométrica** que el collar inteligente de ICHU debe capturar, ya que constituyen variables que la observación manual no logra registrar de manera precisa y sostenida.
 
