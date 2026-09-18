@@ -95,7 +95,6 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
   </tbody>
 </table>
 
-**Pendiente:** verificar el código de Flor de María Contreras Leon. En este capítulo figura como U202323243 y en el README como U202324129.
 
 ## 1.2. Solution Profile
 ### 1.2.1. Antecedentes y problemática
@@ -118,6 +117,7 @@ Para estructurar las dimensiones del problema del sector objetivo, se aplica la 
 | **How Much: ¿cuánto impacto tiene?** | En el cuestionario del Segmento 1, 2 de 2 participantes reportaron pérdidas de entre 5% y 10% del hato y calificaron el abigeato como frecuente y costoso. Próspero reportó la muerte de aproximadamente cinco vaquillas por partos prematuros y antecedentes de robos de 15 a 20 animales. | Priorizar alertas de salud y reproducción, geolocalización, reportes de costos y métricas de mortalidad. |
 
 **Puntos más importantes a resolver por la solución propuesta**
+
 La propuesta de software y hardware IoT tiene como meta prioritaria resolver los siguientes desafíos críticos:
 
 **Detección temprana de anomalías de salud:** Monitorear parámetros biométricos y de actividad física para identificar signos precoces de enfermedad o fatiga extrema antes de que ocurra la muerte del animal.  
@@ -129,24 +129,28 @@ La propuesta de software y hardware IoT tiene como meta prioritaria resolver los
 **Centralización de datos individuales**: Reemplazar el registro manual por un historial digital individual de salud, genealogía, vacunación y movimientos de cada animal, accesible de forma centralizada y remota.  
 
 **Objetivos del Proyecto**
+
 **Objetivo General**
+
 Desarrollar una solución tecnológica distribuida e innovadora basada en Internet de las Cosas (IoT) que permita centralizar, procesar y visualizar información biométrica y de comportamiento animal en tiempo real o mediante sincronización posterior cuando no exista cobertura, facilitando la toma de decisiones preventivas y mejorando la eficiencia operativa en las unidades ganaderas.
 
 **Objetivos Específicos**
-**Diseñar y simular el dispositivo físico de borde:** Desarrollar un prototipo funcional de collar inteligente mediante herramientas de modelado de circuitos, incorporando sensores de movimiento (acelerómetro), temperatura y posicionamiento GPS con un consumo de energía óptimo.
-**Implementar una API REST interna robusta:** Construir el servicio web de backend para la persistencia, procesamiento y analítica cuantitativa de los datos biométricos enviados por los dispositivos de borde.
-**Desarrollar aplicaciones cliente adaptables:** Implementar una aplicación móvil nativa o multiplataforma dirigida al personal de campo para alertas y monitoreo rápido en movimiento, junto con una aplicación web completa para que los administradores analicen historiales detallados y métricas estadísticas.
-**Desplegar una Landing Page informativa:** Crear un sitio web estático para la promoción comercial del modelo de negocio, integrando secciones de código de ética, términos y condiciones legales y enlaces a las plataformas operativas.
-**Integrar servicios externos de terceros:** Conectar la solución con un servicio meteorológico externo o una pasarela de mensajería (SMS/Email) para enriquecer la toma de decisiones y el envío de notificaciones automáticas ante emergencias.  
+
+- **Diseñar y simular el dispositivo físico de borde:** Desarrollar un prototipo funcional de collar inteligente mediante herramientas de modelado de circuitos, incorporando sensores de movimiento (acelerómetro), temperatura y posicionamiento GPS con un consumo de energía óptimo.
+- **Implementar una API REST interna robusta:** Construir el servicio web de backend para la persistencia, procesamiento y analítica cuantitativa de los datos biométricos enviados por los dispositivos de borde.
+- **Desarrollar aplicaciones cliente adaptables:** Implementar una aplicación móvil nativa o multiplataforma dirigida al personal de campo para alertas y monitoreo rápido en movimiento, junto con una aplicación web completa para que los administradores analicen historiales detallados y métricas estadísticas.
+- **Desplegar una Landing Page informativa:** Crear un sitio web estático para la promoción comercial del modelo de negocio, integrando secciones de código de ética, términos y condiciones legales y enlaces a las plataformas operativas.
+- **Integrar servicios externos de terceros:** Conectar la solución con un servicio meteorológico externo o una pasarela de mensajería (SMS/Email) para enriquecer la toma de decisiones y el envío de notificaciones automáticas ante emergencias.
 
 **Restricciones del Proyecto**
+
 Para asegurar la viabilidad técnica, el cumplimiento normativo y el rigor académico del curso, el proyecto se encuentra sujeto a las siguientes restricciones:
 
-**Restricciones de Stack Tecnológico:** El desarrollo de software debe apegarse estrictamente a las tecnologías autorizadas. Esto incluye el uso de HTML5, CSS3 y JavaScript para la Landing Page; Angular Framework (con Angular Material y TypeScript) o Vue para la Web Application; Spring Boot, ASP.NET Core o NestJS para los servicios web de backend; Flask con Peewee ORM y SQLite para los servicios Edge; y Kotlin (Android), Swift (iOS) o Flutter para las Mobile Applications.
-**Restricciones de Idioma y Localización:** Por exigencias del estándar del curso, el idioma por defecto para la interfaz de usuario, los mensajes de error y toda la interfaz de documentación técnica (como OpenAPI/Swagger) de todos los productos de la solución es estrictamente el inglés (en_US), requiriendo soporte de internacionalización (i18n) y accesibilidad (a11y) con atributos ARIA para español latinoamericano (es_419).
-**Restricciones de Diseño de Dispositivos IoT:** El diseño del circuito y simulación del collar inteligente debe ser elaborado obligatoriamente mediante herramientas autorizadas como Cirkit Designer o Wokwi, modelando de manera realista la comunicación con el Edge API.
-**Restricciones Normativas y de Responsabilidad Ética:** La solución debe incorporar en los pies de página (footer) de la Landing Page y de las aplicaciones un acceso explícito a los Términos y Condiciones del Servicio, estructurados en estricta conformidad con los códigos de ética para ingeniería de software establecidos por la ACM/IEEE y el Colegio de Ingenieros del Perú (CIP).
-**Restricciones de Gestión y Control de Código:** El control de versiones debe ser administrado en un repositorio público dentro de una organización en GitHub, empleando de manera rigurosa el flujo de trabajo de GitFlow, el estándar de mensajes conventional commits y versionamiento semántico.
+- **Restricciones de Stack Tecnológico:** El desarrollo de software debe apegarse estrictamente a las tecnologías autorizadas. Esto incluye el uso de HTML5, CSS3 y JavaScript para la Landing Page; Angular Framework (con Angular Material y TypeScript) o Vue para la Web Application; Spring Boot, ASP.NET Core o NestJS para los servicios web de backend; Flask con Peewee ORM y SQLite para los servicios Edge; y Kotlin (Android), Swift (iOS) o Flutter para las Mobile Applications.
+- **Restricciones de Idioma y Localización:** Por exigencias del estándar del curso, el idioma por defecto para la interfaz de usuario, los mensajes de error y toda la interfaz de documentación técnica (como OpenAPI/Swagger) de todos los productos de la solución es estrictamente el inglés (en_US), requiriendo soporte de internacionalización (i18n) y accesibilidad (a11y) con atributos ARIA para español latinoamericano (es_419).
+- **Restricciones de Diseño de Dispositivos IoT:** El diseño del circuito y simulación del collar inteligente debe ser elaborado obligatoriamente mediante herramientas autorizadas como Cirkit Designer o Wokwi, modelando de manera realista la comunicación con el Edge API.
+- **Restricciones Normativas y de Responsabilidad Ética:** La solución debe incorporar en los pies de página (footer) de la Landing Page y de las aplicaciones un acceso explícito a los Términos y Condiciones del Servicio, estructurados en estricta conformidad con los códigos de ética para ingeniería de software establecidos por la ACM/IEEE y el Colegio de Ingenieros del Perú (CIP).
+- **Restricciones de Gestión y Control de Código:** El control de versiones debe ser administrado en un repositorio público dentro de una organización en GitHub, empleando de manera rigurosa el flujo de trabajo de GitFlow, el estándar de mensajes conventional commits y versionamiento semántico.
 ### 1.2.2. Lean UX Process.
 En esta sección se detalla el desarrollo y la aplicación del proceso Lean UX para nuestra solución digital orientada al sector ganadero. Este proceso permite alinear la visión del negocio con las necesidades reales de los usuarios, partiendo de un planteamiento del problema, seguido de supuestos verificables y, finalmente, hipótesis que serán validadas durante el proyecto.
 #### 1.2.2.1. Lean UX Problem Statements.
@@ -183,30 +187,30 @@ Se redacta una declaración de hipótesis por cada Feature Assumption definido e
 
 **Hypothesis 1. Biometric and GPS Tracking**
 
-**Creemos que lograremos** una tasa de renovación anual de suscripciones superior al 92%
-**si** los administradores ganaderos
-**alcanzan** la localización individual de cada animal y la detección temprana de indicios de enfermedad
+**Creemos que lograremos** una tasa de renovación anual de suscripciones superior al 92%  
+**si** los administradores ganaderos  
+**alcanzan** la localización individual de cada animal y la detección temprana de indicios de enfermedad  
 **con** un collar inteligente de bajo consumo que registra temperatura corporal, índice de actividad y coordenadas de posición.
 
 **Hypothesis 2. Real-Time Alerts**
 
-**Creemos que lograremos** una reducción del 15% en la mortalidad del hato de las unidades productivas suscritas
-**si** los ganaderos propietarios y administradores
-**alcanzan** la capacidad de aislar y atender a un animal enfermo en menos de una hora desde la desviación de sus constantes
+**Creemos que lograremos** una reducción del 15% en la mortalidad del hato de las unidades productivas suscritas  
+**si** los ganaderos propietarios y administradores  
+**alcanzan** la capacidad de aislar y atender a un animal enfermo en menos de una hora desde la desviación de sus constantes  
 **con** un motor de alertas automáticas que notifica por aplicación móvil y por mensaje de texto cuando los indicadores biométricos superan los umbrales definidos.
 
 **Hypothesis 3. Analytics Dashboard**
 
-**Creemos que lograremos** 150 unidades productivas con suscripción activa durante el primer año, impulsadas por la recomendación profesional
-**si** los zootecnistas y médicos veterinarios
-**alcanzan** un diagnóstico sustentado en historiales biométricos, tendencias de temperatura y distribución de casos en el hato
+**Creemos que lograremos** 150 unidades productivas con suscripción activa durante el primer año, impulsadas por la recomendación profesional  
+**si** los zootecnistas y médicos veterinarios  
+**alcanzan** un diagnóstico sustentado en historiales biométricos, tendencias de temperatura y distribución de casos en el hato  
 **con** un panel de análisis integrado al RESTful API de desarrollo interno.
 
 **Hypothesis 4. Offline Operation**
 
-**Creemos que lograremos** que el 60% de las unidades productivas suscritas registre actividad en la aplicación al menos cinco días por semana
-**si** el personal de campo de las unidades ganaderas
-**alcanza** la continuidad de sus faenas en zonas sin cobertura celular, consultando fichas y registrando eventos en el momento en que ocurren
+**Creemos que lograremos** que el 60% de las unidades productivas suscritas registre actividad en la aplicación al menos cinco días por semana  
+**si** el personal de campo de las unidades ganaderas  
+**alcanza** la continuidad de sus faenas en zonas sin cobertura celular, consultando fichas y registrando eventos en el momento en que ocurren  
 **con** un modo sin conexión que almacena los registros de forma local y los sincroniza al recuperar la señal.
 
 #### 1.2.2.4. Lean UX Canvas.
@@ -355,21 +359,24 @@ A continuación, se describen los dos segmentos objetivo identificados para nues
 Dentro de este segmento conviven dos roles operativos. El administrador ganadero, propietario o gestor de la unidad productiva, es quien decide la compra y responde por los resultados económicos del hato. El operario de campo es el personal que ejecuta las faenas en el potrero y registra lo que observa durante la jornada; no decide la compra, pero su adopción determina que la información llegue al sistema. Este segmento representa a los tomadores de decisiones financieras y estratégicas de las unidades de producción ganadera. Son los responsables de adquirir la solución digital y los collares inteligentes IoT, motivados por la optimización de costos, el aumento de la productividad de leche y carne, y la mitigación de pérdidas críticas causadas por muertes no detectadas, enfermedades y abigeato.
 
 **A. Perfil Demográfico y Geográfico**
-Edad: Entre 35 y 65 años.
-Género: Masculino y femenino.
-Nivel Educativo: Educación técnica superior o universitaria completa (típicamente en carreras como Agronomía, Medicina Veterinaria, Zootecnia, Administración de Empresas o Ingeniería Industrial).
-Ubicación: Regiones ganaderas de la sierra sur del Perú, en particular Apurímac, Cusco y Puno, donde se realizó la investigación de campo. Cajamarca, Arequipa, La Libertad y San Martín se consideran mercados de expansión posterior.
-Ocupación: Propietarios de haciendas, gerentes generales de cooperativas ganaderas o administradores generales de estancias ganaderas medianas y grandes (hatos de entre 50 y más de 500 cabezas de ganado).
-Dispositivos de Preferencia: Teléfonos inteligentes de gama media-alta (Android e iOS), tabletas y computadoras portátiles o de escritorio para el control administrativo de la empresa.
-Canales de Interacción Digital: Redes sociales profesionales (LinkedIn), grupos especializados de WhatsApp, correos electrónicos corporativos, motores de búsqueda (Google) y portales de noticias del sector agropecuario.  
+
+- **Edad:** Entre 35 y 65 años.
+- **Género:** Masculino y femenino.
+- **Nivel Educativo:** Educación técnica superior o universitaria completa (típicamente en carreras como Agronomía, Medicina Veterinaria, Zootecnia, Administración de Empresas o Ingeniería Industrial).
+- **Ubicación:** Regiones ganaderas de la sierra sur del Perú, en particular Apurímac, Cusco y Puno, donde se realizó la investigación de campo. Cajamarca, Arequipa, La Libertad y San Martín se consideran mercados de expansión posterior.
+- **Ocupación:** Propietarios de haciendas, gerentes generales de cooperativas ganaderas o administradores generales de estancias ganaderas medianas y grandes (hatos de entre 50 y más de 500 cabezas de ganado).
+- **Dispositivos de Preferencia:** Teléfonos inteligentes de gama media-alta (Android e iOS), tabletas y computadoras portátiles o de escritorio para el control administrativo de la empresa.
+- **Canales de Interacción Digital:** Redes sociales profesionales (LinkedIn), grupos especializados de WhatsApp, correos electrónicos corporativos, motores de búsqueda (Google) y portales de noticias del sector agropecuario.  
 
 **B. Características Psicográficas y Conductuales**
-Personalidad: Analíticos, orientados a resultados, visionarios, cautelosos con las inversiones de capital pero abiertos a la adopción de tecnologías validadas que demuestren un rápido retorno de inversión (ROI).
-Habilidades: Gestión de presupuestos, planificación estratégica, liderazgo de personal de campo y negociación con proveedores de la cadena de valor láctea o cárnica.
-Estilo de Vida: Dividen su tiempo entre la supervisión estratégica en campo (visitas periódicas a las estancias) y la gestión comercial en zonas urbanas. Valoran el control de sus activos y la tranquilidad de saber que su patrimonio está protegido de forma preventiva.
-Marcas e Influencias: Compran insumos de marcas reconocidas como Zoetis, MSD Animal Health, e influyen sus decisiones a través de gremios ganaderos locales (como la Asociación de Ganaderos del Perú - AGALEP), ferias agropecuarias nacionales y consultores zootecnistas de confianza.  
+
+- **Personalidad:** Analíticos, orientados a resultados, visionarios, cautelosos con las inversiones de capital pero abiertos a la adopción de tecnologías validadas que demuestren un rápido retorno de inversión (ROI).
+- **Habilidades:** Gestión de presupuestos, planificación estratégica, liderazgo de personal de campo y negociación con proveedores de la cadena de valor láctea o cárnica.
+- **Estilo de Vida:** Dividen su tiempo entre la supervisión estratégica en campo (visitas periódicas a las estancias) y la gestión comercial en zonas urbanas. Valoran el control de sus activos y la tranquilidad de saber que su patrimonio está protegido de forma preventiva.
+- **Marcas e Influencias:** Compran insumos de marcas reconocidas como Zoetis, MSD Animal Health, e influyen sus decisiones a través de gremios ganaderos locales (como la Asociación de Ganaderos del Perú - AGALEP), ferias agropecuarias nacionales y consultores zootecnistas de confianza.  
 
 **C. Evidencia de investigación y fuentes**
+
 En el cuestionario del Segmento 1, los 2 participantes reportaron manejar entre 51 y 200 cabezas, trabajar en pastoreo extensivo o régimen mixto y tener conectividad regular en las zonas de pastoreo. Ambos reportaron pérdidas de entre 5% y 10% del hato y calificaron el abigeato como frecuente y costoso. Estos resultados corresponden a la muestra investigada y no deben generalizarse a toda la población ganadera.
 
 Como contexto nacional, la Encuesta Nacional Agropecuaria del INEI identifica al ganado vacuno como una de las principales crianzas de las unidades agropecuarias del país [1]. El sistema SIEA del MIDAGRI permite consultar datos productivos y estadísticos actualizados por región [2]. Para la conectividad, OSIPTEL publica indicadores de cobertura y calidad de los servicios móviles por departamento, por lo que la disponibilidad debe validarse por predio y no asumirse como uniforme [3]. Las campañas sanitarias y sus periodos deben contrastarse con la información oficial de SENASA y con el calendario regional correspondiente [4].
@@ -378,21 +385,24 @@ Como contexto nacional, la Encuesta Nacional Agropecuaria del INEI identifica al
 Este segmento abarca a los especialistas técnicos encargados del diagnóstico preventivo, la atención de brotes de enfermedades, la sincronización reproductiva y la prescripción de tratamientos médicos para el ganado. Son asesores externos clave o personal de planta que requiere de datos cuantitativos precisos, históricos y en tiempo real para optimizar la salud colectiva e individual de los bovinos.
 
 **A. Perfil Demográfico y Geográfico**
-Edad: Entre 28 y 60 años.
-Género: Masculino y femenino.
-Nivel Educativo: Educación universitaria completa y posgrados (Especializaciones, Maestrías) en Medicina Veterinaria, Zootecnia o Reproducción Animal.
-Ubicación: Ciudades intermedias cercanas a los valles ganaderos o residentes en las capitales de región, realizando visitas técnicas programadas o de emergencia a múltiples establos ganaderos.
-Ocupación: Médicos veterinarios independientes, consultores de salud animal, asesores de sanidad de cooperativas o directores de sanidad animal de grandes agropecuarias.
-Dispositivos de Preferencia: Smartphones de gama media-alta, tabletas robustas (con estuches protectores para uso en corrales) y laptops para análisis estadístico de datos y reportes clínicos.
-Canales de Interacción Digital: Correo electrónico, plataformas académicas y científicas (PubMed, ResearchGate), boletines de sanidad agropecuaria (SENASA), aplicaciones web profesionales de gestión de establos y redes sociales enfocadas en la comunidad médica veterinaria.  
+
+- **Edad:** Entre 28 y 60 años.
+- **Género:** Masculino y femenino.
+- **Nivel Educativo:** Educación universitaria completa y posgrados (Especializaciones, Maestrías) en Medicina Veterinaria, Zootecnia o Reproducción Animal.
+- **Ubicación:** Ciudades intermedias cercanas a los valles ganaderos o residentes en las capitales de región, realizando visitas técnicas programadas o de emergencia a múltiples establos ganaderos.
+- **Ocupación:** Médicos veterinarios independientes, consultores de salud animal, asesores de sanidad de cooperativas o directores de sanidad animal de grandes agropecuarias.
+- **Dispositivos de Preferencia:** Smartphones de gama media-alta, tabletas robustas (con estuches protectores para uso en corrales) y laptops para análisis estadístico de datos y reportes clínicos.
+- **Canales de Interacción Digital:** Correo electrónico, plataformas académicas y científicas (PubMed, ResearchGate), boletines de sanidad agropecuaria (SENASA), aplicaciones web profesionales de gestión de establos y redes sociales enfocadas en la comunidad médica veterinaria.  
 
 **B. Características Psicográficas y Conductuales**
-Personalidad: Metódicos, analíticos, orientados a la ciencia de datos, rigurosos con los protocolos de bioseguridad y apasionados por el bienestar animal. Valoran la precisión de los datos biométricos por encima de las estimaciones subjetivas.
-Habilidades: Diagnóstico clínico, análisis de parámetros fisiológicos complejos (temperatura, frecuencia de rumia, nivel de actividad), diseño de calendarios de vacunación, inseminación artificial y gestión de fármacos veterinarios.
-Estilo de Vida: Dinámico y móvil. Viajan frecuentemente entre diferentes establos y estancias ganaderas. Deben estar preparados para responder a emergencias a cualquier hora del día.
-Marcas e Influencias: Influenciados por publicaciones de revistas indexadas especializadas, laboratorios multinacionales (como Boehringer Ingelheim, Elanco, Bayer Sanidad Animal) y colegios médico-veterinarios locales (como el Colegio Médico Veterinario del Perú).  
+
+- **Personalidad:** Metódicos, analíticos, orientados a la ciencia de datos, rigurosos con los protocolos de bioseguridad y apasionados por el bienestar animal. Valoran la precisión de los datos biométricos por encima de las estimaciones subjetivas.
+- **Habilidades:** Diagnóstico clínico, análisis de parámetros fisiológicos complejos (temperatura, frecuencia de rumia, nivel de actividad), diseño de calendarios de vacunación, inseminación artificial y gestión de fármacos veterinarios.
+- **Estilo de Vida:** Dinámico y móvil. Viajan frecuentemente entre diferentes establos y estancias ganaderas. Deben estar preparados para responder a emergencias a cualquier hora del día.
+- **Marcas e Influencias:** Influenciados por publicaciones de revistas indexadas especializadas, laboratorios multinacionales (como Boehringer Ingelheim, Elanco, Bayer Sanidad Animal) y colegios médico-veterinarios locales (como el Colegio Médico Veterinario del Perú).  
 
 **C. Evidencia de investigación**
+
 Las entrevistas del Segmento 2 muestran que los profesionales necesitan consultar historiales clínicos, tratamientos, constantes fisiológicas, rumia, actividad, reproducción y evidencia ecográfica antes o durante la visita al establo. Darwin, Eliseo y Dionisio coincidieron en la necesidad de alertas tempranas, reportes exportables e integración con ecógrafos y sistemas de nutrición. Estos hallazgos provienen de la investigación propia y deben validarse posteriormente con una muestra más amplia antes de convertirse en indicadores estadísticos generales.
 
 **Referencias citadas en este capítulo**
