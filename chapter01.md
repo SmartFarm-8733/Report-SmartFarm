@@ -23,7 +23,7 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
     <tr>
       <td style="padding: 10px; border: 1px solid #aaa;">
         Avalos Cordova, Diego Andres<br>
-        <span style="font-size:11px; color:#555;">(U2023139222)</span>
+        <span style="font-size:11px; color:#555;">(U202313922)</span>
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
         <img src="images/members/DiegoAndresAvalos.png" alt="Fotografía de Diego Andres Avalos Cordova" style="max-width:80px; border-radius:6px;">
@@ -95,7 +95,7 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
   </tbody>
 </table>
 
-**Pendiente:** verificar los códigos de estudiante contra la matrícula. El código de Diego Ávalos figura con diez dígitos cuando el resto tiene nueve, y en el README aparece un código distinto para él que además coincide con el de Jhimy Romero.
+**Pendiente:** verificar el código de Flor de María Contreras Leon. En este capítulo figura como U202323243 y en el README como U202324129.
 
 ## 1.2. Solution Profile
 ### 1.2.1. Antecedentes y problemática

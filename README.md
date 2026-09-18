@@ -51,7 +51,7 @@
       <td style="border: 1px solid #888; padding: 8px;">Frontend & UX/UI Engineer</td>
     </tr>
     <tr>
-      <td style="border: 1px solid #888; padding: 8px;">U202321510</td>
+      <td style="border: 1px solid #888; padding: 8px;">U202313922</td>
       <td style="border: 1px solid #888; padding: 8px;">Diego Andres Avalos Cordova</td>
       <td style="border: 1px solid #888; padding: 8px;">Frontend & UX/UI Engineer</td>
     </tr>
