@@ -10,40 +10,38 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
 ![Logo de ICHU](images/ichu-logo.png)
 
 ### 1.1.2. Perfiles de integrantes del equipo
+
 <table style="width:100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 12px; table-layout: fixed;">
   <thead>
     <tr>
-      <th style="padding: 10px; border: 1px solid #aaa; background:#f2f2f2; width: 28%;">Diego Andres Avalos Cordova (U2023139222)</th> 
-      <th style="padding: 10px; border: 1px solid #aaa; background:#f2f2f2; width: 18%;">
-        <img src="images/members/DiegoAndresAvalos.png" alt="Foto de Diego" style="max-width:80px; border-radius:6px;">
-      </th>
-      <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">Ingeniería de Software - Mi nombre es Diego Ávalos, tengo 20 años y actualmente estudio Ingeniería de Software. Me interesa especializarme en Desarrollo FullStack, Ciberseguridad y Hacking Ético. Tengo experiencia usando sistemas operativos GNU/Linux y conocimientos en desarrollo web. También me interesan los temas relacionados con tecnología e inteligencia artificial, por lo que busco investigar y aprender constantemente sobre nuevas herramientas que aporten valor al proyecto.</th>
+      <th style="padding: 10px; border: 1px solid #aaa; width: 28%; text-align: left;">Integrante</th>
+      <th style="padding: 10px; border: 1px solid #aaa; width: 18%; text-align: center;">Foto</th>
+      <th style="padding: 10px; border: 1px solid #aaa; text-align: left;">Carrera, conocimientos y aporte al equipo</th>
     </tr>
   </thead>
-
   <tbody>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #aaa;">
+        Avalos Cordova, Diego Andres<br>
+        <span style="font-size:11px; color:#555;">(U2023139222)</span>
+      </td>
+      <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
+        <img src="images/members/DiegoAndresAvalos.png" alt="Fotografía de Diego Andres Avalos Cordova" style="max-width:80px; border-radius:6px;">
+      </td>
+      <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
+        Ingeniería de Software. Mi nombre es Diego Ávalos, tengo 20 años y actualmente estudio Ingeniería de Software. Me interesa especializarme en desarrollo full stack, ciberseguridad y hacking ético. Tengo experiencia usando sistemas operativos GNU/Linux y conocimientos en desarrollo web. También me interesan los temas relacionados con tecnología e inteligencia artificial, por lo que busco investigar y aprender constantemente sobre nuevas herramientas que aporten valor al proyecto.
+      </td>
+    </tr>
     <tr>
       <td style="padding: 10px; border: 1px solid #aaa;">
         Contreras Leon, Flor de María<br>
         <span style="font-size:11px; color:#555;">(U202323243)</span>
       </td>
-      <td style="padding: 10px; border: 1px solid #aaa; text-align:center;">
-        <img src="images/members/FlorMariaContrerasLeon.jpg" alt="Foto de Flor de María" style="max-width:80px; border-radius:6px;">
+      <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
+        <img src="images/members/FlorMariaContrerasLeon.jpg" alt="Fotografía de Flor de María Contreras Leon" style="max-width:80px; border-radius:6px;">
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
-        Ingeniería de Software - Mi nombre es Flor de María, tengo 20 años y actualmente curso la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC). Desde siempre me he caracterizado por ser una persona que toma la iniciativa y busca aportar de manera activa en los proyectos en los que participa.
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 10px; border: 1px solid #aaa;">
-        -----nombre---------<br>
-        <span style="font-size:11px; color:#555;">------codigo----</span>
-      </td>
-      <td style="padding: 10px; border: 1px solid #aaa; text-align:center;">
-        <img src="" alt="Jeff's photo" style="max-width:80px; border-radius:6px;">
-      </td>
-      <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
-      ----descripcion
+        Ingeniería de Software. Mi nombre es Flor de María, tengo 20 años y actualmente curso la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Desde siempre me he caracterizado por ser una persona que toma la iniciativa y busca aportar de manera activa en los proyectos en los que participa.
       </td>
     </tr>
     <tr>
@@ -51,51 +49,53 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
         Romero Meza, Jhimy Pool<br>
         <span style="font-size:11px; color:#555;">(U202321510)</span>
       </td>
-      <td style="padding: 10px; border: 1px solid #aaa; text-align:center;">
-        <img src="images/members/JhimyRomeroMeza.jpg" alt="Foto de Jhimy" style="max-width:80px; border-radius:6px;">
+      <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
+        <img src="images/members/JhimyRomeroMeza.jpg" alt="Fotografía de Jhimy Pool Romero Meza" style="max-width:80px; border-radius:6px;">
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
-        Estudiante de Ingeniería de Software (5mo ciclo). Se destaca por su responsabilidad, compromiso y disposición constante para colaborar. Cuenta con conocimientos previos en tecnología y en el desarrollo de proyectos, demostrando iniciativa y capacidad de aprendizaje autónomo.
+        Ingeniería de Software, quinto ciclo. Se destaca por su responsabilidad, compromiso y disposición constante para colaborar. Cuenta con conocimientos previos en tecnología y en el desarrollo de proyectos, demostrando iniciativa y capacidad de aprendizaje autónomo.
       </td>
     </tr>
     <tr>
       <td style="padding: 10px; border: 1px solid #aaa;">
-        -----nombre---------<br>
-        <span style="font-size:11px; color:#555;">------codigo----</span>
+        Arrieta Quispe, Alison Jimena<br>
+        <span style="font-size:11px; color:#555;">(U202312031)</span>
       </td>
-      <td style="padding: 10px; border: 1px solid #aaa; text-align:center;">
-        <img src="" alt="Jeff's photo" style="max-width:80px; border-radius:6px;">
+      <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
+        <em style="font-size:11px; color:#777;">Pendiente: fotografía</em>
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
-      ----descripcion
+        <em style="font-size:11px; color:#777;">Pendiente: carrera, conocimientos técnicos y habilidades que aporta al equipo.</em>
       </td>
     </tr>
     <tr>
       <td style="padding: 10px; border: 1px solid #aaa;">
-        -----nombre---------<br>
-        <span style="font-size:11px; color:#555;">------codigo----</span>
+        Sanchez Arenas, Manuel Angel<br>
+        <span style="font-size:11px; color:#555;">(U202320574)</span>
       </td>
-      <td style="padding: 10px; border: 1px solid #aaa; text-align:center;">
-        <img src="" alt="Jeff's photo" style="max-width:80px; border-radius:6px;">
+      <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
+        <em style="font-size:11px; color:#777;">Pendiente: fotografía</em>
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
-      ----descripcion
+        <em style="font-size:11px; color:#777;">Pendiente: carrera, conocimientos técnicos y habilidades que aporta al equipo.</em>
       </td>
     </tr>
     <tr>
       <td style="padding: 10px; border: 1px solid #aaa;">
-        -----nombre---------<br>
-        <span style="font-size:11px; color:#555;">------codigo----</span>
+        Awad Vargas, Giorgio Marzouk<br>
+        <span style="font-size:11px; color:#555;">(U202320442)</span>
       </td>
-      <td style="padding: 10px; border: 1px solid #aaa; text-align:center;">
-        <img src="" alt="Jeff's photo" style="max-width:80px; border-radius:6px;">
+      <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
+        <em style="font-size:11px; color:#777;">Pendiente: fotografía</em>
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
-      ----descripcion
+        <em style="font-size:11px; color:#777;">Pendiente: carrera, conocimientos técnicos y habilidades que aporta al equipo.</em>
       </td>
     </tr>
   </tbody>
 </table>
+
+**Pendiente:** verificar los códigos de estudiante contra la matrícula. El código de Diego Ávalos figura con diez dígitos cuando el resto tiene nueve, y en el README aparece un código distinto para él que además coincide con el de Jhimy Romero.
 
 ## 1.2. Solution Profile
 ### 1.2.1. Antecedentes y problemática
