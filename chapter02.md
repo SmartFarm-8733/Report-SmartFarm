@@ -1,4 +1,4 @@
-# Capítulo II: Requirements Elicitation & Analysis
+﻿# Capítulo II: Requirements Elicitation & Analysis
 
 ## 2.1. Competidores.
 
@@ -374,113 +374,111 @@ Cada ficha de User Persona ha sido especificada considerando todos los atributos
 
 ## 2.5. Ubiquitous Language.
 
-El Lenguaje Ubicuo (Ubiquitous Language) es el vocabulario compartido y riguroso que utiliza tanto el equipo de desarrollo como los actores del dominio ganadero para referirse a los mismos conceptos sin ambigüedad. Este glosario fue construido a partir de las entrevistas realizadas a los dos segmentos objetivo y se organiza según los Bounded Contexts definidos para la plataforma ICHU.
+El Lenguaje Ubicuo (Ubiquitous Language) es el vocabulario compartido y riguroso que utiliza tanto el equipo de desarrollo como los actores del dominio ganadero para referirse a los mismos conceptos sin ambigüedad, tal como lo describe Eric Evans en su libro *Domain-Driven Design: Tackling Complexity in the Heart of Software*. Este glosario fue construido a partir de las entrevistas realizadas a los dos segmentos objetivo, utilizando los términos propios del sector ganadero y se organiza según los Bounded Contexts definidos para la plataforma ICHU.
 
 ### Términos transversales del dominio
 
-| Término | Descripción |
-|---|---|
-| **Hato** | Conjunto total de ganado vacuno que posee una unidad productiva. Sinónimo frecuente de "ganado" o "rodeo" en la jerga ganadera andina. |
-| **Arete** | Identificador físico visible colocado en la oreja del animal; es el número de identificación individual que los entrevistados usan para nombrar a cada vaca. |
-| **Abigeato** | Robo de ganado. Principal amenaza patrimonial identificada en las entrevistas del Segmento 1. |
-| **Celo silencioso** | Estado reproductivo en el que la vaca no manifiesta signos externos evidentes de celo; suele detectarse tardíamente (2-3 días) por sangrado vulvar. |
-| **Días abiertos** | Intervalo entre el parto y la nueva preñez de una vaca; indicador clave de eficiencia reproductiva. |
-| **Timpanismo** | Trastorno metabólico digestivo de rápida evolución (acumulación de gases en el rumen) que puede causar la muerte del animal en horas. |
-| **Mal de altura** | Principal causa de mortalidad de terneros en zonas andinas; se manifiesta primero como reducción del movimiento y del tiempo de pastoreo. |
-| **ASCRIGAR Perú** | Asociación de criadores que registra la genealogía (pedigree) y los animales PPC del ganado vacuno; actúa como entidad de registro reproductivo ("la RENIEC de las vacas"). |
-| **PPC** | Registro de Pureza Pedigrí y Crecimiento; certificación de linaje de un animal gestionada por ASCRIGAR. |
-| **Calendario ganadero** | Calendario sanitario regional preestablecido que determina las épocas de campañas (ej. carbúnculo entre mayo y julio, piojera en junio). |
-| **Faena ganadera** | Actividad operativa programada sobre el ganado (dosificación, vacunación, vitaminación, revisión). |
-| **Modo offline** | Capacidad de la aplicación y del collar para operar y almacenar datos sin conexión, sincronizándolos automáticamente al recuperar señal. |
+| Término | Español equivalente | Descripción |
+|---|---|---|
+| **Herd** | (Hato) | Conjunto total de ganado vacuno que posee una unidad productiva; unidad de supervisión y control del ganadero. |
+| **Ear Tag** | (Arete) | Identificador físico visible colocado en la oreja del animal; número de identificación individual con el que los productores nombran a cada vaca. |
+| **Cattle Rustling** | (Abigeato) | Robo de ganado; principal amenaza patrimonial identificada en las entrevistas del Segmento 1. |
+| **Silent Heat** | (Celo silencioso) | Estado reproductivo en el que la vaca no manifiesta signos externos evidentes de celo; suele detectarse tardíamente (2-3 días después) por sangrado vulvar. |
+| **Days Open** | (Días abiertos) | Intervalo entre el parto y la nueva preñez de una vaca; indicador clave de eficiencia reproductiva. |
+| **Bloat** | (Timpanismo) | Trastorno metabólico digestivo de rápida evolución por acumulación de gases en el rumen, que puede causar la muerte del animal en horas. |
+| **High Mountain Disease** | (Mal de altura / brisket disease) | Principal causa de mortalidad de terneros en zonas andinas; se manifiesta primero como reducción del movimiento y del tiempo de pastoreo. |
+| **Breed Registry** | (Registro de criadores / ASCRIGAR Perú) | Asociación de criadores que registra la genealogía (pedigree) y los nacimientos del ganado vacuno; actúa como entidad de registro reproductivo ("la RENIEC de las vacas"). |
+| **Purebred and Performance Certificate (PPC)** | (Registro de Pureza Pedigrí y Crecimiento) | Certificación de linaje de un animal gestionada por la asociación de criadores de registro. |
+| **Livestock Calendar** | (Calendario ganadero) | Calendario sanitario regional preestablecido que determina las épocas de campañas (ej. vacunación contra carbúnculo entre mayo y julio, control de piojera en junio). |
+| **Livestock Task** | (Faena ganadera) | Actividad operativa programada sobre el ganado: dosificación, vacunación, vitaminación, revisión. |
+| **Offline Mode** | (Modo sin conexión) | Capacidad de operar y registrar datos del animal sin conexión de red, actualizando la información automáticamente al recuperar señal. |
 
 ### Identity & Access Management
 
-| Término | Descripción |
-|---|---|
-| **Usuario** | Persona registrada en la plataforma que puede autenticarse para operar el sistema. |
-| **Rol** | Perfil de permisos asignado a un usuario (propietario ganadero, administrador, médico veterinario, zootecnista) que determina qué funcionalidades puede utilizar. |
-| **Autorización** | Regla que permite a un veterinario externo consultar únicamente los hatos de los clientes que lo tienen asignado. |
-| **Sesión** | Estado de autenticación activa de un usuario en la aplicación móvil o web. |
+| Término | Español equivalente | Descripción |
+|---|---|---|
+| **User** | (Usuario) | Persona registrada en la plataforma que opera el sistema sobre su unidad productiva o sobre los hatos que atiende. |
+| **Role** | (Rol) | Perfil de permisos asignado a un usuario (propietario ganadero, administrador, médico veterinario, zootecnista) que determina qué puede hacer dentro de la plataforma. |
+| **Authorization** | (Autorización) | Regla que permite a un veterinario externo consultar únicamente los hatos de los clientes que lo tienen asignado. |
 
 ### Profiles
 
-| Término | Descripción |
-|---|---|
-| **Perfil** | Datos demográficos y profesionales de cada actor: nombre, región, especialidad, años de experiencia, distrito de la estancia. |
-| **Ganadero (propietario)** | Usuario del Segmento 1 que posee la unidad productiva, es el comprador del plan y decide sobre la operación del hato. |
-| **Administrador de estancia** | Usuario del Segmento 1 encargado de la gestión diaria y de los reportes de la unidad productiva. |
-| **Zootecnista / Médico Veterinario** | Usuario del Segmento 2 que brinda asistencia técnica, diagnósticos y tratamientos sobre hatos de terceros. |
-| **Fundo / Estancia / Hacienda** | Unidad productiva ganadera identificada con nombre propio y ubicación geográfica (ej. Hacienda del Marqués, Fundo Flores de Coña). |
+| Término | Español equivalente | Descripción |
+|---|---|---|
+| **Profile** | (Perfil) | Datos demográficos y profesionales de cada actor: nombre, región, especialidad, años de experiencia, distrito de la estancia. |
+| **Cattle Rancher** | (Ganadero propietario) | Usuario del Segmento 1 que posee la unidad productiva, compra el plan y decide sobre la operación del hato. |
+| **Farm Administrator** | (Administrador de estancia) | Usuario del Segmento 1 encargado de la gestión diaria y de los reportes de la unidad productiva. |
+| **Veterinarian / Zootechnician** | (Médico Veterinario / Zootecnista) | Usuario del Segmento 2 que brinda asistencia técnica, diagnósticos y tratamientos sobre hatos de terceros. |
+| **Ranch** | (Fundo / Estancia / Hacienda) | Unidad productiva ganadera identificada con nombre propio y ubicación geográfica (ej. Hacienda del Marqués, Fundo Flores de Coña). |
 
 ### Cattle Information
 
-| Término | Descripción |
-|---|---|
-| **Vaca / Animal** | Entidad central del dominio; unidad individual de ganado con su ficha propia. |
-| **Ficha individual** | Registro único por animal con su identificación, raza, etapa, sexo y datos reproductivos. |
-| **Raza** | Clasificación genética del animal (Brown Swiss, Fleckvieh, criollo, cruzado). |
-| **Etapa** | Fase de desarrollo del animal: ternero, vaquilla, vaquillona, vaca en producción, toro en engorde. |
-| **Lote** | Agrupación de animales por criterio de manejo (edad, raza, potrero, categoría productiva). |
-| **Potrero** | Parcela de pastoreo donde se ubica un grupo de animales; define el régimen de pastoreo y los días de descanso del pasto. |
-| **Genealogía** | Registro de ascendencia del animal (padre, madre) requerido para los registros de pedigree y PPC. |
-| **Estado de preñez / gestación** | Estado reproductivo de la vaca, con fecha probable de parto calculada desde la inseminación. |
-| **Índice de fertilidad** | Indicador derivado de los días abiertos y los ciclos de celo del animal. |
-| **Constante fisiológica de referencia** | Rango normal de temperatura (37-39.5 °C) y frecuencias cardíaca y respiratoria de una vaca adulta sana. |
+| Término | Español equivalente | Descripción |
+|---|---|---|
+| **Cattle** | (Ganado vacuno) | Entidad central del dominio; el conjunto de bovinos gestionados por una unidad productiva. |
+| **Individual Record** | (Ficha individual) | Registro único por animal con su identificación, raza, etapa, sexo y datos reproductivos. |
+| **Breed** | (Raza) | Clasificación genética del animal (Brown Swiss, Fleckvieh, criollo, cruzado). |
+| **Life Stage** | (Etapa) | Fase de desarrollo del animal: ternero, vaquilla, vaquillona, vaca en producción, toro en engorde. |
+| **Lot** | (Lote) | Agrupación de animales por criterio de manejo (edad, raza, potrero, categoría productiva). |
+| **Paddock** | (Potrero) | Parcela de pastoreo donde se ubica un grupo de animales; define el régimen de pastoreo y los días de descanso del pasto. |
+| **Genealogy** | (Genealogía) | Registro de ascendencia del animal (padre, madre) requerido para los registros de pedigree y PPC. |
+| **Pregnancy Status** | (Estado de preñez / gestación) | Estado reproductivo de la vaca, con fecha probable de parto calculada desde la inseminación. |
+| **Fertility Index** | (Índice de fertilidad) | Indicador derivado de los días abiertos y los ciclos de celo del animal. |
+| **Physiological Baseline** | (Constante fisiológica de referencia) | Rango normal de temperatura (37-39.5 °C) y frecuencias cardíaca y respiratoria de una vaca adulta sana. |
 
 ### IoT Assets
 
-| Término | Descripción |
-|---|---|
-| **Collar** | Dispositivo IoT físico colocado en el cuello del animal que captura temperatura, actividad, rumia y ubicación. |
-| **Banda** | Correa/accesorio del collar que se asigna a un animal específico y puede reemplazarse sin cambiar el dispositivo electrónico. |
-| **Asignación de dispositivo** | Relación entre un collar, un cliente y una vaca concreta, gestionada según el plan contratado. |
-| **Batería** | Nivel de energía del dispositivo; su vida útil promocionada es de hasta 3 años. |
-| **Estado del dispositivo** | Condiciones operativas del collar: activo, sin señal, batería baja, sincronizando. |
-| **Zona ciega** | Área de pastoreo sin cobertura de red donde el collar almacena la telemetría en memoria local. |
+| Término | Español equivalente | Descripción |
+|---|---|---|
+| **Smart Collar** | (Collar inteligente) | Dispositivo IoT físico colocado en el cuello del animal que captura temperatura, actividad, rumia y ubicación. |
+| **Device Band** | (Banda) | Correa/accesorio del collar que se asigna a un animal específico y puede reemplazarse sin cambiar el dispositivo electrónico. |
+| **Device Assignment** | (Asignación de dispositivo) | Relación entre un collar, un cliente y una vaca concreta, gestionada según el plan contratado. |
+| **Battery Level** | (Nivel de batería) | Energía disponible del dispositivo; su vida útil promocionada es de hasta 3 años. |
+| **Device Status** | (Estado del dispositivo) | Condiciones operativas del collar: activo, sin señal, batería baja, sincronizando. |
+| **Blind Zone** | (Zona ciega) | Área de pastoreo sin cobertura de red donde el collar almacena la información del animal en memoria local. |
 
 ### Operations & Monitoring
 
-| Término | Descripción |
-|---|---|
-| **Telemetría** | Flujo de datos enviados por el collar: temperatura corporal, ubicación, actividad física, ciclos de rumia y alimentación, frecuencias cardíaca y respiratoria. |
-| **Rumia** | Proceso de masticación regurgitada del bovino; su caída sostenida es la señal temprana más crítica de trastorno metabólico o intoxicación. |
-| **Alerta roja** | Notificación inmediata de máxima prioridad enviada al celular cuando una constante vital decae o se cruza un umbral crítico (fiebre > 40 °C, hipotermia < 37 °C). |
-| **Umbral clínico** | Valor de referencia calibrado con los veterinarios (ej. neumonía a partir de 38.5-39 °C) que dispara las alertas del sistema. |
-| **Última posición conocida** | Dato de ubicación más reciente registrado por el collar, consultable incluso en modo offline. |
-| **Geocerca** | Límite virtual del potrero o del predio; su cruce genera una alerta de posible extravío o robo. |
-| **Evento de inseminación** | Registro con fecha del cruzamiento o inseminación artificial de una vaca, base para la predicción del parto. |
-| **Tiempo desde la inseminación** | Días transcurridos desde el evento reproductivo, usado para programar diagnóstico de gestación y alerta de parto (1 semana antes). |
-| **Detección de celo** | Identificación algorítmica de celo a partir del cruce de picos de actividad, temperatura y caída de producción; incluye la variante silenciosa. |
-| **Sincronización retrasada** | Proceso por el cual los datos guardados offline en campo se actualizan de forma automática al recuperar conectividad. |
+| Término | Español equivalente | Descripción |
+|---|---|---|
+| **Telemetry** | (Telemetría) | Datos capturados por el collar: temperatura corporal, ubicación, actividad física, ciclos de rumia y alimentación, frecuencias cardíaca y respiratoria. |
+| **Rumination** | (Rumia) | Proceso de masticación regurgitada del bovino; su caída sostenida es la señal temprana más crítica de trastorno metabólico o intoxicación. |
+| **Red Alert** | (Alerta roja) | Notificación inmediata de máxima prioridad enviada al celular cuando una constante vital decae o se cruza un umbral crítico (fiebre > 40 °C, hipotermia < 37 °C). |
+| **Clinical Threshold** | (Umbral clínico) | Valor de referencia calibrado con los veterinarios (ej. neumonía a partir de 38.5-39 °C) que dispara las alertas del sistema. |
+| **Last Known Location** | (Última posición conocida) | Dato de ubicación más reciente registrado por el collar, consultable incluso sin conexión. |
+| **Geofence** | (Geocerca) | Límite virtual del potrero o del predio; su cruce genera una alerta de posible extravío o robo. |
+| **Insemination Event** | (Evento de inseminación) | Registro con fecha del cruzamiento o inseminación artificial de una vaca, base para la predicción del parto. |
+| **Time Since Insemination** | (Tiempo desde la inseminación) | Días transcurridos desde el evento reproductivo, usados para programar el diagnóstico de gestación y la alerta de parto (1 semana antes). |
+| **Estrus Detection** | (Detección de celo) | Identificación algorítmica de celo a partir del cruce de picos de actividad, temperatura y caída de producción; incluye la variante silenciosa. |
 
 ### Planning
 
-| Término | Descripción |
-|---|---|
-| **Planificación de actividad** | Programación de las faenas ganaderas sobre el calendario (vacunación, desparasitación, vitaminación, revisiones). |
-| **Campaña sanitaria** | Acción colectiva programada sobre el hato o parte de él, según la época del calendario ganadero (ej. campaña contra la piojera). |
-| **Recordatorio** | Notificación anticipada que avisa que una actividad programada se acerca ("te toca dosificar tal día"). |
-| **Cuarentena** | Periodo de aislamiento programado ante una epidemia o nuevo ingreso de animales. |
-| **Periodo de gestación** | Ventana estimada de parto por animal, generada automáticamente a partir del evento de inseminación. |
-| **Ciclo de engorde** | Programa de engorde intensivo con duración típica de tres meses, con seguimiento de días y peso estimado. |
+| Término | Español equivalente | Descripción |
+|---|---|---|
+| **Activity Planning** | (Planificación de actividad) | Programación de las faenas ganaderas sobre el calendario: vacunación, desparasitación, vitaminación, revisiones. |
+| **Health Campaign** | (Campaña sanitaria) | Acción colectiva programada sobre el hato o parte de él, según la época del calendario ganadero (ej. campaña contra la piojera). |
+| **Reminder** | (Recordatorio) | Notificación anticipada que avisa que una actividad programada se acerca ("te toca dosificar tal día"). |
+| **Quarantine** | (Cuarentena) | Periodo de aislamiento programado ante una epidemia o el ingreso de nuevos animales. |
+| **Gestation Window** | (Periodo de gestación) | Ventana estimada de parto por animal, generada automáticamente a partir del evento de inseminación. |
+| **Fattening Cycle** | (Ciclo de engorde) | Programa de engorde intensivo con duración típica de tres meses, con seguimiento de días y peso estimado. |
 
 ### Dashboard & Analytics
 
-| Término | Descripción |
-|---|---|
-| **Tablero de control** | Vista principal de la plataforma web con los indicadores clave del hato. |
-| **Indicador (KPI)** | Métrica de seguimiento: mortalidad mensual, animales enfermos, celos detectados, inseminaciones, producción de leche por día, costos por cabeza. |
-| **Curva epidemiológica** | Gráfico de avance o control de una enfermedad en el hato a lo largo del tiempo. |
-| **Reporte ejecutivo** | Documento exportable (Excel, PDF o Word) con los datos del hato: salud, sanidad, reproducción y finanzas. |
-| **Balance de engorde** | Comparación de gasto vs. ganancia por ciclo trimestral y por cabeza. |
-| **Tendencia** | Patrón histórico derivado de los datos consolidados del hato (enfermedades por época, días abiertos, producción per cápita anual). |
+| Término | Español equivalente | Descripción |
+|---|---|---|
+| **Control Dashboard** | (Tablero de control) | Vista principal de la plataforma web con los indicadores clave del hato. |
+| **Key Performance Indicator (KPI)** | (Indicador clave) | Métrica de seguimiento: mortalidad mensual, animales enfermos, celos detectados, inseminaciones, producción de leche por día, costos por cabeza. |
+| **Epidemiological Curve** | (Curva epidemiológica) | Gráfico de avance o control de una enfermedad en el hato a lo largo del tiempo. |
+| **Executive Report** | (Reporte ejecutivo) | Documento exportable (Excel, PDF o Word) con los datos del hato: salud, sanidad, reproducción y finanzas. |
+| **Fattening Balance** | (Balance de engorde) | Comparación de gasto vs. ganancia por ciclo trimestral y por cabeza. |
+| **Trend** | (Tendencia) | Patrón histórico derivado de los datos consolidados del hato (enfermedades por época, días abiertos, producción per cápita anual). |
 
 ### Subscription Plans
 
-| Término | Descripción |
-|---|---|
-| **Plan** | Modalidad de suscripción contratada por el cliente, con límites de animales y dispositivos. |
-| **Suscripción anual** | Modelo de pago anual con tarifa fija preferido por los entrevistados del Segmento 1. |
-| **Límite de dispositivos** | Cantidad máxima de collares/bandas habilitadas según el plan, definida por el tamaño del hato. |
-| **Funcionalidad habilitada** | Característica del software activada o desactivada automáticamente según el plan activo (reportes avanzados, alertas SMS). |
-| **Renovación** | Proceso de continuidad del servicio al finalizar el periodo contratado. |
+| Término | Español equivalente | Descripción |
+|---|---|---|
+| **Plan** | (Plan) | Modalidad de suscripción contratada por el cliente, con límites de animales y dispositivos. |
+| **Annual Subscription** | (Suscripción anual) | Modelo de pago anual con tarifa fija preferido por los entrevistados del Segmento 1. |
+| **Device Limit** | (Límite de dispositivos) | Cantidad máxima de collares/bandas habilitadas según el plan, definida por el tamaño del hato. |
+| **Feature Access** | (Funcionalidad habilitada) | Características del producto que se activan según el plan contratado (reportes avanzados, alertas por SMS). |
+| **Renewal** | (Renovación) | Proceso de continuidad del servicio al finalizar el periodo contratado. |
