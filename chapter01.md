@@ -3,9 +3,11 @@
 ### 1.1.1. Descripción de la Startup
 La startup es una empresa de base tecnológica orientada al sector ganadero, cuyo propósito es brindar una solución digital que permita a los ganaderos mejorar la gestión, monitoreo y cuidado de su ganado mediante el uso de tecnologías como Internet de las Cosas (IoT), dispositivos inteligentes y aplicaciones móviles. La propuesta busca facilitar el acceso a información relevante sobre el estado y comportamiento de los animales, permitiendo que los ganaderos puedan tomar decisiones de manera más rápida y eficiente.
 
-La solución estará conformada principalmente por una aplicación móvil y una plataforma digital que recibirán información recopilada mediante dispositivos IoT colocados en los animales, como collares o aretes inteligentes. Estos dispositivos permitirán registrar datos relacionados con la actividad, ubicación, comportamiento y posibles cambios en el estado del animal. La información será procesada y presentada de manera sencilla al ganadero, permitiéndole realizar un seguimiento individual de cada animal y de su ganado en general.
+La solución estará conformada principalmente por una aplicación móvil y una plataforma digital que recibirán información recopilada mediante collares inteligentes IoT colocados en los animales. Estos dispositivos permitirán registrar datos relacionados con la actividad, ubicación, comportamiento y posibles cambios en el estado del animal. La información será procesada y presentada de manera sencilla al ganadero, permitiéndole realizar un seguimiento individual de cada animal y de su ganado en general.
 
 De esta manera, la startup busca contribuir a la modernización de la actividad ganadera mediante una herramienta tecnológica que centralice la información de los animales y facilite su monitoreo. La solución permitirá identificar oportunamente situaciones que puedan requerir atención, optimizar las actividades de manejo del ganado y contar con un historial de información que apoye la toma de decisiones. Asimismo, la propuesta busca reducir la dependencia de controles manuales y mejorar la eficiencia en la gestión de las unidades ganaderas.
+
+![Logo de ICHU](images/ichu-logo.png)
 
 ### 1.1.2. Perfiles de integrantes del equipo
 <table style="width:100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 12px; table-layout: fixed;">
@@ -22,14 +24,14 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
   <tbody>
     <tr>
       <td style="padding: 10px; border: 1px solid #aaa;">
-        -----nombre---------<br>
-        <span style="font-size:11px; color:#555;">------codigo----</span>
+        Contreras Leon, Flor de María<br>
+        <span style="font-size:11px; color:#555;">(U202323243)</span>
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align:center;">
-        <img src="" alt="Jeff's photo" style="max-width:80px; border-radius:6px;">
+        <img src="images/members/FlorMariaContrerasLeon.jpg" alt="Foto de Flor de María" style="max-width:80px; border-radius:6px;">
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
-      ----descripcion
+        Ingeniería de Software - Mi nombre es Flor de María, tengo 20 años y actualmente curso la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC). Desde siempre me he caracterizado por ser una persona que toma la iniciativa y busca aportar de manera activa en los proyectos en los que participa.
       </td>
     </tr>
     <tr>
@@ -134,7 +136,7 @@ La propuesta de software y hardware IoT tiene como meta prioritaria resolver los
 Desarrollar una solución tecnológica distribuida e innovadora basada en tecnologías de Internet de las Cosas (IoT) que permita centralizar, procesar y visualizar información biométrica y de comportamiento animal en tiempo real, facilitando la toma de decisiones preventivas y mejorando la eficiencia operativa en las unidades ganaderas.
 
 **Objetivos Específicos**
-**Diseñar y simular el dispositivo físico de borde:** Desarrollar un prototipo funcional de collar o arete inteligente mediante herramientas de modelado de circuitos, incorporando sensores de movimiento (acelerómetro), temperatura y posicionamiento GPS con un consumo de energía óptimo.
+**Diseñar y simular el dispositivo físico de borde:** Desarrollar un prototipo funcional de collar inteligente mediante herramientas de modelado de circuitos, incorporando sensores de movimiento (acelerómetro), temperatura y posicionamiento GPS con un consumo de energía óptimo.
 **Implementar un RESTful API interno robusto:** Construir el servicio web de backend para la persistencia, procesamiento y analítica cuantitativa de los datos biométricos de telemetría enviados por los dispositivos de borde.
 **Desarrollar aplicaciones cliente adaptables:** Implementar una aplicación móvil nativa o multiplataforma dirigida al personal de campo para alertas y monitoreo rápido en movimiento, junto con una aplicación web completa para que los administradores analicen historiales detallados y métricas estadísticas.
 **Desplegar una Landing Page informativa:** Crear un sitio web estático para la promoción comercial del modelo de negocio, integrando secciones de código de ética, términos y condiciones legales y enlaces a las plataformas operativas.
@@ -145,7 +147,7 @@ Para asegurar la viabilidad técnica, el cumplimiento normativo y el rigor acad�
 
 **Restricciones de Stack Tecnológico:** El desarrollo de software debe apegarse estrictamente a las tecnologías autorizadas. Esto incluye el uso de HTML5, CSS3 y JavaScript para la Landing Page; Angular Framework (con Angular Material y TypeScript) o Vue para la Web Application; Spring Boot, ASP.NET Core o NestJS para los servicios web de backend; Flask con Peewee ORM y SQLite para los servicios Edge; y Kotlin (Android), Swift (iOS) o Flutter para las Mobile Applications.
 **Restricciones de Idioma y Localización:** Por exigencias del estándar del curso, el idioma por defecto para la interfaz de usuario, los mensajes de error y toda la interfaz de documentación técnica (como OpenAPI/Swagger) de todos los productos de la solución es estrictamente el inglés (en_US), requiriendo soporte de internacionalización (i18n) y accesibilidad (a11y) con atributos ARIA para español latinoamericano (es_419).
-**Restricciones de Diseño de Dispositivos IoT:** El diseño del circuito y simulación del collar/arete inteligente debe ser elaborado obligatoriamente mediante herramientas autorizadas como Cirkit Designer o Wokwi, modelando de manera realista la comunicación con el Edge API.
+**Restricciones de Diseño de Dispositivos IoT:** El diseño del circuito y simulación del collar inteligente debe ser elaborado obligatoriamente mediante herramientas autorizadas como Cirkit Designer o Wokwi, modelando de manera realista la comunicación con el Edge API.
 **Restricciones Normativas y de Responsabilidad Ética:** La solución debe incorporar en los pies de página (footer) de la Landing Page y de las aplicaciones un acceso explícito a los Términos y Condiciones del Servicio, estructurados en estricta conformidad con los códigos de ética para ingeniería de software establecidos por la ACM/IEEE y el Colegio de Ingenieros del Perú (CIP).
 **Restricciones de Gestión y Control de Código:** El control de versiones debe ser administrado en un repositorio público dentro de una organización en GitHub, empleando de manera rigurosa el flujo de trabajo de GitFlow, el estándar de mensajes conventional commits y versionamiento semántico.
 ### 1.2.2 Lean UX Process.  
@@ -160,7 +162,7 @@ Para guiar el diseño centrado en el usuario, hemos estructurado nuestras creenc
 
 A. Business Assumptions (Supuestos de Negocio)
 Creemos que los ganaderos están dispuestos a pagar una suscripción mensual bajo el modelo SaaS si demostramos que la solución reduce la mortalidad del ganado en más de un 15% .
-Creemos que un esquema de adquisición híbrido, combinando la venta física del hardware (collares/aretes) a bajo costo con una suscripción digital, reducirá la barrera de entrada al mercado ganadero.
+Creemos que un esquema de adquisición híbrido, combinando la venta física del collar inteligente a bajo costo con una suscripción digital, reducirá la barrera de entrada al mercado ganadero.
 Creemos que es factible producir dispositivos IoT (collares) de bajo consumo energético utilizando hardware libre (open-source) capaz de operar continuamente durante un año sin recarga.
 Creemos que la alianza estratégica con cooperativas ganaderas y veterinarios locales será nuestro principal canal de adquisición de clientes.  
 
@@ -267,7 +269,7 @@ A continuación, se plasma el Lean UX Canvas de la startup ganadera, integrando 
                 <ol>
                     <li>
                         <strong>Dispositivos IoT:</strong>
-                        Collares y aretes con sensores biométricos y GPS.
+                        Collares inteligentes con sensores biométricos y GPS.
                     </li>
                     <li>
                         <strong>Servicios Edge y RESTful API:</strong>
@@ -343,7 +345,7 @@ A continuación, se describen de manera detallada los tres segmentos objetivo id
 
 **Segmento 1:** Medianos y Grandes Ganaderos (Propietarios y Administradores de Estancias)  
 
-Este segmento representa a los tomadores de decisiones financieras y estratégicas de las unidades de producción ganadera. Son los responsables de adquirir la solución digital y los dispositivos IoT (collares o aretes inteligentes), motivados por la optimización de costos, el aumento de la productividad de leche y carne, y la mitigación de pérdidas críticas causadas por muertes no detectadas, enfermedades y abigeato.
+Este segmento representa a los tomadores de decisiones financieras y estratégicas de las unidades de producción ganadera. Son los responsables de adquirir la solución digital y los collares inteligentes IoT, motivados por la optimización de costos, el aumento de la productividad de leche y carne, y la mitigación de pérdidas críticas causadas por muertes no detectadas, enfermedades y abigeato.
 
 **A. Perfil Demográfico y Geográfico**
 Edad: Entre 35 y 65 años.
