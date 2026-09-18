@@ -1,7 +1,7 @@
 # Capítulo I: Introducción
 ## 1.1. Startup Profile
 ### 1.1.1. Descripción de la Startup
-La startup es una empresa de base tecnológica orientada al sector ganadero, cuyo propósito es brindar una solución digital que permita a los ganaderos mejorar la gestión, monitoreo y cuidado de su ganado mediante el uso de tecnologías como Internet de las Cosas (IoT), dispositivos inteligentes y aplicaciones móviles. La propuesta busca facilitar el acceso a información relevante sobre el estado y comportamiento de los animales, permitiendo que los ganaderos puedan tomar decisiones de manera más rápida y eficiente.
+SmartFarm es una startup de base tecnológica orientada al sector ganadero, cuyo producto, ICHU, es una solución digital que permita a los ganaderos mejorar la gestión, monitoreo y cuidado de su ganado mediante el uso de tecnologías como Internet de las Cosas (IoT), dispositivos inteligentes y aplicaciones móviles. La propuesta busca facilitar el acceso a información relevante sobre el estado y comportamiento de los animales, permitiendo que los ganaderos puedan tomar decisiones de manera más rápida y eficiente.
 
 La solución estará conformada principalmente por una aplicación móvil y una plataforma digital que recibirán información recopilada mediante collares inteligentes IoT colocados en los animales. Estos dispositivos permitirán registrar datos relacionados con la actividad, ubicación, comportamiento y posibles cambios en el estado del animal. La información será procesada y presentada de manera sencilla al ganadero, permitiéndole realizar un seguimiento individual de cada animal y de su ganado en general.
 
@@ -109,13 +109,13 @@ Para estructurar las dimensiones del problema del sector objetivo, se aplica la 
 
 | Elemento | Hallazgo identificado | Implicación para ICHU |
 |---|---|---|
-| **Who — ¿Quién?** | Los usuarios principales son los ganaderos propietarios o administradores y los zootecnistas o médicos veterinarios que atienden sus hatos. | Diseñar una experiencia diferenciada para la gestión productiva y para la consulta clínica. |
-| **What — ¿Qué problema?** | Existe detección tardía de enfermedades, celos, partos y extravíos; además, los registros se encuentran fragmentados entre Excel y cuadernos. | Centralizar la ficha individual del animal, la telemetría, las alertas y los eventos productivos. |
-| **Where — ¿Dónde?** | En fundos, estancias, establos y potreros rurales de Apurímac, Cusco, Puno y otras zonas ganaderas con cobertura irregular. | Incorporar collar inteligente, ubicación y operación sin conexión. |
-| **When — ¿Cuándo?** | Durante campañas sanitarias, partos, periodos de celo, enfermedades metabólicas y situaciones de abigeato; también durante las actividades rutinarias de campo. | Generar recordatorios preventivos y alertas inmediatas según la gravedad del evento. |
-| **Why — ¿Por qué?** | La supervisión depende de observación visual, Excel, cuadernos y visitas veterinarias puntuales. La conectividad intermitente dificulta actualizar los registros desde el potrero. | Ofrecer una aplicación móvil offline con sincronización posterior y una plataforma web centralizada. |
-| **How — ¿Cómo se manifiesta?** | Los ganaderos realizan conteos e inspecciones físicas; los veterinarios reciben información incompleta o duplicada sobre tratamientos, vacunas y antecedentes. | Mantener trazabilidad por animal, registrar tratamientos y compartir información autorizada entre ganaderos y profesionales. |
-| **How Much — ¿Cuánto impacto tiene?** | En el cuestionario del Segmento 1, 2 de 2 participantes reportaron pérdidas de entre 5% y 10% del hato y calificaron el abigeato como frecuente y costoso. Próspero reportó la muerte de aproximadamente cinco vaquillas por partos prematuros y antecedentes de robos de 15 a 20 animales. | Priorizar alertas de salud y reproducción, geolocalización, reportes de costos y métricas de mortalidad. |
+| **Who: ¿quién?** | Los usuarios principales son los ganaderos propietarios o administradores y los zootecnistas o médicos veterinarios que atienden sus hatos. | Diseñar una experiencia diferenciada para la gestión productiva y para la consulta clínica. |
+| **What: ¿qué problema?** | Existe detección tardía de enfermedades, celos, partos y extravíos; además, los registros se encuentran fragmentados entre Excel y cuadernos. | Centralizar la ficha individual del animal, la telemetría, las alertas y los eventos productivos. |
+| **Where: ¿dónde?** | En fundos, estancias, establos y potreros rurales de Apurímac, Cusco, Puno y otras zonas ganaderas con cobertura irregular. | Incorporar collar inteligente, ubicación y operación sin conexión. |
+| **When: ¿cuándo?** | Durante campañas sanitarias, partos, periodos de celo, enfermedades metabólicas y situaciones de abigeato; también durante las actividades rutinarias de campo. | Generar recordatorios preventivos y alertas inmediatas según la gravedad del evento. |
+| **Why: ¿por qué?** | La supervisión depende de observación visual, Excel, cuadernos y visitas veterinarias puntuales. La conectividad intermitente dificulta actualizar los registros desde el potrero. | Ofrecer una aplicación móvil offline con sincronización posterior y una plataforma web centralizada. |
+| **How: ¿cómo se manifiesta?** | Los ganaderos realizan conteos e inspecciones físicas; los veterinarios reciben información incompleta o duplicada sobre tratamientos, vacunas y antecedentes. | Mantener trazabilidad por animal, registrar tratamientos y compartir información autorizada entre ganaderos y profesionales. |
+| **How Much: ¿cuánto impacto tiene?** | En el cuestionario del Segmento 1, 2 de 2 participantes reportaron pérdidas de entre 5% y 10% del hato y calificaron el abigeato como frecuente y costoso. Próspero reportó la muerte de aproximadamente cinco vaquillas por partos prematuros y antecedentes de robos de 15 a 20 animales. | Priorizar alertas de salud y reproducción, geolocalización, reportes de costos y métricas de mortalidad. |
 
 **Puntos más importantes a resolver por la solución propuesta**
 La propuesta de software y hardware IoT tiene como meta prioritaria resolver los siguientes desafíos críticos:
@@ -152,7 +152,7 @@ En esta sección se detalla el desarrollo y la aplicación del proceso Lean UX p
 #### 1.2.2.1. Lean UX Problem Statements.
 De acuerdo con las pautas de diseño para iniciativas nuevas, se ha elaborado un planteamiento del problema que abarca las necesidades de los dos segmentos objetivo: ganaderos y zootecnistas o médicos veterinarios:
 
-El estado actual de la ganadería extensiva y del seguimiento del ganado depende principalmente de inspecciones manuales en los potreros, identificación física y registros retrospectivos en papel. Estos procesos requieren mucho trabajo, son propensos a errores y presentan dificultades para escalar. Las soluciones existentes no combinan adecuadamente el monitoreo fisiológico continuo, como la temperatura corporal y los patrones de actividad, con la ubicación GPS dentro de un ecosistema digital accesible y fácil de utilizar. ICHU abordará esta brecha mediante una solución IoT integral basada en collares inteligentes que transmiten datos biométricos a una API REST central y a una aplicación web y móvil que visualiza el estado del ganado y genera alertas predictivas. El enfoque inicial estará dirigido a ganaderos de escala media y profesionales veterinarios de Sudamérica. El éxito se evaluará mediante el uso diario de la aplicación, el tiempo de respuesta ante alertas críticas y la reducción de pérdidas de ganado durante el piloto.
+El estado actual de la ganadería extensiva y del seguimiento del ganado depende principalmente de inspecciones manuales en los potreros, identificación física y registros retrospectivos en papel. Estos procesos requieren mucho trabajo, son propensos a errores y presentan dificultades para escalar. Las soluciones existentes no combinan adecuadamente el monitoreo fisiológico continuo, como la temperatura corporal y los patrones de actividad, con la ubicación GPS dentro de un ecosistema digital accesible y fácil de utilizar. ICHU abordará esta brecha mediante una solución IoT integral basada en collares inteligentes que transmiten datos biométricos a una API REST central y a una aplicación web y móvil que visualiza el estado del ganado y genera alertas predictivas. El enfoque inicial estará dirigido a los ganaderos de escala media de la sierra sur del Perú, en las regiones de Apurímac, Cusco y Puno, y a los zootecnistas y médicos veterinarios que asesoran sus hatos. El éxito se evaluará mediante el uso diario de la aplicación, el tiempo de respuesta ante alertas críticas y la reducción de pérdidas de ganado durante el piloto.
 
 #### 1.2.2.2. Lean UX Assumptions.
 Para guiar el diseño centrado en el usuario, hemos estructurado nuestras creencias en cinco categorías de supuestos, redactados como enunciados verificables que serán validados durante el desarrollo.
@@ -179,20 +179,35 @@ Para guiar el diseño centrado en el usuario, hemos estructurado nuestras creenc
 | **E. Feature Assumptions** | El modo sin conexión permitirá registrar datos localmente y sincronizarlos al recuperar señal, garantizando la continuidad operativa en campo. | Medición de registros creados sin conexión, sincronizaciones exitosas y datos faltantes. |
 
 #### 1.2.2.3. Lean UX Hypothesis Statements.
-Tomando como base los supuestos de características definidos anteriormente, se redacta una declaración de hipótesis por cada supuesto, utilizando una estructura verificable en español:
+Se redacta una declaración de hipótesis por cada Feature Assumption definido en la sección anterior, aplicando la estructura del template: el resultado de negocio que se busca alcanzar, las personas que deben obtenerlo, el beneficio que obtienen y la característica o solución que lo habilita.
 
-**Hypothesis 1 — Biometric and GPS Tracking:**
-Creemos que, si los administradores ganaderos pueden consultar la ubicación individual del ganado y sus primeros indicadores de salud mediante un collar inteligente de bajo consumo, la retención anual de suscripciones superará el 92%. Validaremos esta hipótesis mediante un piloto que mida el uso diario, la disponibilidad de datos y la intención de renovación.
+**Hypothesis 1. Biometric and GPS Tracking**
 
-**Hypothesis 2 — Real-Time Alerts:**
-Creemos que, si los ganaderos reciben alertas cuando los indicadores biométricos validados superan los umbrales críticos, disminuirá el tiempo de respuesta ante emergencias sanitarias y se reducirán las pérdidas de ganado durante el piloto. Mediremos el tiempo de entrega de las alertas, el tiempo de respuesta del usuario y los resultados sanitarios.
+**Creemos que lograremos** una tasa de renovación anual de suscripciones superior al 92%
+**si** los administradores ganaderos
+**alcanzan** la localización individual de cada animal y la detección temprana de indicios de enfermedad
+**con** un collar inteligente de bajo consumo que registra temperatura corporal, índice de actividad y coordenadas de posición.
 
-**Hypothesis 3 — Analytics Dashboard:**
-Creemos que, si los veterinarios pueden consultar historiales biométricos, tendencias de temperatura y distribuciones del hato mediante el panel de análisis, tomarán decisiones diagnósticas más rápidas y fundamentadas. Validaremos esta hipótesis mediante el tiempo de ejecución de tareas y la opinión de los usuarios.
+**Hypothesis 2. Real-Time Alerts**
 
-**Hypothesis 4 — Offline Operation:**
-Creemos que, si los ganaderos pueden consultar fichas de animales y registrar eventos de campo sin cobertura celular, mejorarán el uso diario y la integridad de los datos en zonas rurales. Mediremos la cantidad de registros creados sin conexión, las sincronizaciones exitosas y los registros faltantes durante el piloto.
+**Creemos que lograremos** una reducción del 15% en la mortalidad del hato de las unidades productivas suscritas
+**si** los ganaderos propietarios y administradores
+**alcanzan** la capacidad de aislar y atender a un animal enfermo en menos de una hora desde la desviación de sus constantes
+**con** un motor de alertas automáticas que notifica por aplicación móvil y por mensaje de texto cuando los indicadores biométricos superan los umbrales definidos.
 
+**Hypothesis 3. Analytics Dashboard**
+
+**Creemos que lograremos** 150 unidades productivas con suscripción activa durante el primer año, impulsadas por la recomendación profesional
+**si** los zootecnistas y médicos veterinarios
+**alcanzan** un diagnóstico sustentado en historiales biométricos, tendencias de temperatura y distribución de casos en el hato
+**con** un panel de análisis integrado al RESTful API de desarrollo interno.
+
+**Hypothesis 4. Offline Operation**
+
+**Creemos que lograremos** que el 60% de las unidades productivas suscritas registre actividad en la aplicación al menos cinco días por semana
+**si** el personal de campo de las unidades ganaderas
+**alcanza** la continuidad de sus faenas en zonas sin cobertura celular, consultando fichas y registrando eventos en el momento en que ocurren
+**con** un modo sin conexión que almacena los registros de forma local y los sincroniza al recuperar la señal.
 
 #### 1.2.2.4. Lean UX Canvas.
 A continuación, se presenta el Lienzo Lean UX de la startup ganadera, integrando los bloques estratégicos para validar de forma iterativa nuestro modelo de negocio digital:
@@ -230,12 +245,16 @@ A continuación, se presenta el Lienzo Lean UX de la startup ganadera, integrand
             <td>
                 <ol>
                     <li>
-                        <strong>Administrador/Dueño de Finca:</strong>
-                        Toma decisiones de negocio, evalúa costos y rentabilidad.
+                        <strong>Cesar Flores, administrador ganadero:</strong>
+                        Arquetipo del Segmento 1. Toma las decisiones de negocio, evalúa costos y rentabilidad, y responde por la seguridad del hato.
                     </li>
                     <li>
-                        <strong>Zootecnista/Médico Veterinario:</strong>
-                        Necesita datos e históricos cuantitativos para tratamientos de salud.
+                        <strong>Leonardo Rosales, médico veterinario:</strong>
+                        Arquetipo del Segmento 2. Necesita historiales cuantitativos y datos continuos para sustentar diagnósticos y tratamientos.
+                    </li>
+                    <li>
+                        <strong>Operario de campo:</strong>
+                        Rol operativo dentro del Segmento 1. Ejecuta las faenas en el potrero y registra lo que observa durante la jornada.
                     </li>
                 </ol>
             </td>
@@ -272,10 +291,11 @@ A continuación, se presenta el Lienzo Lean UX de la startup ganadera, integrand
         <tr>
             <td><strong>6. Hypotheses</strong></td>
             <td>
-                <em>Ver sección 1.2.2.3.</em>
-                Creemos que lograremos reducir pérdidas ganaderas y fidelizar clientes si
-                proveemos collares IoT integrados a alertas móviles inmediatas y sincronización
-                sin conexión.
+                Creemos que lograremos una reducción del 15% en la mortalidad del hato y una
+                renovación anual superior al 92% si los ganaderos y los profesionales que los
+                asesoran alcanzan la detección temprana de anomalías y la continuidad del
+                registro en campo, con collares inteligentes integrados a un motor de alertas
+                y a un modo sin conexión con sincronización posterior.
             </td>
         </tr>
         <tr>
@@ -332,13 +352,13 @@ A continuación, se describen los dos segmentos objetivo identificados para nues
 
 **Segmento 1:** Medianos y Grandes Ganaderos (Propietarios y Administradores de Estancias)  
 
-Este segmento representa a los tomadores de decisiones financieras y estratégicas de las unidades de producción ganadera. Son los responsables de adquirir la solución digital y los collares inteligentes IoT, motivados por la optimización de costos, el aumento de la productividad de leche y carne, y la mitigación de pérdidas críticas causadas por muertes no detectadas, enfermedades y abigeato.
+Dentro de este segmento conviven dos roles operativos. El administrador ganadero, propietario o gestor de la unidad productiva, es quien decide la compra y responde por los resultados económicos del hato. El operario de campo es el personal que ejecuta las faenas en el potrero y registra lo que observa durante la jornada; no decide la compra, pero su adopción determina que la información llegue al sistema. Este segmento representa a los tomadores de decisiones financieras y estratégicas de las unidades de producción ganadera. Son los responsables de adquirir la solución digital y los collares inteligentes IoT, motivados por la optimización de costos, el aumento de la productividad de leche y carne, y la mitigación de pérdidas críticas causadas por muertes no detectadas, enfermedades y abigeato.
 
 **A. Perfil Demográfico y Geográfico**
 Edad: Entre 35 y 65 años.
 Género: Masculino y femenino.
 Nivel Educativo: Educación técnica superior o universitaria completa (típicamente en carreras como Agronomía, Medicina Veterinaria, Zootecnia, Administración de Empresas o Ingeniería Industrial).
-Ubicación: Regiones de alta actividad ganadera en el Perú (tales como Cajamarca, Arequipa, Puno, La Libertad, San Martín) y principales zonas ganaderas de Latinoamérica.
+Ubicación: Regiones ganaderas de la sierra sur del Perú, en particular Apurímac, Cusco y Puno, donde se realizó la investigación de campo. Cajamarca, Arequipa, La Libertad y San Martín se consideran mercados de expansión posterior.
 Ocupación: Propietarios de haciendas, gerentes generales de cooperativas ganaderas o administradores generales de estancias ganaderas medianas y grandes (hatos de entre 50 y más de 500 cabezas de ganado).
 Dispositivos de Preferencia: Teléfonos inteligentes de gama media-alta (Android e iOS), tabletas y computadoras portátiles o de escritorio para el control administrativo de la empresa.
 Canales de Interacción Digital: Redes sociales profesionales (LinkedIn), grupos especializados de WhatsApp, correos electrónicos corporativos, motores de búsqueda (Google) y portales de noticias del sector agropecuario.  
@@ -375,12 +395,14 @@ Marcas e Influencias: Influenciados por publicaciones de revistas indexadas espe
 **C. Evidencia de investigación**
 Las entrevistas del Segmento 2 muestran que los profesionales necesitan consultar historiales clínicos, tratamientos, constantes fisiológicas, rumia, actividad, reproducción y evidencia ecográfica antes o durante la visita al establo. Darwin, Eliseo y Dionisio coincidieron en la necesidad de alertas tempranas, reportes exportables e integración con ecógrafos y sistemas de nutrición. Estos hallazgos provienen de la investigación propia y deben validarse posteriormente con una muestra más amplia antes de convertirse en indicadores estadísticos generales.
 
-### 1.4. Fuentes de contexto
+**Referencias citadas en este capítulo**
 
-[1] Instituto Nacional de Estadística e Informática (INEI). *Encuesta Nacional Agropecuaria 2023*. https://proyectos.inei.gob.pe/iinei/srienaho/Descarga/DocumentosMetodologicos/2023-62/05_PUBLICACION_ENA_2023.pdf
+**Pendiente:** trasladar estas cuatro referencias a la sección Bibliografía del informe, conservando las citas numeradas del cuerpo del capítulo. Se presentan en formato APA 7.ª edición.
 
-[2] Ministerio de Desarrollo Agrario y Riego (MIDAGRI). *Sistema Integrado de Estadística Agraria (SIEA)*. https://siea.midagri.gob.pe/
+[1] Instituto Nacional de Estadística e Informática. (2023). *Encuesta Nacional Agropecuaria 2023*. INEI. https://proyectos.inei.gob.pe/iinei/srienaho/Descarga/DocumentosMetodologicos/2023-62/05_PUBLICACION_ENA_2023.pdf
 
-[3] Organismo Supervisor de Inversión Privada en Telecomunicaciones (OSIPTEL). *Estadísticas y reportes de servicios de telecomunicaciones*. https://repositorio.osiptel.gob.pe/handle/20.500.12630/4
+[2] Ministerio de Desarrollo Agrario y Riego. (s. f.). *Sistema Integrado de Estadística Agraria (SIEA)*. MIDAGRI. https://siea.midagri.gob.pe/
 
-[4] Servicio Nacional de Sanidad Agraria (SENASA). *Campañas de vacunación y prevención sanitaria para la ganadería*. https://www.senasa.gob.pe/
+[3] Organismo Supervisor de Inversión Privada en Telecomunicaciones. (s. f.). *Estadísticas y reportes de servicios de telecomunicaciones*. OSIPTEL. https://repositorio.osiptel.gob.pe/handle/20.500.12630/4
+
+[4] Servicio Nacional de Sanidad Agraria. (s. f.). *Campañas de vacunación y prevención sanitaria para la ganadería*. SENASA. https://www.senasa.gob.pe/
