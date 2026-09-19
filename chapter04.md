@@ -56,7 +56,17 @@ Tres de las incertidumbres que el Big Picture dejó marcadas quedaron resueltas 
 
 Para identificar los contextos acotados se aplicó la técnica **look-for-pivotal-events**, que consiste en buscar los hechos del negocio que marcan un cambio de estado entre fases distintas del proceso. Se eligió esta técnica sobre las alternativas porque el Big Picture ya había dejado ordenados los eventos sobre una línea de tiempo, y porque el dominio ganadero presenta transiciones nítidas: un animal pasa de ser un registro administrativo a ser un sujeto vigilado, y de ahí a ser un paciente en tratamiento.
 
-**Pendiente:** capturas de los tres estados progresivos del EventStorm durante la sesión de Candidate Context Discovery, mostrando cómo se fueron trazando los límites.
+![Estado 1 — Pivotal Events](images/diagrams/candidate-context-discovery/01-pivotal-events.svg)
+
+*Estado 1. Identificación de eventos pivote sobre la línea temporal del dominio. Elaboración propia.*
+
+![Estado 2 — Boundaries Emerging](images/diagrams/candidate-context-discovery/02-emerging-boundaries.svg)
+
+*Estado 2. Trazado inicial de fronteras emergentes a partir de cambios de responsabilidad y reglas. Elaboración propia.*
+
+![Estado 3 — Candidate Contexts](images/diagrams/candidate-context-discovery/03-candidate-contexts.svg)
+
+*Estado 3. Primera partición en contextos candidatos, todavía exploratoria. Elaboración propia.*
 
 **Eventos pivote y fronteras que revelan**
 
