@@ -6,9 +6,7 @@
 
 **Competitive Analysis Landscape**
 
-**Pendiente:** insertar en la fila de encabezado el logo de cada organización, junto al nombre que ya figura en ella.
-
-| Sección | Criterio | ICHU IoT (nuestra startup) | Competidor 1: Allflex SenseHub | Competidor 2: Digitanimal | Competidor 3: Moocall |
+| Sección | Criterio | ICHU IoT (nuestra startup)<br>![Logo de ICHU IoT](images/logo-ichu-small.png) | Competidor 1: Allflex SenseHub<br>![Logo de Allflex SenseHub](images/logo-allflex-small.png) | Competidor 2: Digitanimal<br>![Logo de Digitanimal](images/logo-digitanimal-small.png) | Competidor 3: Moocall<br>![Logo de Moocall](images/logo-moocall-small.png) |
 |---|---|---|---|---|---|
 | **¿Por qué llevar a cabo este análisis?** | Objetivo del análisis | Comparar ICHU con sus principales competidores para identificar fortalezas, debilidades, oportunidades y amenazas, y determinar una ventaja competitiva clara y sostenible en el mercado de monitoreo inteligente de ganado. | | | |
 | **Perfil** | Overview | Solución digital basada en collares inteligentes IoT con conectividad LoRaWAN y celular híbrida, integrada a una plataforma web y móvil nativa para el monitoreo biométrico y localización en tiempo real de ganado en pastoreo extensivo. | Líder global en identificación animal y monitoreo inteligente de ganado lechero y de carne, perteneciente al grupo MSD Animal Health, con infraestructura propietaria robusta. | Empresa de base tecnológica española que ofrece collares GPS y sensores para el monitoreo de la ubicación, temperatura y comportamiento de animales en pastoreo extensivo. | Compañía irlandesa especializada en dispositivos IoT acoplados a la cola del animal para la detección temprana del parto y collares para el monitoreo de celo. |
