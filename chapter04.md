@@ -89,8 +89,6 @@ El recorrido de los eventos pivote produjo ocho contextos candidatos, que coinci
 
 Para visualizar cómo colaboran los contextos en los casos reales del negocio se aplicó **Domain Storytelling**. Cada historia se narra con actores, actividades numeradas y objetos de trabajo, siguiendo la secuencia en que ocurren. Se modelaron tres historias que atraviesan la mayor cantidad de contextos y que representan los flujos de mayor valor.
 
-**Pendiente:** capturas de los tres diagramas de Domain Storytelling elaborados en la herramienta indicada.
-
 **Historia 1. Incorporación de un animal al hato monitoreado**
 
 | # | Actor | Actividad | Objeto de trabajo | Destinatario | Contexto |
@@ -104,6 +102,10 @@ Para visualizar cómo colaboran los contextos en los casos reales del negocio se
 | 7 | IoT Assets | publica | el hecho "collar vinculado al animal" | Operations & Monitoring | IoT Assets |
 | 8 | Cattle Band | transmite | la primera lectura biométrica | Operations & Monitoring | Operations & Monitoring |
 | 9 | Operations & Monitoring | atribuye | la lectura al animal correspondiente | Cattle Information | Operations & Monitoring |
+
+![Domain Message Flow de la Historia 1: Incorporación de un animal al hato monitoreado](images/domain-message-flow-h1-incorporacion.png)
+
+*Figura 10. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
 **Historia 2. Detección de fiebre durante el pastoreo sin cobertura**
 
@@ -123,6 +125,10 @@ Para visualizar cómo colaboran los contextos en los casos reales del negocio se
 | 12 | Médico veterinario | registra | la intervención con producto y dosis | Operations & Monitoring | Operations & Monitoring |
 | 13 | Operations & Monitoring | inicia | el periodo de retiro del producto aplicado | Planning | Planning |
 
+![Domain Message Flow de la Historia 2: Detección de fiebre durante el pastoreo sin cobertura](images/domain-message-flow-h2-fiebre-offline.png)
+
+*Figura 11. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
+
 **Historia 3. Contratación de un plan y habilitación de capacidades**
 
 | # | Actor | Actividad | Objeto de trabajo | Destinatario | Contexto |
@@ -135,6 +141,10 @@ Para visualizar cómo colaboran los contextos en los casos reales del negocio se
 | 6 | Subscription Plans | publica | el hecho "suscripción activada" | IoT Assets, Dashboard & Analytics | Subscription Plans |
 | 7 | IoT Assets | habilita | el límite de dispositivos del plan | Administrador ganadero | IoT Assets |
 | 8 | Dashboard & Analytics | habilita | los reportes incluidos en el plan | Administrador ganadero | Dashboard & Analytics |
+
+![Domain Message Flow de la Historia 3: Contratación de un plan y habilitación de capacidades](images/domain-message-flow-h3-suscripcion.png)
+
+*Figura 12. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
 **Lectura de los flujos**
 
