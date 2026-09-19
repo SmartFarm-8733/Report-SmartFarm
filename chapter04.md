@@ -312,7 +312,7 @@ El Ubiquitous Language del capítulo anterior conserva ambos bloques separados p
 
 La arquitectura de la solución se representa aplicando el C4 Model, elaborado como Diagram-as-Code en Structurizr DSL. El modelo completo reúne cuatro personas, seis sistemas externos, nueve containers, setenta y tres componentes clasificados por capa y veinticinco vistas.
 
-El código fuente de todos los diagramas de este capítulo forma parte del repositorio. El modelo C4 se encuentra en `diagrams/structurizr/workspace-smartfarm-c4.dsl` y los diagramas UML y de base de datos en `diagrams/puml/`. El archivo `diagrams/README.md` documenta cómo regenerar cada imagen y qué vista corresponde a cada archivo.
+El código fuente de todos los diagramas de este capítulo forma parte del repositorio. El modelo C4 se encuentra en `diagrams/structurizr/workspace-smartfarm-c4.dsl` y los diagramas UML y de base de datos en `diagrams/puml/`.
 
 La solución se organiza como un **monolito modular** en la nube, en el que cada contexto acotado es un módulo interno con su propio esquema de base de datos, acompañado de un servicio de borde y dos aplicaciones embebidas. Se eligió el monolito modular sobre una arquitectura de microservicios porque el equipo tiene seis integrantes y un ciclo de quince semanas: el aislamiento por módulos preserva los límites de los contextos sin pagar el costo operativo de desplegar y coordinar siete servicios independientes. La modularidad interna deja abierta la extracción posterior de cualquier módulo que lo justifique.
 
