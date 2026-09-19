@@ -101,11 +101,11 @@ Referencias utilizadas en el informe, conservando la numeración empleada por la
 
 | Artefacto | Archivo |
 |---|---|
-| Solution Profile y Lean UX Process | [chapter01.md](chapter01.md) |
-| Requirements Elicitation & Analysis | [chapter02.md](chapter02.md) |
-| Requirements Specification | [chapter03.md](chapter03.md) |
-| Solution Software Design | [chapter04.md](chapter04.md) |
-| Student Outcome y colaboración | [README.md](README.md) |
+| Solution Profile y Lean UX Process | https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/chapter01.md |
+| Requirements Elicitation & Analysis | https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/chapter02.md |
+| Requirements Specification | https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/chapter03.md |
+| Solution Software Design | https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/chapter04.md |
+| Student Outcome y colaboración | https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/README.md |
 
 \newpage
 
@@ -115,9 +115,9 @@ Este anexo reúne las evidencias audiovisuales proporcionadas por el equipo. Los
 
 | Evidencia | Descripción | Enlace | Estado |
 |---|---|---|---|
-| Entrevistas completas | Carpeta con los videos completos de las entrevistas de los dos segmentos objetivo | [Videos de entrevistas completas](https://drive.google.com/drive/folders/1Lx-SoAs_OQUHSQWLl1PhLo1HGMW5-NvT?usp=sharing) | Enlace proporcionado |
-| Entrevistas editadas | Video consolidado de las entrevistas para la evidencia del informe | [Video de entrevista editada](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK) | Enlace proporcionado |
-| Video de exposición AV1 | Exposición del informe según el Final Project Statement | Pendiente de publicación en Microsoft Stream/Clipchamp | Pendiente |
+| Entrevistas completas | Carpeta con los videos completos de las entrevistas de los dos segmentos objetivo | https://drive.google.com/drive/folders/1Lx-SoAs_OQUHSQWLl1PhLo1HGMW5-NvT?usp=sharing | Enlace proporcionado |
+| Entrevistas editadas | Video consolidado de las entrevistas para la evidencia del informe | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsVmlldyI6Ik15RmlsZXNMaW5rQ29weSJ9fQ&e=pKyJVK | Enlace proporcionado |
+| Video de exposición AV1 — Primera exposición | Exposición inicial del informe según el Final Project Statement | https://upcedupe-my.sharepoint.com/:f:/g/personal/u202323243_upc_edu_pe/IgCUSf6VBMS2RpDCw5IECY7KAeH3mMYiKRCK6R4jruEgR7M?e=E6tBZt | Enlace proporcionado |
 | Video About-the-Team | Proceso de trabajo, testimonios y Student Outcome | Pendiente de publicación en Microsoft Stream/Clipchamp y YouTube | Pendiente |
 
 \newpage
@@ -126,9 +126,9 @@ Este anexo reúne las evidencias audiovisuales proporcionadas por el equipo. Los
 
 | Herramienta | Artefactos contenidos | Enlace |
 |---|---|---|
-| Figma / FigJam | Big Picture EventStorming, Bounded Context Canvases y Domain Message Flows | [Tablero SmartFarm en Figma](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1) |
-| Miro | Design-Level EventStorming y Candidate Context Discovery | [Tablero SmartFarm en Miro](https://miro.com/welcomeonboard/ekNIeWVQcC9hcG1mM292c2E0RkcwblUxUSttUDFCSmpZMjBTQldxOENSNVdtbTNiWEZQSXRaQWg1UWk4bmpDYjVzNnNHanMrV3J5RDZZc2RaeXNBSDQ4ZWRzaFRaNi9qbXJsUlBtblZobDFOeS9aTGFyK1BJWDNUVGozSUVYSHhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=680912547552) |
-| UXPressia | User Personas, User Journey Maps, Empathy Maps, As-Is y Impact Mapping | [Proyecto SmartFarm en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N) |
+| Figma / FigJam | Big Picture EventStorming, Bounded Context Canvases y Domain Message Flows | https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1 |
+| Miro | Design-Level EventStorming y Candidate Context Discovery | https://miro.com/welcomeonboard/ekNIeWVQcC9hcG1mM292c2E0RkcwblUxUSttUDFCSmpZMjBTQldxOENSNVdtbTNiWEZQSXRaQWg1UWk4bmpDYjVzNnNHanMrV3J5RDZZc2RaeXNBSDQ4ZWRzaFRaNi9qbXJsUlBtblZobDFOeS9aTGFyK1BJWDNUVGozSUVYSHhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=680912547552 |
+| UXPressia | User Personas, User Journey Maps, Empathy Maps, As-Is y Impact Mapping | https://uxpressia.com/w/v8FzI/t/AIZ5N |
 
 \newpage
 
@@ -136,8 +136,8 @@ Este anexo reúne las evidencias audiovisuales proporcionadas por el equipo. Los
 
 | Segmento | Evidencia | Enlace |
 |---|---|---|
-| Ganadero | Encuesta extensa del segmento de ganaderos | [Encuesta de ganaderos](https://drive.google.com/file/d/1WZdTKVgyGmAlKlI4ZXnRhkK2MJL7fO8D/view?usp=sharing) |
-| Zootecnista / veterinario | Encuesta extensa del segmento profesional | [Encuesta de zootecnistas](https://drive.google.com/file/d/15h2MLOWtvMBic0O97VnSMJxAeW9ZpUy2/view?usp=drive_link) |
+| Ganadero | Encuesta extensa del segmento de ganaderos | https://drive.google.com/file/d/1WZdTKVgyGmAlKlI4ZXnRhkK2MJL7fO8D/view?usp=sharing |
+| Zootecnista / veterinario | Encuesta extensa del segmento profesional | https://drive.google.com/file/d/15h2MLOWtvMBic0O97VnSMJxAeW9ZpUy2/view?usp=drive_link |
 
 Estas evidencias complementan los resúmenes, análisis de entrevistas, User Personas y mapas incluidos en el Capítulo II.
 
@@ -147,10 +147,10 @@ Estas evidencias complementan los resúmenes, análisis de entrevistas, User Per
 
 | Recurso | Propósito | Enlace |
 |---|---|---|
-| Repositorio del informe | Fuente versionada del Project Report y sus artefactos | [Report-SmartFarm](https://github.com/SmartFarm-8733/Report-SmartFarm) |
-| Organización | Organización pública de GitHub de SmartFarm-8733 | [SmartFarm-8733](https://github.com/SmartFarm-8733) |
-| README del repositorio | Registro de versiones, colaboración, Student Outcome y navegación del informe | [README.md](https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/README.md) |
-| Informe completo | Capítulos I-IV, conclusiones, bibliografía y anexos | [Report-SmartFarm · rama feature/conclusions](https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions) |
+| Repositorio del informe | Fuente versionada del Project Report y sus artefactos | https://github.com/SmartFarm-8733/Report-SmartFarm |
+| Organización | Organización pública de GitHub de SmartFarm-8733 | https://github.com/SmartFarm-8733 |
+| README del repositorio | Registro de versiones, colaboración, Student Outcome y navegación del informe | https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/README.md |
+| Informe completo | Capítulos I-IV, conclusiones, bibliografía y anexos | https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions |
 
 \newpage
 
@@ -158,9 +158,9 @@ Estas evidencias complementan los resúmenes, análisis de entrevistas, User Per
 
 | Artefacto | Fuente o exportación | Enlace |
 |---|---|---|
-| C4 Model | Workspace Structurizr DSL | [workspace-ichu-c4.dsl](https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/diagrams/structurizr/workspace-ichu-c4.dsl) |
-| C4 Model | Imágenes exportadas de System Landscape, Context, Container, Deployment y Components | [Imágenes C4](https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions/images/diagrams/c4) |
-| UML y diseño de base de datos | Fuentes PlantUML de clases, context maps y bases de datos | [Fuentes PlantUML](https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions/diagrams/puml) |
-| UML y diseño de base de datos | Imágenes renderizadas de clases, context maps y esquemas | [Imágenes UML y BD](https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions/images/diagrams) |
+| C4 Model | Workspace Structurizr DSL | https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/diagrams/structurizr/workspace-ichu-c4.dsl |
+| C4 Model | Imágenes exportadas de System Landscape, Context, Container, Deployment y Components | https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions/images/diagrams/c4 |
+| UML y diseño de base de datos | Fuentes PlantUML de clases, context maps y bases de datos | https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions/diagrams/puml |
+| UML y diseño de base de datos | Imágenes renderizadas de clases, context maps y esquemas | https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions/images/diagrams |
 
 Los enlaces de este anexo apuntan a contenido versionado dentro del mismo repositorio. Los enlaces de Figma, Miro, UXPressia, Drive y SharePoint apuntan a los espacios externos donde se elaboraron o almacenan los artefactos originales.
