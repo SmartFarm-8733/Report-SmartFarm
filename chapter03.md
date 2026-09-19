@@ -212,10 +212,6 @@ Los Business Goals se formulan siguiendo los criterios SMART y toman como refere
 
 **Impact Map elaborado en UXPressia**
 
-**Pendiente:** captura del Impact Map completo elaborado en UXPressia, con los cuatro Business Goals, los Actors vinculados a cada uno, los Impacts y los Deliverables
-
-**Pendiente:** URL pública del proyecto de UXPressia que contiene las fichas de User Persona y el Impact Map
-
 ### Primer segmento objetivo
 
 **Actor: Cesar Flores, administrador ganadero (arquetipo del Segmento 1)**
@@ -387,7 +383,3 @@ El Sprint 2 concentra la mayor carga porque reúne las historias de mayor comple
 **Evidencia del Product Backlog en la herramienta de control**
 
 El equipo gestiona el Product Backlog en **Trello**, herramienta que se mantendrá para los Sprint Backlogs a fin de conservar la continuidad del seguimiento entre iteraciones.
-
-**Pendiente:** captura del Product Backlog en Trello, en la que se verifique el orden de las historias, sus identificadores, sus títulos y su estimación en Story Points
-
-**Pendiente:** URL pública del board de Trello con el Product Backlog
