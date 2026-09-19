@@ -1071,4 +1071,3 @@ La tabla `plan_feature` implementa la relación de muchos a muchos entre plan y 
 | Subscription Plans | Genérico | Subscription | `subscription` |
 
 Los siete contextos suman quince agregados y se despliegan como módulos internos de un único ejecutable, cada uno con su esquema aislado dentro de la misma instancia de PostgreSQL. La comunicación entre módulos ocurre siempre a través de un Anti-corruption Layer o de eventos de dominio publicados en el proceso, nunca por acceso directo a las tablas de otro esquema. Esa restricción es la que hace posible extraer cualquier módulo como servicio independiente si el crecimiento del producto llegara a justificarlo.
-
