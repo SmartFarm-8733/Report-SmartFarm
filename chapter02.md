@@ -369,7 +369,7 @@ Del análisis de entrevistas se tomaron como insumo principal las herramientas d
 
 Arquetipo del Segmento 1, construido a partir de los patrones identificados en las entrevistas a Próspero Contreras, Meikoll Morell y Grober Barrientos.
 
-![User Persona Cesar Flores, arquetipo del Segmento 1](images/persona-segmento1-cesar-flores.png)
+![User Persona Cesar Flores, arquetipo del Segmento 1](images/persona-segmento1-cesar-flores.jpg)
 
 **Segmento 2: Zootecnistas y Médicos Veterinarios.** Profesionales orientados al monitoreo biométrico continuo, al diagnóstico clínico temprano y a la revisión de historiales de salud consolidados.
 
@@ -377,7 +377,7 @@ Arquetipo del Segmento 1, construido a partir de los patrones identificados en l
 
 Arquetipo del Segmento 2, construido a partir de los patrones identificados en las entrevistas a Darwin Carbajal, Eliseo Ramírez y Dionisio Rodríguez.
 
-![User Persona Leonardo Rosales, arquetipo del Segmento 2](images/persona-segmento2-leonardo-rosales.png)
+![User Persona Leonardo Rosales, arquetipo del Segmento 2](images/persona-segmento2-leonardo-rosales.jpg)
 
 Ambas fichas fueron elaboradas en UXPressia y contemplan los atributos propios de un arquetipo: datos demográficos, biografía, personalidad, habilidades, objetivos, frustraciones, tecnología de preferencia, marcas e influencias, y canales de interacción.
 
@@ -471,7 +471,7 @@ Para la elaboración de los Empathy Maps, el equipo partió de la ficha de cada 
 
 **Empathy Map de Cesar Flores**
 
-![Empathy Map de Cesar Flores, arquetipo del Segmento 1](images/empathy-map-segmento1-ganadero.png)
+![Empathy Map de Cesar Flores, arquetipo del Segmento 1](images/empathy-map-segmento1-ganadero.jpg)
 
 Se empatiza con un ganadero propietario o administrador de una unidad de 51 a 200 cabezas, ubicada en una zona rural de Apurímac o Cusco, que toma las decisiones sobre salud, reproducción, costos y seguridad del hato.
 
@@ -483,7 +483,7 @@ Sus **Pains** son los registros fragmentados, la falta de hábito para registrar
 
 **Empathy Map de Leonardo Rosales**
 
-![Empathy Map de Leonardo Rosales, arquetipo del Segmento 2](images/empathy-map-segmento2-veterinario.png)
+![Empathy Map de Leonardo Rosales, arquetipo del Segmento 2](images/empathy-map-segmento2-veterinario.jpg)
 
 Se empatiza con un zootecnista o médico veterinario que trabaja en campo y en oficina, atiende diferentes establos y necesita información clínica objetiva para diagnosticar y tratar ganado.
 
