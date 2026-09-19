@@ -100,6 +100,7 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 0.11.9 | 2026-09-19 | Contreras Leon, Flor de María | Actualización de los enlaces de los videos de entrevistas para utilizar los recursos publicados en SharePoint. |
 | 0.11.10 | 2026-09-19 | Contreras Leon, Flor de María | Incorporación de enlaces a las fuentes de las evidencias utilizadas en los Capítulos II y IV. |
 | 0.11.11 | 2026-09-19 | Avalos Cordova, Diego Andres | Incorporación de evidencias visuales del historial de commits de GitHub y actualización de las métricas de colaboración del informe. |
+| 0.11.12 | 2026-09-19 | Avalos Cordova, Diego Andres | Depuración de notas internas y placeholders del informe para dejar únicamente el contenido académico de cada sección. |
 ---
 
 # Project Report Collaboration Insights
@@ -122,9 +123,9 @@ Se trabaja con una rama por capítulo, bajo la convención `feature/chapter-<nú
 
 | Métrica | Valor |
 |---|---|
-| Commits de contenido | 80 |
+| Commits de contenido | 81 |
 | Merges de integración | 7 |
-| Commits totales del historial | 87 |
+| Commits totales del historial | 88 |
 | Ramas activas | 7 |
 | Periodo de trabajo | 7 al 19 de septiembre de 2026 |
 | Artefactos versionados | 5 capítulos, 114 imágenes y 17 archivos fuente de diagramas |
@@ -145,11 +146,9 @@ Las siguientes capturas documentan el historial visible de commits de la rama `f
 
 *Figura. Historial de commits de `feature/chapter-II` durante la consolidación del informe (captura 3).*
 
-## Interpretación de los analíticos
+## Interpretación de la actividad colaborativa
 
-**Pendiente:** capturas de los analíticos de colaboración de GitHub, correspondientes a las vistas de Contributors y de Commits en la sección Insights del repositorio.
-
-**Pendiente:** redacción de la interpretación de esos analíticos por parte del equipo, indicando la distribución del trabajo entre integrantes y las medidas adoptadas para equilibrar la participación.
+El historial de commits evidencia una elaboración distribuida del informe entre las ramas de capítulo. Las capturas muestran aportes de Diego Andres Avalos Cordova, Flor de María Contreras Leon, Giorgio Awad, Alison Arrieta y Manuel Angel Sanchez, junto con integraciones realizadas mediante GitFlow. El Registro de Versiones resume las modificaciones relevantes y mantiene la trazabilidad entre cada aporte, el autor y la sección actualizada.
 
 ---
 

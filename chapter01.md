@@ -86,10 +86,10 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
         <span style="font-size:11px; color:#555;">(U202320442)</span>
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
-        <em style="font-size:11px; color:#777;">Pendiente: fotografía</em>
+
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
-        <em style="font-size:11px; color:#777;">Pendiente: carrera, conocimientos técnicos y habilidades que aporta al equipo.</em>
+        Estudiante de Ingeniería de Software. Participa en el análisis de requisitos, la elaboración de User Stories y la documentación colaborativa del proyecto.
       </td>
     </tr>
   </tbody>

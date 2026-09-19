@@ -569,8 +569,6 @@ Las siguientes láminas documentan la progresión completa de la sesión. Se rec
 
 [Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
 
-**Evidencia adicional pendiente:** fotografía del equipo durante la sesión, si se solicita como evidencia complementaria.
-
 **Domain Events identificados, ordenados temporalmente**
 
 | Fase del negocio | Domain Events |
