@@ -79,8 +79,6 @@ Referencias utilizadas en el informe, conservando la numeración empleada por la
 
 # Anexos
 
-\newpage
-
 ## Anexo A. Organización del entregable
 
 Este documento reúne las conclusiones y recomendaciones del proyecto, la pauta del Video About-the-Team, la bibliografía consultada y las evidencias externas que complementan los capítulos del informe.
@@ -88,8 +86,6 @@ Este documento reúne las conclusiones y recomendaciones del proyecto, la pauta 
 - Las conclusiones relacionan el problema, los hallazgos de investigación, las hipótesis y el roadmap.
 - La bibliografía reúne las fuentes utilizadas para fundamentar el análisis y el diseño.
 - Los anexos organizan los enlaces de entrevistas, herramientas colaborativas, encuestas, repositorio y fuentes de diagramas.
-
-\newpage
 
 ## Anexo B. Evidencia documental
 
@@ -108,8 +104,6 @@ https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/chap
 **Student Outcome y colaboración**<br>
 https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/README.md
 
-\newpage
-
 ## Anexo C. Videos y entrevistas
 
 Este anexo reúne las evidencias audiovisuales proporcionadas por el equipo. Los enlaces se conservan como recursos externos y se muestran completos para facilitar su consulta.
@@ -126,8 +120,6 @@ https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7V
 Exposición inicial del informe.<br>
 https://upcedupe-my.sharepoint.com/:f:/g/personal/u202323243_upc_edu_pe/IgCUSf6VBMS2RpDCw5IECY7KAeH3mMYiKRCK6R4jruEgR7M?e=E6tBZt
 
-\newpage
-
 ## Anexo D. Herramientas colaborativas y artefactos de modelado
 
 **Figma / FigJam**<br>
@@ -142,8 +134,6 @@ https://miro.com/welcomeonboard/ekNIeWVQcC9hcG1mM292c2E0RkcwblUxUSttUDFCSmpZMjBT
 User Personas, User Journey Maps, Empathy Maps, As-Is e Impact Mapping.<br>
 https://uxpressia.com/w/v8FzI/t/AIZ5N
 
-\newpage
-
 ## Anexo E. Encuestas y material de investigación
 
 **Ganadero**<br>
@@ -155,8 +145,6 @@ Encuesta extensa del segmento profesional.<br>
 https://drive.google.com/file/d/15h2MLOWtvMBic0O97VnSMJxAeW9ZpUy2/view?usp=drive_link
 
 Estas evidencias complementan los resúmenes, análisis de entrevistas, User Personas y mapas incluidos en el Capítulo II.
-
-\newpage
 
 ## Anexo F. Repositorio y organización del proyecto
 
@@ -175,8 +163,6 @@ https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/READ
 **Informe completo**<br>
 Capítulos I-IV, conclusiones, bibliografía y anexos.<br>
 https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions
-
-\newpage
 
 ## Anexo G. Fuentes de diagramas y artefactos versionados
 

@@ -103,7 +103,7 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 0.11.12 | 2026-09-19 | Avalos Cordova, Diego Andres | Depuración de notas internas y placeholders del informe para dejar únicamente el contenido académico de cada sección. |
 | 0.12.0 | 2026-09-19 | Avalos Cordova, Diego Andres | Creación de la sección de Conclusiones y recomendaciones, pauta del Video About-the-Team, Bibliografía y Anexos. |
 | 0.12.1 | 2026-09-19 | Avalos Cordova, Diego Andres | Integración del estado actualizado del informe, depuración de notas internas y reorganización de los Anexos para su exportación legible a PDF. |
----
+| 0.12.2 | 2026-09-19 | Avalos Cordova, Diego Andres | Consolidación de las ramas de capítulos y conclusiones en `development`, verificación de referencias y preparación de la versión integrada para su promoción a `main`. |
 
 # Project Report Collaboration Insights
 
@@ -125,9 +125,9 @@ Se trabaja con una rama por capítulo, bajo la convención `feature/chapter-<nú
 
 | Métrica | Valor |
 |---|---|
-| Commits de contenido | 89 |
-| Merges de integración | 8 |
-| Commits totales del historial | 97 |
+| Commits de contenido | 110 |
+| Merges de integración | 15 |
+| Commits totales del historial | 125 |
 | Ramas activas | 7 |
 | Periodo de trabajo | 7 al 19 de septiembre de 2026 |
 | Artefactos versionados | 5 capítulos, 114 imágenes y 17 archivos fuente de diagramas |
