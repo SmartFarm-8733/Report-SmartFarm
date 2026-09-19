@@ -261,9 +261,15 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 
 El Context Mapping documenta las relaciones estructurales entre los contextos acotados y deja constancia de las alternativas que el equipo evaluó antes de llegar al diseño final.
 
-![Context Map de la solución ICHU](images/diagrams/context-map.png)
+El mapa se presenta en dos vistas. La primera muestra las relaciones entre los contextos acotados del backend, ordenadas de arriba hacia abajo desde el contexto upstream hacia el downstream. La segunda muestra las integraciones con el borde, los dispositivos y los servicios externos. Separarlas evita el cruce de relaciones que hacía ilegible una única vista con todos los elementos.
 
-*Figura 4.1. Context Map de ICHU. Elaboración propia con PlantUML.*
+![Relaciones entre los Bounded Contexts de la solución](images/diagrams/context-map.png)
+
+*Figura 4.1. Context Map de los Bounded Contexts. Elaboración propia con PlantUML.*
+
+![Integraciones con el borde y con sistemas externos](images/diagrams/context-map-external.png)
+
+*Figura 4.2. Integraciones con el borde y con sistemas externos. Elaboración propia con PlantUML.*
 
 **Patrones aplicados**
 
@@ -314,7 +320,7 @@ El System Landscape presenta el panorama completo en el que se inserta la soluci
 
 ![System Landscape de SmartFarm](images/diagrams/c4/c4-system-landscape.png)
 
-*Figura 4.16. System Landscape. Elaboración propia con Structurizr.*
+*Figura 4.3. System Landscape. Elaboración propia con Structurizr.*
 
 #### 4.1.3.2. Software Architecture Context Level Diagram
 
@@ -326,7 +332,7 @@ Los sistemas externos son el **hardware del collar inteligente** y el **hardware
 
 ![System Context de SmartFarm](images/diagrams/c4/c4-system-context.png)
 
-*Figura 4.17. System Context. Elaboración propia con Structurizr.*
+*Figura 4.4. System Context. Elaboración propia con Structurizr.*
 
 #### 4.1.3.3. Software Architecture Container Level Diagram
 
@@ -348,7 +354,7 @@ Las aplicaciones cliente consumen el RESTful API sobre HTTPS con JSON. El collar
 
 ![Container Diagram de SmartFarm](images/diagrams/c4/c4-container.png)
 
-*Figura 4.18. Container Diagram. Elaboración propia con Structurizr.*
+*Figura 4.5. Container Diagram. Elaboración propia con Structurizr.*
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
@@ -364,7 +370,7 @@ El reparto responde directamente al hallazgo de conectividad del capítulo anter
 
 ![Deployment Diagram de producción](images/diagrams/c4/c4-deployment.png)
 
-*Figura 4.19. Deployment Diagram del entorno de producción. Elaboración propia con Structurizr.*
+*Figura 4.6. Deployment Diagram del entorno de producción. Elaboración propia con Structurizr.*
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
@@ -435,21 +441,21 @@ La vista `MonitoringComponents` del workspace representa la descomposición inte
 
 ![Component Diagram del módulo Operations & Monitoring](images/diagrams/c4/c4-components-monitoring.png)
 
-*Figura 4.20. Componentes del módulo Operations & Monitoring. Elaboración propia con Structurizr.*
+*Figura 4.7. Componentes del módulo Operations & Monitoring. Elaboración propia con Structurizr.*
 
 Este contexto se realiza además en tres containers fuera del backend: las dos aplicaciones embebidas que capturan la telemetría y la pasarela de borde que la recibe y evalúa sin conexión. Sus diagramas de componentes se presentan a continuación.
 
 ![Component Diagram del Cattle Band Embedded Application](images/diagrams/c4/c4-components-cattle-band.png)
 
-*Figura 4.21. Componentes del firmware del collar inteligente. Elaboración propia con Structurizr.*
+*Figura 4.8. Componentes del firmware del collar inteligente. Elaboración propia con Structurizr.*
 
 ![Component Diagram del Portable Edge Gateway](images/diagrams/c4/c4-components-edge-gateway.png)
 
-*Figura 4.22. Componentes de la pasarela de borde. Elaboración propia con Structurizr.*
+*Figura 4.9. Componentes de la pasarela de borde. Elaboración propia con Structurizr.*
 
 ![Component Diagram del Water Controller Embedded Application](images/diagrams/c4/c4-components-water-controller.png)
 
-*Figura 4.23. Componentes del firmware del controlador del abrevadero. Elaboración propia con Structurizr.*
+*Figura 4.10. Componentes del firmware del controlador del abrevadero. Elaboración propia con Structurizr.*
 
 **Flujos dinámicos del contexto**
 
@@ -457,15 +463,15 @@ Los diagramas dinámicos ilustran la secuencia de colaboración entre componente
 
 ![Flujo de telemetría con cobertura](images/diagrams/c4/c4-flow-connected-telemetry.png)
 
-*Figura 4.24. Flujo completo cuando el collar tiene cobertura. Elaboración propia con Structurizr.*
+*Figura 4.11. Flujo completo cuando el collar tiene cobertura. Elaboración propia con Structurizr.*
 
 ![Flujo de pastoreo sin cobertura](images/diagrams/c4/c4-flow-offline-grazing.png)
 
-*Figura 4.25. Flujo completo durante el pastoreo sin cobertura. Elaboración propia con Structurizr.*
+*Figura 4.12. Flujo completo durante el pastoreo sin cobertura. Elaboración propia con Structurizr.*
 
 ![Flujo de sincronización del borde](images/diagrams/c4/c4-flow-edge-synchronization.png)
 
-*Figura 4.26. Sincronización al recuperar la conexión. Elaboración propia con Structurizr.*
+*Figura 4.13. Sincronización al recuperar la conexión. Elaboración propia con Structurizr.*
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -473,7 +479,7 @@ Los diagramas dinámicos ilustran la secuencia de colaboración entre componente
 
 ![Diagrama de clases del Domain Layer de Operations & Monitoring](images/diagrams/class-monitoring.png)
 
-*Figura 4.2. Domain Layer de Operations & Monitoring. Elaboración propia con PlantUML.*
+*Figura 4.14. Domain Layer de Operations & Monitoring. Elaboración propia con PlantUML.*
 
 El diagrama muestra la composición de `MonitoringAlert` con su `Threshold` y su agregación con las lecturas que la sustentan, con multiplicidad de uno a muchos. `Geofence` compone al menos tres vértices, que es la condición mínima para que el polígono sea cerrado. `TelemetryReading` compone su posición, de modo que la precisión viaja junto a la coordenada.
 
@@ -481,7 +487,7 @@ El diagrama muestra la composición de `MonitoringAlert` con su `Threshold` y su
 
 ![Diagrama de base de datos del esquema monitoring](images/diagrams/db-monitoring.png)
 
-*Figura 4.3. Esquema `monitoring`. Elaboración propia con PlantUML.*
+*Figura 4.15. Esquema `monitoring`. Elaboración propia con PlantUML.*
 
 La tabla `alert_reading` resuelve la relación de muchos a muchos entre alertas y lecturas con una clave primaria compuesta. Los vértices de la geocerca se almacenan con su número de secuencia para preservar el orden del polígono. La tabla `telemetry_reading` lleva un índice compuesto por animal y fecha de captura, porque es el criterio de todas las consultas de historial.
 
@@ -531,7 +537,7 @@ Mantiene la identidad y los datos productivos de cada animal. Es la fuente únic
 
 ![Component Diagram del módulo Cattle Information](images/diagrams/c4/c4-components-cattle.png)
 
-*Figura 4.27. Componentes del módulo Cattle Information. Elaboración propia con Structurizr.*
+*Figura 4.16. Componentes del módulo Cattle Information. Elaboración propia con Structurizr.*
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -539,7 +545,7 @@ Mantiene la identidad y los datos productivos de cada animal. Es la fuente únic
 
 ![Diagrama de clases del Domain Layer de Cattle Information](images/diagrams/class-cattle.png)
 
-*Figura 4.4. Domain Layer de Cattle Information. Elaboración propia con PlantUML.*
+*Figura 4.17. Domain Layer de Cattle Information. Elaboración propia con PlantUML.*
 
 `Cattle` compone su arete y su historial de etapas, y agrega opcionalmente su genealogía. `Lot` agrega animales sin poseerlos, porque un animal existe con independencia del lote al que pertenezca en un momento dado.
 
@@ -547,7 +553,7 @@ Mantiene la identidad y los datos productivos de cada animal. Es la fuente únic
 
 ![Diagrama de base de datos del esquema cattle](images/diagrams/db-cattle.png)
 
-*Figura 4.5. Esquema `cattle`. Elaboración propia con PlantUML.*
+*Figura 4.18. Esquema `cattle`. Elaboración propia con PlantUML.*
 
 La restricción `UNIQUE (ranch_id, ear_tag)` implementa en la base la regla de unicidad del arete dentro del predio. La tabla `lot_membership` resuelve la pertenencia de un animal a un lote con clave primaria compuesta y fecha de asignación.
 
@@ -598,7 +604,7 @@ Administra el inventario de dispositivos físicos y controla a qué animal o abr
 
 ![Component Diagram del módulo IoT Assets](images/diagrams/c4/c4-components-iot-assets.png)
 
-*Figura 4.28. Componentes del módulo IoT Assets. Elaboración propia con Structurizr.*
+*Figura 4.19. Componentes del módulo IoT Assets. Elaboración propia con Structurizr.*
 
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -606,7 +612,7 @@ Administra el inventario de dispositivos físicos y controla a qué animal o abr
 
 ![Diagrama de clases del Domain Layer de IoT Assets](images/diagrams/class-iot.png)
 
-*Figura 4.6. Domain Layer de IoT Assets. Elaboración propia con PlantUML.*
+*Figura 4.20. Domain Layer de IoT Assets. Elaboración propia con PlantUML.*
 
 El diagrama muestra los dos puertos que el dominio declara hacia otros contextos. Definirlos como interfaces dentro de la capa de dominio permite que la regla de asignación se pruebe sin depender de Subscription Plans ni de Cattle Information.
 
@@ -614,7 +620,7 @@ El diagrama muestra los dos puertos que el dominio declara hacia otros contextos
 
 ![Diagrama de base de datos del esquema iot](images/diagrams/db-iot.png)
 
-*Figura 4.7. Esquema `iot`. Elaboración propia con PlantUML.*
+*Figura 4.21. Esquema `iot`. Elaboración propia con PlantUML.*
 
 La tabla `device_assignment` conserva `target_id` junto a `target_type`, de modo que un mismo modelo de asignación sirve para el collar vinculado a un animal y para el controlador vinculado a un abrevadero.
 
@@ -668,11 +674,11 @@ Programa las faenas sanitarias y reproductivas del hato, emite los recordatorios
 
 ![Component Diagram del módulo Planning](images/diagrams/c4/c4-components-planning.png)
 
-*Figura 4.29. Componentes del módulo Planning. Elaboración propia con Structurizr.*
+*Figura 4.22. Componentes del módulo Planning. Elaboración propia con Structurizr.*
 
 ![Flujo de emisión de recordatorios](images/diagrams/c4/c4-flow-planning-reminder.png)
 
-*Figura 4.30. Flujo interno de recordatorios del calendario ganadero. Elaboración propia con Structurizr.*
+*Figura 4.23. Flujo interno de recordatorios del calendario ganadero. Elaboración propia con Structurizr.*
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -680,7 +686,7 @@ Programa las faenas sanitarias y reproductivas del hato, emite los recordatorios
 
 ![Diagrama de clases del Domain Layer de Planning](images/diagrams/class-planning.png)
 
-*Figura 4.8. Domain Layer de Planning. Elaboración propia con PlantUML.*
+*Figura 4.24. Domain Layer de Planning. Elaboración propia con PlantUML.*
 
 `HealthCampaign` compone sus aplicaciones y su recordatorio, porque ninguno de los dos tiene sentido fuera de la campaña. `WithdrawalPeriod` se modela como Value Object consultado por la campaña, no como entidad propia, porque su identidad la determinan el animal y el producto.
 
@@ -688,7 +694,7 @@ Programa las faenas sanitarias y reproductivas del hato, emite los recordatorios
 
 ![Diagrama de base de datos del esquema planning](images/diagrams/db-planning.png)
 
-*Figura 4.9. Esquema `planning`. Elaboración propia con PlantUML.*
+*Figura 4.25. Esquema `planning`. Elaboración propia con PlantUML.*
 
 La restricción `UNIQUE (campaign_id, cattle_id)` impide registrar dos veces la aplicación sobre el mismo animal dentro de una campaña, que es el error que los entrevistados asociaron al riesgo de intoxicación por dosis repetida.
 
@@ -740,7 +746,7 @@ Transforma la información acumulada por los demás contextos en indicadores, te
 
 ![Component Diagram del módulo Dashboard & Analytics](images/diagrams/c4/c4-components-analytics.png)
 
-*Figura 4.31. Componentes del módulo Dashboard & Analytics. Elaboración propia con Structurizr.*
+*Figura 4.26. Componentes del módulo Dashboard & Analytics. Elaboración propia con Structurizr.*
 
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -748,7 +754,7 @@ Transforma la información acumulada por los demás contextos en indicadores, te
 
 ![Diagrama de clases del Domain Layer de Dashboard & Analytics](images/diagrams/class-analytics.png)
 
-*Figura 4.10. Domain Layer de Dashboard & Analytics. Elaboración propia con PlantUML.*
+*Figura 4.27. Domain Layer de Dashboard & Analytics. Elaboración propia con PlantUML.*
 
 `DateRange` aparece compuesto tanto en el conjunto de indicadores como en el reporte, lo que refleja la regla de que ningún resultado se entrega sin declarar el periodo sobre el que fue calculado.
 
@@ -756,7 +762,7 @@ Transforma la información acumulada por los demás contextos en indicadores, te
 
 ![Diagrama de base de datos del esquema analytics](images/diagrams/db-analytics.png)
 
-*Figura 4.11. Esquema `analytics`. Elaboración propia con PlantUML.*
+*Figura 4.28. Esquema `analytics`. Elaboración propia con PlantUML.*
 
 Las tablas de este esquema almacenan resultados calculados, no datos operativos. Su contenido puede reconstruirse a partir de los esquemas de origen, lo que permite recalcular sin riesgo ante un cambio en la fórmula de un indicador.
 
@@ -810,7 +816,7 @@ Resuelve quién es cada usuario, sobre qué unidades productivas puede operar y 
 
 ![Component Diagram del módulo Identity & Access Management](images/diagrams/c4/c4-components-identity.png)
 
-*Figura 4.32. Componentes del módulo Identity & Access Management. Elaboración propia con Structurizr.*
+*Figura 4.29. Componentes del módulo Identity & Access Management. Elaboración propia con Structurizr.*
 
 #### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -818,7 +824,7 @@ Resuelve quién es cada usuario, sobre qué unidades productivas puede operar y 
 
 ![Diagrama de clases del Domain Layer de Identity & Access Management](images/diagrams/class-iam.png)
 
-*Figura 4.12. Domain Layer de Identity & Access Management. Elaboración propia con PlantUML.*
+*Figura 4.30. Domain Layer de Identity & Access Management. Elaboración propia con PlantUML.*
 
 `UserAccount` compone su perfil profesional y sus pertenencias, pero agrega las asesorías, porque una asesoría vincula a dos partes y su ciclo de vida no termina con la cuenta del solicitante.
 
@@ -826,7 +832,7 @@ Resuelve quién es cada usuario, sobre qué unidades productivas puede operar y 
 
 ![Diagrama de base de datos del esquema iam](images/diagrams/db-iam.png)
 
-*Figura 4.13. Esquema `iam`. Elaboración propia con PlantUML.*
+*Figura 4.31. Esquema `iam`. Elaboración propia con PlantUML.*
 
 La tabla `herd_advisory` conserva las fechas de solicitud, concesión, vencimiento y revocación por separado, de modo que el historial completo de la relación quede auditable.
 
@@ -878,7 +884,7 @@ Administra los planes contratados, sus límites y su facturación, y determina q
 
 ![Component Diagram del módulo Subscription Plans](images/diagrams/c4/c4-components-subscription.png)
 
-*Figura 4.33. Componentes del módulo Subscription Plans. Elaboración propia con Structurizr.*
+*Figura 4.32. Componentes del módulo Subscription Plans. Elaboración propia con Structurizr.*
 
 #### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -886,7 +892,7 @@ Administra los planes contratados, sus límites y su facturación, y determina q
 
 ![Diagrama de clases del Domain Layer de Subscription Plans](images/diagrams/class-subscription.png)
 
-*Figura 4.14. Domain Layer de Subscription Plans. Elaboración propia con PlantUML.*
+*Figura 4.33. Domain Layer de Subscription Plans. Elaboración propia con PlantUML.*
 
 `Subscription` compone el plan contratado y agrega sus pagos. El puerto `IPaymentProviderPort` mantiene el dominio independiente del proveedor concreto, que puede cambiar sin afectar las reglas de cobertura y renovación.
 
@@ -894,7 +900,7 @@ Administra los planes contratados, sus límites y su facturación, y determina q
 
 ![Diagrama de base de datos del esquema subscription](images/diagrams/db-subscription.png)
 
-*Figura 4.15. Esquema `subscription`. Elaboración propia con PlantUML.*
+*Figura 4.34. Esquema `subscription`. Elaboración propia con PlantUML.*
 
 La tabla `plan_feature` implementa la relación de muchos a muchos entre plan y funcionalidad con clave primaria compuesta, de modo que agregar una funcionalidad a un plan no requiere modificar el esquema.
 
