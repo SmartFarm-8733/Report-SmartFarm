@@ -22,8 +22,6 @@ En la tercera fase se añadieron los **Read Models**, en verde, es decir la info
 
 En la cuarta fase se agruparon los elementos alrededor de los **Aggregates**, en amarillo grande, identificando qué objeto del dominio es responsable de garantizar la consistencia de cada conjunto de reglas.
 
-**Pendiente:** capturas de las cuatro fases de la sesión de Design-Level EventStorming elaboradas en la herramienta de pizarra colaborativa.
-
 **Modelo resultante**
 
 | Command | Actor | Domain Event | Policy que se dispara | Read Model consultado | Aggregate responsable |
@@ -56,8 +54,6 @@ Tres de las incertidumbres que el Big Picture dejó marcadas quedaron resueltas 
 
 Para identificar los contextos acotados se aplicó la técnica **look-for-pivotal-events**, que consiste en buscar los hechos del negocio que marcan un cambio de estado entre fases distintas del proceso. Se eligió esta técnica sobre las alternativas porque el Big Picture ya había dejado ordenados los eventos sobre una línea de tiempo, y porque el dominio ganadero presenta transiciones nítidas: un animal pasa de ser un registro administrativo a ser un sujeto vigilado, y de ahí a ser un paciente en tratamiento.
 
-**Pendiente:** capturas de los tres estados progresivos del EventStorm durante la sesión de Candidate Context Discovery, mostrando cómo se fueron trazando los límites.
-
 **Eventos pivote y fronteras que revelan**
 
 | Evento pivote | Antes del evento | Después del evento | Frontera que sugiere |
@@ -88,8 +84,6 @@ El recorrido de los eventos pivote produjo ocho contextos candidatos, que coinci
 #### 4.1.1.2. Domain Message Flows Modeling
 
 Para visualizar cómo colaboran los contextos en los casos reales del negocio se aplicó **Domain Storytelling**. Cada historia se narra con actores, actividades numeradas y objetos de trabajo, siguiendo la secuencia en que ocurren. Se modelaron tres historias que atraviesan la mayor cantidad de contextos y que representan los flujos de mayor valor.
-
-**Pendiente:** capturas de los tres diagramas de Domain Storytelling elaborados en la herramienta indicada.
 
 **Historia 1. Incorporación de un animal al hato monitoreado**
 
@@ -919,4 +913,3 @@ La tabla `plan_feature` implementa la relación de muchos a muchos entre plan y 
 | Subscription Plans | Genérico | Subscription | `subscription` |
 
 Los siete contextos suman quince agregados y se despliegan como módulos internos de un único ejecutable, cada uno con su esquema aislado dentro de la misma instancia de PostgreSQL. La comunicación entre módulos ocurre siempre a través de un Anti-corruption Layer o de eventos de dominio publicados en el proceso, nunca por acceso directo a las tablas de otro esquema. Esa restricción es la que hace posible extraer cualquier módulo como servicio independiente si el crecimiento del producto llegara a justificarlo.
-
