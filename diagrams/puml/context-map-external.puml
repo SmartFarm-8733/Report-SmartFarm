@@ -8,7 +8,7 @@ skinparam rectangle {
   FontSize 13
 }
 skinparam ArrowFontSize 11
-title SmartFarm - Context Map: integraciones con el borde y con sistemas externos
+title ICHU - Context Map: integraciones con el borde y con sistemas externos
 
 rectangle "Cattle Band\nEmbedded App" as BAND #FFFDE7
 rectangle "Water Controller\nEmbedded App" as WATER #FFFDE7

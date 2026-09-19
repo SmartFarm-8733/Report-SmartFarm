@@ -730,9 +730,9 @@ workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de l
 
         cattleBandEmbeddedApp -> cattleBandHardware "Lee sensores y posición"
 
-        cattleBandEmbeddedApp -> backend "Envia telemetría cuando hay Wi-Fi" "HTTPS / JSON"
+        cattleBandEmbeddedApp -> backend "Envía telemetría cuando hay Wi-Fi" "HTTPS / JSON"
 
-        cattleBandEmbeddedApp -> edgeGateway "Envia telemetría por BLE sin cobertura" "Bluetooth Low Energy"
+        cattleBandEmbeddedApp -> edgeGateway "Envía telemetría por BLE sin cobertura" "Bluetooth Low Energy"
 
         edgeGateway -> edgeDatabase "Guarda telemetría y configuración local" "SQLite"
 

@@ -8,7 +8,7 @@ skinparam rectangle {
   FontSize 13
 }
 skinparam ArrowFontSize 11
-title SmartFarm - Context Map: relaciones entre Bounded Contexts
+title ICHU - Context Map: relaciones entre Bounded Contexts
 
 rectangle "Identity &\nAccess Management" as IAM #E8F0FE
 rectangle "Subscription\nPlans" as SUB #E8F0FE
