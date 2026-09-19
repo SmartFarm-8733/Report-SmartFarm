@@ -439,7 +439,9 @@ Ambos mapas fueron elaborados en UXPressia y están vinculados a la ficha de Use
 
 **User Journey Map As-Is de Cesar Flores**
 
-**Pendiente:** captura del User Journey Map As-Is de Cesar Flores elaborado en UXPressia, vinculado a su ficha de User Persona.
+![User Journey Map As-Is de Cesar Flores](images/journey-map-segmento1-cesar-flores.png)
+
+*Figura 6. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
 | Etapa | Acciones | Pensamientos | Emoción | Puntos de dolor |
 |---|---|---|---|---|
@@ -454,20 +456,9 @@ Ambos mapas fueron elaborados en UXPressia y están vinculados a la ficha de Use
 
 **User Journey Map As-Is de Leonardo Rosales**
 
-**Pendiente:** captura del User Journey Map As-Is de Leonardo Rosales elaborado en UXPressia, vinculado a su ficha de User Persona.
+![User Journey Map As-Is de Leonardo Rosales](images/journey-map-segmento2-leonardo-rosales.png)
 
-| Etapa | Acciones | Pensamientos | Emoción | Puntos de dolor |
-|---|---|---|---|---|
-| Recepción del aviso | Recibe una llamada o un mensaje del ganadero describiendo el cuadro observado | "Por teléfono no puedo saber qué tan grave es" | Neutra | La descripción es subjetiva y depende de lo que el ganadero sepa observar |
-| Preparación de la visita | Arma el maletín previendo varios escenarios posibles | "Ojalá tengan anotado qué le aplicaron" | Baja | Sin antecedentes viaja sin diagnóstico preliminar y puede llegar sin el fármaco adecuado |
-| Traslado al establo | Conduce hasta el predio, en ocasiones durante varias horas | "Este viaje puede ser en vano" | Baja | Las visitas improductivas representan costo y tiempo sin retorno |
-| Examen del animal | Observa la conducta, toma la temperatura y evalúa la rumia y el apetito | "Esto ya lleva días avanzando" | Baja | Solo accede al estado del momento. No dispone de la evolución previa que necesitaría |
-| Consulta de antecedentes | Pregunta al personal del establo y revisa un cuaderno o una hoja de cálculo cuando existe | "Nadie recuerda la fecha exacta de la última dosis" | Muy baja | Los registros manuales alcanzan entre 50% y 70% de precisión según el propio segmento, con riesgo de intoxicación por dosis repetida |
-| Diagnóstico y tratamiento | Decide con la información disponible y aplica el tratamiento | "Estoy tratando con la mitad de los datos" | Baja | El celo silencioso se reconoce al segundo o tercer día y el timpanismo evoluciona en horas |
-| Registro de la intervención | Anota en su libreta, y al regresar a la oficina traslada la información a su computadora | "Después lo paso al informe" | Neutra | Doble registro entre su propio archivo y el del establo, sin conexión entre ambos |
-| Ecografía reproductiva | Realiza el examen, conserva la imagen en el equipo y transcribe el resultado por separado | "La imagen queda en el ecógrafo y el dato en otro lugar" | Baja | La evidencia queda separada del historial clínico, lo que retrasa el registro ante la asociación de criadores |
-| Informe al propietario | Redacta el documento en una hoja de cálculo o un procesador de texto, lo imprime y lo entrega en la visita siguiente | "Esto me toma toda la tarde" | Baja | Llenado manual que Eliseo busca sustituir, y sin datos cuantitativos para sustentar las decisiones |
-| Seguimiento posterior | Espera noticias del ganadero y ocasionalmente llama para consultar | "No sabré si el tratamiento funcionó hasta volver" | Baja | Carece de los datos continuos de las 12, 24 y 48 horas posteriores que Darwin considera obligatorios |
+*Figura 7. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
 **Lectura de los recorridos**
 
