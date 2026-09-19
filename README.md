@@ -152,6 +152,7 @@ Las siguientes capturas documentan el historial visible de commits de la rama `f
 
 El historial de commits evidencia una elaboración distribuida del informe entre las ramas de capítulo. Las capturas muestran aportes de Diego Andres Avalos Cordova, Flor de María Contreras Leon, Giorgio Awad, Alison Arrieta y Manuel Angel Sanchez, junto con integraciones realizadas mediante GitFlow. El Registro de Versiones resume las modificaciones relevantes y mantiene la trazabilidad entre cada aporte, el autor y la sección actualizada.
 
+La organización del informe por ramas de capítulo permite distribuir responsabilidades, integrar los aportes mediante GitFlow y conservar la trazabilidad de las modificaciones en el Registro de Versiones. La colaboración se evidencia en los commits de contenido, las integraciones entre ramas y la actualización progresiva de los artefactos del informe.
 ---
 
 # Tabla de Contenidos
