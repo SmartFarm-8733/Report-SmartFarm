@@ -85,6 +85,8 @@ Referencias utilizadas en el informe, conservando la numeración empleada por la
 
 # Anexos
 
+\newpage
+
 ## Anexo A. Auditoría de cumplimiento de la sección
 
 | Criterio solicitado por el Final Project Statement | Evidencia en este entregable | Estado |
@@ -94,8 +96,10 @@ Referencias utilizadas en el informe, conservando la numeración empleada por la
 | Contrasta resultados con las validaciones | Se utilizan las seis entrevistas y los cuestionarios documentados en el Capítulo II; las métricas no probadas se marcan como pendientes | Cumple |
 | Incluye Video About-the-Team | Se incorpora propósito, contenido, pauta, enlaces y evidencia esperada | Pendiente de evidencia externa |
 | Incluye Bibliografía | Siete referencias utilizadas en el informe con formato APA 7.ª edición | Cumple |
-| Incluye Anexos | Esta auditoría funciona como Anexo A y puede ampliarse con evidencias de entrega | Cumple |
+| Incluye Anexos | Anexos A-G con auditoría, documentos, videos, herramientas, encuestas, repositorio y fuentes de diagramas | Cumple con pendientes externos identificados |
 | Corresponde al alcance de AV1 | Se cubren los Capítulos I-IV y el avance de Conclusiones, Bibliografía y Anexos; el Capítulo V no es requisito de AV1 | Cumple |
+
+\newpage
 
 ## Anexo B. Evidencia documental revisada
 
@@ -106,3 +110,65 @@ Referencias utilizadas en el informe, conservando la numeración empleada por la
 | Requirements Specification | [chapter03.md](chapter03.md) |
 | Solution Software Design | [chapter04.md](chapter04.md) |
 | Student Outcome y colaboración | [README.md](README.md) |
+
+\newpage
+
+## Anexo C. Videos y entrevistas
+
+Este anexo reúne las evidencias audiovisuales proporcionadas por el equipo. Los enlaces se conservan como recursos externos; el informe no descarga ni duplica los videos dentro del repositorio.
+
+| Evidencia | Descripción | Enlace | Estado |
+|---|---|---|---|
+| Entrevistas completas | Carpeta con los videos completos de las entrevistas de los dos segmentos objetivo | [Videos de entrevistas completas](https://drive.google.com/drive/folders/1Lx-SoAs_OQUHSQWLl1PhLo1HGMW5-NvT?usp=sharing) | Enlace proporcionado |
+| Entrevistas editadas | Video consolidado de las entrevistas para la evidencia del informe | [Video de entrevista editada](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK) | Enlace proporcionado |
+| Video de exposición AV1 | Exposición del informe según el Final Project Statement | Pendiente de publicación en Microsoft Stream/Clipchamp | Pendiente |
+| Video About-the-Team | Proceso de trabajo, testimonios y Student Outcome | Pendiente de publicación en Microsoft Stream/Clipchamp y YouTube | Pendiente |
+
+Para cumplir completamente el PDF todavía deben agregarse, para los videos que correspondan, una captura representativa, el enlace público y el timing de cada sección o entrevista.
+
+\newpage
+
+## Anexo D. Herramientas colaborativas y artefactos de modelado
+
+| Herramienta | Artefactos contenidos | Enlace |
+|---|---|---|
+| Figma / FigJam | Big Picture EventStorming, Bounded Context Canvases y Domain Message Flows | [Tablero SmartFarm en Figma](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1) |
+| Miro | Design-Level EventStorming y Candidate Context Discovery | [Tablero SmartFarm en Miro](https://miro.com/welcomeonboard/ekNIeWVQcC9hcG1mM292c2E0RkcwblUxUSttUDFCSmpZMjBTQldxOENSNVdtbTNiWEZQSXRaQWg1UWk4bmpDYjVzNnNHanMrV3J5RDZZc2RaeXNBSDQ4ZWRzaFRaNi9qbXJsUlBtblZobDFOeS9aTGFyK1BJWDNUVGozSUVYSHhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=680912547552) |
+| UXPressia | User Personas, User Journey Maps, Empathy Maps, As-Is y Impact Mapping | [Proyecto SmartFarm en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N) |
+
+\newpage
+
+## Anexo E. Encuestas y material de investigación
+
+| Segmento | Evidencia | Enlace |
+|---|---|---|
+| Ganadero | Encuesta extensa del segmento de ganaderos | [Encuesta de ganaderos](https://drive.google.com/file/d/1WZdTKVgyGmAlKlI4ZXnRhkK2MJL7fO8D/view?usp=sharing) |
+| Zootecnista / veterinario | Encuesta extensa del segmento profesional | [Encuesta de zootecnistas](https://drive.google.com/file/d/15h2MLOWtvMBic0O97VnSMJxAeW9ZpUy2/view?usp=drive_link) |
+
+Estas evidencias complementan los resúmenes, análisis de entrevistas, User Personas y mapas incluidos en el Capítulo II.
+
+\newpage
+
+## Anexo F. Repositorio y organización del proyecto
+
+| Recurso | Propósito | Enlace |
+|---|---|---|
+| Repositorio del informe | Fuente versionada del Project Report y sus artefactos | [Report-SmartFarm](https://github.com/SmartFarm-8733/Report-SmartFarm) |
+| Organización | Organización pública de GitHub de SmartFarm-8733 | [SmartFarm-8733](https://github.com/SmartFarm-8733) |
+| README del repositorio | Registro de versiones, colaboración, Student Outcome y navegación del informe | [README.md](https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/README.md) |
+| Informe completo | Capítulos I-IV, conclusiones, bibliografía y anexos | [Report-SmartFarm · rama feature/conclusions](https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions) |
+
+\newpage
+
+## Anexo G. Fuentes de diagramas y artefactos versionados
+
+El PDF solicita que los diagramas se elaboren en las herramientas indicadas. Además de las imágenes insertadas en los capítulos, se conservan las fuentes de Diagram-as-Code en el repositorio para facilitar su revisión y regeneración.
+
+| Artefacto | Fuente o exportación | Enlace |
+|---|---|---|
+| C4 Model | Workspace Structurizr DSL | [workspace-ichu-c4.dsl](https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/diagrams/structurizr/workspace-ichu-c4.dsl) |
+| C4 Model | Imágenes exportadas de System Landscape, Context, Container, Deployment y Components | [Imágenes C4](https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions/images/diagrams/c4) |
+| UML y diseño de base de datos | Fuentes PlantUML de clases, context maps y bases de datos | [Fuentes PlantUML](https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions/diagrams/puml) |
+| UML y diseño de base de datos | Imágenes renderizadas de clases, context maps y esquemas | [Imágenes UML y BD](https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions/images/diagrams) |
+
+Los enlaces de este anexo apuntan a contenido versionado dentro del mismo repositorio. Los enlaces de Figma, Miro, UXPressia, Drive y SharePoint apuntan a los espacios externos donde se elaboraron o almacenan los artefactos originales.
