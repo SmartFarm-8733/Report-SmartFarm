@@ -6,8 +6,6 @@
 
 **Competitive Analysis Landscape**
 
-**Pendiente:** insertar en la fila de encabezado el logo de cada organización, junto al nombre que ya figura en ella.
-
 | Sección | Criterio | ICHU IoT (nuestra startup) | Competidor 1: Allflex SenseHub | Competidor 2: Digitanimal | Competidor 3: Moocall |
 |---|---|---|---|---|---|
 | **¿Por qué llevar a cabo este análisis?** | Objetivo del análisis | Comparar ICHU con sus principales competidores para identificar fortalezas, debilidades, oportunidades y amenazas, y determinar una ventaja competitiva clara y sostenible en el mercado de monitoreo inteligente de ganado. | | | |
@@ -427,8 +425,6 @@ Ambos mapas fueron elaborados en UXPressia y están vinculados a la ficha de Use
 
 **User Journey Map As-Is de Cesar Flores**
 
-**Pendiente:** captura del User Journey Map As-Is de Cesar Flores elaborado en UXPressia, vinculado a su ficha de User Persona.
-
 | Etapa | Acciones | Pensamientos | Emoción | Puntos de dolor |
 |---|---|---|---|---|
 | Recorrido matinal del potrero | Ensilla o toma la camioneta, cuenta las cabezas a la vista y observa si alguna cojea o se aparta del grupo | "Si falta alguna me voy a dar cuenta recién al terminar la vuelta" | Neutra | El conteo visual es aproximado y consume horas. Los animales dispersos en terreno amplio quedan fuera de la vista |
@@ -441,8 +437,6 @@ Ambos mapas fueron elaborados en UXPressia y están vinculados a la ficha de Use
 | Cierre económico de la campaña | Suma los gastos de memoria o revisando comprobantes sueltos, y estima las pérdidas del periodo | "No sé con exactitud cuánto gané este ciclo" | Baja | No existe costo por cabeza ni balance confiable. La mortalidad se estima en lugar de medirse |
 
 **User Journey Map As-Is de Leonardo Rosales**
-
-**Pendiente:** captura del User Journey Map As-Is de Leonardo Rosales elaborado en UXPressia, vinculado a su ficha de User Persona.
 
 | Etapa | Acciones | Pensamientos | Emoción | Puntos de dolor |
 |---|---|---|---|---|
@@ -508,8 +502,6 @@ En el **ordenamiento temporal**, el equipo dispuso los eventos sobre una línea 
 En la **identificación de eventos pivote**, se marcaron los hechos que separan fases claramente distintas del proceso de negocio y que, por lo tanto, anticipan las fronteras entre contextos.
 
 En la **detección de hot spots**, se señalaron con notas rosadas las zonas de desacuerdo, de reglas de negocio no resueltas o de dependencia respecto de terceros, que requieren validación posterior con los usuarios.
-
-**Pendiente:** capturas de las cuatro etapas de la sesión de Big Picture EventStorming elaboradas en la herramienta de pizarra colaborativa, junto con la fotografía del equipo durante la sesión.
 
 **Domain Events identificados, ordenados temporalmente**
 

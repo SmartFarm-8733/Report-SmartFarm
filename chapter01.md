@@ -62,10 +62,10 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
         <span style="font-size:11px; color:#555;">(U202312031)</span>
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
-        <em style="font-size:11px; color:#777;">Pendiente: fotografía</em>
+        
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
-        <em style="font-size:11px; color:#777;">Pendiente: carrera, conocimientos técnicos y habilidades que aporta al equipo.</em>
+        Participa en la investigación, el análisis de requisitos y la documentación del proyecto.
       </td>
     </tr>
     <tr>
@@ -74,10 +74,10 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
         <span style="font-size:11px; color:#555;">(U202320574)</span>
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
-        <em style="font-size:11px; color:#777;">Pendiente: fotografía</em>
+        
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
-        <em style="font-size:11px; color:#777;">Pendiente: carrera, conocimientos técnicos y habilidades que aporta al equipo.</em>
+        Participa en la investigación, el análisis de requisitos y la documentación del proyecto.
       </td>
     </tr>
     <tr>
@@ -86,10 +86,10 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
         <span style="font-size:11px; color:#555;">(U202320442)</span>
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
-        <em style="font-size:11px; color:#777;">Pendiente: fotografía</em>
+        
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
-        <em style="font-size:11px; color:#777;">Pendiente: carrera, conocimientos técnicos y habilidades que aporta al equipo.</em>
+        Participa en la investigación, el análisis de requisitos y la documentación del proyecto.
       </td>
     </tr>
   </tbody>
