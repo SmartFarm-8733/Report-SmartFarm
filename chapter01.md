@@ -62,10 +62,10 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
         <span style="font-size:11px; color:#555;">(U202312031)</span>
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
-
+        <img src="images/members/AlisonArrieta.png" alt="Fotografía de Alison Arrieta" style="max-width:80px; border-radius:6px;">
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
-        Participa en la investigación, el análisis de requisitos y la documentación del proyecto.
+        Estudiante de 7mo ciclo de la carrera de Ingeniería de Software. Conocimientos en .NET, Angular y Azure. Experiencia en coorporativa como full stack developer.</em>
       </td>
     </tr>
     <tr>
@@ -74,10 +74,10 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
         <span style="font-size:11px; color:#555;">(U202320574)</span>
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
-
+        <img src="images/members/ManuelSanchez.png" alt="Fotografía de Manuel Sanchez" style="max-width:80px; border-radius:6px;">
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
-        Participa en la investigación, el análisis de requisitos y la documentación del proyecto.
+        Estudiante de la carrera de Ingeniería de Software. Me desempeño como desarrollador full stack con experiencia en tecnologías como .NET, Angular y Azure. Además cuento con experiencia en metodologías de desarrollo ágil.</em>
       </td>
     </tr>
     <tr>
@@ -89,7 +89,7 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
 
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
-        Participa en la investigación, el análisis de requisitos y la documentación del proyecto.
+        Estudiante de Ingeniería de Software. Participa en el análisis de requisitos, la elaboración de User Stories y la documentación colaborativa del proyecto.
       </td>
     </tr>
   </tbody>
@@ -120,13 +120,13 @@ Para estructurar las dimensiones del problema del sector objetivo, se aplica la 
 
 La propuesta de software y hardware IoT tiene como meta prioritaria resolver los siguientes desafíos críticos:
 
-**Detección temprana de anomalías de salud:** Monitorear parámetros biométricos y de actividad física para identificar signos precoces de enfermedad o fatiga extrema antes de que ocurra la muerte del animal.
+**Detección temprana de anomalías de salud:** Monitorear parámetros biométricos y de actividad física para identificar signos precoces de enfermedad o fatiga extrema antes de que ocurra la muerte del animal.  
 
-**Prevención de pérdidas y robos:** Proporcionar geolocalización constante y alertas de geofencing (barreras geográficas virtuales) para avisar al ganadero de inmediato si un animal sale del área permitida o si se detecta un patrón de velocidad inusual de huida.
+**Prevención de pérdidas y robos:** Proporcionar geolocalización constante y alertas de geofencing (barreras geográficas virtuales) para avisar al ganadero de inmediato si un animal sale del área permitida o si se detecta un patrón de velocidad inusual de huida.  
 
-**Monitoreo del ciclo reproductivo**: Rastrear variaciones de comportamiento y temperatura que faciliten la detección oportuna de periodos de celo, optimizando las tasas de preñez y el manejo del nacimiento de crías.
+**Monitoreo del ciclo reproductivo**: Rastrear variaciones de comportamiento y temperatura que faciliten la detección oportuna de periodos de celo, optimizando las tasas de preñez y el manejo del nacimiento de crías.  
 
-**Centralización de datos individuales**: Reemplazar el registro manual por un historial digital individual de salud, genealogía, vacunación y movimientos de cada animal, accesible de forma centralizada y remota.
+**Centralización de datos individuales**: Reemplazar el registro manual por un historial digital individual de salud, genealogía, vacunación y movimientos de cada animal, accesible de forma centralizada y remota.  
 
 **Objetivos del Proyecto**
 
@@ -187,34 +187,38 @@ Se redacta una declaración de hipótesis por cada Feature Assumption definido e
 
 **Hypothesis 1. Biometric and GPS Tracking**
 
-**Creemos que lograremos** una tasa de renovación anual de suscripciones superior al 92%
-**si** los administradores ganaderos
-**alcanzan** la localización individual de cada animal y la detección temprana de indicios de enfermedad
+**Creemos que lograremos** una tasa de renovación anual de suscripciones superior al 92%  
+**si** los administradores ganaderos  
+**alcanzan** la localización individual de cada animal y la detección temprana de indicios de enfermedad  
 **con** un collar inteligente de bajo consumo que registra temperatura corporal, índice de actividad y coordenadas de posición.
 
 **Hypothesis 2. Real-Time Alerts**
 
-**Creemos que lograremos** una reducción del 15% en la mortalidad del hato de las unidades productivas suscritas
-**si** los ganaderos propietarios y administradores
-**alcanzan** la capacidad de aislar y atender a un animal enfermo en menos de una hora desde la desviación de sus constantes
+**Creemos que lograremos** una reducción del 15% en la mortalidad del hato de las unidades productivas suscritas  
+**si** los ganaderos propietarios y administradores  
+**alcanzan** la capacidad de aislar y atender a un animal enfermo en menos de una hora desde la desviación de sus constantes  
 **con** un motor de alertas automáticas que notifica por aplicación móvil y por mensaje de texto cuando los indicadores biométricos superan los umbrales definidos.
 
 **Hypothesis 3. Analytics Dashboard**
 
-**Creemos que lograremos** 150 unidades productivas con suscripción activa durante el primer año, impulsadas por la recomendación profesional
-**si** los zootecnistas y médicos veterinarios
-**alcanzan** un diagnóstico sustentado en historiales biométricos, tendencias de temperatura y distribución de casos en el hato
+**Creemos que lograremos** 150 unidades productivas con suscripción activa durante el primer año, impulsadas por la recomendación profesional  
+**si** los zootecnistas y médicos veterinarios  
+**alcanzan** un diagnóstico sustentado en historiales biométricos, tendencias de temperatura y distribución de casos en el hato  
 **con** un panel de análisis integrado al RESTful API de desarrollo interno.
 
 **Hypothesis 4. Offline Operation**
 
-**Creemos que lograremos** que el 60% de las unidades productivas suscritas registre actividad en la aplicación al menos cinco días por semana
-**si** el personal de campo de las unidades ganaderas
-**alcanza** la continuidad de sus faenas en zonas sin cobertura celular, consultando fichas y registrando eventos en el momento en que ocurren
+**Creemos que lograremos** que el 60% de las unidades productivas suscritas registre actividad en la aplicación al menos cinco días por semana  
+**si** el personal de campo de las unidades ganaderas  
+**alcanza** la continuidad de sus faenas en zonas sin cobertura celular, consultando fichas y registrando eventos en el momento en que ocurren  
 **con** un modo sin conexión que almacena los registros de forma local y los sincroniza al recuperar la señal.
 
 #### 1.2.2.4. Lean UX Canvas.
 A continuación, se presenta el Lienzo Lean UX de la startup ganadera, integrando los bloques estratégicos para validar de forma iterativa nuestro modelo de negocio digital:
+
+![Lean UX Canvas del proyecto ICHU](images/lean-ux-canvas-v2.png)
+
+*Figura 10. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
 <table>
     <thead>
@@ -354,7 +358,7 @@ Para garantizar la viabilidad del modelo de negocio de nuestra startup y diseña
 
 A continuación, se describen los dos segmentos objetivo identificados para nuestra solución de monitoreo de ganado mediante tecnología IoT. Las afirmaciones estadísticas se respaldan con fuentes oficiales cuando corresponde y los hallazgos de las entrevistas se presentan como evidencia de la investigación propia.
 
-**Segmento 1:** Medianos y Grandes Ganaderos (Propietarios y Administradores de Estancias)
+**Segmento 1:** Medianos y Grandes Ganaderos (Propietarios y Administradores de Estancias)  
 
 Dentro de este segmento conviven dos roles operativos. El administrador ganadero, propietario o gestor de la unidad productiva, es quien decide la compra y responde por los resultados económicos del hato. El operario de campo es el personal que ejecuta las faenas en el potrero y registra lo que observa durante la jornada; no decide la compra, pero su adopción determina que la información llegue al sistema. Este segmento representa a los tomadores de decisiones financieras y estratégicas de las unidades de producción ganadera. Son los responsables de adquirir la solución digital y los collares inteligentes IoT, motivados por la optimización de costos, el aumento de la productividad de leche y carne, y la mitigación de pérdidas críticas causadas por muertes no detectadas, enfermedades y abigeato.
 
@@ -366,14 +370,14 @@ Dentro de este segmento conviven dos roles operativos. El administrador ganadero
 - **Ubicación:** Regiones ganaderas de la sierra sur del Perú, en particular Apurímac, Cusco y Puno, donde se realizó la investigación de campo. Cajamarca, Arequipa, La Libertad y San Martín se consideran mercados de expansión posterior.
 - **Ocupación:** Propietarios de haciendas, gerentes generales de cooperativas ganaderas o administradores generales de estancias ganaderas medianas y grandes (hatos de entre 50 y más de 500 cabezas de ganado).
 - **Dispositivos de Preferencia:** Teléfonos inteligentes de gama media-alta (Android e iOS), tabletas y computadoras portátiles o de escritorio para el control administrativo de la empresa.
-- **Canales de Interacción Digital:** Redes sociales profesionales (LinkedIn), grupos especializados de WhatsApp, correos electrónicos corporativos, motores de búsqueda (Google) y portales de noticias del sector agropecuario.
+- **Canales de Interacción Digital:** Redes sociales profesionales (LinkedIn), grupos especializados de WhatsApp, correos electrónicos corporativos, motores de búsqueda (Google) y portales de noticias del sector agropecuario.  
 
 **B. Características Psicográficas y Conductuales**
 
 - **Personalidad:** Analíticos, orientados a resultados, visionarios, cautelosos con las inversiones de capital pero abiertos a la adopción de tecnologías validadas que demuestren un rápido retorno de inversión (ROI).
 - **Habilidades:** Gestión de presupuestos, planificación estratégica, liderazgo de personal de campo y negociación con proveedores de la cadena de valor láctea o cárnica.
 - **Estilo de Vida:** Dividen su tiempo entre la supervisión estratégica en campo (visitas periódicas a las estancias) y la gestión comercial en zonas urbanas. Valoran el control de sus activos y la tranquilidad de saber que su patrimonio está protegido de forma preventiva.
-- **Marcas e Influencias:** Compran insumos de marcas reconocidas como Zoetis, MSD Animal Health, e influyen sus decisiones a través de gremios ganaderos locales (como la Asociación de Ganaderos del Perú - AGALEP), ferias agropecuarias nacionales y consultores zootecnistas de confianza.
+- **Marcas e Influencias:** Compran insumos de marcas reconocidas como Zoetis, MSD Animal Health, e influyen sus decisiones a través de gremios ganaderos locales (como la Asociación de Ganaderos del Perú - AGALEP), ferias agropecuarias nacionales y consultores zootecnistas de confianza.  
 
 **C. Evidencia de investigación y fuentes**
 
@@ -392,14 +396,14 @@ Este segmento abarca a los especialistas técnicos encargados del diagnóstico p
 - **Ubicación:** Ciudades intermedias cercanas a los valles ganaderos o residentes en las capitales de región, realizando visitas técnicas programadas o de emergencia a múltiples establos ganaderos.
 - **Ocupación:** Médicos veterinarios independientes, consultores de salud animal, asesores de sanidad de cooperativas o directores de sanidad animal de grandes agropecuarias.
 - **Dispositivos de Preferencia:** Smartphones de gama media-alta, tabletas robustas (con estuches protectores para uso en corrales) y laptops para análisis estadístico de datos y reportes clínicos.
-- **Canales de Interacción Digital:** Correo electrónico, plataformas académicas y científicas (PubMed, ResearchGate), boletines de sanidad agropecuaria (SENASA), aplicaciones web profesionales de gestión de establos y redes sociales enfocadas en la comunidad médica veterinaria.
+- **Canales de Interacción Digital:** Correo electrónico, plataformas académicas y científicas (PubMed, ResearchGate), boletines de sanidad agropecuaria (SENASA), aplicaciones web profesionales de gestión de establos y redes sociales enfocadas en la comunidad médica veterinaria.  
 
 **B. Características Psicográficas y Conductuales**
 
 - **Personalidad:** Metódicos, analíticos, orientados a la ciencia de datos, rigurosos con los protocolos de bioseguridad y apasionados por el bienestar animal. Valoran la precisión de los datos biométricos por encima de las estimaciones subjetivas.
 - **Habilidades:** Diagnóstico clínico, análisis de parámetros fisiológicos complejos (temperatura, frecuencia de rumia, nivel de actividad), diseño de calendarios de vacunación, inseminación artificial y gestión de fármacos veterinarios.
 - **Estilo de Vida:** Dinámico y móvil. Viajan frecuentemente entre diferentes establos y estancias ganaderas. Deben estar preparados para responder a emergencias a cualquier hora del día.
-- **Marcas e Influencias:** Influenciados por publicaciones de revistas indexadas especializadas, laboratorios multinacionales (como Boehringer Ingelheim, Elanco, Bayer Sanidad Animal) y colegios médico-veterinarios locales (como el Colegio Médico Veterinario del Perú).
+- **Marcas e Influencias:** Influenciados por publicaciones de revistas indexadas especializadas, laboratorios multinacionales (como Boehringer Ingelheim, Elanco, Bayer Sanidad Animal) y colegios médico-veterinarios locales (como el Colegio Médico Veterinario del Perú).  
 
 **C. Evidencia de investigación**
 
