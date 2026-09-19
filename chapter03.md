@@ -26,7 +26,7 @@ Los criterios de aceptación siguen la estructura Gherkin (Given-When-Then) y se
 
 ## 3.1. User Stories
 
-Los requisitos se organizan en once Epics alineados con los Bounded Contexts definidos para la plataforma en el Ubiquitous Language. Esta correspondencia garantiza la trazabilidad entre lo que el negocio necesita y la manera en que se descompone la solución.
+Los requisitos se organizan en doce Epics alineados con los Bounded Contexts definidos para la plataforma en el Ubiquitous Language. Esta correspondencia garantiza la trazabilidad entre lo que el negocio necesita y la manera en que se descompone la solución.
 
 | Epic | Bounded Context asociado | Producto digital principal |
 |---|---|---|
@@ -41,6 +41,7 @@ Los requisitos se organizan en once Epics alineados con los Bounded Contexts def
 | EP-09 Análisis para la toma de decisiones | Dashboard & Analytics | Web App |
 | EP-10 Landing Page y suscripciones | Subscription Plans | Landing Page |
 | EP-11 Plataforma IoT e integración de servicios | Transversal (técnico) | Aplicación embebida, Edge API y RESTful API |
+| EP-12 Control del abrevadero | Operations & Monitoring | Aplicación embebida, web y móvil |
 
 **Epics, User Stories y Technical Stories**
 
@@ -122,6 +123,13 @@ Los requisitos se organizan en once Epics alineados con los Bounded Contexts def
 | TS-10 | Gestionar las suscripciones y sus límites | Como desarrollador, deseo administrar la suscripción de una unidad productiva a través de la API central, para habilitar las funcionalidades que corresponden al plan contratado. | Given que se recibe `POST /api/v1/subscriptions` con `ranchId`, `planType` (`BASIC`, `PREMIUM`) y `headCount`<br>When la API valida y persiste la suscripción<br>Then responde `201 Created` con el plan, el límite de dispositivos, el monto, el estado y las funcionalidades habilitadas.<br><br>Given que la unidad productiva tiene una suscripción `BASIC` vigente<br>When se recibe una solicitud dirigida a una funcionalidad exclusiva del plan `PREMIUM`<br>Then la API responde `403 Forbidden` indicando el plan requerido.<br><br>Given que la solicitud omite `planType` o `headCount`, o `headCount` no es un entero positivo<br>When se procesa<br>Then responde `400 Bad Request` indicando el campo inválido. | EP-11 |
 | TS-11 | Integrar el servicio de notificaciones | Como desarrollador, deseo integrar un servicio externo de mensajería, para que las alertas críticas alcancen al responsable aunque no tenga la aplicación abierta. | Given que se genera una alerta de severidad crítica y existe un destinatario configurado<br>When se solicita el envío de la notificación<br>Then el sistema registra la solicitud con el destinatario, el canal empleado y el estado de entrega devuelto por el servicio.<br><br>Given que el servicio externo no está disponible o devuelve un error<br>When se intenta el envío<br>Then el error queda registrado con su motivo, la alerta conserva su estado y el envío se reintenta según la política configurada. | EP-11 |
 | TS-12 | Integrar un servicio meteorológico externo | Como desarrollador, deseo incorporar las condiciones meteorológicas de la ubicación del predio, para contextualizar las variaciones térmicas del hato y enriquecer las alertas sanitarias. | Given que la unidad productiva tiene coordenadas registradas<br>When se consulta el servicio meteorológico externo para esa ubicación<br>Then las condiciones obtenidas se asocian al periodo correspondiente y quedan disponibles para el análisis conjunto con la telemetría del hato.<br><br>Given que el servicio externo no responde dentro del tiempo de espera configurado<br>When se procesa la consulta<br>Then el sistema conserva la última información meteorológica obtenida, indica su antigüedad y no interrumpe el procesamiento de la telemetría. | EP-11 |
+| EP-12 | Control del abrevadero | Agrupa las capacidades para vigilar la temperatura del agua de bebida y mantenerla dentro del rango en que el ganado la consume sin afectar su rendimiento. | No aplica | No aplica |
+| US-54 | Consultar la temperatura del agua del abrevadero | Como administrador ganadero, deseo conocer la temperatura del agua de mis abrevaderos, para dejar de depender de la comprobación manual durante el recorrido del predio. | Given que el abrevadero tiene un controlador asignado que ha transmitido lecturas<br>When se consulta su estado<br>Then el sistema entrega la temperatura del agua, la fecha y hora de la lectura y el estado del actuador de calentamiento.<br><br>Given que el controlador no reporta lecturas durante más de 6 horas<br>When se consulta el abrevadero<br>Then el sistema lo presenta en estado `sin comunicación` junto a la fecha de su última lectura. | EP-12 |
+| US-55 | Recibir una alerta por agua fuera del rango de consumo | Como administrador ganadero, deseo recibir una alerta cuando el agua se enfríe por debajo del rango en que el ganado bebe con normalidad, para evitar la caída de consumo que reduce la producción. | Given que existe un rango de temperatura configurado para el abrevadero<br>When una lectura se sitúa fuera de ese rango durante más de 30 minutos continuos<br>Then el sistema genera una alerta con la temperatura registrada, el rango configurado y la duración de la desviación.<br><br>Given que el actuador de calentamiento se encuentra activo y la temperatura no retorna al rango en el plazo definido<br>When se evalúa la siguiente lectura<br>Then la alerta escala su severidad e incorpora la sospecha de falla del actuador.<br><br>Given que la temperatura retorna al rango configurado<br>When se recibe la lectura que lo confirma<br>Then la alerta registra la normalización con su fecha y hora, y conserva la duración total de la desviación. | EP-12 |
+| US-56 | Verificar el estado del abrevadero durante la faena | Como operario de campo, deseo verificar el estado de los abrevaderos desde el potrero, para priorizar cuáles reviso físicamente en lugar de recorrerlos todos. | Given que el predio registra varios abrevaderos con controlador asignado<br>When el operario consulta su estado<br>Then la aplicación entrega, por cada abrevadero, la temperatura de la última lectura, su condición respecto al rango configurado y la distancia desde la posición del operario.<br><br>Given que la aplicación no tiene cobertura<br>When el operario realiza la consulta<br>Then se entregan las últimas lecturas descargadas indicando la fecha de esa información. | EP-12 |
+| US-57 | Relacionar la temperatura del agua con el consumo del lote | Como médico veterinario, deseo contrastar la temperatura del agua con la actividad y la rumia del lote, para descartar la causa hídrica antes de atribuir una caída de consumo a un cuadro clínico. | Given que existen lecturas del abrevadero y telemetría del lote que abreva en él durante el mismo periodo<br>When se consulta el análisis conjunto<br>Then el sistema entrega la serie de temperatura del agua y el promedio de rumia y actividad del lote en ese periodo.<br><br>Given que el lote no tiene abrevadero asignado<br>When se solicita el análisis<br>Then el sistema informa que no es posible establecer la relación por ausencia de asignación. | EP-12 |
+| TS-13 | Capturar la temperatura del agua y accionar el calentamiento | Como desarrollador, deseo que el controlador del abrevadero mida la temperatura del agua y accione el calentador según el rango configurado, para sostener la temperatura sin intervención manual. | Given que el dispositivo se encuentra operativo y se cumple el intervalo de muestreo<br>When ejecuta la lectura<br>Then genera un paquete con el identificador del controlador, la temperatura del agua, el estado del actuador y la marca de tiempo de la captura.<br><br>Given que la temperatura desciende por debajo del límite inferior del rango configurado<br>When el dispositivo evalúa la lectura<br>Then activa el actuador de calentamiento y registra el evento de activación con su marca de tiempo.<br><br>Given que el sensor devuelve un valor fuera del rango físico admisible<br>When se evalúa la lectura<br>Then el actuador no se acciona, la lectura se marca como inválida y se incluye el código de error del sensor. | EP-12 |
+| TS-14 | Registrar los eventos del controlador del abrevadero | Como desarrollador, deseo exponer en la API central la recepción de lecturas y eventos del controlador del abrevadero, para que las aplicaciones consulten el estado del agua junto con el resto de la telemetría. | Given que se recibe `POST /api/v1/water-controllers/{controllerId}/readings` con `waterTemperature`, `actuatorState` y `recordedAt`<br>When la API valida el contenido y reconoce el controlador<br>Then persiste la lectura asociada al abrevadero y responde `201 Created` con el recurso creado.<br><br>Given que se recibe la solicitud con un `controllerId` no registrado<br>When se procesa<br>Then responde `404 Not Found` y no persiste la lectura.<br><br>Given que se recibe `GET /api/v1/water-controllers/{controllerId}/readings?from={from}&to={to}` con un token autorizado<br>When la API localiza el controlador<br>Then responde `200 OK` con la colección de lecturas del rango solicitado. | EP-12 |
 
 **Criterios de calidad aplicados a las User Stories**
 
@@ -136,29 +144,29 @@ Los requisitos se organizan en once Epics alineados con los Bounded Contexts def
 
 **Cobertura por User Persona**
 
-Cada arquetipo de usuario cuenta con 21 User Stories redactadas desde su rol. Ambos segmentos objetivo reciben así una especificación de requisitos equivalente en profundidad, sin que ninguno quede representado como un usuario secundario de la plataforma.
+Cada arquetipo de usuario cuenta con al menos 21 User Stories redactadas desde su rol. Ambos segmentos objetivo reciben así una especificación de requisitos equivalente en profundidad, sin que ninguno quede representado como un usuario secundario de la plataforma.
 
 | Rol en la redacción | User Persona asociado | Segmento | User Stories |
 |---|---|---|---|
-| Administrador ganadero | Cesar Flores | Segmento 1 | 21 |
-| Médico veterinario | Leonardo Rosales | Segmento 2 | 21 |
-| Operario de campo | No aplica, es un rol operativo | Segmento 1 | 4 |
+| Administrador ganadero | Cesar Flores | Segmento 1 | 23 |
+| Médico veterinario | Leonardo Rosales | Segmento 2 | 22 |
+| Operario de campo | No aplica, es un rol operativo | Segmento 1 | 5 |
 | Visitante | No aplica, es el rol base del sitio web estático | No aplica | 6 |
 | Usuario registrado | No aplica, es un rol transversal de acceso | No aplica | 1 |
-| Desarrollador | No aplica, corresponde a las Technical Stories | No aplica | 12 |
+| Desarrollador | No aplica, corresponde a las Technical Stories | No aplica | 14 |
 
 **Cobertura por producto digital**
 
 | Producto digital | Historias | Identificadores |
 |---|---|---|
 | Landing Page | 7 | US-32 a US-38 |
-| Web Application | 32 | US-01 a US-18, US-23 a US-31, US-39 a US-53 (vistas de gestión y análisis) |
-| Mobile Application | 8 | US-13, US-19, US-20, US-21, US-22, US-27, US-40, US-47 |
-| RESTful API central | 6 | TS-07 a TS-12 |
+| Web Application | 35 | US-01 a US-18, US-23 a US-31, US-39 a US-53 (vistas de gestión y análisis) |
+| Mobile Application | 10 | US-13, US-19, US-20, US-21, US-22, US-27, US-40, US-47, US-55, US-56 |
+| RESTful API central | 7 | TS-07 a TS-12, TS-14 |
 | Edge API | 3 | TS-04, TS-05, TS-06 |
-| Embedded Application | 3 | TS-01, TS-02, TS-03 |
+| Embedded Application | 4 | TS-01, TS-02, TS-03, TS-13 |
 
-Cada producto digital del alcance cuenta con al menos tres historias propias. El Edge API y la Embedded Application se sitúan en ese mínimo y son los primeros candidatos a ampliarse conforme avance el diseño del dispositivo.
+Cada producto digital del alcance cuenta con al menos tres historias propias. El Edge API se sitúa en ese mínimo y es el primer candidato a ampliarse conforme avance el diseño de la solución de borde.
 
 **Trazabilidad con los hallazgos de la investigación**
 
@@ -176,6 +184,8 @@ Cada producto digital del alcance cuenta con al menos tres historias propias. El
 | Campañas sanitarias según el calendario andino: carbúnculo, desparasitación (Próspero, Meikoll) | US-26, US-27, US-28 |
 | Preferencia unánime por el pago anual con tarifa fija | US-35, TS-10 |
 | Control de costos y rentabilidad por cabeza (Próspero, Meikoll, Grober) | US-29, US-31 |
+| Verificación manual de pastos y agua durante el recorrido diario del predio (Empathy Map de Cesar Flores) | US-54, US-55, US-56, TS-13, TS-14 |
+| Caída del consumo y de la rumia como signo previo a un cuadro clínico (Darwin, Eliseo, Dionisio) | US-57 |
 | Riesgo de intoxicación por dosificación repetida y de fallo de preñez por vacunación omitida | US-41, US-43, US-51 |
 | Seguimiento obligatorio de constantes a las 12, 24 y 48 horas tras un protocolo de antibióticos (Darwin) | US-40, US-42 |
 | Uso de exámenes de laboratorio en casos complejos (Eliseo, Dionisio) | US-44 |
@@ -273,7 +283,7 @@ El criterio de asignación es el siguiente:
 
 - **Sprint 1.** La Landing Page completa, incluidas la internacionalización y la accesibilidad, junto con el acceso a la plataforma y la ficha del animal. Al cierre de esta iteración el modelo de negocio es comunicable y existe una unidad productiva con ganado registrado.
 - **Sprint 2.** El flujo de telemetría de extremo a extremo, desde la captura en el collar hasta la consulta en las aplicaciones, con el motor de alertas y la operación de campo sin conexión. Es la iteración que incorpora los productos embebido y de borde.
-- **Sprint 3.** La analítica del hato, el calendario ganadero, el núcleo de la atención clínica veterinaria y la gestión de suscripciones.
+- **Sprint 3.** La analítica del hato, el calendario ganadero, el núcleo de la atención clínica veterinaria, la gestión de suscripciones y el controlador del abrevadero, que es el segundo dispositivo físico del alcance.
 - **Roadmap.** Las integraciones con sistemas externos de laboratorio, nutrición y meteorología, el seguimiento clínico avanzado y las capacidades de mantenimiento del inventario.
 
 **Distribución del esfuerzo**
@@ -282,10 +292,10 @@ El criterio de asignación es el siguiente:
 |---|---|---|
 | Sprint 1 | 13 | 47 |
 | Sprint 2 | 15 | 88 |
-| Sprint 3 | 18 | 80 |
-| Comprometido en el ciclo | 46 | 215 |
-| Roadmap posterior | 19 | 72 |
-| **Total del Product Backlog** | **65** | **287** |
+| Sprint 3 | 21 | 96 |
+| Comprometido en el ciclo | 49 | 231 |
+| Roadmap posterior | 22 | 82 |
+| **Total del Product Backlog** | **71** | **313** |
 
 El Sprint 2 concentra la mayor carga porque reúne las historias de mayor complejidad técnica: la captura en el dispositivo, el procesamiento en el borde, la sincronización con el servicio central y la operación sin conectividad. El equipo reconoce este desbalance y establece dos medidas de control. La primera es validar la velocidad real al término del Sprint 1 y ajustar el alcance comprometido de las iteraciones siguientes con ese dato en lugar de con la estimación inicial. La segunda es tratar el flujo de telemetría como el objetivo indivisible del Sprint 2, de modo que, ante una desviación, se difieran primero las historias de alcance secundario antes que cualquier componente de ese flujo.
 
@@ -358,15 +368,21 @@ El Sprint 2 concentra la mayor carga porque reúne las historias de mayor comple
 | 63 | US-03 | Completar el perfil profesional | Registrar especialidad, colegiatura y experiencia con control de duplicidad. | 3 | Sprint 1 |
 | 64 | US-05 | Revocar la autorización de un médico veterinario | Retirar el acceso conservando la autoría de los registros previos. | 2 | Roadmap |
 | 65 | TS-12 | Integrar un servicio meteorológico externo | Incorporar las condiciones meteorológicas del predio al análisis de la telemetría. | 5 | Roadmap |
+| 66 | TS-13 | Capturar la temperatura del agua y accionar el calentamiento | Medir la temperatura del abrevadero y accionar el calentador según el rango configurado. | 8 | Sprint 3 |
+| 67 | TS-14 | Registrar los eventos del controlador del abrevadero | Recibir y exponer las lecturas del abrevadero a través de la API central. | 5 | Sprint 3 |
+| 68 | US-54 | Consultar la temperatura del agua del abrevadero | Entregar temperatura, estado del actuador y antigüedad de la última lectura. | 3 | Sprint 3 |
+| 69 | US-55 | Recibir una alerta por agua fuera del rango de consumo | Alertar la desviación sostenida y escalar ante sospecha de falla del actuador. | 5 | Roadmap |
+| 70 | US-56 | Verificar el estado del abrevadero durante la faena | Priorizar qué abrevaderos revisar físicamente desde el potrero. | 2 | Roadmap |
+| 71 | US-57 | Relacionar la temperatura del agua con el consumo del lote | Descartar la causa hídrica antes de atribuir la caída de consumo a un cuadro clínico. | 3 | Roadmap |
 
 **Resumen de la estimación**
 
 | Concepto | Valor |
 |---|---|
-| User Stories | 53 |
-| Technical Stories | 12 |
-| Total de historias | 65 |
-| Suma de Story Points | 287 |
+| User Stories | 57 |
+| Technical Stories | 14 |
+| Total de historias | 71 |
+| Suma de Story Points | 313 |
 
 **Evidencia del Product Backlog en la herramienta de control**
 
