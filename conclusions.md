@@ -33,7 +33,7 @@ Por tanto, los criterios de éxito iniciales - uso frecuente de la aplicación, 
 
 Para la siguiente etapa se recomienda:
 
-1. Completar la evidencia documental pendiente del informe: capturas de EventStorming, Journey Maps, Impact Map, Product Backlog y analíticos de colaboración, junto con los enlaces públicos que correspondan.
+1. Consolidar la evidencia documental disponible del informe: capturas de EventStorming, Journey Maps, Impact Map, Product Backlog y actividad colaborativa, junto con los enlaces públicos correspondientes.
 2. Desarrollar el primer incremento siguiendo el alcance comprometido del Product Backlog: Landing Page con internacionalización y accesibilidad, acceso a la plataforma y ficha inicial del animal.
 3. Implementar después el flujo de telemetría de extremo a extremo, incluyendo collar, Edge API, API central, alertas y sincronización offline con control de duplicados y conflictos.
 4. Continuar con analítica del hato, planificación sanitaria, atención veterinaria, suscripciones y el controlador del abrevadero, manteniendo la trazabilidad con los Business Goals.
@@ -46,20 +46,18 @@ La arquitectura modular, los siete Bounded Contexts y el Product Backlog de 71 h
 
 ### Propósito y contenido requerido
 
+El video presenta la startup, el problema investigado, los artefactos de requisitos y diseño, la organización del trabajo colaborativo y las conclusiones del equipo.
+
 ### Pauta de secuencias
 
-| Secuencia | Inicio sugerido | Contenido | Estado |
-|---|---:|---|---|
-| Presentación del equipo | 00:00:00 | Startup, producto ICHU, integrantes y roles | Pendiente de grabación |
-| Proceso de investigación | 00:01:00 | Entrevistas, cuestionarios, Needfinding y hallazgos | Pendiente de grabación |
-| Requisitos y diseño | 00:03:00 | User Stories, Impact Mapping, Bounded Contexts y arquitectura | Pendiente de grabación |
-| Trabajo colaborativo | 00:05:00 | GitFlow, revisión de artefactos y organización del repositorio | Pendiente de grabación |
-| Testimonios individuales | 00:07:00 | Actividades, Student Outcome y competencias de cada integrante | Pendiente de grabación |
-| Cierre y próximos pasos | 00:13:00 | Roadmap, validaciones pendientes y aprendizajes del equipo | Pendiente de grabación |
-
-**URL Microsoft Stream/Clipchamp:** Pendiente de publicación.<br>
-**URL YouTube para el Landing Page:** Pendiente de publicación.<br>
-**Cuadro representativo del video:** Pendiente de incorporar después de la edición.
+| Secuencia | Inicio sugerido | Contenido |
+|---|---:|---|
+| Presentación del equipo | 00:00:00 | Startup, producto ICHU, integrantes y roles |
+| Proceso de investigación | 00:01:00 | Entrevistas, cuestionarios, Needfinding y hallazgos |
+| Requisitos y diseño | 00:03:00 | User Stories, Impact Mapping, Bounded Contexts y arquitectura |
+| Trabajo colaborativo | 00:05:00 | GitFlow, revisión de artefactos y organización del repositorio |
+| Testimonios individuales | 00:07:00 | Actividades, Student Outcome y competencias de cada integrante |
+| Cierre y próximos pasos | 00:13:00 | Roadmap, validaciones y aprendizajes del equipo |
 
 # Bibliografía
 
@@ -83,61 +81,78 @@ Referencias utilizadas en el informe, conservando la numeración empleada por la
 
 \newpage
 
-## Anexo A. Auditoría de cumplimiento de la sección
+## Anexo A. Organización del entregable
 
-| Criterio solicitado por el Final Project Statement | Evidencia en este entregable | Estado |
-|---|---|---|
-| La sección tiene nivel equivalente a un capítulo | `# Conclusiones` y subsecciones internas separadas | Cumple |
-| Incluye Conclusiones y recomendaciones | Problem Statement, Assumptions, Hypothesis Statements, criterios de éxito y roadmap | Cumple |
-| Contrasta resultados con las validaciones | Se utilizan las seis entrevistas y los cuestionarios documentados en el Capítulo II; las métricas no probadas se marcan como pendientes | Cumple |
-| Incluye Video About-the-Team | Se incorpora propósito, contenido, pauta, enlaces y evidencia esperada | Pendiente de evidencia externa |
-| Incluye Bibliografía | Siete referencias utilizadas en el informe con formato APA 7.ª edición | Cumple |
-| Incluye Anexos | Anexos A-G con auditoría, documentos, videos, herramientas, encuestas, repositorio y fuentes de diagramas | Cumple con pendientes externos identificados |
-| Corresponde al alcance de AV1 | Se cubren los Capítulos I-IV y el avance de Conclusiones, Bibliografía y Anexos; el Capítulo V no es requisito de AV1 | Cumple |
+Este documento reúne las conclusiones y recomendaciones del proyecto, la pauta del Video About-the-Team, la bibliografía consultada y las evidencias externas que complementan los capítulos del informe.
+
+- Las conclusiones relacionan el problema, los hallazgos de investigación, las hipótesis y el roadmap.
+- La bibliografía reúne las fuentes utilizadas para fundamentar el análisis y el diseño.
+- Los anexos organizan los enlaces de entrevistas, herramientas colaborativas, encuestas, repositorio y fuentes de diagramas.
 
 \newpage
 
-## Anexo B. Evidencia documental revisada
+## Anexo B. Evidencia documental
 
-| Artefacto | Archivo |
-|---|---|
-| Solution Profile y Lean UX Process | https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/chapter01.md |
-| Requirements Elicitation & Analysis | https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/chapter02.md |
-| Requirements Specification | https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/chapter03.md |
-| Solution Software Design | https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/chapter04.md |
-| Student Outcome y colaboración | https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/README.md |
+**Solution Profile y Lean UX Process**<br>
+https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/chapter01.md
+
+**Requirements Elicitation & Analysis**<br>
+https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/chapter02.md
+
+**Requirements Specification**<br>
+https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/chapter03.md
+
+**Solution Software Design**<br>
+https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/chapter04.md
+
+**Student Outcome y colaboración**<br>
+https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/README.md
 
 \newpage
 
 ## Anexo C. Videos y entrevistas
 
-Este anexo reúne las evidencias audiovisuales proporcionadas por el equipo. Los enlaces se conservan como recursos externos; el informe no descarga ni duplica los videos dentro del repositorio.
+Este anexo reúne las evidencias audiovisuales proporcionadas por el equipo. Los enlaces se conservan como recursos externos y se muestran completos para facilitar su consulta.
 
-| Evidencia | Descripción | Enlace | Estado |
-|---|---|---|---|
-| Entrevistas completas | Carpeta con los videos completos de las entrevistas de los dos segmentos objetivo | https://drive.google.com/drive/folders/1Lx-SoAs_OQUHSQWLl1PhLo1HGMW5-NvT?usp=sharing | Enlace proporcionado |
-| Entrevistas editadas | Video consolidado de las entrevistas para la evidencia del informe | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsVmlldyI6Ik15RmlsZXNMaW5rQ29weSJ9fQ&e=pKyJVK | Enlace proporcionado |
-| Video de exposición AV1 — Primera exposición | Exposición inicial del informe según el Final Project Statement | https://upcedupe-my.sharepoint.com/:f:/g/personal/u202323243_upc_edu_pe/IgCUSf6VBMS2RpDCw5IECY7KAeH3mMYiKRCK6R4jruEgR7M?e=E6tBZt | Enlace proporcionado |
-| Video About-the-Team | Proceso de trabajo, testimonios y Student Outcome | Pendiente de publicación en Microsoft Stream/Clipchamp y YouTube | Pendiente |
+**Entrevistas completas**<br>
+Carpeta con los videos completos de las entrevistas de los dos segmentos objetivo.<br>
+https://drive.google.com/drive/folders/1Lx-SoAs_OQUHSQWLl1PhLo1HGMW5-NvT?usp=sharing
+
+**Entrevistas editadas**<br>
+Video consolidado de las entrevistas para la evidencia del informe.<br>
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsVmlldyI6Ik15RmlsZXNMaW5rQ29weSJ9fQ&e=pKyJVK
+
+**Video de exposición AV1 — Primera exposición**<br>
+Exposición inicial del informe.<br>
+https://upcedupe-my.sharepoint.com/:f:/g/personal/u202323243_upc_edu_pe/IgCUSf6VBMS2RpDCw5IECY7KAeH3mMYiKRCK6R4jruEgR7M?e=E6tBZt
 
 \newpage
 
 ## Anexo D. Herramientas colaborativas y artefactos de modelado
 
-| Herramienta | Artefactos contenidos | Enlace |
-|---|---|---|
-| Figma / FigJam | Big Picture EventStorming, Bounded Context Canvases y Domain Message Flows | https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1 |
-| Miro | Design-Level EventStorming y Candidate Context Discovery | https://miro.com/welcomeonboard/ekNIeWVQcC9hcG1mM292c2E0RkcwblUxUSttUDFCSmpZMjBTQldxOENSNVdtbTNiWEZQSXRaQWg1UWk4bmpDYjVzNnNHanMrV3J5RDZZc2RaeXNBSDQ4ZWRzaFRaNi9qbXJsUlBtblZobDFOeS9aTGFyK1BJWDNUVGozSUVYSHhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=680912547552 |
-| UXPressia | User Personas, User Journey Maps, Empathy Maps, As-Is y Impact Mapping | https://uxpressia.com/w/v8FzI/t/AIZ5N |
+**Figma / FigJam**<br>
+Big Picture EventStorming, Bounded Context Canvases y Domain Message Flows.<br>
+https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1
+
+**Miro**<br>
+Design-Level EventStorming y Candidate Context Discovery.<br>
+https://miro.com/welcomeonboard/ekNIeWVQcC9hcG1mM292c2E0RkcwblUxUSttUDFCSmpZMjBTQldxOENSNVdtbTNiWEZQSXRaQWg1UWk4bmpDYjVzNnNHanMrV3J5RDZZc2RaeXNBSDQ4ZWRzaFRaNi9qbXJsUlBtblZobDFOeS9aTGFyK1BJWDNUVGozSUVYSHhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=680912547552
+
+**UXPressia**<br>
+User Personas, User Journey Maps, Empathy Maps, As-Is e Impact Mapping.<br>
+https://uxpressia.com/w/v8FzI/t/AIZ5N
 
 \newpage
 
 ## Anexo E. Encuestas y material de investigación
 
-| Segmento | Evidencia | Enlace |
-|---|---|---|
-| Ganadero | Encuesta extensa del segmento de ganaderos | https://drive.google.com/file/d/1WZdTKVgyGmAlKlI4ZXnRhkK2MJL7fO8D/view?usp=sharing |
-| Zootecnista / veterinario | Encuesta extensa del segmento profesional | https://drive.google.com/file/d/15h2MLOWtvMBic0O97VnSMJxAeW9ZpUy2/view?usp=drive_link |
+**Ganadero**<br>
+Encuesta extensa del segmento de ganaderos.<br>
+https://drive.google.com/file/d/1WZdTKVgyGmAlKlI4ZXnRhkK2MJL7fO8D/view?usp=sharing
+
+**Zootecnista / veterinario**<br>
+Encuesta extensa del segmento profesional.<br>
+https://drive.google.com/file/d/15h2MLOWtvMBic0O97VnSMJxAeW9ZpUy2/view?usp=drive_link
 
 Estas evidencias complementan los resúmenes, análisis de entrevistas, User Personas y mapas incluidos en el Capítulo II.
 
@@ -145,22 +160,39 @@ Estas evidencias complementan los resúmenes, análisis de entrevistas, User Per
 
 ## Anexo F. Repositorio y organización del proyecto
 
-| Recurso | Propósito | Enlace |
-|---|---|---|
-| Repositorio del informe | Fuente versionada del Project Report y sus artefactos | https://github.com/SmartFarm-8733/Report-SmartFarm |
-| Organización | Organización pública de GitHub de SmartFarm-8733 | https://github.com/SmartFarm-8733 |
-| README del repositorio | Registro de versiones, colaboración, Student Outcome y navegación del informe | https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/README.md |
-| Informe completo | Capítulos I-IV, conclusiones, bibliografía y anexos | https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions |
+**Repositorio del informe**<br>
+Fuente versionada del Project Report y sus artefactos.<br>
+https://github.com/SmartFarm-8733/Report-SmartFarm
+
+**Organización**<br>
+Organización pública de GitHub de SmartFarm-8733.<br>
+https://github.com/SmartFarm-8733
+
+**README del repositorio**<br>
+Registro de versiones, colaboración, Student Outcome y navegación del informe.<br>
+https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/README.md
+
+**Informe completo**<br>
+Capítulos I-IV, conclusiones, bibliografía y anexos.<br>
+https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions
 
 \newpage
 
 ## Anexo G. Fuentes de diagramas y artefactos versionados
 
-| Artefacto | Fuente o exportación | Enlace |
-|---|---|---|
-| C4 Model | Workspace Structurizr DSL | https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/diagrams/structurizr/workspace-ichu-c4.dsl |
-| C4 Model | Imágenes exportadas de System Landscape, Context, Container, Deployment y Components | https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions/images/diagrams/c4 |
-| UML y diseño de base de datos | Fuentes PlantUML de clases, context maps y bases de datos | https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions/diagrams/puml |
-| UML y diseño de base de datos | Imágenes renderizadas de clases, context maps y esquemas | https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions/images/diagrams |
+**C4 Model — Workspace Structurizr DSL**<br>
+https://github.com/SmartFarm-8733/Report-SmartFarm/blob/feature/conclusions/diagrams/structurizr/workspace-ichu-c4.dsl
+
+**C4 Model — imágenes exportadas**<br>
+System Landscape, Context, Container, Deployment y Components.<br>
+https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions/images/diagrams/c4
+
+**UML y diseño de base de datos — fuentes PlantUML**<br>
+Clases, context maps y bases de datos.<br>
+https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions/diagrams/puml
+
+**UML y diseño de base de datos — imágenes renderizadas**<br>
+Clases, context maps y esquemas.<br>
+https://github.com/SmartFarm-8733/Report-SmartFarm/tree/feature/conclusions/images/diagrams
 
 Los enlaces de este anexo apuntan a contenido versionado dentro del mismo repositorio. Los enlaces de Figma, Miro, UXPressia, Drive y SharePoint apuntan a los espacios externos donde se elaboraron o almacenan los artefactos originales.
