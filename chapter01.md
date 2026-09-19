@@ -216,6 +216,10 @@ Se redacta una declaración de hipótesis por cada Feature Assumption definido e
 #### 1.2.2.4. Lean UX Canvas.
 A continuación, se presenta el Lienzo Lean UX de la startup ganadera, integrando los bloques estratégicos para validar de forma iterativa nuestro modelo de negocio digital:
 
+![Lean UX Canvas del proyecto ICHU](images/lean-ux-canvas.png)
+
+*Figura 10. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
+
 <table>
     <thead>
         <tr>
