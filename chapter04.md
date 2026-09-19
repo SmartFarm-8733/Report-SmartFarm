@@ -312,7 +312,9 @@ La solución se organiza como un **monolito modular** en la nube, en el que cada
 
 El System Landscape presenta el panorama completo en el que se inserta la solución: las cuatro personas que interactúan con ella, los dos dispositivos físicos que la alimentan y los cuatro servicios externos de los que depende. A diferencia del diagrama de contexto, incluye los elementos que rodean al sistema aunque no todos se comuniquen directamente con él.
 
-**Pendiente:** exportar desde Structurizr la vista `SystemLandscape` y guardarla como `images/diagrams/c4-system-landscape.png`.
+![System Landscape de SmartFarm](images/diagrams/c4/c4-system-landscape.png)
+
+*Figura 4.16. System Landscape. Elaboración propia con Structurizr.*
 
 #### 4.1.3.2. Software Architecture Context Level Diagram
 
@@ -322,7 +324,9 @@ Los actores representados son el **administrador ganadero**, que gestiona el gan
 
 Los sistemas externos son el **hardware del collar inteligente** y el **hardware del controlador del abrevadero**, que aportan telemetría; **Firebase Authentication**, que verifica credenciales; **Firebase Cloud Messaging**, que entrega notificaciones; el **proveedor de mapas**, que permite visualizar posiciones y geocercas; y el **proveedor de pagos**, que procesa los cobros de la suscripción.
 
-**Pendiente:** exportar desde Structurizr la vista `SystemContext` y guardarla como `images/diagrams/c4-system-context.png`.
+![System Context de SmartFarm](images/diagrams/c4/c4-system-context.png)
+
+*Figura 4.17. System Context. Elaboración propia con Structurizr.*
 
 #### 4.1.3.3. Software Architecture Container Level Diagram
 
@@ -342,7 +346,9 @@ El Container Diagram descompone la solución en sus unidades de despliegue indep
 
 Las aplicaciones cliente consumen el RESTful API sobre HTTPS con JSON. El collar transmite directamente al backend cuando hay Wi-Fi e Internet, y por Bluetooth Low Energy al Edge Gateway durante el pastoreo sin cobertura. El Edge Gateway entrega alertas locales a la aplicación móvil por red local, sin depender de Internet. El backend accede a PostgreSQL mediante Entity Framework Core con el proveedor Npgsql.
 
-**Pendiente:** exportar desde Structurizr la vista `ContainerDiagram` y guardarla como `images/diagrams/c4-container.png`.
+![Container Diagram de SmartFarm](images/diagrams/c4/c4-container.png)
+
+*Figura 4.18. Container Diagram. Elaboración propia con Structurizr.*
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
@@ -356,7 +362,9 @@ El Deployment Diagram describe dónde se ejecuta cada container en el entorno de
 
 El reparto responde directamente al hallazgo de conectividad del capítulo anterior: el 100% de los encuestados calificó la cobertura en las zonas de pastoreo como regular. Por eso el Edge Gateway y su base local se despliegan en el predio y no en la nube, y por eso las reglas críticas se evalúan en el borde.
 
-**Pendiente:** exportar desde Structurizr la vista `ProductionDeployment` y guardarla como `images/diagrams/c4-deployment.png`.
+![Deployment Diagram de producción](images/diagrams/c4/c4-deployment.png)
+
+*Figura 4.19. Deployment Diagram del entorno de producción. Elaboración propia con Structurizr.*
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
@@ -425,7 +433,39 @@ Es el core domain de la solución. Recibe la telemetría de los dispositivos y d
 
 La vista `MonitoringComponents` del workspace representa la descomposición interna de este módulo dentro del container del monolito, mostrando las tres interfaces HTTP, los tres servicios de aplicación, los dos agregados, el servicio de dominio, los dos Anti-corruption Layers y el repositorio.
 
-**Pendiente:** exportar desde Structurizr la vista `MonitoringComponents` y guardarla como `images/diagrams/c4-components-monitoring.png`.
+![Component Diagram del módulo Operations & Monitoring](images/diagrams/c4/c4-components-monitoring.png)
+
+*Figura 4.20. Componentes del módulo Operations & Monitoring. Elaboración propia con Structurizr.*
+
+Este contexto se realiza además en tres containers fuera del backend: las dos aplicaciones embebidas que capturan la telemetría y la pasarela de borde que la recibe y evalúa sin conexión. Sus diagramas de componentes se presentan a continuación.
+
+![Component Diagram del Cattle Band Embedded Application](images/diagrams/c4/c4-components-cattle-band.png)
+
+*Figura 4.21. Componentes del firmware del collar inteligente. Elaboración propia con Structurizr.*
+
+![Component Diagram del Portable Edge Gateway](images/diagrams/c4/c4-components-edge-gateway.png)
+
+*Figura 4.22. Componentes de la pasarela de borde. Elaboración propia con Structurizr.*
+
+![Component Diagram del Water Controller Embedded Application](images/diagrams/c4/c4-components-water-controller.png)
+
+*Figura 4.23. Componentes del firmware del controlador del abrevadero. Elaboración propia con Structurizr.*
+
+**Flujos dinámicos del contexto**
+
+Los diagramas dinámicos ilustran la secuencia de colaboración entre componentes en los tres escenarios de conectividad que la solución debe cubrir.
+
+![Flujo de telemetría con cobertura](images/diagrams/c4/c4-flow-connected-telemetry.png)
+
+*Figura 4.24. Flujo completo cuando el collar tiene cobertura. Elaboración propia con Structurizr.*
+
+![Flujo de pastoreo sin cobertura](images/diagrams/c4/c4-flow-offline-grazing.png)
+
+*Figura 4.25. Flujo completo durante el pastoreo sin cobertura. Elaboración propia con Structurizr.*
+
+![Flujo de sincronización del borde](images/diagrams/c4/c4-flow-edge-synchronization.png)
+
+*Figura 4.26. Sincronización al recuperar la conexión. Elaboración propia con Structurizr.*
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -489,7 +529,9 @@ Mantiene la identidad y los datos productivos de cada animal. Es la fuente únic
 
 #### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Pendiente:** exportar desde Structurizr la vista `CattleComponents` y guardarla como `images/diagrams/c4-components-cattle.png`.
+![Component Diagram del módulo Cattle Information](images/diagrams/c4/c4-components-cattle.png)
+
+*Figura 4.27. Componentes del módulo Cattle Information. Elaboración propia con Structurizr.*
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -554,7 +596,9 @@ Administra el inventario de dispositivos físicos y controla a qué animal o abr
 
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Pendiente:** exportar desde Structurizr la vista `IoTAssetsComponents` y guardarla como `images/diagrams/c4-components-iot-assets.png`.
+![Component Diagram del módulo IoT Assets](images/diagrams/c4/c4-components-iot-assets.png)
+
+*Figura 4.28. Componentes del módulo IoT Assets. Elaboración propia con Structurizr.*
 
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -622,7 +666,13 @@ Programa las faenas sanitarias y reproductivas del hato, emite los recordatorios
 
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Pendiente:** exportar desde Structurizr la vista `PlanningComponents` y guardarla como `images/diagrams/c4-components-planning.png`.
+![Component Diagram del módulo Planning](images/diagrams/c4/c4-components-planning.png)
+
+*Figura 4.29. Componentes del módulo Planning. Elaboración propia con Structurizr.*
+
+![Flujo de emisión de recordatorios](images/diagrams/c4/c4-flow-planning-reminder.png)
+
+*Figura 4.30. Flujo interno de recordatorios del calendario ganadero. Elaboración propia con Structurizr.*
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -688,7 +738,9 @@ Transforma la información acumulada por los demás contextos en indicadores, te
 
 #### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Pendiente:** exportar desde Structurizr la vista `AnalyticsComponents` y guardarla como `images/diagrams/c4-components-analytics.png`.
+![Component Diagram del módulo Dashboard & Analytics](images/diagrams/c4/c4-components-analytics.png)
+
+*Figura 4.31. Componentes del módulo Dashboard & Analytics. Elaboración propia con Structurizr.*
 
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -756,7 +808,9 @@ Resuelve quién es cada usuario, sobre qué unidades productivas puede operar y 
 
 #### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Pendiente:** exportar desde Structurizr la vista `IdentityComponents` y guardarla como `images/diagrams/c4-components-identity.png`.
+![Component Diagram del módulo Identity & Access Management](images/diagrams/c4/c4-components-identity.png)
+
+*Figura 4.32. Componentes del módulo Identity & Access Management. Elaboración propia con Structurizr.*
 
 #### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -822,7 +876,9 @@ Administra los planes contratados, sus límites y su facturación, y determina q
 
 #### 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Pendiente:** exportar desde Structurizr la vista `SubscriptionComponents` y guardarla como `images/diagrams/c4-components-subscription.png`.
+![Component Diagram del módulo Subscription Plans](images/diagrams/c4/c4-components-subscription.png)
+
+*Figura 4.33. Componentes del módulo Subscription Plans. Elaboración propia con Structurizr.*
 
 #### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
 
