@@ -90,6 +90,7 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 0.10.0 | 2026-09-18 | Contreras Leon, Flor de María | Capítulo IV elaborado con Design-Level EventStorming, Bounded Context Canvases, Context Mapping y diseño táctico de siete contextos acotados. |
 | 0.10.1 | 2026-09-18 | Contreras Leon, Flor de María | Diagramas C4 exportados desde Structurizr y diagramas UML y de base de datos generados con PlantUML. |
 | 0.11.0 | 2026-09-18 | Contreras Leon, Flor de María | Integración de las ramas de capítulo, sección de Bibliografía y completado del documento principal. |
+| 0.12.0 | 2026-09-19 | Avalos Cordova, Diego Andres | Creación de la sección de Conclusiones y recomendaciones, pauta del Video About-the-Team, Bibliografía y Anexos, con auditoría de cumplimiento para AV1. |
 
 ---
 
@@ -252,7 +253,11 @@ Se trabaja con una rama por capítulo, bajo la convención `feature/chapter-<nú
       - [4.2.7.5. Bounded Context Software Architecture Component Level Diagrams](chapter04.md#4275-bounded-context-software-architecture-component-level-diagrams)
       - [4.2.7.6. Bounded Context Software Architecture Code Level Diagrams](chapter04.md#4276-bounded-context-software-architecture-code-level-diagrams)
   - [4.3. Síntesis del diseño](chapter04.md#43-sintesis-del-diseno)
-- [Bibliografía](#bibliografía)
+- [Conclusiones](conclusions.md#conclusiones)
+  - [Conclusiones y recomendaciones](conclusions.md#conclusiones-y-recomendaciones)
+  - [Video About-the-Team](conclusions.md#video-about-the-team)
+- [Bibliografía](conclusions.md#bibliografía)
+- [Anexos](conclusions.md#anexos)
 
 ---
 
@@ -284,23 +289,10 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 | III. Requirements Specification | [chapter03.md](chapter03.md) |
 | IV. Solution Software Design | [chapter04.md](chapter04.md) |
 | V. Solution UI/UX Design | [chapter05.md](chapter05.md) |
+| Conclusiones, bibliografía y anexos | [conclusions.md](conclusions.md) |
 
 ---
 
 # Bibliografía
 
-Referencias en formato APA 7.ª edición, ordenadas alfabéticamente por autor. La numeración entre corchetes corresponde a las citas del cuerpo del informe.
-
-[1] Instituto Nacional de Estadística e Informática. (2023). *Encuesta Nacional Agropecuaria 2023*. INEI. https://proyectos.inei.gob.pe/iinei/srienaho/Descarga/DocumentosMetodologicos/2023-62/05_PUBLICACION_ENA_2023.pdf
-
-[2] Ministerio de Desarrollo Agrario y Riego. (s. f.). *Sistema Integrado de Estadística Agraria (SIEA)*. MIDAGRI. https://siea.midagri.gob.pe/
-
-[3] Organismo Supervisor de Inversión Privada en Telecomunicaciones. (s. f.). *Estadísticas y reportes de servicios de telecomunicaciones*. OSIPTEL. https://repositorio.osiptel.gob.pe/handle/20.500.12630/4
-
-[4] Servicio Nacional de Sanidad Agraria. (s. f.). *Campañas de vacunación y prevención sanitaria para la ganadería*. SENASA. https://www.senasa.gob.pe/
-
-[5] Brown, S. (2023). *The C4 model for visualising software architecture*. https://c4model.com/
-
-[6] Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley.
-
-[7] Gothelf, J., & Seiden, J. (2021). *Lean UX: Creating great products with agile teams* (3.ª ed.). O'Reilly Media.
+La bibliografía consolidada del informe se encuentra en [conclusions.md#bibliografía](conclusions.md#bibliografía).
