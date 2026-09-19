@@ -46,10 +46,6 @@ La arquitectura modular, los siete Bounded Contexts y el Product Backlog de 71 h
 
 ### Propósito y contenido requerido
 
-Según el enunciado del trabajo, el video debe resumir el proceso de trabajo del equipo, mostrar escenas reales de colaboración, complementar la explicación con narración y presentar el testimonio ante cámara de cada integrante. Cada participante debe explicar sus actividades, los resultados del trabajo, el logro de los outcomes y las competencias desarrolladas.
-
-En la auditoría del repositorio no se encontró todavía un archivo de video ni una URL publicada en Microsoft Stream, Clipchamp o YouTube. Por esa razón, no se inventan enlaces ni capturas; esta sección queda preparada para incorporar la evidencia antes de la entrega.
-
 ### Pauta de secuencias
 
 | Secuencia | Inicio sugerido | Contenido | Estado |
@@ -124,8 +120,6 @@ Este anexo reúne las evidencias audiovisuales proporcionadas por el equipo. Los
 | Video de exposición AV1 | Exposición del informe según el Final Project Statement | Pendiente de publicación en Microsoft Stream/Clipchamp | Pendiente |
 | Video About-the-Team | Proceso de trabajo, testimonios y Student Outcome | Pendiente de publicación en Microsoft Stream/Clipchamp y YouTube | Pendiente |
 
-Para cumplir completamente el PDF todavía deben agregarse, para los videos que correspondan, una captura representativa, el enlace público y el timing de cada sección o entrevista.
-
 \newpage
 
 ## Anexo D. Herramientas colaborativas y artefactos de modelado
@@ -161,8 +155,6 @@ Estas evidencias complementan los resúmenes, análisis de entrevistas, User Per
 \newpage
 
 ## Anexo G. Fuentes de diagramas y artefactos versionados
-
-El PDF solicita que los diagramas se elaboren en las herramientas indicadas. Además de las imágenes insertadas en los capítulos, se conservan las fuentes de Diagram-as-Code en el repositorio para facilitar su revisión y regeneración.
 
 | Artefacto | Fuente o exportación | Enlace |
 |---|---|---|
