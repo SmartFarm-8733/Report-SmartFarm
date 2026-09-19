@@ -20,7 +20,7 @@ La identificación de candidate bounded contexts aplica start-with-value, start-
 | IoT Data Integration | Capturar, validar, almacenar y sincronizar telemetría desde los dispositivos. | EP-06, TS-01 a TS-05; collares, aretes y servicio de borde. | Enabling |
 | Landing Page and Subscriptions | Comunicar la propuesta de valor, planes y condiciones del servicio. | EP-07, US-15 a US-18. | Supporting, fuera del core operativo |
 
-Identity and Access Management aparece como una capacidad transversal pendiente de formalizar. Las User Stories ya exigen autorización para consultar o modificar información clínica, pero el capítulo III todavía no contiene un epic independiente para identidad, roles y permisos. Esta observación se mantiene como una decisión abierta para la siguiente iteración del EventStorming y no se convierte todavía en un bounded context definitivo.
+Identity and Access Management aparece como una capacidad transversal. Las User Stories ya exigen autorización para consultar o modificar información clínica, mientras que el capítulo III contempla esta necesidad dentro de sus reglas de acceso y permisos. La capacidad se mantiene diferenciada durante el modelado del dominio y no se convierte todavía en un bounded context definitivo.
 
 El timeline resume el flujo desde el registro del animal hasta la toma de decisiones y distingue eventos de negocio de pasos de integración.
 
