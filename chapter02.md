@@ -161,6 +161,10 @@ Con esta estructura, la entrevista se aborda en tres fases: primero el perfil de
 
 ### 2.2.2. Registro de entrevistas.
 
+**Video editado de las entrevistas:** [Abrir video en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK)
+
+**Carpeta con las entrevistas completas:** [Abrir carpeta en Google Drive](https://drive.google.com/drive/folders/1Lx-SoAs_OQUHSQWLl1PhLo1HGMW5-NvT?usp=sharing)
+
 **Criterio de asignación por segmento**
 
 Los entrevistados se clasifican según el rol que desempeñan frente a la unidad productiva, y no según su formación profesional. Por esa razón, Meikoll Morell y Grober Barrientos figuran en el Segmento 1 pese a contar con formación en zootecnia y medicina veterinaria: en ambos casos, la entrevista aborda su responsabilidad sobre la gestión, el inventario y la economía del predio en el que trabajan, que es la perspectiva propia de ese segmento. El Segmento 2 reúne a los profesionales que prestan asesoría clínica a establos que no administran.
@@ -273,6 +277,8 @@ Para complementar las entrevistas en profundidad del Segmento 1, se aplicó un c
 
 *Figura 1. Elaboración propia a partir de los datos recolectados. Startup SmartFarm.*
 
+[Cuestionario ampliado del Segmento 1: Ganaderos](https://drive.google.com/file/d/1WZdTKVgyGmAlKlI4ZXnRhkK2MJL7fO8D/view?usp=sharing)
+
 Como muestra el gráfico, el **50% utiliza hojas de cálculo (Excel/Google Sheets) y el 50% restante cuaderno o registro manual**; ningún ganadero emplea software especializado ganadero ni aplicación móvil. Este patrón confirma que el 100% del segmento digitaliza de forma rudimentaria o no digitaliza nada, sin ningún uso de herramientas especializadas. Además, el registro se divide entre lo semi-digital (Excel) y lo totalmente análogo (cuaderno), lo que genera trazabilidad fragmentada. En consecuencia, ICHU debe incorporar una **migración simple desde Excel y cuadernos hacia la ficha digital por animal**, sin exigir competencias técnicas avanzadas a usuarios acostumbrados a registrar en papel.
 
 **2. Si existiera una plataforma web que centralizara el historial de salud, ubicación y alertas de cada animal, ¿qué tan útil sería para su negocio? (2 respuestas)**
@@ -280,6 +286,8 @@ Como muestra el gráfico, el **50% utiliza hojas de cálculo (Excel/Google Sheet
 ![Utilidad percibida de la plataforma centralizada](images/analisis-segmento1-utilidad-plataforma.png)
 
 *Figura 2. Elaboración propia a partir de los datos recolectados. Startup SmartFarm.*
+
+[Cuestionario ampliado del Segmento 1: Ganaderos](https://drive.google.com/file/d/1WZdTKVgyGmAlKlI4ZXnRhkK2MJL7fO8D/view?usp=sharing)
 
 El gráfico evidencia una validación total de la propuesta de valor: el **100% de los ganaderos calificó la plataforma centralizada como "Muy útil, mejoraría significativamente mis procesos"**, sin ninguna respuesta neutra o negativa. Este dato porcentual respalda directamente el núcleo del producto ICHU: la centralización del historial de salud, la ubicación y las alertas por animal en un único sistema, frente a la dispersión actual en Excel y cuadernos que los propios entrevistados identifican como su principal debilidad de gestión.
 
@@ -325,6 +333,8 @@ Para complementar las entrevistas en profundidad del Segmento 2, se aplicó un c
 
 *Figura 3. Elaboración propia a partir de los datos recolectados. Startup SmartFarm.*
 
+[Cuestionario ampliado del Segmento 2: Zootecnistas y médicos veterinarios](https://drive.google.com/file/d/15h2MLOWtvMBic0O97VnSMJxAeW9ZpUy2/view?usp=drive_link)
+
 Como muestra el gráfico, los dispositivos de registro se distribuyen de forma exactamente equitativa: **33.3% smartphone, 33.3% laptop y 33.3% registros en papel únicamente**. Ningún profesional emplea tablet ni computadora de escritorio como dispositivo principal. Este patrón porcentual evidencia que un tercio del segmento aún no digitaliza su información clínica, mientras que los dos tercios restantes dependen de dispositivos móviles o portátiles. En consecuencia, la plataforma ICHU debe responder con una **aplicación móvil de primera clase** (compatible con smartphones y laptops) que además ofrezca un proceso de migración simple para trasladar los registros en papel hacia el sistema digital centralizado.
 
 **2. ¿Qué tan confiables son los registros manuales de vacunación, inseminación y medicamentos en los establos que asesora? (3 respuestas)**
@@ -333,6 +343,8 @@ Como muestra el gráfico, los dispositivos de registro se distribuyen de forma e
 
 *Figura 4. Elaboración propia a partir de los datos recolectados. Startup SmartFarm.*
 
+[Cuestionario ampliado del Segmento 2: Zootecnistas y médicos veterinarios](https://drive.google.com/file/d/15h2MLOWtvMBic0O97VnSMJxAeW9ZpUy2/view?usp=drive_link)
+
 Según el gráfico, el **66.7% de los entrevistados califica los registros manuales como moderadamente confiables (50-70% de precisión)** y el **33.3% restante como confiables (70-90% de precisión)**. Es destacable que **ningún profesional los considera muy confiables ni confiables al 100%**, es decir, el 100% reconoce un margen de error de al menos un 10% en la información clínica que hoy sostiene sus decisiones. Este dato porcentual valida directamente la propuesta de valor de ICHU: historias clínicas digitales con trazabilidad completa (qué se aplicó, cuándo y quién), reduciendo riesgos ya observados por los propios entrevistados, como intoxicaciones por dosificación repetida o fallos de preñez por vacunación omitida.
 
 **3. ¿Qué parámetro cuantitativo continuo desearía conocer del animal pero que actualmente le es imposible medir de forma manual? (3 respuestas)**
@@ -340,6 +352,8 @@ Según el gráfico, el **66.7% de los entrevistados califica los registros manua
 ![Parámetros cuantitativos deseados](images/analisis-segmento2-parametros.png)
 
 *Figura 5. Elaboración propia a partir de los datos recolectados. Startup SmartFarm.*
+
+[Cuestionario ampliado del Segmento 2: Zootecnistas y médicos veterinarios](https://drive.google.com/file/d/15h2MLOWtvMBic0O97VnSMJxAeW9ZpUy2/view?usp=drive_link)
 
 El gráfico evidencia un resultado unánime: el **100% de los entrevistados seleccionó "Todos los anteriores"**, es decir, desea medir de forma continua los **ciclos de rumia y alimentación, la frecuencia cardíaca y respiratoria, los niveles de actividad física diaria y la temperatura corporal continua 24/7**. La unanimidad absoluta del segmento convierte a estos cuatro parámetros en el **núcleo obligatorio de telemetría biométrica** que el collar inteligente de ICHU debe capturar, ya que constituyen variables que la observación manual no logra registrar de manera precisa y sostenida.
 
@@ -381,6 +395,8 @@ Arquetipo del Segmento 1, construido a partir de los patrones identificados en l
 
 ![User Persona Cesar Flores, arquetipo del Segmento 1](images/persona-segmento1-cesar-flores.jpg)
 
+[Ficha de User Persona y Empathy Map en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
+
 **Segmento 2: Zootecnistas y Médicos Veterinarios.** Profesionales orientados al monitoreo biométrico continuo, al diagnóstico clínico temprano y a la revisión de historiales de salud consolidados.
 
 **User Persona 2: Leonardo Rosales**
@@ -388,6 +404,8 @@ Arquetipo del Segmento 1, construido a partir de los patrones identificados en l
 Arquetipo del Segmento 2, construido a partir de los patrones identificados en las entrevistas a Darwin Carbajal, Eliseo Ramírez y Dionisio Rodríguez.
 
 ![User Persona Leonardo Rosales, arquetipo del Segmento 2](images/persona-segmento2-leonardo-rosales.jpg)
+
+[Ficha de User Persona y Empathy Map en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
 
 Ambas fichas fueron elaboradas en UXPressia y contemplan los atributos propios de un arquetipo: datos demográficos, biografía, personalidad, habilidades, objetivos, frustraciones, tecnología de preferencia, marcas e influencias, y canales de interacción.
 
@@ -441,11 +459,15 @@ Ambos mapas fueron elaborados en UXPressia y están vinculados a la ficha de Use
 
 *Figura 6. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
+[User Journey Map de Cesar Flores en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
+
 **User Journey Map As-Is de Leonardo Rosales**
 
 ![User Journey Map As-Is de Leonardo Rosales](images/journey-map-segmento2-leonardo-rosales.png)
 
 *Figura 7. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
+
+[User Journey Map de Leonardo Rosales en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
 
 #### As-Is Mapping
 
@@ -473,6 +495,8 @@ Para la elaboración de los Empathy Maps, el equipo partió de la ficha de cada 
 
 ![Empathy Map de Cesar Flores, arquetipo del Segmento 1](images/empathy-map-segmento1-ganadero.jpg)
 
+[Empathy Map del Segmento 1 en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
+
 Se empatiza con un ganadero propietario o administrador de una unidad de 51 a 200 cabezas, ubicada en una zona rural de Apurímac o Cusco, que toma las decisiones sobre salud, reproducción, costos y seguridad del hato.
 
 Necesita registrar animales, revisar alertas, programar campañas sanitarias, controlar costos, verificar partos y localizar animales extraviados. Lo que ve a diario son hojas de cálculo, cuadernos, potreros extensos, conectividad irregular y animales enfermos o gestantes cuya vigilancia completa le resulta inabordable. Escucha recomendaciones de veterinarios, avisos de campañas sanitarias, comentarios de otros ganaderos y reportes de su personal de campo. Lo que hace es contar y revisar el ganado, verificar pastos y agua, registrar información en hojas de cálculo o cuadernos, tomar fotografías y contactar al veterinario cuando aparece un problema. Lo resume en una frase: "Lo que falta es una base de datos práctica donde tengamos todos esos antecedentes a la mano".
@@ -484,6 +508,8 @@ Sus **Pains** son los registros fragmentados, la falta de hábito para registrar
 **Empathy Map de Leonardo Rosales**
 
 ![Empathy Map de Leonardo Rosales, arquetipo del Segmento 2](images/empathy-map-segmento2-veterinario.jpg)
+
+[Empathy Map del Segmento 2 en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
 
 Se empatiza con un zootecnista o médico veterinario que trabaja en campo y en oficina, atiende diferentes establos y necesita información clínica objetiva para diagnosticar y tratar ganado.
 
@@ -517,21 +543,31 @@ Las siguientes láminas documentan la progresión completa de la sesión. Se rec
 
 *Figura 2.4.1. Chaotic Exploration: 38 Domain Events identificados sin ordenar. Elaboración propia.*
 
+[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+
 ![01.2 · Enforce the Timeline](images/diagrams/big-picture-eventstorming/01-2-enforce-timeline.svg)
 
 *Figura 2.4.2. Enforce the Timeline: eventos organizados en cinco procesos clave. Elaboración propia.*
+
+[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
 
 ![01.3 · People & External Systems](images/diagrams/big-picture-eventstorming/01-3-people-and-systems.svg)
 
 *Figura 2.4.3. People & External Systems: actores y sistemas de apoyo asociados a los eventos. Elaboración propia.*
 
+[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+
 ![01.4 · Problems & Opportunities](images/diagrams/big-picture-eventstorming/01-4-problems-and-opportunities.svg)
 
 *Figura 2.4.4. Problems & Opportunities: hot spots, oportunidades y supuestos por validar. Elaboración propia.*
 
+[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+
 ![01.5 · Pivotal Events & Emerging Contexts](images/diagrams/big-picture-eventstorming/01-5-pivotal-and-emerging-contexts.svg)
 
 *Figura 2.4.5. Pivotal Events & Emerging Contexts: áreas preliminares derivadas de los cambios de estado. Elaboración propia.*
+
+[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
 
 **Evidencia adicional pendiente:** fotografía del equipo durante la sesión, si se solicita como evidencia complementaria.
 
