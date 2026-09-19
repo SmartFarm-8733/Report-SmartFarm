@@ -22,8 +22,6 @@ En la tercera fase se añadieron los **Read Models**, en verde, es decir la info
 
 En la cuarta fase se agruparon los elementos alrededor de los **Aggregates**, en amarillo grande, identificando qué objeto del dominio es responsable de garantizar la consistencia de cada conjunto de reglas.
 
-**Pendiente:** capturas de las cuatro fases de la sesión de Design-Level EventStorming elaboradas en la herramienta de pizarra colaborativa.
-
 **Modelo resultante**
 
 | Command | Actor | Domain Event | Policy que se dispara | Read Model consultado | Aggregate responsable |
@@ -47,6 +45,10 @@ En la cuarta fase se agruparon los elementos alrededor de los **Aggregates**, en
 | Conceder acceso | Administrador ganadero | Asesoría concedida | Habilitar consulta acotada al hato concedido | Solicitudes pendientes | HerdAdvisory |
 | Dar de baja animal | Administrador ganadero | Animal dado de baja | Liberar el collar asignado y excluirlo de los indicadores | Ficha del animal, collar asignado | Cattle |
 | Ninguno, es automático | Sistema | Temperatura del agua fuera de rango | Activar calentamiento y alertar si no retorna al rango | Rango configurado del abrevadero | MonitoringAlert |
+
+![Design-Level EventStorming de SmartFarm](images/diagrams/design-level-eventstorming.png)
+
+*Figura 4.1.1. Design-Level EventStorming de SmartFarm: comandos, actores, Domain Events, Policies, Aggregates y Read Models. Elaboración propia.*
 
 **Hot spots resueltos en esta sesión**
 
