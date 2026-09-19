@@ -24,7 +24,7 @@ workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de l
         }
 
         visitor = person "Prospective Customer" {
-            description "Visitante del sitio público que evalua la plataforma"
+            description "Visitante del sitio público que evalúa la plataforma"
             tags "Visitor"
         }
 
@@ -74,7 +74,7 @@ workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de l
         // ============================================================
 
         ichu = softwareSystem "ICHU" {
-            description "Plataforma IoT de gestion ganadera"
+            description "Plataforma IoT de gestión ganadera"
 
 
             // ========================================================
@@ -278,7 +278,7 @@ workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de l
 
                 edgeMonitoringService = component "Local Monitoring Service" {
                     technology "Python"
-                    description "Servicio de dominio que evalua umbrales sin Internet"
+                    description "Servicio de dominio que evalúa umbrales sin Internet"
                     tags "DomainService"
                 }
 
@@ -329,7 +329,7 @@ workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de l
 
                 identityAPI = component "Identity & Profile API" {
                     technology "ASP.NET Core Controllers"
-                    description "Interfaz de cuentas, perfiles y asesorias"
+                    description "Interfaz de cuentas, perfiles y asesorías"
                     tags "Interface,IAM"
                 }
 
@@ -376,7 +376,7 @@ workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de l
 
                 cattleApplicationService = component "Cattle Application Service" {
                     technology ".NET"
-                    description "Servicio de aplicación de informacion del ganado"
+                    description "Servicio de aplicación de información del ganado"
                     tags "Application,Cattle"
                 }
 
@@ -494,7 +494,7 @@ workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de l
 
                 monitoringRulesService = component "Monitoring Rules Domain Service" {
                     technology ".NET"
-                    description "Servicio de dominio que evalua umbrales y geocercas"
+                    description "Servicio de dominio que evalúa umbrales y geocercas"
                     tags "DomainService,Monitoring"
                 }
 
@@ -671,13 +671,13 @@ workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de l
 
         visitor -> ichu "Consulta la propuesta y los planes"
 
-        cattleBandHardware -> ichu "Aporta temperatura, movimiento y posicion"
+        cattleBandHardware -> ichu "Aporta temperatura, movimiento y posición"
 
         waterControllerHardware -> ichu "Aporta temperatura del agua y estado del actuador"
 
         ichu -> firebaseAuth "Autentica usuarios"
 
-        ichu -> firebaseMessaging "Envia notificaciones push"
+        ichu -> firebaseMessaging "Envía notificaciones push"
 
         ichu -> mapProvider "Visualiza posiciones y geocercas"
 
@@ -695,8 +695,8 @@ workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de l
 
         fieldOperator -> mobileApplication "Opera durante las faenas de campo" "HTTPS / Local Network"
 
-        veterinarian -> webApplication "Revisa la informacion autorizada" "HTTPS"
-        veterinarian -> mobileApplication "Revisa informacion durante la visita" "HTTPS"
+        veterinarian -> webApplication "Revisa la información autorizada" "HTTPS"
+        veterinarian -> mobileApplication "Revisa información durante la visita" "HTTPS"
 
 
         // ============================================================
@@ -728,7 +728,7 @@ workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de l
         // HIGH-LEVEL CONTAINER RELATIONSHIPS
         // ============================================================
 
-        cattleBandEmbeddedApp -> cattleBandHardware "Lee sensores y posicion"
+        cattleBandEmbeddedApp -> cattleBandHardware "Lee sensores y posición"
 
         cattleBandEmbeddedApp -> backend "Envia telemetría cuando hay Wi-Fi" "HTTPS / JSON"
 
@@ -736,7 +736,7 @@ workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de l
 
         edgeGateway -> edgeDatabase "Guarda telemetría y configuración local" "SQLite"
 
-        edgeGateway -> backend "Sincroniza al recuperar conexion" "HTTPS / JSON"
+        edgeGateway -> backend "Sincroniza al recuperar conexión" "HTTPS / JSON"
 
         edgeGateway -> mobileApplication "Entrega alertas locales sin Internet" "Local Wi-Fi"
 
@@ -752,7 +752,7 @@ workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de l
 
         backend -> paymentProvider "Solicita el cobro de la suscripción" "HTTPS"
 
-        firebaseMessaging -> mobileApplication "Entrega la notificacion al dispositivo" "Push Notification"
+        firebaseMessaging -> mobileApplication "Entrega la notificación al dispositivo" "Push Notification"
 
 
         // ============================================================
@@ -1102,6 +1102,9 @@ workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de l
             include fieldOperator
             include veterinarian
             include visitor
+
+            include cattleBandHardware
+            include waterControllerHardware
 
             include firebaseAuth
             include firebaseMessaging
