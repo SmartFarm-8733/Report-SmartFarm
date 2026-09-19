@@ -282,7 +282,7 @@ El mapa se presenta en dos vistas. La primera muestra las relaciones entre los c
 | Subscription Plans hacia IoT Assets | Customer/Supplier con Anti-corruption Layer | El ACL `Subscription Entitlement` traduce el plan comercial a un número de dispositivos permitidos, que es lo único que la regla de asignación necesita. |
 | Monitoring, Cattle y Planning hacia Dashboard & Analytics | Conformist | Analytics consume los modelos tal como los publican los contextos de origen, sin negociar cambios ni traducir. Es aceptable porque su relación es de solo lectura y un cambio aguas arriba solo obliga a recalcular. |
 | Operations & Monitoring hacia Portable Edge Gateway | Open Host Service | El `Edge Configuration API` publica un contrato estable de umbrales, geocercas y asignaciones que cualquier dispositivo de borde puede consumir. |
-| Portable Edge Gateway hacia Operations & Monitoring | Anti-corruption Layer | El `SmartFarm Cloud API ACL` traduce el modelo local del borde, orientado a la supervivencia sin conexión, al contrato de la nube. |
+| Portable Edge Gateway hacia Operations & Monitoring | Anti-corruption Layer | El `ICHU Cloud API ACL` traduce el modelo local del borde, orientado a la supervivencia sin conexión, al contrato de la nube. |
 | Identity con Firebase Authentication, Subscription con el proveedor de pagos, Monitoring con Firebase Cloud Messaging | Anti-corruption Layer | Tres servicios externos sobre los que el equipo no tiene control. El ACL aísla el dominio de cualquier cambio en sus contratos. |
 | Monitoring con el proveedor de mapas | Conformist | La visualización cartográfica se adapta al contrato del proveedor, porque no hay reglas de negocio propias que proteger. |
 
@@ -312,7 +312,7 @@ El Ubiquitous Language del capítulo anterior conserva ambos bloques separados p
 
 La arquitectura de la solución se representa aplicando el C4 Model, elaborado como Diagram-as-Code en Structurizr DSL. El modelo completo reúne cuatro personas, seis sistemas externos, nueve containers, setenta y tres componentes clasificados por capa y veinticinco vistas.
 
-El código fuente de todos los diagramas de este capítulo forma parte del repositorio. El modelo C4 se encuentra en `diagrams/structurizr/workspace-smartfarm-c4.dsl` y los diagramas UML y de base de datos en `diagrams/puml/`.
+El código fuente de todos los diagramas de este capítulo forma parte del repositorio. El modelo C4 se encuentra en `diagrams/structurizr/workspace-ichu-c4.dsl` y los diagramas UML y de base de datos en `diagrams/puml/`.
 
 La solución se organiza como un **monolito modular** en la nube, en el que cada contexto acotado es un módulo interno con su propio esquema de base de datos, acompañado de un servicio de borde y dos aplicaciones embebidas. Se eligió el monolito modular sobre una arquitectura de microservicios porque el equipo tiene seis integrantes y un ciclo de quince semanas: el aislamiento por módulos preserva los límites de los contextos sin pagar el costo operativo de desplegar y coordinar siete servicios independientes. La modularidad interna deja abierta la extracción posterior de cualquier módulo que lo justifique.
 
@@ -320,7 +320,7 @@ La solución se organiza como un **monolito modular** en la nube, en el que cada
 
 El System Landscape presenta el panorama completo en el que se inserta la solución: las cuatro personas que interactúan con ella, los dos dispositivos físicos que la alimentan y los cuatro servicios externos de los que depende. A diferencia del diagrama de contexto, incluye los elementos que rodean al sistema aunque no todos se comuniquen directamente con él.
 
-![System Landscape de SmartFarm](images/diagrams/c4/c4-system-landscape.png)
+![System Landscape de ICHU](images/diagrams/c4/c4-system-landscape.png)
 
 *Figura 4.3. System Landscape. Elaboración propia con Structurizr.*
 
@@ -332,7 +332,7 @@ Los actores representados son el **administrador ganadero**, que gestiona el gan
 
 Los sistemas externos son el **hardware del collar inteligente** y el **hardware del controlador del abrevadero**, que aportan telemetría; **Firebase Authentication**, que verifica credenciales; **Firebase Cloud Messaging**, que entrega notificaciones; el **proveedor de mapas**, que permite visualizar posiciones y geocercas; y el **proveedor de pagos**, que procesa los cobros de la suscripción.
 
-![System Context de SmartFarm](images/diagrams/c4/c4-system-context.png)
+![System Context de ICHU](images/diagrams/c4/c4-system-context.png)
 
 *Figura 4.4. System Context. Elaboración propia con Structurizr.*
 
@@ -349,12 +349,12 @@ El Container Diagram descompone la solución en sus unidades de despliegue indep
 | Water Controller Embedded Application | C++ sobre ESP32 | Medición de la temperatura del agua y accionamiento del calentador |
 | Portable Edge Gateway | Flask con Peewee ORM sobre Python | Recepción por BLE, almacenamiento local, evaluación de reglas críticas y sincronización |
 | Edge Database | SQLite | Telemetría sin conexión, estado de alertas, umbrales y geocercas en caché |
-| SmartFarm Modular Monolith | ASP.NET Core Web API sobre .NET 8 | Backend en la nube con los siete contextos como módulos internos |
-| SmartFarm Cloud Database | PostgreSQL 16 | Persistencia relacional con un esquema por contexto acotado |
+| ICHU Modular Monolith | ASP.NET Core Web API sobre .NET 8 | Backend en la nube con los siete contextos como módulos internos |
+| ICHU Cloud Database | PostgreSQL 16 | Persistencia relacional con un esquema por contexto acotado |
 
 Las aplicaciones cliente consumen el RESTful API sobre HTTPS con JSON. El collar transmite directamente al backend cuando hay Wi-Fi e Internet, y por Bluetooth Low Energy al Edge Gateway durante el pastoreo sin cobertura. El Edge Gateway entrega alertas locales a la aplicación móvil por red local, sin depender de Internet. El backend accede a PostgreSQL mediante Entity Framework Core con el proveedor Npgsql.
 
-![Container Diagram de SmartFarm](images/diagrams/c4/c4-container.png)
+![Container Diagram de ICHU](images/diagrams/c4/c4-container.png)
 
 *Figura 4.5. Container Diagram. Elaboración propia con Structurizr.*
 

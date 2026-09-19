@@ -1,4 +1,4 @@
-workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock management platform" {
+workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de la startup SmartFarm" {
 
     !impliedRelationships false
 
@@ -73,7 +73,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // SMARTFARM SOFTWARE SYSTEM
         // ============================================================
 
-        smartFarm = softwareSystem "SmartFarm" {
+        ichu = softwareSystem "ICHU" {
             description "Plataforma IoT de gestion ganadera"
 
 
@@ -288,7 +288,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
                     tags "Infrastructure"
                 }
 
-                cloudApiACL = component "SmartFarm Cloud API ACL" {
+                cloudApiACL = component "ICHU Cloud API ACL" {
                     technology "Python"
                     description "ACL hacia el API central"
                     tags "Infrastructure,ACL"
@@ -317,7 +317,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
             // SMARTFARM MODULAR MONOLITH
             // ========================================================
 
-            backend = container "SmartFarm Modular Monolith" {
+            backend = container "ICHU Modular Monolith" {
                 technology ".NET 8 + ASP.NET Core Web API"
                 description "Backend en la nube con los contextos acotados como módulos"
                 tags "Monolith,API"
@@ -650,7 +650,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
             // SINGLE CLOUD DATABASE
             // ========================================================
 
-            cloudDatabase = container "SmartFarm Cloud Database" {
+            cloudDatabase = container "ICHU Cloud Database" {
                 technology "PostgreSQL 16"
                 description "Base relacional con un esquema por contexto acotado"
                 tags "Database"
@@ -663,25 +663,25 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // IMPORTANT: DIRECT RELATIONSHIPS TO SMARTFARM
         // ============================================================
 
-        ranchManager -> smartFarm "Gestiona hato, dispositivos, planificación y suscripción"
+        ranchManager -> ichu "Gestiona hato, dispositivos, planificación y suscripción"
 
-        fieldOperator -> smartFarm "Supervisa el hato y registra faenas"
+        fieldOperator -> ichu "Supervisa el hato y registra faenas"
 
-        veterinarian -> smartFarm "Revisa salud e historial autorizados"
+        veterinarian -> ichu "Revisa salud e historial autorizados"
 
-        visitor -> smartFarm "Consulta la propuesta y los planes"
+        visitor -> ichu "Consulta la propuesta y los planes"
 
-        cattleBandHardware -> smartFarm "Aporta temperatura, movimiento y posicion"
+        cattleBandHardware -> ichu "Aporta temperatura, movimiento y posicion"
 
-        waterControllerHardware -> smartFarm "Aporta temperatura del agua y estado del actuador"
+        waterControllerHardware -> ichu "Aporta temperatura del agua y estado del actuador"
 
-        smartFarm -> firebaseAuth "Autentica usuarios"
+        ichu -> firebaseAuth "Autentica usuarios"
 
-        smartFarm -> firebaseMessaging "Envia notificaciones push"
+        ichu -> firebaseMessaging "Envia notificaciones push"
 
-        smartFarm -> mapProvider "Visualiza posiciones y geocercas"
+        ichu -> mapProvider "Visualiza posiciones y geocercas"
 
-        smartFarm -> paymentProvider "Procesa los cobros"
+        ichu -> paymentProvider "Procesa los cobros"
 
 
         // ============================================================
@@ -781,7 +781,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
 
         bandConnectivityService -> bandBleAdapter "Uses BLE route when cloud connectivity is unavailable"
 
-        bandCloudAdapter -> backend "Uploads cattle telemetry directly to SmartFarm Cloud" "HTTPS / JSON"
+        bandCloudAdapter -> backend "Envía telemetría directamente a la nube" "HTTPS / JSON"
 
         bandBleAdapter -> edgeGateway "Sends cattle telemetry to the Portable Edge Gateway" "Bluetooth Low Energy"
 
@@ -850,7 +850,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
 
         identityService -> authorizationService "Evaluates roles and permissions"
 
-        identityService -> identityRepository "Loads and stores SmartFarm profile information"
+        identityService -> identityRepository "Lee y escribe cuentas, perfiles y asesorías"
 
         identityService -> firebaseAuthACL "Validates Firebase authenticated identities"
 
@@ -1083,7 +1083,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // ============================================================
 
         systemLandscape "SystemLandscape" {
-            title "SmartFarm - System Landscape"
+            title "ICHU - System Landscape"
             description "Personas, dispositivos y servicios externos del panorama de la solución"
 
             include *
@@ -1092,11 +1092,11 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         }
 
 
-        systemContext smartFarm "SystemContext" {
-            title "SmartFarm - System Context"
+        systemContext ichu "SystemContext" {
+            title "ICHU - System Context"
             description "Usuarios, hardware IoT y servicios externos que interactúan con la plataforma"
 
-            include smartFarm
+            include ichu
 
             include ranchManager
             include fieldOperator
@@ -1116,8 +1116,8 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // LEVEL 2 - CONTAINERS
         // ============================================================
 
-        container smartFarm "ContainerDiagram" {
-            title "SmartFarm - Container Diagram"
+        container ichu "ContainerDiagram" {
+            title "ICHU - Container Diagram"
             description "Clientes web y móvil, dispositivos ESP32, pasarela de borde, backend y base relacional"
 
             include *
@@ -1185,7 +1185,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // ============================================================
 
         component backend "IdentityComponents" {
-            title "SmartFarm Backend - Identity & Access"
+            title "ICHU Backend - Identity & Access"
 
             include identityAPI
             include identityService
@@ -1206,7 +1206,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // ============================================================
 
         component backend "CattleComponents" {
-            title "SmartFarm Backend - Cattle Information"
+            title "ICHU Backend - Cattle Information"
 
             include cattleAPI
             include cattleApplicationService
@@ -1224,7 +1224,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // ============================================================
 
         component backend "IoTAssetsComponents" {
-            title "SmartFarm Backend - IoT Assets"
+            title "ICHU Backend - IoT Assets"
 
             include iotAssetsAPI
             include iotAssetsApplicationService
@@ -1247,7 +1247,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // ============================================================
 
         component backend "MonitoringComponents" {
-            title "SmartFarm Backend - Operations & Monitoring"
+            title "ICHU Backend - Operations & Monitoring"
 
             include telemetryAPI
             include operationsAPI
@@ -1283,7 +1283,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // ============================================================
 
         component backend "PlanningComponents" {
-            title "SmartFarm Backend - Planning"
+            title "ICHU Backend - Planning"
 
             include planningAPI
             include planningApplicationService
@@ -1306,7 +1306,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // ============================================================
 
         component backend "AnalyticsComponents" {
-            title "SmartFarm Backend - Dashboard & Analytics"
+            title "ICHU Backend - Dashboard & Analytics"
 
             include analyticsAPI
             include analyticsApplicationService
@@ -1325,7 +1325,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // ============================================================
 
         component backend "SubscriptionComponents" {
-            title "SmartFarm Backend - Subscriptions & Billing"
+            title "ICHU Backend - Subscriptions & Billing"
 
             include subscriptionAPI
             include billingAPI
@@ -1347,8 +1347,8 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // END-TO-END DYNAMIC FLOW - CONNECTED CATTLE BAND
         // ============================================================
 
-        dynamic smartFarm "ConnectedTelemetryFlow" {
-            title "SmartFarm - Connected Cattle Monitoring Flow"
+        dynamic ichu "ConnectedTelemetryFlow" {
+            title "ICHU - Connected Cattle Monitoring Flow"
             description "Flujo completo cuando el collar tiene cobertura"
 
             cattleBandEmbeddedApp -> backend "1. Sends temperature, movement and GPS telemetry through Wi-Fi"
@@ -1367,8 +1367,8 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // END-TO-END DYNAMIC FLOW - OFFLINE GRAZING
         // ============================================================
 
-        dynamic smartFarm "OfflineGrazingFlow" {
-            title "SmartFarm - Offline Grazing Flow"
+        dynamic ichu "OfflineGrazingFlow" {
+            title "ICHU - Offline Grazing Flow"
             description "Flujo completo durante el pastoreo sin cobertura"
 
             cattleBandEmbeddedApp -> edgeGateway "1. Sends telemetry through Bluetooth Low Energy"
@@ -1385,8 +1385,8 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // END-TO-END DYNAMIC FLOW - EDGE SYNCHRONIZATION
         // ============================================================
 
-        dynamic smartFarm "EdgeSynchronizationFlow" {
-            title "SmartFarm - Edge Gateway Synchronization"
+        dynamic ichu "EdgeSynchronizationFlow" {
+            title "ICHU - Edge Gateway Synchronization"
             description "Sincronización al recuperar la conexión"
 
             edgeGateway -> backend "1. Uploads telemetry collected during offline grazing and requests updated configuration"
@@ -1405,8 +1405,8 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // END-TO-END DYNAMIC FLOW - WATER CONTROLLER
         // ============================================================
 
-        dynamic smartFarm "WaterControllerCloudFlow" {
-            title "SmartFarm - Water Controller Cloud Flow"
+        dynamic ichu "WaterControllerCloudFlow" {
+            title "ICHU - Water Controller Cloud Flow"
             description "Reporte de temperatura del agua y eventos del actuador"
 
             waterControllerEmbeddedApp -> backend "1. Reports temperature and heating events"
@@ -1492,7 +1492,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // ============================================================
 
         dynamic backend "CloudTelemetryProcessingFlow" {
-            title "SmartFarm Backend - Telemetry Processing"
+            title "ICHU Backend - Telemetry Processing"
             description "Procesamiento interno de la telemetría en el backend"
 
             telemetryAPI -> telemetryIngestionService "1. Receives cattle or water telemetry"
@@ -1522,7 +1522,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // ============================================================
 
         dynamic backend "EdgeConfigurationFlow" {
-            title "SmartFarm Backend - Edge Configuration Flow"
+            title "ICHU Backend - Edge Configuration Flow"
             description "Prepara la configuración que el borde necesita para operar sin conexión"
 
             edgeConfigurationAPI -> edgeConfigurationService "1. Receives configuration request from Edge"
@@ -1542,7 +1542,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // ============================================================
 
         dynamic backend "PlanningReminderFlow" {
-            title "SmartFarm Backend - Planning Reminder Flow"
+            title "ICHU Backend - Planning Reminder Flow"
             description "Flujo interno de recordatorios del calendario ganadero"
 
             planningAPI -> planningApplicationService "1. Creates or updates scheduled livestock activity"
@@ -1588,7 +1588,7 @@ workspace "SmartFarm" "C4 architecture model for the SmartFarm IoT livestock man
         // ============================================================
 
         deployment * production "ProductionDeployment" {
-            title "SmartFarm - Production Deployment"
+            title "ICHU - Production Deployment"
             description "Despliegue de dispositivos, borde, backend, aplicaciones y servicios en la nube"
 
             include *
