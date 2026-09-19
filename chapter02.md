@@ -501,7 +501,7 @@ El Big Picture EventStorming permite al equipo construir una comprensión compar
 
 **Desarrollo de la sesión**
 
-La sesión se organizó en cuatro etapas sucesivas, siguiendo la secuencia habitual de la técnica.
+La sesión se organizó en cinco etapas sucesivas, siguiendo la secuencia habitual de la técnica.
 
 En la **exploración caótica**, cada integrante escribió en notas de color naranja los hechos relevantes del dominio que había identificado en las entrevistas, redactados siempre en pasado y desde la perspectiva del negocio, sin discutir todavía su orden ni su pertinencia.
 
@@ -511,7 +511,31 @@ En la **identificación de eventos pivote**, se marcaron los hechos que separan 
 
 En la **detección de hot spots**, se señalaron con notas rosadas las zonas de desacuerdo, de reglas de negocio no resueltas o de dependencia respecto de terceros, que requieren validación posterior con los usuarios.
 
-**Pendiente:** capturas de las cuatro etapas de la sesión de Big Picture EventStorming elaboradas en la herramienta de pizarra colaborativa, junto con la fotografía del equipo durante la sesión.
+Finalmente, en la **identificación de eventos pivote y áreas de dominio emergentes**, se usaron los cambios de estado más significativos para proponer agrupaciones preliminares. Estas áreas son hipótesis de exploración y no representan todavía bounded contexts definitivos.
+
+Las siguientes láminas documentan la progresión completa de la sesión. Se reconstruyeron en formato vectorial para conservar legibilidad en el informe, manteniendo los eventos, actores, problemas y oportunidades que aparecen en el modelo del dominio.
+
+![01.1 · Chaotic Exploration](images/diagrams/big-picture-eventstorming/01-1-chaotic-exploration.svg)
+
+*Figura 2.4.1. Chaotic Exploration: 38 Domain Events identificados sin ordenar. Elaboración propia.*
+
+![01.2 · Enforce the Timeline](images/diagrams/big-picture-eventstorming/01-2-enforce-timeline.svg)
+
+*Figura 2.4.2. Enforce the Timeline: eventos organizados en cinco procesos clave. Elaboración propia.*
+
+![01.3 · People & External Systems](images/diagrams/big-picture-eventstorming/01-3-people-and-systems.svg)
+
+*Figura 2.4.3. People & External Systems: actores y sistemas de apoyo asociados a los eventos. Elaboración propia.*
+
+![01.4 · Problems & Opportunities](images/diagrams/big-picture-eventstorming/01-4-problems-and-opportunities.svg)
+
+*Figura 2.4.4. Problems & Opportunities: hot spots, oportunidades y supuestos por validar. Elaboración propia.*
+
+![01.5 · Pivotal Events & Emerging Contexts](images/diagrams/big-picture-eventstorming/01-5-pivotal-and-emerging-contexts.svg)
+
+*Figura 2.4.5. Pivotal Events & Emerging Contexts: áreas preliminares derivadas de los cambios de estado. Elaboración propia.*
+
+**Evidencia adicional pendiente:** fotografía del equipo durante la sesión, si se solicita como evidencia complementaria.
 
 **Domain Events identificados, ordenados temporalmente**
 
