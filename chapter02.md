@@ -443,17 +443,6 @@ Ambos mapas fueron elaborados en UXPressia y están vinculados a la ficha de Use
 
 *Figura 6. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
-| Etapa | Acciones | Pensamientos | Emoción | Puntos de dolor |
-|---|---|---|---|---|
-| Recorrido matinal del potrero | Ensilla o toma la camioneta, cuenta las cabezas a la vista y observa si alguna cojea o se aparta del grupo | "Si falta alguna me voy a dar cuenta recién al terminar la vuelta" | Neutra | El conteo visual es aproximado y consume horas. Los animales dispersos en terreno amplio quedan fuera de la vista |
-| Detección de un animal decaído | Se acerca, lo observa, ocasionalmente le toma la temperatura y consulta por teléfono al veterinario | "¿Hace cuántos días viene así y no lo noté?" | Baja | Los primeros signos se manifestaron días antes y no existe registro de cuándo empezó el cuadro |
-| Comunicación con el veterinario | Llama, describe de memoria lo que observa y coordina una visita que puede tardar días | "No sé decirle qué le aplicamos la última vez" | Baja | La señal celular falla, no hay historial que consultar y la atención es puntual en lugar de programada |
-| Registro del evento | Al regresar a la casa anota en un cuaderno, o en una hoja de cálculo si lo recuerda | "Después lo paso, ahora estoy cansado" | Neutra | La falta de hábito de registro inmediato deriva en pérdida de historial y de trazabilidad |
-| Preparación de una campaña sanitaria | Recuerda de memoria o por aviso de terceros que corresponde vacunar, compra insumos y convoca al personal | "Creo que la desparasitación tocaba el mes pasado" | Neutra | Depende de la memoria y del calendario regional. No hay control de qué animal recibió qué aplicación |
-| Hallazgo de una pérdida | Encuentra un animal muerto, o advierte que faltan cabezas tras el conteo | "Si me enteraba ayer, quizá lo salvaba" | Muy baja | Próspero perdió cinco vaquillas por partos prematuros. Meikoll no recuperó dos de tres caballos robados pese a contar con microchip |
-| Respuesta ante el abigeato | Avisa a la comunidad y a la autoridad policial, y organiza una búsqueda | "Ya deben estar lejos" | Muy baja | Sin ubicación conocida, la búsqueda se realiza a ciegas y rara vez permite recuperar al animal |
-| Cierre económico de la campaña | Suma los gastos de memoria o revisando comprobantes sueltos, y estima las pérdidas del periodo | "No sé con exactitud cuánto gané este ciclo" | Baja | No existe costo por cabeza ni balance confiable. La mortalidad se estima en lugar de medirse |
-
 **User Journey Map As-Is de Leonardo Rosales**
 
 ![User Journey Map As-Is de Leonardo Rosales](images/journey-map-segmento2-leonardo-rosales.png)
