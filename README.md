@@ -94,6 +94,8 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 0.11.3 | 2026-09-19 | Arrieta Quispe, Alison Jimena | Definición y consenso de la arquitectura general del proyecto como base para la elaboración del modelo C4, incluyendo la organización de los principales componentes, sistemas y relaciones de la solución. |
 | 0.11.4 | 2026-09-19 | Arrieta Quispe, Alison Jimena | Elaboración y estructuración del Big Picture EventStorming del proyecto, organizando los Domain Events, su secuencia temporal, actores, sistemas externos, hotspots, oportunidades, eventos pivote y contextos emergentes. |
 | 0.11.5 | 2026-09-19 | Arrieta Quispe, Alison Jimena | Participación en la definición y estructuración de las Epics del producto, así como en la elaboración de parte de las User Stories asociadas a las funcionalidades principales de la solución. |
+| 0.11.6 | 2026-09-19 | Avalos Cordova, Diego Andres | Corrección de los enlaces de los eventos de actores y sistemas en la evidencia de People & External Systems del Capítulo II. |
+| 0.11.7 | 2026-09-19 | Avalos Cordova, Diego Andres | Reubicación de la figura de Design-Level EventStorming después de su tabla correspondiente para mejorar la lectura del Capítulo IV. |
 ---
 
 # Project Report Collaboration Insights
@@ -116,11 +118,12 @@ Se trabaja con una rama por capítulo, bajo la convención `feature/chapter-<nú
 
 | Métrica | Valor |
 |---|---|
-| Commits de contenido | 53 |
+| Commits de contenido | 75 |
 | Merges de integración | 6 |
+| Commits totales del historial | 81 |
 | Ramas activas | 7 |
-| Periodo de trabajo | 7 al 18 de septiembre de 2026 |
-| Artefactos versionados | 5 capítulos, 86 imágenes y 17 archivos fuente de diagramas |
+| Periodo de trabajo | 7 al 19 de septiembre de 2026 |
+| Artefactos versionados | 5 capítulos, 110 imágenes y 17 archivos fuente de diagramas |
 
 ## Interpretación de los analíticos
 
