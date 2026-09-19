@@ -295,7 +295,7 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 
 Criterio: *La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.*
 
-En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC Student Outcome 5.
+El trabajo del equipo se evidencia en la distribución de responsabilidades por capítulo, la integración de las ramas mediante GitFlow, la elaboración conjunta de los artefactos y la revisión cruzada del informe.
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---|---|---|

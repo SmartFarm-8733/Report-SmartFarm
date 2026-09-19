@@ -1,5 +1,4 @@
 # Capítulo III: Requirements Specification
-
 Los problemas, objetivos y necesidades identificados durante la investigación se traducen aquí en los requisitos de ICHU, el producto de la startup SmartFarm. La especificación abarca los dos segmentos objetivo, medianos y grandes ganaderos por un lado y zootecnistas y médicos veterinarios por otro, e incluye la Landing Page, las aplicaciones web y móvil, los servicios internos (RESTful API central y Edge API) y el dispositivo IoT.
 
 **Roles considerados en la especificación**
