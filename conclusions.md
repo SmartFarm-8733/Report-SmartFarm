@@ -106,5 +106,3 @@ Referencias utilizadas en el informe, conservando la numeración empleada por la
 | Requirements Specification | [chapter03.md](chapter03.md) |
 | Solution Software Design | [chapter04.md](chapter04.md) |
 | Student Outcome y colaboración | [README.md](README.md) |
-
-La auditoría no considera como resultados alcanzados los elementos que el informe identifica como pendientes. Esos elementos deben completarse y volver a revisarse antes de una entrega que exija evidencia final de validación o video publicado.
