@@ -1,18 +1,18 @@
 <p style="text-align: center">
   <img src="./images/upc-logo.png" alt="Logo UPC" width="120"/>
 </p>
-<h2 style="text-align: center">Universidad Peruana de Ciencias Aplicadas</h2>  
-<h3 style="text-align: center">Carrera de Ingeniería de Software</h3>  
+<h2 style="text-align: center">Universidad Peruana de Ciencias Aplicadas</h2>
+<h3 style="text-align: center">Carrera de Ingeniería de Software</h3>
 <h3 style="text-align: center">Ciclo 2026-20</h3>
 
-<p style="text-align: center"><strong>Código del curso:</strong> 1ASI0572</p>  
-<p style="text-align: center"><strong>Nombre del curso:</strong> Desarrollo de Soluciones IoT</p>  
-<p style="text-align: center"><strong>NRC:</strong> 8733</p>  
+<p style="text-align: center"><strong>Código del curso:</strong> 1ASI0572</p>
+<p style="text-align: center"><strong>Nombre del curso:</strong> Desarrollo de Soluciones IoT</p>
+<p style="text-align: center"><strong>NRC:</strong> 8733</p>
 <p style="text-align: center"><strong>Profesor:</strong> Angel Augusto Velasquez Nuñez</p>
 
 <h1 style="text-align: center">Informe de Trabajo Final</h1>
 
-<p style="text-align: center"><strong>Startup:</strong> SmartFarm</p>  
+<p style="text-align: center"><strong>Startup:</strong> SmartFarm</p>
 <p style="text-align: center"><strong>Producto:</strong> ICHU</p>
 
 ## Integrantes
