@@ -449,6 +449,16 @@ Ambos mapas fueron elaborados en UXPressia y están vinculados a la ficha de Use
 
 *Figura 7. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
+#### As-Is Mapping
+
+**As-Is Map de Cesar Flores**
+
+![As-Is Mapping de Cesar Flores, arquetipo del Segmento 1](images/cesar-flores-as-is-mapping.jpeg)
+
+**As-Is Map de Leonardo Rosales**
+
+![As-Is Mapping de Leonardo Rosales, arquetipo del Segmento 2](images/leonardo-rosales-as-is-mapping.jpeg)
+
 **Lectura de los recorridos**
 
 En el recorrido de Cesar Flores, la emoción desciende en dos momentos concretos: cuando descubre que un animal lleva días enfermo sin que él lo advirtiera, y cuando constata una pérdida por muerte o robo. Ambos comparten la misma causa, que es la ausencia de información entre el instante en que el problema comienza y el instante en que se vuelve visible.
