@@ -169,6 +169,10 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 | **Dependencias** | Consume identidad de IAM, ficha del animal de Cattle Information y asignación de dispositivo de IoT Assets. Depende de Firebase Cloud Messaging para notificar. |
 | **Crítica del diseño** | Es el contexto con mayor superficie. Se evaluó dividirlo en Telemetry y Alerting, y se descartó porque la regla de deduplicación exige que ambos compartan la misma transacción. |
 
+![Bounded Context Canvas de Operations & Monitoring](images/diagrams/bounded-context-canvases/01-operations-monitoring.png)
+
+*Canvas 1. Bounded Context Canvas de Operations & Monitoring. Elaboración propia.*
+
 **Canvas 2. Cattle Information**
 
 | Bloque | Contenido |
@@ -183,6 +187,10 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 | **Capacidades salientes** | Exponer la ficha y el estado del animal. Publicar el alta y la baja de animales. |
 | **Dependencias** | Consume la identidad del predio de IAM. Es consumido por IoT Assets, Operations & Monitoring, Planning y Analytics. |
 | **Crítica del diseño** | Se evaluó incorporar aquí el historial clínico y se descartó: la intervención clínica pertenece al flujo de monitoreo y atención, no a la identidad del animal. |
+
+![Bounded Context Canvas de Cattle Information](images/diagrams/bounded-context-canvases/02-cattle-information.png)
+
+*Canvas 2. Bounded Context Canvas de Cattle Information. Elaboración propia.*
 
 **Canvas 3. IoT Assets**
 
@@ -199,6 +207,10 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 | **Dependencias** | Consulta el límite del plan a Subscription Plans y la existencia del animal a Cattle Information, ambas mediante Anti-corruption Layer. |
 | **Crítica del diseño** | Se evaluó fusionarlo con Cattle Information y se descartó: el dispositivo tiene un ciclo de vida propio, se compra, se asigna, se libera y se da de baja con independencia del animal. |
 
+![Bounded Context Canvas de IoT Assets](images/diagrams/bounded-context-canvases/03-iot-assets.png)
+
+*Canvas 3. Bounded Context Canvas de IoT Assets. Elaboración propia.*
+
 **Canvas 4. Planning**
 
 | Bloque | Contenido |
@@ -213,6 +225,10 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 | **Capacidades salientes** | Emitir recordatorios. Exponer campañas vencidas. Exponer periodos de retiro vigentes. |
 | **Dependencias** | Consume el lote y el animal de Cattle Information, y las intervenciones de Operations & Monitoring para calcular los periodos de retiro. |
 | **Crítica del diseño** | Se evaluó modelar el periodo de retiro dentro de Operations & Monitoring, donde se origina, y se decidió ubicarlo aquí porque su consulta principal es de planificación y no de vigilancia. |
+
+![Bounded Context Canvas de Planning](images/diagrams/bounded-context-canvases/04-planning.png)
+
+*Canvas 4. Bounded Context Canvas de Planning. Elaboración propia.*
 
 **Canvas 5. Dashboard & Analytics**
 
@@ -229,6 +245,10 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 | **Dependencias** | Lee de Operations & Monitoring, Cattle Information y Planning bajo relación Conformist. |
 | **Crítica del diseño** | Es un contexto de solo lectura. Se decidió no permitirle escribir en los contextos de origen, de modo que un error en la analítica nunca corrompa el dato operativo. |
 
+![Bounded Context Canvas de Dashboard & Analytics](images/diagrams/bounded-context-canvases/05-dashboard-analytics.png)
+
+*Canvas 5. Bounded Context Canvas de Dashboard & Analytics. Elaboración propia.*
+
 **Canvas 6. Identity & Access Management**
 
 | Bloque | Contenido |
@@ -243,6 +263,10 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 | **Capacidades salientes** | Resolver la identidad y el alcance de acceso de cada solicitud. |
 | **Dependencias** | Delega la verificación de credenciales en Firebase Authentication mediante Anti-corruption Layer. |
 | **Crítica del diseño** | Aquí se tomó la decisión de **absorber el contexto candidato Profiles**, que se detalla en la sección de Context Mapping. |
+
+![Bounded Context Canvas de Identity & Access Management](images/diagrams/bounded-context-canvases/06-identity-access-management.png)
+
+*Canvas 6. Bounded Context Canvas de Identity & Access Management. Elaboración propia.*
 
 **Canvas 7. Subscription Plans**
 
@@ -259,6 +283,10 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 | **Dependencias** | Delega el cobro en el proveedor de pagos mediante Anti-corruption Layer. |
 | **Crítica del diseño** | Se evaluó adoptar una plataforma de suscripciones de terceros. Se descartó para esta fase por la necesidad de vincular el límite de dispositivos con el inventario propio, que es una regla específica del producto. |
 
+![Bounded Context Canvas de Subscription Plans](images/diagrams/bounded-context-canvases/07-subscription-plans.png)
+
+*Canvas 7. Bounded Context Canvas de Subscription Plans. Elaboración propia.*
+
 **Canvas 8. Profiles, contexto candidato descartado**
 
 | Bloque | Contenido |
@@ -266,6 +294,10 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 | **Propósito original** | Mantener los datos demográficos y profesionales de los actores del sistema. |
 | **Resultado del análisis** | El análisis de capacidades mostró que todas sus reglas dependen de la identidad del usuario y que ninguna capacidad podía ejercerse sin consultar Identity & Access Management en la misma transacción. |
 | **Decisión** | Absorbido por Identity & Access Management como el agregado `ProfessionalProfile`. La justificación completa se desarrolla en la sección siguiente. |
+
+![Bounded Context Canvas de Profiles, contexto candidato descartado](images/diagrams/bounded-context-canvases/08-profiles-discarded.png)
+
+*Canvas 8. Bounded Context Canvas de Profiles, contexto candidato descartado. Elaboración propia.*
 
 ### 4.1.2. Context Mapping
 
