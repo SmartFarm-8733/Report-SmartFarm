@@ -96,6 +96,10 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 0.11.5 | 2026-09-19 | Arrieta Quispe, Alison Jimena | Participación en la definición y estructuración de las Epics del producto, así como en la elaboración de parte de las User Stories asociadas a las funcionalidades principales de la solución. |
 | 0.11.6 | 2026-09-19 | Avalos Cordova, Diego Andres | Corrección de los enlaces de los eventos de actores y sistemas en la evidencia de People & External Systems del Capítulo II. |
 | 0.11.7 | 2026-09-19 | Avalos Cordova, Diego Andres | Reubicación de la figura de Design-Level EventStorming después de su tabla correspondiente para mejorar la lectura del Capítulo IV. |
+| 0.11.8 | 2026-09-19 | Sanchez Arenas, Manuel Angel | Incorporación de la información del perfil de Manuel Sanchez Arenas y de su participación en la sección Student Outcome. |
+| 0.11.9 | 2026-09-19 | Contreras Leon, Flor de María | Actualización de los enlaces de los videos de entrevistas para utilizar los recursos publicados en SharePoint. |
+| 0.11.10 | 2026-09-19 | Contreras Leon, Flor de María | Incorporación de enlaces a las fuentes de las evidencias utilizadas en los Capítulos II y IV. |
+| 0.11.11 | 2026-09-19 | Avalos Cordova, Diego Andres | Incorporación de evidencias visuales del historial de commits de GitHub y actualización de las métricas de colaboración del informe. |
 ---
 
 # Project Report Collaboration Insights
@@ -118,12 +122,28 @@ Se trabaja con una rama por capítulo, bajo la convención `feature/chapter-<nú
 
 | Métrica | Valor |
 |---|---|
-| Commits de contenido | 75 |
-| Merges de integración | 6 |
-| Commits totales del historial | 81 |
+| Commits de contenido | 80 |
+| Merges de integración | 7 |
+| Commits totales del historial | 87 |
 | Ramas activas | 7 |
 | Periodo de trabajo | 7 al 19 de septiembre de 2026 |
-| Artefactos versionados | 5 capítulos, 110 imágenes y 17 archivos fuente de diagramas |
+| Artefactos versionados | 5 capítulos, 114 imágenes y 17 archivos fuente de diagramas |
+
+## Evidencias de commits en GitHub
+
+Las siguientes capturas documentan el historial visible de commits de la rama `feature/chapter-II` durante la consolidación del informe. En ellas se observan aportes de Diego Andres Avalos Cordova, Flor de María Contreras Leon, Giorgio Awad, Alison Arrieta y Manuel Angel Sanchez, además de la integración de ramas mediante GitFlow. La evidencia se mantiene alineada con las versiones 0.11.6 a 0.11.10 del Registro de Versiones.
+
+<img src="./images/collaboration/commits/commits-feature-chapter-II-01.png" alt="Historial de commits de feature/chapter-II, captura 1" style="max-width:100%;">
+
+*Figura. Historial de commits de `feature/chapter-II` durante la consolidación del informe (captura 1).*
+
+<img src="./images/collaboration/commits/commits-feature-chapter-II-02.png" alt="Historial de commits de feature/chapter-II, captura 2" style="max-width:100%;">
+
+*Figura. Historial de commits de `feature/chapter-II` durante la consolidación del informe (captura 2).*
+
+<img src="./images/collaboration/commits/commits-feature-chapter-II-03.png" alt="Historial de commits de feature/chapter-II, captura 3" style="max-width:100%;">
+
+*Figura. Historial de commits de `feature/chapter-II` durante la consolidación del informe (captura 3).*
 
 ## Interpretación de los analíticos
 
