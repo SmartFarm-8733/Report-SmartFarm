@@ -46,6 +46,12 @@ En la cuarta fase se agruparon los elementos alrededor de los **Aggregates**, en
 | Dar de baja animal | Administrador ganadero | Animal dado de baja | Liberar el collar asignado y excluirlo de los indicadores | Ficha del animal, collar asignado | Cattle |
 | Ninguno, es automático | Sistema | Temperatura del agua fuera de rango | Activar calentamiento y alertar si no retorna al rango | Rango configurado del abrevadero | MonitoringAlert |
 
+![Design-Level EventStorming de SmartFarm](images/diagrams/design-level-eventstorming.png)
+
+*Figura 4.1.1. Design-Level EventStorming de SmartFarm: comandos, actores, Domain Events, Policies, Aggregates y Read Models. Elaboración propia.*
+
+[Abrir tablero Miro del Design-Level EventStorming](https://miro.com/welcomeonboard/ekNIcWVQcC9hcG1mM292c2E0RkcwblUxUSttUDFCSmpZMjBTQldxOENSNVdtbTNiWEZQSXRaQWg1UWk4bmpDYjVzNnNHanMrV3J5RDZZc2RaeXNBSDQ4ZWRzaFRaNi9qbXJsUlBtblZobDFOeS9aTGFyK1BJWDNUVGozSUVYSHhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=680912547552)
+
 **Hot spots resueltos en esta sesión**
 
 Tres de las incertidumbres que el Big Picture dejó marcadas quedaron resueltas al modelar a este nivel de detalle. La primera es que **el umbral debe ser por etapa productiva y no único**, lo que obligó a modelar `Threshold` como Value Object con la etapa como parte de su identidad. La segunda es que **el operario registra observaciones pero no diagnósticos**, distinción que se refleja en el tipo de operación y en las reglas de autorización. La tercera es que **un registro creado sin conexión sobre un animal dado de baja no se aplica**, sino que se conserva como conflicto para revisión manual, lo que exigió incorporar el estado de sincronización al agregado correspondiente.
@@ -53,6 +59,24 @@ Tres de las incertidumbres que el Big Picture dejó marcadas quedaron resueltas 
 #### 4.1.1.1. Candidate Context Discovery
 
 Para identificar los contextos acotados se aplicó la técnica **look-for-pivotal-events**, que consiste en buscar los hechos del negocio que marcan un cambio de estado entre fases distintas del proceso. Se eligió esta técnica sobre las alternativas porque el Big Picture ya había dejado ordenados los eventos sobre una línea de tiempo, y porque el dominio ganadero presenta transiciones nítidas: un animal pasa de ser un registro administrativo a ser un sujeto vigilado, y de ahí a ser un paciente en tratamiento.
+
+![Estado 1 — Pivotal Events](images/diagrams/candidate-context-discovery/01-pivotal-events.svg)
+
+*Estado 1. Identificación de eventos pivote sobre la línea temporal del dominio. Elaboración propia.*
+
+[Abrir tablero Miro de Candidate Context Discovery](https://miro.com/welcomeonboard/ekNIcWVQcC9hcG1mM292c2E0RkcwblUxUSttUDFCSmpZMjBTQldxOENSNVdtbTNiWEZQSXRaQWg1UWk4bmpDYjVzNnNHanMrV3J5RDZZc2RaeXNBSDQ4ZWRzaFRaNi9qbXJsUlBtblZobDFOeS9aTGFyK1BJWDNUVGozSUVYSHhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=680912547552)
+
+![Estado 2 — Boundaries Emerging](images/diagrams/candidate-context-discovery/02-emerging-boundaries.svg)
+
+*Estado 2. Trazado inicial de fronteras emergentes a partir de cambios de responsabilidad y reglas. Elaboración propia.*
+
+[Abrir tablero Miro de Candidate Context Discovery](https://miro.com/welcomeonboard/ekNIcWVQcC9hcG1mM292c2E0RkcwblUxUSttUDFCSmpZMjBTQldxOENSNVdtbTNiWEZQSXRaQWg1UWk4bmpDYjVzNnNHanMrV3J5RDZZc2RaeXNBSDQ4ZWRzaFRaNi9qbXJsUlBtblZobDFOeS9aTGFyK1BJWDNUVGozSUVYSHhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=680912547552)
+
+![Estado 3 — Candidate Contexts](images/diagrams/candidate-context-discovery/03-candidate-contexts.svg)
+
+*Estado 3. Primera partición en contextos candidatos, todavía exploratoria. Elaboración propia.*
+
+[Abrir tablero Miro de Candidate Context Discovery](https://miro.com/welcomeonboard/ekNIcWVQcC9hcG1mM292c2E0RkcwblUxUSttUDFCSmpZMjBTQldxOENSNVdtbTNiWEZQSXRaQWg1UWk4bmpDYjVzNnNHanMrV3J5RDZZc2RaeXNBSDQ4ZWRzaFRaNi9qbXJsUlBtblZobDFOeS9aTGFyK1BJWDNUVGozSUVYSHhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=680912547552)
 
 **Eventos pivote y fronteras que revelan**
 
@@ -99,6 +123,12 @@ Para visualizar cómo colaboran los contextos en los casos reales del negocio se
 | 8 | Cattle Band | transmite | la primera lectura biométrica | Operations & Monitoring | Operations & Monitoring |
 | 9 | Operations & Monitoring | atribuye | la lectura al animal correspondiente | Cattle Information | Operations & Monitoring |
 
+![Domain Message Flow de la Historia 1: Incorporación de un animal al hato monitoreado](images/domain-message-flow-h1-incorporacion.png)
+
+*Figura 10. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
+
+[Abrir tablero Figma de Domain Message Flows](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+
 **Historia 2. Detección de fiebre durante el pastoreo sin cobertura**
 
 | # | Actor | Actividad | Objeto de trabajo | Destinatario | Contexto |
@@ -117,6 +147,12 @@ Para visualizar cómo colaboran los contextos en los casos reales del negocio se
 | 12 | Médico veterinario | registra | la intervención con producto y dosis | Operations & Monitoring | Operations & Monitoring |
 | 13 | Operations & Monitoring | inicia | el periodo de retiro del producto aplicado | Planning | Planning |
 
+![Domain Message Flow de la Historia 2: Detección de fiebre durante el pastoreo sin cobertura](images/domain-message-flow-h2-fiebre-offline.png)
+
+*Figura 11. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
+
+[Abrir tablero Figma de Domain Message Flows](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+
 **Historia 3. Contratación de un plan y habilitación de capacidades**
 
 | # | Actor | Actividad | Objeto de trabajo | Destinatario | Contexto |
@@ -129,6 +165,12 @@ Para visualizar cómo colaboran los contextos en los casos reales del negocio se
 | 6 | Subscription Plans | publica | el hecho "suscripción activada" | IoT Assets, Dashboard & Analytics | Subscription Plans |
 | 7 | IoT Assets | habilita | el límite de dispositivos del plan | Administrador ganadero | IoT Assets |
 | 8 | Dashboard & Analytics | habilita | los reportes incluidos en el plan | Administrador ganadero | Dashboard & Analytics |
+
+![Domain Message Flow de la Historia 3: Contratación de un plan y habilitación de capacidades](images/domain-message-flow-h3-suscripcion.png)
+
+*Figura 12. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
+
+[Abrir tablero Figma de Domain Message Flows](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
 
 **Lectura de los flujos**
 
@@ -153,6 +195,12 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 | **Dependencias** | Consume identidad de IAM, ficha del animal de Cattle Information y asignación de dispositivo de IoT Assets. Depende de Firebase Cloud Messaging para notificar. |
 | **Crítica del diseño** | Es el contexto con mayor superficie. Se evaluó dividirlo en Telemetry y Alerting, y se descartó porque la regla de deduplicación exige que ambos compartan la misma transacción. |
 
+![Bounded Context Canvas de Operations & Monitoring](images/diagrams/bounded-context-canvases/01-operations-monitoring.png)
+
+*Canvas 1. Bounded Context Canvas de Operations & Monitoring. Elaboración propia.*
+
+[Abrir tablero Figma de los Bounded Context Canvases](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+
 **Canvas 2. Cattle Information**
 
 | Bloque | Contenido |
@@ -167,6 +215,12 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 | **Capacidades salientes** | Exponer la ficha y el estado del animal. Publicar el alta y la baja de animales. |
 | **Dependencias** | Consume la identidad del predio de IAM. Es consumido por IoT Assets, Operations & Monitoring, Planning y Analytics. |
 | **Crítica del diseño** | Se evaluó incorporar aquí el historial clínico y se descartó: la intervención clínica pertenece al flujo de monitoreo y atención, no a la identidad del animal. |
+
+![Bounded Context Canvas de Cattle Information](images/diagrams/bounded-context-canvases/02-cattle-information.png)
+
+*Canvas 2. Bounded Context Canvas de Cattle Information. Elaboración propia.*
+
+[Abrir tablero Figma de los Bounded Context Canvases](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
 
 **Canvas 3. IoT Assets**
 
@@ -183,6 +237,12 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 | **Dependencias** | Consulta el límite del plan a Subscription Plans y la existencia del animal a Cattle Information, ambas mediante Anti-corruption Layer. |
 | **Crítica del diseño** | Se evaluó fusionarlo con Cattle Information y se descartó: el dispositivo tiene un ciclo de vida propio, se compra, se asigna, se libera y se da de baja con independencia del animal. |
 
+![Bounded Context Canvas de IoT Assets](images/diagrams/bounded-context-canvases/03-iot-assets.png)
+
+*Canvas 3. Bounded Context Canvas de IoT Assets. Elaboración propia.*
+
+[Abrir tablero Figma de los Bounded Context Canvases](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+
 **Canvas 4. Planning**
 
 | Bloque | Contenido |
@@ -197,6 +257,12 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 | **Capacidades salientes** | Emitir recordatorios. Exponer campañas vencidas. Exponer periodos de retiro vigentes. |
 | **Dependencias** | Consume el lote y el animal de Cattle Information, y las intervenciones de Operations & Monitoring para calcular los periodos de retiro. |
 | **Crítica del diseño** | Se evaluó modelar el periodo de retiro dentro de Operations & Monitoring, donde se origina, y se decidió ubicarlo aquí porque su consulta principal es de planificación y no de vigilancia. |
+
+![Bounded Context Canvas de Planning](images/diagrams/bounded-context-canvases/04-planning.png)
+
+*Canvas 4. Bounded Context Canvas de Planning. Elaboración propia.*
+
+[Abrir tablero Figma de los Bounded Context Canvases](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
 
 **Canvas 5. Dashboard & Analytics**
 
@@ -213,6 +279,12 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 | **Dependencias** | Lee de Operations & Monitoring, Cattle Information y Planning bajo relación Conformist. |
 | **Crítica del diseño** | Es un contexto de solo lectura. Se decidió no permitirle escribir en los contextos de origen, de modo que un error en la analítica nunca corrompa el dato operativo. |
 
+![Bounded Context Canvas de Dashboard & Analytics](images/diagrams/bounded-context-canvases/05-dashboard-analytics.png)
+
+*Canvas 5. Bounded Context Canvas de Dashboard & Analytics. Elaboración propia.*
+
+[Abrir tablero Figma de los Bounded Context Canvases](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+
 **Canvas 6. Identity & Access Management**
 
 | Bloque | Contenido |
@@ -227,6 +299,12 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 | **Capacidades salientes** | Resolver la identidad y el alcance de acceso de cada solicitud. |
 | **Dependencias** | Delega la verificación de credenciales en Firebase Authentication mediante Anti-corruption Layer. |
 | **Crítica del diseño** | Aquí se tomó la decisión de **absorber el contexto candidato Profiles**, que se detalla en la sección de Context Mapping. |
+
+![Bounded Context Canvas de Identity & Access Management](images/diagrams/bounded-context-canvases/06-identity-access-management.png)
+
+*Canvas 6. Bounded Context Canvas de Identity & Access Management. Elaboración propia.*
+
+[Abrir tablero Figma de los Bounded Context Canvases](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
 
 **Canvas 7. Subscription Plans**
 
@@ -243,6 +321,12 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 | **Dependencias** | Delega el cobro en el proveedor de pagos mediante Anti-corruption Layer. |
 | **Crítica del diseño** | Se evaluó adoptar una plataforma de suscripciones de terceros. Se descartó para esta fase por la necesidad de vincular el límite de dispositivos con el inventario propio, que es una regla específica del producto. |
 
+![Bounded Context Canvas de Subscription Plans](images/diagrams/bounded-context-canvases/07-subscription-plans.png)
+
+*Canvas 7. Bounded Context Canvas de Subscription Plans. Elaboración propia.*
+
+[Abrir tablero Figma de los Bounded Context Canvases](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+
 **Canvas 8. Profiles, contexto candidato descartado**
 
 | Bloque | Contenido |
@@ -250,6 +334,12 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 | **Propósito original** | Mantener los datos demográficos y profesionales de los actores del sistema. |
 | **Resultado del análisis** | El análisis de capacidades mostró que todas sus reglas dependen de la identidad del usuario y que ninguna capacidad podía ejercerse sin consultar Identity & Access Management en la misma transacción. |
 | **Decisión** | Absorbido por Identity & Access Management como el agregado `ProfessionalProfile`. La justificación completa se desarrolla en la sección siguiente. |
+
+![Bounded Context Canvas de Profiles, contexto candidato descartado](images/diagrams/bounded-context-canvases/08-profiles-discarded.png)
+
+*Canvas 8. Bounded Context Canvas de Profiles, contexto candidato descartado. Elaboración propia.*
+
+[Abrir tablero Figma de los Bounded Context Canvases](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
 
 ### 4.1.2. Context Mapping
 
@@ -261,9 +351,13 @@ El mapa se presenta en dos vistas. La primera muestra las relaciones entre los c
 
 *Figura 4.1. Context Map de los Bounded Contexts. Elaboración propia con PlantUML.*
 
+[Abrir código fuente PlantUML del Context Map](diagrams/puml/context-map.puml)
+
 ![Integraciones con el borde y con sistemas externos](images/diagrams/context-map-external.png)
 
 *Figura 4.2. Integraciones con el borde y con sistemas externos. Elaboración propia con PlantUML.*
+
+[Abrir código fuente PlantUML de integraciones externas](diagrams/puml/context-map-external.puml)
 
 **Patrones aplicados**
 
@@ -306,7 +400,7 @@ El Ubiquitous Language del capítulo anterior conserva ambos bloques separados p
 
 La arquitectura de la solución se representa aplicando el C4 Model, elaborado como Diagram-as-Code en Structurizr DSL. El modelo completo reúne cuatro personas, seis sistemas externos, nueve containers, setenta y tres componentes clasificados por capa y veinticinco vistas.
 
-El código fuente de todos los diagramas de este capítulo forma parte del repositorio. El modelo C4 se encuentra en `diagrams/structurizr/workspace-ichu-c4.dsl` y los diagramas UML y de base de datos en `diagrams/puml/`.
+El código fuente de todos los diagramas de este capítulo forma parte del repositorio. El modelo C4 se encuentra en [workspace-ichu-c4.dsl](diagrams/structurizr/workspace-ichu-c4.dsl) y los diagramas UML y de base de datos se encuentran en la carpeta [diagrams/puml](diagrams/puml/).
 
 La solución se organiza como un **monolito modular** en la nube, en el que cada contexto acotado es un módulo interno con su propio esquema de base de datos, acompañado de un servicio de borde y dos aplicaciones embebidas. Se eligió el monolito modular sobre una arquitectura de microservicios porque el equipo tiene seis integrantes y un ciclo de quince semanas: el aislamiento por módulos preserva los límites de los contextos sin pagar el costo operativo de desplegar y coordinar siete servicios independientes. La modularidad interna deja abierta la extracción posterior de cualquier módulo que lo justifique.
 
@@ -317,6 +411,8 @@ El System Landscape presenta el panorama completo en el que se inserta la soluci
 ![System Landscape de ICHU](images/diagrams/c4/c4-system-landscape.png)
 
 *Figura 4.3. System Landscape. Elaboración propia con Structurizr.*
+
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
 
 #### 4.1.3.2. Software Architecture Context Level Diagram
 
@@ -329,6 +425,8 @@ Los sistemas externos son el **hardware del collar inteligente** y el **hardware
 ![System Context de ICHU](images/diagrams/c4/c4-system-context.png)
 
 *Figura 4.4. System Context. Elaboración propia con Structurizr.*
+
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
 
 #### 4.1.3.3. Software Architecture Container Level Diagram
 
@@ -352,6 +450,8 @@ Las aplicaciones cliente consumen el RESTful API sobre HTTPS con JSON. El collar
 
 *Figura 4.5. Container Diagram. Elaboración propia con Structurizr.*
 
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
+
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
 El Deployment Diagram describe dónde se ejecuta cada container en el entorno de producción.
@@ -367,6 +467,8 @@ El reparto responde directamente al hallazgo de conectividad del capítulo anter
 ![Deployment Diagram de producción](images/diagrams/c4/c4-deployment.png)
 
 *Figura 4.6. Deployment Diagram del entorno de producción. Elaboración propia con Structurizr.*
+
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
@@ -439,19 +541,27 @@ La vista `MonitoringComponents` del workspace representa la descomposición inte
 
 *Figura 4.7. Componentes del módulo Operations & Monitoring. Elaboración propia con Structurizr.*
 
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
+
 Este contexto se realiza además en tres containers fuera del backend: las dos aplicaciones embebidas que capturan la telemetría y la pasarela de borde que la recibe y evalúa sin conexión. Sus diagramas de componentes se presentan a continuación.
 
 ![Component Diagram del Cattle Band Embedded Application](images/diagrams/c4/c4-components-cattle-band.png)
 
 *Figura 4.8. Componentes del firmware del collar inteligente. Elaboración propia con Structurizr.*
 
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
+
 ![Component Diagram del Portable Edge Gateway](images/diagrams/c4/c4-components-edge-gateway.png)
 
 *Figura 4.9. Componentes de la pasarela de borde. Elaboración propia con Structurizr.*
 
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
+
 ![Component Diagram del Water Controller Embedded Application](images/diagrams/c4/c4-components-water-controller.png)
 
 *Figura 4.10. Componentes del firmware del controlador del abrevadero. Elaboración propia con Structurizr.*
+
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
 
 **Flujos dinámicos del contexto**
 
@@ -461,13 +571,19 @@ Los diagramas dinámicos ilustran la secuencia de colaboración entre componente
 
 *Figura 4.11. Flujo completo cuando el collar tiene cobertura. Elaboración propia con Structurizr.*
 
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
+
 ![Flujo de pastoreo sin cobertura](images/diagrams/c4/c4-flow-offline-grazing.png)
 
 *Figura 4.12. Flujo completo durante el pastoreo sin cobertura. Elaboración propia con Structurizr.*
 
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
+
 ![Flujo de sincronización del borde](images/diagrams/c4/c4-flow-edge-synchronization.png)
 
 *Figura 4.13. Sincronización al recuperar la conexión. Elaboración propia con Structurizr.*
+
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -477,6 +593,8 @@ Los diagramas dinámicos ilustran la secuencia de colaboración entre componente
 
 *Figura 4.14. Domain Layer de Operations & Monitoring. Elaboración propia con PlantUML.*
 
+[Abrir fuente PlantUML](diagrams/puml/class-monitoring.puml)
+
 El diagrama muestra la composición de `MonitoringAlert` con su `Threshold` y su agregación con las lecturas que la sustentan, con multiplicidad de uno a muchos. `Geofence` compone al menos tres vértices, que es la condición mínima para que el polígono sea cerrado. `TelemetryReading` compone su posición, de modo que la precisión viaja junto a la coordenada.
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
@@ -484,6 +602,8 @@ El diagrama muestra la composición de `MonitoringAlert` con su `Threshold` y su
 ![Diagrama de base de datos del esquema monitoring](images/diagrams/db-monitoring.png)
 
 *Figura 4.15. Esquema `monitoring`. Elaboración propia con PlantUML.*
+
+[Abrir fuente PlantUML](diagrams/puml/db-monitoring.puml)
 
 La tabla `alert_reading` resuelve la relación de muchos a muchos entre alertas y lecturas con una clave primaria compuesta. Los vértices de la geocerca se almacenan con su número de secuencia para preservar el orden del polígono. La tabla `telemetry_reading` lleva un índice compuesto por animal y fecha de captura, porque es el criterio de todas las consultas de historial.
 
@@ -535,6 +655,8 @@ Mantiene la identidad y los datos productivos de cada animal. Es la fuente únic
 
 *Figura 4.16. Componentes del módulo Cattle Information. Elaboración propia con Structurizr.*
 
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
+
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
@@ -543,6 +665,8 @@ Mantiene la identidad y los datos productivos de cada animal. Es la fuente únic
 
 *Figura 4.17. Domain Layer de Cattle Information. Elaboración propia con PlantUML.*
 
+[Abrir fuente PlantUML](diagrams/puml/class-cattle.puml)
+
 `Cattle` compone su arete y su historial de etapas, y agrega opcionalmente su genealogía. `Lot` agrega animales sin poseerlos, porque un animal existe con independencia del lote al que pertenezca en un momento dado.
 
 ##### 4.2.2.6.2. Bounded Context Database Design Diagram
@@ -550,6 +674,8 @@ Mantiene la identidad y los datos productivos de cada animal. Es la fuente únic
 ![Diagrama de base de datos del esquema cattle](images/diagrams/db-cattle.png)
 
 *Figura 4.18. Esquema `cattle`. Elaboración propia con PlantUML.*
+
+[Abrir fuente PlantUML](diagrams/puml/db-cattle.puml)
 
 La restricción `UNIQUE (ranch_id, ear_tag)` implementa en la base la regla de unicidad del arete dentro del predio. La tabla `lot_membership` resuelve la pertenencia de un animal a un lote con clave primaria compuesta y fecha de asignación.
 
@@ -602,6 +728,8 @@ Administra el inventario de dispositivos físicos y controla a qué animal o abr
 
 *Figura 4.19. Componentes del módulo IoT Assets. Elaboración propia con Structurizr.*
 
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
+
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
@@ -610,6 +738,8 @@ Administra el inventario de dispositivos físicos y controla a qué animal o abr
 
 *Figura 4.20. Domain Layer de IoT Assets. Elaboración propia con PlantUML.*
 
+[Abrir fuente PlantUML](diagrams/puml/class-iot.puml)
+
 El diagrama muestra los dos puertos que el dominio declara hacia otros contextos. Definirlos como interfaces dentro de la capa de dominio permite que la regla de asignación se pruebe sin depender de Subscription Plans ni de Cattle Information.
 
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram
@@ -617,6 +747,8 @@ El diagrama muestra los dos puertos que el dominio declara hacia otros contextos
 ![Diagrama de base de datos del esquema iot](images/diagrams/db-iot.png)
 
 *Figura 4.21. Esquema `iot`. Elaboración propia con PlantUML.*
+
+[Abrir fuente PlantUML](diagrams/puml/db-iot.puml)
 
 La tabla `device_assignment` conserva `target_id` junto a `target_type`, de modo que un mismo modelo de asignación sirve para el collar vinculado a un animal y para el controlador vinculado a un abrevadero.
 
@@ -672,9 +804,13 @@ Programa las faenas sanitarias y reproductivas del hato, emite los recordatorios
 
 *Figura 4.22. Componentes del módulo Planning. Elaboración propia con Structurizr.*
 
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
+
 ![Flujo de emisión de recordatorios](images/diagrams/c4/c4-flow-planning-reminder.png)
 
 *Figura 4.23. Flujo interno de recordatorios del calendario ganadero. Elaboración propia con Structurizr.*
+
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -684,6 +820,8 @@ Programa las faenas sanitarias y reproductivas del hato, emite los recordatorios
 
 *Figura 4.24. Domain Layer de Planning. Elaboración propia con PlantUML.*
 
+[Abrir fuente PlantUML](diagrams/puml/class-planning.puml)
+
 `HealthCampaign` compone sus aplicaciones y su recordatorio, porque ninguno de los dos tiene sentido fuera de la campaña. `WithdrawalPeriod` se modela como Value Object consultado por la campaña, no como entidad propia, porque su identidad la determinan el animal y el producto.
 
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram
@@ -691,6 +829,8 @@ Programa las faenas sanitarias y reproductivas del hato, emite los recordatorios
 ![Diagrama de base de datos del esquema planning](images/diagrams/db-planning.png)
 
 *Figura 4.25. Esquema `planning`. Elaboración propia con PlantUML.*
+
+[Abrir fuente PlantUML](diagrams/puml/db-planning.puml)
 
 La restricción `UNIQUE (campaign_id, cattle_id)` impide registrar dos veces la aplicación sobre el mismo animal dentro de una campaña, que es el error que los entrevistados asociaron al riesgo de intoxicación por dosis repetida.
 
@@ -744,6 +884,8 @@ Transforma la información acumulada por los demás contextos en indicadores, te
 
 *Figura 4.26. Componentes del módulo Dashboard & Analytics. Elaboración propia con Structurizr.*
 
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
+
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
@@ -752,6 +894,8 @@ Transforma la información acumulada por los demás contextos en indicadores, te
 
 *Figura 4.27. Domain Layer de Dashboard & Analytics. Elaboración propia con PlantUML.*
 
+[Abrir fuente PlantUML](diagrams/puml/class-analytics.puml)
+
 `DateRange` aparece compuesto tanto en el conjunto de indicadores como en el reporte, lo que refleja la regla de que ningún resultado se entrega sin declarar el periodo sobre el que fue calculado.
 
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram
@@ -759,6 +903,8 @@ Transforma la información acumulada por los demás contextos en indicadores, te
 ![Diagrama de base de datos del esquema analytics](images/diagrams/db-analytics.png)
 
 *Figura 4.28. Esquema `analytics`. Elaboración propia con PlantUML.*
+
+[Abrir fuente PlantUML](diagrams/puml/db-analytics.puml)
 
 Las tablas de este esquema almacenan resultados calculados, no datos operativos. Su contenido puede reconstruirse a partir de los esquemas de origen, lo que permite recalcular sin riesgo ante un cambio en la fórmula de un indicador.
 
@@ -814,6 +960,8 @@ Resuelve quién es cada usuario, sobre qué unidades productivas puede operar y 
 
 *Figura 4.29. Componentes del módulo Identity & Access Management. Elaboración propia con Structurizr.*
 
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
+
 #### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.6.6.1. Bounded Context Domain Layer Class Diagrams
@@ -822,6 +970,8 @@ Resuelve quién es cada usuario, sobre qué unidades productivas puede operar y 
 
 *Figura 4.30. Domain Layer de Identity & Access Management. Elaboración propia con PlantUML.*
 
+[Abrir fuente PlantUML](diagrams/puml/class-iam.puml)
+
 `UserAccount` compone su perfil profesional y sus pertenencias, pero agrega las asesorías, porque una asesoría vincula a dos partes y su ciclo de vida no termina con la cuenta del solicitante.
 
 ##### 4.2.6.6.2. Bounded Context Database Design Diagram
@@ -829,6 +979,8 @@ Resuelve quién es cada usuario, sobre qué unidades productivas puede operar y 
 ![Diagrama de base de datos del esquema iam](images/diagrams/db-iam.png)
 
 *Figura 4.31. Esquema `iam`. Elaboración propia con PlantUML.*
+
+[Abrir fuente PlantUML](diagrams/puml/db-iam.puml)
 
 La tabla `herd_advisory` conserva las fechas de solicitud, concesión, vencimiento y revocación por separado, de modo que el historial completo de la relación quede auditable.
 
@@ -882,6 +1034,8 @@ Administra los planes contratados, sus límites y su facturación, y determina q
 
 *Figura 4.32. Componentes del módulo Subscription Plans. Elaboración propia con Structurizr.*
 
+[Abrir fuente Structurizr](diagrams/structurizr/workspace-ichu-c4.dsl)
+
 #### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.7.6.1. Bounded Context Domain Layer Class Diagrams
@@ -890,6 +1044,8 @@ Administra los planes contratados, sus límites y su facturación, y determina q
 
 *Figura 4.33. Domain Layer de Subscription Plans. Elaboración propia con PlantUML.*
 
+[Abrir fuente PlantUML](diagrams/puml/class-subscription.puml)
+
 `Subscription` compone el plan contratado y agrega sus pagos. El puerto `IPaymentProviderPort` mantiene el dominio independiente del proveedor concreto, que puede cambiar sin afectar las reglas de cobertura y renovación.
 
 ##### 4.2.7.6.2. Bounded Context Database Design Diagram
@@ -897,6 +1053,8 @@ Administra los planes contratados, sus límites y su facturación, y determina q
 ![Diagrama de base de datos del esquema subscription](images/diagrams/db-subscription.png)
 
 *Figura 4.34. Esquema `subscription`. Elaboración propia con PlantUML.*
+
+[Abrir fuente PlantUML](diagrams/puml/db-subscription.puml)
 
 La tabla `plan_feature` implementa la relación de muchos a muchos entre plan y funcionalidad con clave primaria compuesta, de modo que agregar una funcionalidad a un plan no requiere modificar el esquema.
 
