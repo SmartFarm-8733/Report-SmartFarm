@@ -42,5 +42,6 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 0.12.6 | 2026-10-06 | Avalos Cordova, Diego Andres | Centrado horizontal y vertical del bloque de carátula, incluidos los integrantes, con separación de página para la presentación del informe. |
 | 0.12.7 | 2026-10-06 | Avalos Cordova, Diego Andres | Reubicación de Student Outcome antes del Capítulo I, corrección de las anclas del índice y de etiquetas HTML en los perfiles de integrantes. |
 | 0.13.0 | 2026-10-06 | Avalos Cordova, Diego Andres | Incorporación de la estructura del Capítulo VI y espacios de TB1 en Student Outcome, colaboración, conclusiones, videos de exposiciones y anexos, sin modificar el Capítulo V. |
+| 0.13.1 | 2026-10-06 | Avalos Cordova, Diego Andres | Incorporación de la estructura vacía del Capítulo V, actualización de sus enlaces en el índice y numeración consecutiva de los apartados de diseño de aplicaciones. |
 
 <div style="break-after: page; page-break-after: always;"></div>
