@@ -35,3 +35,6 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 0.12.0 | 2026-09-19 | Avalos Cordova, Diego Andres | Creación de la sección de Conclusiones y recomendaciones, pauta del Video About-the-Team, Bibliografía y Anexos. |
 | 0.12.1 | 2026-09-19 | Avalos Cordova, Diego Andres | Integración del estado actualizado del informe, depuración de notas internas y reorganización de los Anexos para su exportación legible a PDF. |
 | 0.12.2 | 2026-09-19 | Avalos Cordova, Diego Andres | Consolidación de las ramas de capítulos y conclusiones en `development`, verificación de referencias y preparación de la versión integrada para su promoción a `main`. |
+| 0.12.3 | 2026-10-06 | Avalos Cordova, Diego Andres | Rediseño de la carátula y separación de las secciones iniciales para conservar su paginación al exportar a PDF. |
+
+<div style="break-after: page; page-break-after: always;"></div>
