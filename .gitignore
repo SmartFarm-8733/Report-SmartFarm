@@ -1,0 +1,15 @@
+# Generated report exports and temporary files
+/output/
+/tmp/
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Common document build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz

@@ -211,7 +211,7 @@ Los Business Goals se formulan siguiendo los criterios SMART y toman como refere
 
 **Impact Map elaborado en UXPressia**
 
-![Impact Map del proyecto](images/impact-mapping.png)
+![Impact Map del proyecto](assets/images/impact-mapping.png)
 
 *Figura 9. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
@@ -389,7 +389,7 @@ El Sprint 2 concentra la mayor carga porque reúne las historias de mayor comple
 
 El equipo gestiona el Product Backlog en **Jira**, herramienta que se mantendrá para los Sprint Backlogs a fin de conservar la continuidad del seguimiento entre iteraciones.
 
-![Product Backlog en Jira](images/product-backlog-jira.png)
+![Product Backlog en Jira](assets/images/product-backlog-jira.png)
 
 *Figura 8. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
