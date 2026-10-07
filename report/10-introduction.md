@@ -68,7 +68,7 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
         <img src="assets/images/members/alison-arrieta.jpg" alt="Fotografía de Alison Arrieta" style="width:80px; height:107px; object-fit:cover; border-radius:6px;">
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
-        Estudiante de 7mo ciclo de la carrera de Ingeniería de Software. Conocimientos en .NET, Angular y Azure. Experiencia en coorporativa como full stack developer.</em>
+        Estudiante de 7mo ciclo de la carrera de Ingeniería de Software. Conocimientos en .NET, Angular y Azure. Experiencia corporativa como full stack developer.
       </td>
     </tr>
     <tr>
@@ -80,7 +80,7 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
         <img src="assets/images/members/manuel-sanchez.jpg" alt="Fotografía de Manuel Sanchez" style="width:80px; height:107px; object-fit:cover; border-radius:6px;">
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
-        Estudiante de la carrera de Ingeniería de Software. Me desempeño como desarrollador full stack con experiencia en tecnologías como .NET, Angular y Azure. Además cuento con experiencia en metodologías de desarrollo ágil.</em>
+        Estudiante de la carrera de Ingeniería de Software. Me desempeño como desarrollador full stack con experiencia en tecnologías como .NET, Angular y Azure. Además cuento con experiencia en metodologías de desarrollo ágil.
       </td>
     </tr>
     <tr>
