@@ -39,5 +39,6 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 0.12.3 | 2026-10-06 | Avalos Cordova, Diego Andres | Rediseño de la carátula y separación de las secciones iniciales para conservar su paginación al exportar a PDF. |
 | 0.12.4 | 2026-10-06 | Contreras Leon, Flor de María | Actualización de las fotografías del equipo y de sus referencias en el perfil de integrantes del Capítulo I. |
 | 0.12.5 | 2026-10-06 | Avalos Cordova, Diego Andres | Alineación de la numeración de Student Outcome y conclusiones con la convención documental, actualización de referencias y normalización de encabezados Markdown. |
+| 0.12.6 | 2026-10-06 | Avalos Cordova, Diego Andres | Centrado horizontal y vertical del bloque de carátula, incluidos los integrantes, con separación de página para la presentación del informe. |
 
 <div style="break-after: page; page-break-after: always;"></div>
