@@ -1,4 +1,5 @@
 # Registro de Versiones del Informe
+
 Esta sección resume las modificaciones relevantes realizadas al informe durante el ciclo de vida del proyecto. Cada línea corresponde a un único autor.
 
 | Versión | Fecha | Autor | Descripción de modificación |
@@ -36,5 +37,7 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 0.12.1 | 2026-09-19 | Avalos Cordova, Diego Andres | Integración del estado actualizado del informe, depuración de notas internas y reorganización de los Anexos para su exportación legible a PDF. |
 | 0.12.2 | 2026-09-19 | Avalos Cordova, Diego Andres | Consolidación de las ramas de capítulos y conclusiones en `development`, verificación de referencias y preparación de la versión integrada para su promoción a `main`. |
 | 0.12.3 | 2026-10-06 | Avalos Cordova, Diego Andres | Rediseño de la carátula y separación de las secciones iniciales para conservar su paginación al exportar a PDF. |
+| 0.12.4 | 2026-10-06 | Contreras Leon, Flor de María | Actualización de las fotografías del equipo y de sus referencias en el perfil de integrantes del Capítulo I. |
+| 0.12.5 | 2026-10-06 | Avalos Cordova, Diego Andres | Alineación de la numeración de Student Outcome y conclusiones con la convención documental, actualización de referencias y normalización de encabezados Markdown. |
 
 <div style="break-after: page; page-break-after: always;"></div>

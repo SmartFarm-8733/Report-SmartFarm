@@ -2,7 +2,6 @@
 
 - [Registro de Versiones del Informe](02-version-history.md#registro-de-versiones-del-informe)
 - [Project Report Collaboration Insights](03-collaboration-insights.md#project-report-collaboration-insights)
-- [Student Outcome](../89-student-outcome.md#student-outcome)
 - [Capítulo I: Introducción](../10-introduction.md#capitulo-i-introduccion)
   - [1.1. Startup Profile](../10-introduction.md#11-startup-profile)
     - [1.1.1. Descripción de la Startup](../10-introduction.md#111-descripcion-de-la-startup)
@@ -123,10 +122,11 @@
       - [4.2.7.5. Bounded Context Software Architecture Component Level Diagrams](../40-solution-software-design.md#4275-bounded-context-software-architecture-component-level-diagrams)
       - [4.2.7.6. Bounded Context Software Architecture Code Level Diagrams](../40-solution-software-design.md#4276-bounded-context-software-architecture-code-level-diagrams)
   - [4.3. Síntesis del diseño](../40-solution-software-design.md#43-sintesis-del-diseno)
-- [Conclusiones](../98-conclusions-and-recommendations.md#conclusiones)
-  - [Conclusiones y recomendaciones](../98-conclusions-and-recommendations.md#conclusiones-y-recomendaciones)
-  - [Video About-the-Team](../98-conclusions-and-recommendations.md#video-about-the-team)
-- [Bibliografía](../99-bibliography.md#bibliografía)
+- [Student Outcome](../87-student-outcome.md#student-outcome)
+- [Conclusiones](../88-conclusions-and-recommendations.md#conclusiones)
+  - [Conclusiones y recomendaciones](../88-conclusions-and-recommendations.md#conclusiones-y-recomendaciones)
+  - [Video About-the-Team](../88-conclusions-and-recommendations.md#video-about-the-team)
+- [Bibliografía](../99-bibliography.md#bibliografia)
 - [Anexos](../annexes/00-index.md#anexos)
 
 <div style="break-after: page; page-break-after: always;"></div>

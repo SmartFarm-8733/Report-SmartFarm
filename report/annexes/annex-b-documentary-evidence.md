@@ -13,7 +13,7 @@ https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/30-requireme
 https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/40-solution-software-design.md
 
 **Student Outcome**<br>
-https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/89-student-outcome.md
+https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/87-student-outcome.md
 
 **Project Report Collaboration Insights**<br>
 https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/front-matter/03-collaboration-insights.md

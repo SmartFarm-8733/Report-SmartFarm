@@ -8,8 +8,8 @@ Repositorio fuente del informe del proyecto SmartFarm / ICHU para el curso Desar
 report/
 ├── front-matter/       # Carátula, versiones, colaboración e índice
 ├── 10-...md            # Capítulos en orden de lectura
-├── 89-student-outcome.md
-├── 98-conclusions-and-recommendations.md
+├── 87-student-outcome.md
+├── 88-conclusions-and-recommendations.md
 ├── 99-bibliography.md
 ├── annexes/            # Anexos A–G separados por tema
 └── assets/
@@ -27,9 +27,9 @@ report/
 6. [Capítulo II — Requirements Elicitation & Analysis](report/20-requirements-elicitation-and-analysis.md)
 7. [Capítulo III — Requirements Specification](report/30-requirements-specification.md)
 8. [Capítulo IV — Solution Software Design](report/40-solution-software-design.md)
-9. [Capítulo V — Solution UI/UX Design](report/50-solution-ui-ux-design.md) (archivo fuente vacío en la versión recibida)
-10. [Student Outcome](report/89-student-outcome.md)
-11. [Conclusiones y recomendaciones](report/98-conclusions-and-recommendations.md)
+9. [Capítulo V — Solution UI/UX Design](report/50-solution-ui-ux-design.md)
+10. [Student Outcome](report/87-student-outcome.md)
+11. [Conclusiones y recomendaciones](report/88-conclusions-and-recommendations.md)
 12. [Bibliografía](report/99-bibliography.md)
 13. [Anexos](report/annexes/00-index.md)
 
