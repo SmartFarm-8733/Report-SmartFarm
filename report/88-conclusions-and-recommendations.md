@@ -42,6 +42,12 @@ Para la siguiente etapa se recomienda:
 
 La arquitectura modular, los siete Bounded Contexts y el Product Backlog de 71 historias proporcionan una base adecuada para evolucionar ICHU sin perder trazabilidad. La siguiente iteración debe convertir los supuestos de alto riesgo en experimentos medibles y actualizar las decisiones del dominio con la evidencia obtenida.
 
+### TB1
+
+#### Conclusiones
+
+#### Recomendaciones
+
 ## Video About-the-Team
 
 ### Propósito y contenido requerido

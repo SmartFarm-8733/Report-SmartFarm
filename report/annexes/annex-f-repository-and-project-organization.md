@@ -15,7 +15,7 @@ https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/front-matter
 https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/front-matter/03-collaboration-insights.md
 
 **Student Outcome**<br>
-https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/89-student-outcome.md
+https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/front-matter/05-student-outcome.md
 
 **Informe completo**<br>
 Capítulos I-IV, Student Outcome, conclusiones, bibliografía y anexos.<br>

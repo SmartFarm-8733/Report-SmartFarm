@@ -6,12 +6,11 @@ Repositorio fuente del informe del proyecto SmartFarm / ICHU para el curso Desar
 
 ```text
 report/
-├── front-matter/       # Carátula, versiones, colaboración e índice
+├── front-matter/       # Carátula, versiones, colaboración, índice y Student Outcome
 ├── 10-...md            # Capítulos en orden de lectura
-├── 89-student-outcome.md
-├── 98-conclusions-and-recommendations.md
+├── 88-conclusions-and-recommendations.md
 ├── 99-bibliography.md
-├── annexes/            # Anexos A–G separados por tema
+├── annexes/            # Anexos A–H separados por tema
 └── assets/
     ├── images/         # Imágenes y diagramas renderizados
     └── diagram-sources/ # Fuentes PlantUML y Structurizr DSL
@@ -23,15 +22,16 @@ report/
 2. [Registro de versiones](report/front-matter/02-version-history.md)
 3. [Project Report Collaboration Insights](report/front-matter/03-collaboration-insights.md)
 4. [Tabla de contenidos](report/front-matter/04-table-of-contents.md)
-5. [Capítulo I — Introducción](report/10-introduction.md)
-6. [Capítulo II — Requirements Elicitation & Analysis](report/20-requirements-elicitation-and-analysis.md)
-7. [Capítulo III — Requirements Specification](report/30-requirements-specification.md)
-8. [Capítulo IV — Solution Software Design](report/40-solution-software-design.md)
-9. [Capítulo V — Solution UI/UX Design](report/50-solution-ui-ux-design.md) (archivo fuente vacío en la versión recibida)
-10. [Student Outcome](report/89-student-outcome.md)
-11. [Conclusiones y recomendaciones](report/98-conclusions-and-recommendations.md)
-12. [Bibliografía](report/99-bibliography.md)
-13. [Anexos](report/annexes/00-index.md)
+5. [Student Outcome](report/front-matter/05-student-outcome.md)
+6. [Capítulo I — Introducción](report/10-introduction.md)
+7. [Capítulo II — Requirements Elicitation & Analysis](report/20-requirements-elicitation-and-analysis.md)
+8. [Capítulo III — Requirements Specification](report/30-requirements-specification.md)
+9. [Capítulo IV — Solution Software Design](report/40-solution-software-design.md)
+10. [Capítulo V — Solution UI/UX Design](report/50-solution-ui-ux-design.md)
+11. [Capítulo VI — Product Implementation, Validation & Deployment](report/60-product-implementation-validation-and-deployment.md)
+12. [Conclusiones y recomendaciones](report/88-conclusions-and-recommendations.md)
+13. [Bibliografía](report/99-bibliography.md)
+14. [Anexos](report/annexes/00-index.md)
 
 ## Flujo de trabajo
 
