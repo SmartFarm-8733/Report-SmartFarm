@@ -7,7 +7,7 @@ La solución estará conformada principalmente por una aplicación móvil y una 
 
 De esta manera, la startup busca contribuir a la modernización de la actividad ganadera mediante una herramienta tecnológica que centralice la información de los animales y facilite su monitoreo. La solución permitirá identificar oportunamente situaciones que puedan requerir atención, optimizar las actividades de manejo del ganado y contar con un historial de información que apoye la toma de decisiones. Asimismo, la propuesta busca reducir la dependencia de controles manuales y mejorar la eficiencia en la gestión de las unidades ganaderas.
 
-![Logo de ICHU](images/ichu-logo.png)
+![Logo de ICHU](assets/images/ichu-logo.png)
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
@@ -26,7 +26,7 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
         <span style="font-size:11px; color:#555;">(U202313922)</span>
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
-        <img src="images/members/DiegoAndresAvalos.png" alt="Fotografía de Diego Andres Avalos Cordova" style="max-width:80px; border-radius:6px;">
+        <img src="assets/images/members/DiegoAndresAvalos.png" alt="Fotografía de Diego Andres Avalos Cordova" style="max-width:80px; border-radius:6px;">
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
         Ingeniería de Software. Mi nombre es Diego Ávalos, tengo 20 años y actualmente estudio Ingeniería de Software. Me interesa especializarme en desarrollo full stack, ciberseguridad y hacking ético. Tengo experiencia usando sistemas operativos GNU/Linux y conocimientos en desarrollo web. También me interesan los temas relacionados con tecnología e inteligencia artificial, por lo que busco investigar y aprender constantemente sobre nuevas herramientas que aporten valor al proyecto.
@@ -38,7 +38,7 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
         <span style="font-size:11px; color:#555;">(U202323243)</span>
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
-        <img src="images/members/FlorMariaContrerasLeon.jpg" alt="Fotografía de Flor de María Contreras Leon" style="max-width:80px; border-radius:6px;">
+        <img src="assets/images/members/FlorMariaContrerasLeon.jpg" alt="Fotografía de Flor de María Contreras Leon" style="max-width:80px; border-radius:6px;">
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
         Ingeniería de Software. Mi nombre es Flor de María, tengo 20 años y actualmente curso la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Desde siempre me he caracterizado por ser una persona que toma la iniciativa y busca aportar de manera activa en los proyectos en los que participa.
@@ -50,7 +50,7 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
         <span style="font-size:11px; color:#555;">(U202321510)</span>
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
-        <img src="images/members/JhimyRomeroMeza.jpg" alt="Fotografía de Jhimy Pool Romero Meza" style="max-width:80px; border-radius:6px;">
+        <img src="assets/images/members/JhimyRomeroMeza.jpg" alt="Fotografía de Jhimy Pool Romero Meza" style="max-width:80px; border-radius:6px;">
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
         Ingeniería de Software, quinto ciclo. Se destaca por su responsabilidad, compromiso y disposición constante para colaborar. Cuenta con conocimientos previos en tecnología y en el desarrollo de proyectos, demostrando iniciativa y capacidad de aprendizaje autónomo.
@@ -62,7 +62,7 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
         <span style="font-size:11px; color:#555;">(U202312031)</span>
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
-        <img src="images/members/AlisonArrieta.png" alt="Fotografía de Alison Arrieta" style="max-width:80px; border-radius:6px;">
+        <img src="assets/images/members/AlisonArrieta.png" alt="Fotografía de Alison Arrieta" style="max-width:80px; border-radius:6px;">
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
         Estudiante de 7mo ciclo de la carrera de Ingeniería de Software. Conocimientos en .NET, Angular y Azure. Experiencia en coorporativa como full stack developer.</em>
@@ -74,7 +74,7 @@ De esta manera, la startup busca contribuir a la modernización de la actividad 
         <span style="font-size:11px; color:#555;">(U202320574)</span>
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: center;">
-        <img src="images/members/ManuelSanchez.png" alt="Fotografía de Manuel Sanchez" style="max-width:80px; border-radius:6px;">
+        <img src="assets/images/members/ManuelSanchez.png" alt="Fotografía de Manuel Sanchez" style="max-width:80px; border-radius:6px;">
       </td>
       <td style="padding: 10px; border: 1px solid #aaa; text-align: justify;">
         Estudiante de la carrera de Ingeniería de Software. Me desempeño como desarrollador full stack con experiencia en tecnologías como .NET, Angular y Azure. Además cuento con experiencia en metodologías de desarrollo ágil.</em>
@@ -216,7 +216,7 @@ Se redacta una declaración de hipótesis por cada Feature Assumption definido e
 #### 1.2.2.4. Lean UX Canvas.
 A continuación, se presenta el Lienzo Lean UX de la startup ganadera, integrando los bloques estratégicos para validar de forma iterativa nuestro modelo de negocio digital:
 
-![Lean UX Canvas del proyecto ICHU](images/lean-ux-canvas-v2.png)
+![Lean UX Canvas del proyecto ICHU](assets/images/lean-ux-canvas-v2.png)
 
 *Figura 10. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 

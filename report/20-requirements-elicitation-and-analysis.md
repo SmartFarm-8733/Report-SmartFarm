@@ -6,7 +6,7 @@
 
 **Competitive Analysis Landscape**
 
-| Sección | Criterio | ICHU IoT (nuestra startup)<br>![Logo de ICHU IoT](images/logo-ichu-small.png) | Competidor 1: Allflex SenseHub<br>![Logo de Allflex SenseHub](images/logo-allflex-small.png) | Competidor 2: Digitanimal<br>![Logo de Digitanimal](images/logo-digitanimal-small.png) | Competidor 3: Moocall<br>![Logo de Moocall](images/logo-moocall-small.png) |
+| Sección | Criterio | ICHU IoT (nuestra startup)<br>![Logo de ICHU IoT](assets/images/logo-ichu-small.png) | Competidor 1: Allflex SenseHub<br>![Logo de Allflex SenseHub](assets/images/logo-allflex-small.png) | Competidor 2: Digitanimal<br>![Logo de Digitanimal](assets/images/logo-digitanimal-small.png) | Competidor 3: Moocall<br>![Logo de Moocall](assets/images/logo-moocall-small.png) |
 |---|---|---|---|---|---|
 | **¿Por qué llevar a cabo este análisis?** | Objetivo del análisis | Comparar ICHU con sus principales competidores para identificar fortalezas, debilidades, oportunidades y amenazas, y determinar una ventaja competitiva clara y sostenible en el mercado de monitoreo inteligente de ganado. | | | |
 | **Perfil** | Overview | Solución digital basada en collares inteligentes IoT con conectividad LoRaWAN y celular híbrida, integrada a una plataforma web y móvil nativa para el monitoreo biométrico y localización en tiempo real de ganado en pastoreo extensivo. | Líder global en identificación animal y monitoreo inteligente de ganado lechero y de carne, perteneciente al grupo MSD Animal Health, con infraestructura propietaria robusta. | Empresa de base tecnológica española que ofrece collares GPS y sensores para el monitoreo de la ubicación, temperatura y comportamiento de animales en pastoreo extensivo. | Compañía irlandesa especializada en dispositivos IoT acoplados a la cola del animal para la detección temprana del parto y collares para el monitoreo de celo. |
@@ -179,7 +179,7 @@ Los entrevistados se clasifican según el rol que desempeñan frente a la unidad
 > **Duración:** 00:22:45
 > **Entrevistador:** Flor Contreras
 
-![Entrevista a Próspero Contreras Flores](images/entrevista-segmento1-prospero-contreras.png)
+![Entrevista a Próspero Contreras Flores](assets/images/entrevista-segmento1-prospero-contreras.png)
 
 > **Video: (Inicio: 0:01)** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK
 
@@ -194,7 +194,7 @@ Los entrevistados se clasifican según el rol que desempeñan frente a la unidad
 > **Duración:** 00:15:17
 > **Entrevistador:** Flor Contreras
 
-![Entrevista a Meikoll Morell Bosa Cárdenas](images/entrevista-segmento1-meikoll-morell.png)
+![Entrevista a Meikoll Morell Bosa Cárdenas](assets/images/entrevista-segmento1-meikoll-morell.png)
 
 > **Video: (Inicio: 6:01)** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK
 
@@ -209,7 +209,7 @@ Los entrevistados se clasifican según el rol que desempeñan frente a la unidad
 > **Duración:** 00:23:02
 > **Entrevistador:** Flor Contreras
 
-![Entrevista a Grober Barrientos Talaverano](images/entrevista-segmento1-grober-barrientos.png)
+![Entrevista a Grober Barrientos Talaverano](assets/images/entrevista-segmento1-grober-barrientos.png)
 
 > **Video: (Inicio: 12:43)** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK
 
@@ -226,7 +226,7 @@ Los entrevistados se clasifican según el rol que desempeñan frente a la unidad
 > **Duración:** 00:21:28
 > **Entrevistador:** Flor Contreras
 
-![Entrevista a Darwin Carbajal Vilca](images/entrevista-segmento2-darwin-carbajal.png)
+![Entrevista a Darwin Carbajal Vilca](assets/images/entrevista-segmento2-darwin-carbajal.png)
 
 > **Video: (Inicio: 18:07)** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK
 
@@ -241,7 +241,7 @@ Los entrevistados se clasifican según el rol que desempeñan frente a la unidad
 > **Duración:** 00:17:24
 > **Entrevistador:** Flor Contreras
 
-![Entrevista a Eliseo Ramírez Mena](images/entrevista-segmento2-eliseo-ramirez.png)
+![Entrevista a Eliseo Ramírez Mena](assets/images/entrevista-segmento2-eliseo-ramirez.png)
 
 > **Video: (Inicio: 24:01)** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK
 
@@ -256,7 +256,7 @@ Los entrevistados se clasifican según el rol que desempeñan frente a la unidad
 > **Duración:** 00:16:31
 > **Entrevistador:** Flor Contreras
 
-![Entrevista a Dionisio Rodríguez](images/entrevista-segmento2-dionisio-rodriguez.png)
+![Entrevista a Dionisio Rodríguez](assets/images/entrevista-segmento2-dionisio-rodriguez.png)
 
 > **Video: (Inicio: 29:32)** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK
 
@@ -273,7 +273,7 @@ Para complementar las entrevistas en profundidad del Segmento 1, se aplicó un c
 
 **1. ¿Qué herramientas utiliza actualmente para el control del inventario de animales? (2 respuestas)**
 
-![Herramientas utilizadas para el control del inventario](images/analisis-segmento1-herramientas.png)
+![Herramientas utilizadas para el control del inventario](assets/images/analisis-segmento1-herramientas.png)
 
 *Figura 1. Elaboración propia a partir de los datos recolectados. Startup SmartFarm.*
 
@@ -283,7 +283,7 @@ Como muestra el gráfico, el **50% utiliza hojas de cálculo (Excel/Google Sheet
 
 **2. Si existiera una plataforma web que centralizara el historial de salud, ubicación y alertas de cada animal, ¿qué tan útil sería para su negocio? (2 respuestas)**
 
-![Utilidad percibida de la plataforma centralizada](images/analisis-segmento1-utilidad-plataforma.png)
+![Utilidad percibida de la plataforma centralizada](assets/images/analisis-segmento1-utilidad-plataforma.png)
 
 *Figura 2. Elaboración propia a partir de los datos recolectados. Startup SmartFarm.*
 
@@ -329,7 +329,7 @@ Para complementar las entrevistas en profundidad del Segmento 2, se aplicó un c
 
 **1. ¿Qué dispositivos informáticos utiliza habitualmente para registrar el historial de tratamientos y diagnósticos? (3 respuestas)**
 
-![Dispositivos utilizados para registrar historiales](images/analisis-segmento2-dispositivos.png)
+![Dispositivos utilizados para registrar historiales](assets/images/analisis-segmento2-dispositivos.png)
 
 *Figura 3. Elaboración propia a partir de los datos recolectados. Startup SmartFarm.*
 
@@ -339,7 +339,7 @@ Como muestra el gráfico, los dispositivos de registro se distribuyen de forma e
 
 **2. ¿Qué tan confiables son los registros manuales de vacunación, inseminación y medicamentos en los establos que asesora? (3 respuestas)**
 
-![Confiabilidad de los registros manuales](images/analisis-segmento2-confiabilidad-registros.png)
+![Confiabilidad de los registros manuales](assets/images/analisis-segmento2-confiabilidad-registros.png)
 
 *Figura 4. Elaboración propia a partir de los datos recolectados. Startup SmartFarm.*
 
@@ -349,7 +349,7 @@ Según el gráfico, el **66.7% de los entrevistados califica los registros manua
 
 **3. ¿Qué parámetro cuantitativo continuo desearía conocer del animal pero que actualmente le es imposible medir de forma manual? (3 respuestas)**
 
-![Parámetros cuantitativos deseados](images/analisis-segmento2-parametros.png)
+![Parámetros cuantitativos deseados](assets/images/analisis-segmento2-parametros.png)
 
 *Figura 5. Elaboración propia a partir de los datos recolectados. Startup SmartFarm.*
 
@@ -393,7 +393,7 @@ Del análisis de entrevistas se tomaron como insumo principal las herramientas d
 
 Arquetipo del Segmento 1, construido a partir de los patrones identificados en las entrevistas a Próspero Contreras, Meikoll Morell y Grober Barrientos.
 
-![User Persona Cesar Flores, arquetipo del Segmento 1](images/persona-segmento1-cesar-flores.jpg)
+![User Persona Cesar Flores, arquetipo del Segmento 1](assets/images/persona-segmento1-cesar-flores.jpg)
 
 [Ficha de User Persona y Empathy Map en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
 
@@ -403,7 +403,7 @@ Arquetipo del Segmento 1, construido a partir de los patrones identificados en l
 
 Arquetipo del Segmento 2, construido a partir de los patrones identificados en las entrevistas a Darwin Carbajal, Eliseo Ramírez y Dionisio Rodríguez.
 
-![User Persona Leonardo Rosales, arquetipo del Segmento 2](images/persona-segmento2-leonardo-rosales.jpg)
+![User Persona Leonardo Rosales, arquetipo del Segmento 2](assets/images/persona-segmento2-leonardo-rosales.jpg)
 
 [Ficha de User Persona y Empathy Map en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
 
@@ -455,7 +455,7 @@ Ambos mapas fueron elaborados en UXPressia y están vinculados a la ficha de Use
 
 **User Journey Map As-Is de Cesar Flores**
 
-![User Journey Map As-Is de Cesar Flores](images/journey-map-segmento1-cesar-flores.png)
+![User Journey Map As-Is de Cesar Flores](assets/images/journey-map-segmento1-cesar-flores.png)
 
 *Figura 6. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
@@ -463,7 +463,7 @@ Ambos mapas fueron elaborados en UXPressia y están vinculados a la ficha de Use
 
 **User Journey Map As-Is de Leonardo Rosales**
 
-![User Journey Map As-Is de Leonardo Rosales](images/journey-map-segmento2-leonardo-rosales.png)
+![User Journey Map As-Is de Leonardo Rosales](assets/images/journey-map-segmento2-leonardo-rosales.png)
 
 *Figura 7. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
@@ -473,11 +473,11 @@ Ambos mapas fueron elaborados en UXPressia y están vinculados a la ficha de Use
 
 **As-Is Map de Cesar Flores**
 
-![As-Is Mapping de Cesar Flores, arquetipo del Segmento 1](images/cesar-flores-as-is-mapping.jpeg)
+![As-Is Mapping de Cesar Flores, arquetipo del Segmento 1](assets/images/cesar-flores-as-is-mapping.jpeg)
 
 **As-Is Map de Leonardo Rosales**
 
-![As-Is Mapping de Leonardo Rosales, arquetipo del Segmento 2](images/leonardo-rosales-as-is-mapping.jpeg)
+![As-Is Mapping de Leonardo Rosales, arquetipo del Segmento 2](assets/images/leonardo-rosales-as-is-mapping.jpeg)
 
 **Lectura de los recorridos**
 
@@ -493,7 +493,7 @@ Para la elaboración de los Empathy Maps, el equipo partió de la ficha de cada 
 
 **Empathy Map de Cesar Flores**
 
-![Empathy Map de Cesar Flores, arquetipo del Segmento 1](images/empathy-map-segmento1-ganadero.jpg)
+![Empathy Map de Cesar Flores, arquetipo del Segmento 1](assets/images/empathy-map-segmento1-ganadero.jpg)
 
 [Empathy Map del Segmento 1 en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
 
@@ -507,7 +507,7 @@ Sus **Pains** son los registros fragmentados, la falta de hábito para registrar
 
 **Empathy Map de Leonardo Rosales**
 
-![Empathy Map de Leonardo Rosales, arquetipo del Segmento 2](images/empathy-map-segmento2-veterinario.jpg)
+![Empathy Map de Leonardo Rosales, arquetipo del Segmento 2](assets/images/empathy-map-segmento2-veterinario.jpg)
 
 [Empathy Map del Segmento 2 en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
 
@@ -539,31 +539,31 @@ Finalmente, en la **identificación de eventos pivote y áreas de dominio emerge
 
 Las siguientes láminas documentan la progresión completa de la sesión. Se reconstruyeron en formato vectorial para conservar legibilidad en el informe, manteniendo los eventos, actores, problemas y oportunidades que aparecen en el modelo del dominio.
 
-![01.1 · Chaotic Exploration](images/diagrams/big-picture-eventstorming/01-1-chaotic-exploration.svg)
+![01.1 · Chaotic Exploration](assets/images/diagrams/big-picture-eventstorming/01-1-chaotic-exploration.svg)
 
 *Figura 2.4.1. Chaotic Exploration: 38 Domain Events identificados sin ordenar. Elaboración propia.*
 
 [Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
 
-![01.2 · Enforce the Timeline](images/diagrams/big-picture-eventstorming/01-2-enforce-timeline.svg)
+![01.2 · Enforce the Timeline](assets/images/diagrams/big-picture-eventstorming/01-2-enforce-timeline.svg)
 
 *Figura 2.4.2. Enforce the Timeline: eventos organizados en cinco procesos clave. Elaboración propia.*
 
 [Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
 
-![01.3 · People & External Systems](images/diagrams/big-picture-eventstorming/01-3-people-and-systems.svg)
+![01.3 · People & External Systems](assets/images/diagrams/big-picture-eventstorming/01-3-people-and-systems.svg)
 
 *Figura 2.4.3. People & External Systems: actores y sistemas de apoyo asociados a los eventos. Elaboración propia.*
 
 [Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
 
-![01.4 · Problems & Opportunities](images/diagrams/big-picture-eventstorming/01-4-problems-and-opportunities.svg)
+![01.4 · Problems & Opportunities](assets/images/diagrams/big-picture-eventstorming/01-4-problems-and-opportunities.svg)
 
 *Figura 2.4.4. Problems & Opportunities: hot spots, oportunidades y supuestos por validar. Elaboración propia.*
 
 [Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
 
-![01.5 · Pivotal Events & Emerging Contexts](images/diagrams/big-picture-eventstorming/01-5-pivotal-and-emerging-contexts.svg)
+![01.5 · Pivotal Events & Emerging Contexts](assets/images/diagrams/big-picture-eventstorming/01-5-pivotal-and-emerging-contexts.svg)
 
 *Figura 2.4.5. Pivotal Events & Emerging Contexts: áreas preliminares derivadas de los cambios de estado. Elaboración propia.*
 
