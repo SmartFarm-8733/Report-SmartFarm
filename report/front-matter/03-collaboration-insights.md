@@ -47,4 +47,12 @@ El historial de commits evidencia una elaboración distribuida del informe entre
 
 Durante AV1, la organización inicial por ramas de capítulo permitió distribuir responsabilidades e integrar los aportes mediante GitFlow. Para los siguientes cambios, el repositorio mantiene `main` y `develop` como ramas permanentes y utiliza ramas temporales integradas mediante Pull Request, con la trazabilidad registrada en los commits y en el Registro de Versiones.
 
+## TB1
+
+### Organización del trabajo
+
+### Actividad colaborativa
+
+### Evidencias de colaboración y commits
+
 <div style="break-after: page; page-break-after: always;"></div>

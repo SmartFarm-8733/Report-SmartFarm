@@ -10,7 +10,7 @@ report/
 ├── 10-...md            # Capítulos en orden de lectura
 ├── 88-conclusions-and-recommendations.md
 ├── 99-bibliography.md
-├── annexes/            # Anexos A–G separados por tema
+├── annexes/            # Anexos A–H separados por tema
 └── assets/
     ├── images/         # Imágenes y diagramas renderizados
     └── diagram-sources/ # Fuentes PlantUML y Structurizr DSL
@@ -28,9 +28,10 @@ report/
 8. [Capítulo III — Requirements Specification](report/30-requirements-specification.md)
 9. [Capítulo IV — Solution Software Design](report/40-solution-software-design.md)
 10. [Capítulo V — Solution UI/UX Design](report/50-solution-ui-ux-design.md)
-11. [Conclusiones y recomendaciones](report/88-conclusions-and-recommendations.md)
-12. [Bibliografía](report/99-bibliography.md)
-13. [Anexos](report/annexes/00-index.md)
+11. [Capítulo VI — Product Implementation, Validation & Deployment](report/60-product-implementation-validation-and-deployment.md)
+12. [Conclusiones y recomendaciones](report/88-conclusions-and-recommendations.md)
+13. [Bibliografía](report/99-bibliography.md)
+14. [Anexos](report/annexes/00-index.md)
 
 ## Flujo de trabajo
 
