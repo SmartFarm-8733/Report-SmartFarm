@@ -521,86 +521,93 @@ Sus **Pains** son los tratamientos anteriores no registrados, las dosis duplicad
 
 ## 2.4. Big Picture EventStorming.
 
-El Big Picture EventStorming permite al equipo construir una comprensión compartida del dominio ganadero antes de tomar cualquier decisión de diseño. A diferencia de las técnicas orientadas a la solución, esta sesión se concentra en los hechos relevantes que ocurren en el negocio, con independencia de qué sistema los registre.
+Big Picture EventStorming builds a shared understanding of the cattle-farming business before solution design. This model describes the **current business (as-is)**: people identify and manage animals, observe them during grazing, provide veterinary care, handle reproduction and preventive campaigns, and maintain records using notebooks, phones and spreadsheets. It does not describe an operating ICHU platform.
 
-**Desarrollo de la sesión**
+The evidence comes from the interview summaries in section 2.2.2 of the official AV1 report (PDF pages 16–19). Próspero, Meikoll and Grober describe manual or Excel-based records, incomplete histories and rural connectivity limitations; Darwin, Eliseo and Dionisio describe field observation, clinical work, ultrasound evidence and office reporting. Requested automatic alerts, continuous telemetry and application integrations are **desired capabilities**, not proof that those capabilities already exist.
 
-La sesión se organizó en cinco etapas sucesivas, siguiendo la secuencia habitual de la técnica.
+**Process and scope of the revision**
 
-En la **exploración caótica**, cada integrante escribió en notas de color naranja los hechos relevantes del dominio que había identificado en las entrevistas, redactados siempre en pasado y desde la perspectiva del negocio, sin discutir todavía su orden ni su pertinencia.
+The team's existing FigJam model is revised through five stages: collect business-event candidates, arrange local timelines, associate people and existing support, review problems and opportunities, and identify pivotal events and provisional business areas. Event names are checked against the documented interviews and existing business vocabulary. This revision does not claim that a new interview or facilitated workshop has taken place.
 
-En el **ordenamiento temporal**, el equipo dispuso los eventos sobre una línea de tiempo que recorre el ciclo productivo del hato, desde la incorporación del animal hasta su baja, y resolvió los duplicados y las formulaciones ambiguas.
+The business narrative uses the present tense because it explains how work happens today. Each orange or purple event uses the past tense because it names a fact that has already occurred, such as *Animal examined* or *Diagnosis recorded*. Smart-collar onboarding, telemetry capture, Edge storage, central synchronization, automatic reminders and system-generated alerts are removed from the as-is event inventory. Technical components and final bounded-context boundaries belong to later design work, not this section.
 
-En la **identificación de eventos pivote**, se marcaron los hechos que separan fases claramente distintas del proceso de negocio y que, por lo tanto, anticipan las fronteras entre contextos.
+The following figures are separate PNG captures exported directly from the corrected FigJam sections, not reconstructed drawings. Each capture and its explanation belongs to its corresponding stage within section 2.4; the Final Project Statement does not prescribe additional numbered subsections here.
 
-En la **detección de hot spots**, se señalaron con notas rosadas las zonas de desacuerdo, de reglas de negocio no resueltas o de dependencia respecto de terceros, que requieren validación posterior con los usuarios.
+**Stage 1 — Chaotic Exploration**
 
-Finalmente, en la **identificación de eventos pivote y áreas de dominio emergentes**, se usaron los cambios de estado más significativos para proponer agrupaciones preliminares. Estas áreas son hipótesis de exploración y no representan todavía bounded contexts definitivos.
+The unordered inventory contains 36 business-event candidates. Orange notes represent facts about herd identity, observation, care, reproduction, campaigns, records and lifecycle exits. Neighbouring notes do not imply a sequence. Existing domain concepts whose exact operating rules are not established by the interviews remain candidates for validation, rather than confirmed procedures used by every farm.
 
-Las siguientes láminas documentan la progresión completa de la sesión. Se reconstruyeron en formato vectorial para conservar legibilidad en el informe, manteniendo los eventos, actores, problemas y oportunidades que aparecen en el modelo del dominio.
+![Stage 1 — Chaotic Exploration: unordered current-business event candidates](assets/images/diagrams/big-picture-eventstorming/01-1-chaotic-exploration.png)
 
-![01.1 · Chaotic Exploration](assets/images/diagrams/big-picture-eventstorming/01-1-chaotic-exploration.svg)
+*Figure 2.4.1. Chaotic Exploration: 36 past-tense business-event candidates, without future solution components. Source: SmartFarm FigJam board.*
 
-*Figura 2.4.1. Chaotic Exploration: 38 Domain Events identificados sin ordenar. Elaboración propia.*
+**Stage 2 — Enforce the Timeline**
 
-[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+The same 36 candidates are arranged in six business lanes, read from top to bottom. Arrows express plausible local ordering only where a relationship is modelled. They do not turn every observation into a mandatory step or imply that all farms follow one universal process. Grazing observations are alternative findings; death, sale and theft are alternative exit reasons, not consecutive events. Field recording and office entry can occur at different times.
 
-![01.2 · Enforce the Timeline](assets/images/diagrams/big-picture-eventstorming/01-2-enforce-timeline.svg)
+![Stage 2 — Enforce the Timeline: six local business paths and explicit alternatives](assets/images/diagrams/big-picture-eventstorming/01-2-enforce-timeline.png)
 
-*Figura 2.4.2. Enforce the Timeline: eventos organizados en cinco procesos clave. Elaboración propia.*
+*Figure 2.4.2. Enforce the Timeline: herd lifecycle, grazing observations, health intervention, reproduction, preventive campaigns and field records/reporting. Source: SmartFarm FigJam board.*
 
-[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+The reproduction lane illustrates a successful pathway, not a guaranteed pregnancy or calving outcome. Medication-history review and diagnosis can occur in a different order. Withdrawal periods apply only when the administered treatment requires them; the actual rules, campaign-closure criteria and cost/indicator hand-offs remain to be validated. No clinical threshold or software policy is specified.
 
-![01.3 · People & External Systems](assets/images/diagrams/big-picture-eventstorming/01-3-people-and-systems.svg)
+**Stage 3 — People & External Support**
 
-*Figura 2.4.3. People & External Systems: actores y sistemas de apoyo asociados a los eventos. Elaboración propia.*
+Yellow notes identify business roles: cattle rancher/owner, field worker/herder, farm administrator and veterinarian/zootechnician. Blue notes show existing support, including notebooks, phone notes and photos, Excel records, ultrasound equipment, clinical notes, laboratory support for complex cases, and office/printed reports. These associations clarify who uses which support around an event; they are not software commands or integrations. A single person can perform several roles, and field-worker responsibilities require confirmation.
 
-[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+![Stage 3 — People and existing support associated with business-event anchors](assets/images/diagrams/big-picture-eventstorming/01-3-people-and-systems.png)
 
-![01.4 · Problems & Opportunities](assets/images/diagrams/big-picture-eventstorming/01-4-problems-and-opportunities.svg)
+*Figure 2.4.3. People & External Support: current roles, supporting tools and the external breed registry, without proposed ICHU infrastructure. Source: SmartFarm FigJam board.*
 
-*Figura 2.4.4. Problems & Opportunities: hot spots, oportunidades y supuestos por validar. Elaboración propia.*
+ASCRIGAR Peru is an external administrative participant mentioned in Darwin's gestation-registration evidence needs. It is not represented as an existing API integration. Required evidence, submission responsibility and acceptance steps remain open questions. Collars, an Edge device and a central service are not substituted for business actors.
 
-[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+**Stage 4 — Problems & Opportunities**
 
-![01.5 · Pivotal Events & Emerging Contexts](assets/images/diagrams/big-picture-eventstorming/01-5-pivotal-and-emerging-contexts.svg)
+Story review links five event anchors to pink hot spots and green opportunities. A hot spot describes a current pain or unresolved business issue. An opportunity states a desired outcome, not a capability already deployed or a prescribed technical implementation.
 
-*Figura 2.4.5. Pivotal Events & Emerging Contexts: áreas preliminares derivadas de los cambios de estado. Elaboración propia.*
+![Stage 4 — Five current problems, desired improvements and four validation questions](assets/images/diagrams/big-picture-eventstorming/01-4-problems-and-opportunities.png)
 
-[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+*Figure 2.4.4. Problems & Opportunities: five current-business pain points, five desired outcomes and four explicit validation questions. Source: SmartFarm FigJam board.*
 
-**Domain Events identificados, ordenados temporalmente**
-
-| Fase del negocio | Domain Events |
-|---|---|
-| Incorporación del animal | Animal registrado en el hato, Arete asignado al animal, Animal incorporado a un lote, Etapa productiva registrada |
-| Asignación de dispositivos | Collar recibido por la unidad productiva, Collar vinculado al animal, Primera lectura recibida del collar |
-| Vigilancia diaria | Lectura biométrica capturada, Lectura almacenada en el borde, Lectura sincronizada con el servicio central, Posición del animal registrada |
-| Detección de anomalías | Umbral de temperatura superado, Caída de rumia detectada, Patrón de actividad inusual detectado, Animal ubicado fuera de la zona de pastoreo |
-| Atención sanitaria | Alerta emitida al responsable, Alerta atendida, Animal examinado, Diagnóstico registrado, Tratamiento aplicado, Periodo de retiro iniciado, Periodo de retiro concluido |
-| Ciclo reproductivo | Celo detectado, Servicio registrado, Preñez confirmada por ecografía, Parto registrado, Cría registrada en el hato |
-| Planificación sanitaria | Campaña sanitaria programada, Recordatorio de campaña emitido, Aplicación registrada por animal, Campaña cerrada |
-| Cierre del ciclo | Costo de campaña consolidado, Indicadores del periodo calculados, Reporte entregado al propietario |
-| Salida del animal | Animal dado de baja por muerte, Animal dado de baja por venta, Robo de animal denunciado, Collar liberado |
-
-**Eventos pivote**
-
-El equipo identificó cuatro hechos que marcan cambios de fase en el proceso de negocio y que, por lo tanto, señalan fronteras candidatas entre contextos:
-
-- **Collar vinculado al animal.** Separa la gestión del inventario de dispositivos de la vigilancia del animal. A partir de este hecho, la telemetría deja de pertenecer a un aparato y pasa a pertenecer a un ser vivo con historia.
-- **Umbral de temperatura superado.** Separa la captura de datos de la respuesta sanitaria. Antes de este hecho el sistema observa, después interviene.
-- **Diagnóstico registrado.** Separa la sospecha de la certeza clínica y habilita el tratamiento, el periodo de retiro y la trazabilidad de lo aplicado.
-- **Animal dado de baja.** Cierra la historia del animal y determina qué información alimenta los indicadores de mortalidad del periodo.
-
-**Hot spots**
-
-| Zona de incertidumbre | Descripción | Cómo se resolverá |
+| Event anchor | Current pain / open issue | Desired outcome and evidence |
 |---|---|---|
-| Umbrales por etapa productiva | No existe consenso sobre si el umbral térmico debe ser único o variar según edad, raza y etapa. Darwin propuso valores distintos para terneros y adultos | Validar con los tres profesionales del Segmento 2 antes de fijar los valores por defecto |
-| Autoría del registro en campo | No está definido si el operario puede registrar un diagnóstico o únicamente una observación | Resolver como regla de negocio en la definición de roles |
-| Dependencia de la asociación de criadores | El registro de gestación ante la asociación sigue un procedimiento externo que el equipo no controla | Verificar el procedimiento vigente antes de comprometer cualquier integración |
-| Precisión de la ubicación | La lectura de posición tiene un margen de error que puede generar falsas salidas de zona | Definir una tolerancia configurable y validarla en el piloto |
-| Conciliación de registros sin conexión | No está resuelto qué ocurre cuando un registro creado sin cobertura afecta a un animal que fue dado de baja entretanto | Definir la regla de conflicto durante el diseño táctico |
+| Elevated body temperature observed | Health deterioration can be noticed late; manual observation is not continuous. | Recognize deterioration earlier and shorten response delays. Grober, Darwin, Eliseo and Dionisio describe physiological or behavioural signs and the need for earlier recognition. |
+| Animal reported missing | Missing animals and theft can be noticed after a loss; rural signal limits existing tracking attempts. | Improve herd visibility and follow-up of missing animals. Próspero and Meikoll describe theft-related losses; this does not establish an operating GPS/geofence solution. |
+| Treatment applied | Histories are scattered across notebooks and individual files, making previous interventions difficult to trace. | Maintain reliable animal-level history, dates and authorship. Próspero and Meikoll describe incomplete records; Darwin needs access to prior medication information. |
+| Field record entered in spreadsheet | Field work and office entry are separated; delayed entry and intermittent connectivity increase missing information. | Capture evidence when work occurs and preserve it for office review. Meikoll identifies delayed recording, while Eliseo and Dionisio describe field/office routines. No synchronization architecture is assumed. |
+| Pregnancy confirmed by ultrasound | Ultrasound evidence and external registry paperwork involve separate administrative steps whose exact rules are not confirmed. | Keep complete evidence and clarify the registry hand-off. Darwin identifies the ASCRIGAR-related need; the formal submission and acceptance process requires validation. |
+
+The four pale-yellow questions remain explicitly unresolved:
+
+- Who checks the herd and owns health escalation?
+- How is each field note matched to the correct animal?
+- Which campaign-closure, cost and withdrawal rules are actually used?
+- What gestation evidence does ASCRIGAR require, and who submits it?
+
+**Stage 5 — Pivotal Events & Emerging Business Areas**
+
+Four purple pivots mark changes in business responsibility or focus: *Animal registered in herd* establishes traceable herd membership; *Health concern reported* shifts routine observation toward a response; *Diagnosis recorded* provides a clinical conclusion that guides treatment; and *Pregnancy confirmed by ultrasound* changes reproductive follow-up and evidence handling. These events do not define final software boundaries.
+
+![Stage 5 — Pivotal business events and exploratory areas, not final bounded contexts](assets/images/diagrams/big-picture-eventstorming/01-5-pivotal-and-emerging-contexts.png)
+
+*Figure 2.4.5. Pivotal Events & Emerging Business Areas: four pivots and supporting events associated with five provisional business areas. Source: SmartFarm FigJam board.*
+
+The provisional areas are **Herd Identity & Lifecycle**, **Grazing Observation & Response**, **Animal Health & Clinical Care**, **Reproduction & Evidence**, and **Preventive Campaigns & Reporting**. *Health campaign closed* supports administrative review, subject to closure-rule validation. *Animal deregistered after theft* belongs to herd lifecycle management, not exclusively to reporting. Field record-keeping crosses these areas; it is not a telemetry service. These groupings are exploration hypotheses, not a final Context Map, service decomposition or assignment of software ownership.
+
+**Business-event inventory by lane**
+
+The table preserves the same 36 event names shown in stages 1 and 2. Membership in a lane does not assert an unconditional chronological chain.
+
+| Business lane | Past-tense business-event candidates |
+|---|---|
+| Herd identity and lifecycle (7) | Animal registered in herd; Ear tag assigned; Animal added to lot; Production stage recorded; Animal deregistered after death; Animal deregistered after sale; Animal deregistered after theft. |
+| Grazing and observations (8) | Grazing started; Herd visually checked; Body temperature measured; Elevated body temperature observed; Reduced rumination observed; Unusual behaviour observed; Animal found outside grazing area; Animal reported missing. |
+| Health and intervention (8) | Health concern reported; Veterinary assistance requested; Animal examined; Medication history reviewed; Diagnosis recorded; Treatment applied; Withdrawal period started; Withdrawal period ended. |
+| Reproduction (5) | Estrus detected; Service recorded; Pregnancy confirmed by ultrasound; Calving recorded; Calf registered in herd. |
+| Preventive health campaign (3) | Health campaign scheduled; Preventive application recorded; Health campaign closed. |
+| Field records and reporting (5) | Field observation recorded; Field record entered in spreadsheet; Cost consolidated; Period indicators calculated; Report delivered to owner. |
+
+Tablero de figma del big picture event storming: `https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/Big-Picture-Oficial?node-id=0-1&t=dl4FnkJgp9nQOLwd-1`
 
 ## 2.5. Ubiquitous Language.
 
