@@ -170,11 +170,11 @@ El wireframe organiza la propuesta de ICHU, la información para ganaderos y vet
 
 ### 5.3.2. Landing Page Mock-up
 
-El mockup de alta fidelidad parte del landing actualizado de ICHU: verde bosque, crema y dorado, tipografía display combinada con sans serif y fotografía ganadera. En móvil, el contenido y las acciones se reorganizan en una columna sin alterar el recorrido principal.
+La composición reúne siete capturas originales de la landing actual de ICHU, desde la portada hasta el pie de página. Se presentan en cascada para mostrar el recorrido visual y la jerarquía de sus secciones, conservando el diseño y el contenido del sitio.
 
-![Mockups responsivos de alta fidelidad de la landing page de ICHU](assets/images/landing-page-mockup-responsive.png)
+![Capturas originales de la landing page de ICHU organizadas en cascada](assets/images/landing-page-mockup-responsive.png)
 
-*Figura 5.3.2. Mockups de alta fidelidad de ICHU en escritorio y móvil. Elaboración propia a partir del landing actual.*
+*Figura 5.3.2. Recorrido visual de la landing page de ICHU en siete capturas organizadas en cascada. Elaboración propia a partir del sitio actual.*
 
 ## 5.4. Applications UX/UI Design
 
