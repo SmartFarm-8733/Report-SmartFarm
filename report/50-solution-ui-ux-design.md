@@ -122,6 +122,23 @@ Para la distribución de la aplicación móvil mediante una tienda, se propone e
 
 ### 5.2.4. Searching Systems
 
+El landing usa navegación directa y enlaces a secciones, sin buscador interno: su contenido informativo es reducido. En las aplicaciones, la búsqueda se limita al hato seleccionado y a los permisos vigentes; el veterinario puede seleccionar únicamente unidades autorizadas.
+
+| Área | Búsqueda y filtros propuestos | Presentación del resultado |
+|---|---|---|
+| Animales | Arete; nombre si está registrado; lote, etapa y estado. | Lista con identificador, lote, etapa y collar; acceso a la ficha. El arete se interpreta dentro del hato. |
+| Monitoreo | Animal, indicador y periodo. | Series de temperatura, actividad o rumia; mapa de última posición con hora de captura. |
+| Historial | Animal, periodo y tipo de registro. | Cronología de eventos, intervenciones, resultados y reproducción; autor, fecha y retiro vigente. |
+| Alertas | Animal, tipo, prioridad, estado y periodo. | Lista priorizada, fecha, condición de atención y acceso al detalle. |
+| Calendario | Fecha, lote, tipo de campaña o seguimiento y estado. | Agenda con avance, recordatorios y días de atraso cuando corresponda. |
+| Dispositivos | Identificador, animal asignado y estado de conexión. | Inventario con asignación, batería cuando esté disponible y última comunicación. |
+| Abrevaderos | Identificador, condición y periodo. | Lista de temperatura, hora, estado del calentador y distancia disponible; detalle por abrevadero. |
+| Reportes | Hato, lote, indicador y periodo. | Indicadores, tendencias y comparaciones; datos excluidos o incompletos identificados y opción de exportar. |
+
+Web presenta tablas con paginación y filtros visibles; móvil, tarjetas con filtros desplegables y el mismo criterio de selección. Se conserva la consulta al regresar del detalle y se permite limpiar los filtros. El portafolio veterinario resume solo los hatos autorizados (US53).
+
+Sin coincidencias, Sin lecturas y Acceso no autorizado son estados distintos, con orientación para el siguiente paso. Sin conexión, la búsqueda móvil cubre únicamente fichas descargadas e informa la fecha de actualización y los registros por sincronizar (US22); no presenta datos ausentes como valores cero ni ubicaciones antiguas como posiciones en tiempo real.
+
 ### 5.2.5. Navigation Systems
 
 ## 5.3. Landing Page UI Design
