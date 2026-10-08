@@ -541,7 +541,7 @@ El inventario sin ordenar contiene 36 eventos candidatos del negocio. Las notas 
 
 *Figura 2.4.1. Exploración caótica: 36 eventos candidatos del negocio redactados en pasado, sin componentes de la solución futura. Fuente: tablero de SmartFarm en FigJam.*
 
-Tablero de figma del big picture event storming: `https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/Big-Picture-Oficial?node-id=0-1&t=dl4FnkJgp9nQOLwd-1`
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
 
 **Etapa 2 — Ordenamiento temporal**
 
@@ -550,6 +550,8 @@ Los mismos 36 eventos candidatos se organizan en seis carriles del negocio, que 
 ![Etapa 2 — Ordenamiento temporal: seis procesos locales del negocio y alternativas explícitas](assets/images/diagrams/big-picture-eventstorming/01-2-enforce-timeline.png)
 
 *Figura 2.4.2. Ordenamiento temporal: ciclo de vida del hato, observaciones durante el pastoreo, intervención sanitaria, reproducción, campañas preventivas y registros en campo e informes. Fuente: tablero de SmartFarm en FigJam.*
+
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
 
 El carril de reproducción ilustra una secuencia exitosa, no una preñez o un parto garantizados. La revisión del historial de medicamentos y el diagnóstico pueden ocurrir en un orden distinto. Los períodos de retiro se aplican únicamente cuando el tratamiento administrado los requiere; las reglas efectivamente utilizadas, los criterios de cierre de campañas y los traspasos de información sobre costos e indicadores se mantienen pendientes de validación. No se define ningún umbral clínico ni política de software.
 
@@ -561,6 +563,8 @@ Las notas amarillas identifican roles del negocio: ganadero propietario, trabaja
 
 *Figura 2.4.3. Personas y medios de apoyo externos: roles actuales, herramientas de apoyo y registro externo de criadores, sin la infraestructura propuesta de ICHU. Fuente: tablero de SmartFarm en FigJam.*
 
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
+
 ASCRIGAR Perú es un participante administrativo externo mencionado en las necesidades de Darwin sobre evidencia para el registro de gestación. No se representa como una integración mediante API que ya exista. La evidencia requerida, la responsabilidad de presentar la documentación y los pasos de aceptación permanecen como preguntas abiertas. Los actores del negocio no se sustituyen por collares, un dispositivo de borde ni un servicio central.
 
 **Etapa 4 — Problemas y oportunidades**
@@ -570,6 +574,8 @@ La revisión de la secuencia del negocio vincula cinco eventos de referencia con
 ![Etapa 4 — Cinco problemas actuales, mejoras deseadas y cuatro preguntas de validación](assets/images/diagrams/big-picture-eventstorming/01-4-problems-and-opportunities.png)
 
 *Figura 2.4.4. Problemas y oportunidades: cinco dolores del negocio actual, cinco resultados deseados y cuatro preguntas explícitas de validación. Fuente: tablero de SmartFarm en FigJam.*
+
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
 
 | Evento de referencia | Dolor actual o asunto pendiente | Resultado deseado y evidencia |
 |---|---|---|
@@ -594,6 +600,8 @@ Cuatro eventos pivote en morado marcan cambios en la responsabilidad o en el enf
 
 *Figura 2.4.5. Eventos pivote y áreas de negocio emergentes: cuatro eventos pivote y eventos de apoyo asociados con cinco áreas provisionales del negocio. Fuente: tablero de SmartFarm en FigJam.*
 
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
+
 Las áreas provisionales son **Identificación y ciclo de vida del hato**, **Observación durante el pastoreo y respuesta**, **Salud animal y atención clínica**, **Reproducción y evidencia**, y **Campañas preventivas e informes**. *Campaña sanitaria cerrada* sirve de apoyo a la revisión administrativa, sujeta a la validación de las reglas de cierre. *Animal dado de baja después de un robo* pertenece a la gestión del ciclo de vida del hato, no exclusivamente a la elaboración de informes. El mantenimiento de registros de campo atraviesa estas áreas; no es un servicio de telemetría. Estas agrupaciones son hipótesis de exploración, no un mapa de contextos definitivo, una descomposición de servicios ni una asignación de responsabilidades de software.
 
 **Inventario de eventos del negocio por carril**
@@ -609,7 +617,7 @@ La tabla presenta, traducidos al español, los mismos 36 eventos de las etapas 1
 | Campaña sanitaria preventiva (3) | Campaña sanitaria programada; Aplicación preventiva registrada; Campaña sanitaria cerrada. |
 | Registros de campo e informes (5) | Observación de campo registrada; Registro de campo ingresado en hoja de cálculo; Costo consolidado; Indicadores del período calculados; Informe entregado al propietario. |
 
-Tablero de figma del big picture event storming: `https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/Big-Picture-Oficial?node-id=0-1&t=dl4FnkJgp9nQOLwd-1`
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
 
 ## 2.5. Ubiquitous Language.
 
