@@ -541,6 +541,8 @@ El inventario sin ordenar contiene 36 eventos candidatos del negocio. Las notas 
 
 *Figura 2.4.1. Exploración caótica: 36 eventos candidatos del negocio redactados en pasado, sin componentes de la solución futura. Fuente: tablero de SmartFarm en FigJam.*
 
+Tablero de figma del big picture event storming: `https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/Big-Picture-Oficial?node-id=0-1&t=dl4FnkJgp9nQOLwd-1`
+
 **Etapa 2 — Ordenamiento temporal**
 
 Los mismos 36 eventos candidatos se organizan en seis carriles del negocio, que se leen de arriba hacia abajo. Las flechas expresan un orden local plausible únicamente donde se modela una relación. No convierten cada observación en un paso obligatorio ni implican que todas las unidades productivas sigan un único proceso universal. Las observaciones durante el pastoreo son hallazgos alternativos; la muerte, la venta y el robo son motivos alternativos de baja, no eventos consecutivos. El registro en campo y la incorporación de datos en oficina pueden ocurrir en momentos distintos.
