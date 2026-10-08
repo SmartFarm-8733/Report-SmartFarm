@@ -521,91 +521,91 @@ Sus **Pains** son los tratamientos anteriores no registrados, las dosis duplicad
 
 ## 2.4. Big Picture EventStorming.
 
-Big Picture EventStorming builds a shared understanding of the cattle-farming business before solution design. This model describes the **current business (as-is)**: people identify and manage animals, observe them during grazing, provide veterinary care, handle reproduction and preventive campaigns, and maintain records using notebooks, phones and spreadsheets. It does not describe an operating ICHU platform.
+El Big Picture EventStorming permite construir una comprensión compartida del negocio ganadero antes de diseñar la solución. Este modelo describe el **negocio actual**: las personas identifican y gestionan a los animales, los observan durante el pastoreo, brindan atención veterinaria, gestionan la reproducción y las campañas preventivas, y mantienen registros en cuadernos, teléfonos y hojas de cálculo. No describe una plataforma ICHU que ya se encuentre en funcionamiento.
 
-The evidence comes from the interview summaries in section 2.2.2 of the official AV1 report (PDF pages 16–19). Próspero, Meikoll and Grober describe manual or Excel-based records, incomplete histories and rural connectivity limitations; Darwin, Eliseo and Dionisio describe field observation, clinical work, ultrasound evidence and office reporting. Requested automatic alerts, continuous telemetry and application integrations are **desired capabilities**, not proof that those capabilities already exist.
+La evidencia proviene de los resúmenes de entrevistas de la sección 2.2.2 del informe oficial AV1 (páginas 16–19 del PDF). Próspero, Meikoll y Grober describen registros manuales o en Excel, historiales incompletos y limitaciones de conectividad rural; Darwin, Eliseo y Dionisio describen observación en campo, trabajo clínico, evidencia ecográfica y elaboración de informes en oficina. Las alertas automáticas, la telemetría continua y las integraciones entre aplicaciones que solicitan son **capacidades deseadas**, no pruebas de que dichas capacidades ya existan.
 
-**Process and scope of the revision**
+**Proceso y alcance de la revisión**
 
-The team's existing FigJam model is revised through five stages: collect business-event candidates, arrange local timelines, associate people and existing support, review problems and opportunities, and identify pivotal events and provisional business areas. Event names are checked against the documented interviews and existing business vocabulary. This revision does not claim that a new interview or facilitated workshop has taken place.
+El modelo existente del equipo en FigJam se revisa en cinco etapas: recopilar eventos candidatos del negocio, ordenar secuencias temporales locales, asociar personas y medios de apoyo existentes, revisar problemas y oportunidades, e identificar eventos pivote y áreas de negocio provisionales. Los nombres de los eventos se contrastan con las entrevistas documentadas y con el vocabulario existente del negocio. Esta revisión no afirma que se haya realizado una nueva entrevista ni un nuevo taller facilitado.
 
-The business narrative uses the present tense because it explains how work happens today. Each orange or purple event uses the past tense because it names a fact that has already occurred, such as *Animal examined* or *Diagnosis recorded*. Smart-collar onboarding, telemetry capture, Edge storage, central synchronization, automatic reminders and system-generated alerts are removed from the as-is event inventory. Technical components and final bounded-context boundaries belong to later design work, not this section.
+La explicación del negocio utiliza el tiempo presente porque describe cómo se trabaja hoy. Cada evento naranja o morado se redacta en pasado porque nombra un hecho que ya ocurrió, como *Animal examinado* o *Diagnóstico registrado*. La incorporación de collares inteligentes, la captura de telemetría, el almacenamiento en el dispositivo de borde, la sincronización central, los recordatorios automáticos y las alertas generadas por el sistema se excluyen del inventario de eventos del negocio actual. Los componentes técnicos y las fronteras definitivas de los contextos delimitados corresponden al diseño posterior, no a esta sección.
 
-The following figures are separate PNG captures exported directly from the corrected FigJam sections, not reconstructed drawings. Each capture and its explanation belongs to its corresponding stage within section 2.4; the Final Project Statement does not prescribe additional numbered subsections here.
+Las siguientes figuras son capturas PNG independientes exportadas directamente de las secciones corregidas de FigJam, no dibujos reconstruidos. Cada captura y su explicación corresponden a su respectiva etapa dentro de la sección 2.4; el enunciado del trabajo final no exige subsecciones numeradas adicionales en este punto. El texto dentro de las imágenes se conserva en inglés; las explicaciones del informe se presentan en español.
 
-**Stage 1 — Chaotic Exploration**
+**Etapa 1 — Exploración caótica**
 
-The unordered inventory contains 36 business-event candidates. Orange notes represent facts about herd identity, observation, care, reproduction, campaigns, records and lifecycle exits. Neighbouring notes do not imply a sequence. Existing domain concepts whose exact operating rules are not established by the interviews remain candidates for validation, rather than confirmed procedures used by every farm.
+El inventario sin ordenar contiene 36 eventos candidatos del negocio. Las notas naranjas representan hechos relacionados con la identificación del hato, la observación, la atención sanitaria, la reproducción, las campañas, los registros y las bajas de animales. La proximidad entre las notas no implica una secuencia. Los conceptos existentes del dominio cuyas reglas operativas exactas no se establecen en las entrevistas se mantienen como candidatos por validar, en lugar de presentarse como procedimientos confirmados que todas las unidades productivas aplican.
 
-![Stage 1 — Chaotic Exploration: unordered current-business event candidates](assets/images/diagrams/big-picture-eventstorming/01-1-chaotic-exploration.png)
+![Etapa 1 — Exploración caótica: eventos candidatos del negocio actual sin ordenar](assets/images/diagrams/big-picture-eventstorming/01-1-chaotic-exploration.png)
 
-*Figure 2.4.1. Chaotic Exploration: 36 past-tense business-event candidates, without future solution components. Source: SmartFarm FigJam board.*
+*Figura 2.4.1. Exploración caótica: 36 eventos candidatos del negocio redactados en pasado, sin componentes de la solución futura. Fuente: tablero de SmartFarm en FigJam.*
 
-**Stage 2 — Enforce the Timeline**
+**Etapa 2 — Ordenamiento temporal**
 
-The same 36 candidates are arranged in six business lanes, read from top to bottom. Arrows express plausible local ordering only where a relationship is modelled. They do not turn every observation into a mandatory step or imply that all farms follow one universal process. Grazing observations are alternative findings; death, sale and theft are alternative exit reasons, not consecutive events. Field recording and office entry can occur at different times.
+Los mismos 36 eventos candidatos se organizan en seis carriles del negocio, que se leen de arriba hacia abajo. Las flechas expresan un orden local plausible únicamente donde se modela una relación. No convierten cada observación en un paso obligatorio ni implican que todas las unidades productivas sigan un único proceso universal. Las observaciones durante el pastoreo son hallazgos alternativos; la muerte, la venta y el robo son motivos alternativos de baja, no eventos consecutivos. El registro en campo y la incorporación de datos en oficina pueden ocurrir en momentos distintos.
 
-![Stage 2 — Enforce the Timeline: six local business paths and explicit alternatives](assets/images/diagrams/big-picture-eventstorming/01-2-enforce-timeline.png)
+![Etapa 2 — Ordenamiento temporal: seis procesos locales del negocio y alternativas explícitas](assets/images/diagrams/big-picture-eventstorming/01-2-enforce-timeline.png)
 
-*Figure 2.4.2. Enforce the Timeline: herd lifecycle, grazing observations, health intervention, reproduction, preventive campaigns and field records/reporting. Source: SmartFarm FigJam board.*
+*Figura 2.4.2. Ordenamiento temporal: ciclo de vida del hato, observaciones durante el pastoreo, intervención sanitaria, reproducción, campañas preventivas y registros en campo e informes. Fuente: tablero de SmartFarm en FigJam.*
 
-The reproduction lane illustrates a successful pathway, not a guaranteed pregnancy or calving outcome. Medication-history review and diagnosis can occur in a different order. Withdrawal periods apply only when the administered treatment requires them; the actual rules, campaign-closure criteria and cost/indicator hand-offs remain to be validated. No clinical threshold or software policy is specified.
+El carril de reproducción ilustra una secuencia exitosa, no una preñez o un parto garantizados. La revisión del historial de medicamentos y el diagnóstico pueden ocurrir en un orden distinto. Los períodos de retiro se aplican únicamente cuando el tratamiento administrado los requiere; las reglas efectivamente utilizadas, los criterios de cierre de campañas y los traspasos de información sobre costos e indicadores se mantienen pendientes de validación. No se define ningún umbral clínico ni política de software.
 
-**Stage 3 — People & External Support**
+**Etapa 3 — Personas y medios de apoyo externos**
 
-Yellow notes identify business roles: cattle rancher/owner, field worker/herder, farm administrator and veterinarian/zootechnician. Blue notes show existing support, including notebooks, phone notes and photos, Excel records, ultrasound equipment, clinical notes, laboratory support for complex cases, and office/printed reports. These associations clarify who uses which support around an event; they are not software commands or integrations. A single person can perform several roles, and field-worker responsibilities require confirmation.
+Las notas amarillas identifican roles del negocio: ganadero propietario, trabajador de campo o pastor, administrador de la unidad productiva y médico veterinario o zootecnista. Las notas azules muestran medios de apoyo existentes: cuadernos, notas y fotografías en el teléfono, registros en Excel, equipos de ecografía, notas clínicas, apoyo de laboratorio para casos complejos e informes de oficina o impresos. Estas asociaciones aclaran quién utiliza cada medio de apoyo en relación con un evento; no representan comandos de software ni integraciones. Una misma persona puede desempeñar varios roles, y las responsabilidades del trabajador de campo requieren confirmación.
 
-![Stage 3 — People and existing support associated with business-event anchors](assets/images/diagrams/big-picture-eventstorming/01-3-people-and-systems.png)
+![Etapa 3 — Personas y medios de apoyo existentes asociados con eventos de referencia del negocio](assets/images/diagrams/big-picture-eventstorming/01-3-people-and-systems.png)
 
-*Figure 2.4.3. People & External Support: current roles, supporting tools and the external breed registry, without proposed ICHU infrastructure. Source: SmartFarm FigJam board.*
+*Figura 2.4.3. Personas y medios de apoyo externos: roles actuales, herramientas de apoyo y registro externo de criadores, sin la infraestructura propuesta de ICHU. Fuente: tablero de SmartFarm en FigJam.*
 
-ASCRIGAR Peru is an external administrative participant mentioned in Darwin's gestation-registration evidence needs. It is not represented as an existing API integration. Required evidence, submission responsibility and acceptance steps remain open questions. Collars, an Edge device and a central service are not substituted for business actors.
+ASCRIGAR Perú es un participante administrativo externo mencionado en las necesidades de Darwin sobre evidencia para el registro de gestación. No se representa como una integración mediante API que ya exista. La evidencia requerida, la responsabilidad de presentar la documentación y los pasos de aceptación permanecen como preguntas abiertas. Los actores del negocio no se sustituyen por collares, un dispositivo de borde ni un servicio central.
 
-**Stage 4 — Problems & Opportunities**
+**Etapa 4 — Problemas y oportunidades**
 
-Story review links five event anchors to pink hot spots and green opportunities. A hot spot describes a current pain or unresolved business issue. An opportunity states a desired outcome, not a capability already deployed or a prescribed technical implementation.
+La revisión de la secuencia del negocio vincula cinco eventos de referencia con puntos problemáticos en rosado y oportunidades en verde. Un punto problemático describe un dolor actual o un asunto del negocio pendiente de resolver. Una oportunidad expresa un resultado deseado, no una capacidad ya implementada ni una solución técnica obligatoria.
 
-![Stage 4 — Five current problems, desired improvements and four validation questions](assets/images/diagrams/big-picture-eventstorming/01-4-problems-and-opportunities.png)
+![Etapa 4 — Cinco problemas actuales, mejoras deseadas y cuatro preguntas de validación](assets/images/diagrams/big-picture-eventstorming/01-4-problems-and-opportunities.png)
 
-*Figure 2.4.4. Problems & Opportunities: five current-business pain points, five desired outcomes and four explicit validation questions. Source: SmartFarm FigJam board.*
+*Figura 2.4.4. Problemas y oportunidades: cinco dolores del negocio actual, cinco resultados deseados y cuatro preguntas explícitas de validación. Fuente: tablero de SmartFarm en FigJam.*
 
-| Event anchor | Current pain / open issue | Desired outcome and evidence |
+| Evento de referencia | Dolor actual o asunto pendiente | Resultado deseado y evidencia |
 |---|---|---|
-| Elevated body temperature observed | Health deterioration can be noticed late; manual observation is not continuous. | Recognize deterioration earlier and shorten response delays. Grober, Darwin, Eliseo and Dionisio describe physiological or behavioural signs and the need for earlier recognition. |
-| Animal reported missing | Missing animals and theft can be noticed after a loss; rural signal limits existing tracking attempts. | Improve herd visibility and follow-up of missing animals. Próspero and Meikoll describe theft-related losses; this does not establish an operating GPS/geofence solution. |
-| Treatment applied | Histories are scattered across notebooks and individual files, making previous interventions difficult to trace. | Maintain reliable animal-level history, dates and authorship. Próspero and Meikoll describe incomplete records; Darwin needs access to prior medication information. |
-| Field record entered in spreadsheet | Field work and office entry are separated; delayed entry and intermittent connectivity increase missing information. | Capture evidence when work occurs and preserve it for office review. Meikoll identifies delayed recording, while Eliseo and Dionisio describe field/office routines. No synchronization architecture is assumed. |
-| Pregnancy confirmed by ultrasound | Ultrasound evidence and external registry paperwork involve separate administrative steps whose exact rules are not confirmed. | Keep complete evidence and clarify the registry hand-off. Darwin identifies the ASCRIGAR-related need; the formal submission and acceptance process requires validation. |
+| Temperatura corporal elevada observada | El deterioro de la salud puede advertirse tarde; la observación manual no es continua. | Reconocer el deterioro con mayor anticipación y reducir las demoras en la respuesta. Grober, Darwin, Eliseo y Dionisio describen signos fisiológicos o de comportamiento y la necesidad de reconocerlos antes. |
+| Animal reportado como desaparecido | La desaparición de animales y el robo pueden advertirse después de una pérdida; la señal rural limita los intentos de rastreo existentes. | Mejorar la visibilidad del hato y el seguimiento de los animales desaparecidos. Próspero y Meikoll describen pérdidas relacionadas con el robo; esto no demuestra que exista una solución operativa de GPS o cercas virtuales. |
+| Tratamiento aplicado | Los historiales se encuentran dispersos entre cuadernos y fichas individuales, lo que dificulta rastrear las intervenciones anteriores. | Mantener un historial confiable por animal, con fechas y autoría claras. Próspero y Meikoll describen registros incompletos; Darwin necesita consultar la información sobre medicamentos administrados previamente. |
+| Registro de campo ingresado en hoja de cálculo | El trabajo de campo y el ingreso de datos en oficina están separados; el registro tardío y la conectividad intermitente aumentan la pérdida de información. | Capturar la evidencia cuando se realiza el trabajo y conservarla para su revisión en oficina. Meikoll identifica el registro tardío, mientras que Eliseo y Dionisio describen rutinas de campo y oficina. No se presupone una arquitectura de sincronización. |
+| Preñez confirmada por ecografía | La evidencia ecográfica y la documentación del registro externo implican pasos administrativos separados cuyas reglas exactas no están confirmadas. | Conservar evidencia completa y aclarar el traspaso de información al registro. Darwin identifica la necesidad relacionada con ASCRIGAR; el procedimiento formal de presentación y aceptación requiere validación. |
 
-The four pale-yellow questions remain explicitly unresolved:
+Las cuatro preguntas de las notas amarillo claro se mantienen explícitamente sin resolver:
 
-- Who checks the herd and owns health escalation?
-- How is each field note matched to the correct animal?
-- Which campaign-closure, cost and withdrawal rules are actually used?
-- What gestation evidence does ASCRIGAR require, and who submits it?
+- ¿Quién revisa el hato y se responsabiliza de comunicar los problemas de salud para su atención?
+- ¿Cómo se asocia cada nota de campo con el animal correcto?
+- ¿Qué reglas de cierre de campañas, costos y períodos de retiro se utilizan realmente?
+- ¿Qué evidencia de gestación exige ASCRIGAR y quién la presenta?
 
-**Stage 5 — Pivotal Events & Emerging Business Areas**
+**Etapa 5 — Eventos pivote y áreas de negocio emergentes**
 
-Four purple pivots mark changes in business responsibility or focus: *Animal registered in herd* establishes traceable herd membership; *Health concern reported* shifts routine observation toward a response; *Diagnosis recorded* provides a clinical conclusion that guides treatment; and *Pregnancy confirmed by ultrasound* changes reproductive follow-up and evidence handling. These events do not define final software boundaries.
+Cuatro eventos pivote en morado marcan cambios en la responsabilidad o en el enfoque del negocio: *Animal registrado en el hato* establece una pertenencia al hato que puede rastrearse; *Problema de salud reportado* orienta la observación rutinaria hacia una respuesta; *Diagnóstico registrado* aporta una conclusión clínica que guía el tratamiento; y *Preñez confirmada por ecografía* cambia el seguimiento reproductivo y el manejo de la evidencia. Estos eventos no definen fronteras definitivas de software.
 
-![Stage 5 — Pivotal business events and exploratory areas, not final bounded contexts](assets/images/diagrams/big-picture-eventstorming/01-5-pivotal-and-emerging-contexts.png)
+![Etapa 5 — Eventos pivote del negocio y áreas exploratorias, no contextos delimitados definitivos](assets/images/diagrams/big-picture-eventstorming/01-5-pivotal-and-emerging-contexts.png)
 
-*Figure 2.4.5. Pivotal Events & Emerging Business Areas: four pivots and supporting events associated with five provisional business areas. Source: SmartFarm FigJam board.*
+*Figura 2.4.5. Eventos pivote y áreas de negocio emergentes: cuatro eventos pivote y eventos de apoyo asociados con cinco áreas provisionales del negocio. Fuente: tablero de SmartFarm en FigJam.*
 
-The provisional areas are **Herd Identity & Lifecycle**, **Grazing Observation & Response**, **Animal Health & Clinical Care**, **Reproduction & Evidence**, and **Preventive Campaigns & Reporting**. *Health campaign closed* supports administrative review, subject to closure-rule validation. *Animal deregistered after theft* belongs to herd lifecycle management, not exclusively to reporting. Field record-keeping crosses these areas; it is not a telemetry service. These groupings are exploration hypotheses, not a final Context Map, service decomposition or assignment of software ownership.
+Las áreas provisionales son **Identificación y ciclo de vida del hato**, **Observación durante el pastoreo y respuesta**, **Salud animal y atención clínica**, **Reproducción y evidencia**, y **Campañas preventivas e informes**. *Campaña sanitaria cerrada* sirve de apoyo a la revisión administrativa, sujeta a la validación de las reglas de cierre. *Animal dado de baja después de un robo* pertenece a la gestión del ciclo de vida del hato, no exclusivamente a la elaboración de informes. El mantenimiento de registros de campo atraviesa estas áreas; no es un servicio de telemetría. Estas agrupaciones son hipótesis de exploración, no un mapa de contextos definitivo, una descomposición de servicios ni una asignación de responsabilidades de software.
 
-**Business-event inventory by lane**
+**Inventario de eventos del negocio por carril**
 
-The table preserves the same 36 event names shown in stages 1 and 2. Membership in a lane does not assert an unconditional chronological chain.
+La tabla presenta, traducidos al español, los mismos 36 eventos de las etapas 1 y 2, cuyos nombres dentro de las imágenes se conservan en inglés. Pertenecer a un carril no implica una secuencia cronológica incondicional.
 
-| Business lane | Past-tense business-event candidates |
+| Carril del negocio | Eventos candidatos del negocio redactados en pasado |
 |---|---|
-| Herd identity and lifecycle (7) | Animal registered in herd; Ear tag assigned; Animal added to lot; Production stage recorded; Animal deregistered after death; Animal deregistered after sale; Animal deregistered after theft. |
-| Grazing and observations (8) | Grazing started; Herd visually checked; Body temperature measured; Elevated body temperature observed; Reduced rumination observed; Unusual behaviour observed; Animal found outside grazing area; Animal reported missing. |
-| Health and intervention (8) | Health concern reported; Veterinary assistance requested; Animal examined; Medication history reviewed; Diagnosis recorded; Treatment applied; Withdrawal period started; Withdrawal period ended. |
-| Reproduction (5) | Estrus detected; Service recorded; Pregnancy confirmed by ultrasound; Calving recorded; Calf registered in herd. |
-| Preventive health campaign (3) | Health campaign scheduled; Preventive application recorded; Health campaign closed. |
-| Field records and reporting (5) | Field observation recorded; Field record entered in spreadsheet; Cost consolidated; Period indicators calculated; Report delivered to owner. |
+| Identificación y ciclo de vida del hato (7) | Animal registrado en el hato; Arete asignado; Animal incorporado a un lote; Etapa productiva registrada; Animal dado de baja por muerte; Animal dado de baja después de una venta; Animal dado de baja después de un robo. |
+| Pastoreo y observaciones (8) | Pastoreo iniciado; Hato revisado visualmente; Temperatura corporal medida; Temperatura corporal elevada observada; Disminución de la rumia observada; Comportamiento inusual observado; Animal encontrado fuera del área de pastoreo; Animal reportado como desaparecido. |
+| Salud e intervención (8) | Problema de salud reportado; Asistencia veterinaria solicitada; Animal examinado; Historial de medicamentos revisado; Diagnóstico registrado; Tratamiento aplicado; Período de retiro iniciado; Período de retiro finalizado. |
+| Reproducción (5) | Celo detectado; Servicio registrado; Preñez confirmada por ecografía; Parto registrado; Cría registrada en el hato. |
+| Campaña sanitaria preventiva (3) | Campaña sanitaria programada; Aplicación preventiva registrada; Campaña sanitaria cerrada. |
+| Registros de campo e informes (5) | Observación de campo registrada; Registro de campo ingresado en hoja de cálculo; Costo consolidado; Indicadores del período calculados; Informe entregado al propietario. |
 
 Tablero de figma del big picture event storming: `https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/Big-Picture-Oficial?node-id=0-1&t=dl4FnkJgp9nQOLwd-1`
 
