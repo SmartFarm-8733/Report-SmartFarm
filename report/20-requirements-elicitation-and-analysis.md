@@ -553,85 +553,103 @@ Los **Pains comunes documentados** son la información clínica incompleta o dup
 
 ## 2.4. Big Picture EventStorming.
 
-El Big Picture EventStorming permite al equipo construir una comprensión compartida del dominio ganadero antes de tomar cualquier decisión de diseño. Esta vista se concentra en hechos del negocio —estados o sucesos que importan a ganaderos y profesionales— independientemente de qué sistema los registre. El transporte de telemetría, el almacenamiento, las API y la sincronización son decisiones de solución y se describen en el Capítulo IV; no se modelan como eventos del dominio en esta tabla.
+El Big Picture EventStorming permite construir una comprensión compartida del negocio ganadero antes de diseñar la solución. Este modelo describe el **negocio actual**: las personas identifican y gestionan a los animales, los observan durante el pastoreo, brindan atención veterinaria, gestionan la reproducción y las campañas preventivas, y mantienen registros en cuadernos, teléfonos y hojas de cálculo. No describe una plataforma ICHU que ya se encuentre en funcionamiento.
 
-**Desarrollo de la sesión**
+La evidencia proviene de los resúmenes de entrevistas de la sección 2.2.2 del informe oficial AV1 (páginas 16–19 del PDF). Próspero, Meikoll y Grober describen registros manuales o en Excel, historiales incompletos y limitaciones de conectividad rural; Darwin, Eliseo y Dionisio describen observación en campo, trabajo clínico, evidencia ecográfica y elaboración de informes en oficina. Las alertas automáticas, la telemetría continua y las integraciones entre aplicaciones que solicitan son **capacidades deseadas**, no pruebas de que dichas capacidades ya existan.
 
-La sesión se organizó en cinco etapas sucesivas, siguiendo la secuencia habitual de la técnica.
+**Proceso y alcance de la revisión**
 
-En la **exploración caótica**, cada integrante escribió en notas de color naranja los hechos relevantes del dominio que había identificado en las entrevistas, redactados siempre en pasado y desde la perspectiva del negocio, sin discutir todavía su orden ni su pertinencia.
+El modelo existente del equipo en FigJam se revisa en cinco etapas: recopilar eventos candidatos del negocio, ordenar secuencias temporales locales, asociar personas y medios de apoyo existentes, revisar problemas y oportunidades, e identificar eventos pivote y áreas de negocio provisionales. Los nombres de los eventos se contrastan con las entrevistas documentadas y con el vocabulario existente del negocio. Esta revisión no afirma que se haya realizado una nueva entrevista ni un nuevo taller facilitado.
 
-En el **ordenamiento temporal**, el equipo dispuso los eventos sobre una línea de tiempo que recorre el ciclo productivo del hato, desde la incorporación del animal hasta su baja, y resolvió los duplicados y las formulaciones ambiguas.
+La explicación del negocio utiliza el tiempo presente porque describe cómo se trabaja hoy. Cada evento naranja o morado se redacta en pasado porque nombra un hecho que ya ocurrió, como *Animal examinado* o *Diagnóstico registrado*. La incorporación de collares inteligentes, la captura de telemetría, el almacenamiento en el dispositivo de borde, la sincronización central, los recordatorios automáticos y las alertas generadas por el sistema se excluyen del inventario de eventos del negocio actual. Los componentes técnicos y las fronteras definitivas de los contextos delimitados corresponden al diseño posterior, no a esta sección.
 
-En la **identificación de eventos pivote**, se marcaron los hechos que separan fases claramente distintas del proceso de negocio y que, por lo tanto, anticipan las fronteras entre contextos.
+Las siguientes figuras son capturas PNG independientes exportadas directamente de las secciones corregidas de FigJam, no dibujos reconstruidos. Cada captura y su explicación corresponden a su respectiva etapa dentro de la sección 2.4; el enunciado del trabajo final no exige subsecciones numeradas adicionales en este punto. El texto dentro de las imágenes se conserva en inglés; las explicaciones del informe se presentan en español.
 
-En la **detección de hot spots**, se señalaron con notas rosadas las zonas de desacuerdo, de reglas de negocio no resueltas o de dependencia respecto de terceros, que requieren validación posterior con los usuarios.
+**Etapa 1 — Exploración caótica**
 
-Finalmente, en la **identificación de eventos pivote y áreas de dominio emergentes**, se usaron los cambios de estado más significativos para proponer agrupaciones preliminares. Estas áreas son hipótesis de exploración y no representan todavía bounded contexts definitivos.
+El inventario sin ordenar contiene 36 eventos candidatos del negocio. Las notas naranjas representan hechos relacionados con la identificación del hato, la observación, la atención sanitaria, la reproducción, las campañas, los registros y las bajas de animales. La proximidad entre las notas no implica una secuencia. Los conceptos existentes del dominio cuyas reglas operativas exactas no se establecen en las entrevistas se mantienen como candidatos por validar, en lugar de presentarse como procedimientos confirmados que todas las unidades productivas aplican.
 
-Las siguientes láminas documentan la progresión completa de la sesión. Se reconstruyeron en formato vectorial para conservar legibilidad en el informe, manteniendo los eventos, actores, problemas y oportunidades que aparecen en el modelo del dominio.
+![Etapa 1 — Exploración caótica: eventos candidatos del negocio actual sin ordenar](assets/images/diagrams/big-picture-eventstorming/01-1-chaotic-exploration.png)
 
-![01.1 · Chaotic Exploration](assets/images/diagrams/big-picture-eventstorming/01-1-chaotic-exploration.svg)
+*Figura 2.4.1. Exploración caótica: 36 eventos candidatos del negocio redactados en pasado, sin componentes de la solución futura. Fuente: tablero de SmartFarm en FigJam.*
 
-*Figura 2.4.1. Chaotic Exploration: 38 Domain Events identificados sin ordenar. Elaboración propia.*
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
 
-[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+**Etapa 2 — Ordenamiento temporal**
 
-![01.2 · Enforce the Timeline](assets/images/diagrams/big-picture-eventstorming/01-2-enforce-timeline.svg)
+Los mismos 36 eventos candidatos se organizan en seis carriles del negocio, que se leen de arriba hacia abajo. Las flechas expresan un orden local plausible únicamente donde se modela una relación. No convierten cada observación en un paso obligatorio ni implican que todas las unidades productivas sigan un único proceso universal. Las observaciones durante el pastoreo son hallazgos alternativos; la muerte, la venta y el robo son motivos alternativos de baja, no eventos consecutivos. El registro en campo y la incorporación de datos en oficina pueden ocurrir en momentos distintos.
 
-*Figura 2.4.2. Enforce the Timeline: eventos organizados en cinco procesos clave. Elaboración propia.*
+![Etapa 2 — Ordenamiento temporal: seis procesos locales del negocio y alternativas explícitas](assets/images/diagrams/big-picture-eventstorming/01-2-enforce-timeline.png)
 
-[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+*Figura 2.4.2. Ordenamiento temporal: ciclo de vida del hato, observaciones durante el pastoreo, intervención sanitaria, reproducción, campañas preventivas y registros en campo e informes. Fuente: tablero de SmartFarm en FigJam.*
 
-![01.3 · People & External Systems](assets/images/diagrams/big-picture-eventstorming/01-3-people-and-systems.svg)
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
 
-*Figura 2.4.3. People & External Systems: actores y sistemas de apoyo asociados a los eventos. Elaboración propia.*
+El carril de reproducción ilustra una secuencia exitosa, no una preñez o un parto garantizados. La revisión del historial de medicamentos y el diagnóstico pueden ocurrir en un orden distinto. Los períodos de retiro se aplican únicamente cuando el tratamiento administrado los requiere; las reglas efectivamente utilizadas, los criterios de cierre de campañas y los traspasos de información sobre costos e indicadores se mantienen pendientes de validación. No se define ningún umbral clínico ni política de software.
 
-[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+**Etapa 3 — Personas y medios de apoyo externos**
 
-![01.4 · Problems & Opportunities](assets/images/diagrams/big-picture-eventstorming/01-4-problems-and-opportunities.svg)
+Las notas amarillas identifican roles del negocio: ganadero propietario, trabajador de campo o pastor, administrador de la unidad productiva y médico veterinario o zootecnista. Las notas azules muestran medios de apoyo existentes: cuadernos, notas y fotografías en el teléfono, registros en Excel, equipos de ecografía, notas clínicas, apoyo de laboratorio para casos complejos e informes de oficina o impresos. Estas asociaciones aclaran quién utiliza cada medio de apoyo en relación con un evento; no representan comandos de software ni integraciones. Una misma persona puede desempeñar varios roles, y las responsabilidades del trabajador de campo requieren confirmación.
 
-*Figura 2.4.4. Problems & Opportunities: hot spots, oportunidades y supuestos por validar. Elaboración propia.*
+![Etapa 3 — Personas y medios de apoyo existentes asociados con eventos de referencia del negocio](assets/images/diagrams/big-picture-eventstorming/01-3-people-and-systems.png)
 
-[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+*Figura 2.4.3. Personas y medios de apoyo externos: roles actuales, herramientas de apoyo y registro externo de criadores, sin la infraestructura propuesta de ICHU. Fuente: tablero de SmartFarm en FigJam.*
 
-![01.5 · Pivotal Events & Emerging Contexts](assets/images/diagrams/big-picture-eventstorming/01-5-pivotal-and-emerging-contexts.svg)
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
 
-*Figura 2.4.5. Pivotal Events & Emerging Contexts: áreas preliminares derivadas de los cambios de estado. Elaboración propia.*
+ASCRIGAR Perú es un participante administrativo externo mencionado en las necesidades de Darwin sobre evidencia para el registro de gestación. No se representa como una integración mediante API que ya exista. La evidencia requerida, la responsabilidad de presentar la documentación y los pasos de aceptación permanecen como preguntas abiertas. Los actores del negocio no se sustituyen por collares, un dispositivo de borde ni un servicio central.
 
-[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+**Etapa 4 — Problemas y oportunidades**
 
-**Domain Events identificados, ordenados temporalmente**
+La revisión de la secuencia del negocio vincula cinco eventos de referencia con puntos problemáticos en rosado y oportunidades en verde. Un punto problemático describe un dolor actual o un asunto del negocio pendiente de resolver. Una oportunidad expresa un resultado deseado, no una capacidad ya implementada ni una solución técnica obligatoria.
 
-| Fase del negocio | Domain Events |
-|---|---|
-| Incorporación del animal | Animal registrado en el hato, Arete asignado al animal, Animal incorporado a un lote, Etapa productiva registrada |
-| Identificación y vigilancia | Collar vinculado al animal, Estado del animal observado, Posición del animal registrada |
-| Detección de cambios relevantes | Umbral de temperatura superado, Disminución de rumia observada, Cambio inusual de actividad observado, Animal ubicado fuera de la zona de pastoreo |
-| Atención sanitaria | Alerta emitida al responsable, Alerta atendida, Animal examinado, Diagnóstico registrado, Tratamiento aplicado, Periodo de retiro iniciado, Periodo de retiro concluido |
-| Ciclo reproductivo | Celo detectado, Servicio registrado, Preñez confirmada por ecografía, Parto registrado, Cría registrada en el hato |
-| Planificación sanitaria | Campaña sanitaria programada, Recordatorio de campaña emitido, Aplicación registrada por animal, Campaña cerrada |
-| Cierre del ciclo | Costo de campaña consolidado, Indicadores del periodo calculados, Reporte entregado al propietario |
-| Salida del animal | Animal dado de baja por muerte, Animal dado de baja por venta, Robo de animal denunciado, Collar liberado |
+![Etapa 4 — Cinco problemas actuales, mejoras deseadas y cuatro preguntas de validación](assets/images/diagrams/big-picture-eventstorming/01-4-problems-and-opportunities.png)
 
-**Eventos pivote**
+*Figura 2.4.4. Problemas y oportunidades: cinco dolores del negocio actual, cinco resultados deseados y cuatro preguntas explícitas de validación. Fuente: tablero de SmartFarm en FigJam.*
 
-El equipo identificó cuatro hechos que marcan cambios de fase en el proceso de negocio y que, por lo tanto, señalan fronteras candidatas entre contextos:
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
 
-- **Collar vinculado al animal.** Separa la gestión del inventario de dispositivos de la vigilancia del animal. A partir de este hecho, la telemetría deja de pertenecer a un aparato y pasa a pertenecer a un ser vivo con historia.
-- **Umbral de temperatura superado.** Separa la captura de datos de la respuesta sanitaria. Antes de este hecho el sistema observa, después interviene.
-- **Diagnóstico registrado.** Separa la sospecha de la certeza clínica y habilita el tratamiento, el periodo de retiro y la trazabilidad de lo aplicado.
-- **Animal dado de baja.** Cierra la historia del animal y determina qué información alimenta los indicadores de mortalidad del periodo.
-
-**Hot spots**
-
-| Zona de incertidumbre | Descripción | Cómo se resolverá |
+| Evento de referencia | Dolor actual o asunto pendiente | Resultado deseado y evidencia |
 |---|---|---|
-| Umbrales por etapa productiva | No existe consenso sobre si el umbral térmico debe ser único o variar según edad, raza y etapa. Darwin propuso valores distintos para terneros y adultos | Validar con los tres profesionales del Segmento 2 antes de fijar los valores por defecto |
-| Autoría del registro en campo | No está definido si el operario puede registrar un diagnóstico o únicamente una observación | Resolver como regla de negocio en la definición de roles |
-| Dependencia de la asociación de criadores | El registro de gestación ante la asociación sigue un procedimiento externo que el equipo no controla | Verificar el procedimiento vigente antes de comprometer cualquier integración |
-| Precisión de la ubicación | La lectura de posición tiene un margen de error que puede generar falsas salidas de zona | Definir una tolerancia configurable y validarla en el piloto |
-| Conciliación de registros sin conexión | No está resuelto qué ocurre cuando un registro creado sin cobertura afecta a un animal que fue dado de baja entretanto | Definir la regla de conflicto durante el diseño táctico |
+| Temperatura corporal elevada observada | El deterioro de la salud puede advertirse tarde; la observación manual no es continua. | Reconocer el deterioro con mayor anticipación y reducir las demoras en la respuesta. Grober, Darwin, Eliseo y Dionisio describen signos fisiológicos o de comportamiento y la necesidad de reconocerlos antes. |
+| Animal reportado como desaparecido | La desaparición de animales y el robo pueden advertirse después de una pérdida; la señal rural limita los intentos de rastreo existentes. | Mejorar la visibilidad del hato y el seguimiento de los animales desaparecidos. Próspero y Meikoll describen pérdidas relacionadas con el robo; esto no demuestra que exista una solución operativa de GPS o cercas virtuales. |
+| Tratamiento aplicado | Los historiales se encuentran dispersos entre cuadernos y fichas individuales, lo que dificulta rastrear las intervenciones anteriores. | Mantener un historial confiable por animal, con fechas y autoría claras. Próspero y Meikoll describen registros incompletos; Darwin necesita consultar la información sobre medicamentos administrados previamente. |
+| Registro de campo ingresado en hoja de cálculo | El trabajo de campo y el ingreso de datos en oficina están separados; el registro tardío y la conectividad intermitente aumentan la pérdida de información. | Capturar la evidencia cuando se realiza el trabajo y conservarla para su revisión en oficina. Meikoll identifica el registro tardío, mientras que Eliseo y Dionisio describen rutinas de campo y oficina. No se presupone una arquitectura de sincronización. |
+| Preñez confirmada por ecografía | La evidencia ecográfica y la documentación del registro externo implican pasos administrativos separados cuyas reglas exactas no están confirmadas. | Conservar evidencia completa y aclarar el traspaso de información al registro. Darwin identifica la necesidad relacionada con ASCRIGAR; el procedimiento formal de presentación y aceptación requiere validación. |
+
+Las cuatro preguntas de las notas amarillo claro se mantienen explícitamente sin resolver:
+
+- ¿Quién revisa el hato y se responsabiliza de comunicar los problemas de salud para su atención?
+- ¿Cómo se asocia cada nota de campo con el animal correcto?
+- ¿Qué reglas de cierre de campañas, costos y períodos de retiro se utilizan realmente?
+- ¿Qué evidencia de gestación exige ASCRIGAR y quién la presenta?
+
+**Etapa 5 — Eventos pivote y áreas de negocio emergentes**
+
+Cuatro eventos pivote en morado marcan cambios en la responsabilidad o en el enfoque del negocio: *Animal registrado en el hato* establece una pertenencia al hato que puede rastrearse; *Problema de salud reportado* orienta la observación rutinaria hacia una respuesta; *Diagnóstico registrado* aporta una conclusión clínica que guía el tratamiento; y *Preñez confirmada por ecografía* cambia el seguimiento reproductivo y el manejo de la evidencia. Estos eventos no definen fronteras definitivas de software.
+
+![Etapa 5 — Eventos pivote del negocio y áreas exploratorias, no contextos delimitados definitivos](assets/images/diagrams/big-picture-eventstorming/01-5-pivotal-and-emerging-contexts.png)
+
+*Figura 2.4.5. Eventos pivote y áreas de negocio emergentes: cuatro eventos pivote y eventos de apoyo asociados con cinco áreas provisionales del negocio. Fuente: tablero de SmartFarm en FigJam.*
+
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
+
+Las áreas provisionales son **Identificación y ciclo de vida del hato**, **Observación durante el pastoreo y respuesta**, **Salud animal y atención clínica**, **Reproducción y evidencia**, y **Campañas preventivas e informes**. *Campaña sanitaria cerrada* sirve de apoyo a la revisión administrativa, sujeta a la validación de las reglas de cierre. *Animal dado de baja después de un robo* pertenece a la gestión del ciclo de vida del hato, no exclusivamente a la elaboración de informes. El mantenimiento de registros de campo atraviesa estas áreas; no es un servicio de telemetría. Estas agrupaciones son hipótesis de exploración, no un mapa de contextos definitivo, una descomposición de servicios ni una asignación de responsabilidades de software.
+
+**Inventario de eventos del negocio por carril**
+
+La tabla presenta, traducidos al español, los mismos 36 eventos de las etapas 1 y 2, cuyos nombres dentro de las imágenes se conservan en inglés. Pertenecer a un carril no implica una secuencia cronológica incondicional.
+
+| Carril del negocio | Eventos candidatos del negocio redactados en pasado |
+|---|---|
+| Identificación y ciclo de vida del hato (7) | Animal registrado en el hato; Arete asignado; Animal incorporado a un lote; Etapa productiva registrada; Animal dado de baja por muerte; Animal dado de baja después de una venta; Animal dado de baja después de un robo. |
+| Pastoreo y observaciones (8) | Pastoreo iniciado; Hato revisado visualmente; Temperatura corporal medida; Temperatura corporal elevada observada; Disminución de la rumia observada; Comportamiento inusual observado; Animal encontrado fuera del área de pastoreo; Animal reportado como desaparecido. |
+| Salud e intervención (8) | Problema de salud reportado; Asistencia veterinaria solicitada; Animal examinado; Historial de medicamentos revisado; Diagnóstico registrado; Tratamiento aplicado; Período de retiro iniciado; Período de retiro finalizado. |
+| Reproducción (5) | Celo detectado; Servicio registrado; Preñez confirmada por ecografía; Parto registrado; Cría registrada en el hato. |
+| Campaña sanitaria preventiva (3) | Campaña sanitaria programada; Aplicación preventiva registrada; Campaña sanitaria cerrada. |
+| Registros de campo e informes (5) | Observación de campo registrada; Registro de campo ingresado en hoja de cálculo; Costo consolidado; Indicadores del período calculados; Informe entregado al propietario. |
+
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
 
 ## 2.5. Ubiquitous Language.
 
