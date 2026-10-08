@@ -318,7 +318,7 @@ workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de l
             // ========================================================
 
             backend = container "ICHU Modular Monolith" {
-                technology ".NET 8 + ASP.NET Core Web API"
+                technology "ASP.NET Core Web API"
                 description "Backend en la nube con los contextos acotados como módulos"
                 tags "Monolith,API"
 
@@ -651,7 +651,7 @@ workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de l
             // ========================================================
 
             cloudDatabase = container "ICHU Cloud Database" {
-                technology "PostgreSQL 16"
+                technology "PostgreSQL"
                 description "Base relacional con un esquema por contexto acotado"
                 tags "Database"
             }
@@ -1051,7 +1051,7 @@ workspace "ICHU" "Modelo C4 de ICHU, la plataforma IoT de gestión ganadera de l
             deploymentNode "Cloud Platform" {
 
                 deploymentNode ".NET Application Runtime" {
-                    technology ".NET 8 / ASP.NET Core"
+                    technology "ASP.NET Core"
 
                     containerInstance backend
                 }
