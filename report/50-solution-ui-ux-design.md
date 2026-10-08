@@ -190,6 +190,21 @@ Los wireframes de baja fidelidad establecen la jerarquía y distribución de las
 
 ### 5.4.2. Applications Wireflow Diagrams
 
+Cada wireflow representa una meta de usuario y muestra las acciones, decisiones y pantallas de baja fidelidad que resultan de cada interacción. Las metas se vinculan con las historias de usuario del alcance web:
+
+| User Persona | Meta de usuario | Historias relacionadas |
+|---|---|---|
+| Cesar Flores, administrador ganadero | Revisar el hato y atender una alerta. | US-13, US-16, US-19 |
+| Cesar Flores, administrador ganadero | Consultar animales y programar una campaña sanitaria. | US-06, US-07, US-26, US-27, US-28 |
+| Cesar Flores, administrador ganadero | Revisar indicadores y exportar un reporte. | US-29, US-31 |
+| Leonardo Rosales, médico veterinario | Consultar un hato autorizado, preparar una atención y registrar una intervención. | US-04, US-14, US-23, US-24, US-39 |
+
+Cada meta cuenta con un flujo independiente, rotulado con su persona y explicado brevemente. Cuando una interacción cambia el contenido de una vista, el wireflow muestra el nuevo estado de pantalla.
+
+> **Espacio reservado para la Figura 5.4.2:** lámina con los cuatro wireflows independientes de la Web Application, identificados por User Persona y meta.
+
+*Figura 5.4.2. Wireflows de la Web Application ICHU para las metas priorizadas de administración ganadera y atención veterinaria. Elaboración propia.*
+
 ### 5.4.3. Applications Mock-ups
 
 ### 5.4.4. Applications User Flow Diagrams
