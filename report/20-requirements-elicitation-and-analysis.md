@@ -27,8 +27,8 @@ Para posicionar a ICHU IoT con éxito, nuestra startup implementará un conjunto
 
 #### Estrategia 1: Reducción de Barreras Económicas y Tecnológicas de Infraestructura
 
-- **Táctica Comercial:** Eliminar la necesidad de costosas antenas fijas propietarias en el rancho ganadero (la gran debilidad de Allflex). El ganadero podrá optar por el collar inteligente ICHU, que transmite de forma local desde cada animal de la manada y sincroniza los datos directamente con nuestra plataforma, reduciendo a una fracción los costos de instalación física.
-- **Táctica de Ingeniería:** Diseñar el collar inteligente con conectividad híbrida que almacene la telemetría en memoria flash local cuando el ganado se encuentre en "zonas ciegas" sin señal. Una vez que el ganado retorne a áreas de cobertura o se aproxime al corral principal, los datos se sincronizarán de forma transparente y asíncrona hacia nuestro Edge API.
+- **Táctica Comercial:** Reducir la dependencia de antenas fijas propietarias en el rancho ganadero. El collar transmite sus lecturas localmente al componente Edge disponible en el predio; el Edge las sincroniza con la plataforma central cuando recupera conectividad. Esta arquitectura busca reducir la infraestructura fija requerida, sujeto a validación en el piloto.
+- **Táctica de Ingeniería:** Conservar temporalmente la telemetría cuando no haya conectividad y entregarla al Edge cuando el collar pueda comunicarse con él. El Edge mantiene los registros pendientes y los sincroniza de forma asíncrona con la plataforma central cuando exista conexión.
 
 #### Estrategia 2: Optimización Energética de los Dispositivos Físicos
 
@@ -44,6 +44,18 @@ Para posicionar a ICHU IoT con éxito, nuestra startup implementará un conjunto
 
 - **Táctica Comercial:** Posicionar a ICHU IoT no solo como un rastreador o un sensor aislado, sino como una plataforma abierta que conecta al ganadero con su médico veterinario de confianza. El veterinario podrá visualizar análisis clínicos e históricos de salud de manera remota para prescribir tratamientos oportunos, reduciendo las visitas físicas improductivas.
 - **Táctica de Ingeniería:** Diseñar y documentar rigurosamente los endpoints de nuestro RESTful API con OpenAPI/Swagger, permitiendo que sistemas externos de laboratorios o software de gestión de terceros se integren de forma segura mediante protocolos estandarizados, expandiendo el valor del ecosistema sin comprometer la seguridad de la información.
+
+**Vinculación de estrategias con funcionalidades y Product Backlog**
+
+La prioridad corresponde al orden y sprint registrados en el Product Backlog del Capítulo III; los puntos indicados son Story Points y expresan esfuerzo estimado, no prioridad. Cuando el backlog no contiene una historia que implemente una táctica completa, se indica como brecha y no como capacidad comprometida.
+
+| Ventaja competitiva buscada | Funcionalidad que la habilita | Historia asociada en el backlog | Prioridad registrada |
+|---|---|---|---|
+| Reducir la dependencia de infraestructura fija y tolerar zonas sin cobertura | Conservar lecturas pendientes en el collar; recibirlas en Edge; sincronizar desde Edge hacia la API central al recuperar conectividad; operar sin cobertura | TS-03, TS-04, TS-06 y US-22 | TS-04: orden 8, 8 SP, Sprint 2; TS-06: orden 11, 8 SP, Sprint 2; US-22: orden 23, 8 SP, Sprint 2; TS-03: orden 24, 5 SP, Sprint 3 |
+| Extender el tiempo de operación del collar entre cambios de batería | Ajustar muestreo y suspensión del dispositivo según su actividad | TS-01 y TS-02 | TS-01: orden 7, 8 SP, Sprint 2; TS-02: orden 25, 5 SP, Sprint 3. La autonomía de hasta tres años sigue siendo una meta comercial por validar, no un resultado medido. |
+| Facilitar la adopción progresiva mediante planes ajustados al tamaño del hato | Presentar planes, límites de dispositivos y estimación de costo para que el cliente compare opciones | US-35 | Orden 3, 5 SP, Sprint 1. La gestión efectiva de suscripciones y facturación aún no tiene una historia explícita identificada aquí. |
+| Diferenciar el servicio mediante alertas sanitarias y acceso clínico compartido | Consultar telemetría e historial, recibir y atender alertas, y autorizar al veterinario sobre el hato | US-04, US-13, US-14, US-16 y US-19 | US-13: orden 13, 3 SP, Sprint 2; US-16: orden 15, 8 SP, Sprint 2; US-19: orden 18, 3 SP, Sprint 2; US-04: orden 29, 5 SP, Sprint 1; US-14: orden 34, 5 SP, Sprint 3 |
+| Ampliar el ecosistema con integraciones veterinarias y de terceros | API externa documentada y conexiones con laboratorios, ecógrafos o software nutricional | No se identifica una HU de integración externa en el backlog actual. US-04 y US-14 cubren autorización y consulta clínica, pero no implementan por sí solas dicha interoperabilidad. | Pendiente de priorización y definición como historia específica. |
 
 ## 2.2. Entrevistas.
 
@@ -166,6 +178,10 @@ Con esta estructura, la entrevista se aborda en tres fases: primero el perfil de
 **Criterio de asignación por segmento**
 
 Los entrevistados se clasifican según el rol que desempeñan frente a la unidad productiva, y no según su formación profesional. Por esa razón, Meikoll Morell y Grober Barrientos figuran en el Segmento 1 pese a contar con formación en zootecnia y medicina veterinaria: en ambos casos, la entrevista aborda su responsabilidad sobre la gestión, el inventario y la economía del predio en el que trabajan, que es la perspectiva propia de ese segmento. El Segmento 2 reúne a los profesionales que prestan asesoría clínica a establos que no administran.
+
+**Alcance de la evidencia de las entrevistas**
+
+Los resúmenes siguientes registran actividades, problemas, dispositivos y necesidades cuando estos aparecen documentados en la entrevista o en el cuestionario del segmento. Las marcas, influencias de compra y canales preferidos no están consignados de forma sistemática en los resúmenes disponibles; por tanto, no se atribuyen a todos los integrantes del arquetipo. Los datos de una sola persona se identifican por su nombre y no se presentan como rasgos comunes del segmento. Los videos enlazados permiten consultar el contexto y la formulación original de cada respuesta.
 
 #### Segmento 1: Medianos y Grandes Ganaderos
 
@@ -317,7 +333,23 @@ El cruce de los tres resúmenes del Segmento 1 (Próspero Contreras Flores, Meik
 
 - **Suscripción anual y valor estratégico.** Los tres aceptan el modelo de suscripción, que Próspero y Meikoll declaran expresamente anual, y el 100% del cuestionario ratifica "pago anual con tarifa fija". Grober añade el potencial de certificaciones (mejoramiento genético por PPC y su base de datos) y mejoramiento genético a partir de registros multi-generacionales (días abiertos, índice de fertilidad, producción per cápita anual), que amplían el valor del sistema más allá del monitoreo diario.
 
-En síntesis, las entrevistas del Segmento 1 validan los pilares de la solución: **ficha digital individual centralizada (migración desde Excel/cuaderno), conectividad híbrida con modo offline obligatorio, alertas sanitarias y reproductivas basadas en el calendario ganadero, geolocalización contra el abigeato, control de costos por cabeza y modelo de suscripción anual**.
+En síntesis, las entrevistas y el cuestionario respaldan, dentro de esta muestra, la necesidad de una ficha individual, operación sin cobertura, alertas sanitarias y reproductivas, ubicación, control de costos y una opción de pago anual. Estos resultados describen necesidades y preferencias declaradas; no validan todavía la eficacia de la solución ni la reducción de pérdidas.
+
+##### Trazabilidad de evidencia a requisitos
+
+La tabla separa patrones compartidos, respuestas del cuestionario y casos individuales. Los identificadores de historias enlazan con el Product Backlog del Capítulo III; la asociación expresa una necesidad respaldada, no una validación de que la funcionalidad ya produzca el beneficio esperado.
+
+| Fuente | Hallazgo documentado | Necesidad derivada | Arquetipo | Historias relacionadas |
+|---|---|---|---|---|
+| Próspero, Meikoll y Grober; cuestionario Segmento 1 (2 respuestas) | Registros en Excel/cuadernos y pérdida de trazabilidad; ambos cuestionarios reportan uso de registros manuales o hojas de cálculo | Identificar al animal y consultar una ficha con sus datos productivos y eventos | Cesar Flores; patrón recurrente del segmento | US-06, US-07, US-21 |
+| Próspero (50% de cobertura declarada en potreros), Meikoll y Grober; cuestionario Segmento 1 (2/2: cobertura regular) | La conectividad es irregular en zonas de pastoreo | Registrar y conservar información sin cobertura, con sincronización posterior | Cesar Flores; patrón recurrente, con distinta intensidad por predio | US-22, TS-03, TS-04, TS-06 |
+| Próspero y Meikoll; cuestionario Segmento 1 (2/2 reportan abigeato frecuente y costoso) | Robos reportados por Próspero; Meikoll relata que el microchip no permitió recuperar dos de tres caballos robados por falta de señal | Consultar ubicación y recibir aviso de salida del área; el caso del microchip es evidencia individual de Meikoll | Cesar Flores; la experiencia de robo concreta es individual | US-15, US-17, US-20 |
+| Grober | En su zona, la reducción de movimiento y pastoreo puede preceder signos de mal de altura en terneros | Consultar actividad y recibir una alerta que apoye la inspección clínica | Cesar Flores y Leonardo Rosales como necesidad compartida de vigilancia; el caso de altura es específico de Grober | US-13, US-16, TS-01 |
+| Darwin | El celo silencioso suele reconocerse con dos o tres días de retraso; también solicita alertas por cambios de rumia y temperatura | Detectar patrones compatibles con celo y revisar evidencia biométrica | Leonardo Rosales; observación específica de Darwin que requiere validación clínica | US-18, US-14 |
+| Darwin, Eliseo y Dionisio; cuestionario Segmento 2 (3 respuestas) | Los tres solicitan seguimiento de variables biométricas; el cuestionario indica uso de smartphone, laptop o papel (una respuesta por categoría) | Consultar el historial biométrico y registrar información desde los medios disponibles para el profesional | Leonardo Rosales; necesidad recurrente, dispositivos heterogéneos | US-14, US-21, US-22 |
+| Darwin, Eliseo y Dionisio | Solicitan alertas ante anomalías; Eliseo y Dionisio además describen reportes e integración con equipos o herramientas externas | Recibir y atender alertas, exportar información y definir interoperabilidad pendiente | Leonardo Rosales; cada integración concreta debe confirmarse con usuarios y priorizarse | US-16, US-19, US-31; integración externa pendiente de HU |
+
+**Límites de la muestra.** Se entrevistó a tres participantes por segmento y se aplicaron cuestionarios a dos ganaderos y tres profesionales. Por ello, las coincidencias se consideran patrones cualitativos de esta muestra, no estimaciones representativas de todos los ganaderos o veterinarios. La reducción de mortalidad, el ahorro de tiempo y la aceptación o renovación de una suscripción son resultados esperados que deben validarse en un piloto; no son resultados comprobados por estas entrevistas.
 
 #### Análisis de entrevistas del Segmento 2: Zootecnistas y Médicos Veterinarios
 
@@ -371,7 +403,7 @@ El cruce de los tres resúmenes del Segmento 2 (Darwin Carbajal Vilca, Eliseo Ra
 
 - **Reportes ejecutivos comparativos.** Dionisio solicita reportes exportables a Excel o PDF y Eliseo automatización de reportes ejecutivos; ambos coinciden con la necesidad expresada en el cuestionario de graficar enfermedades por establecimiento, mortalidad y problemas reproductivos por mes, lo que sustenta el **módulo de analítica del ICHU Web Application**.
 
-En síntesis, las entrevistas del Segmento 2 validan cuantitativa y cualitativamente los pilares de la solución: **telemetría biométrica continua (rumia, temperatura, actividad, frecuencias cardíaca y respiratoria), motor de alertas clínicas configurables, historia clínica digital centralizada con API abierta, soporte móvil offline y reportes exportables**.
+En síntesis, las entrevistas y el cuestionario respaldan en esta muestra el interés por consultar variables biométricas y recibir alertas, y documentan solicitudes de historial digital, soporte en campo y reportes. Las peticiones de ecógrafos, nutrición y otras integraciones se atribuyen a participantes concretos; la API abierta y la eficacia clínica no quedan validadas por estas entrevistas y requieren historias de backlog y validación posteriores.
 
 ## 2.3. Needfinding.
 
@@ -384,6 +416,8 @@ En esta sección se consolidan y sintetizan los hallazgos cualitativos y cuantit
 Para la construcción de los arquetipos de usuario, el equipo procesó la información recolectada en la fase de entrevistas y el análisis del mercado ganadero. Se identificaron dos patrones de comportamiento que representan a los dos segmentos objetivo definidos para el ecosistema de software ICHU.
 
 Del análisis de entrevistas se tomaron como insumo principal las herramientas de registro que utiliza cada segmento, el estado de la conectividad en sus zonas de trabajo, las pérdidas económicas declaradas, los dispositivos de preferencia y los parámetros que cada perfil necesita conocer del animal. Del análisis competitivo se incorporaron las expectativas de precio y de modalidad de contratación, junto con las funcionalidades que los competidores ya ofrecen y que condicionan lo que cada segmento espera encontrar.
+
+Las personas son arquetipos de segmento construidos a partir de tres entrevistas por segmento, no retratos de un participante concreto. Se consideran **patrones comunes** los temas que aparecen en varias entrevistas o que coinciden con el cuestionario; se mantienen como **evidencia individual** los sucesos y condiciones atribuidos a una sola persona; y se consideran **supuestos por validar** las preferencias que no aparecen directamente en las fuentes. Por ejemplo, los robos relatados por Próspero y la experiencia con microchip de Meikoll son casos individuales, mientras que el cuestionario respalda que ambos participantes consideran frecuente y costoso el abigeato. La composición de la muestra es pequeña y no permite afirmar que estos rasgos describan a todo el mercado.
 
 **Segmento 1: Medianos y Grandes Ganaderos.** Propietarios y administradores de unidades productivas, enfocados en la rentabilidad, la reducción de pérdidas por mortalidad y abigeato, y la toma de decisiones a partir de indicadores del hato.
 
@@ -405,7 +439,7 @@ Arquetipo del Segmento 2, construido a partir de los patrones identificados en l
 
 [Ficha de User Persona y Empathy Map en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
 
-Ambas fichas fueron elaboradas en UXPressia y contemplan los atributos propios de un arquetipo: datos demográficos, biografía, personalidad, habilidades, objetivos, frustraciones, tecnología de preferencia, marcas e influencias, y canales de interacción.
+Ambas fichas fueron elaboradas en UXPressia y contemplan datos demográficos, biografía, personalidad, habilidades, objetivos, frustraciones, tecnología, marcas e influencias y canales. Los atributos sin respaldo en varias entrevistas o cuestionarios deben interpretarse como hipótesis de diseño pendientes de validación, no como rasgos confirmados del arquetipo.
 
 ### 2.3.2. User Task Matrix.
 
@@ -487,7 +521,7 @@ Ambos recorridos convergen en que el registro se realiza siempre después de la 
 
 ### 2.3.4. Empathy Mapping.
 
-Para la elaboración de los Empathy Maps, el equipo partió de la ficha de cada User Persona y colocó al arquetipo en el centro del lienzo. A partir de ahí, cada integrante aportó observaciones derivadas de los resúmenes de entrevista, respondiendo de forma sucesiva a las preguntas que estructuran la herramienta: con quién se empatiza, qué necesita hacer, qué dice, qué ve, qué hace, qué escucha, y cómo se siente y qué piensa. La sesión cerró con la identificación de los Pains, a partir de la pregunta sobre qué le preocupa, y de los Gains, a partir de la pregunta sobre qué puede ayudar a resolver sus problemas y qué podría convencerlo de que la propuesta es la alternativa adecuada.
+Para la elaboración de los Empathy Maps, el equipo partió de las entrevistas y de los patrones sintetizados en las User Personas. Los elementos descritos a continuación se limitan a evidencia disponible: registros en Excel o cuadernos, conectividad irregular, observación y atención de animales, uso de teléfonos o computadoras cuando se declara, y necesidades expresadas por los participantes. Las marcas, influencias de compra y canales sociales no están documentados de manera consistente en las fuentes transcritas; se consideran preguntas pendientes de validación y no hechos del arquetipo. Los mapas gráficos asociados deben reflejar esta misma distinción entre patrón común, caso individual y supuesto.
 
 **Empathy Map de Cesar Flores**
 
@@ -495,13 +529,13 @@ Para la elaboración de los Empathy Maps, el equipo partió de la ficha de cada 
 
 [Empathy Map del Segmento 1 en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
 
-Se empatiza con un ganadero propietario o administrador de una unidad de 51 a 200 cabezas, ubicada en una zona rural de Apurímac o Cusco, que toma las decisiones sobre salud, reproducción, costos y seguridad del hato.
+Se empatiza con un arquetipo de propietario o administrador ganadero. En esta muestra, los predios entrevistados se encuentran en Apurímac y Cusco y los tamaños declarados varían; no se toma la localización ni escala de un solo participante como requisito universal.
 
-Necesita registrar animales, revisar alertas, programar campañas sanitarias, controlar costos, verificar partos y localizar animales extraviados. Lo que ve a diario son hojas de cálculo, cuadernos, potreros extensos, conectividad irregular y animales enfermos o gestantes cuya vigilancia completa le resulta inabordable. Escucha recomendaciones de veterinarios, avisos de campañas sanitarias, comentarios de otros ganaderos y reportes de su personal de campo. Lo que hace es contar y revisar el ganado, verificar pastos y agua, registrar información en hojas de cálculo o cuadernos, tomar fotografías y contactar al veterinario cuando aparece un problema. Lo resume en una frase: "Lo que falta es una base de datos práctica donde tengamos todos esos antecedentes a la mano".
+Necesita identificar animales, consultar antecedentes, organizar campañas, revisar costos y responder a problemas sanitarios o de seguridad. Las entrevistas describen registros en Excel y cuadernos, potreros con cobertura irregular y labores de observación directa. Próspero menciona el uso de smartphone en campo y laptop en oficina; Meikoll refiere laptop y smartphone para sus fichas. Las actividades y necesidades comunes incluyen revisar animales, registrar eventos y consultar apoyo veterinario. Los canales de comunicación preferidos, marcas y fuentes de influencia no quedaron establecidos de forma comparable; deben validarse, no asumirse. Próspero expresa la necesidad de tener los antecedentes disponibles en una base de datos práctica.
 
-Piensa y siente que le preocupa perder animales por enfermedades, partos o abigeato, y que no tiene toda la información a la mano. Aspira a una herramienta sencilla que funcione aunque no haya señal.
+La muestra documenta preocupación por enfermedades, partos y abigeato, pero los sucesos concretos varían por participante. La necesidad transversal respaldada es mantener información accesible y mejorar la detección y respuesta; que una herramienta reduzca efectivamente mortalidad o pérdidas sigue siendo una hipótesis a validar.
 
-Sus **Pains** son los registros fragmentados, la falta de hábito para registrar, la mala conectividad, las pérdidas por partos, enfermedades y robos, y la ausencia de trazabilidad. Sus **Gains** son la ficha individual por animal, las alertas de parto y celo, el modo sin conexión, la geolocalización, el control de costos y los reportes automáticos.
+Los **Pains comunes documentados** son la fragmentación de registros y la conectividad irregular. La falta de hábito para registrar corresponde específicamente a Meikoll; los robos y problemas de parto o enfermedad se atribuyen a quienes los relataron y no a todos los ganaderos. Los **Gains esperados** son la ficha individual, las alertas, el funcionamiento sin conexión, la ubicación y los reportes; su efecto en pérdidas y tiempos requiere validación.
 
 **Empathy Map de Leonardo Rosales**
 
@@ -509,17 +543,17 @@ Sus **Pains** son los registros fragmentados, la falta de hábito para registrar
 
 [Empathy Map del Segmento 2 en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
 
-Se empatiza con un zootecnista o médico veterinario que trabaja en campo y en oficina, atiende diferentes establos y necesita información clínica objetiva para diagnosticar y tratar ganado.
+Se empatiza con un arquetipo de zootecnista o médico veterinario que combina atención en campo con análisis y documentación clínica. Las entrevistas describen esta dinámica en Darwin, Eliseo y Dionisio, aunque las herramientas y tareas específicas varían entre ellos.
 
-Necesita examinar animales, registrar síntomas y tratamientos, revisar antecedentes, monitorear temperatura y rumia, analizar lotes y generar reportes para los propietarios. Lo que ve son animales con signos clínicos, historiales incompletos, hojas de cálculo, celulares, laptops, ecógrafos y establos distintos con información dispersa. Escucha consultas de ganaderos, opiniones de colegas, capacitaciones de la asociación de criadores, universidades, grupos profesionales y reportes del personal de campo. Lo que hace es realizar visitas, observar el comportamiento, evaluar tratamientos, consultar a otros profesionales, registrar informes y recurrir a pruebas de laboratorio en los casos complejos. Lo resume así: "Cuando tienes un seguimiento exacto puedes acudir al instante".
+Necesita examinar animales, registrar intervenciones, consultar antecedentes, interpretar cambios de temperatura, actividad o rumia y comunicar resultados al propietario. El cuestionario del segmento (3 respuestas) registra un uso repartido entre smartphone, laptop y papel; Dionisio menciona el teléfono en campo y la computadora para informes. Eliseo describe registros en computadora e impresión de informes. Las entrevistas respaldan consultas de colegas y el uso de equipos como ecógrafos en casos concretos, pero no documentan de manera común marcas, asociaciones, universidades ni canales de influencia; esos elementos deben confirmarse antes de incorporarlos como atributos del arquetipo.
 
-Piensa y siente que le preocupa detectar tarde una enfermedad o aplicar un tratamiento incorrecto. Necesita confiar en los datos y contar con evidencia clínica para justificar sus decisiones.
+Los participantes expresan preocupación por detectar tarde cambios clínicos, por la calidad de los registros y por duplicar tareas. Necesitan datos trazables para sustentar decisiones; la eficacia diagnóstica de alertas o monitoreo continuo aún requiere validación clínica.
 
-Sus **Pains** son los tratamientos anteriores no registrados, las dosis duplicadas, la detección tardía del timpanismo, el celo silencioso, la falta de datos de rumia y las ecografías separadas del historial. Sus **Gains** son las alertas tempranas, la historia clínica completa, las imágenes ecográficas centralizadas, los reportes exportables, el análisis epidemiológico y la integración con sistemas externos.
+Los **Pains comunes documentados** son la información clínica incompleta o duplicada y la dificultad de advertir algunos cambios a tiempo. El timpanismo y el celo silencioso se mantienen como ejemplos clínicos relatados por participantes concretos. Los **Gains esperados** son alertas, historiales trazables, reportes e interoperabilidad; su eficacia clínica y disponibilidad deben validarse antes de presentarlos como resultados alcanzados.
 
 ## 2.4. Big Picture EventStorming.
 
-El Big Picture EventStorming permite al equipo construir una comprensión compartida del dominio ganadero antes de tomar cualquier decisión de diseño. A diferencia de las técnicas orientadas a la solución, esta sesión se concentra en los hechos relevantes que ocurren en el negocio, con independencia de qué sistema los registre.
+El Big Picture EventStorming permite al equipo construir una comprensión compartida del dominio ganadero antes de tomar cualquier decisión de diseño. Esta vista se concentra en hechos del negocio —estados o sucesos que importan a ganaderos y profesionales— independientemente de qué sistema los registre. El transporte de telemetría, el almacenamiento, las API y la sincronización son decisiones de solución y se describen en el Capítulo IV; no se modelan como eventos del dominio en esta tabla.
 
 **Desarrollo de la sesión**
 
@@ -572,9 +606,8 @@ Las siguientes láminas documentan la progresión completa de la sesión. Se rec
 | Fase del negocio | Domain Events |
 |---|---|
 | Incorporación del animal | Animal registrado en el hato, Arete asignado al animal, Animal incorporado a un lote, Etapa productiva registrada |
-| Asignación de dispositivos | Collar recibido por la unidad productiva, Collar vinculado al animal, Primera lectura recibida del collar |
-| Vigilancia diaria | Lectura biométrica capturada, Lectura almacenada en el borde, Lectura sincronizada con el servicio central, Posición del animal registrada |
-| Detección de anomalías | Umbral de temperatura superado, Caída de rumia detectada, Patrón de actividad inusual detectado, Animal ubicado fuera de la zona de pastoreo |
+| Identificación y vigilancia | Collar vinculado al animal, Estado del animal observado, Posición del animal registrada |
+| Detección de cambios relevantes | Umbral de temperatura superado, Disminución de rumia observada, Cambio inusual de actividad observado, Animal ubicado fuera de la zona de pastoreo |
 | Atención sanitaria | Alerta emitida al responsable, Alerta atendida, Animal examinado, Diagnóstico registrado, Tratamiento aplicado, Periodo de retiro iniciado, Periodo de retiro concluido |
 | Ciclo reproductivo | Celo detectado, Servicio registrado, Preñez confirmada por ecografía, Parto registrado, Cría registrada en el hato |
 | Planificación sanitaria | Campaña sanitaria programada, Recordatorio de campaña emitido, Aplicación registrada por animal, Campaña cerrada |

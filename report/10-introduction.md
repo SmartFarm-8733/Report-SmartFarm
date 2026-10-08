@@ -381,22 +381,19 @@ A continuación, se describen los dos segmentos objetivo identificados para nues
 
 Dentro de este segmento conviven dos roles operativos. El administrador ganadero, propietario o gestor de la unidad productiva, es quien decide la compra y responde por los resultados económicos del hato. El operario de campo es el personal que ejecuta las faenas en el potrero y registra lo que observa durante la jornada; no decide la compra, pero su adopción determina que la información llegue al sistema. Este segmento representa a los tomadores de decisiones financieras y estratégicas de las unidades de producción ganadera. Son los responsables de adquirir la solución digital y los collares inteligentes IoT, motivados por la optimización de costos, el aumento de la productividad de leche y carne, y la mitigación de pérdidas críticas causadas por muertes no detectadas, enfermedades y abigeato.
 
-**A. Perfil Demográfico y Geográfico**
+**A. Perfil del segmento: evidencia y límites**
 
-- **Edad:** Entre 35 y 65 años.
-- **Género:** Masculino y femenino.
-- **Nivel Educativo:** Educación técnica superior o universitaria completa (típicamente en carreras como Agronomía, Medicina Veterinaria, Zootecnia, Administración de Empresas o Ingeniería Industrial).
-- **Ubicación:** Regiones ganaderas de la sierra sur del Perú, en particular Apurímac, Cusco y Puno, donde se realizó la investigación de campo. Cajamarca, Arequipa, La Libertad y San Martín se consideran mercados de expansión posterior.
-- **Ocupación:** Propietarios de haciendas, gerentes generales de cooperativas ganaderas o administradores generales de estancias ganaderas medianas y grandes (hatos de entre 50 y más de 500 cabezas de ganado).
-- **Dispositivos de Preferencia:** Teléfonos inteligentes de gama media-alta (Android e iOS), tabletas y computadoras portátiles o de escritorio para el control administrativo de la empresa.
-- **Canales de Interacción Digital:** Redes sociales profesionales (LinkedIn), grupos especializados de WhatsApp, correos electrónicos corporativos, motores de búsqueda (Google) y portales de noticias del sector agropecuario.
+- **Ocupación respaldada:** Propietarios o administradores de una unidad productiva que toman decisiones sobre el hato. El operario de campo es un rol relacionado, pero no equivale al comprador o administrador.
+- **Ubicación observada:** Las entrevistas de este segmento corresponden a predios de Apurímac y Cusco. Son ubicaciones de la muestra, no una delimitación del mercado total.
+- **Escala observada:** Los dos participantes del cuestionario declararon entre 51 y 200 cabezas. Esta cifra describe únicamente esa muestra; no se atribuye a todos los integrantes del segmento.
+- **Dispositivos observados:** Próspero y Meikoll mencionan smartphone y laptop en sus prácticas de registro. No se documentan preferencias generales por sistema operativo, gama de dispositivo, tabletas o computadoras de escritorio.
+- **Edad, género, nivel educativo y canales digitales preferidos:** No se cuenta con evidencia comparable suficiente para asignar rangos o preferencias al arquetipo.
 
-**B. Características Psicográficas y Conductuales**
+**B. Patrones de trabajo y supuestos por validar**
 
-- **Personalidad:** Analíticos, orientados a resultados, visionarios, cautelosos con las inversiones de capital pero abiertos a la adopción de tecnologías validadas que demuestren un rápido retorno de inversión (ROI).
-- **Habilidades:** Gestión de presupuestos, planificación estratégica, liderazgo de personal de campo y negociación con proveedores de la cadena de valor láctea o cárnica.
-- **Estilo de Vida:** Dividen su tiempo entre la supervisión estratégica en campo (visitas periódicas a las estancias) y la gestión comercial en zonas urbanas. Valoran el control de sus activos y la tranquilidad de saber que su patrimonio está protegido de forma preventiva.
-- **Marcas e Influencias:** Compran insumos de marcas reconocidas como Zoetis, MSD Animal Health, e influyen sus decisiones a través de gremios ganaderos locales (como la Asociación de Ganaderos del Perú - AGALEP), ferias agropecuarias nacionales y consultores zootecnistas de confianza.
+- **Patrones documentados:** Registros dispersos entre hojas de cálculo y cuadernos, conectividad irregular en potreros y necesidad de consultar información sanitaria, productiva y económica del animal.
+- **Necesidades expresadas:** Registro individual, alertas sanitarias o reproductivas, consulta de costos y operación sin cobertura. Son necesidades declaradas, no prueba de que la propuesta reduzca pérdidas.
+- **Supuestos por validar:** Sensibilidad al precio, retorno de inversión esperado, marcas de insumos, gremios o asesores que influyen en la compra, ferias y canales digitales de adquisición. Las entrevistas no los establecen como patrones comunes.
 
 **C. Evidencia de investigación y fuentes**
 
@@ -407,23 +404,19 @@ Como contexto nacional, la Encuesta Nacional Agropecuaria del INEI identifica al
 **Segmento 2:** Zootecnistas y Médicos Veterinarios
 Este segmento abarca a los especialistas técnicos encargados del diagnóstico preventivo, la atención de brotes de enfermedades, la sincronización reproductiva y la prescripción de tratamientos médicos para el ganado. Son asesores externos clave o personal de planta que requiere de datos cuantitativos precisos, históricos y en tiempo real para optimizar la salud colectiva e individual de los bovinos.
 
-**A. Perfil Demográfico y Geográfico**
+**A. Perfil del segmento: evidencia y límites**
 
-- **Edad:** Entre 28 y 60 años.
-- **Género:** Masculino y femenino.
-- **Nivel Educativo:** Educación universitaria completa y posgrados (Especializaciones, Maestrías) en Medicina Veterinaria, Zootecnia o Reproducción Animal.
-- **Ubicación:** Ciudades intermedias cercanas a los valles ganaderos o residentes en las capitales de región, realizando visitas técnicas programadas o de emergencia a múltiples establos ganaderos.
-- **Ocupación:** Médicos veterinarios independientes, consultores de salud animal, asesores de sanidad de cooperativas o directores de sanidad animal de grandes agropecuarias.
-- **Dispositivos de Preferencia:** Smartphones de gama media-alta, tabletas robustas (con estuches protectores para uso en corrales) y laptops para análisis estadístico de datos y reportes clínicos.
-- **Canales de Interacción Digital:** Correo electrónico, plataformas académicas y científicas (PubMed, ResearchGate), boletines de sanidad agropecuaria (SENASA), aplicaciones web profesionales de gestión de establos y redes sociales enfocadas en la comunidad médica veterinaria.
+- **Ocupación respaldada:** Zootecnistas y médicos veterinarios que realizan atención técnica o clínica de ganado. La muestra incluye perfiles y responsabilidades distintas.
+- **Ubicación observada:** Las entrevistas mencionan Puno, Perú, y trabajo de campo en Perú por un participante ubicado en Chile. No se infiere una distribución geográfica general a partir de estos casos.
+- **Dispositivos observados:** El cuestionario del segmento (3 respuestas) registró una respuesta por cada categoría: smartphone, laptop y solo papel. No se midió preferencia por gama, tableta o sistema operativo.
+- **Edad, género, nivel educativo agregado y canales digitales preferidos:** No hay evidencia comparable suficiente para definirlos como rasgos del arquetipo.
 
-**B. Características Psicográficas y Conductuales**
+**B. Patrones de trabajo y supuestos por validar**
 
-- **Personalidad:** Metódicos, analíticos, orientados a la ciencia de datos, rigurosos con los protocolos de bioseguridad y apasionados por el bienestar animal. Valoran la precisión de los datos biométricos por encima de las estimaciones subjetivas.
-- **Habilidades:** Diagnóstico clínico, análisis de parámetros fisiológicos complejos (temperatura, frecuencia de rumia, nivel de actividad), diseño de calendarios de vacunación, inseminación artificial y gestión de fármacos veterinarios.
-- **Estilo de Vida:** Dinámico y móvil. Viajan frecuentemente entre diferentes establos y estancias ganaderas. Deben estar preparados para responder a emergencias a cualquier hora del día.
-- **Marcas e Influencias:** Influenciados por publicaciones de revistas indexadas especializadas, laboratorios multinacionales (como Boehringer Ingelheim, Elanco, Bayer Sanidad Animal) y colegios médico-veterinarios locales (como el Colegio Médico Veterinario del Perú).
+- **Patrones documentados:** Combinación de actividades de campo y documentación o análisis de oficina; consulta de información clínica y necesidad expresada de mejorar registros y detección de cambios.
+- **Necesidades expresadas:** Alertas, historiales, reportes y acceso a datos biométricos. Las solicitudes concretas de ecógrafos, nutrición o reportes se atribuyen a quienes las mencionaron, no a todos los profesionales.
+- **Supuestos por validar:** Influencia de publicaciones, laboratorios, colegios profesionales, marcas, canales digitales y disponibilidad para responder fuera del horario laboral. Las entrevistas resumidas no establecen estos rasgos como comunes.
 
 **C. Evidencia de investigación**
 
-Las entrevistas del Segmento 2 muestran que los profesionales necesitan consultar historiales clínicos, tratamientos, constantes fisiológicas, rumia, actividad, reproducción y evidencia ecográfica antes o durante la visita al establo. Darwin, Eliseo y Dionisio coincidieron en la necesidad de alertas tempranas, reportes exportables e integración con ecógrafos y sistemas de nutrición. Estos hallazgos provienen de la investigación propia y deben validarse posteriormente con una muestra más amplia antes de convertirse en indicadores estadísticos generales.
+Las entrevistas del Segmento 2 documentan necesidades de consulta de historial clínico y biometría, pero las solicitudes de alertas, reportes e integración varían por participante. Se mantienen como necesidades reportadas y candidatos de diseño; no se presentan como preferencias universales ni como resultados validados. Deben contrastarse con una muestra más amplia.
