@@ -77,6 +77,49 @@ Las etiquetas se localizan de forma consistente en `en_US` y `es_419`, incluido 
 
 ### 5.2.3. SEO Tags and Meta Tags
 
+Se asignan los siguientes valores de diseño a las páginas principales. Title y Description se traducen junto con el contenido; los ejemplos corresponden a `es_419`.
+
+| Página pública | Title | Meta Description |
+|---|---|---|
+| Inicio | ICHU · Ganadería inteligente | Conoce ICHU: monitoreo con collares IoT y gestión del hato para ganaderos y veterinarios. |
+| Cómo funciona | Cómo funciona ICHU | Descubre cómo vincular un collar, consultar lecturas y revisar alertas del hato. |
+| Videos | Videos de ICHU | Explora videos sobre la propuesta de ICHU y su uso en el trabajo ganadero. |
+| Planes | Planes de ICHU | Compara cobertura, límites de dispositivos y condiciones de los planes de ICHU. |
+| Términos | Términos de ICHU | Consulta las condiciones de uso, el tratamiento de datos y la fecha de actualización. |
+
+Quiénes somos, los contenidos por segmento, Tecnología y Contacto son secciones de Inicio, no páginas independientes. Planes y Términos se proponen como páginas complementarias.
+
+| Vista de la Web Application | Title | Meta Description |
+|---|---|---|
+| Acceso | Acceso · ICHU | Inicia sesión para acceder a tu espacio de trabajo en ICHU. |
+| Mi hato / Hatos autorizados | Hatos · ICHU | Consulta el resumen de las unidades a las que tienes acceso. |
+| Animales y ficha | Animales · ICHU | Consulta fichas, lotes e historial de los animales autorizados. |
+| Monitoreo | Monitoreo · ICHU | Revisa lecturas y ubicaciones con su fecha de captura. |
+| Alertas | Alertas · ICHU | Consulta señales, estados de atención y acciones registradas. |
+| Calendario | Calendario · ICHU | Organiza campañas sanitarias, recordatorios y seguimientos. |
+| Reportes | Reportes · ICHU | Consulta indicadores por periodo y exporta reportes autorizados. |
+| Dispositivos | Dispositivos · ICHU | Consulta collares y abrevaderos, asignaciones y conectividad. |
+| Cuenta | Cuenta · ICHU | Gestiona tu perfil, asesorías y plan según tus permisos. |
+
+| Metadato compartido | Valor |
+|---|---|
+| Author, en todas las páginas | SmartFarm |
+| Keywords, páginas públicas | ICHU, SmartFarm, ganadería inteligente, Perú, IoT |
+| Keywords, aplicación web | ICHU, gestión ganadera, hato, monitoreo, historial veterinario |
+| Robots, páginas públicas | index, follow |
+| Robots, aplicación web | noindex, nofollow |
+
+Los metadatos de la aplicación son genéricos: no incluyen nombres de animales, propietarios ni datos clínicos. La exclusión de indexación no sustituye la autenticación ni los permisos por hato. La vista previa pública reutiliza Title y Description; la URL canónica se configurará con el dominio definitivo.
+
+Para la distribución de la aplicación móvil mediante una tienda, se propone esta ficha ASO, adaptable a los campos de la plataforma elegida; no implica una publicación existente.
+
+| Campo ASO | Valor propuesto |
+|---|---|
+| App Title | ICHU: ganado y alertas |
+| App keywords | ganado, ganadería, monitoreo, IoT, alertas, veterinario |
+| App subtitle | Tu hato, cerca de ti |
+| App description | Consulta fichas, lecturas y ubicaciones; revisa alertas y registra eventos de campo. Accede al historial clínico según tus permisos. Trabaja con fichas descargadas sin conexión y sincroniza los registros al recuperar cobertura. |
+
 ### 5.2.4. Searching Systems
 
 ### 5.2.5. Navigation Systems
