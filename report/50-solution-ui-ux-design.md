@@ -164,17 +164,17 @@ El veterinario sin autorización permanece en Perfil y Asesorías hasta obtener 
 
 El wireframe organiza la propuesta de ICHU, la información para ganaderos y veterinarios, la explicación del servicio y el contacto. En escritorio conserva la navegación principal; en móvil prioriza un recorrido vertical y un menú compacto, manteniendo las mismas etiquetas y acciones.
 
-<!-- Insertar una lámina de Figma con el wireframe de escritorio y su adaptación móvil. Mostrar encabezado, hero, secciones por segmento, tecnología, contacto y pie de página; sustituir esta indicación por la exportación final. -->
+![Wireframes responsivos de la landing page de ICHU](assets/images/landing-page-wireframe-responsive.png)
 
-*Figura 5.3.1. Wireframes responsivos de la landing page de ICHU.*
+*Figura 5.3.1. Wireframes responsivos de ICHU. Elaboración propia a partir de la estructura del landing actual.*
 
 ### 5.3.2. Landing Page Mock-up
 
 El mockup de alta fidelidad parte del landing actualizado de ICHU: verde bosque, crema y dorado, tipografía display combinada con sans serif y fotografía ganadera. En móvil, el contenido y las acciones se reorganizan en una columna sin alterar el recorrido principal.
 
-<!-- Insertar una lámina de Figma con los mockups de alta fidelidad de escritorio y móvil. Incluir la página completa o vistas que permitan revisar hero, navegación, contenido y contacto; sustituir esta indicación por la exportación final. -->
+![Mockups responsivos de alta fidelidad de la landing page de ICHU](assets/images/landing-page-mockup-responsive.png)
 
-*Figura 5.3.2. Mockups de alta fidelidad de la landing page de ICHU en escritorio y móvil.*
+*Figura 5.3.2. Mockups de alta fidelidad de ICHU en escritorio y móvil. Elaboración propia a partir del landing actual.*
 
 ## 5.4. Applications UX/UI Design
 
