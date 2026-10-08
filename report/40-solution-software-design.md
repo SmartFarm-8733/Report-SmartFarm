@@ -441,8 +441,8 @@ El Container Diagram descompone la solución en sus unidades de despliegue indep
 | Water Controller Embedded Application | C++ sobre ESP32 | Medición de la temperatura del agua y accionamiento del calentador |
 | Portable Edge Gateway | Flask con Peewee ORM sobre Python | Recepción por BLE, almacenamiento local, evaluación de reglas críticas y sincronización |
 | Edge Database | SQLite | Telemetría sin conexión, estado de alertas, umbrales y geocercas en caché |
-| ICHU Modular Monolith | ASP.NET Core Web API sobre .NET 8 | Backend en la nube con los siete contextos como módulos internos |
-| ICHU Cloud Database | PostgreSQL 16 | Persistencia relacional con un esquema por contexto acotado |
+| ICHU Modular Monolith | ASP.NET Core Web API | Backend en la nube con los siete contextos como módulos internos |
+| ICHU Cloud Database | PostgreSQL | Persistencia relacional con un esquema por contexto acotado |
 
 Las aplicaciones cliente consumen el RESTful API sobre HTTPS con JSON. El collar transmite directamente al backend cuando hay Wi-Fi e Internet, y por Bluetooth Low Energy al Edge Gateway durante el pastoreo sin cobertura. El Edge Gateway entrega alertas locales a la aplicación móvil por red local, sin depender de Internet. El backend accede a PostgreSQL mediante Entity Framework Core con el proveedor Npgsql.
 
