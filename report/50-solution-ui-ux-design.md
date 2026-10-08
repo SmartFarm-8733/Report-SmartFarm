@@ -170,6 +170,12 @@ El wireframe organiza la propuesta de ICHU, la información para ganaderos y vet
 
 ### 5.3.2. Landing Page Mock-up
 
+El mockup de alta fidelidad parte del landing actualizado de ICHU: verde bosque, crema y dorado, tipografía display combinada con sans serif y fotografía ganadera. En móvil, el contenido y las acciones se reorganizan en una columna sin alterar el recorrido principal.
+
+<!-- Insertar una lámina de Figma con los mockups de alta fidelidad de escritorio y móvil. Incluir la página completa o vistas que permitan revisar hero, navegación, contenido y contacto; sustituir esta indicación por la exportación final. -->
+
+*Figura 5.3.2. Mockups de alta fidelidad de la landing page de ICHU en escritorio y móvil.*
+
 ## 5.4. Applications UX/UI Design
 
 ### 5.4.1. Applications Wireframes
