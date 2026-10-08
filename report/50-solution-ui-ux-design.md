@@ -33,7 +33,7 @@ La identidad y el significado de los estados se mantienen entre pantallas; la co
 
 El mockup recibido evidencia la web y su adaptación, pero aún no las vistas nativas ni la interfaz física del collar y del controlador del abrevadero. Las capturas web y los diseños nativos se incorporarán en 5.3 y 5.4; el dispositivo se completará en 5.6.
 
-> **Figuras por añadir:** logotipos; web en escritorio y móvil; app nativa; e interfaz física del collar y controlador (5.6).
+> **Figura por añadir en 5.1.2:** una lámina comparativa con la web en escritorio y móvil, la app nativa y la interfaz física IoT (collar y controlador, según se defina en 5.6).
 
 ## 5.2. Information Architecture
 
