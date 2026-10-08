@@ -207,6 +207,12 @@ Cada meta cuenta con un flujo independiente, rotulado con su persona y explicado
 
 ### 5.4.3. Applications Mock-ups
 
+Los mockups de alta fidelidad desarrollan las vistas web de los wireframes y aplican la paleta, tipografía y componentes definidos en 5.1. La propuesta conserva las etiquetas de 5.2, distingue los permisos por rol y contempla estados de validación, ausencia de resultados y acceso restringido, junto con los criterios de localización y accesibilidad de US-37 y US-38.
+
+> **Espacio reservado para la Figura 5.4.3:** composición de mockups web de alta fidelidad para los flujos priorizados de administración ganadera y atención veterinaria.
+
+*Figura 5.4.3. Mockups de la Web Application ICHU con el sistema visual y los estados de interfaz definidos para sus usuarios. Elaboración propia.*
+
 ### 5.4.4. Applications User Flow Diagrams
 
 ## 5.5. Applications Prototyping
