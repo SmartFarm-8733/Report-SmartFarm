@@ -215,6 +215,12 @@ Los mockups de alta fidelidad desarrollan las vistas web de los wireframes y apl
 
 ### 5.4.4. Applications User Flow Diagrams
 
+Los User Flows desarrollan las cuatro metas de 5.4.2 usando las pantallas de los mockups como pasos. Cada diagrama distingue la ruta esperada de las alternativas, las decisiones y condiciones de acceso, y la respuesta visible ante errores de validación o ausencia de resultados; incluye la meta y una explicación breve.
+
+> **Espacio reservado para la Figura 5.4.4:** lámina de User Flows web, con las pantallas de alta fidelidad y las rutas esperadas y alternativas para cada meta.
+
+*Figura 5.4.4. User Flows de la Web Application ICHU derivados de los wireflows y mockups de las metas priorizadas. Elaboración propia.*
+
 ## 5.5. Applications Prototyping
 
 ## 5.6. IoT Device Design
