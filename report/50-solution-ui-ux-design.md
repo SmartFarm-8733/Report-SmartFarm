@@ -178,7 +178,15 @@ La composición reúne siete capturas originales de la landing actual de ICHU, d
 
 ## 5.4. Applications UX/UI Design
 
+La propuesta presenta la experiencia de la Web Application ICHU para el administrador ganadero y el médico veterinario. Las vistas traducen la arquitectura de información de 5.2 y las pautas visuales de 5.1, con contenido y acciones según el rol y sus permisos.
+
 ### 5.4.1. Applications Wireframes
+
+Los wireframes de baja fidelidad establecen la jerarquía y distribución de las vistas de acceso, tablero, animales, monitoreo y alertas, planificación y atención clínica. Se priorizan una navegación consistente, lectura clara y controles accesibles.
+
+> **Espacio reservado para la Figura 5.4.1:** lámina de wireframes de la Web Application con las vistas clave para el administrador ganadero y el médico veterinario.
+
+*Figura 5.4.1. Wireframes de la Web Application ICHU para las tareas principales de sus usuarios. Elaboración propia.*
 
 ### 5.4.2. Applications Wireflow Diagrams
 
