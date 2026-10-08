@@ -162,6 +162,12 @@ El veterinario sin autorización permanece en Perfil y Asesorías hasta obtener 
 
 ### 5.3.1. Landing Page Wireframe
 
+El wireframe organiza la propuesta de ICHU, la información para ganaderos y veterinarios, la explicación del servicio y el contacto. En escritorio conserva la navegación principal; en móvil prioriza un recorrido vertical y un menú compacto, manteniendo las mismas etiquetas y acciones.
+
+<!-- Insertar una lámina de Figma con el wireframe de escritorio y su adaptación móvil. Mostrar encabezado, hero, secciones por segmento, tecnología, contacto y pie de página; sustituir esta indicación por la exportación final. -->
+
+*Figura 5.3.1. Wireframes responsivos de la landing page de ICHU.*
+
 ### 5.3.2. Landing Page Mock-up
 
 ## 5.4. Applications UX/UI Design
