@@ -55,6 +55,26 @@ El [landing de referencia](https://github.com/SmartFarm-8733/LandingPageSmartFar
 
 ### 5.2.2. Labeling Systems
 
+Las etiquetas nombran destinos y acciones, no componentes técnicos. Se mantienen entre encabezados, menús y botones, con iconos como apoyo y no como sustituto del texto.
+
+| Etiqueta | Contenido o destino asociado |
+|---|---|
+| Inicio / Quiénes somos | Propuesta de ICHU / propósito y equipo SmartFarm. |
+| Para ganaderos / Para veterinarios | Beneficios y acceso correspondiente a cada segmento. |
+| Tecnología / Cómo funciona / Videos | Dispositivos y conectividad / pasos de uso / contenido audiovisual; Videos reemplaza la etiqueta ambigua Web y Media. |
+| Planes / Contacto / Términos | Comparación de cobertura y límites / solicitud de demo / condiciones y tratamiento de datos. |
+| Mi hato / Hatos autorizados | Resumen de la unidad propia / selector de unidades con acceso profesional vigente. |
+| Animales / Ficha del animal | Inventario / identidad, lote, etapa, collar e historial del animal seleccionado. |
+| Monitoreo / Alertas | Lecturas y última ubicación conocida / señales que requieren revisión y su estado de atención. |
+| Historial / Reproducción / Nutrición | Registros e intervenciones / eventos reproductivos del animal / plan nutricional del lote. |
+| Calendario / Reportes | Campañas, recordatorios y seguimientos / indicadores y exportación por periodo. |
+| Dispositivos | Collares y abrevaderos, asignación, batería y última comunicación. |
+| Perfil / Asesorías / Mi plan | Datos de cuenta y profesionales / solicitudes y permisos de acceso / suscripción, cobertura y límites. |
+
+Las acciones usan verbo y objeto: **Registrar animal**, **Vincular collar**, **Atender alerta**, **Registrar intervención** y **Exportar reporte**. Arete identifica al animal; collar identifica el equipo de telemetría. Una lectura muestra unidad y hora; Sin datos no equivale a Normal, ni Sin conexión a Sin alertas.
+
+Las etiquetas se localizan de forma consistente en `en_US` y `es_419`, incluido el contenido de ayuda, errores, fechas y números (US37). El idioma inicial definido por la historia es `en_US`, con preferencia persistente; los ejemplos de esta sección usan `es_419`.
+
 ### 5.2.3. SEO Tags and Meta Tags
 
 ### 5.2.4. Searching Systems
