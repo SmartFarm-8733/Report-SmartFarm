@@ -165,7 +165,13 @@ En esta sección se detalla el desarrollo y la aplicación del proceso Lean UX p
 
 De acuerdo con las pautas de diseño para iniciativas nuevas, se ha elaborado un planteamiento del problema que abarca las necesidades de los dos segmentos objetivo: ganaderos y zootecnistas o médicos veterinarios:
 
-El estado actual de la ganadería extensiva y del seguimiento del ganado depende principalmente de inspecciones manuales en los potreros, identificación física y registros retrospectivos en papel. Estos procesos requieren mucho trabajo, son propensos a errores y presentan dificultades para escalar. Las soluciones existentes no combinan adecuadamente el monitoreo fisiológico continuo, como la temperatura corporal y los patrones de actividad, con la ubicación GPS dentro de un ecosistema digital accesible y fácil de utilizar. ICHU abordará esta brecha mediante una solución IoT integral basada en collares inteligentes que transmiten datos biométricos a una API REST central y a una aplicación web y móvil que visualiza el estado del ganado y genera alertas predictivas. El enfoque inicial estará dirigido a los ganaderos de escala media de la sierra sur del Perú, en las regiones de Apurímac, Cusco y Puno, y a los zootecnistas y médicos veterinarios que asesoran sus hatos. El éxito se evaluará mediante el uso diario de la aplicación, el tiempo de respuesta ante alertas críticas y la reducción de pérdidas de ganado durante el piloto.
+El estado actual de la ganadería extensiva y del seguimiento del ganado depende principalmente de inspecciones manuales en los potreros, identificación física y registros retrospectivos en papel. Estos procesos requieren mucho trabajo, son propensos a errores y presentan dificultades para escalar. Las soluciones existentes no combinan adecuadamente el monitoreo fisiológico continuo —como temperatura corporal y patrones de actividad— con la ubicación GPS en un ecosistema digital accesible. ICHU propone atender esta necesidad mediante collares inteligentes que transmiten datos biométricos a una API central y a aplicaciones web y móvil con historial y alertas. El enfoque inicial se dirige a ganaderos medianos de Apurímac, Cusco y Puno, y a los profesionales que asesoran sus hatos. La propuesta distingue los resultados que busca SmartFarm de los beneficios que esperan obtener sus usuarios:
+
+**Resultados de negocio de SmartFarm:** captar suscripciones activas, mantener su renovación, promover el uso frecuente de la plataforma y reducir costos de soporte y operación. Se medirán mediante suscripciones activas, renovación por cohorte, frecuencia de uso y costo de soporte.
+
+**Resultados esperados para los usuarios:** recibir alertas tempranas y actuar oportunamente, reducir pérdidas del hato y el tiempo dedicado a inspecciones, y consultar o registrar información en zonas sin conectividad.
+
+Estos beneficios son objetivos por validar en un piloto; no son resultados ya alcanzados. La evidencia disponible valida de forma preliminar la relevancia del problema y las necesidades expresadas por las personas entrevistadas, no el desempeño de la solución.
 
 #### 1.2.2.2. Lean UX Assumptions.
 
@@ -173,24 +179,28 @@ Para guiar el diseño centrado en el usuario, hemos estructurado nuestras creenc
 
 | Categoría | Supuesto | Forma de validación |
 |---|---|---|
-| **A. Business Assumptions** | Los ganaderos están dispuestos a pagar una suscripción anual con tarifa fija bajo el modelo SaaS si se demuestra que la solución reduce la mortalidad del ganado en más de un 15%. | Entrevistas de disposición de pago, prueba piloto y seguimiento de conversión a suscripciones. |
+| **A. Business Assumptions** | Los ganaderos podrían adoptar una suscripción anual con tarifa fija si perciben valor suficiente para su operación y pueden evaluar sus costos y beneficios. La disposición de pago y el modelo de precio se validarán mediante entrevistas y un piloto; no se presupone una reducción de mortalidad comprobada. | Entrevistas de disposición de pago, prueba piloto y seguimiento de conversión a suscripciones. |
 | **A. Business Assumptions** | Un esquema de adquisición híbrido, que combine la venta física del collar inteligente a bajo costo con una suscripción digital, reducirá la barrera de entrada al mercado ganadero. | Pruebas de precio y comparación de interés entre venta de hardware, suscripción y paquete combinado. |
-| **A. Business Assumptions** | Es factible producir collares IoT de bajo consumo utilizando hardware de código abierto, con un objetivo inicial de operación continua de hasta tres años por batería. | Pruebas de consumo, autonomía y transmisión realizadas con prototipos en laboratorio y campo. |
+| **E. Technical / Feature Assumptions** | Se podrá alcanzar una autonomía de hasta tres años por batería con un collar IoT de bajo consumo. Es una meta técnica por comprobar. | Pruebas de consumo y autonomía con prototipos en laboratorio y campo. |
 | **A. Business Assumptions** | Las alianzas con cooperativas ganaderas y veterinarios locales serán un canal principal de adquisición de clientes. | Registro de contactos, conversiones y suscripciones provenientes de cada alianza. |
 | **B. Business Outcome Assumptions** | Se capturarán al menos 150 suscripciones activas de unidades ganaderas durante el primer año de operaciones. | Seguimiento mensual de clientes, planes activos y cancelaciones. |
 | **B. Business Outcome Assumptions** | Se mantendrá una tasa de retención anual de suscripciones superior al 92%. | Análisis de cohortes y comparación entre suscripciones renovadas y canceladas. |
-| **B. Business Outcome Assumptions** | La tasa de fallas técnicas o pérdida de señal de los collares IoT en el campo será inferior al 2% anual. | Registro de incidentes, disponibilidad de dispositivos y reportes de conectividad durante el piloto. |
+| **E. Technical / Feature Assumptions** | La tasa de fallas técnicas o pérdida de señal de los collares IoT en el campo será inferior al 2% anual. Es un objetivo técnico aún no validado. | Registro de incidentes, disponibilidad de dispositivos y reportes de conectividad durante el piloto. |
 | **B. Business Outcome Assumptions** | El costo de adquisición de clientes (CAC) disminuirá en un 25% durante el segundo semestre gracias a las recomendaciones orgánicas. | Comparación semestral del CAC y del origen de cada nuevo cliente. |
+| **B. Business Outcome Assumptions** | Una proporción creciente de las unidades suscritas utilizará la plataforma de forma frecuente. | Medición de usuarios y unidades activas por semana y días de uso durante el piloto. |
 | **C. User Assumptions** | El usuario principal del Segmento 1 es el ganadero propietario o administrador de la finca, quien necesita interfaces legibles y pocos pasos. | Pruebas de usabilidad, tiempo de ejecución de tareas y entrevistas posteriores. |
 | **C. User Assumptions** | El zootecnista o médico veterinario es un usuario clave que requiere acceso a historiales cuantitativos para realizar diagnósticos precisos. | Pruebas de consulta clínica, revisión de historiales y entrevistas con profesionales. |
 | **C. User Assumptions** | Los ganaderos trabajan frecuentemente en zonas con conectividad intermitente y necesitan consultar datos locales previamente descargados. | Pruebas de campo en zonas con cobertura irregular y medición de tareas realizadas sin conexión. |
 | **D. User Outcome and Benefit Assumptions** | El monitoreo automatizado y las alertas priorizadas reducirán el tiempo dedicado al conteo y a las inspecciones rutinarias. | Comparación del tiempo de trabajo antes y después de utilizar ICHU. |
+| **D. User Outcome and Benefit Assumptions** | En un piloto, la detección temprana y la atención de alertas podrían contribuir a reducir en 15% la mortalidad respecto de una línea base comparable. Es una meta de validación, no un resultado observado. | Definir la línea base y el periodo de seguimiento antes del piloto; comparar resultados y documentar factores que puedan influir. |
 | **D. User Outcome and Benefit Assumptions** | La geolocalización de los animales aumentará la sensación de seguridad y ayudará a prevenir abigeatos y extravíos. | Pruebas de alertas de alejamiento, recuperación de posiciones y encuestas de percepción. |
 | **D. User Outcome and Benefit Assumptions** | Las anomalías térmicas detectadas automáticamente permitirán aislar oportunamente animales con posibles brotes epidémicos. | Medición del tiempo entre la detección, la alerta y la intervención del usuario. |
-| **E. Feature Assumptions** | Un collar IoT hermético con sensores de temperatura, acelerómetro y GPS transmitirá datos biométricos estables al servicio Edge API. | Pruebas de precisión, autonomía, resistencia y continuidad de transmisión. |
-| **E. Feature Assumptions** | Las notificaciones automáticas en la aplicación móvil y por SMS alertarán oportunamente ante desviaciones críticas del comportamiento animal. | Medición del tiempo de entrega, tasa de recepción y cantidad de falsos positivos. |
-| **E. Feature Assumptions** | El panel de análisis permitirá visualizar métricas agrupadas, promedios de salud del hato y mapas de calor de pastoreo. | Pruebas de tareas, revisión de métricas consultadas y evaluación de utilidad por los usuarios. |
-| **E. Feature Assumptions** | El modo sin conexión permitirá registrar datos localmente y sincronizarlos al recuperar señal, garantizando la continuidad operativa en campo. | Medición de registros creados sin conexión, sincronizaciones exitosas y datos faltantes. |
+| **E. Technical / Feature Assumptions** | Un collar IoT hermético con sensores de temperatura, acelerómetro y GPS transmitirá datos biométricos estables al servicio Edge API. | Pruebas de precisión, autonomía, resistencia y continuidad de transmisión. |
+| **E. Technical / Feature Assumptions** | Las notificaciones automáticas en la aplicación móvil y por SMS alertarán oportunamente ante desviaciones críticas del comportamiento animal. | Medición del tiempo de entrega, tasa de recepción y cantidad de falsos positivos. |
+| **E. Technical / Feature Assumptions** | El panel de análisis permitirá visualizar métricas agrupadas, promedios de salud del hato y mapas de calor de pastoreo. | Pruebas de tareas, revisión de métricas consultadas y evaluación de utilidad por los usuarios. |
+| **E. Technical / Feature Assumptions** | El modo sin conexión permitirá registrar datos localmente y sincronizarlos al recuperar señal, garantizando la continuidad operativa en campo. | Medición de registros creados sin conexión, sincronizaciones exitosas y datos faltantes. |
+
+**Estado de la evidencia.** Las entrevistas y cuestionarios aportan evidencia preliminar de la relevancia del problema y de las necesidades expresadas por los participantes. La muestra reportada es de dos ganaderos y tres profesionales en los cuestionarios; no permite generalizar al sector. La disposición de pago requiere validación adicional y no se ha demostrado ningún resultado de negocio, beneficio de usuario ni desempeño técnico. La precisión, autonomía, conectividad, entrega de alertas y sincronización requieren pruebas de laboratorio y de campo.
 
 #### 1.2.2.3. Lean UX Hypothesis Statements.
 
@@ -219,10 +229,11 @@ Se redacta una declaración de hipótesis por cada Feature Assumption definido e
 
 **Hypothesis 4. Offline Operation**
 
-**Creemos que lograremos** que el 60% de las unidades productivas suscritas registre actividad en la aplicación al menos cinco días por semana
-**si** el personal de campo de las unidades ganaderas
-**alcanza** la continuidad de sus faenas en zonas sin cobertura celular, consultando fichas y registrando eventos en el momento en que ocurren
-**con** un modo sin conexión que almacena los registros de forma local y los sincroniza al recuperar la señal.
+**Indicador de adopción de negocio por validar:** que al menos el 60% de las unidades suscritas registre actividad cinco días por semana.
+**Si** el personal de campo consulta fichas y registra eventos durante sus faenas en zonas sin cobertura
+**entonces** podrá mantener la continuidad del trabajo y el registro
+**con** un modo sin conexión que almacena los datos localmente y los sincroniza al recuperar la señal.
+**Medición:** frecuencia de uso, registros locales, sincronizaciones exitosas y conflictos durante el piloto.
 
 #### 1.2.2.4. Lean UX Canvas.
 
@@ -311,11 +322,7 @@ A continuación, se presenta el Lienzo Lean UX de la startup ganadera, integrand
         <tr>
             <td><strong>6. Hypotheses</strong></td>
             <td>
-                Creemos que lograremos una reducción del 15% en la mortalidad del hato y una
-                renovación anual superior al 92% si los ganaderos y los profesionales que los
-                asesoran alcanzan la detección temprana de anomalías y la continuidad del
-                registro en campo, con collares inteligentes integrados a un motor de alertas
-                y a un modo sin conexión con sincronización posterior.
+                <strong>Resultados de negocio por validar:</strong> 150 suscripciones activas en el primer año, renovación anual superior al 92% y adopción frecuente. <strong>Resultados esperados para los usuarios:</strong> alertas tempranas, menor tiempo de inspección y continuidad del registro sin cobertura; el piloto evaluará si esto contribuye a reducir en 15% la mortalidad frente a una línea base comparable. <strong>Hipótesis técnicas:</strong> precisión y autonomía de sensores, transmisión y sincronización. Ninguno de estos resultados se ha demostrado todavía.
             </td>
         </tr>
         <tr>
