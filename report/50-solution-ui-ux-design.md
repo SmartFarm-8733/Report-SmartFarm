@@ -312,16 +312,18 @@ Si ya existe una autorización o una solicitud pendiente, la Web Application con
 
 ## 5.5. Applications Prototyping
 
-El prototipo navegable de la Web Application se implementa en [WebFrontend-SmartFarm](https://github.com/SmartFarm-8733/WebFrontend-SmartFarm), con Angular y componentes independientes para identidad, hato, monitoreo, planificación, analítica y suscripciones. Permite recorrer las vistas de 5.4, cambiar idioma, rol y unidad de trabajo, y observar estados de validación y confirmación en formularios.
+El prototipo de alta fidelidad corresponde a la Web Application de ICHU. Está implementado con Angular y se puede explorar en la [versión desplegada](https://web-frontend-smart-farm.vercel.app/login); el [repositorio del frontend](https://github.com/SmartFarm-8733/WebFrontend-SmartFarm) contiene su código fuente. Esta entrega cubre la aplicación web en navegadores de escritorio y en ventanas estrechas; no contempla una aplicación móvil nativa.
 
-| Interacción del prototipo | Resultado visible |
+La navegación sigue la arquitectura de información de 5.2.5: el menú lateral organiza las áreas de trabajo y la cabecera conserva visibles el rol y el hato activos. Los recorridos se relacionan con las metas de usuario de 5.4.4. En escritorio y en ventanas estrechas se muestran las mismas funciones, con una disposición adaptable; los formularios presentan validación y confirmación de las acciones disponibles.
+
+| Recorrido | Interacción representada |
 |---|---|
-| Abrir el espacio de trabajo y elegir el rol ganadero o veterinario. | La aplicación presenta las opciones y vistas disponibles para el rol y la unidad seleccionados. |
-| Consultar el hato, animales, alertas, planificación y reportes desde la navegación web. | Las vistas muestran registros de ejemplo; las búsquedas, filtros y acciones mantienen el contexto durante la sesión. |
-| Registrar una respuesta de alerta o un evento clínico. | La validación señala campos requeridos; al guardar, la lista y el estado se actualizan en memoria. |
-| Cambiar idioma entre inglés y español y ajustar el ancho de pantalla. | Las etiquetas se localizan y la disposición se adapta a escritorio y móvil web. |
+| Revisión y atención de alertas (5.4.4.1). | Consultar el hato y las alertas, revisar el detalle y registrar una respuesta. |
+| Consulta animal y campaña sanitaria (5.4.4.2). | Buscar animales y recorrer las vistas de planificación de campañas. |
+| Indicadores y reportes (5.4.4.3). | Consultar indicadores y tendencias del hato, aplicar filtros y acceder a las opciones de reporte. |
+| Atención veterinaria (5.4.4.4). | Consultar animales e historial clínico y recorrer el registro de una intervención. |
 
-El prototipo usa datos ficticios en memoria. No implementa autenticación real, API, pagos, notificaciones externas, sincronización ni control de dispositivos IoT; recargar la página restablece los registros de ejemplo. La solicitud de acceso veterinario prevista en US-39 se representa en los wireflows, pero su creación desde el perfil veterinario aún no está implementada en el prototipo. Las comprobaciones locales de tipos, compilación de producción y 41 pruebas automatizadas del frontend finalizaron correctamente.
+El prototipo utiliza datos ficticios en memoria: no implementa autenticación real, API, pagos, notificaciones externas, sincronización ni control de dispositivos IoT, y al recargar se restablecen los registros de ejemplo. La solicitud de acceso veterinario de US-39 está descrita en los wireflows, pero todavía no se puede crear desde el perfil veterinario. Las comprobaciones locales de tipos, compilación de producción y 41 pruebas automatizadas del frontend finalizaron correctamente.
 
 ## 5.6. IoT Device Design
 
