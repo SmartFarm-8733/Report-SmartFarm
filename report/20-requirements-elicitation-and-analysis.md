@@ -684,5 +684,16 @@ A continuación, se organiza el glosario del dominio distribuido por los *Bounde
 | **Clinical Threshold**   | Umbral clínico         | Rango o límite cuantitativo de temperatura o inactividad calibrado por los veterinarios que desencadena las notificaciones de emergencia.                       |
 | **Geofence**             | Geocerca               | Perímetro virtual geográfico trazado alrededor del potrero; la salida no autorizada del bovino genera un aviso por posible extravío o abigeato.                 |
 | **Estrus Detection**     | Detección de celo      | Identificación algorítmica de la ventana fértil de la hembra bovina mediante el análisis combinado de picos de actividad física y variaciones térmicas.         |
-| **Gestation Ultrasound** | Ecografía de gestación | Examen de diagnóstico por imagen realizado por el veterinario para confirmar la preñez y adjuntar evidencia gráfica al historial del animal.                    |
+| **Gestation Ultrasound** | Ecografía de gestación | Examen de diagnóstico por imagen realizado por el veterinario para confirmar la preñez y adjuntar evidencia gráfica al historial del animal.                    |  
+
+### 2.5.7\. Health &amp; Reproductive Planning Domain
+
+| Término (Inglés)      | Equivalente en Español | Definición y Regla del Dominio                                                                                                                                   |
+| --------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Health Campaign**   | Campaña sanitaria      | Intervención profiláctica programada sobre el hato (vacunación masiva, desparasitación) alineada al calendario ganadero regional.                                |
+| **Withdrawal Period** | Tiempo de retiro       | Intervalo obligatorio posterior a la administración de un fármaco veterinario durante el cual la leche o carne del bovino no puede destinarse al consumo humano. |
+| **Quarantine**        | Cuarentena             | Aislamiento preventivo de animales enfermos o recién ingresados a la estancia para evitar la propagación de contagios en el hato.                                |
+| **Gestation Window**  | Ventana de parto       | Periodo estimado para el nacimiento del ternero, calculado automáticamente a partir de la fecha de inseminación o servicio confirmado.                           |  
+
+
 
