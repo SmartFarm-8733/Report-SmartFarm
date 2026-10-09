@@ -662,5 +662,27 @@ A continuación, se organiza el glosario del dominio distribuido por los *Bounde
 | **Paddock**                | Potrero                             | Subdivisión geográfica de pastizal dentro de la estancia donde pastorea un lote específico de ganado bovino.                                |
 | **Genealogy**              | Genealogía                          | Registro de ascendencia del animal (macho progenitor y hembra progenitora) utilizado para la certificación de pureza racial.                |
 | **Pregnancy Status**       | Estado de gestación                 | Condición reproductiva de la hembra bovina (vaca vacía, preñada o en periodo de transición al parto).                                       |
-| **Physiological Baseline** | Constante fisiológica de referencia | Valores estándar de temperatura corporal (37.5 °C - 39.5 °C) y frecuencias fisiológicas correspondientes a un bovino sano en reposo.        |
+| **Physiological Baseline** | Constante fisiológica de referencia | Valores estándar de temperatura corporal (37.5 °C - 39.5 °C) y frecuencias fisiológicas correspondientes a un bovino sano en reposo.        |  
+
+### 2.5.5\. IoT Asset Management Domain
+
+| Término (Inglés)   | Equivalente en Español      | Definición y Regla del Dominio                                                                                                                              |
+| ------------------ | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Smart Collar**   | Collar inteligente          | Unidad electrónica IoT hermética equipada con sensores y transmisor de red, colocada en el bovino para captura continua de datos.                           |
+| **Device Band**    | Correa del collar           | Accesorio de sujeción ajustable que sostiene el collar inteligente en el cuello del animal y puede reemplazarse de forma independiente.                     |
+| **Device Pairing** | Vinculación del dispositivo | Asociación lógica entre un *Smart Collar* específico y la ficha individual de un bovino en el sistema.                                                      |
+| **Battery Life**   | Autonomía de batería        | Duración estimada de la fuente de energía del *Smart Collar* bajo perfiles de transmisión optimizados.                                                      |
+| **Blind Zone**     | Zona ciega                  | Área de pastoreo extensivo con ausencia temporal de cobertura de red celular o LoRaWAN, donde el dispositivo o el *Edge Service* almacena datos localmente. |  
+
+### 2.5.6\. Operations &amp; Monitoring Domain
+
+| Término (Inglés)         | Equivalente en Español | Definición y Regla del Dominio                                                                                                                                  |
+| ------------------------ | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Biotelemetry**         | Telemetría biométrica  | Conjunto de datos fisiológicos capturados por el *Smart Collar*, como temperatura corporal interna, índice de actividad y patrones de movimiento.               |
+| **Rumination**           | Rumia                  | Proceso fisiológico de masticación diferida en el bovino; la reducción sostenida de sus horas diarias constituye el principal indicador temprano de enfermedad. |
+| **Red Alert**            | Alerta roja            | Notificación prioritaria generada automáticamente al detectar que una constante biométrica sobrepasa los umbrales de riesgo (ej. fiebre &gt; 40.0 °C).             |
+| **Clinical Threshold**   | Umbral clínico         | Rango o límite cuantitativo de temperatura o inactividad calibrado por los veterinarios que desencadena las notificaciones de emergencia.                       |
+| **Geofence**             | Geocerca               | Perímetro virtual geográfico trazado alrededor del potrero; la salida no autorizada del bovino genera un aviso por posible extravío o abigeato.                 |
+| **Estrus Detection**     | Detección de celo      | Identificación algorítmica de la ventana fértil de la hembra bovina mediante el análisis combinado de picos de actividad física y variaciones térmicas.         |
+| **Gestation Ultrasound** | Ecografía de gestación | Examen de diagnóstico por imagen realizado por el veterinario para confirmar la preñez y adjuntar evidencia gráfica al historial del animal.                    |
 
