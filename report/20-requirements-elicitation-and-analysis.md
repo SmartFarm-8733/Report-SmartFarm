@@ -640,3 +640,27 @@ A continuación, se organiza el glosario del dominio distribuido por los *Bounde
 | **Advisory Scope**     | Alcance de la asesoría  | Delimitación del conjunto de animales o potreros sobre los cuales un profesional sanitario tiene autorización para consultar antecedentes y registrar tratamientos. |
 | **Veterinary License** | Colegiatura veterinaria | Número de registro oficial expedido por el colegio profesional correspondiente que habilita al médico veterinario a prescribir tratamientos y emitir diagnósticos.  |  
 
+### 2.5.3\. Profiles &amp; Preferences Management Domain
+
+| Término (Inglés)                 | Equivalente en Español           | Definición y Regla del Dominio                                                                                                                         |
+| -------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Cattle Rancher**               | Ganadero propietario             | Propietario de la unidad productiva ganadera que toma las decisiones financieras, evalúa la rentabilidad del hato y contrata la suscripción.           |
+| **Ranch Administrator**          | Administrador de estancia        | Responsable operativo de la gestión diaria del hato, supervisión de capataces, control de inventario de insumos y consolidación de reportes.           |
+| **Veterinarian / Zootechnician** | Médico Veterinario / Zootecnista | Profesional especialista de salud animal responsable del monitoreo de signos vitales, diagnóstico clínico y emisión de prescripciones para el hato.    |
+| **Field Operator**               | Capataz / Operario de campo      | Personal operativo de terreno encargado del manejo directo de los animales en el corral, recorrido de potreros y ejecución física de faenas ganaderas. |
+| **Ranch**                        | Fundo / Estancia / Hacienda      | Predio o unidad geográfica delimitada orientada a la explotación ganadera (ej. Fundo El Ganadero, Hacienda del Marqués).                               |  
+
+
+### 2.5.4\. Cattle Information Management Domain
+
+| Término (Inglés)           | Equivalente en Español              | Definición y Regla del Dominio                                                                                                              |
+| -------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Individual Record**      | Ficha individual                    | Expediente digital único de cada bovino que consolida su identificación por arete, raza, etapa productiva, linaje y estado de salud.        |
+| **Breed**                  | Raza                                | Clasificación genética del bovino (ej. Brown Swiss, Fleckvieh, Criollo, Cruzado).                                                           |
+| **Life Stage**             | Etapa productiva                    | Fase de desarrollo del bovino dentro del ciclo del hato (ej. ternero, vaquillona, vaca en producción, toro en engorde).                     |
+| **Lot**                    | Lote                                | Subgrupo de bovinos clasificados bajo criterios operativos comunes (edad, condición corporal, potrero de ubicación o propósito productivo). |
+| **Paddock**                | Potrero                             | Subdivisión geográfica de pastizal dentro de la estancia donde pastorea un lote específico de ganado bovino.                                |
+| **Genealogy**              | Genealogía                          | Registro de ascendencia del animal (macho progenitor y hembra progenitora) utilizado para la certificación de pureza racial.                |
+| **Pregnancy Status**       | Estado de gestación                 | Condición reproductiva de la hembra bovina (vaca vacía, preñada o en periodo de transición al parto).                                       |
+| **Physiological Baseline** | Constante fisiológica de referencia | Valores estándar de temperatura corporal (37.5 °C - 39.5 °C) y frecuencias fisiológicas correspondientes a un bovino sano en reposo.        |
+
