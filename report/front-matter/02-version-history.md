@@ -44,5 +44,6 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 0.13.0 | 2026-10-06 | Avalos Cordova, Diego Andres | Incorporación de la estructura del Capítulo VI y espacios de TB1 en Student Outcome, colaboración, conclusiones, videos de exposiciones y anexos, sin modificar el Capítulo V. |
 | 0.13.1 | 2026-10-06 | Avalos Cordova, Diego Andres | Incorporación de la estructura vacía del Capítulo V, actualización de sus enlaces en el índice y numeración consecutiva de los apartados de diseño de aplicaciones. |
 | 0.14.0 | 2026-10-08 | Contreras Leon, Flor de María | Desarrollo de la sección 5.6 con diseños conceptuales, decisiones de montaje y alimentación, flujo de datos hacia Edge, leyenda cromática de cableado, estado de validación, imágenes Gemini y capturas Cirkit versionadas. |
+| 0.15.0 | 2026-10-08 | Contreras Leon, Flor de María | Documentación inicial del Capítulo VI con configuración del entorno, backlog planificado del Sprint 1, capturas de la Landing Page en escritorio y viewport móvil, y evidencia del preview público desplegado en FPM Desk. |
 
 <div style="break-after: page; page-break-after: always;"></div>
