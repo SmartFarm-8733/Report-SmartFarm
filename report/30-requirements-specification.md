@@ -326,7 +326,7 @@ El criterio de asignación es el siguiente:
 | Roadmap posterior | 22 | 82 |
 | **Total del Product Backlog** | **76** | **352** |
 
-El Sprint 2 concentra la mayor carga porque reúne las historias de mayor complejidad técnica: la captura en el dispositivo, el procesamiento en el borde, la sincronización con el servicio central y la operación sin conectividad. El equipo reconoce este desbalance y establece dos medidas de control. La primera es validar la velocidad real al término del Sprint 1 y ajustar el alcance comprometido de las iteraciones siguientes con ese dato en lugar de con la estimación inicial. La segunda es tratar el flujo de telemetría como el objetivo indivisible del Sprint 2, de modo que, ante una desviación, se difieran primero las historias de alcance secundario antes que cualquier componente de ese flujo.
+El Sprint 2 concentra la mayor carga porque reúne las historias de mayor complejidad técnica: la captura en el dispositivo, el procesamiento en el borde, la sincronización con el servicio central y la operación sin conectividad. Esta propuesta requiere revisar el desbalance antes de comprometer cada sprint, con dos medidas de control. La primera es validar la velocidad real al término del Sprint 1 y ajustar el alcance comprometido de las iteraciones siguientes con ese dato en lugar de con la estimación inicial. La segunda es tratar el flujo de telemetría como el objetivo indivisible del Sprint 2, de modo que, ante una desviación, se difieran primero las historias de alcance secundario antes que cualquier componente de ese flujo.
 
 **Product Backlog priorizado**
 

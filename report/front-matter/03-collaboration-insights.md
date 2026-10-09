@@ -90,4 +90,20 @@ El avance integrado corresponde a documentación y diseño. El Capítulo V conti
 | [PR #8: Big Picture EventStorming](https://github.com/SmartFarm-8733/Report-SmartFarm/pull/8) | Modelo As-Is y capturas de FigJam. |
 
 Las capturas de commits de la sección AV1 se conservan como evidencia histórica de esa entrega. Para TB1, los enlaces anteriores permiten revisar autores, fechas, archivos modificados y su integración.
+
+### Corrección de requisitos a partir de la revisión del profesor
+
+El 8 de octubre se creó `fix/user-and-technical-stories` a partir del estado actualizado del informe, conservando `develop` como base de integración. Giorgio Awad registró las correcciones en commits separados por alcance; la autoría corresponde a la identidad Git configurada `GiorgioAwad`. Los seis commits de contenido siguientes y el commit documental que registra estas evidencias permiten revisar qué cambió en cada aporte. Las métricas anteriores conservan su corte histórico en `238af37` y no incluyen esta revisión.
+
+| Alcance | Commit | Cambio verificable |
+|---|---|---|
+| Contratación | [6f8fc2d](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/6f8fc2d841829d555085ec08548a9fe352a8d094) | Reformulación de US-33, US-34 y US-35 hacia registro, comparación de costos e inicio de suscripción; actualización de sus referencias en los Capítulos IV y V. |
+| Collar y Edge | [0904aed](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/0904aed4cd8f1814f9721ba23441ea9cebe76fbf) | Revisión de TS-01 a TS-06 con actores Device Maker y Portable Edge Gateway, captura identificable, recepción BLE, confirmación durable, configuración e idempotencia. |
+| Cloud y abrevadero | [49e4a82](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/49e4a82e8c6c43e995335e2e9adc20ed75f9226b) | Revisión de TS-07 a TS-14 con consumidores concretos, autorización, estados de suscripción, notificaciones, contexto meteorológico y sincronización del abrevadero desde Edge. |
+| Clientes y operación offline | [5c0e3e6](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/5c0e3e65880dec963f7a3d44db4cf2e3bc3f96b0) | Incorporación de TS-15 a TS-19 para configuración Edge, alertas y telemetría locales, sincronización móvil e indicadores Web; ajuste de US-13, US-16, US-19 y US-22. |
+| Impact Mapping y backlog | [a10d064](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/a10d06490b26f5a77830520ba994cb00357649b4) | Reformulación de BG-03 como reducción propuesta del CAC, mortalidad como hipótesis de beneficio del usuario y actualización del backlog a 57 US, 19 TS y 352 SP propuestos, con prioridades y dependencias revisadas. |
+| Consistencia entre capítulos | [eb24b01](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/eb24b0164b653901ffa60e97570180ccae867f01) | Revisión de la evidencia de investigación, distinción de bajas por muerte en US-09 y corrección del texto arquitectónico y de las prioridades competitivas relacionadas con las historias. |
+
+Se verificaron identificadores únicos, criterios Given–When–Then, correspondencia de títulos con el backlog, prioridades relacionadas del Capítulo II, enlaces locales y sumas por sprint. El resultado contiene 76 historias y 352 SP como propuesta para Sprint Planning; no acredita implementación ni cierre de sprints. Las capturas y tableros de Jira y UXPressia y los diagramas de arquitectura de AV1 requieren sincronización con esta especificación. La rama queda preparada para revisión mediante Pull Request hacia `develop`.
+
 <div style="break-after: page; page-break-after: always;"></div>
