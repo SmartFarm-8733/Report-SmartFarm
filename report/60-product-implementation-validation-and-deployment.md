@@ -8,7 +8,7 @@ Este capítulo registra la configuración y las evidencias de implementación de
 
 La Landing Page de ICHU se desarrolla como un sitio estático con **HTML, CSS y JavaScript**, sin framework ni proceso de compilación. El código está organizado en páginas HTML, una hoja de estilos compartida (`css/styles.css`) y dos módulos JavaScript: `js/i18n.js`, para idioma, y `js/main.js`, para navegación e interacciones. Los recursos gráficos y de video se mantienen en carpetas propias.
 
-Para una revisión local, el README del repositorio permite abrir `index.html` directamente en un navegador o iniciar un servidor estático con `npx serve .` o `python -m http.server 8080`. El proyecto también declara una comprobación con jsdom para identificar IDs duplicados, recursos faltantes, anclas rotas y estilos inline. La existencia de esa práctica en el README no constituye por sí sola evidencia de que se haya ejecutado para esta revisión.
+Para una revisión local, el README del repositorio permite abrir `index.html` directamente en un navegador o iniciar un servidor estático con `npx serve .` o `python -m http.server 8080`. El README también menciona una comprobación con jsdom para identificar IDs duplicados, recursos faltantes, anclas rotas y estilos inline; sin embargo, en la copia del proyecto revisada no se encontró el script ni un `package.json` que permita ejecutarla. Por tanto, esa comprobación queda pendiente de localizar o implementar y no se presenta como una prueba ejecutada.
 
 | Elemento | Configuración documentada |
 |---|---|
@@ -16,15 +16,15 @@ Para una revisión local, el README del repositorio permite abrir `index.html` d
 | Framework o build | No se usan framework ni proceso de compilación |
 | Ejecución de la Landing Page | Navegador web; opcionalmente, servidor estático local |
 | Organización del código | Páginas HTML, `css/styles.css`, `js/i18n.js` y `js/main.js` |
-| Validación mencionada por el proyecto | Script con jsdom descrito en el README; falta adjuntar su resultado de ejecución para el Sprint Review |
+| Validación automatizada | El README menciona jsdom, pero no se encontró el script ni su configuración en la copia revisada; todavía no es reproducible |
 
-Fuente: [repositorio LandingPageSmartFarm](https://github.com/SmartFarm-8733/LandingPageSmartFarm) y su README.
+Fuente: README del repositorio LandingPageSmartFarm, https://github.com/SmartFarm-8733/LandingPageSmartFarm
 
 ### 6.1.2. Source Code Management
 
-El código de la Landing Page y el informe se mantienen en repositorios Git separados: [LandingPageSmartFarm](https://github.com/SmartFarm-8733/LandingPageSmartFarm) y [Report-SmartFarm](https://github.com/SmartFarm-8733/Report-SmartFarm). Esta separación permite revisar la evolución del producto web y la documentación de manera independiente.
+El código de la Landing Page y el informe se mantienen en repositorios Git separados: https://github.com/SmartFarm-8733/LandingPageSmartFarm y https://github.com/SmartFarm-8733/Report-SmartFarm. Esta separación permite revisar la evolución del producto web y la documentación de manera independiente.
 
-Para el repositorio del informe, la guía de contribución define `main` para entregas publicadas, `develop` para integración y ramas `feature/<alcance>` o `fix/<alcance>` para cambios de trabajo. Las contribuciones se integran mediante Pull Request con revisión de otro integrante, y los commits siguen Conventional Commits. El capítulo se está trabajando localmente en la rama `feature/chapterVI`; aún no se ha publicado ni integrado.
+Para el repositorio del informe, la guía de contribución define `main` para entregas publicadas, `develop` para integración y ramas `feature/<alcance>` o `fix/<alcance>` para cambios de trabajo. Las contribuciones se integran mediante Pull Request con revisión de otro integrante, y los commits siguen Conventional Commits. El Capítulo VI se trabaja en la rama `feature/chapter-VI`, publicada en GitHub y aún no integrada en `main`.
 
 | Práctica | Convención del repositorio del informe |
 |---|---|
@@ -33,7 +33,7 @@ Para el repositorio del informe, la guía de contribución define `main` para en
 | Mensajes de commit | Conventional Commits, en minúsculas, con alcance opcional |
 | Rama de entrega | `main` |
 
-Fuente: [guía de contribución](../CONTRIBUTING.md). La convención anterior describe el repositorio del informe; cualquier diferencia en el flujo del repositorio de la Landing Page debe confirmarse con su configuración y responsables.
+Fuente: archivo CONTRIBUTING.md del repositorio Report-SmartFarm. La convención anterior describe el repositorio del informe; cualquier diferencia en el flujo del repositorio de la Landing Page debe confirmarse con su configuración y responsables.
 
 ### 6.1.3. Source Code Style Guide & Conventions
 
@@ -52,6 +52,8 @@ Estas convenciones resumen la guía del repositorio de la Landing Page. No se af
 La Landing Page se publicó como sitio estático en un preview administrado desde FPM Desk. Según la información proporcionada por el equipo, el servidor es privado, pertenece a FPM y fue creado por Flor de María Contreras. La consola muestra el proyecto `LandingPageSmartFarm`, el repositorio de GitHub conectado, la rama `main`, la receta `Static HTML` y el estado del preview como **Público**. El flujo separa el preview de Producción, que aparece como una etapa opcional; por ello, esta evidencia acredita un preview publicado, no una promoción a producción.
 
 URL completa del preview: https://smartfarm-ichu-preview.fpm.it.com/
+
+El frontend de la aplicación web se despliega por separado en Vercel; sus evidencias del entorno de producción y de la interfaz publicada se presentan en la sección 6.2.1.8.
 
 La consola registra seis ejecuciones de despliegue. En la captura, la más reciente figura como lista, construida desde el commit `23c4793` de `main` el 9 de septiembre de 2026, con la receta `Static HTML` y una duración de cuatro segundos. La URL respondió con HTTP 200 durante la verificación de este informe el 8 de octubre de 2026.
 
@@ -87,7 +89,20 @@ La fuente consultada no fija aquí las fechas, duración, capacidad comprometida
 
 #### 6.2.1.2. Aspect Leaders and Collaborators
 
-Los responsables y colaboradores por aspecto se completarán con las asignaciones vigentes del equipo en Jira. No se infieren a partir de la autoría de commits ni de la lista general de integrantes.
+La siguiente distribución es una **planificación simulada** agregada en Jira. Las 22 tareas SF-96 a SF-117 llevan la etiqueta `simulado` y permanecen en estado **Por hacer**. Los nombres de la tabla son responsables propuestos, no evidencia de asignación ni de trabajo completado. En el proyecto, SF-96 es la única de estas tareas asignada a una cuenta de integrante; las demás siguen sin asignar. No se enviaron invitaciones ni se inició un sprint. Esta planificación no modifica las 13 historias ni los 47 puntos de la línea base del Sprint 1.
+
+Consulta del conjunto de tareas en Jira: https://upc-team-experimentos.atlassian.net/issues/?jql=issueKey%20in%20(SF-96%2CSF-97%2CSF-98%2CSF-99%2CSF-100%2CSF-101%2CSF-102%2CSF-103%2CSF-104%2CSF-105%2CSF-106%2CSF-107%2CSF-108%2CSF-109%2CSF-110%2CSF-111%2CSF-112%2CSF-113%2CSF-114%2CSF-115%2CSF-116%2CSF-117)
+
+| Responsable propuesto | Tareas simuladas en Jira |
+|---|---|
+| Contreras Leon, Flor de María | SF-96 — Capítulo V, diseño UI/UX y Landing Page; SF-106 — Dashboard & Analytics, indicadores e informes. |
+| Avalos Cordova, Diego Andres | SF-97 — Capítulo VI, frontend, pruebas y despliegue; SF-102 — Operations & Monitoring; SF-109 — Portable Edge Gateway; SF-112 — integración del frontend web/móvil con las APIs. |
+| Arrieta Quispe, Alison Jimena | SF-98 — correcciones editoriales; SF-103 — Cattle Information; SF-107 — Identity & Access Management; SF-116 — trazabilidad entre Bounded Contexts, APIs, Jira e informe. |
+| Sanchez Arenas, Manuel Angel | SF-99 — correcciones de requisitos y trazabilidad; SF-105 — Planning; SF-113 — contratos OpenAPI/Swagger; SF-114 — pruebas de integración entre frontend, API y Edge. |
+| Awad Vargas, Giorgio Marzouk | SF-100 — correcciones de pruebas y despliegue; SF-108 — Subscription Plans; SF-111 — controlador de calentamiento del abrevadero; SF-115 — verificación de entornos y despliegues. |
+| Romero Meza, Jhimy Pool | SF-101 — correcciones de figuras; SF-104 — IoT Assets; SF-110 — prototipo conceptual del collar IoT; SF-117 — auditoría de criterios y evidencias de entrega. |
+
+Los siete Bounded Contexts de la arquitectura se reflejan como trabajo planificado del monolito modular; Portable Edge Gateway y los prototipos IoT se registran como tareas transversales. Las descripciones de Jira delimitan entregables propuestos y pruebas por ejecutar. Las capturas de diseño del Capítulo V no demuestran que los sensores, el Edge o las APIs estén implementados o conectados.
 
 #### 6.2.1.3. Sprint Backlog 1
 
@@ -110,7 +125,7 @@ La tabla conserva el orden y la estimación de la priorización de historias del
 | 63 | US-03 — Completar el perfil profesional | Registrar especialidad, colegiatura y experiencia del médico veterinario. | 3 | Sprint 1 |
 |  | **Total planificado** |  | **47** |  |
 
-Fuente: [Product Backlog y roadmap, Capítulo III](30-requirements-specification.md).
+Fuente: archivo report/30-requirements-specification.md, sección Product Backlog y alcance comprometido y roadmap, Capítulo III.
 
 #### 6.2.1.4. Development Evidence for Sprint Review
 
@@ -134,6 +149,23 @@ Las capturas siguientes documentan la presentación de la Landing Page en españ
 
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review
 
+Se realizó una comprobación manual preliminar de renderizado con Chrome DevTools en el preset **iPad Mini**, viewport de 768 × 1024 píxeles, al 75 % y sin limitación de red. La portada, la navegación móvil y el comienzo de la sección siguiente son visibles. Esta captura no permite evaluar los controles ni muestra la barra con la URL.
+
+| Caso | Resultado observado | Estado |
+|---|---|---|
+| Renderizado del preview en viewport iPad Mini (768 × 1024) | La portada carga en Chrome incógnito; la URL del preview se ve en la barra y el contenido se adapta al viewport emulado. | Aprobado, comprobación visual |
+| Consola en la primera inspección | Se vio `[Violation] Permissions policy violation: unload is not allowed in this document.`, con fuente `content.d0f3cf01.js`. | Observado una vez; origen no confirmado |
+| Consola en la repetición de incógnito | No aparecen errores ni advertencias en la consola de la captura. El mensaje anterior no se reproduce; esto sugiere que pudo provenir de una extensión o estado del navegador, pero no confirma su origen. | Aprobado en esta repetición |
+| Cambio de idioma, tema, menú y validación del formulario | No se ejecutaron ni se demuestran en esta captura. | No ejecutado |
+
+![Prueba manual preliminar en emulación de iPad Mini con la consola de DevTools abierta](assets/images/tests/landing-preview-ipad-mini-console.png)
+
+*Figura 6.9. La página se renderiza en un viewport móvil emulado; DevTools muestra una violación de Permissions Policy procedente de `content.d0f3cf01.js`, cuyo origen debe confirmarse.*
+
+![Repetición de la prueba en incógnito con viewport iPad Mini y consola limpia](assets/images/tests/landing-preview-ipad-mini-incognito.png)
+
+*Figura 6.10. Repetición de la inspección en Chrome incógnito: la dirección del preview aparece en la barra, la portada se renderiza en el viewport iPad Mini y DevTools no muestra errores ni advertencias.*
+
 #### 6.2.1.6. Execution Evidence for Sprint Review
 
 Las Figuras 6.2 y 6.4 muestran la página cargada localmente en un navegador; la Figura 6.2 deja visible la ruta local del archivo y la Figura 6.4 indica la emulación del viewport móvil. La Figura 6.8 muestra la portada abierta desde el preview público. La URL respondió con HTTP 200 durante la verificación del 8 de octubre de 2026. Estas evidencias acreditan renderizado local y disponibilidad del preview en esa fecha; no demuestran una prueba en teléfono físico ni el funcionamiento de los controles de idioma, tema o formulario, que requieren resultados de prueba propios.
@@ -141,5 +173,15 @@ Las Figuras 6.2 y 6.4 muestran la página cargada localmente en un navegador; la
 #### 6.2.1.7. Services Documentation Evidence for Sprint Review
 
 #### 6.2.1.8. Software Deployment Evidence for Sprint Review
+
+La aplicación web de ICHU tiene un despliegue de producción separado de la Landing Page alojada en el preview de FPM Desk. La consola de Vercel muestra el deployment como **Ready**, asociado a `main` y al commit `1d6994c` (`Merge pull request #10 from SmartFarm-8733/feature/app-integration`). El dominio de producción mostrado es https://web-frontend-smart-farm.vercel.app/; durante la verificación de este informe respondió con HTTP 200. La ruta de dashboard capturada en el navegador es https://web-frontend-smart-farm-5ml9ssa2v-flordemas-projects.vercel.app/dashboard y también respondió con HTTP 200.
+
+![Deployment de producción del frontend de ICHU en Vercel](assets/images/deployment/vercel-production-deployment.png)
+
+*Figura 6.11. Panel de Vercel: deployment de producción en estado Ready, rama `main`, commit `1d6994c` y dominio `web-frontend-smart-farm.vercel.app`.*
+
+![Dashboard del frontend de ICHU abierto desde Vercel](assets/images/deployment/vercel-dashboard-app.png)
+
+*Figura 6.12. Dashboard del frontend cargado desde la URL de Vercel. Las cifras del hato que aparecen en pantalla son datos de muestra de la interfaz; esta captura no demuestra su persistencia ni conexión con un backend productivo.*
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint

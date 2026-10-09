@@ -45,5 +45,10 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 0.13.1 | 2026-10-06 | Avalos Cordova, Diego Andres | Incorporación de la estructura vacía del Capítulo V, actualización de sus enlaces en el índice y numeración consecutiva de los apartados de diseño de aplicaciones. |
 | 0.14.0 | 2026-10-08 | Contreras Leon, Flor de María | Desarrollo de la sección 5.6 con diseños conceptuales, decisiones de montaje y alimentación, flujo de datos hacia Edge, leyenda cromática de cableado, estado de validación, imágenes Gemini y capturas Cirkit versionadas. |
 | 0.15.0 | 2026-10-08 | Contreras Leon, Flor de María | Documentación inicial del Capítulo VI con configuración del entorno, backlog planificado del Sprint 1, capturas de la Landing Page en escritorio y viewport móvil, y evidencia del preview público desplegado en FPM Desk. |
+| 0.15.1 | 2026-10-08 | Contreras Leon, Flor de María | Aclaración de que el script jsdom mencionado en el README no está disponible en la copia revisada del repositorio y no se reporta como ejecutado. |
+| 0.15.2 | 2026-10-08 | Contreras Leon, Flor de María | Incorporación de una captura de prueba manual en emulación móvil y registro del mensaje de consola pendiente de atribución. |
+| 0.15.3 | 2026-10-08 | Contreras Leon, Flor de María | Registro de la repetición en incógnito sin errores ni advertencias en la consola y actualización del resultado de la inspección móvil del preview. |
+| 0.15.4 | 2026-10-08 | Contreras Leon, Flor de María | Incorporación de evidencias del deployment de producción del frontend de la aplicación web en Vercel, diferenciándolo del preview de la Landing Page en FPM Desk. |
+| 0.15.5 | 2026-10-08 | Contreras Leon, Flor de María | Incorporación en el Capítulo VI de una distribución simulada de 22 tareas Jira para los siete Bounded Contexts, Edge, frontend, dispositivos IoT, pruebas, despliegue y revisión de evidencias, distinguiéndola de asignaciones y ejecución verificadas. |
 
 <div style="break-after: page; page-break-after: always;"></div>
