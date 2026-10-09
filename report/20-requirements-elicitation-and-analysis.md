@@ -631,3 +631,12 @@ A continuación, se organiza el glosario del dominio distribuido por los *Bounde
 | **High Mountain Disease** | Mal de altura             | Alteración fisiológica en terneros criados en zonas andinas de altitud elevada; se manifiesta inicialmente mediante un letargo y marcada reducción de la actividad.   |
 | **Livestock Calendar**    | Calendario ganadero       | Programación sanitaria regional que establece las fechas óptimas para faenas de vacunación, desparasitación y vitaminación del hato.                                  |
 
+
+### 2.5.2\. Identity &amp; Access Management Domain
+
+| Término (Inglés)       | Equivalente en Español  | Definición y Regla del Dominio                                                                                                                                      |
+| ---------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Herd Advisory**      | Asesoría del hato       | Vínculo profesional por el cual un médico veterinario o zootecnista presta servicios de salud y supervisión técnica a un hato administrado por un tercero.          |
+| **Advisory Scope**     | Alcance de la asesoría  | Delimitación del conjunto de animales o potreros sobre los cuales un profesional sanitario tiene autorización para consultar antecedentes y registrar tratamientos. |
+| **Veterinary License** | Colegiatura veterinaria | Número de registro oficial expedido por el colegio profesional correspondiente que habilita al médico veterinario a prescribir tratamientos y emitir diagnósticos.  |  
+
