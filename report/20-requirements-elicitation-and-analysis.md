@@ -604,7 +604,7 @@ El equipo identificó cuatro hechos que marcan cambios de fase en el proceso de 
 
 ## 2.5. Ubiquitous Language.
 
-El Lenguaje Ubicuo (Ubiquitous Language) es el vocabulario compartido y riguroso que utiliza tanto el equipo de desarrollo como los actores del dominio ganadero para referirse a los mismos conceptos sin ambigüedad, tal como lo describe Eric Evans en su libro *Domain-Driven Design: Tackling Complexity in the Heart of Software*. Este glosario fue construido a partir de las entrevistas realizadas a los dos segmentos objetivo y se organiza según los Bounded Contexts definidos para la plataforma ICHU. Recoge únicamente términos del dominio ganadero, es decir, conceptos que los propios ganaderos, zootecnistas y médicos veterinarios emplean en su actividad. No se incluyen términos técnicos del área de ingeniería de software, aunque algunos de ellos aparezcan más adelante en el diseño de la solución.
+El Lenguaje Ubicuo (*Ubiquitous Language*) es el vocabulario riguroso, compartido y libre de ambigüedades utilizado por todos los miembros del equipo de desarrollo, los expertos del dominio y los usuarios ganaderos para modelar la realidad del negocio, tal como lo establece Eric Evans en *Domain-Driven Design: Tackling Complexity in the Heart of Software*.
 
 ### Términos transversales del dominio
 
