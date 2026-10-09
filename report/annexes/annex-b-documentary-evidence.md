@@ -12,6 +12,12 @@ https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/30-requireme
 **Solution Software Design**<br>
 https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/40-solution-software-design.md
 
+**Solution UI/UX Design**<br>
+[Capítulo V](../50-solution-ui-ux-design.md)
+
+**Product Implementation, Validation & Deployment**<br>
+[Capítulo VI](../60-product-implementation-validation-and-deployment.md)
+
 **Student Outcome**<br>
 https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/front-matter/05-student-outcome.md
 

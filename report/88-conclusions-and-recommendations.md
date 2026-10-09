@@ -2,19 +2,47 @@
 
 ## Conclusiones y recomendaciones
 
-### 1. Resultado frente al Problem Statement
+### 1\. Resultado frente al Problem Statement
 
-El Problem Statement de ICHU plantea que la gestión extensiva del ganado depende de inspecciones visuales, identificación física y registros dispersos en cuadernos o hojas de cálculo. Esa situación dificulta conocer la evolución de cada animal, detectar anomalías a tiempo y actuar cuando la conectividad es irregular. La solución propuesta combina collares inteligentes, una API RESTful central, servicios de borde y aplicaciones web y móvil para centralizar la información, generar alertas y mantener la continuidad de las faenas.
+El *Problem Statement* de **ICHU** plantea que la gestión ganadera de pastoreo extensivo depende de inspecciones visuales discontinuas, marcas físicas y registros manuales en cuadernos o hojas de cálculo. Esta situación dificulta el seguimiento individual del ganado, la detección temprana de anomalías de salud y la toma de decisiones cuando la cobertura de red es intermitente o nula en el campo. La solución propuesta combina dispositivos de telemetría IoT, servicios de borde (*Edge Services / Edge API*), una RESTful API centralizada en la nube, y aplicaciones web y móviles para centralizar la información, emitir alertas operativas y asegurar la continuidad del trabajo en zonas remotas.
 
-La investigación realizada en el Capítulo II brinda evidencia preliminar a favor de este problema. Se realizaron seis entrevistas, tres a representantes del segmento de medianos y grandes ganaderos y tres a zootecnistas y médicos veterinarios. En el cuestionario del primer segmento, el 50 % indicó utilizar hojas de cálculo y el 50 % cuadernos o registros manuales; el 100 % calificó como muy útil una plataforma que centralice historial, ubicación y alertas. Además, el 100 % reportó conectividad regular en las zonas de pastoreo, pérdidas del 5 % al 10 % del valor del hato y preferencia por una suscripción anual con tarifa fija.
+La investigación realizada en el Capítulo II (*Requirements Elicitation &amp; Analysis*) brinda evidencia cualitativa y cuantitativa que respalda la **existencia y relevancia del problema**:
 
-En el segundo segmento, el 66.7 % calificó los registros manuales como moderadamente confiables y el 100 % indicó que necesita conocer continuamente variables que no puede medir de forma manual, como rumia, actividad, temperatura y frecuencias cardíaca y respiratoria. Estos resultados sostienen la relevancia de una historia clínica digital, telemetría continua, alertas configurables, acceso móvil y operación sin conexión. Sin embargo, esta evidencia valida principalmente la existencia y relevancia del problema; todavía no demuestra que el producto implementado logre los resultados de negocio previstos.
+* En el segmento de **Medianos y Grandes Ganaderos (Propietarios/Administradores)**, las tres entrevistas describen registros dispersos y conectividad irregular. En el cuestionario complementario de dos respuestas, una persona utiliza hojas de cálculo y otra registros manuales; ambas califican la plataforma centralizada como muy útil y prefieren el pago anual con tarifa fija.
+* En el segmento de **Zootecnistas y Médicos Veterinarios**, las tres entrevistas respaldan la necesidad de datos biométricos continuos, antecedentes individuales y alertas que apoyen la evaluación profesional. El cuestionario complementario reúne tres respuestas y refuerza esa necesidad; no mide una mejora diagnóstica atribuible al producto.
 
-### 2. Assumptions frente al comportamiento observado
+La investigación comprende seis entrevistas, tres por segmento, y cuestionarios con dos ganaderos y tres profesionales. Estos resultados describen esta muestra y no representan porcentajes de todo el mercado. Los capataces y operarios son actores operativos de la solución, no un tercer segmento entrevistado.
 
-Los hallazgos respaldan de manera inicial algunos supuestos del Lean UX Process. La preferencia por el pago anual con tarifa fija, la necesidad de una ficha centralizada por animal, la operación en zonas con conectividad intermitente y la demanda de alertas sanitarias y reproductivas son consistentes con las respuestas y entrevistas documentadas. También se confirma que el veterinario necesita combinar trabajo de campo y oficina, por lo que la solución debe mantener la información sincronizada entre las aplicaciones móvil y web.
+**Arquitectura propuesta:** El collar transmite por BLE al *Portable Edge Gateway*, que procesa y almacena las lecturas en SQLite y evalúa reglas locales. El Edge sincroniza con la RESTful API central cuando dispone de Internet; la presencia de Wi-Fi no garantiza esa conectividad. La aplicación móvil consulta y atiende alertas por la red local. Esta ruta se mantiene también cuando hay cobertura y no contempla que el collar invoque directamente la nube.
 
-Todavía no se pueden confirmar los supuestos que requieren resultados longitudinales o pruebas técnicas. Permanecen abiertos la reducción del 15 % de la mortalidad, las 150 suscripciones activas durante el primer año, la renovación superior al 92 %, la tasa de fallas inferior al 2 %, la reducción del CAC, la autonomía de tres años del collar, la precisión de los sensores, el tiempo de entrega de las notificaciones y la tasa de sincronización offline. Cada uno debe validarse mediante un piloto instrumentado, pruebas de laboratorio y campo, métricas de uso y entrevistas posteriores.
+**Alcance de la evidencia:** Los hallazgos respaldan la relevancia del problema y el interés declarado por la propuesta dentro de la muestra. No demuestran todavía aceptación comercial ni resultados de negocio o impacto operativo en producción; esos resultados requieren mediciones en pilotos.
+
+---
+
+### 2\. Assumptions frente al comportamiento observado y Objetivos de Validación Futura
+
+Los hallazgos cualitativos y estadísticos del *Needfinding* respaldan de manera inicial los **supuestos de usuario y de negocio** (*User Assumptions* y *Business Assumptions*) del *Lean UX Process*:
+
+* Los participantes expresan interés por la suscripción; las dos respuestas del cuestionario ganadero prefieren el pago anual con tarifa fija.
+* Ambos segmentos solicitan antecedentes centralizados por animal para apoyar al profesional y al propietario.
+* Las entrevistas respaldan la necesidad de operación sin cobertura y alertas ante anomalías térmicas o reproductivas.
+
+Por el contrario, **permanecen como propuestas e hipótesis no demostradas** todos aquellos supuestos que requieren mediciones técnicas de laboratorio, pruebas de carga o resultados longitudinales de uso en producción. **No deben presentarse como resultados logrados**, sino como **objetivos de validación futura** que deberán verificarse mediante pilotos instrumentados en campo:
+
+1. **Objetivos de impacto biológico y comercial:**
+  * La reducción del 15 % en la tasa de mortalidad del ganado.
+  * La meta de alcanzar 150 suscripciones activas durante el primer año de operación comercial.
+  * La tasa de renovación del software superior al 92 % anual.
+  * La reducción proyectada en el Costo de Adquisición de Clientes (CAC).
+2. **Objetivos de hardware e infraestructura IoT:**
+  * La autonomía energética de 3 años en la batería del collar o arete inteligente.
+  * La precisión de lectura y calibración de los sensores biométricos de temperatura y acelerometría en condiciones climáticas extremas.
+3. **Objetivos de rendimiento de software y borde:**
+  * Una tasa de fallas del sistema informático inferior al 2 %.
+  * Los tiempos de latencia en la entrega de notificaciones push de emergencia.
+  * La tasa de éxito e integridad en la sincronización asíncrona entre el *Edge API* y la *RESTful API* central tras periodos prolongados de desconexión.
+
+---
 
 ### 3. Hypothesis Statements y criterios de éxito
 
@@ -29,24 +57,27 @@ Las cuatro hipótesis definidas en el Capítulo I mantienen trazabilidad con las
 
 Por tanto, los criterios de éxito iniciales - uso frecuente de la aplicación, respuesta oportuna ante alertas críticas y reducción de pérdidas del ganado - deben considerarse objetivos de validación y no resultados alcanzados. AV1 entrega la especificación del problema, los requisitos y el diseño; no contiene todavía evidencia suficiente para declarar aceptadas o rechazadas las hipótesis.
 
-### 4. Recomendaciones y roadmap
+### 4. Recomendaciones para el Roadmap del Producto Digital
 
-Para la siguiente etapa se recomienda:
-
-1. Consolidar la evidencia documental disponible del informe: capturas de EventStorming, Journey Maps, Impact Map, Product Backlog y actividad colaborativa, junto con los enlaces públicos correspondientes.
-2. Desarrollar el primer incremento siguiendo el alcance comprometido del Product Backlog: Landing Page con internacionalización y accesibilidad, acceso a la plataforma y ficha inicial del animal.
-3. Implementar después el flujo de telemetría de extremo a extremo, incluyendo collar, Edge API, API central, alertas y sincronización offline con control de duplicados y conflictos.
-4. Continuar con analítica del hato, planificación sanitaria, atención veterinaria, suscripciones y el controlador del abrevadero, manteniendo la trazabilidad con los Business Goals.
-5. Ejecutar un piloto con unidades productivas de los dos segmentos. Antes de iniciar, definir la línea base de mortalidad, tiempo de respuesta, registros completos, frecuencia de uso, disponibilidad de dispositivos y resultados de sincronización.
-6. Mantener como roadmap posterior las integraciones con laboratorios, nutrición y meteorología, el seguimiento clínico avanzado y el mantenimiento ampliado del inventario.
-
-La arquitectura modular, los siete Bounded Contexts y el Product Backlog de 71 historias proporcionan una base adecuada para evolucionar ICHU sin perder trazabilidad. La siguiente iteración debe convertir los supuestos de alto riesgo en experimentos medibles y actualizar las decisiones del dominio con la evidencia obtenida.
+1. **Instrumentación de Pilotos en Campo:** Desplegar prototipos físicos de los nodos IoT integrados con el *Edge Service* en un entorno ganadero controlado para evaluar el consumo de energía en transmisión, la estabilidad del almacenamiento local en SQLite y la resiliencia del software ante caídas de tensión o señal.
+2. **Ejecución de Pruebas de Estrés y Sincronización:** Diseñar suites de pruebas automatizadas e integración continua para simular ráfagas masivas de datos hacia la RESTful API cuando múltiples servicios de borde entren en cobertura simultáneamente, asegurando que la tasa de fallas se mantenga por debajo del límite objetivo.
+3. **Optimización del procesamiento en el borde (Edge Computing):** Evaluar la incorporación de algoritmos livianos en el *Edge Service* para clasificar patrones de comportamiento (reposo, rumia, celo) de forma local, reduciendo el volumen de datos a transmitir hacia la nube y optimizando el uso de ancho de banda en zonas rurales.
 
 ### TB1
 
 #### Conclusiones
 
+En TB1, el diseño de la experiencia de ICHU pasó de las decisiones de estilo y arquitectura de información a representaciones concretas de la Landing Page y de la Web Application. El Capítulo V reúne wireframes, mockups, wireflows y user flows vinculados con las necesidades y las historias de usuario; el prototipo web y la Landing Page pueden explorarse en sus despliegues documentados en el Capítulo VI. Esta continuidad facilita revisar cómo la propuesta visual orienta las tareas principales de ganaderos y veterinarios.
+
+El Capítulo VI documenta la configuración disponible, las evidencias de interfaz y los despliegues de ambos productos web. La evidencia debe interpretarse dentro de su alcance: la Web Application usa datos ficticios en memoria y no cuenta con autenticación real, API ni persistencia; la Landing Page es estática y su formulario deriva la solicitud a WhatsApp. Las comprobaciones automatizadas reportadas para el frontend y las comprobaciones visuales de la Landing Page respaldan el estado observado, pero no equivalen a una validación de aceptación con usuarios ni demuestran el cumplimiento integral de cada requisito. La planificación de Jira se documenta como simulada y no como un Sprint ejecutado. Los diseños de dispositivos IoT de 5.6 son conceptuales, mientras que esta entrega presenta interfaces web y no una aplicación móvil nativa.
+
 #### Recomendaciones
+
+1. Validar las tareas principales de ganaderos y veterinarios con participantes de ambos segmentos. Registrar errores, tiempos, comprensión de alertas y dificultades de navegación, y relacionar los resultados con las hipótesis de producto.
+2. Ampliar las comprobaciones del frontend con recorridos reproducibles de extremo a extremo, revisión de accesibilidad por teclado y tecnología de asistencia, y pruebas de idioma y diseño adaptable. Separar los resultados de la Landing Page estática de los de la Web Application.
+3. Convertir la planificación simulada del Sprint 1 en un backlog de ejecución con fechas, responsables confirmados, criterios de aceptación y estados verificables. Documentar la revisión y los cambios de alcance a partir del trabajo efectivamente realizado.
+4. En incrementos posteriores, integrar gradualmente autenticación, persistencia y servicios reales con las interfaces, preservando la separación de responsabilidades y la operación de borde definida en la arquitectura. Registrar las decisiones y pruebas de integración antes de presentar capacidades como implementadas.
+5. Incorporar en los anexos las evidencias audiovisuales de TB1 cuando estén disponibles, junto con sus enlaces de acceso y la identificación de la entrega.
 
 ## Video About-the-Team
 

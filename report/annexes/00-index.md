@@ -9,4 +9,4 @@ Los anexos reúnen evidencias externas, material de investigación y fuentes de 
 - [Anexo E. Encuestas y material de investigación](annex-e-surveys-and-research.md)
 - [Anexo F. Repositorio y organización del proyecto](annex-f-repository-and-project-organization.md)
 - [Anexo G. Fuentes de diagramas y artefactos versionados](annex-g-diagram-sources.md)
-- [Anexo H. Entregables TB1](annex-h-tb1-deliverables.md)
+- [Anexo H. Recursos digitales y artefactos de TB1](annex-h-tb1-deliverables.md)

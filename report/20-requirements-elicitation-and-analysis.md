@@ -27,8 +27,8 @@ Para posicionar a ICHU IoT con éxito, nuestra startup implementará un conjunto
 
 #### Estrategia 1: Reducción de Barreras Económicas y Tecnológicas de Infraestructura
 
-- **Táctica Comercial:** Eliminar la necesidad de costosas antenas fijas propietarias en el rancho ganadero (la gran debilidad de Allflex). El ganadero podrá optar por el collar inteligente ICHU, que transmite de forma local desde cada animal de la manada y sincroniza los datos directamente con nuestra plataforma, reduciendo a una fracción los costos de instalación física.
-- **Táctica de Ingeniería:** Diseñar el collar inteligente con conectividad híbrida que almacene la telemetría en memoria flash local cuando el ganado se encuentre en "zonas ciegas" sin señal. Una vez que el ganado retorne a áreas de cobertura o se aproxime al corral principal, los datos se sincronizarán de forma transparente y asíncrona hacia nuestro Edge API.
+- **Táctica Comercial:** Reducir la dependencia de antenas fijas propietarias en el rancho ganadero. El collar transmite sus lecturas localmente al componente Edge disponible en el predio; el Edge las sincroniza con la plataforma central cuando recupera conectividad. Esta arquitectura busca reducir la infraestructura fija requerida, sujeto a validación en el piloto.
+- **Táctica de Ingeniería:** Conservar temporalmente la telemetría cuando no haya conectividad y entregarla al Edge cuando el collar pueda comunicarse con él. El Edge mantiene los registros pendientes y los sincroniza de forma asíncrona con la plataforma central cuando exista conexión.
 
 #### Estrategia 2: Optimización Energética de los Dispositivos Físicos
 
@@ -44,6 +44,18 @@ Para posicionar a ICHU IoT con éxito, nuestra startup implementará un conjunto
 
 - **Táctica Comercial:** Posicionar a ICHU IoT no solo como un rastreador o un sensor aislado, sino como una plataforma abierta que conecta al ganadero con su médico veterinario de confianza. El veterinario podrá visualizar análisis clínicos e históricos de salud de manera remota para prescribir tratamientos oportunos, reduciendo las visitas físicas improductivas.
 - **Táctica de Ingeniería:** Diseñar y documentar rigurosamente los endpoints de nuestro RESTful API con OpenAPI/Swagger, permitiendo que sistemas externos de laboratorios o software de gestión de terceros se integren de forma segura mediante protocolos estandarizados, expandiendo el valor del ecosistema sin comprometer la seguridad de la información.
+
+**Vinculación de estrategias con funcionalidades y Product Backlog**
+
+La prioridad corresponde al orden y sprint registrados en el Product Backlog del Capítulo III; los puntos indicados son Story Points y expresan esfuerzo estimado, no prioridad. Cuando el backlog no contiene una historia que implemente una táctica completa, se indica como brecha y no como capacidad comprometida.
+
+| Ventaja competitiva buscada | Funcionalidad que la habilita | Historia asociada en el backlog | Prioridad registrada |
+|---|---|---|---|
+| Reducir la dependencia de infraestructura fija y tolerar zonas sin cobertura | Conservar lecturas pendientes en el collar; recibirlas en Edge; sincronizar desde Edge hacia la API central al recuperar conectividad; operar sin cobertura | TS-03, TS-04, TS-06 y US-22 | TS-03: orden 20, 5 SP, Sprint 2; TS-04: orden 19, 8 SP, Sprint 2; TS-06: orden 23, 8 SP, Sprint 2; US-22: orden 36, 8 SP, Sprint 2 |
+| Extender el tiempo de operación del collar entre cambios de batería | Ajustar muestreo y suspensión del dispositivo según su actividad | TS-01 y TS-02 | TS-01: orden 18, 8 SP, Sprint 2; TS-02: orden 37, 5 SP, Sprint 3; La autonomía de hasta tres años es una meta técnica por validar, no un resultado medido. |
+| Facilitar la adopción progresiva mediante planes ajustados al tamaño del hato | Comparar cobertura y costos e iniciar el registro y la solicitud de suscripción | US-35, US-34, TS-10 | US-35: orden 6, 5 SP, Sprint 1; US-34: orden 8, 5 SP, Sprint 1; TS-10: orden 5, 8 SP, Sprint 1. El cobro requiere confirmación comercial y no se presume implementado. |
+| Diferenciar el servicio mediante alertas sanitarias y acceso clínico compartido | Consultar telemetría e historial, recibir y atender alertas, y autorizar al veterinario sobre el hato | US-04, US-13, US-14, US-16 y US-19 | US-04: orden 10, 5 SP, Sprint 1; US-13: orden 26, 3 SP, Sprint 2; US-14: orden 49, 5 SP, Sprint 3; US-16: orden 30, 8 SP, Sprint 2; US-19: orden 31, 3 SP, Sprint 2 |
+| Ampliar el ecosistema con integraciones veterinarias y de terceros | API externa documentada y conexiones con laboratorios, ecógrafos o software nutricional | No se identifica una HU de integración externa en el backlog actual. US-04 y US-14 cubren autorización y consulta clínica, pero no implementan por sí solas dicha interoperabilidad. | Pendiente de priorización y definición como historia específica. |
 
 ## 2.2. Entrevistas.
 
@@ -163,11 +175,13 @@ Con esta estructura, la entrevista se aborda en tres fases: primero el perfil de
 
 **Video editado de las entrevistas:** [Abrir video en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK)
 
-**Carpeta con las entrevistas completas:** [Abrir carpeta en Google Drive](https://drive.google.com/drive/folders/1Lx-SoAs_OQUHSQWLl1PhLo1HGMW5-NvT?usp=sharing)
-
 **Criterio de asignación por segmento**
 
 Los entrevistados se clasifican según el rol que desempeñan frente a la unidad productiva, y no según su formación profesional. Por esa razón, Meikoll Morell y Grober Barrientos figuran en el Segmento 1 pese a contar con formación en zootecnia y medicina veterinaria: en ambos casos, la entrevista aborda su responsabilidad sobre la gestión, el inventario y la economía del predio en el que trabajan, que es la perspectiva propia de ese segmento. El Segmento 2 reúne a los profesionales que prestan asesoría clínica a establos que no administran.
+
+**Alcance de la evidencia de las entrevistas**
+
+Los resúmenes siguientes registran actividades, problemas, dispositivos y necesidades cuando estos aparecen documentados en la entrevista o en el cuestionario del segmento. Las marcas, influencias de compra y canales preferidos no están consignados de forma sistemática en los resúmenes disponibles; por tanto, no se atribuyen a todos los integrantes del arquetipo. Los datos de una sola persona se identifican por su nombre y no se presentan como rasgos comunes del segmento. Los videos enlazados permiten consultar el contexto y la formulación original de cada respuesta.
 
 #### Segmento 1: Medianos y Grandes Ganaderos
 
@@ -181,7 +195,7 @@ Los entrevistados se clasifican según el rol que desempeñan frente a la unidad
 
 ![Entrevista a Próspero Contreras Flores](assets/images/entrevista-segmento1-prospero-contreras.png)
 
-> **Video: (Inicio: 0:01)** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK
+> **Video: (Inicio: 0:01)** [ver segmento en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK)
 
 > **Resumen:**
 > La entrevista realizada a Próspero Contreras Flores, ganadero ubicado en la región de Apurímac, describe la dinámica operativa y los desafíos clave en la gestión de un predio con aproximadamente 100 cabezas de ganado bajo un régimen de pastoreo extensivo. Actualmente, la administración del inventario y el registro de eventos de salud se realizan de forma rudimentaria mediante hojas de cálculo en Excel y cuadernos de notas, lo que genera vacíos significativos en la trazabilidad médica individual del hato y propicia pérdidas económicas por partos prematuros no supervisados y casos de abigeato (robo de ganado). La infraestructura local presenta una cobertura de internet intermitente (aproximadamente 50% de señal en los potreros), por lo que el productor requiere una herramienta digital multidispositivo (smartphone en campo y laptop en oficina) con capacidad de almacenamiento offline. La solución ideal demandada debe centralizar las fichas clínicas individuales, emitir notificaciones preventivas ajustadas al calendario sanitario andino (vacunación contra carbúnculo, desparasitación), predecir eventos reproductivos (detección de celos y proximidad de partos) y consolidar reportes administrativos de costos y mortalidad bajo un modelo de suscripción anual.
@@ -196,7 +210,7 @@ Los entrevistados se clasifican según el rol que desempeñan frente a la unidad
 
 ![Entrevista a Meikoll Morell Bosa Cárdenas](assets/images/entrevista-segmento1-meikoll-morell.png)
 
-> **Video: (Inicio: 6:01)** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK
+> **Video: (Inicio: 6:01)** [ver segmento en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK)
 
 > **Resumen:**
 > El ingeniero zootecnista Meikoll Morell Bosa Cárdenas, propietario de la Hacienda del Marqués en Pampa de Anta (Cusco), maneja 40 cabezas de ganado Brown Swiss bajo un régimen semi-extensivo, 20 toros en engorde intensivo y caballos peruanos de paso. Su principal canal de control actual consiste en fichas individuales ingresadas en Excel desde su laptop y smartphone, pero identifica que el mayor problema en su gestión es la falta de hábito para registrar las intervenciones inmediatamente después del trabajo de campo, lo que deriva en pérdida de historial clínico y de trazabilidad. Respecto a pérdidas económicas, señala eventos de negligencia en partos y accidentes en equinos, además de vulnerabilidad ante el abigeato, donde la geolocalización por microchip ha fallado por falta de señal en zonas rurales. Para optimizar su toma de decisiones, Meikoll muestra interés en adoptar una solución de software bajo suscripción anual, priorizando que funcione desde el teléfono en modo offline para actualizar datos automáticamente al recuperar conexión. Entre las funciones clave que exige destacan las notificaciones automáticas para campañas sanitarias (dosificación, vacunas y vitaminas), alertas sobre el tiempo y peso estimado en ganadería de engorde, módulos de control de costos por alimento y medicinas por cabeza para evaluar la rentabilidad de los ciclos trimestrales, y la capacidad de adjuntar fotografías de los animales como evidencia del estado físico y respaldo ante robos.
@@ -211,7 +225,7 @@ Los entrevistados se clasifican según el rol que desempeñan frente a la unidad
 
 ![Entrevista a Grober Barrientos Talaverano](assets/images/entrevista-segmento1-grober-barrientos.png)
 
-> **Video: (Inicio: 12:43)** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK
+> **Video: (Inicio: 12:43)** [ver segmento en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK)
 
 > **Resumen:**
 > Grober Barrientos Talaverano, un médico veterinario zootecnista de 34 años. Grober trabaja en el Fundo Agropecuario Yavi Yavi (Cusco), donde se encarga de brindar asistencia técnica en sanidad, manejo, alimentación y registros de ganado. Durante la charla, Grober explicó que manejan animales criollos, cruzados y un lote de 65 cabezas productoras de leche (Brown Swiss y Fleckvieh). Actualmente utiliza Excel en su computadora para llevar sus registros, aunque enfrenta problemas de conectividad intermitente en la zona de pastoreo. Indicó que la principal causa de mortalidad bovina en su zona es el mal de altura en terneros, cuyos primeros signos suelen evidenciarse en la reducción del movimiento y del tiempo de pastoreo. Por ello, destacó que le sería de gran utilidad una plataforma o sistema que registre y alerte sobre variaciones en las constantes fisiológicas (temperatura, frecuencias) y patrones de desplazamiento, además de permitir el filtrado por categorías, el control de costos e inventario y la generación de reportes e historiales de salud, sanidad y reproducción en tiempo real.
@@ -228,7 +242,7 @@ Los entrevistados se clasifican según el rol que desempeñan frente a la unidad
 
 ![Entrevista a Darwin Carbajal Vilca](assets/images/entrevista-segmento2-darwin-carbajal.png)
 
-> **Video: (Inicio: 18:07)** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK
+> **Video: (Inicio: 18:07)** [ver segmento en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK)
 
 > **Resumen:**
 > Darwin Carbajal Vilca, médico veterinario zootecnista y criador de ganado vacuno Brown Swiss en Puno con más de 18 años de experiencia en inseminación artificial, administra el fundo "Flores de Coña" con 26 animales de pedigree y PPC. Su jornada combina labor de campo e inspección en establo en primeras y últimas horas del día con trabajo de escritorio e investigación clínica. En su práctica médica identifica desafíos clave como la detección tardía del celo silencioso, reconocible habitualmente al segundo o tercer día por sangrado vulvar, y el impacto fatal de trastornos metabólicos de rápida evolución como el timpanismo o la intoxicación por ensilado alterado. Para optimizar su gestión, requiere una solución tecnológica integrada que permita registrar historias clínicas digitales en campo para validar fármacos administrados, recibir alertas preventivas sobre caídas en la rumia o alzas térmicas, analizar curvas epidemiológicas a nivel de hato y adjuntar evidencia ecográfica para agilizar los registros de gestación ante ASCRIGAR Perú.
@@ -243,7 +257,7 @@ Los entrevistados se clasifican según el rol que desempeñan frente a la unidad
 
 ![Entrevista a Eliseo Ramírez Mena](assets/images/entrevista-segmento2-eliseo-ramirez.png)
 
-> **Video: (Inicio: 24:01)** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK
+> **Video: (Inicio: 24:01)** [ver segmento en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK)
 
 > **Resumen:**
 > La entrevista expone la rutina laboral y las necesidades tecnológicas de Eliseo Ramírez Mena, bachiller en Medicina Veterinaria y Zootecnia con más de dos años de experiencia en el manejo de ganado vacuno y ovino. Su jornada diaria distribuye la mañana en labores de campo con los animales y la tarde en trabajo de oficina, registro de datos en computadora e impresión de informes para clientes. En el aspecto sanitario y reproductivo, Eliseo enfatiza que los tratamientos dependen del diagnóstico clínico observable, como la variación de temperatura, el apetito, la alteración de rumiación o conductas en celo, y del apoyo de colegas en casos complejos, así como del uso de intervenciones inmediatas ante emergencias metabólicas como el timpanismo gaseoso. Frente a la propuesta de un software y una aplicación móvil veterinaria, el especialista prioriza la utilidad de sincronizar imágenes de ecógrafos para evaluar la gestación en tiempo real desde el celular, la emisión de alertas rojas automáticas cuando decaen las constantes vitales del animal, la automatización de reportes ejecutivos para sustituir el llenado manual en Excel, y la integración de módulos nutricionales que identifiquen deficiencias minerales o de nutrientes en la dieta del ganado.
@@ -258,10 +272,25 @@ Los entrevistados se clasifican según el rol que desempeñan frente a la unidad
 
 ![Entrevista a Dionisio Rodríguez](assets/images/entrevista-segmento2-dionisio-rodriguez.png)
 
-> **Video: (Inicio: 29:32)** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK
+> **Video: (Inicio: 29:32)** [ver segmento en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK)
 
 > **Resumen:**
 > Esta entrevista explora las necesidades operativas y tecnológicas de Dionisio Rodríguez, zootecnista chileno con trabajo de campo en Perú, para guiar el desarrollo de la plataforma ganadera ICHU de SmartFarm. Rodríguez explica que pasa la mayor parte de su jornada en el terreno registrando datos y fotos en su teléfono inteligente, reservando la computadora de oficina para la elaboración de informes. Para la detección temprana de enfermedades metabólicas o infecciosas y la identificación de celos silenciosos, fundamenta su diagnóstico en el seguimiento continuo de la temperatura corporal, la inactividad, la disminución de la rumia y los cambios de conducta, recurriendo a exámenes de laboratorio solo en casos complejos. En cuanto al diseño de la plataforma, solicita alertas automáticas ante fiebres o partos, reportes exportables a Excel o PDF, e integración directa con equipos de campo como ecógrafos portátiles y software de nutrición para evitar la duplicidad en el registro de información.
+
+**Trazabilidad de los dispositivos y herramientas hacia las User Personas**
+
+La siguiente relación distingue lo documentado en cada resumen de los atributos que todavía no pueden asignarse al arquetipo del segmento.
+
+| Participante | Dispositivos y herramientas documentados en su resumen | Alcance para la construcción del arquetipo |
+|---|---|---|
+| Próspero Contreras | Smartphone en campo, laptop en oficina, Excel y cuadernos. | Respalda el trabajo entre campo y oficina; no establece el sistema operativo ni el navegador principal. |
+| Meikoll Morell | Laptop y smartphone para fichas en Excel. | Coincide con Próspero en esos dispositivos; la falta de hábito de registro y el caso del microchip se conservan como evidencia individual. |
+| Grober Barrientos | Excel en computadora y conectividad intermitente en pastoreo. | No se identifica el tipo de computadora ni se documenta el uso de cuatro dispositivos. |
+| Darwin Carbajal | Trabajo de campo y de escritorio; solicitud de adjuntar evidencia ecográfica para registros de gestación ante ASCRIGAR Perú. | El resumen no precisa dispositivos o sistema operativo. ASCRIGAR corresponde a este caso y finalidad, no a una influencia de compra común del segmento. |
+| Eliseo Ramírez | Registros en computadora e informes impresos; solicitud de consultar imágenes ecográficas desde el celular. | Se distingue la práctica actual de la función deseada; no se atribuye una plataforma móvil ya utilizada para esa integración. |
+| Dionisio Rodríguez | Smartphone para datos y fotos en campo, computadora de oficina para informes. | Documenta esos dispositivos, pero no un sistema operativo, navegador o canal social preferido. |
+
+Los resultados agregados de los cuestionarios se presentan en 2.2.3 y no se asignan a un entrevistado específico sin identificación de su respuesta. En el cuestionario del Segmento 2, las tres respuestas sobre el dispositivo principal se reparten entre smartphone, laptop y papel; esto no equivale a que cada participante utilice los cuatro dispositivos dibujados en la ficha. Faltan respuestas comparables sobre sistemas operativos, navegadores principales, marcas e influencias de compra y canales preferidos. Estos campos requieren validación antes de presentarse como características habituales del segmento.
 
 ### 2.2.3. Análisis de entrevistas.
 
@@ -319,7 +348,23 @@ El cruce de los tres resúmenes del Segmento 1 (Próspero Contreras Flores, Meik
 
 - **Suscripción anual y valor estratégico.** Los tres aceptan el modelo de suscripción, que Próspero y Meikoll declaran expresamente anual, y el 100% del cuestionario ratifica "pago anual con tarifa fija". Grober añade el potencial de certificaciones (mejoramiento genético por PPC y su base de datos) y mejoramiento genético a partir de registros multi-generacionales (días abiertos, índice de fertilidad, producción per cápita anual), que amplían el valor del sistema más allá del monitoreo diario.
 
-En síntesis, las entrevistas del Segmento 1 validan los pilares de la solución: **ficha digital individual centralizada (migración desde Excel/cuaderno), conectividad híbrida con modo offline obligatorio, alertas sanitarias y reproductivas basadas en el calendario ganadero, geolocalización contra el abigeato, control de costos por cabeza y modelo de suscripción anual**.
+En síntesis, las entrevistas y el cuestionario respaldan, dentro de esta muestra, la necesidad de una ficha individual, operación sin cobertura, alertas sanitarias y reproductivas, ubicación, control de costos y una opción de pago anual. Estos resultados describen necesidades y preferencias declaradas; no validan todavía la eficacia de la solución ni la reducción de pérdidas.
+
+##### Trazabilidad de evidencia a requisitos
+
+La tabla separa patrones compartidos, respuestas del cuestionario y casos individuales. Los identificadores de historias enlazan con el Product Backlog del Capítulo III; la asociación expresa una necesidad respaldada, no una validación de que la funcionalidad ya produzca el beneficio esperado.
+
+| Fuente | Hallazgo documentado | Necesidad derivada | Arquetipo | Historias relacionadas |
+|---|---|---|---|---|
+| Próspero, Meikoll y Grober; cuestionario Segmento 1 (2 respuestas) | Registros en Excel/cuadernos y pérdida de trazabilidad; ambos cuestionarios reportan uso de registros manuales o hojas de cálculo | Identificar al animal y consultar una ficha con sus datos productivos y eventos | Cesar Flores; patrón recurrente del segmento | US-06, US-07, US-21 |
+| Próspero (50% de cobertura declarada en potreros), Meikoll y Grober; cuestionario Segmento 1 (2/2: cobertura regular) | La conectividad es irregular en zonas de pastoreo | Registrar y conservar información sin cobertura, con sincronización posterior | Cesar Flores; patrón recurrente, con distinta intensidad por predio | US-22, TS-03, TS-04, TS-06 |
+| Próspero y Meikoll; cuestionario Segmento 1 (2/2 reportan abigeato frecuente y costoso) | Robos reportados por Próspero; Meikoll relata que el microchip no permitió recuperar dos de tres caballos robados por falta de señal | Consultar ubicación y recibir aviso de salida del área; el caso del microchip es evidencia individual de Meikoll | Cesar Flores; la experiencia de robo concreta es individual | US-15, US-17, US-20 |
+| Grober | En su zona, la reducción de movimiento y pastoreo puede preceder signos de mal de altura en terneros | Consultar actividad y recibir una alerta que apoye la inspección clínica | Cesar Flores y Leonardo Rosales como necesidad compartida de vigilancia; el caso de altura es específico de Grober | US-13, US-16, TS-01 |
+| Darwin | El celo silencioso suele reconocerse con dos o tres días de retraso; también solicita alertas por cambios de rumia y temperatura | Detectar patrones compatibles con celo y revisar evidencia biométrica | Leonardo Rosales; observación específica de Darwin que requiere validación clínica | US-18, US-14 |
+| Darwin, Eliseo y Dionisio; cuestionario Segmento 2 (3 respuestas) | Los tres solicitan seguimiento de variables biométricas; el cuestionario indica uso de smartphone, laptop o papel (una respuesta por categoría) | Consultar el historial biométrico y registrar información desde los medios disponibles para el profesional | Leonardo Rosales; necesidad recurrente, dispositivos heterogéneos | US-14, US-21, US-22 |
+| Darwin, Eliseo y Dionisio | Solicitan alertas ante anomalías; Eliseo y Dionisio además describen reportes e integración con equipos o herramientas externas | Recibir y atender alertas, exportar información y definir interoperabilidad pendiente | Leonardo Rosales; cada integración concreta debe confirmarse con usuarios y priorizarse | US-16, US-19, US-31; integración externa pendiente de HU |
+
+**Límites de la muestra.** Se entrevistó a tres participantes por segmento y se aplicaron cuestionarios a dos ganaderos y tres profesionales. Por ello, las coincidencias se consideran patrones cualitativos de esta muestra, no estimaciones representativas de todos los ganaderos o veterinarios. La reducción de mortalidad, el ahorro de tiempo y la aceptación o renovación de una suscripción son resultados esperados que deben validarse en un piloto; no son resultados comprobados por estas entrevistas.
 
 #### Análisis de entrevistas del Segmento 2: Zootecnistas y Médicos Veterinarios
 
@@ -373,7 +418,7 @@ El cruce de los tres resúmenes del Segmento 2 (Darwin Carbajal Vilca, Eliseo Ra
 
 - **Reportes ejecutivos comparativos.** Dionisio solicita reportes exportables a Excel o PDF y Eliseo automatización de reportes ejecutivos; ambos coinciden con la necesidad expresada en el cuestionario de graficar enfermedades por establecimiento, mortalidad y problemas reproductivos por mes, lo que sustenta el **módulo de analítica del ICHU Web Application**.
 
-En síntesis, las entrevistas del Segmento 2 validan cuantitativa y cualitativamente los pilares de la solución: **telemetría biométrica continua (rumia, temperatura, actividad, frecuencias cardíaca y respiratoria), motor de alertas clínicas configurables, historia clínica digital centralizada con API abierta, soporte móvil offline y reportes exportables**.
+En síntesis, las entrevistas y el cuestionario respaldan en esta muestra el interés por consultar variables biométricas y recibir alertas, y documentan solicitudes de historial digital, soporte en campo y reportes. Las peticiones de ecógrafos, nutrición y otras integraciones se atribuyen a participantes concretos; la API abierta y la eficacia clínica no quedan validadas por estas entrevistas y requieren historias de backlog y validación posteriores.
 
 ## 2.3. Needfinding.
 
@@ -385,7 +430,9 @@ En esta sección se consolidan y sintetizan los hallazgos cualitativos y cuantit
 
 Para la construcción de los arquetipos de usuario, el equipo procesó la información recolectada en la fase de entrevistas y el análisis del mercado ganadero. Se identificaron dos patrones de comportamiento que representan a los dos segmentos objetivo definidos para el ecosistema de software ICHU.
 
-Del análisis de entrevistas se tomaron como insumo principal las herramientas de registro que utiliza cada segmento, el estado de la conectividad en sus zonas de trabajo, las pérdidas económicas declaradas, los dispositivos de preferencia y los parámetros que cada perfil necesita conocer del animal. Del análisis competitivo se incorporaron las expectativas de precio y de modalidad de contratación, junto con las funcionalidades que los competidores ya ofrecen y que condicionan lo que cada segmento espera encontrar.
+Del análisis de entrevistas se tomaron como insumo principal las herramientas de registro que utiliza cada participante, el estado de la conectividad en sus zonas de trabajo, las pérdidas económicas declaradas, los dispositivos mencionados y los parámetros que necesita conocer del animal. Los cuestionarios complementan esta información con resultados agregados de cada muestra, incluidas las preferencias de contratación cuando se preguntaron. El análisis competitivo aporta contexto sobre ofertas existentes, pero no demuestra por sí mismo las preferencias, marcas, dispositivos ni expectativas de los entrevistados.
+
+Las personas son arquetipos de segmento construidos a partir de tres entrevistas por segmento, no retratos de un participante concreto. Se consideran **patrones comunes** los temas que aparecen en varias entrevistas o que coinciden con el cuestionario; se mantienen como **evidencia individual** los sucesos y condiciones atribuidos a una sola persona; y se consideran **supuestos por validar** las preferencias que no aparecen directamente en las fuentes. Por ejemplo, los robos relatados por Próspero y la experiencia con microchip de Meikoll son casos individuales, mientras que el cuestionario respalda que ambos participantes consideran frecuente y costoso el abigeato. La composición de la muestra es pequeña y no permite afirmar que estos rasgos describan a todo el mercado.
 
 **Segmento 1: Medianos y Grandes Ganaderos.** Propietarios y administradores de unidades productivas, enfocados en la rentabilidad, la reducción de pérdidas por mortalidad y abigeato, y la toma de decisiones a partir de indicadores del hato.
 
@@ -393,9 +440,11 @@ Del análisis de entrevistas se tomaron como insumo principal las herramientas d
 
 Arquetipo del Segmento 1, construido a partir de los patrones identificados en las entrevistas a Próspero Contreras, Meikoll Morell y Grober Barrientos.
 
-![User Persona Cesar Flores, arquetipo del Segmento 1](assets/images/persona-segmento1-cesar-flores.jpg)
+![User Persona Cesar Flores, arquetipo del Segmento 1](assets/images/persona-segmento1-cesar-flores.png)
 
-[Ficha de User Persona y Empathy Map en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
+[Ficha de User Persona de Cesar Flores en UXPressia](https://uxpressia.com/w/v8FzI/p/JsGGF?tagId=AIZ5N)
+
+La ficha diferencia el uso de smartphone y laptop declarado por Próspero y Meikoll de la configuración de cuatro dispositivos que no está respaldada como patrón común. El rango de 51–200 cabezas y la preferencia por pago anual fijo corresponden a las dos respuestas del cuestionario del segmento, no a todos los predios entrevistados.
 
 **Segmento 2: Zootecnistas y Médicos Veterinarios.** Profesionales orientados al monitoreo biométrico continuo, al diagnóstico clínico temprano y a la revisión de historiales de salud consolidados.
 
@@ -403,11 +452,28 @@ Arquetipo del Segmento 1, construido a partir de los patrones identificados en l
 
 Arquetipo del Segmento 2, construido a partir de los patrones identificados en las entrevistas a Darwin Carbajal, Eliseo Ramírez y Dionisio Rodríguez.
 
-![User Persona Leonardo Rosales, arquetipo del Segmento 2](assets/images/persona-segmento2-leonardo-rosales.jpg)
+![User Persona Leonardo Rosales, arquetipo del Segmento 2](assets/images/persona-segmento2-leonardo-rosales.png)
 
-[Ficha de User Persona y Empathy Map en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
+[Ficha de User Persona de Leonardo Rosales en UXPressia](https://uxpressia.com/w/v8FzI/p/Mq5pD?tagId=AIZ5N)
 
-Ambas fichas fueron elaboradas en UXPressia y contemplan los atributos propios de un arquetipo: datos demográficos, biografía, personalidad, habilidades, objetivos, frustraciones, tecnología de preferencia, marcas e influencias, y canales de interacción.
+La ficha sintetiza las entrevistas a Darwin, Eliseo y Dionisio y explicita la variedad de herramientas registrada en las tres respuestas del cuestionario. ASCRIGAR Perú se mantiene como evidencia individual de Darwin para registros de gestación; no se generaliza como marca o influencia compartida. Los objetivos y motivaciones expresan resultados deseados, no efectos clínicos ya comprobados de ICHU.
+
+Ambas fichas fueron elaboradas en UXPressia y contemplan datos demográficos, biografía, personalidad, habilidades, objetivos, frustraciones, tecnología, marcas e influencias y canales. Los atributos sin respaldo en varias entrevistas o cuestionarios deben interpretarse como hipótesis de diseño pendientes de validación, no como rasgos confirmados del arquetipo.
+
+**Lectura de los campos pendientes de validación**
+
+
+
+| Campo de las fichas | Evidencia disponible y corrección de interpretación | Validación pendiente |
+|---|---|---|
+| Dispositivos y sistemas operativos | Próspero y Meikoll mencionan smartphone y laptop; Grober menciona computadora. En el Segmento 2, el cuestionario distribuye el dispositivo principal entre smartphone, laptop y papel. Los cuatro dispositivos y los logotipos de Android o Windows no constituyen una configuración común confirmada. | Identificar por participante los dispositivos realmente usados y su sistema operativo; retirar de futuras exportaciones los que no tengan respaldo. |
+| Navegadores | Las fichas señalan estos iconos como pendientes de validación. Los resúmenes no establecen una preferencia compartida por Chrome, Edge o Firefox. | Registrar el navegador principal de cada participante antes de seleccionar los iconos del arquetipo. |
+| Marcas e influencias de Cesar | Zoetis, MSD Animal Health, AGALEP y las ferias mostradas en la imagen no quedan sustentadas como preferencias comunes en los resúmenes disponibles. Tampoco se confirma de manera comparable la influencia de consultores en las decisiones de compra. | Preguntar qué marcas usa cada participante y quién o qué influye en sus decisiones; conservar solo los patrones respaldados e identificar las menciones individuales. |
+| Marcas e influencias de Leonardo | ASCRIGAR Perú está vinculada al caso de Darwin y a registros de gestación. Las consultas a colegas aparecen en las entrevistas; no prueban preferencias compartidas por marcas, universidades o plataformas académicas. | Diferenciar entidades relacionadas con un trámite de fuentes de influencia o preferencias de compra y contrastarlas entre participantes. |
+| Canales de ambos arquetipos | PC y laptop son dispositivos de acceso, no canales de comunicación por sí mismos. Los iconos de Facebook, WhatsApp o correo en las fichas no demuestran que esos sean los canales preferidos del segmento. El uso de un smartphone tampoco prueba una aplicación de mensajería concreta. | Documentar por qué medio se comunica o informa cada participante, con quién y para qué actividad; separar el canal del dispositivo utilizado. |
+| Demografía y habilidades | Los nombres de las personas son sintéticos y las edades y escalas de habilidades de las fichas son ilustrativas. Una localización o experiencia individual no representa automáticamente al segmento completo. | No utilizar esos valores como estadísticas del segmento; confirmar cualquier atributo que se vaya a tratar como patrón de la muestra. |
+
+Estos límites también se aplican a la lectura de los Empathy Maps de 2.3.4: ningún dato pendiente de las User Personas debe trasladarse al mapa como un hecho confirmado. La actualización de las dos fichas no implica una nueva exportación de los mapas de empatía.
 
 ### 2.3.2. User Task Matrix.
 
@@ -489,7 +555,7 @@ Ambos recorridos convergen en que el registro se realiza siempre después de la 
 
 ### 2.3.4. Empathy Mapping.
 
-Para la elaboración de los Empathy Maps, el equipo partió de la ficha de cada User Persona y colocó al arquetipo en el centro del lienzo. A partir de ahí, cada integrante aportó observaciones derivadas de los resúmenes de entrevista, respondiendo de forma sucesiva a las preguntas que estructuran la herramienta: con quién se empatiza, qué necesita hacer, qué dice, qué ve, qué hace, qué escucha, y cómo se siente y qué piensa. La sesión cerró con la identificación de los Pains, a partir de la pregunta sobre qué le preocupa, y de los Gains, a partir de la pregunta sobre qué puede ayudar a resolver sus problemas y qué podría convencerlo de que la propuesta es la alternativa adecuada.
+Para la elaboración de los Empathy Maps, el equipo partió de las entrevistas y de los patrones sintetizados en las User Personas. Los elementos descritos a continuación se limitan a evidencia disponible: registros en Excel o cuadernos, conectividad irregular, observación y atención de animales, uso de teléfonos o computadoras cuando se declara, y necesidades expresadas por los participantes. Las marcas, influencias de compra y canales sociales no están documentados de manera consistente en las fuentes transcritas; se consideran preguntas pendientes de validación y no hechos del arquetipo. Los mapas gráficos asociados deben reflejar esta misma distinción entre patrón común, caso individual y supuesto.
 
 **Empathy Map de Cesar Flores**
 
@@ -497,13 +563,13 @@ Para la elaboración de los Empathy Maps, el equipo partió de la ficha de cada 
 
 [Empathy Map del Segmento 1 en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
 
-Se empatiza con un ganadero propietario o administrador de una unidad de 51 a 200 cabezas, ubicada en una zona rural de Apurímac o Cusco, que toma las decisiones sobre salud, reproducción, costos y seguridad del hato.
+Se empatiza con un arquetipo de propietario o administrador ganadero. En esta muestra, los predios entrevistados se encuentran en Apurímac y Cusco y los tamaños declarados varían; no se toma la localización ni escala de un solo participante como requisito universal.
 
-Necesita registrar animales, revisar alertas, programar campañas sanitarias, controlar costos, verificar partos y localizar animales extraviados. Lo que ve a diario son hojas de cálculo, cuadernos, potreros extensos, conectividad irregular y animales enfermos o gestantes cuya vigilancia completa le resulta inabordable. Escucha recomendaciones de veterinarios, avisos de campañas sanitarias, comentarios de otros ganaderos y reportes de su personal de campo. Lo que hace es contar y revisar el ganado, verificar pastos y agua, registrar información en hojas de cálculo o cuadernos, tomar fotografías y contactar al veterinario cuando aparece un problema. Lo resume en una frase: "Lo que falta es una base de datos práctica donde tengamos todos esos antecedentes a la mano".
+Necesita identificar animales, consultar antecedentes, organizar campañas, revisar costos y responder a problemas sanitarios o de seguridad. Las entrevistas describen registros en Excel y cuadernos, potreros con cobertura irregular y labores de observación directa. Próspero menciona el uso de smartphone en campo y laptop en oficina; Meikoll refiere laptop y smartphone para sus fichas. Las actividades y necesidades comunes incluyen revisar animales, registrar eventos y consultar apoyo veterinario. Los canales de comunicación preferidos, marcas y fuentes de influencia no quedaron establecidos de forma comparable; deben validarse, no asumirse. Próspero expresa la necesidad de tener los antecedentes disponibles en una base de datos práctica.
 
-Piensa y siente que le preocupa perder animales por enfermedades, partos o abigeato, y que no tiene toda la información a la mano. Aspira a una herramienta sencilla que funcione aunque no haya señal.
+La muestra documenta preocupación por enfermedades, partos y abigeato, pero los sucesos concretos varían por participante. La necesidad transversal respaldada es mantener información accesible y mejorar la detección y respuesta; que una herramienta reduzca efectivamente mortalidad o pérdidas sigue siendo una hipótesis a validar.
 
-Sus **Pains** son los registros fragmentados, la falta de hábito para registrar, la mala conectividad, las pérdidas por partos, enfermedades y robos, y la ausencia de trazabilidad. Sus **Gains** son la ficha individual por animal, las alertas de parto y celo, el modo sin conexión, la geolocalización, el control de costos y los reportes automáticos.
+Los **Pains comunes documentados** son la fragmentación de registros y la conectividad irregular. La falta de hábito para registrar corresponde específicamente a Meikoll; los robos y problemas de parto o enfermedad se atribuyen a quienes los relataron y no a todos los ganaderos. Los **Gains esperados** son la ficha individual, las alertas, el funcionamiento sin conexión, la ubicación y los reportes; su efecto en pérdidas y tiempos requiere validación.
 
 **Empathy Map de Leonardo Rosales**
 
@@ -511,201 +577,220 @@ Sus **Pains** son los registros fragmentados, la falta de hábito para registrar
 
 [Empathy Map del Segmento 2 en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
 
-Se empatiza con un zootecnista o médico veterinario que trabaja en campo y en oficina, atiende diferentes establos y necesita información clínica objetiva para diagnosticar y tratar ganado.
+Se empatiza con un arquetipo de zootecnista o médico veterinario que combina atención en campo con análisis y documentación clínica. Las entrevistas describen esta dinámica en Darwin, Eliseo y Dionisio, aunque las herramientas y tareas específicas varían entre ellos.
 
-Necesita examinar animales, registrar síntomas y tratamientos, revisar antecedentes, monitorear temperatura y rumia, analizar lotes y generar reportes para los propietarios. Lo que ve son animales con signos clínicos, historiales incompletos, hojas de cálculo, celulares, laptops, ecógrafos y establos distintos con información dispersa. Escucha consultas de ganaderos, opiniones de colegas, capacitaciones de la asociación de criadores, universidades, grupos profesionales y reportes del personal de campo. Lo que hace es realizar visitas, observar el comportamiento, evaluar tratamientos, consultar a otros profesionales, registrar informes y recurrir a pruebas de laboratorio en los casos complejos. Lo resume así: "Cuando tienes un seguimiento exacto puedes acudir al instante".
+Necesita examinar animales, registrar intervenciones, consultar antecedentes, interpretar cambios de temperatura, actividad o rumia y comunicar resultados al propietario. El cuestionario del segmento (3 respuestas) registra un uso repartido entre smartphone, laptop y papel; Dionisio menciona el teléfono en campo y la computadora para informes. Eliseo describe registros en computadora e impresión de informes. Las entrevistas respaldan consultas de colegas y el uso de equipos como ecógrafos en casos concretos. Darwin menciona ASCRIGAR Perú para registros de gestación, lo que constituye evidencia individual de esa relación, no una influencia compartida por todos los profesionales. Las marcas, asociaciones, universidades y canales de influencia no quedan documentados de manera común; deben confirmarse antes de incorporarlos como atributos del arquetipo.
 
-Piensa y siente que le preocupa detectar tarde una enfermedad o aplicar un tratamiento incorrecto. Necesita confiar en los datos y contar con evidencia clínica para justificar sus decisiones.
+Los participantes expresan preocupación por detectar tarde cambios clínicos, por la calidad de los registros y por duplicar tareas. Necesitan datos trazables para sustentar decisiones; la eficacia diagnóstica de alertas o monitoreo continuo aún requiere validación clínica.
 
-Sus **Pains** son los tratamientos anteriores no registrados, las dosis duplicadas, la detección tardía del timpanismo, el celo silencioso, la falta de datos de rumia y las ecografías separadas del historial. Sus **Gains** son las alertas tempranas, la historia clínica completa, las imágenes ecográficas centralizadas, los reportes exportables, el análisis epidemiológico y la integración con sistemas externos.
+Los **Pains comunes documentados** son la información clínica incompleta o duplicada y la dificultad de advertir algunos cambios a tiempo. El timpanismo y el celo silencioso se mantienen como ejemplos clínicos relatados por participantes concretos. Los **Gains esperados** son alertas, historiales trazables, reportes e interoperabilidad; su eficacia clínica y disponibilidad deben validarse antes de presentarlos como resultados alcanzados.
 
 ## 2.4. Big Picture EventStorming.
 
-El Big Picture EventStorming permite al equipo construir una comprensión compartida del dominio ganadero antes de tomar cualquier decisión de diseño. A diferencia de las técnicas orientadas a la solución, esta sesión se concentra en los hechos relevantes que ocurren en el negocio, con independencia de qué sistema los registre.
+El Big Picture EventStorming permite construir una comprensión compartida del negocio ganadero antes de diseñar la solución. Este modelo describe el **negocio actual**: las personas identifican y gestionan a los animales, los observan durante el pastoreo, brindan atención veterinaria, gestionan la reproducción y las campañas preventivas, y mantienen registros en cuadernos, teléfonos y hojas de cálculo. No describe una plataforma ICHU que ya se encuentre en funcionamiento.
 
-**Desarrollo de la sesión**
+La evidencia proviene de los resúmenes de entrevistas de la sección 2.2.2 del informe oficial AV1 (páginas 16–19 del PDF). Próspero, Meikoll y Grober describen registros manuales o en Excel, historiales incompletos y limitaciones de conectividad rural; Darwin, Eliseo y Dionisio describen observación en campo, trabajo clínico, evidencia ecográfica y elaboración de informes en oficina. Las alertas automáticas, la telemetría continua y las integraciones entre aplicaciones que solicitan son **capacidades deseadas**, no pruebas de que dichas capacidades ya existan.
 
-La sesión se organizó en cinco etapas sucesivas, siguiendo la secuencia habitual de la técnica.
+**Proceso y alcance de la revisión**
 
-En la **exploración caótica**, cada integrante escribió en notas de color naranja los hechos relevantes del dominio que había identificado en las entrevistas, redactados siempre en pasado y desde la perspectiva del negocio, sin discutir todavía su orden ni su pertinencia.
+El modelo existente del equipo en FigJam se revisa en cinco etapas: recopilar eventos candidatos del negocio, ordenar secuencias temporales locales, asociar personas y medios de apoyo existentes, revisar problemas y oportunidades, e identificar eventos pivote y áreas de negocio provisionales. Los nombres de los eventos se contrastan con las entrevistas documentadas y con el vocabulario existente del negocio. Esta revisión no afirma que se haya realizado una nueva entrevista ni un nuevo taller facilitado.
 
-En el **ordenamiento temporal**, el equipo dispuso los eventos sobre una línea de tiempo que recorre el ciclo productivo del hato, desde la incorporación del animal hasta su baja, y resolvió los duplicados y las formulaciones ambiguas.
+La explicación del negocio utiliza el tiempo presente porque describe cómo se trabaja hoy. Cada evento naranja o morado se redacta en pasado porque nombra un hecho que ya ocurrió, como *Animal examinado* o *Diagnóstico registrado*. La incorporación de collares inteligentes, la captura de telemetría, el almacenamiento en el dispositivo de borde, la sincronización central, los recordatorios automáticos y las alertas generadas por el sistema se excluyen del inventario de eventos del negocio actual. Los componentes técnicos y las fronteras definitivas de los contextos delimitados corresponden al diseño posterior, no a esta sección.
 
-En la **identificación de eventos pivote**, se marcaron los hechos que separan fases claramente distintas del proceso de negocio y que, por lo tanto, anticipan las fronteras entre contextos.
+Las siguientes figuras son capturas PNG independientes exportadas directamente de las secciones corregidas de FigJam, no dibujos reconstruidos. Cada captura y su explicación corresponden a su respectiva etapa dentro de la sección 2.4; el enunciado del trabajo final no exige subsecciones numeradas adicionales en este punto. El texto dentro de las imágenes se conserva en inglés; las explicaciones del informe se presentan en español.
 
-En la **detección de hot spots**, se señalaron con notas rosadas las zonas de desacuerdo, de reglas de negocio no resueltas o de dependencia respecto de terceros, que requieren validación posterior con los usuarios.
+**Etapa 1 — Exploración caótica**
 
-Finalmente, en la **identificación de eventos pivote y áreas de dominio emergentes**, se usaron los cambios de estado más significativos para proponer agrupaciones preliminares. Estas áreas son hipótesis de exploración y no representan todavía bounded contexts definitivos.
+El inventario sin ordenar contiene 36 eventos candidatos del negocio. Las notas naranjas representan hechos relacionados con la identificación del hato, la observación, la atención sanitaria, la reproducción, las campañas, los registros y las bajas de animales. La proximidad entre las notas no implica una secuencia. Los conceptos existentes del dominio cuyas reglas operativas exactas no se establecen en las entrevistas se mantienen como candidatos por validar, en lugar de presentarse como procedimientos confirmados que todas las unidades productivas aplican.
 
-Las siguientes láminas documentan la progresión completa de la sesión. Se reconstruyeron en formato vectorial para conservar legibilidad en el informe, manteniendo los eventos, actores, problemas y oportunidades que aparecen en el modelo del dominio.
+![Etapa 1 — Exploración caótica: eventos candidatos del negocio actual sin ordenar](assets/images/diagrams/big-picture-eventstorming/01-1-chaotic-exploration.png)
 
-![01.1 · Chaotic Exploration](assets/images/diagrams/big-picture-eventstorming/01-1-chaotic-exploration.svg)
+*Figura 2.4.1. Exploración caótica: 36 eventos candidatos del negocio redactados en pasado, sin componentes de la solución futura. Fuente: tablero de SmartFarm en FigJam.*
 
-*Figura 2.4.1. Chaotic Exploration: 38 Domain Events identificados sin ordenar. Elaboración propia.*
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
 
-[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+**Etapa 2 — Ordenamiento temporal**
 
-![01.2 · Enforce the Timeline](assets/images/diagrams/big-picture-eventstorming/01-2-enforce-timeline.svg)
+Los mismos 36 eventos candidatos se organizan en seis carriles del negocio, que se leen de arriba hacia abajo. Las flechas expresan un orden local plausible únicamente donde se modela una relación. No convierten cada observación en un paso obligatorio ni implican que todas las unidades productivas sigan un único proceso universal. Las observaciones durante el pastoreo son hallazgos alternativos; la muerte, la venta y el robo son motivos alternativos de baja, no eventos consecutivos. El registro en campo y la incorporación de datos en oficina pueden ocurrir en momentos distintos.
 
-*Figura 2.4.2. Enforce the Timeline: eventos organizados en cinco procesos clave. Elaboración propia.*
+![Etapa 2 — Ordenamiento temporal: seis procesos locales del negocio y alternativas explícitas](assets/images/diagrams/big-picture-eventstorming/01-2-enforce-timeline.png)
 
-[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+*Figura 2.4.2. Ordenamiento temporal: ciclo de vida del hato, observaciones durante el pastoreo, intervención sanitaria, reproducción, campañas preventivas y registros en campo e informes. Fuente: tablero de SmartFarm en FigJam.*
 
-![01.3 · People & External Systems](assets/images/diagrams/big-picture-eventstorming/01-3-people-and-systems.svg)
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
 
-*Figura 2.4.3. People & External Systems: actores y sistemas de apoyo asociados a los eventos. Elaboración propia.*
+El carril de reproducción ilustra una secuencia exitosa, no una preñez o un parto garantizados. La revisión del historial de medicamentos y el diagnóstico pueden ocurrir en un orden distinto. Los períodos de retiro se aplican únicamente cuando el tratamiento administrado los requiere; las reglas efectivamente utilizadas, los criterios de cierre de campañas y los traspasos de información sobre costos e indicadores se mantienen pendientes de validación. No se define ningún umbral clínico ni política de software.
 
-[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+**Etapa 3 — Personas y medios de apoyo externos**
 
-![01.4 · Problems & Opportunities](assets/images/diagrams/big-picture-eventstorming/01-4-problems-and-opportunities.svg)
+Las notas amarillas identifican roles del negocio: ganadero propietario, trabajador de campo o pastor, administrador de la unidad productiva y médico veterinario o zootecnista. Las notas azules muestran medios de apoyo existentes: cuadernos, notas y fotografías en el teléfono, registros en Excel, equipos de ecografía, notas clínicas, apoyo de laboratorio para casos complejos e informes de oficina o impresos. Estas asociaciones aclaran quién utiliza cada medio de apoyo en relación con un evento; no representan comandos de software ni integraciones. Una misma persona puede desempeñar varios roles, y las responsabilidades del trabajador de campo requieren confirmación.
 
-*Figura 2.4.4. Problems & Opportunities: hot spots, oportunidades y supuestos por validar. Elaboración propia.*
+![Etapa 3 — Personas y medios de apoyo existentes asociados con eventos de referencia del negocio](assets/images/diagrams/big-picture-eventstorming/01-3-people-and-systems.png)
 
-[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+*Figura 2.4.3. Personas y medios de apoyo externos: roles actuales, herramientas de apoyo y registro externo de criadores, sin la infraestructura propuesta de ICHU. Fuente: tablero de SmartFarm en FigJam.*
 
-![01.5 · Pivotal Events & Emerging Contexts](assets/images/diagrams/big-picture-eventstorming/01-5-pivotal-and-emerging-contexts.svg)
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
 
-*Figura 2.4.5. Pivotal Events & Emerging Contexts: áreas preliminares derivadas de los cambios de estado. Elaboración propia.*
+ASCRIGAR Perú es un participante administrativo externo mencionado en las necesidades de Darwin sobre evidencia para el registro de gestación. No se representa como una integración mediante API que ya exista. La evidencia requerida, la responsabilidad de presentar la documentación y los pasos de aceptación permanecen como preguntas abiertas. Los actores del negocio no se sustituyen por collares, un dispositivo de borde ni un servicio central.
 
-[Abrir tablero Figma del Big Picture EventStorming](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+**Etapa 4 — Problemas y oportunidades**
 
-**Domain Events identificados, ordenados temporalmente**
+La revisión de la secuencia del negocio vincula cinco eventos de referencia con puntos problemáticos en rosado y oportunidades en verde. Un punto problemático describe un dolor actual o un asunto del negocio pendiente de resolver. Una oportunidad expresa un resultado deseado, no una capacidad ya implementada ni una solución técnica obligatoria.
 
-| Fase del negocio | Domain Events |
-|---|---|
-| Incorporación del animal | Animal registrado en el hato, Arete asignado al animal, Animal incorporado a un lote, Etapa productiva registrada |
-| Asignación de dispositivos | Collar recibido por la unidad productiva, Collar vinculado al animal, Primera lectura recibida del collar |
-| Vigilancia diaria | Lectura biométrica capturada, Lectura almacenada en el borde, Lectura sincronizada con el servicio central, Posición del animal registrada |
-| Detección de anomalías | Umbral de temperatura superado, Caída de rumia detectada, Patrón de actividad inusual detectado, Animal ubicado fuera de la zona de pastoreo |
-| Atención sanitaria | Alerta emitida al responsable, Alerta atendida, Animal examinado, Diagnóstico registrado, Tratamiento aplicado, Periodo de retiro iniciado, Periodo de retiro concluido |
-| Ciclo reproductivo | Celo detectado, Servicio registrado, Preñez confirmada por ecografía, Parto registrado, Cría registrada en el hato |
-| Planificación sanitaria | Campaña sanitaria programada, Recordatorio de campaña emitido, Aplicación registrada por animal, Campaña cerrada |
-| Cierre del ciclo | Costo de campaña consolidado, Indicadores del periodo calculados, Reporte entregado al propietario |
-| Salida del animal | Animal dado de baja por muerte, Animal dado de baja por venta, Robo de animal denunciado, Collar liberado |
+![Etapa 4 — Cinco problemas actuales, mejoras deseadas y cuatro preguntas de validación](assets/images/diagrams/big-picture-eventstorming/01-4-problems-and-opportunities.png)
 
-**Eventos pivote**
+*Figura 2.4.4. Problemas y oportunidades: cinco dolores del negocio actual, cinco resultados deseados y cuatro preguntas explícitas de validación. Fuente: tablero de SmartFarm en FigJam.*
 
-El equipo identificó cuatro hechos que marcan cambios de fase en el proceso de negocio y que, por lo tanto, señalan fronteras candidatas entre contextos:
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
 
-- **Collar vinculado al animal.** Separa la gestión del inventario de dispositivos de la vigilancia del animal. A partir de este hecho, la telemetría deja de pertenecer a un aparato y pasa a pertenecer a un ser vivo con historia.
-- **Umbral de temperatura superado.** Separa la captura de datos de la respuesta sanitaria. Antes de este hecho el sistema observa, después interviene.
-- **Diagnóstico registrado.** Separa la sospecha de la certeza clínica y habilita el tratamiento, el periodo de retiro y la trazabilidad de lo aplicado.
-- **Animal dado de baja.** Cierra la historia del animal y determina qué información alimenta los indicadores de mortalidad del periodo.
-
-**Hot spots**
-
-| Zona de incertidumbre | Descripción | Cómo se resolverá |
+| Evento de referencia | Dolor actual o asunto pendiente | Resultado deseado y evidencia |
 |---|---|---|
-| Umbrales por etapa productiva | No existe consenso sobre si el umbral térmico debe ser único o variar según edad, raza y etapa. Darwin propuso valores distintos para terneros y adultos | Validar con los tres profesionales del Segmento 2 antes de fijar los valores por defecto |
-| Autoría del registro en campo | No está definido si el operario puede registrar un diagnóstico o únicamente una observación | Resolver como regla de negocio en la definición de roles |
-| Dependencia de la asociación de criadores | El registro de gestación ante la asociación sigue un procedimiento externo que el equipo no controla | Verificar el procedimiento vigente antes de comprometer cualquier integración |
-| Precisión de la ubicación | La lectura de posición tiene un margen de error que puede generar falsas salidas de zona | Definir una tolerancia configurable y validarla en el piloto |
-| Conciliación de registros sin conexión | No está resuelto qué ocurre cuando un registro creado sin cobertura afecta a un animal que fue dado de baja entretanto | Definir la regla de conflicto durante el diseño táctico |
+| Temperatura corporal elevada observada | El deterioro de la salud puede advertirse tarde; la observación manual no es continua. | Reconocer el deterioro con mayor anticipación y reducir las demoras en la respuesta. Grober, Darwin, Eliseo y Dionisio describen signos fisiológicos o de comportamiento y la necesidad de reconocerlos antes. |
+| Animal reportado como desaparecido | La desaparición de animales y el robo pueden advertirse después de una pérdida; la señal rural limita los intentos de rastreo existentes. | Mejorar la visibilidad del hato y el seguimiento de los animales desaparecidos. Próspero y Meikoll describen pérdidas relacionadas con el robo; esto no demuestra que exista una solución operativa de GPS o cercas virtuales. |
+| Tratamiento aplicado | Los historiales se encuentran dispersos entre cuadernos y fichas individuales, lo que dificulta rastrear las intervenciones anteriores. | Mantener un historial confiable por animal, con fechas y autoría claras. Próspero y Meikoll describen registros incompletos; Darwin necesita consultar la información sobre medicamentos administrados previamente. |
+| Registro de campo ingresado en hoja de cálculo | El trabajo de campo y el ingreso de datos en oficina están separados; el registro tardío y la conectividad intermitente aumentan la pérdida de información. | Capturar la evidencia cuando se realiza el trabajo y conservarla para su revisión en oficina. Meikoll identifica el registro tardío, mientras que Eliseo y Dionisio describen rutinas de campo y oficina. No se presupone una arquitectura de sincronización. |
+| Preñez confirmada por ecografía | La evidencia ecográfica y la documentación del registro externo implican pasos administrativos separados cuyas reglas exactas no están confirmadas. | Conservar evidencia completa y aclarar el traspaso de información al registro. Darwin identifica la necesidad relacionada con ASCRIGAR; el procedimiento formal de presentación y aceptación requiere validación. |
+
+Las cuatro preguntas de las notas amarillo claro se mantienen explícitamente sin resolver:
+
+- ¿Quién revisa el hato y se responsabiliza de comunicar los problemas de salud para su atención?
+- ¿Cómo se asocia cada nota de campo con el animal correcto?
+- ¿Qué reglas de cierre de campañas, costos y períodos de retiro se utilizan realmente?
+- ¿Qué evidencia de gestación exige ASCRIGAR y quién la presenta?
+
+**Etapa 5 — Eventos pivote y áreas de negocio emergentes**
+
+Cuatro eventos pivote en morado marcan cambios en la responsabilidad o en el enfoque del negocio: *Animal registrado en el hato* establece una pertenencia al hato que puede rastrearse; *Problema de salud reportado* orienta la observación rutinaria hacia una respuesta; *Diagnóstico registrado* aporta una conclusión clínica que guía el tratamiento; y *Preñez confirmada por ecografía* cambia el seguimiento reproductivo y el manejo de la evidencia. Estos eventos no definen fronteras definitivas de software.
+
+![Etapa 5 — Eventos pivote del negocio y áreas exploratorias, no contextos delimitados definitivos](assets/images/diagrams/big-picture-eventstorming/01-5-pivotal-and-emerging-contexts.png)
+
+*Figura 2.4.5. Eventos pivote y áreas de negocio emergentes: cuatro eventos pivote y eventos de apoyo asociados con cinco áreas provisionales del negocio. Fuente: tablero de SmartFarm en FigJam.*
+
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
+
+Las áreas provisionales son **Identificación y ciclo de vida del hato**, **Observación durante el pastoreo y respuesta**, **Salud animal y atención clínica**, **Reproducción y evidencia**, y **Campañas preventivas e informes**. *Campaña sanitaria cerrada* sirve de apoyo a la revisión administrativa, sujeta a la validación de las reglas de cierre. *Animal dado de baja después de un robo* pertenece a la gestión del ciclo de vida del hato, no exclusivamente a la elaboración de informes. El mantenimiento de registros de campo atraviesa estas áreas; no es un servicio de telemetría. Estas agrupaciones son hipótesis de exploración, no un mapa de contextos definitivo, una descomposición de servicios ni una asignación de responsabilidades de software.
+
+**Inventario de eventos del negocio por carril**
+
+La tabla presenta, traducidos al español, los mismos 36 eventos de las etapas 1 y 2, cuyos nombres dentro de las imágenes se conservan en inglés. Pertenecer a un carril no implica una secuencia cronológica incondicional.
+
+| Carril del negocio | Eventos candidatos del negocio redactados en pasado |
+|---|---|
+| Identificación y ciclo de vida del hato (7) | Animal registrado en el hato; Arete asignado; Animal incorporado a un lote; Etapa productiva registrada; Animal dado de baja por muerte; Animal dado de baja después de una venta; Animal dado de baja después de un robo. |
+| Pastoreo y observaciones (8) | Pastoreo iniciado; Hato revisado visualmente; Temperatura corporal medida; Temperatura corporal elevada observada; Disminución de la rumia observada; Comportamiento inusual observado; Animal encontrado fuera del área de pastoreo; Animal reportado como desaparecido. |
+| Salud e intervención (8) | Problema de salud reportado; Asistencia veterinaria solicitada; Animal examinado; Historial de medicamentos revisado; Diagnóstico registrado; Tratamiento aplicado; Período de retiro iniciado; Período de retiro finalizado. |
+| Reproducción (5) | Celo detectado; Servicio registrado; Preñez confirmada por ecografía; Parto registrado; Cría registrada en el hato. |
+| Campaña sanitaria preventiva (3) | Campaña sanitaria programada; Aplicación preventiva registrada; Campaña sanitaria cerrada. |
+| Registros de campo e informes (5) | Observación de campo registrada; Registro de campo ingresado en hoja de cálculo; Costo consolidado; Indicadores del período calculados; Informe entregado al propietario. |
+
+Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
 
 ## 2.5. Ubiquitous Language.
 
-El Lenguaje Ubicuo (Ubiquitous Language) es el vocabulario compartido y riguroso que utiliza tanto el equipo de desarrollo como los actores del dominio ganadero para referirse a los mismos conceptos sin ambigüedad, tal como lo describe Eric Evans en su libro *Domain-Driven Design: Tackling Complexity in the Heart of Software*. Este glosario fue construido a partir de las entrevistas realizadas a los dos segmentos objetivo y se organiza según los Bounded Contexts definidos para la plataforma ICHU. Recoge únicamente términos del dominio ganadero, es decir, conceptos que los propios ganaderos, zootecnistas y médicos veterinarios emplean en su actividad. No se incluyen términos técnicos del área de ingeniería de software, aunque algunos de ellos aparezcan más adelante en el diseño de la solución.
+El Lenguaje Ubicuo (*Ubiquitous Language*) es el vocabulario riguroso, compartido y libre de ambigüedades utilizado por todos los miembros del equipo de desarrollo, los expertos del dominio y los usuarios ganaderos para modelar la realidad del negocio, tal como lo establece Eric Evans en *Domain-Driven Design: Tackling Complexity in the Heart of Software*.  
 
-### Términos transversales del dominio
+Para asegurar una comunicación técnica e interdisciplinaria coherente en la documentación, los diagramas de arquitectura C4, los *Bounded Contexts* y el código fuente, se han formalizado las siguientes reglas semánticas fundamentales sobre los términos principales del dominio ganadero:
 
-| Término | Español | Descripción |
-|---|---|---|
-| **Herd** | Hato | Conjunto total de ganado vacuno que posee una unidad productiva; unidad de supervisión y control del ganadero. |
-| **Ear Tag** | Arete | Identificador físico visible colocado en la oreja del animal; número de identificación individual con el que los productores nombran a cada vaca. |
-| **Cattle Rustling** | Abigeato | Robo de ganado; principal amenaza patrimonial identificada en las entrevistas del Segmento 1. |
-| **Silent Heat** | Celo silencioso | Estado reproductivo en el que la vaca no manifiesta signos externos evidentes de celo; suele detectarse tardíamente (2-3 días después) por sangrado vulvar. |
-| **Days Open** | Días abiertos | Intervalo entre el parto y la nueva preñez de una vaca; indicador clave de eficiencia reproductiva. |
-| **Bloat** | Timpanismo | Trastorno metabólico digestivo de rápida evolución por acumulación de gases en el rumen, que puede causar la muerte del animal en horas. |
-| **High Mountain Disease** | Mal de altura | Principal causa de mortalidad de terneros en zonas andinas; se manifiesta primero como reducción del movimiento y del tiempo de pastoreo. |
-| **Breed Registry** | Registro de criadores / ASCRIGAR Perú | Asociación de criadores que registra la genealogía (pedigree) y los nacimientos del ganado vacuno; actúa como entidad de registro reproductivo ("la RENIEC de las vacas"). |
-| **Purebred and Performance Certificate (PPC)** | Registro de Pureza Pedigrí y Crecimiento | Certificación de linaje de un animal gestionada por la asociación de criadores de registro. |
-| **Livestock Calendar** | Calendario ganadero | Calendario sanitario regional preestablecido que determina las épocas de campañas (ej. vacunación contra carbúnculo entre mayo y julio, control de piojera en junio). |
-| **Livestock Task** | Faena ganadera | Actividad operativa programada sobre el ganado: dosificación, vacunación, vitaminación, revisión. |
+* **Cattle (Ganado Bovino):** Se utiliza exclusivamente para referirse a la especie bovina (vacas, toros, terneros, vaquillonas), que constituye la entidad central de monitoreo de la plataforma. No debe usarse para referirse a otras especies animales.
+* **Livestock (Ganado en sentido general / Sector Pecuario):** Se emplea para abarcar la actividad ganadera o pecuaria de forma general, el sector agropecuario o el conjunto de animales de granja de una región.
+* **Herd (Hato):** Designa el grupo, manada o conjunto total de ganado bovino administrado dentro de una unidad productiva ganadera específica (*Ranch*).
+* **Smart Collar (Collar Inteligente):** Denominación única y estandarizada para el dispositivo físico de telemetría IoT colocado en el cuello del animal. Se elimina el uso alternado de términos como *"Cattle Band"* o *"Collar GPS"* para evitar ambigüedades en el código y los diagramas de arquitectura.
 
-### Identity & Access Management
+A continuación, se organiza el glosario del dominio distribuido por los *Bounded Contexts* clave que conforman el ecosistema **ICHU**. Todos los términos corresponden estrictamente a conceptos del negocio ganadero y omiten jerga técnica de ingeniería de software.  
 
-| Término | Español | Descripción |
-|---|---|---|
-| **Herd Advisory** | Asesoría del hato | Relación por la cual un profesional atiende de forma periódica el ganado de una unidad productiva que no administra; se inicia por acuerdo con el propietario y puede terminar cuando este lo decide. |
-| **Advisory Scope** | Alcance de la asesoría | Conjunto de animales de una unidad productiva sobre los que el profesional tiene competencia para diagnosticar, prescribir y registrar intervenciones. |
-| **Colegiatura** | Colegiatura | Número de registro del profesional ante el colegio médico veterinario, que acredita su habilitación para ejercer. |
+### 2.5.1\. Términos Transversales del Dominio (Cross-Domain Terms)
 
-### Profiles
+| Término (Inglés)          | Equivalente en Español    | Definición y Regla del Dominio                                                                                                                                        |
+| ------------------------- | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Cattle**                | Ganado bovino             | Población de bovinos (vacas, toros, terneros) gestionados por la unidad productiva. Es la entidad central objeto de monitoreo biométrico y localización.              |
+| **Livestock**             | Ganado en sentido general | Término global para referirse a la actividad ganadera, el sector pecuario o la producción animal en general.                                                          |
+| **Herd**                  | Hato                      | Conjunto específico de ganado bovino que pertenece a una estancia o unidad productiva; constituye la unidad principal de gestión del ganadero.                        |
+| **Smart Collar**          | Collar inteligente        | Dispositivo físico IoT estandarizado que se instala en el cuello del bovino para capturar constantes biométricas (temperatura, rumia) y geolocalización.              |
+| **Ear Tag**               | Arete                     | Identificador visual físico o arete numérico colocado en la oreja del bovino para su identificación individual en el corral.                                          |
+| **Cattle Rustling**       | Abigeato                  | Delito de hurto o robo de ganado bovino; principal riesgo patrimonial en zonas de pastoreo extensivo.                                                                 |
+| **Silent Heat**           | Celo silencioso           | Evento reproductivo en el que la vaca no muestra signos externos visibles de celo, pero presenta variaciones térmicas y de actividad física detectables por sensores. |
+| **Days Open**             | Días abiertos             | Intervalo de tiempo transcurrido entre el parto de la vaca y su posterior concepción confirmada; indicador clave de eficiencia reproductiva del hato.                 |
+| **Bloat**                 | Timpanismo                | Trastorno digestivo grave causado por la acumulación anormal de gases en el rumen, con evolución rápida que requiere intervención médica urgente.                     |
+| **High Mountain Disease** | Mal de altura             | Alteración fisiológica en terneros criados en zonas andinas de altitud elevada; se manifiesta inicialmente mediante un letargo y marcada reducción de la actividad.   |
+| **Livestock Calendar**    | Calendario ganadero       | Programación sanitaria regional que establece las fechas óptimas para faenas de vacunación, desparasitación y vitaminación del hato.                                  |
 
-| Término | Español | Descripción |
-|---|---|---|
-| **Cattle Rancher** | Ganadero propietario | Usuario del Segmento 1 que posee la unidad productiva, compra el plan y decide sobre la operación del hato. |
-| **Farm Administrator** | Administrador de estancia | Usuario del Segmento 1 encargado de la gestión diaria y de los reportes de la unidad productiva. |
-| **Veterinarian / Zootechnician** | Médico Veterinario / Zootecnista | Usuario del Segmento 2 que brinda asistencia técnica, diagnósticos y tratamientos sobre hatos de terceros. |
-| **Ranch** | Fundo / Estancia / Hacienda | Unidad productiva ganadera identificada con nombre propio y ubicación geográfica (ej. Hacienda del Marqués, Fundo Flores de Coña). |
 
-### Cattle Information
+### 2.5.2\. Identity &amp; Access Management Domain
 
-| Término | Español | Descripción |
-|---|---|---|
-| **Cattle** | Ganado vacuno | Entidad central del dominio; el conjunto de bovinos gestionados por una unidad productiva. |
-| **Individual Record** | Ficha individual | Registro único por animal con su identificación, raza, etapa, sexo y datos reproductivos. |
-| **Breed** | Raza | Clasificación genética del animal (Brown Swiss, Fleckvieh, criollo, cruzado). |
-| **Life Stage** | Etapa | Fase de desarrollo del animal: ternero, vaquilla, vaquillona, vaca en producción, toro en engorde. |
-| **Lot** | Lote | Agrupación de animales por criterio de manejo (edad, raza, potrero, categoría productiva). |
-| **Paddock** | Potrero | Parcela de pastoreo donde se ubica un grupo de animales; define el régimen de pastoreo y los días de descanso del pasto. |
-| **Genealogy** | Genealogía | Registro de ascendencia del animal (padre, madre) requerido para los registros de pedigree y PPC. |
-| **Pregnancy Status** | Estado de preñez / gestación | Estado reproductivo de la vaca, con fecha probable de parto calculada desde la inseminación. |
-| **Fertility Index** | Índice de fertilidad | Indicador derivado de los días abiertos y los ciclos de celo del animal. |
-| **Physiological Baseline** | Constante fisiológica de referencia | Rango normal de temperatura (37-39.5 °C) y frecuencias cardíaca y respiratoria de una vaca adulta sana. |
+| Término (Inglés)       | Equivalente en Español  | Definición y Regla del Dominio                                                                                                                                      |
+| ---------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Herd Advisory**      | Asesoría del hato       | Vínculo profesional por el cual un médico veterinario o zootecnista presta servicios de salud y supervisión técnica a un hato administrado por un tercero.          |
+| **Advisory Scope**     | Alcance de la asesoría  | Delimitación del conjunto de animales o potreros sobre los cuales un profesional sanitario tiene autorización para consultar antecedentes y registrar tratamientos. |
+| **Veterinary License** | Colegiatura veterinaria | Número de registro oficial expedido por el colegio profesional correspondiente que habilita al médico veterinario a prescribir tratamientos y emitir diagnósticos.  |  
 
-### IoT Assets
+### 2.5.3\. Profiles &amp; Preferences Management Domain
 
-| Término | Español | Descripción |
-|---|---|---|
-| **Smart Collar** | Collar inteligente | Dispositivo IoT físico colocado en el cuello del animal que captura temperatura, actividad, rumia y ubicación. |
-| **Device Band** | Banda | Correa/accesorio del collar que se asigna a un animal específico y puede reemplazarse sin cambiar el dispositivo electrónico. |
-| **Device Assignment** | Asignación de dispositivo | Relación entre un collar, un cliente y una vaca concreta, gestionada según el plan contratado. |
-| **Battery Level** | Nivel de batería | Energía disponible del dispositivo; su vida útil promocionada es de hasta 3 años. |
-| **Device Status** | Estado del collar | Condición operativa del collar según su última comunicación: en servicio, sin señal o con batería baja. |
-| **Blind Zone** | Zona ciega | Área de pastoreo sin cobertura de red donde el collar almacena la información del animal en memoria local. |
+| Término (Inglés)                 | Equivalente en Español           | Definición y Regla del Dominio                                                                                                                         |
+| -------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Cattle Rancher**               | Ganadero propietario             | Propietario de la unidad productiva ganadera que toma las decisiones financieras, evalúa la rentabilidad del hato y contrata la suscripción.           |
+| **Ranch Administrator**          | Administrador de estancia        | Responsable operativo de la gestión diaria del hato, supervisión de capataces, control de inventario de insumos y consolidación de reportes.           |
+| **Veterinarian / Zootechnician** | Médico Veterinario / Zootecnista | Profesional especialista de salud animal responsable del monitoreo de signos vitales, diagnóstico clínico y emisión de prescripciones para el hato.    |
+| **Field Operator**               | Capataz / Operario de campo      | Personal operativo de terreno encargado del manejo directo de los animales en el corral, recorrido de potreros y ejecución física de faenas ganaderas. |
+| **Ranch**                        | Fundo / Estancia / Hacienda      | Predio o unidad geográfica delimitada orientada a la explotación ganadera (ej. Fundo El Ganadero, Hacienda del Marqués).                               |  
 
-### Operations & Monitoring
 
-| Término | Español | Descripción |
-|---|---|---|
-| **Telemetry** | Telemetría | Datos capturados por el collar: temperatura corporal, ubicación, actividad física, ciclos de rumia y alimentación, frecuencias cardíaca y respiratoria. |
-| **Rumination** | Rumia | Proceso de masticación regurgitada del bovino; su caída sostenida es la señal temprana más crítica de trastorno metabólico o intoxicación. |
-| **Red Alert** | Alerta roja | Notificación inmediata de máxima prioridad enviada al celular cuando una constante vital decae o se cruza un umbral crítico (fiebre > 40 °C, hipotermia < 37 °C). |
-| **Clinical Threshold** | Umbral clínico | Valor de referencia calibrado con los veterinarios (ej. neumonía a partir de 38.5-39 °C) que dispara las alertas del sistema. |
-| **Last Known Location** | Última posición conocida | Dato de ubicación más reciente registrado por el collar, consultable incluso sin conexión. |
-| **Geofence** | Geocerca | Límite virtual del potrero o del predio; su cruce genera una alerta de posible extravío o robo. |
-| **Insemination Event** | Evento de inseminación | Registro con fecha del cruzamiento o inseminación artificial de una vaca, base para la predicción del parto. |
-| **Time Since Insemination** | Tiempo desde la inseminación | Días transcurridos desde el evento reproductivo, usados para programar el diagnóstico de gestación y la alerta de parto (1 semana antes). |
-| **Estrus Detection** | Detección de celo | Identificación algorítmica de celo a partir del cruce de picos de actividad, temperatura y caída de producción; incluye la variante silenciosa. |
+### 2.5.4\. Cattle Information Management Domain
 
-### Planning
+| Término (Inglés)           | Equivalente en Español              | Definición y Regla del Dominio                                                                                                              |
+| -------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Individual Record**      | Ficha individual                    | Expediente digital único de cada bovino que consolida su identificación por arete, raza, etapa productiva, linaje y estado de salud.        |
+| **Breed**                  | Raza                                | Clasificación genética del bovino (ej. Brown Swiss, Fleckvieh, Criollo, Cruzado).                                                           |
+| **Life Stage**             | Etapa productiva                    | Fase de desarrollo del bovino dentro del ciclo del hato (ej. ternero, vaquillona, vaca en producción, toro en engorde).                     |
+| **Lot**                    | Lote                                | Subgrupo de bovinos clasificados bajo criterios operativos comunes (edad, condición corporal, potrero de ubicación o propósito productivo). |
+| **Paddock**                | Potrero                             | Subdivisión geográfica de pastizal dentro de la estancia donde pastorea un lote específico de ganado bovino.                                |
+| **Genealogy**              | Genealogía                          | Registro de ascendencia del animal (macho progenitor y hembra progenitora) utilizado para la certificación de pureza racial.                |
+| **Pregnancy Status**       | Estado de gestación                 | Condición reproductiva de la hembra bovina (vaca vacía, preñada o en periodo de transición al parto).                                       |
+| **Physiological Baseline** | Constante fisiológica de referencia | Valores estándar de temperatura corporal (37.5 °C - 39.5 °C) y frecuencias fisiológicas correspondientes a un bovino sano en reposo.        |  
 
-| Término | Español | Descripción |
-|---|---|---|
-| **Activity Planning** | Planificación de actividad | Programación de las faenas ganaderas sobre el calendario: vacunación, desparasitación, vitaminación, revisiones. |
-| **Health Campaign** | Campaña sanitaria | Acción colectiva programada sobre el hato o parte de él, según la época del calendario ganadero (ej. campaña contra la piojera). |
-| **Reminder** | Recordatorio | Notificación anticipada que avisa que una actividad programada se acerca ("te toca dosificar tal día"). |
-| **Quarantine** | Cuarentena | Periodo de aislamiento programado ante una epidemia o el ingreso de nuevos animales. |
-| **Gestation Window** | Periodo de gestación | Ventana estimada de parto por animal, generada automáticamente a partir del evento de inseminación. |
-| **Fattening Cycle** | Ciclo de engorde | Programa de engorde intensivo con duración típica de tres meses, con seguimiento de días y peso estimado. |
+### 2.5.5\. IoT Asset Management Domain
 
-### Dashboard & Analytics
+| Término (Inglés)   | Equivalente en Español      | Definición y Regla del Dominio                                                                                                                              |
+| ------------------ | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Smart Collar**   | Collar inteligente          | Unidad electrónica IoT hermética equipada con sensores y transmisor de red, colocada en el bovino para captura continua de datos.                           |
+| **Device Band**    | Correa del collar           | Accesorio de sujeción ajustable que sostiene el collar inteligente en el cuello del animal y puede reemplazarse de forma independiente.                     |
+| **Device Pairing** | Vinculación del dispositivo | Asociación lógica entre un *Smart Collar* específico y la ficha individual de un bovino en el sistema.                                                      |
+| **Battery Life**   | Autonomía de batería        | Duración estimada de la fuente de energía del *Smart Collar* bajo perfiles de transmisión optimizados.                                                      |
+| **Blind Zone**     | Zona ciega                  | Área de pastoreo extensivo con ausencia temporal de cobertura de red celular o LoRaWAN, donde el dispositivo o el *Edge Service* almacena datos localmente. |  
 
-| Término | Español | Descripción |
-|---|---|---|
-| **Key Performance Indicator (KPI)** | Indicador clave | Métrica de seguimiento: mortalidad mensual, animales enfermos, celos detectados, inseminaciones, producción de leche por día, costos por cabeza. |
-| **Epidemiological Curve** | Curva epidemiológica | Gráfico de avance o control de una enfermedad en el hato a lo largo del tiempo. |
-| **Executive Report** | Reporte ejecutivo | Documento exportable (Excel, PDF o Word) con los datos del hato: salud, sanidad, reproducción y finanzas. |
-| **Fattening Balance** | Balance de engorde | Comparación de gasto vs. ganancia por ciclo trimestral y por cabeza. |
-| **Trend** | Tendencia | Patrón histórico derivado de los datos consolidados del hato (enfermedades por época, días abiertos, producción per cápita anual). |
+### 2.5.6\. Operations &amp; Monitoring Domain
 
-### Subscription Plans
+| Término (Inglés)         | Equivalente en Español | Definición y Regla del Dominio                                                                                                                                  |
+| ------------------------ | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Biotelemetry**         | Telemetría biométrica  | Conjunto de datos fisiológicos capturados por el *Smart Collar*, como temperatura corporal interna, índice de actividad y patrones de movimiento.               |
+| **Rumination**           | Rumia                  | Proceso fisiológico de masticación diferida en el bovino; la reducción sostenida de sus horas diarias constituye el principal indicador temprano de enfermedad. |
+| **Red Alert**            | Alerta roja            | Notificación prioritaria generada automáticamente al detectar que una constante biométrica sobrepasa los umbrales de riesgo (ej. fiebre &gt; 40.0 °C).             |
+| **Clinical Threshold**   | Umbral clínico         | Rango o límite cuantitativo de temperatura o inactividad calibrado por los veterinarios que desencadena las notificaciones de emergencia.                       |
+| **Geofence**             | Geocerca               | Perímetro virtual geográfico trazado alrededor del potrero; la salida no autorizada del bovino genera un aviso por posible extravío o abigeato.                 |
+| **Estrus Detection**     | Detección de celo      | Identificación algorítmica de la ventana fértil de la hembra bovina mediante el análisis combinado de picos de actividad física y variaciones térmicas.         |
+| **Gestation Ultrasound** | Ecografía de gestación | Examen de diagnóstico por imagen realizado por el veterinario para confirmar la preñez y adjuntar evidencia gráfica al historial del animal.                    |  
 
-| Término | Español | Descripción |
-|---|---|---|
-| **Plan** | Plan | Modalidad de suscripción contratada por el cliente, con límites de animales y dispositivos. |
-| **Annual Subscription** | Suscripción anual | Modelo de pago anual con tarifa fija preferido por los entrevistados del Segmento 1. |
-| **Device Limit** | Límite de dispositivos | Cantidad máxima de collares/bandas habilitadas según el plan, definida por el tamaño del hato. |
-| **Plan Coverage** | Cobertura del plan | Conjunto de prestaciones incluidas en la modalidad contratada, como los reportes avanzados o el aviso por mensaje de texto. |
-| **Renewal** | Renovación | Proceso de continuidad del servicio al finalizar el periodo contratado. |
+### 2.5.7\. Health &amp; Reproductive Planning Domain
+
+| Término (Inglés)      | Equivalente en Español | Definición y Regla del Dominio                                                                                                                                   |
+| --------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Health Campaign**   | Campaña sanitaria      | Intervención profiláctica programada sobre el hato (vacunación masiva, desparasitación) alineada al calendario ganadero regional.                                |
+| **Withdrawal Period** | Tiempo de retiro       | Intervalo obligatorio posterior a la administración de un fármaco veterinario durante el cual la leche o carne del bovino no puede destinarse al consumo humano. |
+| **Quarantine**        | Cuarentena             | Aislamiento preventivo de animales enfermos o recién ingresados a la estancia para evitar la propagación de contagios en el hato.                                |
+| **Gestation Window**  | Ventana de parto       | Periodo estimado para el nacimiento del ternero, calculado automáticamente a partir de la fecha de inseminación o servicio confirmado.                           |  
+
+
+### 2.5.8\. Dashboard &amp; Analytics Domain
+
+| Término (Inglés)          | Equivalente en Español       | Definición y Regla del Dominio                                                                                                        |
+| ------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **Executive Dashboard**   | Tablero de control ejecutivo | Vista resumida con indicadores cuantitativos consolidada para el propietario (mortalidad, tasa de preñez, distribución por potreros). |
+| **Epidemiological Curve** | Curva epidemiológica         | Representación gráfica del comportamiento y distribución de eventos de enfermedad en el hato a lo largo del tiempo.                   |
+| **Executive Report**      | Reporte ejecutivo            | Informe estructurado exportable en formatos estándar (PDF, Excel) con los registros sanitarios, reproductivos y operativos del hato.  |  
+
+
+### 2.5.9\. Subscriptions &amp; Payment Management Domain
+
+| Término (Inglés)        | Equivalente en Español | Definición y Regla del Dominio                                                                                                        |
+| ----------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **Annual Subscription** | Suscripción anual      | Modalidad de contratación preferida por los ganaderos con tarifa fija por cabeza de ganado monitoreada.                               |
+| **Plan Coverage**       | Cobertura del plan     | Alcance de funcionalidades, almacenamiento histórico y número de dispositivos *Smart Collar* habilitados según la suscripción activa. |
