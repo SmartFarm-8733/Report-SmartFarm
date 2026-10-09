@@ -2,8 +2,6 @@
 
 Esta sección resume las modificaciones relevantes realizadas al informe durante el ciclo de vida del proyecto. Cada línea corresponde a un único autor.
 
-Actualización al **8 de octubre de 2026**, con base en los cambios integrados en `develop` hasta el commit [`8eb4f5d`](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/8eb4f5d30490ad24b5b6ba46adfe493101e328a9). El registro incluye las contribuciones TB1 de ese corte y las revisiones de la rama `audit/tb1-report`; las fechas corresponden a la zona horaria de Perú (UTC−5).
-
 | Versión | Fecha | Autor | Descripción de modificación |
 |---|---|---|---|
 | 0.1.0 | 2026-09-07 | Romero Meza, Jhimy Pool | Versión inicial del informe. Creación de la carátula y de la estructura de archivos del repositorio. |
