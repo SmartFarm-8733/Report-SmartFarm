@@ -25,7 +25,7 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
         }
 
         cattleBandHardware = softwareSystem "Cattle Band Hardware" {
-            description "ESP32 collar with temperature, motion and GPS sensors, Wi-Fi and BLE"
+            description "ESP32 collar with temperature, motion and GPS sensors; BLE telemetry link to the Edge Gateway"
             tags "External,Hardware"
         }
 
@@ -103,7 +103,7 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
 
             edgeGateway = container "Portable Edge Gateway" {
                 technology "Flask + Peewee ORM on Python, running on Raspberry Pi or similar Edge Device"
-                description "Portable offline gateway with later cloud synchronization"
+                description "Receives collar and water-controller telemetry over BLE, evaluates locally and synchronizes with the cloud"
                 tags "Edge"
 
             }
@@ -174,9 +174,7 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
 
         cattleBandEmbeddedApp -> cattleBandHardware "Reads sensors and position"
 
-        cattleBandEmbeddedApp -> backend "Sends telemetry when Internet is available" "HTTPS / JSON"
-
-        cattleBandEmbeddedApp -> edgeGateway "Sends offline telemetry over BLE" "Bluetooth Low Energy"
+        cattleBandEmbeddedApp -> edgeGateway "Always sends telemetry to the Edge Gateway over BLE" "Bluetooth Low Energy"
 
         edgeGateway -> edgeDatabase "Stores local telemetry and configuration" "SQLite"
 
@@ -186,7 +184,7 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
 
         waterControllerEmbeddedApp -> waterControllerHardware "Measures water and controls the heater"
 
-        waterControllerEmbeddedApp -> backend "Reports temperature and actuator events" "HTTPS / JSON"
+        waterControllerEmbeddedApp -> edgeGateway "Sends water readings and actuator events over BLE" "Bluetooth Low Energy"
 
         backend -> cloudDatabase "Reads and writes cloud data" "Entity Framework Core / Npgsql"
 
@@ -201,11 +199,11 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
         production = deploymentEnvironment "Production" {
             deploymentNode "Ranch / Grazing Environment" {
                 deploymentNode "Cattle Band Device" {
-                    technology "ESP32 + Wi-Fi + Bluetooth Low Energy"
+                    technology "ESP32 + Bluetooth Low Energy"
                     containerInstance cattleBandEmbeddedApp
                 }
                 deploymentNode "Water Temperature Controller Device" {
-                    technology "ESP32 + Wi-Fi"
+                    technology "ESP32 + Bluetooth Low Energy"
                     containerInstance waterControllerEmbeddedApp
                 }
                 deploymentNode "Portable Edge Gateway Device" {

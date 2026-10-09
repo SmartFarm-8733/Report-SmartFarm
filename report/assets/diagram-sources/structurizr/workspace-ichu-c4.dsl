@@ -34,7 +34,7 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
         // ============================================================
 
         cattleBandHardware = softwareSystem "Cattle Band Hardware" {
-            description "ESP32 collar with temperature, motion and GPS sensors, Wi-Fi and BLE"
+            description "ESP32 collar with temperature, motion and GPS sensors; BLE telemetry link to the Edge Gateway"
             tags "External,Hardware"
         }
 
@@ -149,7 +149,7 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
 
                 bandConnectivityService = component "Band Connectivity Service" {
                     technology "C++"
-                    description "Servicio de aplicación que elige Wi-Fi o BLE"
+                    description "Servicio de aplicación que transmite siempre por BLE al Portable Edge Gateway"
                     tags "Application"
                 }
 
@@ -183,15 +183,9 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
                     tags "Infrastructure"
                 }
 
-                bandCloudAdapter = component "Band Cloud Adapter" {
-                    technology "C++ / HTTPS"
-                    description "Adaptador de envío directo al backend"
-                    tags "Infrastructure"
-                }
-
                 bandBleAdapter = component "Band BLE Adapter" {
                     technology "C++ / Bluetooth Low Energy"
-                    description "Adaptador de envío por Bluetooth Low Energy"
+                    description "Adaptador de envío obligatorio por Bluetooth Low Energy al Edge Gateway"
                     tags "Infrastructure"
                 }
             }
@@ -249,9 +243,9 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
                     tags "Infrastructure"
                 }
 
-                waterCloudAdapter = component "Water Cloud Adapter" {
-                    technology "C++ / HTTPS"
-                    description "Adaptador de envío al backend"
+                waterBleAdapter = component "Water BLE Adapter" {
+                    technology "C++ / Bluetooth Low Energy"
+                    description "Adaptador de envío de telemetría al Portable Edge Gateway"
                     tags "Infrastructure"
                 }
             }
@@ -263,19 +257,19 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
 
             edgeGateway = container "Portable Edge Gateway" {
                 technology "Flask + Peewee ORM on Python, running on Raspberry Pi or similar Edge Device"
-                description "Portable offline gateway with later cloud synchronization"
+                description "Receives collar and water-controller telemetry over BLE, evaluates locally and synchronizes with the cloud"
                 tags "Edge"
 
 
                 bleDeviceInterface = component "BLE Device Interface" {
                     technology "Python + Bluetooth Low Energy"
-                    description "Interfaz de descubrimiento y recepción por BLE"
+                    description "BLE interface receiving telemetry from collars and water controllers"
                     tags "Interface"
                 }
 
                 edgeTelemetryService = component "Edge Telemetry Collection Service" {
                     technology "Python"
-                    description "Servicio de aplicación que recibe de varios collares"
+                    description "Servicio de aplicación que recibe telemetría de collares y controladores de agua"
                     tags "Application"
                 }
 
@@ -752,9 +746,7 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
 
         cattleBandEmbeddedApp -> cattleBandHardware "Reads sensors and position"
 
-        cattleBandEmbeddedApp -> backend "Sends telemetry when Internet is available" "HTTPS / JSON"
-
-        cattleBandEmbeddedApp -> edgeGateway "Sends offline telemetry over BLE" "Bluetooth Low Energy"
+        cattleBandEmbeddedApp -> edgeGateway "Always sends telemetry to the Edge Gateway over BLE" "Bluetooth Low Energy"
 
         edgeGateway -> edgeDatabase "Stores local telemetry and configuration" "SQLite"
 
@@ -764,7 +756,7 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
 
         waterControllerEmbeddedApp -> waterControllerHardware "Measures water and controls the heater"
 
-        waterControllerEmbeddedApp -> backend "Reports temperature and actuator events" "HTTPS / JSON"
+        waterControllerEmbeddedApp -> edgeGateway "Sends water readings and actuator events over BLE" "Bluetooth Low Energy"
 
         backend -> cloudDatabase "Reads and writes cloud data" "Entity Framework Core / Npgsql"
 
@@ -799,11 +791,7 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
 
         cattleBandHardwareACL -> cattleBandHardware "Reads physical sensors and GPS/GNSS module"
 
-        bandConnectivityService -> bandCloudAdapter "Uses cloud route when Wi-Fi and Internet are available"
-
-        bandConnectivityService -> bandBleAdapter "Uses BLE route when cloud connectivity is unavailable"
-
-        bandCloudAdapter -> backend "Envía telemetría directamente a la nube" "HTTPS / JSON"
+        bandConnectivityService -> bandBleAdapter "Always sends telemetry over BLE to the Edge Gateway"
 
         bandBleAdapter -> edgeGateway "Sends cattle telemetry to the Portable Edge Gateway" "Bluetooth Low Energy"
 
@@ -818,9 +806,9 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
 
         waterControlService -> temperatureRegulationService "Requests temperature regulation evaluation"
 
-        waterControlService -> waterLocalBuffer "Buffers events while cloud connectivity is unavailable"
+        waterControlService -> waterLocalBuffer "Buffers readings when the Edge Gateway is temporarily unreachable"
 
-        waterControlService -> waterCloudAdapter "Reports temperature and actuator events"
+        waterControlService -> waterBleAdapter "Sends readings and actuator events over BLE"
 
         temperatureRegulationService -> waterControllerDevice "Updates heating state"
 
@@ -832,14 +820,14 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
 
         waterHardwareACL -> waterControllerHardware "Reads temperature sensor and operates heating actuator"
 
-        waterCloudAdapter -> backend "Reports water telemetry and actuator events" "HTTPS / JSON"
+        waterBleAdapter -> edgeGateway "Sends water telemetry and actuator events to the Edge Gateway" "Bluetooth Low Energy"
 
 
         // ============================================================
         // EDGE GATEWAY INTERNAL RELATIONSHIPS
         // ============================================================
 
-        bleDeviceInterface -> edgeTelemetryService "Provides telemetry received from cattle bands"
+        bleDeviceInterface -> edgeTelemetryService "Provides telemetry received from collars and water controllers"
 
         edgeTelemetryService -> edgeTelemetry "Creates and updates local telemetry state"
 
@@ -1033,11 +1021,11 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
         production = deploymentEnvironment "Production" {
             deploymentNode "Ranch / Grazing Environment" {
                 deploymentNode "Cattle Band Device" {
-                    technology "ESP32 + Wi-Fi + Bluetooth Low Energy"
+                    technology "ESP32 + Bluetooth Low Energy"
                     containerInstance cattleBandEmbeddedApp
                 }
                 deploymentNode "Water Temperature Controller Device" {
-                    technology "ESP32 + Wi-Fi"
+                    technology "ESP32 + Bluetooth Low Energy"
                     containerInstance waterControllerEmbeddedApp
                 }
                 deploymentNode "Portable Edge Gateway Device" {
@@ -1383,15 +1371,19 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
 
         dynamic ichu "ConnectedTelemetryFlow" {
             title "ICHU - Connected Cattle Monitoring Flow"
-            description "Flujo completo cuando el collar tiene cobertura"
+            description "Collar telemetry always reaches the Edge Gateway over BLE; the Edge synchronizes with the cloud when Internet is available"
 
-            cattleBandEmbeddedApp -> backend "1. Sends temperature, movement and GPS telemetry through Wi-Fi"
+            cattleBandEmbeddedApp -> edgeGateway "Sends readings to the Edge Gateway over BLE"
 
-            backend -> cloudDatabase "2. Stores telemetry and monitoring state"
+            edgeGateway -> edgeDatabase "Persists readings and evaluates cached critical rules"
 
-            backend -> firebaseMessaging "3. Requests push notification when a critical rule is detected"
+            edgeGateway -> backend "Synchronizes readings and alert state over HTTPS when Internet is available"
 
-            firebaseMessaging -> mobileApplication "4. Delivers cattle alert to the user"
+            backend -> cloudDatabase "Persists synchronized telemetry and monitoring state"
+
+            backend -> firebaseMessaging "Requests push notification when a critical rule is detected"
+
+            firebaseMessaging -> mobileApplication "Delivers cattle alert to the user"
 
             autoLayout lr
         }
@@ -1403,13 +1395,13 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
 
         dynamic ichu "OfflineGrazingFlow" {
             title "ICHU - Offline Grazing Flow"
-            description "Flujo completo durante el pastoreo sin cobertura"
+            description "Collar data reaches Edge over BLE and local alerting continues without Internet"
 
-            cattleBandEmbeddedApp -> edgeGateway "1. Sends telemetry through Bluetooth Low Energy"
+            cattleBandEmbeddedApp -> edgeGateway "Sends telemetry through Bluetooth Low Energy"
 
-            edgeGateway -> edgeDatabase "2. Stores telemetry and uses cached monitoring configuration"
+            edgeGateway -> edgeDatabase "Stores telemetry and uses cached monitoring configuration"
 
-            edgeGateway -> mobileApplication "3. Delivers local fever or geofence alerts"
+            edgeGateway -> mobileApplication "Delivers local fever or geofence alerts"
 
             autoLayout lr
         }
@@ -1423,13 +1415,13 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
             title "ICHU - Edge Gateway Synchronization"
             description "Sincronización al recuperar la conexión"
 
-            edgeGateway -> backend "1. Uploads telemetry collected during offline grazing and requests updated configuration"
+            edgeGateway -> backend "Uploads telemetry collected during offline grazing and requests updated configuration"
 
-            backend -> cloudDatabase "2. Stores synchronized telemetry"
+            backend -> cloudDatabase "Stores synchronized telemetry"
 
-            backend -> firebaseMessaging "3. Requests cloud notifications when required"
+            backend -> firebaseMessaging "Requests cloud notifications when required"
 
-            firebaseMessaging -> mobileApplication "4. Delivers cloud notification"
+            firebaseMessaging -> mobileApplication "Delivers cloud notification"
 
             autoLayout lr
         }
@@ -1440,12 +1432,16 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
         // ============================================================
 
         dynamic ichu "WaterControllerCloudFlow" {
-            title "ICHU - Water Controller Cloud Flow"
-            description "Reporte de temperatura del agua y eventos del actuador"
+            title "ICHU - Water Controller via Edge Flow"
+            description "Water readings reach the Edge Gateway over BLE before cloud synchronization"
 
-            waterControllerEmbeddedApp -> backend "1. Reports temperature and heating events"
+            waterControllerEmbeddedApp -> edgeGateway "Sends water readings and actuator events to Edge over BLE"
 
-            backend -> cloudDatabase "2. Stores water telemetry and actuator history"
+            edgeGateway -> edgeDatabase "Persists water readings for local availability"
+
+            edgeGateway -> backend "Synchronizes water readings when Internet is available"
+
+            backend -> cloudDatabase "Stores water telemetry and actuator history"
 
             autoLayout lr
         }
@@ -1471,7 +1467,7 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
 
             cattleBandHardwareACL -> cattleBandHardware "6. Reads physical sensors"
 
-            bandTelemetryService -> bandConnectivityService "7. Selects the available communication route"
+            bandTelemetryService -> bandConnectivityService "Uses the required BLE route to the Edge Gateway"
 
             autoLayout lr
         }
@@ -1485,7 +1481,7 @@ workspace "ICHU" "C4 model of ICHU, the livestock IoT platform by SmartFarm" {
             title "Portable Edge Gateway - Offline Processing"
             description "Procesamiento en el borde durante el pastoreo sin cobertura"
 
-            bleDeviceInterface -> edgeTelemetryService "1. Receives telemetry from cattle bands"
+            bleDeviceInterface -> edgeTelemetryService "Receives telemetry from collars and water controllers"
 
             edgeTelemetryService -> edgeTelemetry "2. Creates local telemetry state"
 

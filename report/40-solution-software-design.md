@@ -448,9 +448,9 @@ El icono de navegador se utiliza únicamente para Landing Page Browser Client y 
 
 El backend se denomina ICHU Web Service para expresar su responsabilidad funcional. «Monolito modular» describe la decisión arquitectónica y no forma parte de su nombre. Sigue siendo un único container de backend; los contextos acotados son módulos internos, no microservicios desplegados por separado. Las tecnologías de estas cuatro vistas se presentan sin números de versión, de manera uniforme y sin atribuir versiones que el proyecto no haya establecido.
 
-El Cattle Band transmite por BLE al Portable Edge Gateway, que persiste y evalúa localmente las lecturas y sincroniza con la API central cuando dispone de salida a Internet. Este flujo se mantiene también cuando hay cobertura: el collar no invoca directamente el Cloud. La disponibilidad de Wi-Fi no demuestra acceso a Internet. La Mobile Application consulta y atiende alertas del Edge por la red local (TS-16), y consulta lecturas locales mediante TS-17. El backend accede a PostgreSQL mediante Entity Framework Core con el proveedor Npgsql.
+El collar inteligente y el controlador del abrevadero envían sus registros por BLE al Portable Edge Gateway, sin depender de que el predio tenga conexión a Internet. El Edge persiste y evalúa localmente las lecturas; cuando hay Internet, sincroniza los lotes con la API central. La Mobile Application consulta y atiende alertas del Edge por la red local (TS-16), y consulta lecturas locales mediante TS-17. El backend accede a PostgreSQL mediante Entity Framework Core con el proveedor Npgsql.
 
-La revisión de requisitos del 8 de octubre de 2026 actualiza estos contratos en el Capítulo III. Las vistas C4 y los flujos gráficos de AV1 muestran el diseño anterior; sus fuentes y exportaciones todavía no representan el Edge como intermediario obligatorio ni todos los contratos Web y Mobile revisados. Por tanto, esas imágenes documentan AV1 y no constituyen evidencia de implementación de las historias corregidas.
+Las vistas C4 que siguen representan este flujo por medio de las relaciones entre cada dispositivo, el Edge Gateway y el servicio central. La sincronización hacia la nube depende de la conexión a Internet disponible en el Gateway, y no de una conexión directa desde los dispositivos.
 
 ![Container Diagram de ICHU](assets/images/diagrams/c4/c4-container.png)
 
@@ -573,17 +573,17 @@ Este contexto se realiza además en tres containers fuera del backend: las dos a
 
 **Flujos dinámicos del contexto**
 
-Los diagramas dinámicos ilustran la secuencia de colaboración entre componentes en los tres escenarios de conectividad que la solución debe cubrir.
+Los diagramas dinámicos muestran cómo el collar y el controlador del abrevadero envían sus registros al Edge, cómo continúa la evaluación local sin Internet y cómo se sincronizan los datos con la nube al recuperar conexión.
 
 ![Flujo de telemetría con cobertura](assets/images/diagrams/c4/c4-flow-connected-telemetry.png)
 
-*Figura 4.11. Flujo completo cuando el collar tiene cobertura. Elaboración propia con Structurizr.*
+*Figura 4.11. Flujo completo del collar y sincronización por Edge cuando hay conexión a Internet. Elaboración propia con Structurizr.*
 
 [Abrir fuente Structurizr](assets/diagram-sources/structurizr/workspace-ichu-c4.dsl)
 
 ![Flujo de pastoreo sin cobertura](assets/images/diagrams/c4/c4-flow-offline-grazing.png)
 
-*Figura 4.12. Flujo completo durante el pastoreo sin cobertura. Elaboración propia con Structurizr.*
+*Figura 4.12. Flujo local del collar a través del Edge durante el pastoreo sin Internet. Elaboración propia con Structurizr.*
 
 [Abrir fuente Structurizr](assets/diagram-sources/structurizr/workspace-ichu-c4.dsl)
 
