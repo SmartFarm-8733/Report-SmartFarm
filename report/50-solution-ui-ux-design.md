@@ -217,9 +217,9 @@ Los mockups de alta fidelidad corresponden a capturas del frontend local. Muestr
 
 Los User Flows desarrollan las cuatro metas de 5.4.2 usando las pantallas de los mockups como pasos. Cada diagrama distingue la ruta esperada de las alternativas, las decisiones y condiciones de acceso, y la respuesta visible ante errores de validación o ausencia de resultados; incluye la meta y una explicación breve.
 
-> **Espacio reservado para la Figura 5.4.4:** lámina de User Flows web, con las pantallas de alta fidelidad y las rutas esperadas y alternativas para cada meta.
+![User flows web con rutas esperadas y alternativas](assets/images/webapp-user-flows.png)
 
-*Figura 5.4.4. User Flows de la Web Application ICHU derivados de los wireflows y mockups de las metas priorizadas. Elaboración propia.*
+*Figura 5.4.4. User Flows de la Web Application ICHU con decisiones, validaciones y controles de acceso para las metas priorizadas. Elaboración propia.*
 
 ## 5.5. Applications Prototyping
 
