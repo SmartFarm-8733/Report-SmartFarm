@@ -182,11 +182,11 @@ La propuesta presenta la experiencia de la Web Application ICHU para el administ
 
 ### 5.4.1. Applications Wireframes
 
-Los wireframes de baja fidelidad establecen la jerarquía y distribución de las vistas de acceso, tablero, animales, monitoreo y alertas, planificación y atención clínica. Se priorizan una navegación consistente, lectura clara y controles accesibles.
+Los wireframes de baja fidelidad organizan seis vistas de escritorio para las tareas del administrador ganadero y del médico veterinario, con navegación y jerarquía consistentes.
 
-> **Espacio reservado para la Figura 5.4.1:** lámina de wireframes de la Web Application con las vistas clave para el administrador ganadero y el médico veterinario.
+![Wireframes de escritorio de la Web Application ICHU](assets/images/webapp-wireframes.png)
 
-*Figura 5.4.1. Wireframes de la Web Application ICHU para las tareas principales de sus usuarios. Elaboración propia.*
+*Figura 5.4.1. Wireframes de escritorio de la Web Application ICHU. Elaboración propia.*
 
 ### 5.4.2. Applications Wireflow Diagrams
 
