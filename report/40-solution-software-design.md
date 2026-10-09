@@ -412,8 +412,6 @@ El System Landscape presenta el panorama completo en el que se inserta la soluci
 
 *Figura 4.3. System Landscape. Elaboración propia con Structurizr.*
 
-[Abrir fuente Structurizr de las cuatro vistas generales](assets/diagram-sources/structurizr/workspace-ichu-c4-overview.dsl)
-
 #### 4.1.3.2. Software Architecture Context Level Diagram
 
 El Context Diagram sitúa a ICHU como una caja única en el centro, rodeada por sus usuarios y por los sistemas con los que intercambia información. Permite discutir el alcance de la solución sin entrar en decisiones de implementación.
@@ -425,8 +423,6 @@ Los sistemas externos son el **hardware del collar inteligente** y el **hardware
 ![System Context de ICHU](assets/images/diagrams/c4/c4-system-context.png)
 
 *Figura 4.4. System Context. Elaboración propia con Structurizr.*
-
-[Abrir fuente Structurizr de las cuatro vistas generales](assets/diagram-sources/structurizr/workspace-ichu-c4-overview.dsl)
 
 #### 4.1.3.3. Software Architecture Container Level Diagram
 
@@ -458,8 +454,6 @@ El collar transmite directamente al backend cuando hay Wi-Fi e Internet, y por B
 
 *Figura 4.5. Container Diagram. Elaboración propia con Structurizr.*
 
-[Abrir fuente Structurizr de las cuatro vistas generales](assets/diagram-sources/structurizr/workspace-ichu-c4-overview.dsl)
-
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
 El Deployment Diagram describe dónde se alojan y dónde se ejecutan las instancias de los containers en producción. Separa los dos alojamientos web del navegador que descarga y ejecuta sus archivos, así como el servicio de backend de su base de datos y de los proveedores externos.
@@ -481,8 +475,6 @@ El alojamiento de la landing page y el de la SPA son nodos distintos en el model
 ![Deployment Diagram de producción](assets/images/diagrams/c4/c4-deployment.png)
 
 *Figura 4.6. Deployment Diagram del entorno de producción. Elaboración propia con Structurizr.*
-
-[Abrir fuente Structurizr de las cuatro vistas generales](assets/diagram-sources/structurizr/workspace-ichu-c4-overview.dsl)
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
