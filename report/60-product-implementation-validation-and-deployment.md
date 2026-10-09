@@ -1,6 +1,6 @@
 # Capítulo VI: Product Implementation, Validation & Deployment
 
-Este capítulo registra la configuración y las evidencias de implementación del producto. En este avance se documentan el entorno, la gestión del código, las convenciones disponibles y la línea base planificada para el Sprint 1. Las actividades de ejecución, pruebas y despliegue se informarán cuando se cuente con evidencia verificable.
+Este capítulo registra la configuración del software y las evidencias disponibles del Sprint 1. El alcance desarrollado y documentado aquí comprende dos interfaces: la Landing Page de ICHU y el frontend web de la plataforma. No se implementó un backend; por ello, las pantallas, cifras de ejemplo y respuestas visuales descritas no acreditan persistencia de datos ni servicios conectados.
 
 ## 6.1. Software Configuration Management
 
@@ -9,6 +9,8 @@ Este capítulo registra la configuración y las evidencias de implementación de
 La Landing Page de ICHU se desarrolla como un sitio estático con **HTML, CSS y JavaScript**, sin framework ni proceso de compilación. El código está organizado en páginas HTML, una hoja de estilos compartida (`css/styles.css`) y dos módulos JavaScript: `js/i18n.js`, para idioma, y `js/main.js`, para navegación e interacciones. Los recursos gráficos y de video se mantienen en carpetas propias.
 
 Para una revisión local, el README del repositorio permite abrir `index.html` directamente en un navegador o iniciar un servidor estático con `npx serve .` o `python -m http.server 8080`. El README también menciona una comprobación con jsdom para identificar IDs duplicados, recursos faltantes, anclas rotas y estilos inline; sin embargo, en la copia del proyecto revisada no se encontró el script ni un `package.json` que permita ejecutarla. Por tanto, esa comprobación queda pendiente de localizar o implementar y no se presenta como una prueba ejecutada.
+
+El frontend web de la plataforma es un segundo artefacto, desplegado en Vercel. Las capturas disponibles muestran su interfaz de inicio de sesión y un dashboard; no incluyen el código fuente ni sus archivos de configuración. Por ese motivo no se atribuyen a ese frontend un framework, versiones de runtime o comandos de compilación que no se puedan verificar desde los artefactos revisados.
 
 | Elemento | Configuración documentada |
 |---|---|
@@ -25,6 +27,8 @@ Fuente: README del repositorio LandingPageSmartFarm, https://github.com/SmartFar
 El código de la Landing Page y el informe se mantienen en repositorios Git separados: https://github.com/SmartFarm-8733/LandingPageSmartFarm y https://github.com/SmartFarm-8733/Report-SmartFarm. Esta separación permite revisar la evolución del producto web y la documentación de manera independiente.
 
 Para el repositorio del informe, la guía de contribución define `main` para entregas publicadas, `develop` para integración y ramas `feature/<alcance>` o `fix/<alcance>` para cambios de trabajo. Las contribuciones se integran mediante Pull Request con revisión de otro integrante, y los commits siguen Conventional Commits. El Capítulo VI se trabaja en la rama `feature/chapter-VI`, publicada en GitHub y aún no integrada en `main`.
+
+La captura del deployment de Vercel registra el frontend web en la rama `main`, en el commit `1d6994c`, integrado desde el Pull Request #10 de `feature/app-integration`. La evidencia no permite verificar desde este checkout la URL de su repositorio de código ni sus demás convenciones de ramas y commits.
 
 | Práctica | Convención del repositorio del informe |
 |---|---|
@@ -59,19 +63,19 @@ La consola registra seis ejecuciones de despliegue. En la captura, la más recie
 
 ![Panel FPM Desk con la lista de proyectos y el proyecto LandingPageSmartFarm](assets/images/deployment/fpm-projects.png)
 
-*Figura 6.5. Lista de proyectos en FPM Desk; se identifica LandingPageSmartFarm con un preview disponible.*
+*Figura 6.1. Lista de proyectos en FPM Desk; se identifica LandingPageSmartFarm con un preview disponible.*
 
 ![Configuración del preview en FPM Desk](assets/images/deployment/fpm-preview-configuration.png)
 
-*Figura 6.6. Detalle del preview: repositorio GitHub conectado, rama `main`, receta Static HTML, URL completa visible y estado público. El panel indica Producción como una etapa opcional.*
+*Figura 6.2. Detalle del preview: repositorio GitHub conectado, rama `main`, receta Static HTML, URL completa visible y estado público. El panel indica Producción como una etapa opcional.*
 
 ![Historial de ejecuciones de despliegue en FPM Desk](assets/images/deployment/fpm-deployment-history.png)
 
-*Figura 6.7. Historial de seis ejecuciones, con la más reciente en estado «Listo».*
+*Figura 6.3. Historial de seis ejecuciones, con la más reciente en estado «Listo».*
 
 ![Landing Page de ICHU abierta desde la URL publicada](assets/images/deployment/published-preview.png)
 
-*Figura 6.8. Portada en español cargada desde el preview público; la barra del navegador muestra smartfarm-ichu-preview.fpm.it.com.*
+*Figura 6.4. Portada en español cargada desde el preview público; la barra del navegador muestra smartfarm-ichu-preview.fpm.it.com.*
 
 ## 6.2. Landing Page, Services & Applications Implementation
 
@@ -133,30 +137,33 @@ Las capturas siguientes documentan la presentación de la Landing Page en españ
 
 ![Portada de ICHU en español en navegador de escritorio](assets/images/implementation/landing-page-es-desktop.png)
 
-*Figura 6.1. Portada de la Landing Page en español vista en escritorio. Captura de navegador proporcionada por el equipo.*
+*Figura 6.5. Portada de la Landing Page en español vista en escritorio. Captura de navegador proporcionada por el equipo.*
 
 ![Sección de presentación de ICHU en inglés en navegador de escritorio](assets/images/implementation/landing-page-en-desktop.png)
 
-*Figura 6.2. Sección «What is ICHU?» en inglés, abierta desde un archivo local en el navegador. Captura de navegador proporcionada por el equipo.*
+*Figura 6.6. Sección «What is ICHU?» en inglés, abierta desde un archivo local en el navegador. Captura de navegador proporcionada por el equipo.*
 
 ![Sección para ganaderos con tema oscuro](assets/images/implementation/landing-page-en-dark-theme.png)
 
-*Figura 6.3. Vista en inglés con tema oscuro y contenido dirigido a ganaderos. La ficha del animal en la imagen es un recurso ilustrativo de la Landing Page, no evidencia de una función conectada a datos.*
+*Figura 6.7. Vista en inglés con tema oscuro y contenido dirigido a ganaderos. La ficha del animal en la imagen es un recurso ilustrativo de la Landing Page, no evidencia de una función conectada a datos.*
 
 ![Portada de ICHU adaptada a una vista móvil](assets/images/implementation/landing-page-en-mobile.png)
 
-*Figura 6.4. Portada en inglés en la emulación de un viewport móvil de 360 × 800 píxeles. La captura muestra una vista emulada en navegador, no una prueba en un dispositivo físico.*
+*Figura 6.8. Portada en inglés en la emulación de un viewport móvil de 360 × 800 píxeles. La captura muestra una vista emulada en navegador, no una prueba en un dispositivo físico.*
+
+La interfaz web de la plataforma también se muestra en el dashboard de la Figura 6.12. Esa captura acredita la presentación del frontend; los indicadores son datos de muestra y no evidencian conexión con un backend.
 
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review
 
-Se realizó una comprobación manual preliminar de renderizado con Chrome DevTools en el preset **iPad Mini**, viewport de 768 × 1024 píxeles, al 75 % y sin limitación de red. La portada, la navegación móvil y el comienzo de la sección siguiente son visibles. Esta captura no permite evaluar los controles ni muestra la barra con la URL.
+Se realizó una comprobación manual preliminar de renderizado con Chrome DevTools en el preset **iPad Mini**, viewport de 768 × 1024 píxeles, al 75 % y sin limitación de red. La primera captura permite ver la portada, la navegación móvil y el comienzo de la sección siguiente, pero no permite evaluar los controles ni muestra la barra con la URL.
 
 | Caso | Resultado observado | Estado |
 |---|---|---|
 | Renderizado del preview en viewport iPad Mini (768 × 1024) | La portada carga en Chrome incógnito; la URL del preview se ve en la barra y el contenido se adapta al viewport emulado. | Aprobado, comprobación visual |
 | Consola en la primera inspección | Se vio `[Violation] Permissions policy violation: unload is not allowed in this document.`, con fuente `content.d0f3cf01.js`. | Observado una vez; origen no confirmado |
 | Consola en la repetición de incógnito | No aparecen errores ni advertencias en la consola de la captura. El mensaje anterior no se reproduce; esto sugiere que pudo provenir de una extensión o estado del navegador, pero no confirma su origen. | Aprobado en esta repetición |
-| Cambio de idioma, tema, menú y validación del formulario | No se ejecutaron ni se demuestran en esta captura. | No ejecutado |
+| Cambio de idioma, tema, menú y validación del formulario | Las capturas de desarrollo muestran los estados español, inglés y tema oscuro, pero no registran la activación de esos controles. El menú y el envío del formulario tampoco se probaron. | Estados visuales capturados; comportamiento no verificado |
+| Suite automatizada descrita en el README | En la copia revisada no están el script jsdom ni su configuración, así que no fue posible ejecutar ni reproducir esa suite. | Pendiente; no ejecutada |
 
 ![Prueba manual preliminar en emulación de iPad Mini con la consola de DevTools abierta](assets/images/tests/landing-preview-ipad-mini-console.png)
 
@@ -168,9 +175,19 @@ Se realizó una comprobación manual preliminar de renderizado con Chrome DevToo
 
 #### 6.2.1.6. Execution Evidence for Sprint Review
 
-Las Figuras 6.2 y 6.4 muestran la página cargada localmente en un navegador; la Figura 6.2 deja visible la ruta local del archivo y la Figura 6.4 indica la emulación del viewport móvil. La Figura 6.8 muestra la portada abierta desde el preview público. La URL respondió con HTTP 200 durante la verificación del 8 de octubre de 2026. Estas evidencias acreditan renderizado local y disponibilidad del preview en esa fecha; no demuestran una prueba en teléfono físico ni el funcionamiento de los controles de idioma, tema o formulario, que requieren resultados de prueba propios.
+Las Figuras 6.6 y 6.8 muestran la Landing Page cargada localmente; la primera deja visible la ruta del archivo y la segunda la emulación de un viewport móvil. La Figura 6.4 muestra la portada abierta desde el preview de FPM Desk, cuya URL respondió con HTTP 200 durante la verificación del 8 de octubre de 2026. La Figura 6.12 muestra el dashboard del frontend web de Vercel; su URL también respondió con HTTP 200 en esa fecha. Estas evidencias acreditan renderizado y disponibilidad de las interfaces en ese momento; no demuestran una prueba en teléfono físico, la conexión con servicios backend ni el funcionamiento integral de idioma, tema o formulario.
 
 #### 6.2.1.7. Services Documentation Evidence for Sprint Review
+
+El alcance de este incremento comprende interfaces frontend. La Landing Page es un sitio estático que presenta ICHU; su formulario prepara una solicitud y abre WhatsApp para que la persona la envíe. No procesa ni almacena la solicitud en un backend propio. El frontend web publicado en Vercel presenta un dashboard y otras vistas de gestión, pero la captura disponible indica que no hay conexión meteorológica en vivo y sus cifras se identifican como datos de muestra.
+
+| Interfaz o servicio | Documentación disponible | Límite comprobado |
+|---|---|---|
+| Landing Page | Páginas estáticas `index.html`, `media.html` y `como-funciona.html`; navegación, alternancia de idioma y tema, contenido informativo y formulario que abre WhatsApp. | Se verifican archivos y pantallas; las capturas no demuestran que se haya probado cada interacción ni que exista procesamiento en servidor. |
+| Frontend web de la plataforma | Dashboard con indicadores del hato y navegación a animales, ubicación, monitoreo, alertas e historial clínico. URL publicada: https://web-frontend-smart-farm.vercel.app/ | La captura muestra datos de ejemplo y señala que no hay conexión meteorológica en vivo. No demuestra persistencia ni consumo de una API. |
+| Backend y contratos de servicios | No se implementaron backend ni endpoints API dentro del alcance documentado; no hay contratos OpenAPI/Swagger que adjuntar para este incremento. | No se presentan servicios ni integración backend como implementados o probados. |
+
+El preview de la Landing Page está disponible en https://smartfarm-ichu-preview.fpm.it.com/. La aplicación frontend de Vercel está disponible en https://web-frontend-smart-farm.vercel.app/. Las capturas de despliegue correspondientes se encuentran en las Figuras 6.1–6.4 y 6.11–6.12.
 
 #### 6.2.1.8. Software Deployment Evidence for Sprint Review
 
@@ -185,3 +202,16 @@ La aplicación web de ICHU tiene un despliegue de producción separado de la Lan
 *Figura 6.12. Dashboard del frontend cargado desde la URL de Vercel. Las cifras del hato que aparecen en pantalla son datos de muestra de la interfaz; esta captura no demuestra su persistencia ni conexión con un backend productivo.*
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
+
+La evidencia disponible muestra coordinación mediante cambios versionados, despliegues y una distribución de tareas propuesta. En el historial del informe, Avalos Cordova, Diego Andres (`diegodev-22`) registró cambios de diseño para la Landing Page y los flujos de la aplicación; Contreras Leon, Flor de María (`FlorDeMa`) incorporó el diseño de dispositivos IoT y el avance de documentación. El historial se consulta en https://github.com/SmartFarm-8733/Report-SmartFarm/commits/feature/chapter-VI. La captura de Vercel registra la integración del frontend a `main` desde el Pull Request #10 de `feature/app-integration`.
+
+El plan documentado no fija las fechas oficiales ni la duración del Sprint 1. Por ello, estos commits y el deployment se presentan como evidencia de colaboración del proyecto, sin afirmar que ocurrieron dentro de un Sprint con fechas confirmadas.
+
+La distribución de 22 tareas SF-96 a SF-117 en Jira es simulada: las tareas siguen como **Por hacer** y los responsables de la tabla de 6.2.1.2 son propuestos. Por tanto, esa planificación no prueba que las tareas hayan sido completadas por esas personas. Tampoco hay actas o registros que acrediten reuniones diarias, una Sprint Review formal o una retrospectiva; no se reportan como celebradas.
+
+| Evidencia | Aporte a la coordinación | Alcance de lo que demuestra |
+|---|---|---|
+| Historial Git del informe | Cambios de Diego en wireframes, flujos y visuales de la Landing Page; cambios de Flor en diseño IoT y documentación de capítulos V y VI. | Acredita contribuciones versionadas al informe y sus artefactos; no demuestra por sí sola la implementación del frontend de la plataforma. |
+| Deployment Vercel | Pull Request #10 de `feature/app-integration` integrado en `main`, commit `1d6994c`. | Acredita un artefacto frontend publicado; no acredita backend ni integración de datos. |
+| Backlog Jira SF-96 a SF-117 | Reparto propuesto de tareas para Flor, Diego y los demás integrantes. | Datos simulados, estado **Por hacer**; no son evidencia de asignación formal o finalización. |
+| Registros de ceremonias | No se encontraron actas de planificación, reuniones diarias, revisión ni retrospectiva. | La colaboración se describe solo desde artefactos verificables; no se infieren ceremonias. |
