@@ -31,9 +31,7 @@ La identidad y el significado de los estados se mantienen entre pantallas; la co
 | **IoT digital** | Mostrar lectura, unidad, hora y vigencia; distinguir estados en línea, sin señal, almacenado y sincronizado, junto con batería y conectividad. |
 | **IoT físico** | Indicadores inequívocos y coherentes con la app. La función de luces, botones y sonidos se especifica junto con el diseño físico en 5.6. |
 
-El mockup recibido evidencia la web y su adaptación, pero no las vistas nativas de la aplicación. El diseño conceptual del collar, el receptor de alertas y el controlador del abrevadero se documenta en 5.6; las vistas nativas se incorporarán en 5.4.
-
-> **Figura por añadir en 5.1.2:** una lámina comparativa con la web en escritorio y móvil, la app nativa y la interfaz física IoT (collar, receptor de alertas y controlador del abrevadero, descritos en 5.6).
+Las pautas para aplicaciones móviles e interfaces IoT definen criterios de diseño del producto; esta entrega presenta únicamente la Web Application. El diseño conceptual del collar, el receptor de alertas y el controlador del abrevadero se documenta en 5.6.
 
 ## 5.2. Information Architecture
 
