@@ -2,6 +2,8 @@
 
 Esta sección resume las modificaciones relevantes realizadas al informe durante el ciclo de vida del proyecto. Cada línea corresponde a un único autor.
 
+Actualización al **8 de octubre de 2026**, a partir de los cambios integrados en `develop` hasta el commit [`238af37`](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/238af3763c30473c9f6610ff9cd0e2d304b98359). Las fechas corresponden a la zona horaria de Perú (UTC−5).
+
 | Versión | Fecha | Autor | Descripción de modificación |
 |---|---|---|---|
 | 0.1.0 | 2026-09-07 | Romero Meza, Jhimy Pool | Versión inicial del informe. Creación de la carátula y de la estructura de archivos del repositorio. |
@@ -43,5 +45,11 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 0.12.7 | 2026-10-06 | Avalos Cordova, Diego Andres | Reubicación de Student Outcome antes del Capítulo I, corrección de las anclas del índice y de etiquetas HTML en los perfiles de integrantes. |
 | 0.13.0 | 2026-10-06 | Avalos Cordova, Diego Andres | Incorporación de la estructura del Capítulo VI y espacios de TB1 en Student Outcome, colaboración, conclusiones, videos de exposiciones y anexos, sin modificar el Capítulo V. |
 | 0.13.1 | 2026-10-06 | Avalos Cordova, Diego Andres | Incorporación de la estructura vacía del Capítulo V, actualización de sus enlaces en el índice y numeración consecutiva de los apartados de diseño de aplicaciones. |
+| 0.13.2 | 2026-10-06 | Avalos Cordova, Diego Andres | Registro de la reorganización del repositorio en `report/`: separación de capítulos, secciones iniciales y anexos; traslado de imágenes y fuentes de diagramas a `report/assets/`; documentación del flujo de contribución con `main`, `develop` y ramas temporales. Evidencia: [1511611](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/1511611). |
+| 0.14.0 | 2026-10-07 | Avalos Cordova, Diego Andres | Desarrollo de las guías de estilo del Capítulo V: identidad de ICHU, paleta, tipografía, componentes, estados, accesibilidad y adaptación web, móvil e IoT. Incorporación de la lámina SVG de tokens visuales y de la referencia de accesibilidad en la bibliografía. Evidencia: [17c21c2](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/17c21c2). |
+| 0.14.1 | 2026-10-07 | Avalos Cordova, Diego Andres | Desarrollo de la arquitectura de información del Capítulo V: organización, etiquetas, metadatos SEO y ASO, búsqueda, filtros y navegación por rol. Las rutas y capacidades se documentan como propuestas de diseño. Evidencia: [PR #6](https://github.com/SmartFarm-8733/Report-SmartFarm/pull/6). |
+| 0.15.0 | 2026-10-08 | Sanchez Arenas, Manuel Angel | Revisión de Lean UX para diferenciar resultados de negocio, beneficios del usuario y supuestos técnicos por validar; corrección de enlaces de entrevistas, herramientas y anexos; retiro de versiones específicas de .NET y PostgreSQL del texto arquitectónico y de la fuente C4. Evidencia: [deba076](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/deba076). |
+| 0.15.1 | 2026-10-08 | Sanchez Arenas, Manuel Angel | Ajuste de la trazabilidad entre estrategias y User Stories, y revisión del análisis de entrevistas, User Personas y Empathy Maps para distinguir la muestra investigada, los hallazgos por participante y las hipótesis pendientes de validación. Evidencia: [6324ad4](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/6324ad4), integrado mediante [PR #7](https://github.com/SmartFarm-8733/Report-SmartFarm/pull/7). |
+| 0.15.2 | 2026-10-08 | Arrieta Quispe, Alison Jimena | Corrección del Big Picture EventStorming como representación As-Is del negocio; sustitución de cinco SVG por capturas PNG de FigJam; actualización de eventos, actores, problemas, oportunidades y preguntas de validación; redacción en español e incorporación del enlace al tablero. Evidencia: [PR #8](https://github.com/SmartFarm-8733/Report-SmartFarm/pull/8). |
 
 <div style="break-after: page; page-break-after: always;"></div>
