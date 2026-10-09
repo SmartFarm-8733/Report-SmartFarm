@@ -17,3 +17,11 @@ Referencias utilizadas en el informe, conservando la numeración empleada por la
 [7] Gothelf, J., & Seiden, J. (2021). *Lean UX: Creating great products with agile teams* (3.ª ed.). O'Reilly Media.
 
 [8] World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
+
+[9] Angular. (s. f.). *Angular documentation*. https://angular.dev/docs
+
+[10] Playwright. (s. f.). *Writing tests*. https://playwright.dev/docs/writing-tests
+
+[11] Vercel. (s. f.). *Deploying to Vercel*. https://vercel.com/docs/deployments/overview
+
+[12] World Wide Web Consortium. (s. f.). *Internationalization quick tips for the Web*. https://www.w3.org/International/quicktips/Overview

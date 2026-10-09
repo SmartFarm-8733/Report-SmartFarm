@@ -71,7 +71,7 @@ Las etiquetas nombran destinos y acciones, no componentes técnicos. Se mantiene
 
 Las acciones usan verbo y objeto: **Registrar animal**, **Vincular collar**, **Atender alerta**, **Registrar intervención** y **Exportar reporte**. Arete identifica al animal; collar identifica el equipo de telemetría. Una lectura muestra unidad y hora; Sin datos no equivale a Normal, ni Sin conexión a Sin alertas.
 
-Las etiquetas se localizan de forma consistente en `en_US` y `es_419`, incluido el contenido de ayuda, errores, fechas y números (US-37). El idioma inicial definido por la historia es `en_US`, con preferencia persistente; los ejemplos de esta sección usan `es_419`.
+Las etiquetas se localizan de forma consistente en `en_US` y `es_419`, incluido el contenido de ayuda, errores, fechas y números (US-37). El idioma inicial definido por la historia es `en_US`, con preferencia persistente; los ejemplos de esta sección usan `es_419`. La configuración del idioma del documento y el tratamiento de formatos regionales siguen las pautas de internacionalización web del W3C [12].
 
 ### 5.2.3. SEO Tags and Meta Tags
 
@@ -312,7 +312,7 @@ Si ya existe una autorización o una solicitud pendiente, la Web Application con
 
 ## 5.5. Applications Prototyping
 
-El prototipo de alta fidelidad corresponde a la Web Application de ICHU. Está implementado con Angular y se puede explorar en la [versión desplegada](https://web-frontend-smart-farm.vercel.app/login); el [repositorio del frontend](https://github.com/SmartFarm-8733/WebFrontend-SmartFarm) contiene su código fuente. Esta entrega cubre la aplicación web en navegadores de escritorio y en ventanas estrechas; no contempla una aplicación móvil nativa.
+El prototipo de alta fidelidad corresponde a la Web Application de ICHU, construida con Angular [9]. Se puede explorar en la [versión desplegada](https://web-frontend-smart-farm.vercel.app/login); el [repositorio del frontend](https://github.com/SmartFarm-8733/WebFrontend-SmartFarm) contiene su código fuente. Esta entrega cubre la aplicación web en navegadores de escritorio y en ventanas estrechas; no contempla una aplicación móvil nativa.
 
 La navegación sigue la arquitectura de información de 5.2.5: el menú lateral organiza las áreas de trabajo y la cabecera conserva visibles el rol y el hato activos. Los recorridos se relacionan con las metas de usuario de 5.4.4. En escritorio y en ventanas estrechas se muestran las mismas funciones, con una disposición adaptable; los formularios presentan validación y confirmación de las acciones disponibles.
 
@@ -323,7 +323,7 @@ La navegación sigue la arquitectura de información de 5.2.5: el menú lateral 
 | Indicadores y reportes (5.4.4.3). | Consultar indicadores y tendencias del hato, aplicar filtros y acceder a las opciones de reporte. |
 | Atención veterinaria (5.4.4.4). | Consultar animales e historial clínico y recorrer el registro de una intervención. |
 
-El prototipo utiliza datos ficticios en memoria: no implementa autenticación real, API, pagos, notificaciones externas, sincronización ni control de dispositivos IoT, y al recargar se restablecen los registros de ejemplo. La solicitud de acceso veterinario de US-39 está descrita en los wireflows, pero todavía no se puede crear desde el perfil veterinario. Las comprobaciones locales de tipos, compilación de producción y 41 pruebas automatizadas del frontend finalizaron correctamente.
+El prototipo utiliza datos ficticios en memoria: no implementa autenticación real, API, pagos, notificaciones externas, sincronización ni control de dispositivos IoT, y al recargar se restablecen los registros de ejemplo. La solicitud de acceso veterinario de US-39 está descrita en los wireflows, pero todavía no se puede crear desde el perfil veterinario. Las comprobaciones locales reportadas de tipos, compilación de producción y 41 pruebas automatizadas de extremo a extremo con Playwright [10] finalizaron correctamente.
 
 ## 5.6. IoT Device Design
 
