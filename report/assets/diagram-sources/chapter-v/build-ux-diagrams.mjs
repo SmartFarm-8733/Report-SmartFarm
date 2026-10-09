@@ -26,10 +26,6 @@ function base(title, subtitle, width, height, body) {
   <title id="title">${escapeXml(title)}</title><desc id="desc">${escapeXml(subtitle)}</desc>
   <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="${colors.green}"/></marker><marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="${colors.muted}"/></marker></defs>
   <rect width="${width}" height="${height}" fill="${colors.paper}"/>
-  ${text(58, 55, 'ICHU  /  WEB APPLICATION', 15, colors.green, 700)}
-  ${text(58, 105, title, 34, colors.forest, 700)}
-  ${text(60, 143, subtitle, 17, colors.muted, 400)}
-  <line x1="58" y1="165" x2="${width - 58}" y2="165" stroke="${colors.border}" stroke-width="2"/>
   ${body}
 </svg>`;
 }
@@ -112,14 +108,19 @@ function wireflowSvg(flow) {
     const sourceX = xs[branch.from] + 165;
     const cardCenter = x + 330;
     const connector = `<path d="M ${sourceX} 542 V 575 H ${cardCenter} V 612" fill="none" stroke="${colors.muted}" stroke-width="2.5" marker-end="url(#arrow-muted)"/>${text((sourceX + cardCenter) / 2, 567, branch.label, 12, colors.muted, 700, 'middle')}`;
-    const loop = branch.loop ? `<path d="M ${cardCenter} 790 V 835 H ${sourceX} V 548" fill="none" stroke="${colors.muted}" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrow-muted)"/>${text(cardCenter + (sourceX - cardCenter) / 2, 830, 'Volver a la pantalla', 11, colors.muted, 600, 'middle')}` : '';
-    return `${connector}<rect x="${x}" y="612" width="660" height="178" rx="12" fill="${branch.tone === 'error' ? colors.paleRed : colors.paleGold}" stroke="${branch.tone === 'error' ? '#e8d0c7' : '#e6d9ad'}" stroke-width="2"/>${text(x + 24, 646, branch.title, 18, branch.tone === 'error' ? colors.red : '#80641e', 700)}${lines(x + 24, 679, branch.lines, 15, colors.ink, 400, 23)}${loop}`;
+    const screenX = xs[branch.from];
+    const screenCenter = screenX + 165;
+    const exitLeft = screenCenter < x + 330;
+    const routeX = exitLeft
+      ? (screenX + 330 <= x ? x - 45 : Math.min(x - 15, screenX - 15))
+      : (screenX >= x + 660 ? x + 705 : Math.max(x + 705, screenX + 345));
+    const targetX = routeX < screenX ? screenX : screenX + 330;
+    const returnY = 450 + index * 50;
+    const loop = branch.loop ? `<path d="M ${cardCenter} 790 V 835 H ${routeX} V ${returnY} H ${targetX}" fill="none" stroke="${colors.muted}" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrow-muted)"/>` : '';
+    return `${connector}${loop}<rect x="${x}" y="612" width="660" height="178" rx="12" fill="${branch.tone === 'error' ? colors.paleRed : colors.paleGold}" stroke="${branch.tone === 'error' ? '#e8d0c7' : '#e6d9ad'}" stroke-width="2"/>${text(x + 24, 646, branch.title, 18, branch.tone === 'error' ? colors.red : '#80641e', 700)}${lines(x + 24, 679, branch.lines, 15, colors.ink, 400, 23)}`;
   }).join('\n');
-  const body = `<rect x="55" y="190" width="1490" height="390" rx="15" fill="#fbfaf5" stroke="${colors.border}"/>
-    ${text(78, 207, flow.persona, 13, colors.green, 700)}${cards}${arrows}${branches}
-    ${text(60, 865, `Historias relacionadas: ${flow.stories}`, 14, colors.muted, 600)}
-    ${text(1540, 865, 'Pantalla esquemática · navegación web', 13, colors.muted, 400, 'end')}`;
-  return base(flow.title, `${flow.persona} · ${flow.stories}. Secuencia de pantallas con rutas alternativas conectadas.`, 1600, 900, body);
+  const body = `<g transform="translate(0 -150)">${cards}${arrows}${branches}</g>`;
+  return base(flow.title, `${flow.persona} · ${flow.stories}. Secuencia de pantallas con rutas alternativas conectadas.`, 1600, 740, body);
 }
 
 function flowNode(node) {
@@ -150,10 +151,8 @@ function noteBox(x, y, w, h, title, detail, tone = 'error') {
 }
 
 function userFlowSvg(flow) {
-  const body = `${flow.lanes ?? ''}${flow.nodes.map(flowNode).join('\n')}${flow.edges.map((item) => edge(item.path, item.label, item.x, item.y, item.dashed)).join('\n')}${flow.notes.map((note) => noteBox(note.x, note.y, note.w, note.h, note.title, note.detail, note.tone)).join('\n')}
-    ${text(60, 955, `Historias relacionadas: ${flow.stories}`, 14, colors.muted, 600)}
-    ${text(1540, 955, 'Decisiones: rombo · acción: rectángulo · inicio/fin: cápsula', 13, colors.muted, 400, 'end')}`;
-  return base(flow.title, `${flow.persona} · ${flow.stories}. Flujo de usuario con decisiones, salidas y retornos explícitos.`, 1600, 990, body);
+  const body = `<g transform="translate(0 -130)">${flow.lanes ?? ''}${flow.nodes.map(flowNode).join('\n')}${flow.edges.map((item) => edge(item.path, item.label, item.x, item.y, item.dashed)).join('\n')}${flow.notes.map((note) => noteBox(note.x, note.y, note.w, note.h, note.title, note.detail, note.tone)).join('\n')}</g>`;
+  return base(flow.title, `${flow.persona} · ${flow.stories}. Flujo de usuario con decisiones, salidas y retornos explícitos.`, 1600, 630, body);
 }
 
 const wireflows = [
@@ -288,7 +287,7 @@ const userFlows = [
   },
   {
     file: 'user-flow-veterinary-care.svg', title: 'User Flow · acceso y atención veterinaria', persona: 'Médico veterinario · Leonardo Rosales / administrador ganadero', stories: 'US-04 · US-14 · US-23 · US-24 · US-39',
-    lanes: `<rect x="42" y="190" width="1516" height="270" rx="12" fill="#fbfaf5" stroke="${colors.border}"/><rect x="42" y="485" width="1516" height="230" rx="12" fill="#edf1f2" stroke="#d4dcde"/>${text(62, 218, 'VETERINARIO', 13, colors.green, 700)}${text(62, 512, 'ADMINISTRADOR DE HATO', 13, colors.green, 700)}`,
+    lanes: `<rect x="42" y="190" width="1516" height="270" rx="12" fill="#f8f0d7" stroke="${colors.border}"/><rect x="42" y="485" width="1516" height="230" rx="12" fill="#efe5c5" stroke="#d8cda9"/>`,
     nodes: [
       { x: 80, y: 290, w: 170, h: 82, type: 'start', title: 'Inicio', detail: ['Consultar hato'] },
       { x: 300, y: 270, w: 185, h: 130, type: 'decision', title: '¿Acceso vigente?', detail: [] },
