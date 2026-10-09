@@ -14,7 +14,7 @@
 | Jerarquía y ritmo | Títulos 28–32 px, subtítulos 20–24 px, lectura 16 px y controles 14 px. Espaciado en escala de 4 px: 4, 8, 12, 16, 24 y 32 px. |
 | Componentes | Bordes discretos, etiquetas claras y estados visibles de foco, selección y error. Verde para acciones operativas y dorado para la acción principal del onboarding. |
 
-El mockup HTML aún usa una base de 14 px; se alineará con estos tokens. El tono será serio, cercano, profesional, respetuoso y sereno. Errores y alertas indicarán la situación y el siguiente paso sin diagnósticos no sustentados. Se validarán contraste WCAG (4.5:1 en texto normal; 3:1 en texto grande), foco visible y objetivos táctiles de 44 × 44 px [8].
+La Web Application usa una base de 16 px, Outfit para encabezados y Plus Jakarta Sans para lectura y controles. El tono es serio, cercano, profesional y sereno. Errores y alertas indican la situación y el siguiente paso sin presentar inferencias como diagnósticos. El diseño contempla contraste WCAG (4.5:1 en texto normal; 3:1 en texto grande), foco visible y objetivos táctiles de al menos 44 × 44 px [8].
 
 ![Muestra de identidad visual y tokens de ICHU](assets/images/ichu-style-guidelines.svg)
 
@@ -27,7 +27,7 @@ La identidad y el significado de los estados se mantienen entre pantallas; la co
 | Experiencia | Guía visual y de interacción |
 |---|---|
 | **Web responsiva** | Navegación y paneles se reorganizan al reducirse el ancho (1080, 720 y 560 px en el mockup); en móvil, una columna y desplazamiento independiente para tablas. |
-| **Aplicación móvil** | Priorizar tarea y acción, tarjetas de una columna y controles táctiles amplios. Los wireframes nativos se documentarán en 5.4; la web responsiva no los sustituye. |
+| **Aplicación móvil (fuera del alcance de esta entrega)** | Como pauta futura, priorizar una tarea por vista, tarjetas de una columna y controles táctiles amplios. No se presentan wireframes ni mockups de una aplicación móvil en este capítulo. |
 | **IoT digital** | Mostrar lectura, unidad, hora y vigencia; distinguir estados en línea, sin señal, almacenado y sincronizado, junto con batería y conectividad. |
 | **IoT físico** | Indicadores inequívocos y coherentes con la app. La función de luces, botones y sonidos se especifica junto con el diseño físico en 5.6. |
 
@@ -35,7 +35,7 @@ Las pautas para aplicaciones móviles e interfaces IoT definen criterios de dise
 
 ## 5.2. Information Architecture
 
-ICHU organiza la información según las tareas de César, administrador ganadero, y Leonardo, veterinario (2.3), las historias de usuario (3.1) y las experiencias web y móvil definidas en 4.1.3.3. Se propone una estructura común con acceso por rol: gestión del hato para el administrador, consulta clínica de hatos autorizados para el veterinario y tareas de campo en móvil. Las decisiones siguientes orientan los wireframes; no representan funcionalidades ya implementadas.
+La arquitectura de información de este capítulo corresponde al landing y a la Web Application ICHU. Se apoya en las tareas de César, administrador ganadero, y Leonardo, veterinario (2.3), las historias de usuario (3.1) y la arquitectura definida en 4.1.3.3. La estructura distingue la gestión del hato y la consulta clínica de unidades autorizadas. Las vistas descritas son decisiones de diseño; su implementación se identifica en 5.5.
 
 ### 5.2.1. Organization Systems
 
@@ -44,7 +44,7 @@ ICHU organiza la información según las tareas de César, administrador ganader
 | Landing Page | Jerarquía de propuesta, beneficios, tecnología y contacto; contenido por audiencia: ganaderos y veterinarios. La explicación de uso es secuencial: conocer ICHU, entender su funcionamiento y solicitar una demo. |
 | Hato y animales | Jerarquía hato → lote → animal → ficha. La ficha reúne identidad, historial, reproducción y monitoreo; potreros y nutrición se consultan desde el lote. Evita repetir datos entre módulos. |
 | Monitoreo y atención | Por tópicos: lecturas, ubicación, alertas y registros de campo o clínicos. Alertas ordenadas por prioridad y fecha; historial y lecturas por fecha de captura, no de sincronización. |
-| Calendario y reportes | Campañas y seguimientos en orden cronológico. Comparación matricial de animales, lotes e indicadores en escritorio; tarjetas y filtros equivalentes en móvil. |
+| Planificación sanitaria y reportes | Campañas y seguimientos en orden cronológico. Filtros y resultados se reorganizan para anchos menores sin cambiar el contenido ni los permisos de la Web Application. |
 | Dispositivos y cuenta | Inventario de collares y abrevaderos separado de las fichas animales. Perfil, asesorías y plan en un área secundaria; visibilidad según permisos. |
 
 Los nombres de hatos, lotes y potreros se ordenan alfabéticamente; los animales se identifican por arete. Registro, vinculación de collar e intervención usan pasos breves: seleccionar, completar y confirmar. El veterinario selecciona primero un hato autorizado; el administrador trabaja sobre su unidad y el operario sobre las tareas habilitadas.
@@ -64,8 +64,8 @@ Las etiquetas nombran destinos y acciones, no componentes técnicos. Se mantiene
 | Mi hato / Hatos autorizados | Resumen de la unidad propia / selector de unidades con acceso profesional vigente. |
 | Animales / Ficha del animal | Inventario / identidad, lote, etapa, collar e historial del animal seleccionado. |
 | Monitoreo / Alertas | Lecturas y última ubicación conocida / señales que requieren revisión y su estado de atención. |
-| Historial / Reproducción / Nutrición | Registros e intervenciones / eventos reproductivos del animal / plan nutricional del lote. |
-| Calendario / Reportes | Campañas, recordatorios y seguimientos / indicadores y exportación por periodo. |
+| Historial clínico / Reproducción / Nutrición | Registros e intervenciones / eventos reproductivos del animal / plan nutricional del lote. |
+| Planificación sanitaria / Reportes | Campañas, recordatorios y seguimientos / indicadores y exportación por periodo. |
 | Dispositivos | Collares y abrevaderos, asignación, batería y última comunicación. |
 | Perfil / Asesorías / Mi plan | Datos de cuenta y profesionales / solicitudes y permisos de acceso / suscripción, cobertura y límites. |
 
@@ -94,7 +94,7 @@ Quiénes somos, los contenidos por segmento, Tecnología y Contacto son seccione
 | Animales y ficha | Animales · ICHU | Consulta fichas, lotes e historial de los animales autorizados. |
 | Monitoreo | Monitoreo · ICHU | Revisa lecturas y ubicaciones con su fecha de captura. |
 | Alertas | Alertas · ICHU | Consulta señales, estados de atención y acciones registradas. |
-| Calendario | Calendario · ICHU | Organiza campañas sanitarias, recordatorios y seguimientos. |
+| Planificación sanitaria | Planificación sanitaria · ICHU | Organiza campañas sanitarias, recordatorios y seguimientos. |
 | Reportes | Reportes · ICHU | Consulta indicadores por periodo y exporta reportes autorizados. |
 | Dispositivos | Dispositivos · ICHU | Consulta collares y abrevaderos, asignaciones y conectividad. |
 | Cuenta | Cuenta · ICHU | Gestiona tu perfil, asesorías y plan según tus permisos. |
@@ -109,52 +109,41 @@ Quiénes somos, los contenidos por segmento, Tecnología y Contacto son seccione
 
 Los metadatos de la aplicación son genéricos: no incluyen nombres de animales, propietarios ni datos clínicos. La exclusión de indexación no sustituye la autenticación ni los permisos por hato. La vista previa pública reutiliza Title y Description; la URL canónica se configurará con el dominio definitivo.
 
-Para la distribución de la aplicación móvil mediante una tienda, se propone esta ficha ASO, adaptable a los campos de la plataforma elegida; no implica una publicación existente.
-
-| Campo ASO | Valor propuesto |
-|---|---|
-| App Title | ICHU: ganado y alertas |
-| App keywords | ganado, ganadería, monitoreo, IoT, alertas, veterinario |
-| App subtitle | Tu hato, cerca de ti |
-| App description | Consulta fichas, lecturas y ubicaciones; revisa alertas y registra eventos de campo. Accede al historial clínico según tus permisos. Trabaja con fichas descargadas sin conexión y sincroniza los registros al recuperar cobertura. |
-
 ### 5.2.4. Searching Systems
 
-El landing usa navegación directa y enlaces a secciones, sin buscador interno: su contenido informativo es reducido. En las aplicaciones, la búsqueda se limita al hato seleccionado y a los permisos vigentes; el veterinario puede seleccionar únicamente unidades autorizadas.
+El landing usa navegación directa y enlaces a secciones, sin buscador interno: su contenido informativo es reducido. En la Web Application, la búsqueda se limita al hato seleccionado y a los permisos vigentes; el veterinario puede consultar únicamente unidades autorizadas.
 
 | Área | Búsqueda y filtros propuestos | Presentación del resultado |
 |---|---|---|
 | Animales | Arete; nombre si está registrado; lote, etapa y estado. | Lista con identificador, lote, etapa y collar; acceso a la ficha. El arete se interpreta dentro del hato. |
 | Monitoreo | Animal, indicador y periodo. | Series de temperatura, actividad o rumia; mapa de última posición con hora de captura. |
-| Historial | Animal, periodo y tipo de registro. | Cronología de eventos, intervenciones, resultados y reproducción; autor, fecha y retiro vigente. |
+| Historial clínico | Animal, periodo y tipo de registro. | Cronología de eventos, intervenciones, resultados y reproducción; autor, fecha y retiro vigente. |
 | Alertas | Animal, tipo, prioridad, estado y periodo. | Lista priorizada, fecha, condición de atención y acceso al detalle. |
-| Calendario | Fecha, lote, tipo de campaña o seguimiento y estado. | Agenda con avance, recordatorios y días de atraso cuando corresponda. |
+| Planificación sanitaria | Fecha, lote, tipo de campaña o seguimiento y estado. | Agenda con avance, recordatorios y días de atraso cuando corresponda. |
 | Dispositivos | Identificador, animal asignado y estado de conexión. | Inventario con asignación, batería cuando esté disponible y última comunicación. |
 | Abrevaderos | Identificador, condición y periodo. | Lista de temperatura, hora, estado del calentador y distancia disponible; detalle por abrevadero. |
 | Reportes | Hato, lote, indicador y periodo. | Indicadores, tendencias y comparaciones; datos excluidos o incompletos identificados y opción de exportar. |
 
-Web presenta tablas con paginación y filtros visibles; móvil, tarjetas con filtros desplegables y el mismo criterio de selección. Se conserva la consulta al regresar del detalle y se permite limpiar los filtros. El portafolio veterinario resume solo los hatos autorizados (US-53).
+La Web Application presenta tablas con paginación y filtros visibles; en ventanas estrechas, los controles se reorganizan sin cambiar los criterios de selección. Se conserva la consulta al regresar del detalle y se permite limpiar los filtros. El portafolio veterinario resume solo los hatos autorizados (US-53).
 
-Sin coincidencias, Sin lecturas y Acceso no autorizado son estados distintos, con orientación para el siguiente paso. Sin conexión, la búsqueda móvil cubre únicamente fichas descargadas e informa la fecha de actualización y los registros por sincronizar (US-22); no presenta datos ausentes como valores cero ni ubicaciones antiguas como posiciones en tiempo real.
+Sin coincidencias, Sin lecturas y Acceso no autorizado son estados distintos, con orientación para el siguiente paso. La Web Application no presenta datos ausentes como valores cero ni ubicaciones antiguas como posiciones en tiempo real.
 
 ### 5.2.5. Navigation Systems
 
 | Experiencia | Recorrido y técnica de navegación |
 |---|---|
-| Landing Page | Encabezado con enlaces a Inicio, Quiénes somos, los dos segmentos, Tecnología y Contacto. Cómo funciona y Videos abren páginas complementarias; en móvil, menú desplegable con los mismos destinos. Pie de página con Planes, Contacto y Términos. |
-| Aplicación web | Menú lateral: Animales, Monitoreo, Alertas, Calendario y Reportes. Cabecera con hato activo y resumen; Dispositivos y cuenta en accesos secundarios. La ficha enlaza Historial y Reproducción; el lote, Nutrición. Se muestra la sección activa y una ruta de retorno al listado. |
-| Aplicación móvil | Navegación inferior propuesta: Animales, Alertas, Calendario y Menú. Monitoreo se abre desde la ficha o el menú; los accesos secundarios conservan los nombres web. Las tareas de campo permanecen accesibles con datos descargados y muestran conectividad y sincronización. |
+| Landing Page | Encabezado con enlaces a Inicio, Quiénes somos, los dos segmentos, Tecnología y Contacto. Cómo funciona y Videos abren páginas complementarias; a menor ancho, un menú compacto conserva los mismos destinos. Pie de página con Planes, Contacto y Términos. |
+| Web Application | Menú lateral: Mi hato, Animales, Ubicación y geocercas, Monitoreo, Alertas, Historial clínico, Planificación sanitaria, Nutrición, Reproducción, Reportes, Dispositivos IoT, Asesorías, Mi plan y Mi cuenta. La cabecera conserva el hato y el rol activos; la sección seleccionada y la ruta de retorno se mantienen visibles. |
 
 La acción del segmento ganadero lleva al acceso web; la del veterinario, al registro profesional. Si el destino no está disponible, se ofrece Contacto (US-33). Solicitar demo abre el formulario con nombre, región, número de cabezas y correo; la confirmación informa el plazo de contacto (US-34).
 
 | Tarea | Ruta propuesta |
 |---|---|
 | Administrador: revisar un animal | Mi hato → Animales → Ficha del animal → Monitoreo; Vincular collar aparece según plan y permisos. |
-| Operario: registrar un hallazgo | Animales → Ficha del animal → Registrar evento; también puede llegar desde el detalle de una alerta. |
 | Veterinario: preparar y registrar atención | Hatos autorizados → Animales → Ficha del animal → Historial → Registrar intervención → Programar seguimiento. |
 | Administrador: dar acceso al asesor | Cuenta → Asesorías → Revisar solicitud → Autorizar o rechazar; acceso revocable desde el mismo destino. |
 
-El veterinario sin autorización permanece en Perfil y Asesorías hasta obtener acceso; ocultar un enlace no sustituye el control de permisos. Cambiar de hato actualiza el contexto sin mezclar registros. Volver conserva filtros y posición; abandonar un formulario modificado exige confirmar el descarte. El recorrido por teclado, el foco visible, los nombres accesibles y los controles táctiles siguen 5.1 y US-38.
+El registro operativo de aplicaciones y eventos de campaña (US-28) corresponde al operario y queda fuera de las rutas de los dos roles mostrados en este capítulo. El veterinario sin autorización permanece en Asesorías hasta obtener acceso; ocultar un enlace no sustituye el control de permisos. Cambiar de hato actualiza el contexto sin mezclar registros. Volver conserva filtros y posición; abandonar un formulario modificado exige confirmar el descarte. El recorrido por teclado, el foco visible, los nombres accesibles y los controles táctiles siguen 5.1 y US-38.
 
 ## 5.3. Landing Page UI Design
 
@@ -164,17 +153,49 @@ La propuesta de la landing page aplica la identidad visual y la arquitectura de 
 
 El wireframe organiza la propuesta de ICHU, la información para ganaderos y veterinarios, la explicación del servicio y el contacto. En escritorio conserva la navegación principal; en móvil prioriza un recorrido vertical y un menú compacto, manteniendo las mismas etiquetas y acciones.
 
-![Wireframes responsivos de la landing page de ICHU](assets/images/landing-page-wireframe-responsive.png)
+![Wireframe de escritorio de ICHU](assets/images/landing-page/landing-wireframe-desktop.png)
 
-*Figura 5.3.1. Wireframes responsivos de ICHU. Elaboración propia a partir de la estructura del landing actual.*
+*Figura 5.3.1.1. Wireframe de escritorio de la landing page ICHU.*
+
+![Wireframe móvil web de ICHU](assets/images/landing-page/landing-wireframe-mobile.png)
+
+*Figura 5.3.1.2. Adaptación móvil web de la landing page ICHU.*
+
+Ambas vistas conservan el mismo contenido y las acciones principales; la versión estrecha reorganiza las secciones en una columna.
 
 ### 5.3.2. Landing Page Mock-up
 
 La composición reúne siete capturas originales de la landing actual de ICHU, desde la portada hasta el pie de página. Se presentan en cascada para mostrar el recorrido visual y la jerarquía de sus secciones, conservando el diseño y el contenido del sitio.
 
-![Capturas originales de la landing page de ICHU organizadas en cascada](assets/images/landing-page-mockup-responsive.png)
+Las capturas separan el recorrido para mantener legibles las secciones y conservar la composición original de la página.
 
-*Figura 5.3.2. Recorrido visual de la landing page de ICHU en siete capturas organizadas en cascada. Elaboración propia a partir del sitio actual.*
+![Inicio, hero y métricas de ICHU](assets/images/landing-page/landing-mockup-01-home-hero.png)
+
+*Figura 5.3.2.1. Inicio, hero y métricas.*
+
+![Quiénes somos y diagnóstico del campo](assets/images/landing-page/landing-mockup-02-about-and-field-diagnosis.png)
+
+*Figura 5.3.2.2. Quiénes somos y diagnóstico del campo.*
+
+![Propuesta de ICHU para ganaderos](assets/images/landing-page/landing-mockup-03-ichu-overview-and-rancher.png)
+
+*Figura 5.3.2.3. Propuesta y vista para ganaderos.*
+
+![Historia y tecnología de ICHU](assets/images/landing-page/landing-mockup-04-traceability-and-technology.png)
+
+*Figura 5.3.2.4. Trazabilidad y tecnología.*
+
+![Alertas y manejo integral del predio](assets/images/landing-page/landing-mockup-05-alerts-and-farm-management.png)
+
+*Figura 5.3.2.5. Alertas y manejo integral del predio.*
+
+![Contexto nacional y contacto](assets/images/landing-page/landing-mockup-06-national-context-and-contact.png)
+
+*Figura 5.3.2.6. Contexto nacional y contacto.*
+
+![Cierre y pie de página de ICHU](assets/images/landing-page/landing-mockup-07-closing-and-footer.png)
+
+*Figura 5.3.2.7. Cierre y pie de página.*
 
 ## 5.4. Applications UX/UI Design
 
@@ -184,9 +205,29 @@ La propuesta presenta la experiencia de la Web Application ICHU para el administ
 
 Los wireframes de baja fidelidad organizan seis vistas de escritorio para las tareas del administrador ganadero y del médico veterinario, con navegación y jerarquía consistentes.
 
-![Wireframes de escritorio de la Web Application ICHU](assets/images/webapp-wireframes.png)
+![Wireframe de acceso](assets/images/application-wireframes/webapp-wireframe-login.png)
 
-*Figura 5.4.1. Wireframes de escritorio de la Web Application ICHU. Elaboración propia.*
+*Figura 5.4.1.1. Acceso a la Web Application.*
+
+![Wireframe del dashboard Mi hato](assets/images/application-wireframes/webapp-wireframe-dashboard.png)
+
+*Figura 5.4.1.2. Resumen Mi hato.*
+
+![Wireframe de animales](assets/images/application-wireframes/webapp-wireframe-animals.png)
+
+*Figura 5.4.1.3. Inventario de animales.*
+
+![Wireframe de alertas](assets/images/application-wireframes/webapp-wireframe-alerts.png)
+
+*Figura 5.4.1.4. Lista de alertas.*
+
+![Wireframe de planificación sanitaria](assets/images/application-wireframes/webapp-wireframe-planning.png)
+
+*Figura 5.4.1.5. Planificación sanitaria.*
+
+![Wireframe de historial clínico](assets/images/application-wireframes/webapp-wireframe-clinical-history.png)
+
+*Figura 5.4.1.6. Historial clínico y registro.*
 
 ### 5.4.2. Applications Wireflow Diagrams
 
@@ -194,34 +235,93 @@ Cada wireflow representa una meta de usuario y muestra las acciones, decisiones 
 
 | User Persona | Meta de usuario | Historias relacionadas |
 |---|---|---|
-| Cesar Flores, administrador ganadero | Revisar el hato y atender una alerta. | US-13, US-16, US-19 |
-| Cesar Flores, administrador ganadero | Consultar animales y programar una campaña sanitaria. | US-06, US-07, US-26, US-27, US-28 |
-| Cesar Flores, administrador ganadero | Revisar indicadores y exportar un reporte. | US-29, US-31 |
+| César Flores, administrador ganadero | Revisar el hato y atender una alerta. | US-13, US-16, US-19 |
+| César Flores, administrador ganadero | Consultar el hato y programar una campaña sanitaria. | US-07, US-26, US-27 |
+| César Flores, administrador ganadero | Revisar indicadores y exportar un reporte. | US-29, US-31 |
 | Leonardo Rosales, médico veterinario | Consultar un hato autorizado, preparar una atención y registrar una intervención. | US-04, US-14, US-23, US-24, US-39 |
 
-Cada meta cuenta con un flujo independiente, rotulado con su persona y explicado brevemente. Cuando una interacción cambia el contenido de una vista, el wireflow muestra el nuevo estado de pantalla.
+Cada meta cuenta con un wireflow independiente. Las pantallas esquemáticas se conectan en el orden de interacción e incluyen los estados alternativos relevantes. La programación de campañas se atribuye al administrador (US-26–US-27); el registro de aplicaciones por operario (US-28) no se mezcla con ese flujo.
 
-![Wireflows web de las cuatro metas priorizadas](assets/images/webapp-wireflows.png)
+![Wireflow para revisar el hato y atender una alerta](assets/diagram-sources/chapter-v/wireflow-alert-response.svg)
 
-*Figura 5.4.2. Wireflows de la Web Application ICHU, vinculados con las personas y sus historias de usuario. Elaboración propia.*
+*Figura 5.4.2.1. Wireflow de monitoreo y atención de alertas para el administrador ganadero. Elaboración propia.*
+
+![Wireflow para consultar animales y programar una campaña](assets/diagram-sources/chapter-v/wireflow-health-campaign.svg)
+
+*Figura 5.4.2.2. Wireflow de consulta animal y programación sanitaria. Elaboración propia.*
+
+![Wireflow para consultar indicadores y exportar un reporte](assets/diagram-sources/chapter-v/wireflow-herd-report.svg)
+
+*Figura 5.4.2.3. Wireflow de analítica y exportación para el administrador ganadero. Elaboración propia.*
+
+![Wireflow de acceso veterinario y preparación de atención](assets/diagram-sources/chapter-v/wireflow-veterinary-care.svg)
+
+*Figura 5.4.2.4. Wireflow de autorización, consulta clínica y registro veterinario. Elaboración propia.*
 
 ### 5.4.3. Applications Mock-ups
 
 Los mockups de alta fidelidad corresponden a capturas del frontend local. Muestran las vistas de administración y atención veterinaria con datos de muestra, la identidad visual y los controles definidos en 5.1 y 5.2.
 
-![Mockups de la Web Application ICHU capturados del frontend local](assets/images/webapp-mockups.png)
+Las capturas siguientes corresponden a vistas implementadas del frontend. Se presentan por separado para distinguir las tareas y los roles.
 
-*Figura 5.4.3. Mockups de alta fidelidad de la Web Application ICHU para el administrador ganadero y el médico veterinario. Elaboración propia a partir del frontend.*
+![Dashboard del administrador ganadero](assets/images/application-screens/dashboard-admin.png)
+
+*Figura 5.4.3.1. Dashboard del administrador ganadero.*
+
+![Inventario del hato](assets/images/application-screens/herd-inventory.png)
+
+*Figura 5.4.3.2. Inventario y consulta de animales.*
+
+![Vista de alertas](assets/images/application-screens/alerts-admin.png)
+
+*Figura 5.4.3.3. Alertas y registro de respuesta.*
+
+![Vista de planificación sanitaria](assets/images/application-screens/planning-admin.png)
+
+*Figura 5.4.3.4. Campañas y calendario sanitario.*
+
+![Vista de reportes](assets/images/application-screens/reports-admin.png)
+
+*Figura 5.4.3.5. Indicadores y exportación de reportes.*
+
+![Vista de historial clínico para veterinario](assets/images/application-screens/clinical-vet.png)
+
+*Figura 5.4.3.6. Historial clínico desde el rol veterinario.*
 
 ### 5.4.4. Applications User Flow Diagrams
 
-Los User Flows desarrollan las cuatro metas de 5.4.2 usando las pantallas de los mockups como pasos. Cada diagrama distingue la ruta esperada de las alternativas, las decisiones y condiciones de acceso, y la respuesta visible ante errores de validación o ausencia de resultados; incluye la meta y una explicación breve.
+Cada User Flow corresponde a una meta de 5.4.2 y muestra el recorrido principal, las decisiones, las rutas alternativas y el retorno a la tarea cuando procede. Los identificadores remiten a las historias de usuario de 3.1; los flujos describen el comportamiento previsto, no sustituyen las restricciones declaradas del prototipo en 5.5.
 
-![User flows web con rutas esperadas y alternativas](assets/images/webapp-user-flows.png)
+![User flow para revisar y atender una alerta](assets/diagram-sources/chapter-v/user-flow-alert-response.svg)
 
-*Figura 5.4.4. User Flows de la Web Application ICHU con decisiones, validaciones y controles de acceso para las metas priorizadas. Elaboración propia.*
+*Figura 5.4.4.1. User Flow de revisión y atención de alertas (US-13, US-16 y US-19).*
+
+![User flow para programar una campaña sanitaria](assets/diagram-sources/chapter-v/user-flow-health-campaign.svg)
+
+*Figura 5.4.4.2. User Flow de consulta animal y programación de campañas (US-07, US-26 y US-27).*
+
+![User flow para revisar indicadores y exportar](assets/diagram-sources/chapter-v/user-flow-herd-report.svg)
+
+*Figura 5.4.4.3. User Flow de indicadores y exportación de reportes (US-29 y US-31).*
+
+![User flow de acceso veterinario y registro clínico](assets/diagram-sources/chapter-v/user-flow-veterinary-care.svg)
+
+*Figura 5.4.4.4. User Flow de autorización, preparación de atención e intervención clínica (US-04, US-14, US-23, US-24 y US-39).*
+
+Si ya existe una autorización o una solicitud pendiente, la Web Application conserva ese estado y evita crear una solicitud duplicada (US-39).
 
 ## 5.5. Applications Prototyping
+
+El prototipo navegable de la Web Application se implementa en [WebFrontend-SmartFarm](https://github.com/SmartFarm-8733/WebFrontend-SmartFarm), con Angular y componentes independientes para identidad, hato, monitoreo, planificación, analítica y suscripciones. Permite recorrer las vistas de 5.4, cambiar idioma, rol y unidad de trabajo, y observar estados de validación y confirmación en formularios.
+
+| Interacción del prototipo | Resultado visible |
+|---|---|
+| Abrir el espacio de trabajo y elegir el rol ganadero o veterinario. | La aplicación presenta las opciones y vistas disponibles para el rol y la unidad seleccionados. |
+| Consultar el hato, animales, alertas, planificación y reportes desde la navegación web. | Las vistas muestran registros de ejemplo; las búsquedas, filtros y acciones mantienen el contexto durante la sesión. |
+| Registrar una respuesta de alerta o un evento clínico. | La validación señala campos requeridos; al guardar, la lista y el estado se actualizan en memoria. |
+| Cambiar idioma entre inglés y español y ajustar el ancho de pantalla. | Las etiquetas se localizan y la disposición se adapta a escritorio y móvil web. |
+
+El prototipo usa datos ficticios en memoria. No implementa autenticación real, API, pagos, notificaciones externas, sincronización ni control de dispositivos IoT; recargar la página restablece los registros de ejemplo. La solicitud de acceso veterinario prevista en US-39 se representa en los wireflows, pero su creación desde el perfil veterinario aún no está implementada en el prototipo. Las comprobaciones locales de tipos, compilación de producción y 41 pruebas automatizadas del frontend finalizaron correctamente.
 
 ## 5.6. IoT Device Design
 
