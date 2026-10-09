@@ -43,5 +43,6 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 0.12.7 | 2026-10-06 | Avalos Cordova, Diego Andres | Reubicación de Student Outcome antes del Capítulo I, corrección de las anclas del índice y de etiquetas HTML en los perfiles de integrantes. |
 | 0.13.0 | 2026-10-06 | Avalos Cordova, Diego Andres | Incorporación de la estructura del Capítulo VI y espacios de TB1 en Student Outcome, colaboración, conclusiones, videos de exposiciones y anexos, sin modificar el Capítulo V. |
 | 0.13.1 | 2026-10-06 | Avalos Cordova, Diego Andres | Incorporación de la estructura vacía del Capítulo V, actualización de sus enlaces en el índice y numeración consecutiva de los apartados de diseño de aplicaciones. |
+| 0.14.0 | 2026-10-08 | Contreras Leon, Flor de María | Desarrollo de la sección 5.6 con diseños conceptuales, decisiones de montaje y alimentación, flujo de datos hacia Edge, leyenda cromática de cableado, estado de validación, imágenes Gemini y capturas Cirkit versionadas. |
 
 <div style="break-after: page; page-break-after: always;"></div>

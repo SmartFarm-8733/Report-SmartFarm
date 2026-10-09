@@ -29,11 +29,11 @@ La identidad y el significado de los estados se mantienen entre pantallas; la co
 | **Web responsiva** | Navegación y paneles se reorganizan al reducirse el ancho (1080, 720 y 560 px en el mockup); en móvil, una columna y desplazamiento independiente para tablas. |
 | **Aplicación móvil** | Priorizar tarea y acción, tarjetas de una columna y controles táctiles amplios. Los wireframes nativos se documentarán en 5.4; la web responsiva no los sustituye. |
 | **IoT digital** | Mostrar lectura, unidad, hora y vigencia; distinguir estados en línea, sin señal, almacenado y sincronizado, junto con batería y conectividad. |
-| **IoT físico** | Indicadores inequívocos y coherentes con la app. La función de luces, botones y sonidos se definirá con el diseño físico en 5.6. |
+| **IoT físico** | Indicadores inequívocos y coherentes con la app. La función de luces, botones y sonidos se especifica junto con el diseño físico en 5.6. |
 
-El mockup recibido evidencia la web y su adaptación, pero aún no las vistas nativas ni la interfaz física del collar y del controlador del abrevadero. Las capturas web y los diseños nativos se incorporarán en 5.3 y 5.4; el dispositivo se completará en 5.6.
+El mockup recibido evidencia la web y su adaptación, pero no las vistas nativas de la aplicación. El diseño conceptual del collar, el receptor de alertas y el controlador del abrevadero se documenta en 5.6; las vistas nativas se incorporarán en 5.4.
 
-> **Figura por añadir en 5.1.2:** una lámina comparativa con la web en escritorio y móvil, la app nativa y la interfaz física IoT (collar y controlador, según se defina en 5.6).
+> **Figura por añadir en 5.1.2:** una lámina comparativa con la web en escritorio y móvil, la app nativa y la interfaz física IoT (collar, receptor de alertas y controlador del abrevadero, descritos en 5.6).
 
 ## 5.2. Information Architecture
 
@@ -224,3 +224,120 @@ Los User Flows desarrollan las cuatro metas de 5.4.2 usando las pantallas de los
 ## 5.5. Applications Prototyping
 
 ## 5.6. IoT Device Design
+
+ICHU contempla tres elementos físicos relacionados: un collar de monitoreo para el animal, un receptor local que presenta alertas y un controlador IoT que calienta el agua del abrevadero. La separación permite ubicar la telemetría junto al animal, mostrar avisos al personal y controlar el calentamiento desde el bebedero. Los diseños de esta sección son propuestas de hardware y diagramas conceptuales; no acreditan la fabricación, la validación eléctrica ni una simulación ejecutada.
+
+### 5.6.1. System Overview
+
+El collar adquiere temperatura, movimiento y ubicación; el receptor convierte los avisos recibidos en señales visuales y sonoras. Por separado, el controlador del abrevadero mide la temperatura del agua y acciona una resistencia calefactora mediante un relé cuando corresponde. El controlador calienta el agua y no incluye una etapa de enfriamiento.
+
+| Dispositivo | Función | Elementos representados |
+|---|---|---|
+| Collar IoT | Capturar lecturas y ubicación del animal. | ESP32-S3 DevKit, sonda DS18B20, sensor de movimiento MPU-6050, GPS NEO-6M, batería Li-ion de 3,7 V y módulo de carga/protección. |
+| Receptor de alertas | Presentar el estado recibido del collar en el punto de atención. | ESP32 DevKitC, LCD I2C de 16 × 2, conversor de nivel lógico, tres LEDs con resistencias y buzzer activo KY-012. |
+| Controlador del abrevadero | Medir la temperatura del agua y controlar su calentamiento. | ESP32 DevKitC, sonda impermeable DS18B20, módulo relé, resistencia calefactora y fuente de alimentación del calentador. |
+
+La vista general reúne los tres circuitos en el lienzo de Cirkit Designer. Los bloques no comparten conexiones eléctricas entre sí: el envío de datos del collar al receptor es inalámbrico y se representa como relación funcional, no como un cable. La comunicación del controlador del agua con la aplicación tampoco está implementada en estos esquemas.
+
+![Vista general de los circuitos propuestos para el collar, el controlador del abrevadero y el receptor de alertas](assets/images/iot/system-circuit-overview.png)
+
+*Figura 5.6.1. Vista general de los tres subsistemas IoT en Cirkit Designer. Elaboración propia a partir del proyecto del equipo.*
+
+### 5.6.2. Collar IoT
+
+El collar se ajusta al cuello con una correa ergonómica y un cierre de seguridad. La carcasa electrónica se divide en tapas superior e inferior; esta última protege la electrónica y dispone de una superficie de contacto para la medición térmica. La antena GPS queda orientada hacia el cielo y el botón lateral se reserva para encendido o emparejamiento, con un LED indicador. La ilustración es un concepto de forma y ubicación de componentes, no un plano dimensional de fabricación.
+
+![Concepto físico del collar ICHU y vista explotada de sus componentes](assets/images/iot/collar-physical-concept.jpg)
+
+*Figura 5.6.2. Concepto físico del collar IoT ICHU. Ilustración generada con Gemini a partir de los componentes propuestos.*
+
+En el diagrama eléctrico, el ESP32-S3 DevKit concentra las lecturas. La sonda DS18B20 se usa para medir temperatura; su línea de datos se representa con una resistencia pull-up de 4,7 kΩ. El MPU-6050 aporta aceleración y giroscopio como indicadores de movimiento, y el NEO-6M aporta coordenadas GPS. Una batería Li-ion de 3,7 V y el módulo de carga/protección alimentan el conjunto. La ubicación final de la sonda y su método de contacto deberán revisarse en el prototipo para evitar lecturas afectadas por el montaje o el pelaje.
+
+![Diagrama del circuito del collar IoT](assets/images/iot/collar-circuit.png)
+
+*Figura 5.6.3. Circuito conceptual del collar en Cirkit Designer, con temperatura, movimiento, GPS y alimentación.*
+
+### 5.6.3. Alert Receiver and Indicators
+
+El receptor es un módulo separado del collar. Recibe los avisos por un enlace inalámbrico pendiente de definir y muestra el estado en una pantalla LCD I2C de 16 × 2. Los indicadores visuales se asignan a los estados **Normal** (verde), **Atención** (amarillo) y **Urgencia** (rojo); el buzzer KY-012 complementa la alerta sonora. Los colores se acompañan con texto en la interfaz para no depender solo de la percepción del color.
+
+En el esquema se asignan SDA y SCL de la pantalla a GPIO21 y GPIO22 del ESP32, a través de un conversor de nivel lógico para la interfaz I2C. Los LEDs verde, amarillo y rojo se conectan a GPIO25, GPIO26 y GPIO27, respectivamente, cada uno en serie con una resistencia de 220 Ω y retorno a tierra común. Para el módulo KY-012 se asignan PWM a GPIO14, VIN a 5 V y GND a tierra común.
+
+![Concepto físico del panel local de alertas con LCD, LEDs y buzzer](assets/images/iot/alert-panel-physical-concept.jpg)
+
+*Figura 5.6.4. Concepto físico del receptor de alertas. Ilustración generada con Gemini; sus vistas de conexiones son referenciales y la asignación de pines se documenta según el esquema Cirkit y el texto de esta sección.*
+
+![Diagrama del circuito del receptor de alertas, LCD, LEDs y buzzer](assets/images/iot/alert-receiver-circuit.png)
+
+*Figura 5.6.5. Circuito conceptual del receptor de alertas en Cirkit Designer.*
+
+### 5.6.4. Water Heating Controller
+
+El controlador del abrevadero mide el agua con una sonda DS18B20 impermeable ubicada dentro del recipiente. El ESP32 DevKitC evalúa la lectura respecto de una temperatura objetivo configurable y activa el módulo relé para alimentar la resistencia calefactora. El comportamiento propuesto es de calentamiento únicamente; no se añade un actuador de enfriamiento ni se fija un umbral clínico o de operación en esta etapa.
+
+El circuito representa por separado el sensor, la lógica de control, el relé y la alimentación del calentador. La selección final de fuente, relé, cableado y resistencia debe corresponder a la potencia de la carga y a la instalación prevista; los valores eléctricos no se especifican en el esquema conceptual.
+
+![Concepto físico del controlador IoT instalado en el bebedero](assets/images/iot/water-controller-physical-concept.jpg)
+
+*Figura 5.6.6. Propuesta de instalación del sensor, la resistencia calefactora y la caja de control. Ilustración generada con Gemini.*
+
+![Diagrama del circuito del controlador de calentamiento de agua](assets/images/iot/water-heater-circuit.png)
+
+*Figura 5.6.7. Circuito conceptual del controlador de calentamiento del abrevadero en Cirkit Designer.*
+
+### 5.6.5. Design Decisions and Edge Data Flow
+
+Las ubicaciones y alimentaciones siguientes son decisiones de diseño propuestas. Los rieles regulados deben dimensionarse para los módulos finalmente comprados; la ilustración no sustituye las hojas de datos ni la validación eléctrica.
+
+#### Wiring Color Convention
+
+Para leer los diagramas con rapidez, se propone una convención cromática común para todos los circuitos ICHU. Es una leyenda gráfica del proyecto, no un código universal para instalaciones eléctricas. Los colores deben acompañarse con el nombre de la señal o el pin; el color por sí solo no identifica voltaje, sentido de datos ni conexión.
+
+| Color de línea propuesto | Red o función | Etiquetas que deben acompañarla |
+|---|---|---|
+| Rojo `#D64545` | Positivo de alimentación DC. | `+3V3`, `+5V` o `VIN`, según el riel; no mezclar niveles sin indicarlos. |
+| Negro `#2D3436` | Tierra común de baja tensión. | `GND`; indicar la unión común de ESP32, sensores y periféricos. |
+| Verde `#27AE60` | Datos I2C. | `SDA`, por ejemplo entre LCD/MPU-6050 y ESP32. |
+| Azul `#2F80ED` | Reloj I2C. | `SCL`, por ejemplo entre LCD/MPU-6050 y ESP32. |
+| Amarillo `#E3B341` | Bus de datos OneWire del DS18B20. | `DQ` o `DATA`; señalar la resistencia pull-up de 4,7 kΩ en el esquema del collar. |
+| Celeste `#35A7C8` | UART del GPS. | `TX` y `RX` en cada extremo, indicando su dirección. |
+| Naranja `#F28C28` | Señales digitales de control del ESP32. | GPIO correspondiente, como `GPIO14 / PWM` para KY-012 o `GPIOxx / IN` para la entrada lógica del relé. |
+| Morado `#8E63B0` | Rama de potencia conmutada hacia el calefactor, separada del control lógico. | `SALIDA RELÉ` y la tensión/corriente de carga una vez dimensionadas. No asignar este color a un valor eléctrico no definido. |
+| Gris discontinuo `#68737D` | Enlace de comunicación inalámbrica; no es un conductor físico. | `BLE → Edge Gateway` o `Wi-Fi → API`, según el trayecto. |
+
+El calefactor debe permanecer visualmente separado del circuito lógico del ESP32: la línea morada representa de forma conceptual la carga que conmuta el relé, no una recomendación de color para cableado de red eléctrica. La selección real de conductores y protecciones queda sujeta al voltaje, la corriente, el equipo adquirido y las reglas de instalación aplicables.
+
+Las capturas Cirkit ya guardadas muestran colores asignados por la herramienta y aún no siguen esta leyenda de manera uniforme. Por tanto, la tabla define el estándar que se aplicará al recolorear y exportar los diagramas finales; no se debe inferir de esas capturas que, por ejemplo, un cable azul actual sea `SCL` o uno negro sea `GND` sin revisar sus pines.
+
+| Componente | Qué mide o hace | Ubicación de montaje propuesta | Alimentación y transporte de datos |
+|---|---|---|---|
+| DS18B20 del collar | Registra temperatura superficial en el punto de contacto; no mide por sí solo temperatura corporal interna. | Fijado en la cara interna inferior de la carcasa, con la superficie sensible en contacto estable con el animal y protegida del agua. | Línea de datos al ESP32-S3 con resistencia pull-up de 4,7 kΩ, según el circuito. Riel regulado del conjunto Li-ion; nivel exacto por confirmar con el módulo. |
+| MPU-6050 | Aporta aceleración y velocidad angular para estimar movimiento y actividad. | Fijado a la placa dentro de la carcasa, evitando que se mueva respecto del collar. | Bus I2C y riel regulado de baja tensión del ESP32-S3; sus lecturas forman el índice de actividad enviado en la telemetría. |
+| GPS NEO-6M | Obtiene latitud y longitud cuando existe recepción satelital. | Dentro de la carcasa, con su antena orientada hacia el cielo y sin cubrirla con metal. | Riel regulado compatible con la placa del módulo; sus coordenadas se incorporan al paquete de telemetría. |
+| ESP32-S3 y batería del collar | Lee sensores, marca los registros y administra el enlace. El nivel de batería del contrato requiere una medición de tensión aún no dibujada. | Placa y batería en la carcasa superior sellada, sujetas para resistir vibración. | Batería Li-ion de 3,7 V con módulo de carga/protección y regulación para cada componente; Wi-Fi o BLE integrado según la cobertura y la arquitectura de 4.1.3.3. |
+| DS18B20 del abrevadero | Mide la temperatura del agua. | Sonda impermeable sumergida y asegurada; separada de la resistencia calefactora para medir el agua y no el elemento caliente. | Conectado al ESP32 DevKitC; alimentación desde su riel de baja tensión y pull-up conforme al circuito definitivo. |
+| ESP32 DevKitC, relé y resistencia calefactora | El ESP32 compara la lectura con el objetivo configurable; el relé conmuta la resistencia y el controlador solo calienta. | ESP32 y relé dentro de una caja cerrada, fuera de la zona de salpicaduras; sonda y calefactor en el bebedero. | Alimentación lógica regulada y alimentación de potencia dimensionada para el calefactor, separadas a través del relé. La fuente y los valores se deben seleccionar para la carga real. Las lecturas tienen como destino la API central según TS-14; el canal físico y el paso por Edge están por definir. |
+| ESP32 DevKitC del receptor, LCD, LEDs y KY-012 | Presenta los estados Normal, Atención y Urgencia en pantalla y luces, y emite sonido en una urgencia. | Caja del panel en un lugar seco y visible para el operario; LEDs y pantalla en el frente, salida acústica del buzzer despejada. | Se propone una fuente regulada de 5 V para la placa y periféricos; las señales del ESP32 operan a 3,3 V, con el conversor I2C del esquema para la pantalla. Se propone obtener alertas desde Edge por Wi-Fi en la red local; endpoint y contrato por definir, enlace aún no probado. |
+
+Para el collar, el flujo diseñado es: **sensores → ESP32-S3 → Edge Gateway** por Bluetooth Low Energy cuando el pastoreo no tiene cobertura; el ESP32 conserva registros pendientes si no logra entregar el lote y los libera tras la confirmación de Edge. Cuando el collar dispone de Wi-Fi e Internet, la arquitectura del capítulo IV permite transmitir directamente al backend. El Edge Gateway almacena las lecturas en SQLite y evalúa las reglas críticas con la configuración local; al recuperar Internet sincroniza lotes con la API central por `POST /api/v1/telemetry/batch` (TS-03 a TS-06).
+
+Cada registro del collar incluye `deviceId`, `temperature`, `activityIndex`, `latitude`, `longitude`, `batteryLevel` y `recordedAt` (TS-01). Una lectura inválida debe conservar el indicador de error del sensor en vez de presentarse como una medición normal. Las alertas locales de Edge se entregan a la aplicación móvil por la red local, de acuerdo con 4.1.3.3.
+
+El controlador de agua tiene un contrato separado en TS-14: publica `waterTemperature`, `actuatorState` y `recordedAt` en `/api/v1/water-controllers/{controllerId}/readings`. La arquitectura actual no especifica que esas lecturas pasen por Edge; por ello, no se representa ese tránsito como una conexión existente. Para el panel LCD/LED se propone una consulta o entrega de alertas del Edge Gateway por Wi-Fi sobre la red local; la interfaz y su contrato siguen pendientes y el circuito no dibuja el transporte de radio. La lámina de Gemini que muestra una transmisión directa collar–receptor se considera ilustrativa; el flujo del sistema mantiene al Edge Gateway como punto local de recepción y evaluación.
+
+El campo `batteryLevel` de la telemetría del collar también requiere una decisión de medición —por ejemplo, entrada ADC con acondicionamiento adecuado o una salida de monitor de batería del módulo de alimentación—, porque no aparece un circuito de medición en la captura Cirkit. Se conserva en el contrato de datos, pero su captura física queda como trabajo propuesto.
+
+En el alcance definido hoy, **solo el trayecto del collar al Edge está establecido**: BLE al Portable Edge Gateway sin cobertura y Wi-Fi directo al backend cuando hay Internet. La integración propuesta del panel con Edge por Wi-Fi local y el eventual paso de lecturas del abrevadero por Edge necesitan cerrar contrato y requisitos antes de presentarse como conexiones implementadas.
+
+### 5.6.6. Proposal and Verification Status
+
+| Elemento | Estado | Evidencia disponible |
+|---|---|---|
+| Forma del collar, carcasa, ubicación de componentes y correa | Propuesta conceptual; no fabricada ni probada en un animal. | Lámina conceptual generada con Gemini, Figura 5.6.2. |
+| Montaje del calentador, caja del controlador y posición de sonda | Propuesta conceptual; no hay instalación física. | Lámina de instalación generada con Gemini, Figura 5.6.6. |
+| Carcasa y disposición del panel de alertas | Propuesta conceptual; no se probó con usuarios ni se integró con Edge. | Lámina generada con Gemini, Figura 5.6.4. Sus pines ilustrados no son referencia eléctrica. |
+| Circuitos del collar, calentador y receptor | Diagramas guardados y revisados visualmente en Cirkit Designer; no se ejecutó la simulación ni se validó el cableado con hardware. | Figuras 5.6.1, 5.6.3, 5.6.5 y 5.6.7, más proyecto editable. |
+| Flujo BLE/Wi-Fi hacia Edge y sincronización con la nube | Decisión arquitectónica descrita en los capítulos III y IV; no se implementó ni probó con estos dispositivos. | Technical Stories TS-01–TS-06 y arquitectura de 4.1.3.3. |
+| Lecturas del controlador del agua y presentación de alertas | Contratos y comportamiento propuestos; no se enviaron lecturas reales ni se verificó una alerta de extremo a extremo. | TS-14 y diagramas conceptuales de esta sección. |
+
+El https://app.cirkitdesigner.com/project/a07ab13c-8ded-4672-a786-deecb40e13c2 conserva el lienzo completo. Antes de considerar un prototipo validado, se deben confirmar los componentes y valores contra el presupuesto, sustituir las etiquetas de texto vacías, definir la interfaz Edge–panel, y comprobar alimentación, corriente, aislamiento, protección frente a agua y funcionamiento de la resistencia calefactora.
