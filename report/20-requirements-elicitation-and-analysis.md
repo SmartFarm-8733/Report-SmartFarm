@@ -613,5 +613,21 @@ Para asegurar una comunicación técnica e interdisciplinaria coherente en la do
 * **Herd (Hato):** Designa el grupo, manada o conjunto total de ganado bovino administrado dentro de una unidad productiva ganadera específica (*Ranch*).
 * **Smart Collar (Collar Inteligente):** Denominación única y estandarizada para el dispositivo físico de telemetría IoT colocado en el cuello del animal. Se elimina el uso alternado de términos como *"Cattle Band"* o *"Collar GPS"* para evitar ambigüedades en el código y los diagramas de arquitectura.
 
-A continuación, se organiza el glosario del dominio distribuido por los *Bounded Contexts* clave que conforman el ecosistema **ICHU**. Todos los términos corresponden estrictamente a conceptos del negocio ganadero y omiten jerga técnica de ingeniería de software.
+A continuación, se organiza el glosario del dominio distribuido por los *Bounded Contexts* clave que conforman el ecosistema **ICHU**. Todos los términos corresponden estrictamente a conceptos del negocio ganadero y omiten jerga técnica de ingeniería de software.  
+
+### 2.5.1\. Términos Transversales del Dominio (Cross-Domain Terms)
+
+| Término (Inglés)          | Equivalente en Español    | Definición y Regla del Dominio                                                                                                                                        |
+| ------------------------- | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Cattle**                | Ganado bovino             | Población de bovinos (vacas, toros, terneros) gestionados por la unidad productiva. Es la entidad central objeto de monitoreo biométrico y localización.              |
+| **Livestock**             | Ganado en sentido general | Término global para referirse a la actividad ganadera, el sector pecuario o la producción animal en general.                                                          |
+| **Herd**                  | Hato                      | Conjunto específico de ganado bovino que pertenece a una estancia o unidad productiva; constituye la unidad principal de gestión del ganadero.                        |
+| **Smart Collar**          | Collar inteligente        | Dispositivo físico IoT estandarizado que se instala en el cuello del bovino para capturar constantes biométricas (temperatura, rumia) y geolocalización.              |
+| **Ear Tag**               | Arete                     | Identificador visual físico o arete numérico colocado en la oreja del bovino para su identificación individual en el corral.                                          |
+| **Cattle Rustling**       | Abigeato                  | Delito de hurto o robo de ganado bovino; principal riesgo patrimonial en zonas de pastoreo extensivo.                                                                 |
+| **Silent Heat**           | Celo silencioso           | Evento reproductivo en el que la vaca no muestra signos externos visibles de celo, pero presenta variaciones térmicas y de actividad física detectables por sensores. |
+| **Days Open**             | Días abiertos             | Intervalo de tiempo transcurrido entre el parto de la vaca y su posterior concepción confirmada; indicador clave de eficiencia reproductiva del hato.                 |
+| **Bloat**                 | Timpanismo                | Trastorno digestivo grave causado por la acumulación anormal de gases en el rumen, con evolución rápida que requiere intervención médica urgente.                     |
+| **High Mountain Disease** | Mal de altura             | Alteración fisiológica en terneros criados en zonas andinas de altitud elevada; se manifiesta inicialmente mediante un letargo y marcada reducción de la actividad.   |
+| **Livestock Calendar**    | Calendario ganadero       | Programación sanitaria regional que establece las fechas óptimas para faenas de vacunación, desparasitación y vitaminación del hato.                                  |
 
