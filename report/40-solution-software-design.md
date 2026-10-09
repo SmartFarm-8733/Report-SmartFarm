@@ -437,14 +437,16 @@ El Container Diagram descompone la solución en sus unidades de despliegue indep
 | Landing Page | HTML5, CSS3 y JavaScript | Sitio público con la propuesta de valor, los planes y el canal de contacto |
 | Web Application | Angular con TypeScript | Gestión del ganado, dispositivos, planificación, analítica y suscripciones |
 | Mobile Application | Flutter con Dart | Monitoreo, alertas y operación de campo, con funcionamiento sin cobertura |
-| Cattle Band Embedded Application | C++ sobre ESP32 | Captura de temperatura, movimiento y posición, con transmisión por Wi-Fi o BLE |
+| Cattle Band Embedded Application | C++ sobre ESP32 | Captura de temperatura, movimiento y posición, con transmisión BLE al Portable Edge Gateway |
 | Water Controller Embedded Application | C++ sobre ESP32 | Medición de la temperatura del agua y accionamiento del calentador |
 | Portable Edge Gateway | Flask con Peewee ORM sobre Python | Recepción por BLE, almacenamiento local, evaluación de reglas críticas y sincronización |
 | Edge Database | SQLite | Telemetría sin conexión, estado de alertas, umbrales y geocercas en caché |
 | ICHU Modular Monolith | ASP.NET Core Web API | Backend en la nube con los siete contextos como módulos internos |
 | ICHU Cloud Database | PostgreSQL | Persistencia relacional con un esquema por contexto acotado |
 
-Las aplicaciones cliente consumen el RESTful API sobre HTTPS con JSON. El collar transmite directamente al backend cuando hay Wi-Fi e Internet, y por Bluetooth Low Energy al Edge Gateway durante el pastoreo sin cobertura. El Edge Gateway entrega alertas locales a la aplicación móvil por red local, sin depender de Internet. El backend accede a PostgreSQL mediante Entity Framework Core con el proveedor Npgsql.
+Las aplicaciones cliente consumen el RESTful API sobre HTTPS con JSON. El Cattle Band transmite por BLE al Portable Edge Gateway, que persiste y evalúa localmente las lecturas y sincroniza con la API central cuando dispone de salida a Internet. Este flujo se mantiene también cuando hay cobertura: el collar no invoca directamente el Cloud. La disponibilidad de Wi-Fi no demuestra acceso a Internet. La Mobile Application consulta y atiende alertas del Edge por la red local (TS-16), y consulta lecturas locales mediante TS-17. El backend accede a PostgreSQL mediante Entity Framework Core con el proveedor Npgsql.
+
+La revisión de requisitos del 8 de octubre de 2026 actualiza estos contratos en el Capítulo III. Los diagramas C4, sus fuentes y los flujos gráficos de AV1 deben revisarse y regenerarse para representar el Edge como intermediario obligatorio, los contratos Web y Mobile y el inicio de contratación; las imágenes existentes no constituyen evidencia de implementación de las historias corregidas.
 
 ![Container Diagram de ICHU](assets/images/diagrams/c4/c4-container.png)
 
