@@ -277,6 +277,21 @@ Los resúmenes siguientes registran actividades, problemas, dispositivos y neces
 > **Resumen:**
 > Esta entrevista explora las necesidades operativas y tecnológicas de Dionisio Rodríguez, zootecnista chileno con trabajo de campo en Perú, para guiar el desarrollo de la plataforma ganadera ICHU de SmartFarm. Rodríguez explica que pasa la mayor parte de su jornada en el terreno registrando datos y fotos en su teléfono inteligente, reservando la computadora de oficina para la elaboración de informes. Para la detección temprana de enfermedades metabólicas o infecciosas y la identificación de celos silenciosos, fundamenta su diagnóstico en el seguimiento continuo de la temperatura corporal, la inactividad, la disminución de la rumia y los cambios de conducta, recurriendo a exámenes de laboratorio solo en casos complejos. En cuanto al diseño de la plataforma, solicita alertas automáticas ante fiebres o partos, reportes exportables a Excel o PDF, e integración directa con equipos de campo como ecógrafos portátiles y software de nutrición para evitar la duplicidad en el registro de información.
 
+**Trazabilidad de los dispositivos y herramientas hacia las User Personas**
+
+La siguiente relación distingue lo documentado en cada resumen de los atributos que todavía no pueden asignarse al arquetipo del segmento.
+
+| Participante | Dispositivos y herramientas documentados en su resumen | Alcance para la construcción del arquetipo |
+|---|---|---|
+| Próspero Contreras | Smartphone en campo, laptop en oficina, Excel y cuadernos. | Respalda el trabajo entre campo y oficina; no establece el sistema operativo ni el navegador principal. |
+| Meikoll Morell | Laptop y smartphone para fichas en Excel. | Coincide con Próspero en esos dispositivos; la falta de hábito de registro y el caso del microchip se conservan como evidencia individual. |
+| Grober Barrientos | Excel en computadora y conectividad intermitente en pastoreo. | No se identifica el tipo de computadora ni se documenta el uso de cuatro dispositivos. |
+| Darwin Carbajal | Trabajo de campo y de escritorio; solicitud de adjuntar evidencia ecográfica para registros de gestación ante ASCRIGAR Perú. | El resumen no precisa dispositivos o sistema operativo. ASCRIGAR corresponde a este caso y finalidad, no a una influencia de compra común del segmento. |
+| Eliseo Ramírez | Registros en computadora e informes impresos; solicitud de consultar imágenes ecográficas desde el celular. | Se distingue la práctica actual de la función deseada; no se atribuye una plataforma móvil ya utilizada para esa integración. |
+| Dionisio Rodríguez | Smartphone para datos y fotos en campo, computadora de oficina para informes. | Documenta esos dispositivos, pero no un sistema operativo, navegador o canal social preferido. |
+
+Los resultados agregados de los cuestionarios se presentan en 2.2.3 y no se asignan a un entrevistado específico sin identificación de su respuesta. En el cuestionario del Segmento 2, las tres respuestas sobre el dispositivo principal se reparten entre smartphone, laptop y papel; esto no equivale a que cada participante utilice los cuatro dispositivos dibujados en la ficha. Faltan respuestas comparables sobre sistemas operativos, navegadores principales, marcas e influencias de compra y canales preferidos. Estos campos requieren validación antes de presentarse como características habituales del segmento.
+
 ### 2.2.3. Análisis de entrevistas.
 
 #### Análisis de entrevistas del Segmento 1: Medianos y Grandes Ganaderos
@@ -415,7 +430,7 @@ En esta sección se consolidan y sintetizan los hallazgos cualitativos y cuantit
 
 Para la construcción de los arquetipos de usuario, el equipo procesó la información recolectada en la fase de entrevistas y el análisis del mercado ganadero. Se identificaron dos patrones de comportamiento que representan a los dos segmentos objetivo definidos para el ecosistema de software ICHU.
 
-Del análisis de entrevistas se tomaron como insumo principal las herramientas de registro que utiliza cada segmento, el estado de la conectividad en sus zonas de trabajo, las pérdidas económicas declaradas, los dispositivos de preferencia y los parámetros que cada perfil necesita conocer del animal. Del análisis competitivo se incorporaron las expectativas de precio y de modalidad de contratación, junto con las funcionalidades que los competidores ya ofrecen y que condicionan lo que cada segmento espera encontrar.
+Del análisis de entrevistas se tomaron como insumo principal las herramientas de registro que utiliza cada participante, el estado de la conectividad en sus zonas de trabajo, las pérdidas económicas declaradas, los dispositivos mencionados y los parámetros que necesita conocer del animal. Los cuestionarios complementan esta información con resultados agregados de cada muestra, incluidas las preferencias de contratación cuando se preguntaron. El análisis competitivo aporta contexto sobre ofertas existentes, pero no demuestra por sí mismo las preferencias, marcas, dispositivos ni expectativas de los entrevistados.
 
 Las personas son arquetipos de segmento construidos a partir de tres entrevistas por segmento, no retratos de un participante concreto. Se consideran **patrones comunes** los temas que aparecen en varias entrevistas o que coinciden con el cuestionario; se mantienen como **evidencia individual** los sucesos y condiciones atribuidos a una sola persona; y se consideran **supuestos por validar** las preferencias que no aparecen directamente en las fuentes. Por ejemplo, los robos relatados por Próspero y la experiencia con microchip de Meikoll son casos individuales, mientras que el cuestionario respalda que ambos participantes consideran frecuente y costoso el abigeato. La composición de la muestra es pequeña y no permite afirmar que estos rasgos describan a todo el mercado.
 
@@ -425,9 +440,11 @@ Las personas son arquetipos de segmento construidos a partir de tres entrevistas
 
 Arquetipo del Segmento 1, construido a partir de los patrones identificados en las entrevistas a Próspero Contreras, Meikoll Morell y Grober Barrientos.
 
-![User Persona Cesar Flores, arquetipo del Segmento 1](assets/images/persona-segmento1-cesar-flores.jpg)
+![User Persona Cesar Flores, arquetipo del Segmento 1](assets/images/persona-segmento1-cesar-flores.png)
 
-[Ficha de User Persona y Empathy Map en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
+[Ficha de User Persona de Cesar Flores en UXPressia](https://uxpressia.com/w/v8FzI/p/JsGGF?tagId=AIZ5N)
+
+La ficha diferencia el uso de smartphone y laptop declarado por Próspero y Meikoll de la configuración de cuatro dispositivos que no está respaldada como patrón común. El rango de 51–200 cabezas y la preferencia por pago anual fijo corresponden a las dos respuestas del cuestionario del segmento, no a todos los predios entrevistados. Las edades, escalas de habilidades y otros detalles ilustrativos del arquetipo no son mediciones de esa muestra.
 
 **Segmento 2: Zootecnistas y Médicos Veterinarios.** Profesionales orientados al monitoreo biométrico continuo, al diagnóstico clínico temprano y a la revisión de historiales de salud consolidados.
 
@@ -435,11 +452,28 @@ Arquetipo del Segmento 1, construido a partir de los patrones identificados en l
 
 Arquetipo del Segmento 2, construido a partir de los patrones identificados en las entrevistas a Darwin Carbajal, Eliseo Ramírez y Dionisio Rodríguez.
 
-![User Persona Leonardo Rosales, arquetipo del Segmento 2](assets/images/persona-segmento2-leonardo-rosales.jpg)
+![User Persona Leonardo Rosales, arquetipo del Segmento 2](assets/images/persona-segmento2-leonardo-rosales.png)
 
-[Ficha de User Persona y Empathy Map en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
+[Ficha de User Persona de Leonardo Rosales en UXPressia](https://uxpressia.com/w/v8FzI/p/Mq5pD?tagId=AIZ5N)
+
+La ficha sintetiza las entrevistas a Darwin, Eliseo y Dionisio y explicita la variedad de herramientas registrada en las tres respuestas del cuestionario. ASCRIGAR Perú se mantiene como evidencia individual de Darwin para registros de gestación; no se generaliza como marca o influencia compartida. Los objetivos y motivaciones expresan resultados deseados, no efectos clínicos ya comprobados de ICHU.
 
 Ambas fichas fueron elaboradas en UXPressia y contemplan datos demográficos, biografía, personalidad, habilidades, objetivos, frustraciones, tecnología, marcas e influencias y canales. Los atributos sin respaldo en varias entrevistas o cuestionarios deben interpretarse como hipótesis de diseño pendientes de validación, no como rasgos confirmados del arquetipo.
+
+**Lectura de los campos pendientes de validación**
+
+Las fichas actualizadas todavía contienen algunos elementos visuales sin trazabilidad suficiente. Las etiquetas de validación y las siguientes precisiones delimitan su interpretación; no sustituyen la investigación faltante ni permiten dar por concluidas todas las correcciones de esos campos.
+
+| Campo de las fichas | Evidencia disponible y corrección de interpretación | Validación pendiente |
+|---|---|---|
+| Dispositivos y sistemas operativos | Próspero y Meikoll mencionan smartphone y laptop; Grober menciona computadora. En el Segmento 2, el cuestionario distribuye el dispositivo principal entre smartphone, laptop y papel. Los cuatro dispositivos y los logotipos de Android o Windows no constituyen una configuración común confirmada. | Identificar por participante los dispositivos realmente usados y su sistema operativo; retirar de futuras exportaciones los que no tengan respaldo. |
+| Navegadores | Las fichas señalan estos iconos como pendientes de validación. Los resúmenes no establecen una preferencia compartida por Chrome, Edge o Firefox. | Registrar el navegador principal de cada participante antes de seleccionar los iconos del arquetipo. |
+| Marcas e influencias de Cesar | Zoetis, MSD Animal Health, AGALEP y las ferias mostradas en la imagen no quedan sustentadas como preferencias comunes en los resúmenes disponibles. Tampoco se confirma de manera comparable la influencia de consultores en las decisiones de compra. | Preguntar qué marcas usa cada participante y quién o qué influye en sus decisiones; conservar solo los patrones respaldados e identificar las menciones individuales. |
+| Marcas e influencias de Leonardo | ASCRIGAR Perú está vinculada al caso de Darwin y a registros de gestación. Las consultas a colegas aparecen en las entrevistas; no prueban preferencias compartidas por marcas, universidades o plataformas académicas. | Diferenciar entidades relacionadas con un trámite de fuentes de influencia o preferencias de compra y contrastarlas entre participantes. |
+| Canales de ambos arquetipos | PC y laptop son dispositivos de acceso, no canales de comunicación por sí mismos. Los iconos de Facebook, WhatsApp o correo en las fichas no demuestran que esos sean los canales preferidos del segmento. El uso de un smartphone tampoco prueba una aplicación de mensajería concreta. | Documentar por qué medio se comunica o informa cada participante, con quién y para qué actividad; separar el canal del dispositivo utilizado. |
+| Demografía y habilidades | Los nombres de las personas son sintéticos y las edades y escalas de habilidades de las fichas son ilustrativas. Una localización o experiencia individual no representa automáticamente al segmento completo. | No utilizar esos valores como estadísticas del segmento; confirmar cualquier atributo que se vaya a tratar como patrón de la muestra. |
+
+Estos límites también se aplican a la lectura de los Empathy Maps de 2.3.4: ningún dato pendiente de las User Personas debe trasladarse al mapa como un hecho confirmado. La actualización de las dos fichas no implica una nueva exportación de los mapas de empatía.
 
 ### 2.3.2. User Task Matrix.
 
@@ -545,7 +579,7 @@ Los **Pains comunes documentados** son la fragmentación de registros y la conec
 
 Se empatiza con un arquetipo de zootecnista o médico veterinario que combina atención en campo con análisis y documentación clínica. Las entrevistas describen esta dinámica en Darwin, Eliseo y Dionisio, aunque las herramientas y tareas específicas varían entre ellos.
 
-Necesita examinar animales, registrar intervenciones, consultar antecedentes, interpretar cambios de temperatura, actividad o rumia y comunicar resultados al propietario. El cuestionario del segmento (3 respuestas) registra un uso repartido entre smartphone, laptop y papel; Dionisio menciona el teléfono en campo y la computadora para informes. Eliseo describe registros en computadora e impresión de informes. Las entrevistas respaldan consultas de colegas y el uso de equipos como ecógrafos en casos concretos, pero no documentan de manera común marcas, asociaciones, universidades ni canales de influencia; esos elementos deben confirmarse antes de incorporarlos como atributos del arquetipo.
+Necesita examinar animales, registrar intervenciones, consultar antecedentes, interpretar cambios de temperatura, actividad o rumia y comunicar resultados al propietario. El cuestionario del segmento (3 respuestas) registra un uso repartido entre smartphone, laptop y papel; Dionisio menciona el teléfono en campo y la computadora para informes. Eliseo describe registros en computadora e impresión de informes. Las entrevistas respaldan consultas de colegas y el uso de equipos como ecógrafos en casos concretos. Darwin menciona ASCRIGAR Perú para registros de gestación, lo que constituye evidencia individual de esa relación, no una influencia compartida por todos los profesionales. Las marcas, asociaciones, universidades y canales de influencia no quedan documentados de manera común; deben confirmarse antes de incorporarlos como atributos del arquetipo.
 
 Los participantes expresan preocupación por detectar tarde cambios clínicos, por la calidad de los registros y por duplicar tareas. Necesitan datos trazables para sustentar decisiones; la eficacia diagnóstica de alertas o monitoreo continuo aún requiere validación clínica.
 
