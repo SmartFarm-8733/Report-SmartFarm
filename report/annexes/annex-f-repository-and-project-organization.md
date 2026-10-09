@@ -18,12 +18,12 @@ https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/front-matter
 https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/front-matter/05-student-outcome.md
 
 **Informe completo**<br>
-Capítulos I-VI, secciones iniciales, Student Outcome, conclusiones, bibliografía y anexos. El Capítulo V contiene avances de guías de estilo y arquitectura de información; el Capítulo VI conserva la estructura para documentar la implementación, validación y despliegue.<br>
+Capítulos I-VI, secciones iniciales, Student Outcome, conclusiones, bibliografía y anexos. El Capítulo V reúne diseño UI/UX de la Landing Page y la Web Application; el Capítulo VI documenta la configuración, planificación y evidencias disponibles de implementación y despliegue. El alcance no incluye backend y la planificación de Jira se identifica como simulada.<br>
 https://github.com/SmartFarm-8733/Report-SmartFarm/tree/main/report
 
-**Estado integrado al 8 de octubre de 2026**<br>
-Versión de `develop` utilizada para esta actualización, con los avances del Capítulo V y las correcciones de Lean UX, entrevistas y Big Picture EventStorming.<br>
-https://github.com/SmartFarm-8733/Report-SmartFarm/tree/238af3763c30473c9f6610ff9cd0e2d304b98359/report
+**Base TB1 integrada en `develop` al 8 de octubre de 2026**<br>
+Versión utilizada para la rama de auditoría, con los Capítulos V y VI integrados, además de las correcciones de Lean UX, entrevistas, requisitos y Big Picture EventStorming.<br>
+https://github.com/SmartFarm-8733/Report-SmartFarm/tree/8eb4f5d30490ad24b5b6ba46adfe493101e328a9/report
 
 **Convenciones de contribución**<br>
 Flujo de ramas, commits, revisión y organización de archivos.<br>

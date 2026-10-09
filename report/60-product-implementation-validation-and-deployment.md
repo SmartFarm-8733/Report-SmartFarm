@@ -8,17 +8,18 @@ Este capítulo registra la configuración del software y las evidencias disponib
 
 La Landing Page de ICHU se desarrolla como un sitio estático con **HTML, CSS y JavaScript**, sin framework ni proceso de compilación. El código está organizado en páginas HTML, una hoja de estilos compartida (`css/styles.css`) y dos módulos JavaScript: `js/i18n.js`, para idioma, y `js/main.js`, para navegación e interacciones. Los recursos gráficos y de video se mantienen en carpetas propias.
 
-Para una revisión local, el README del repositorio permite abrir `index.html` directamente en un navegador o iniciar un servidor estático con `npx serve .` o `python -m http.server 8080`. El README también menciona una comprobación con jsdom para identificar IDs duplicados, recursos faltantes, anclas rotas y estilos inline; sin embargo, en la copia del proyecto revisada no se encontró el script ni un `package.json` que permita ejecutarla. Por tanto, esa comprobación queda pendiente de localizar o implementar y no se presenta como una prueba ejecutada.
+Para una revisión local, el README del repositorio permite abrir `index.html` directamente en un navegador o iniciar un servidor estático con `npx serve .` o `python -m http.server 8080`. El README también menciona una comprobación con jsdom para identificar IDs duplicados, recursos faltantes, anclas rotas y estilos inline; sin embargo, en la copia del proyecto revisada no se encontró el script ni un `package.json` que permita ejecutarla. Por tanto, esa comprobación no es reproducible con el material disponible y no se presenta como una prueba ejecutada.
 
-El frontend web de la plataforma es un segundo artefacto, desplegado en Vercel. Las capturas disponibles muestran su interfaz de inicio de sesión y un dashboard; no incluyen el código fuente ni sus archivos de configuración. Por ese motivo no se atribuyen a ese frontend un framework, versiones de runtime o comandos de compilación que no se puedan verificar desde los artefactos revisados.
+El frontend web de la plataforma es un segundo artefacto, desarrollado con Angular y TypeScript, con componentes de Angular Material. Su [repositorio de código](https://github.com/SmartFarm-8733/WebFrontend-SmartFarm) incluye el manifiesto de dependencias y los comandos del proyecto. En la revisión del manifiesto se observaron Angular y Angular Material 22.2.2, TypeScript 6.0.3 y Playwright 1.64.0; las versiones corresponden al estado del repositorio consultado y no implican que exista un backend conectado. Las capturas disponibles muestran la interfaz de inicio de sesión y un dashboard con datos de muestra.
 
 | Elemento | Configuración documentada |
 |---|---|
-| Lenguajes | HTML, CSS y JavaScript |
-| Framework o build | No se usan framework ni proceso de compilación |
-| Ejecución de la Landing Page | Navegador web; opcionalmente, servidor estático local |
-| Organización del código | Páginas HTML, `css/styles.css`, `js/i18n.js` y `js/main.js` |
-| Validación automatizada | El README menciona jsdom, pero no se encontró el script ni su configuración en la copia revisada; todavía no es reproducible |
+| Landing Page — lenguajes y ejecución | HTML, CSS y JavaScript; navegador web, con servidor estático opcional |
+| Landing Page — organización | Páginas HTML, `css/styles.css`, `js/i18n.js` y `js/main.js`; no utiliza framework ni proceso de compilación |
+| Web Application — tecnologías verificadas | Angular 22.2.2, TypeScript 6.0.3 y Angular Material 22.2.2, según el manifiesto del [repositorio](https://github.com/SmartFarm-8733/WebFrontend-SmartFarm) |
+| Web Application — comandos del manifiesto | `npm start`, `npm run build`, `npm run typecheck` y `npm run test:e2e`; este último ejecuta Playwright |
+| Backend | No implementado en el alcance documentado; la interfaz web presenta datos de ejemplo |
+| Landing Page — validación automatizada | El README menciona jsdom, pero no se encontró el script ni su configuración en la copia revisada; no es reproducible desde esa copia |
 
 Fuente: README del repositorio LandingPageSmartFarm, https://github.com/SmartFarm-8733/LandingPageSmartFarm
 
@@ -28,7 +29,7 @@ El código de la Landing Page y el informe se mantienen en repositorios Git sepa
 
 Para el repositorio del informe, la guía de contribución define `main` para entregas publicadas, `develop` para integración y ramas `feature/<alcance>` o `fix/<alcance>` para cambios de trabajo. Las contribuciones se integran mediante Pull Request con revisión de otro integrante, y los commits siguen Conventional Commits. El Capítulo VI se trabaja en la rama `feature/chapter-VI`, publicada en GitHub y aún no integrada en `main`.
 
-La captura del deployment de Vercel registra el frontend web en la rama `main`, en el commit `1d6994c`, integrado desde el Pull Request #10 de `feature/app-integration`. La evidencia no permite verificar desde este checkout la URL de su repositorio de código ni sus demás convenciones de ramas y commits.
+La captura del deployment de Vercel registra el frontend web en la rama `main`, en el commit `1d6994c`, integrado desde el Pull Request #10 de `feature/app-integration`. El código fuente se mantiene en el [repositorio WebFrontend-SmartFarm](https://github.com/SmartFarm-8733/WebFrontend-SmartFarm). Las convenciones de ramas y commits de ese repositorio no se infieren de las reglas de `Report-SmartFarm`.
 
 | Práctica | Convención del repositorio del informe |
 |---|---|
@@ -57,7 +58,7 @@ La Landing Page se publicó como sitio estático en un preview administrado desd
 
 URL completa del preview: https://smartfarm-ichu-preview.fpm.it.com/
 
-El frontend de la aplicación web se despliega por separado en Vercel; sus evidencias del entorno de producción y de la interfaz publicada se presentan en la sección 6.2.1.8.
+El frontend de la aplicación web se despliega por separado en Vercel, que distingue entornos locales, de preview y de producción [11]; sus evidencias del entorno de producción y de la interfaz publicada se presentan en la sección 6.2.1.8.
 
 La consola registra seis ejecuciones de despliegue. En la captura, la más reciente figura como lista, construida desde el commit `23c4793` de `main` el 9 de septiembre de 2026, con la receta `Static HTML` y una duración de cuatro segundos. La URL respondió con HTTP 200 durante la verificación de este informe el 8 de octubre de 2026.
 

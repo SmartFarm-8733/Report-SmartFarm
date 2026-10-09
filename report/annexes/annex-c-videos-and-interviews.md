@@ -12,5 +12,3 @@ Video editado de entrevistas y fragmentos referenciados por participante en el C
 
 Exposición inicial del informe.<br>
 [Ver evidencia AV1 en SharePoint](https://upcedupe-my.sharepoint.com/:f:/g/personal/u202323243_upc_edu_pe/IgCUSf6VBMS2RpDCw5IECY7KAeH3mMYiKRCK6R4jruEgR7M?e=E6tBZt)
-
-#### TB1

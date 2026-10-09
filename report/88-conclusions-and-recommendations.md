@@ -67,7 +67,17 @@ Por tanto, los criterios de éxito iniciales - uso frecuente de la aplicación, 
 
 #### Conclusiones
 
+En TB1, el diseño de la experiencia de ICHU pasó de las decisiones de estilo y arquitectura de información a representaciones concretas de la Landing Page y de la Web Application. El Capítulo V reúne wireframes, mockups, wireflows y user flows vinculados con las necesidades y las historias de usuario; el prototipo web y la Landing Page pueden explorarse en sus despliegues documentados en el Capítulo VI. Esta continuidad facilita revisar cómo la propuesta visual orienta las tareas principales de ganaderos y veterinarios.
+
+El Capítulo VI documenta la configuración disponible, las evidencias de interfaz y los despliegues de ambos productos web. La evidencia debe interpretarse dentro de su alcance: la Web Application usa datos ficticios en memoria y no cuenta con autenticación real, API ni persistencia; la Landing Page es estática y su formulario deriva la solicitud a WhatsApp. Las comprobaciones automatizadas reportadas para el frontend y las comprobaciones visuales de la Landing Page respaldan el estado observado, pero no equivalen a una validación de aceptación con usuarios ni demuestran el cumplimiento integral de cada requisito. La planificación de Jira se documenta como simulada y no como un Sprint ejecutado. Los diseños de dispositivos IoT de 5.6 son conceptuales, mientras que esta entrega presenta interfaces web y no una aplicación móvil nativa.
+
 #### Recomendaciones
+
+1. Validar las tareas principales de ganaderos y veterinarios con participantes de ambos segmentos. Registrar errores, tiempos, comprensión de alertas y dificultades de navegación, y relacionar los resultados con las hipótesis de producto.
+2. Ampliar las comprobaciones del frontend con recorridos reproducibles de extremo a extremo, revisión de accesibilidad por teclado y tecnología de asistencia, y pruebas de idioma y diseño adaptable. Separar los resultados de la Landing Page estática de los de la Web Application.
+3. Convertir la planificación simulada del Sprint 1 en un backlog de ejecución con fechas, responsables confirmados, criterios de aceptación y estados verificables. Documentar la revisión y los cambios de alcance a partir del trabajo efectivamente realizado.
+4. En incrementos posteriores, integrar gradualmente autenticación, persistencia y servicios reales con las interfaces, preservando la separación de responsabilidades y la operación de borde definida en la arquitectura. Registrar las decisiones y pruebas de integración antes de presentar capacidades como implementadas.
+5. Incorporar en los anexos las evidencias audiovisuales de TB1 cuando estén disponibles, junto con sus enlaces de acceso y la identificación de la entrega.
 
 ## Video About-the-Team
 
