@@ -215,10 +215,10 @@ Se redacta una declaración de hipótesis por cada Feature Assumption definido e
 
 **Hypothesis 2. Real-Time Alerts**
 
-**Creemos que lograremos** una reducción del 15% en la mortalidad del hato de las unidades productivas suscritas
+**Creemos que lograremos** una tasa de renovación anual de suscripciones superior al 92%, como hipótesis de negocio
 **si** los ganaderos propietarios y administradores
 **alcanzan** la capacidad de aislar y atender a un animal enfermo en menos de una hora desde la desviación de sus constantes
-**con** un motor de alertas automáticas que notifica por aplicación móvil y por mensaje de texto cuando los indicadores biométricos superan los umbrales definidos.
+**con** alertas evaluadas en el Portable Edge Gateway y consultables localmente en el móvil; al recuperar conectividad, el Edge sincroniza con la API central y el backend puede solicitar notificaciones externas. La reducción del 15% en mortalidad se conserva como hipótesis de beneficio del usuario por validar en un piloto, no como resultado empresarial demostrado.
 
 **Hypothesis 3. Analytics Dashboard**
 

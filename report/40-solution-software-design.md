@@ -158,7 +158,7 @@ Para visualizar cómo colaboran los contextos en los casos reales del negocio se
 | # | Actor | Actividad | Objeto de trabajo | Destinatario | Contexto |
 |---|---|---|---|---|---|
 | 1 | Visitante | compara | los planes y estima el costo de su hato | Landing Page | Subscription Plans |
-| 2 | Visitante | solicita | una demostración con su contexto productivo | Landing Page | Subscription Plans |
+| 2 | Visitante | inicia | la contratación con el plan y la cantidad de cabezas seleccionados | Landing Page → Web Application | Subscription Plans |
 | 3 | Administrador ganadero | contrata | el plan para su unidad productiva | Subscription Plans | Subscription Plans |
 | 4 | Subscription Plans | solicita | el cobro del periodo | Payment Provider | Subscription Plans |
 | 5 | Payment Provider | confirma | la aceptación del pago | Subscription Plans | Subscription Plans |
@@ -435,7 +435,7 @@ El Container Diagram descompone la solución en aplicaciones, servicios y almace
 | Web Application Hosting | Alojamiento web estático | Entrega por HTTPS los archivos HTML, CSS y JavaScript compilados de la SPA |
 | Web Application | Angular con TypeScript | SPA ejecutada en el navegador para gestionar ganado, dispositivos, planificación, analítica y suscripciones |
 | Mobile Application | Flutter con Dart | Monitoreo, alertas y operación de campo, con funcionamiento sin cobertura |
-| Cattle Band Embedded Application | C++ sobre ESP32 | Captura de temperatura, movimiento y posición, con transmisión por Wi-Fi o BLE |
+| Cattle Band Embedded Application | C++ sobre ESP32 | Captura de temperatura, movimiento y posición, con transmisión BLE al Portable Edge Gateway |
 | Water Controller Embedded Application | C++ sobre ESP32 | Medición de la temperatura del agua y accionamiento del calentador |
 | Portable Edge Gateway | Flask con Peewee ORM sobre Python | Recepción por BLE, almacenamiento local, evaluación de reglas críticas y sincronización |
 | Edge Database | SQLite | Telemetría sin conexión, estado de alertas, umbrales y geocercas en caché |
@@ -448,7 +448,9 @@ El icono de navegador se utiliza únicamente para Landing Page Browser Client y 
 
 El backend se denomina ICHU Web Service para expresar su responsabilidad funcional. «Monolito modular» describe la decisión arquitectónica y no forma parte de su nombre. Sigue siendo un único container de backend; los contextos acotados son módulos internos, no microservicios desplegados por separado. Las tecnologías de estas cuatro vistas se presentan sin números de versión, de manera uniforme y sin atribuir versiones que el proyecto no haya establecido.
 
-El collar transmite directamente al backend cuando hay Wi-Fi e Internet, y por Bluetooth Low Energy al Edge Gateway durante el pastoreo sin cobertura. El Edge Gateway entrega alertas locales a la aplicación móvil por red local, sin depender de Internet. El backend accede a PostgreSQL mediante Entity Framework Core con el proveedor Npgsql.
+El Cattle Band transmite por BLE al Portable Edge Gateway, que persiste y evalúa localmente las lecturas y sincroniza con la API central cuando dispone de salida a Internet. Este flujo se mantiene también cuando hay cobertura: el collar no invoca directamente el Cloud. La disponibilidad de Wi-Fi no demuestra acceso a Internet. La Mobile Application consulta y atiende alertas del Edge por la red local (TS-16), y consulta lecturas locales mediante TS-17. El backend accede a PostgreSQL mediante Entity Framework Core con el proveedor Npgsql.
+
+La revisión de requisitos del 8 de octubre de 2026 actualiza estos contratos en el Capítulo III. Las vistas C4 y los flujos gráficos de AV1 muestran el diseño anterior; sus fuentes y exportaciones todavía no representan el Edge como intermediario obligatorio ni todos los contratos Web y Mobile revisados. Por tanto, esas imágenes documentan AV1 y no constituyen evidencia de implementación de las historias corregidas.
 
 ![Container Diagram de ICHU](assets/images/diagrams/c4/c4-container.png)
 

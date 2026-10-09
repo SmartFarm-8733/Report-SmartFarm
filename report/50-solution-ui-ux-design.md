@@ -43,7 +43,7 @@ ICHU organiza la información según las tareas de César, administrador ganader
 
 | Grupo de información | Organización y sustento |
 |---|---|
-| Landing Page | Jerarquía de propuesta, beneficios, tecnología y contacto; contenido por audiencia: ganaderos y veterinarios. La explicación de uso es secuencial: conocer ICHU, entender su funcionamiento y solicitar una demo. |
+| Landing Page | Jerarquía de propuesta, beneficios, tecnología y contacto; contenido por audiencia: ganaderos y veterinarios. La explicación de uso es secuencial: conocer ICHU, entender su funcionamiento, comparar planes e iniciar la contratación. |
 | Hato y animales | Jerarquía hato → lote → animal → ficha. La ficha reúne identidad, historial, reproducción y monitoreo; potreros y nutrición se consultan desde el lote. Evita repetir datos entre módulos. |
 | Monitoreo y atención | Por tópicos: lecturas, ubicación, alertas y registros de campo o clínicos. Alertas ordenadas por prioridad y fecha; historial y lecturas por fecha de captura, no de sincronización. |
 | Calendario y reportes | Campañas y seguimientos en orden cronológico. Comparación matricial de animales, lotes e indicadores en escritorio; tarjetas y filtros equivalentes en móvil. |
@@ -147,7 +147,7 @@ Sin coincidencias, Sin lecturas y Acceso no autorizado son estados distintos, co
 | Aplicación web | Menú lateral: Animales, Monitoreo, Alertas, Calendario y Reportes. Cabecera con hato activo y resumen; Dispositivos y cuenta en accesos secundarios. La ficha enlaza Historial y Reproducción; el lote, Nutrición. Se muestra la sección activa y una ruta de retorno al listado. |
 | Aplicación móvil | Navegación inferior propuesta: Animales, Alertas, Calendario y Menú. Monitoreo se abre desde la ficha o el menú; los accesos secundarios conservan los nombres web. Las tareas de campo permanecen accesibles con datos descargados y muestran conectividad y sincronización. |
 
-La acción del segmento ganadero lleva al acceso web; la del veterinario, al registro profesional. Si el destino no está disponible, se ofrece Contacto (US-33). Solicitar demo abre el formulario con nombre, región, número de cabezas y correo; la confirmación informa el plazo de contacto (US-34).
+La acción del segmento ganadero lleva al acceso web; la del veterinario, al registro profesional. Si el destino no está disponible, se ofrece Contacto (US-33). Iniciar contratación conserva el plan y la cantidad de cabezas, dirige al registro o inicio de sesión y permite confirmar la solicitud con el importe y los términos vigentes (US-34). La solicitud queda pendiente de la confirmación comercial; no equivale a un pago ni a un plan activo.
 
 | Tarea | Ruta propuesta |
 |---|---|
