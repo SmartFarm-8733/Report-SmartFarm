@@ -180,7 +180,6 @@
 - [Bibliografía](../99-bibliography.md#bibliografía)
 - [Anexos](../annexes/00-index.md#anexos)
     - [Videos de Exposiciones](../annexes/annex-c-videos-and-interviews.md#videos-de-exposiciones)
-        - [TB1](../annexes/annex-c-videos-and-interviews.md#tb1)
     - [Anexo H. Recursos digitales y artefactos de TB1](../annexes/annex-h-tb1-deliverables.md#anexo-h-recursos-digitales-y-artefactos-de-tb1)
 
 <div style="break-after: page; page-break-after: always;"></div>
