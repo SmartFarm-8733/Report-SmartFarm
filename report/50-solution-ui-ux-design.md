@@ -201,9 +201,9 @@ Cada wireflow representa una meta de usuario y muestra las acciones, decisiones 
 
 Cada meta cuenta con un flujo independiente, rotulado con su persona y explicado brevemente. Cuando una interacción cambia el contenido de una vista, el wireflow muestra el nuevo estado de pantalla.
 
-> **Espacio reservado para la Figura 5.4.2:** lámina con los cuatro wireflows independientes de la Web Application, identificados por User Persona y meta.
+![Wireflows web de las cuatro metas priorizadas](assets/images/webapp-wireflows.png)
 
-*Figura 5.4.2. Wireflows de la Web Application ICHU para las metas priorizadas de administración ganadera y atención veterinaria. Elaboración propia.*
+*Figura 5.4.2. Wireflows de la Web Application ICHU, vinculados con las personas y sus historias de usuario. Elaboración propia.*
 
 ### 5.4.3. Applications Mock-ups
 
