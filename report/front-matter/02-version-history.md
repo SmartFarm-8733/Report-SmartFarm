@@ -50,5 +50,6 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 0.15.3 | 2026-10-08 | Contreras Leon, Flor de María | Registro de la repetición en incógnito sin errores ni advertencias en la consola y actualización del resultado de la inspección móvil del preview. |
 | 0.15.4 | 2026-10-08 | Contreras Leon, Flor de María | Incorporación de evidencias del deployment de producción del frontend de la aplicación web en Vercel, diferenciándolo del preview de la Landing Page en FPM Desk. |
 | 0.15.5 | 2026-10-08 | Contreras Leon, Flor de María | Incorporación en el Capítulo VI de una distribución simulada de 22 tareas Jira para los siete Bounded Contexts, Edge, frontend, dispositivos IoT, pruebas, despliegue y revisión de evidencias, distinguiéndola de asignaciones y ejecución verificadas. |
+| 0.15.6 | 2026-10-08 | Contreras Leon, Flor de María | Actualización del estado de acceso al proyecto Jira: una cuenta incorporada, dos solicitudes pendientes de aprobación administrativa y estado sin confirmar para otras dos cuentas. |
 
 <div style="break-after: page; page-break-after: always;"></div>
