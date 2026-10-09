@@ -5,25 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ICHU · Aplicación web · Figuras UX/UI 5.4</title>
   <style>
-    :root{--forest:#244a37;--deep:#183326;--gold:#e1b638;--cream:#f7f6ef;--paper:#fbfaf5;--ink:#202a23;--muted:#68736b;--line:#dddcd2;--soft:#efeee7;--pale-green:#e9eee6;--red:#b64e43;--blue:#819589}
+    :root{--forest:#244a37;--deep:#183326;--gold:#e1b638;--cream:#f3efdf;--paper:#fbfaf5;--ink:#202a23;--muted:#68736b;--line:#dddcd2;--soft:#efeee7;--pale-green:#e9eee6;--red:#b64e43;--blue:#819589}
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:#e9e7df;color:var(--ink);font-family:"Arial",sans-serif}
-    .figure{position:relative;width:1920px;padding:72px 82px 64px;background:var(--cream) url("../../images/application-screens/ux-board-paper-texture.png") center/cover no-repeat;overflow:hidden}
-    .figure::before{content:"";position:absolute;left:0;top:0;width:12px;height:100%;background:var(--gold)}
-    .figure-head{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;margin-bottom:38px}
-    .kicker{color:#9a7721;font-size:16px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0 0 14px}
-    .figure-title{font-size:52px;line-height:1.08;letter-spacing:-.04em;color:var(--deep);font-weight:700;margin:0}
-    .figure-subtitle{font-size:20px;line-height:1.5;color:var(--muted);margin:14px 0 0;max-width:1140px}
-    .edition{font-size:16px;letter-spacing:.1em;color:var(--muted);border:1px solid #d4d1c5;border-radius:99px;padding:12px 18px;white-space:nowrap;background:#fbfaf5cc}
-    .accent-rule{width:82px;height:5px;background:var(--gold);border-radius:9px;margin-top:22px}
-    .caption-note{font-size:15px;color:var(--muted);margin-top:20px}
+    html,body{margin:0;padding:0;background:var(--cream);color:var(--ink);font-family:"Arial",sans-serif}
+    .figure{position:relative;width:1920px;padding:64px 82px;background:var(--cream);overflow:hidden}
+    .figure-head{display:block;margin-bottom:32px}
+    .figure-title{font-size:56px;line-height:1.08;letter-spacing:-.04em;color:var(--deep);font-weight:700;margin:0}
+    .kicker,.figure-subtitle,.edition,.accent-rule{display:none}
     /* 5.4.1 · desktop low-fidelity wireframes */
-    #figure-541{min-height:1450px;height:auto}
+    #figure-541{min-height:1400px;height:auto}
     .wireframe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
     .wire-card{height:550px;background:#fffefa;border:1px solid #d8d6cc;border-radius:16px;padding:22px;box-shadow:0 6px 18px #273a2a0a}
     .wire-card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
     .wire-card-head h2{font-size:22px;color:var(--deep);margin:0}
-    .wire-tag{font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+    .wire-tag{display:none}
     .browser{height:468px;border:1px solid #d7d6cf;border-radius:10px;overflow:hidden;background:#fff}
     .browser-top{height:30px;background:#f0efe9;border-bottom:1px solid #deddd6;display:flex;align-items:center;padding:0 12px;gap:6px}
     .browser-top i{width:7px;height:7px;border-radius:50%;background:#c6c4b9}
@@ -66,7 +61,7 @@
     .wf-login-form .wf-field{margin:11px 0;height:42px}
     .wf-login-form .wf-button{width:100%;margin-top:14px}
     /* shared flow pieces */
-    #figure-542{min-height:1520px;height:auto}
+    #figure-542{min-height:1400px;height:auto}
     .goal-list{display:grid;gap:18px}
     .goal-row{height:275px;display:grid;grid-template-columns:330px 1fr;gap:22px;padding:20px;background:#fffefa;border:1px solid #dedcd2;border-radius:16px}
     .goal-meta{border-right:1px solid #e2e0d7;padding:10px 20px 8px 6px;display:flex;flex-direction:column;justify-content:center}
@@ -86,20 +81,14 @@
     .branch-notes span{font-size:12px;padding:7px 11px;border-radius:99px;background:#f4f1e6;border:1px solid #e4dfcb;color:#59655b}
     .branch-notes span.warn{background:#fbf0e8;border-color:#ead1c2;color:#8c4d3c}
     /* 5.4.3 · actual app screenshots */
-    #figure-543{height:1900px}
+    #figure-543{height:auto;min-height:0}
     .screen-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-    .screen-card{background:#fffefa;border:1px solid #d9d7cd;border-radius:15px;padding:16px;box-shadow:0 7px 22px #2034270b}
-    .screen-card.wide{grid-column:1/-1;display:grid;grid-template-columns:280px 1fr;gap:20px;align-items:center}
-    .screen-caption{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:3px 3px 13px}
-    .screen-card.wide .screen-caption{display:block;padding:18px}
-    .screen-caption strong{font-size:18px;color:var(--deep)}
-    .screen-caption span{font-size:12px;color:#8d792f;letter-spacing:.08em;text-transform:uppercase}
-    .screen-card img{width:100%;height:auto;display:block;border:1px solid #e0ded6;border-radius:8px}
-    .screen-card.wide img{width:100%;height:auto;object-fit:contain}
-    .screen-card:not(.wide) img{height:320px;object-fit:cover;object-position:top}
-    .source-note{font-size:13px;color:var(--muted);margin:19px 4px 0}
+    .screen-card{background:transparent;border:0;border-radius:0;padding:0;box-shadow:none;overflow:hidden}
+    .screen-card.wide{grid-column:1/-1;display:block}
+    .screen-card img{width:100%;height:auto;display:block;border:0;border-radius:0}
+    .screen-card:not(.wide) img{height:auto;object-fit:contain;object-position:top}
     /* 5.4.4 · user flows with decision branches */
-    #figure-544{min-height:1700px;height:auto}
+    #figure-544{min-height:1520px;height:auto}
     .user-flow-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
     .user-flow{height:630px;background:#fffefa;border:1px solid #dcdacf;border-radius:16px;padding:22px 24px;position:relative}
     .user-flow-head{display:flex;justify-content:space-between;gap:18px;align-items:start;border-bottom:1px solid #e6e4dc;padding-bottom:15px;margin-bottom:15px}
@@ -120,7 +109,6 @@
     .branch b{display:block;color:var(--forest);margin-bottom:3px}
     .branch.no b{color:var(--red)}
     .role-note{margin:12px 0 0;padding:10px 12px;border-left:3px solid var(--gold);background:#f5f2e8;border-radius:0 8px 8px 0;color:#5e665d;font-size:12px;line-height:1.45}
-    .legend{display:flex;gap:18px;align-items:center;margin-top:23px;color:var(--muted);font-size:13px}
     .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px;background:#edf1e9;border:1px solid #d3decf}
     .legend i.error{background:#fbefea;border-color:#e9d1c8}
     .legend i.decision{background:#f7f0d9;border-color:#d9c77f}
@@ -130,8 +118,7 @@
   <main>
     <section class="figure" id="figure-541" aria-label="Wireframes de la aplicación web ICHU">
       <header class="figure-head">
-        <div><p class="kicker">5.4.1 · Exploración estructural</p><h1 class="figure-title">Wireframes de la Web Application</h1><p class="figure-subtitle">Vistas de escritorio para las tareas del administrador ganadero y del médico veterinario.</p><div class="accent-rule"></div></div>
-        <span class="edition">ICHU · SMARTFARM</span>
+        <h1 class="figure-title">Wireframes de la Web Application</h1>
       </header>
       <div class="wireframe-grid">
         <article class="wire-card"><div class="wire-card-head"><h2>Acceso</h2><span class="wire-tag">Autenticación</span></div><div class="browser"><div class="browser-top"><i></i><i></i><i></i><span class="browser-url">app.ichu.pe / acceso</span></div><div class="wf-login"><div class="wf-login-photo"></div><div class="wf-login-form"><div class="wf-label">ICHU · SMARTFARM</div><div class="wf-title"></div><div class="wf-subtitle"></div><div class="wf-field"><b></b><i></i></div><div class="wf-field"><b></b><i></i></div><div class="wf-button gold"></div><div class="wf-subtitle" style="width:52%;margin-top:15px"></div></div></div></div></article>
@@ -141,13 +128,11 @@
         <article class="wire-card"><div class="wire-card-head"><h2>Planificación sanitaria</h2><span class="wire-tag">Campañas</span></div><div class="browser"><div class="browser-top"><i></i><i></i><i></i><span class="browser-url">app.ichu.pe / planning</span></div><div class="mini-app"><aside class="mini-sidebar"><div class="mini-logo"></div><div class="nav-chip"></div><div class="nav-chip"></div><div class="nav-chip"></div><div class="nav-chip active"></div><div class="nav-chip"></div></aside><div class="mini-content"><div class="wf-label">Sanidad del hato</div><div class="wf-title"></div><div class="wf-subtitle"></div><div class="wf-metrics"><div class="wf-metric"><b></b><span></span></div><div class="wf-metric"><b></b><span></span></div><div class="wf-metric"><b></b><span></span></div><div class="wf-metric"><b></b><span></span></div></div><div class="wf-panel"><div class="wf-panel-title">Recordatorios de campañas</div><div class="wf-row"><span></span><span></span><span></span><span></span></div><div class="wf-row"><span></span><span></span><span></span><span></span></div></div><div class="wf-panel"><div class="wf-panel-title">Calendario del hato</div><div class="wf-row"><span></span><span></span><span></span><span></span></div></div></div></div></div></article>
         <article class="wire-card"><div class="wire-card-head"><h2>Historial clínico</h2><span class="wire-tag">Vista veterinaria</span></div><div class="browser"><div class="browser-top"><i></i><i></i><i></i><span class="browser-url">app.ichu.pe / health</span></div><div class="mini-app"><aside class="mini-sidebar"><div class="mini-logo"></div><div class="nav-chip"></div><div class="nav-chip"></div><div class="nav-chip"></div><div class="nav-chip active"></div><div class="nav-chip"></div></aside><div class="mini-content"><div class="wf-label">Registros de atención / ICHU</div><div class="wf-title"></div><div class="wf-subtitle"></div><div class="wf-metrics" style="grid-template-columns:repeat(3,1fr)"><div class="wf-metric"><b></b><span></span></div><div class="wf-metric"><b></b><span></span></div><div class="wf-metric"><b></b><span></span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:9px"><div class="wf-panel"><div class="wf-panel-title">Registrar atención</div><div class="wf-form"><div class="wf-field"><b></b><i></i></div><div class="wf-field"><b></b><i></i></div><div class="wf-field" style="grid-column:span 2;height:54px"><b></b><i></i></div><div class="wf-button gold"></div></div></div><div class="wf-panel"><div class="wf-panel-title">Historial de salud</div><div class="wf-alert"><span></span><i></i></div><div class="wf-alert"><span></span><i></i></div></div></div></div></div></div></article>
       </div>
-      <p class="caption-note">Baja fidelidad · distribución de contenido para escritorio · sin aplicación móvil nativa.</p>
     </section>
 
     <section class="figure" id="figure-542" aria-label="Wireflows de las tareas priorizadas">
       <header class="figure-head">
-        <div><p class="kicker">5.4.2 · Secuencia de interacción</p><h1 class="figure-title">Wireflows por meta de usuario</h1><p class="figure-subtitle">Acciones principales y respuestas de la interfaz en los recorridos priorizados para la aplicación web.</p><div class="accent-rule"></div></div>
-        <span class="edition">4 RECORRIDOS · WEB</span>
+        <h1 class="figure-title">Wireflows por meta de usuario</h1>
       </header>
       <div class="goal-list">
         <article class="goal-row"><div class="goal-meta"><span class="persona">Cesar Flores · Administrador ganadero</span><h2>Revisar el hato y atender una alerta</h2><span class="story-ids">Historias · US-13, US-16, US-19</span></div><div class="path-area"><div class="path"><div class="step"><div class="step-type">Pantalla</div><strong>Mi hato</strong><small>Resumen y alertas destacadas</small></div><div class="step"><div class="step-type">Pantalla</div><strong>Alertas</strong><small>Filtrar y abrir una señal</small></div><div class="step"><div class="step-type">Acción</div><strong>Registrar respuesta</strong><small>Escribir hallazgo o acción</small></div><div class="step"><div class="step-type">Resultado</div><strong>Alerta atendida</strong><small>Estado y nota quedan registrados</small></div></div><div class="branch-notes"><span>La respuesta válida requiere una nota de 5 a 500 caracteres.</span><span class="warn">Sin coincidencias: limpiar filtros o elegir otro hato.</span></div></div></article>
@@ -155,28 +140,24 @@
         <article class="goal-row"><div class="goal-meta"><span class="persona">Cesar Flores · Administrador ganadero</span><h2>Revisar indicadores y exportar un reporte</h2><span class="story-ids">Historias · US-29, US-31</span></div><div class="path-area"><div class="path"><div class="step"><div class="step-type">Pantalla</div><strong>Reportes</strong><small>Resumen operativo del hato</small></div><div class="step"><div class="step-type">Filtro</div><strong>Periodo</strong><small>Seleccionar mes de campañas</small></div><div class="step"><div class="step-type">Decisión</div><strong>Revisar datos</strong><small>Indicadores y avance por campaña</small></div><div class="step"><div class="step-type">Acción</div><strong>Exportar</strong><small>CSV o impresión / guardar PDF</small></div></div><div class="branch-notes"><span>Los indicadores separan inventario actual de datos por periodo.</span><span class="warn">Si no hay resultados, ajustar el periodo antes de exportar.</span></div></div></article>
         <article class="goal-row"><div class="goal-meta"><span class="persona">Leonardo Rosales · Médico veterinario</span><h2>Consultar un hato autorizado y registrar atención</h2><span class="story-ids">Historias · US-04, US-14, US-23, US-24, US-39</span></div><div class="path-area"><div class="path"><div class="step"><div class="step-type">Acceso</div><strong>Hato autorizado</strong><small>Solo registros vinculados</small></div><div class="step"><div class="step-type">Pantalla</div><strong>Animales</strong><small>Consulta de solo lectura</small></div><div class="step"><div class="step-type">Pantalla</div><strong>Historial clínico</strong><small>Revisar registros existentes</small></div><div class="step"><div class="step-type">Acción</div><strong>Registrar atención</strong><small>Tipo, fecha, observación y datos</small></div><div class="step"><div class="step-type">Resultado</div><strong>Registro guardado</strong><small>Historial actualizado</small></div></div><div class="branch-notes"><span>El permiso se valida en cada operación; ocultar enlaces no basta.</span><span class="warn">Sin autorización: no exponer registros del hato.</span></div></div></article>
       </div>
-      <p class="caption-note">Cada recorrido corresponde a una meta y a las historias de usuario del alcance web indicadas en 5.4.2.</p>
     </section>
 
     <section class="figure" id="figure-543" aria-label="Mockups de alta fidelidad de la aplicación web">
       <header class="figure-head">
-        <div><p class="kicker">5.4.3 · Aplicación visual</p><h1 class="figure-title">Mockups de la Web Application</h1><p class="figure-subtitle">Capturas reales de la interfaz implementada, con roles, datos de muestra y componentes actuales de ICHU.</p><div class="accent-rule"></div></div>
-        <span class="edition">CAPTURAS DEL FRONTEND</span>
+        <h1 class="figure-title">Mockups de la Web Application</h1>
       </header>
       <div class="screen-grid">
-        <article class="screen-card"><div class="screen-caption"><strong>Administrador · Resumen del hato</strong><span>Inicio</span></div><img src="../../images/application-screens/dashboard-admin.png" alt="Captura real del tablero Mi hato para el administrador ganadero"></article>
-        <article class="screen-card"><div class="screen-caption"><strong>Administrador · Alertas</strong><span>Atención</span></div><img src="../../images/application-screens/alerts-admin.png" alt="Captura real de la cola de alertas y las acciones de respuesta"></article>
-        <article class="screen-card"><div class="screen-caption"><strong>Administrador · Planificación sanitaria</strong><span>Campañas</span></div><img src="../../images/application-screens/planning-admin.png" alt="Captura real de la planificación sanitaria y calendario del hato"></article>
-        <article class="screen-card"><div class="screen-caption"><strong>Administrador · Analítica y reportes</strong><span>Indicadores</span></div><img src="../../images/application-screens/reports-admin.png" alt="Captura real de los indicadores, avances y opciones de exportación"></article>
-        <article class="screen-card wide"><div class="screen-caption"><strong>Veterinario · Historial clínico</strong><span>Atención profesional</span><p class="caption-note">Vista vinculada al hato autorizado, con formulario de atención e historial en una sola página.</p></div><img src="../../images/application-screens/clinical-care-layout.png" alt="Captura real del formulario de atención clínica y el historial de salud para el rol veterinario"></article>
+        <article class="screen-card"><img src="../../images/application-screens/dashboard-admin.png" alt="Captura del tablero Mi hato para el administrador ganadero"></article>
+        <article class="screen-card"><img src="../../images/application-screens/alerts-admin.png" alt="Captura de la cola de alertas y las acciones de respuesta"></article>
+        <article class="screen-card"><img src="../../images/application-screens/planning-admin.png" alt="Captura de la planificación sanitaria y calendario del hato"></article>
+        <article class="screen-card"><img src="../../images/application-screens/reports-admin.png" alt="Captura de los indicadores, avances y opciones de exportación"></article>
+        <article class="screen-card wide"><img src="../../images/application-screens/clinical-care-layout.png" alt="Captura del formulario de atención clínica y el historial de salud para el rol veterinario"></article>
       </div>
-      <p class="source-note">Las vistas se capturaron desde el frontend local. La figura muestra la Web Application; no representa una aplicación móvil nativa.</p>
     </section>
 
     <section class="figure" id="figure-544" aria-label="User flows de las tareas priorizadas">
       <header class="figure-head">
-        <div><p class="kicker">5.4.4 · Decisiones y resultados</p><h1 class="figure-title">User Flows de la Web Application</h1><p class="figure-subtitle">Rutas esperadas, controles de acceso y recuperación ante validaciones o ausencia de datos.</p><div class="accent-rule"></div></div>
-        <span class="edition">4 METAS · RUTAS ALTERNATIVAS</span>
+        <h1 class="figure-title">User Flows de la Web Application</h1>
       </header>
       <div class="user-flow-grid">
         <article class="user-flow"><header class="user-flow-head"><h2>Atender una alerta</h2><span>Administrador</span></header><div class="flow-columns"><div class="main-steps"><div class="flow-node start"><b>Mi hato</b><small>Abrir el resumen operativo</small></div><div class="flow-node"><b>Alertas</b><small>Filtrar señales y revisar prioridad</small></div><div class="flow-node"><b>Registrar respuesta</b><small>Documentar el hallazgo o acción</small></div><div class="flow-node"><b>Guardar respuesta</b><small>Actualizar el estado de la alerta</small></div><div class="flow-node success"><b>Confirmación visible</b><small>La respuesta aparece en el registro</small></div></div><aside class="flow-side"><div class="decision">¿Se encontró una alerta?</div><div class="branch no"><b>No</b>Limpiar filtros o elegir otro hato; volver a la cola.</div><div class="decision">¿La nota es válida?</div><div class="branch no"><b>No</b>Mostrar el error junto al campo y conservar lo escrito.</div><div class="branch"><b>Sí</b>Guardar; la transición sigue el estado permitido.</div></aside></div></article>
@@ -184,8 +165,6 @@
         <article class="user-flow"><header class="user-flow-head"><h2>Exportar un reporte</h2><span>Administrador</span></header><div class="flow-columns"><div class="main-steps"><div class="flow-node start"><b>Analítica y reportes</b><small>Consultar indicadores operativos</small></div><div class="flow-node"><b>Seleccionar periodo</b><small>Filtrar las campañas por mes</small></div><div class="flow-node"><b>Revisar resultados</b><small>Inventario, alertas, avance y origen de datos</small></div><div class="flow-node"><b>Elegir salida</b><small>Exportar CSV o imprimir / guardar PDF</small></div><div class="flow-node success"><b>Archivo o impresión</b><small>La acción depende del navegador</small></div></div><aside class="flow-side"><div class="decision">¿Hay datos para el periodo?</div><div class="branch no"><b>No</b>Mostrar estado vacío y permitir elegir otro periodo.</div><div class="branch"><b>Sí</b>Generar CSV local o abrir la impresión del navegador.</div><div class="role-note">Los datos del tablero distinguen el inventario actual de los registros filtrados por periodo.</div></aside></div></article>
         <article class="user-flow"><header class="user-flow-head"><h2>Registrar una atención clínica</h2><span>Médico veterinario</span></header><div class="flow-columns"><div class="main-steps"><div class="flow-node start"><b>Seleccionar hato vinculado</b><small>Contexto permitido para el profesional</small></div><div class="flow-node"><b>Animales · ficha</b><small>Consultar identificación e historial</small></div><div class="flow-node"><b>Historial clínico</b><small>Completar tipo, fecha y observación</small></div><div class="flow-node"><b>Guardar registro</b><small>Validar datos y periodos aplicables</small></div><div class="flow-node success"><b>Historial actualizado</b><small>La intervención queda registrada</small></div></div><aside class="flow-side"><div class="decision">¿El hato está autorizado?</div><div class="branch no"><b>No</b>No mostrar información ni habilitar el registro.</div><div class="decision">¿El formulario es válido?</div><div class="branch no"><b>No</b>Indicar fecha o campos requeridos a corregir.</div><div class="branch"><b>Sí</b>Guardar la atención y reflejarla en el historial.</div></aside></div></article>
       </div>
-      <div class="legend"><span><i></i>Inicio y resultado esperado</span><span><i class="decision"></i>Decisión</span><span><i class="error"></i>Ruta alternativa / validación</span></div>
-      <p class="caption-note">Los recorridos describen la interfaz web y no implican servicios de backend, notificaciones reales ni acceso a un hato no autorizado.</p>
     </section>
   </main>
 </body>
