@@ -18,5 +18,13 @@ https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/front-matter
 https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/front-matter/05-student-outcome.md
 
 **Informe completo**<br>
-Capítulos I-IV, Student Outcome, conclusiones, bibliografía y anexos.<br>
+Capítulos I-VI, secciones iniciales, Student Outcome, conclusiones, bibliografía y anexos. El Capítulo V contiene avances de guías de estilo y arquitectura de información; el Capítulo VI conserva la estructura para documentar la implementación, validación y despliegue.<br>
 https://github.com/SmartFarm-8733/Report-SmartFarm/tree/main/report
+
+**Estado integrado al 8 de octubre de 2026**<br>
+Versión de `develop` utilizada para esta actualización, con los avances del Capítulo V y las correcciones de Lean UX, entrevistas y Big Picture EventStorming.<br>
+https://github.com/SmartFarm-8733/Report-SmartFarm/tree/238af3763c30473c9f6610ff9cd0e2d304b98359/report
+
+**Convenciones de contribución**<br>
+Flujo de ramas, commits, revisión y organización de archivos.<br>
+[CONTRIBUTING.md](../../CONTRIBUTING.md)

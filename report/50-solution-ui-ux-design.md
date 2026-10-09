@@ -41,7 +41,7 @@ La arquitectura de información de este capítulo corresponde al landing y a la 
 
 | Grupo de información | Organización y sustento |
 |---|---|
-| Landing Page | Jerarquía de propuesta, beneficios, tecnología y contacto; contenido por audiencia: ganaderos y veterinarios. La explicación de uso es secuencial: conocer ICHU, entender su funcionamiento y solicitar una demo. |
+| Landing Page | Jerarquía de propuesta, beneficios, tecnología y contacto; contenido por audiencia: ganaderos y veterinarios. La explicación de uso es secuencial: conocer ICHU, entender su funcionamiento, comparar planes e iniciar la contratación. |
 | Hato y animales | Jerarquía hato → lote → animal → ficha. La ficha reúne identidad, historial, reproducción y monitoreo; potreros y nutrición se consultan desde el lote. Evita repetir datos entre módulos. |
 | Monitoreo y atención | Por tópicos: lecturas, ubicación, alertas y registros de campo o clínicos. Alertas ordenadas por prioridad y fecha; historial y lecturas por fecha de captura, no de sincronización. |
 | Planificación sanitaria y reportes | Campañas y seguimientos en orden cronológico. Filtros y resultados se reorganizan para anchos menores sin cambiar el contenido ni los permisos de la Web Application. |
@@ -135,7 +135,7 @@ Sin coincidencias, Sin lecturas y Acceso no autorizado son estados distintos, co
 | Landing Page | Encabezado con enlaces a Inicio, Quiénes somos, los dos segmentos, Tecnología y Contacto. Cómo funciona y Videos abren páginas complementarias; a menor ancho, un menú compacto conserva los mismos destinos. Pie de página con Planes, Contacto y Términos. |
 | Web Application | Menú lateral: Mi hato, Animales, Ubicación y geocercas, Monitoreo, Alertas, Historial clínico, Planificación sanitaria, Nutrición, Reproducción, Reportes, Dispositivos IoT, Asesorías, Mi plan y Mi cuenta. La cabecera conserva el hato y el rol activos; la sección seleccionada y la ruta de retorno se mantienen visibles. |
 
-La acción del segmento ganadero lleva al acceso web; la del veterinario, al registro profesional. Si el destino no está disponible, se ofrece Contacto (US-33). Solicitar demo abre el formulario con nombre, región, número de cabezas y correo; la confirmación informa el plazo de contacto (US-34).
+La acción del segmento ganadero lleva al acceso web; la del veterinario, al registro profesional. Si el destino no está disponible, se ofrece Contacto (US-33). Iniciar contratación conserva el plan y la cantidad de cabezas, dirige al registro o inicio de sesión y permite confirmar la solicitud con el importe y los términos vigentes (US-34). La solicitud queda pendiente de la confirmación comercial; no equivale a un pago ni a un plan activo.
 
 | Tarea | Ruta propuesta |
 |---|---|

@@ -165,7 +165,13 @@ En esta sección se detalla el desarrollo y la aplicación del proceso Lean UX p
 
 De acuerdo con las pautas de diseño para iniciativas nuevas, se ha elaborado un planteamiento del problema que abarca las necesidades de los dos segmentos objetivo: ganaderos y zootecnistas o médicos veterinarios:
 
-El estado actual de la ganadería extensiva y del seguimiento del ganado depende principalmente de inspecciones manuales en los potreros, identificación física y registros retrospectivos en papel. Estos procesos requieren mucho trabajo, son propensos a errores y presentan dificultades para escalar. Las soluciones existentes no combinan adecuadamente el monitoreo fisiológico continuo, como la temperatura corporal y los patrones de actividad, con la ubicación GPS dentro de un ecosistema digital accesible y fácil de utilizar. ICHU abordará esta brecha mediante una solución IoT integral basada en collares inteligentes que transmiten datos biométricos a una API REST central y a una aplicación web y móvil que visualiza el estado del ganado y genera alertas predictivas. El enfoque inicial estará dirigido a los ganaderos de escala media de la sierra sur del Perú, en las regiones de Apurímac, Cusco y Puno, y a los zootecnistas y médicos veterinarios que asesoran sus hatos. El éxito se evaluará mediante el uso diario de la aplicación, el tiempo de respuesta ante alertas críticas y la reducción de pérdidas de ganado durante el piloto.
+El estado actual de la ganadería extensiva y del seguimiento del ganado depende principalmente de inspecciones manuales en los potreros, identificación física y registros retrospectivos en papel. Estos procesos requieren mucho trabajo, son propensos a errores y presentan dificultades para escalar. Las soluciones existentes no combinan adecuadamente el monitoreo fisiológico continuo —como temperatura corporal y patrones de actividad— con la ubicación GPS en un ecosistema digital accesible. ICHU propone atender esta necesidad mediante collares inteligentes que transmiten datos biométricos a una API central y a aplicaciones web y móvil con historial y alertas. El enfoque inicial se dirige a ganaderos medianos de Apurímac, Cusco y Puno, y a los profesionales que asesoran sus hatos. La propuesta distingue los resultados que busca SmartFarm de los beneficios que esperan obtener sus usuarios:
+
+**Resultados de negocio de SmartFarm:** captar suscripciones activas, mantener su renovación, promover el uso frecuente de la plataforma y reducir costos de soporte y operación. Se medirán mediante suscripciones activas, renovación por cohorte, frecuencia de uso y costo de soporte.
+
+**Resultados esperados para los usuarios:** recibir alertas tempranas y actuar oportunamente, reducir pérdidas del hato y el tiempo dedicado a inspecciones, y consultar o registrar información en zonas sin conectividad.
+
+Estos beneficios son objetivos por validar en un piloto; no son resultados ya alcanzados. La evidencia disponible valida de forma preliminar la relevancia del problema y las necesidades expresadas por las personas entrevistadas, no el desempeño de la solución.
 
 #### 1.2.2.2. Lean UX Assumptions.
 
@@ -173,24 +179,28 @@ Para guiar el diseño centrado en el usuario, hemos estructurado nuestras creenc
 
 | Categoría | Supuesto | Forma de validación |
 |---|---|---|
-| **A. Business Assumptions** | Los ganaderos están dispuestos a pagar una suscripción anual con tarifa fija bajo el modelo SaaS si se demuestra que la solución reduce la mortalidad del ganado en más de un 15%. | Entrevistas de disposición de pago, prueba piloto y seguimiento de conversión a suscripciones. |
+| **A. Business Assumptions** | Los ganaderos podrían adoptar una suscripción anual con tarifa fija si perciben valor suficiente para su operación y pueden evaluar sus costos y beneficios. La disposición de pago y el modelo de precio se validarán mediante entrevistas y un piloto; no se presupone una reducción de mortalidad comprobada. | Entrevistas de disposición de pago, prueba piloto y seguimiento de conversión a suscripciones. |
 | **A. Business Assumptions** | Un esquema de adquisición híbrido, que combine la venta física del collar inteligente a bajo costo con una suscripción digital, reducirá la barrera de entrada al mercado ganadero. | Pruebas de precio y comparación de interés entre venta de hardware, suscripción y paquete combinado. |
-| **A. Business Assumptions** | Es factible producir collares IoT de bajo consumo utilizando hardware de código abierto, con un objetivo inicial de operación continua de hasta tres años por batería. | Pruebas de consumo, autonomía y transmisión realizadas con prototipos en laboratorio y campo. |
+| **E. Technical / Feature Assumptions** | Se podrá alcanzar una autonomía de hasta tres años por batería con un collar IoT de bajo consumo. Es una meta técnica por comprobar. | Pruebas de consumo y autonomía con prototipos en laboratorio y campo. |
 | **A. Business Assumptions** | Las alianzas con cooperativas ganaderas y veterinarios locales serán un canal principal de adquisición de clientes. | Registro de contactos, conversiones y suscripciones provenientes de cada alianza. |
 | **B. Business Outcome Assumptions** | Se capturarán al menos 150 suscripciones activas de unidades ganaderas durante el primer año de operaciones. | Seguimiento mensual de clientes, planes activos y cancelaciones. |
 | **B. Business Outcome Assumptions** | Se mantendrá una tasa de retención anual de suscripciones superior al 92%. | Análisis de cohortes y comparación entre suscripciones renovadas y canceladas. |
-| **B. Business Outcome Assumptions** | La tasa de fallas técnicas o pérdida de señal de los collares IoT en el campo será inferior al 2% anual. | Registro de incidentes, disponibilidad de dispositivos y reportes de conectividad durante el piloto. |
+| **E. Technical / Feature Assumptions** | La tasa de fallas técnicas o pérdida de señal de los collares IoT en el campo será inferior al 2% anual. Es un objetivo técnico aún no validado. | Registro de incidentes, disponibilidad de dispositivos y reportes de conectividad durante el piloto. |
 | **B. Business Outcome Assumptions** | El costo de adquisición de clientes (CAC) disminuirá en un 25% durante el segundo semestre gracias a las recomendaciones orgánicas. | Comparación semestral del CAC y del origen de cada nuevo cliente. |
+| **B. Business Outcome Assumptions** | Una proporción creciente de las unidades suscritas utilizará la plataforma de forma frecuente. | Medición de usuarios y unidades activas por semana y días de uso durante el piloto. |
 | **C. User Assumptions** | El usuario principal del Segmento 1 es el ganadero propietario o administrador de la finca, quien necesita interfaces legibles y pocos pasos. | Pruebas de usabilidad, tiempo de ejecución de tareas y entrevistas posteriores. |
 | **C. User Assumptions** | El zootecnista o médico veterinario es un usuario clave que requiere acceso a historiales cuantitativos para realizar diagnósticos precisos. | Pruebas de consulta clínica, revisión de historiales y entrevistas con profesionales. |
 | **C. User Assumptions** | Los ganaderos trabajan frecuentemente en zonas con conectividad intermitente y necesitan consultar datos locales previamente descargados. | Pruebas de campo en zonas con cobertura irregular y medición de tareas realizadas sin conexión. |
 | **D. User Outcome and Benefit Assumptions** | El monitoreo automatizado y las alertas priorizadas reducirán el tiempo dedicado al conteo y a las inspecciones rutinarias. | Comparación del tiempo de trabajo antes y después de utilizar ICHU. |
+| **D. User Outcome and Benefit Assumptions** | En un piloto, la detección temprana y la atención de alertas podrían contribuir a reducir en 15% la mortalidad respecto de una línea base comparable. Es una meta de validación, no un resultado observado. | Definir la línea base y el periodo de seguimiento antes del piloto; comparar resultados y documentar factores que puedan influir. |
 | **D. User Outcome and Benefit Assumptions** | La geolocalización de los animales aumentará la sensación de seguridad y ayudará a prevenir abigeatos y extravíos. | Pruebas de alertas de alejamiento, recuperación de posiciones y encuestas de percepción. |
 | **D. User Outcome and Benefit Assumptions** | Las anomalías térmicas detectadas automáticamente permitirán aislar oportunamente animales con posibles brotes epidémicos. | Medición del tiempo entre la detección, la alerta y la intervención del usuario. |
-| **E. Feature Assumptions** | Un collar IoT hermético con sensores de temperatura, acelerómetro y GPS transmitirá datos biométricos estables al servicio Edge API. | Pruebas de precisión, autonomía, resistencia y continuidad de transmisión. |
-| **E. Feature Assumptions** | Las notificaciones automáticas en la aplicación móvil y por SMS alertarán oportunamente ante desviaciones críticas del comportamiento animal. | Medición del tiempo de entrega, tasa de recepción y cantidad de falsos positivos. |
-| **E. Feature Assumptions** | El panel de análisis permitirá visualizar métricas agrupadas, promedios de salud del hato y mapas de calor de pastoreo. | Pruebas de tareas, revisión de métricas consultadas y evaluación de utilidad por los usuarios. |
-| **E. Feature Assumptions** | El modo sin conexión permitirá registrar datos localmente y sincronizarlos al recuperar señal, garantizando la continuidad operativa en campo. | Medición de registros creados sin conexión, sincronizaciones exitosas y datos faltantes. |
+| **E. Technical / Feature Assumptions** | Un collar IoT hermético con sensores de temperatura, acelerómetro y GPS transmitirá datos biométricos estables al servicio Edge API. | Pruebas de precisión, autonomía, resistencia y continuidad de transmisión. |
+| **E. Technical / Feature Assumptions** | Las notificaciones automáticas en la aplicación móvil y por SMS alertarán oportunamente ante desviaciones críticas del comportamiento animal. | Medición del tiempo de entrega, tasa de recepción y cantidad de falsos positivos. |
+| **E. Technical / Feature Assumptions** | El panel de análisis permitirá visualizar métricas agrupadas, promedios de salud del hato y mapas de calor de pastoreo. | Pruebas de tareas, revisión de métricas consultadas y evaluación de utilidad por los usuarios. |
+| **E. Technical / Feature Assumptions** | El modo sin conexión permitirá registrar datos localmente y sincronizarlos al recuperar señal, garantizando la continuidad operativa en campo. | Medición de registros creados sin conexión, sincronizaciones exitosas y datos faltantes. |
+
+**Estado de la evidencia.** Las entrevistas y cuestionarios aportan evidencia preliminar de la relevancia del problema y de las necesidades expresadas por los participantes. La muestra reportada es de dos ganaderos y tres profesionales en los cuestionarios; no permite generalizar al sector. La disposición de pago requiere validación adicional y no se ha demostrado ningún resultado de negocio, beneficio de usuario ni desempeño técnico. La precisión, autonomía, conectividad, entrega de alertas y sincronización requieren pruebas de laboratorio y de campo.
 
 #### 1.2.2.3. Lean UX Hypothesis Statements.
 
@@ -205,10 +215,10 @@ Se redacta una declaración de hipótesis por cada Feature Assumption definido e
 
 **Hypothesis 2. Real-Time Alerts**
 
-**Creemos que lograremos** una reducción del 15% en la mortalidad del hato de las unidades productivas suscritas
+**Creemos que lograremos** una tasa de renovación anual de suscripciones superior al 92%, como hipótesis de negocio
 **si** los ganaderos propietarios y administradores
 **alcanzan** la capacidad de aislar y atender a un animal enfermo en menos de una hora desde la desviación de sus constantes
-**con** un motor de alertas automáticas que notifica por aplicación móvil y por mensaje de texto cuando los indicadores biométricos superan los umbrales definidos.
+**con** alertas evaluadas en el Portable Edge Gateway y consultables localmente en el móvil; al recuperar conectividad, el Edge sincroniza con la API central y el backend puede solicitar notificaciones externas. La reducción del 15% en mortalidad se conserva como hipótesis de beneficio del usuario por validar en un piloto, no como resultado empresarial demostrado.
 
 **Hypothesis 3. Analytics Dashboard**
 
@@ -219,10 +229,11 @@ Se redacta una declaración de hipótesis por cada Feature Assumption definido e
 
 **Hypothesis 4. Offline Operation**
 
-**Creemos que lograremos** que el 60% de las unidades productivas suscritas registre actividad en la aplicación al menos cinco días por semana
-**si** el personal de campo de las unidades ganaderas
-**alcanza** la continuidad de sus faenas en zonas sin cobertura celular, consultando fichas y registrando eventos en el momento en que ocurren
-**con** un modo sin conexión que almacena los registros de forma local y los sincroniza al recuperar la señal.
+**Indicador de adopción de negocio por validar:** que al menos el 60% de las unidades suscritas registre actividad cinco días por semana.
+**Si** el personal de campo consulta fichas y registra eventos durante sus faenas en zonas sin cobertura
+**entonces** podrá mantener la continuidad del trabajo y el registro
+**con** un modo sin conexión que almacena los datos localmente y los sincroniza al recuperar la señal.
+**Medición:** frecuencia de uso, registros locales, sincronizaciones exitosas y conflictos durante el piloto.
 
 #### 1.2.2.4. Lean UX Canvas.
 
@@ -311,11 +322,7 @@ A continuación, se presenta el Lienzo Lean UX de la startup ganadera, integrand
         <tr>
             <td><strong>6. Hypotheses</strong></td>
             <td>
-                Creemos que lograremos una reducción del 15% en la mortalidad del hato y una
-                renovación anual superior al 92% si los ganaderos y los profesionales que los
-                asesoran alcanzan la detección temprana de anomalías y la continuidad del
-                registro en campo, con collares inteligentes integrados a un motor de alertas
-                y a un modo sin conexión con sincronización posterior.
+                <strong>Resultados de negocio por validar:</strong> 150 suscripciones activas en el primer año, renovación anual superior al 92% y adopción frecuente. <strong>Resultados esperados para los usuarios:</strong> alertas tempranas, menor tiempo de inspección y continuidad del registro sin cobertura; el piloto evaluará si esto contribuye a reducir en 15% la mortalidad frente a una línea base comparable. <strong>Hipótesis técnicas:</strong> precisión y autonomía de sensores, transmisión y sincronización. Ninguno de estos resultados se ha demostrado todavía.
             </td>
         </tr>
         <tr>
@@ -374,22 +381,19 @@ A continuación, se describen los dos segmentos objetivo identificados para nues
 
 Dentro de este segmento conviven dos roles operativos. El administrador ganadero, propietario o gestor de la unidad productiva, es quien decide la compra y responde por los resultados económicos del hato. El operario de campo es el personal que ejecuta las faenas en el potrero y registra lo que observa durante la jornada; no decide la compra, pero su adopción determina que la información llegue al sistema. Este segmento representa a los tomadores de decisiones financieras y estratégicas de las unidades de producción ganadera. Son los responsables de adquirir la solución digital y los collares inteligentes IoT, motivados por la optimización de costos, el aumento de la productividad de leche y carne, y la mitigación de pérdidas críticas causadas por muertes no detectadas, enfermedades y abigeato.
 
-**A. Perfil Demográfico y Geográfico**
+**A. Perfil del segmento: evidencia y límites**
 
-- **Edad:** Entre 35 y 65 años.
-- **Género:** Masculino y femenino.
-- **Nivel Educativo:** Educación técnica superior o universitaria completa (típicamente en carreras como Agronomía, Medicina Veterinaria, Zootecnia, Administración de Empresas o Ingeniería Industrial).
-- **Ubicación:** Regiones ganaderas de la sierra sur del Perú, en particular Apurímac, Cusco y Puno, donde se realizó la investigación de campo. Cajamarca, Arequipa, La Libertad y San Martín se consideran mercados de expansión posterior.
-- **Ocupación:** Propietarios de haciendas, gerentes generales de cooperativas ganaderas o administradores generales de estancias ganaderas medianas y grandes (hatos de entre 50 y más de 500 cabezas de ganado).
-- **Dispositivos de Preferencia:** Teléfonos inteligentes de gama media-alta (Android e iOS), tabletas y computadoras portátiles o de escritorio para el control administrativo de la empresa.
-- **Canales de Interacción Digital:** Redes sociales profesionales (LinkedIn), grupos especializados de WhatsApp, correos electrónicos corporativos, motores de búsqueda (Google) y portales de noticias del sector agropecuario.
+- **Ocupación respaldada:** Propietarios o administradores de una unidad productiva que toman decisiones sobre el hato. El operario de campo es un rol relacionado, pero no equivale al comprador o administrador.
+- **Ubicación observada:** Las entrevistas de este segmento corresponden a predios de Apurímac y Cusco. Son ubicaciones de la muestra, no una delimitación del mercado total.
+- **Escala observada:** Los dos participantes del cuestionario declararon entre 51 y 200 cabezas. Esta cifra describe únicamente esa muestra; no se atribuye a todos los integrantes del segmento.
+- **Dispositivos observados:** Próspero y Meikoll mencionan smartphone y laptop en sus prácticas de registro. No se documentan preferencias generales por sistema operativo, gama de dispositivo, tabletas o computadoras de escritorio.
+- **Edad, género, nivel educativo y canales digitales preferidos:** No se cuenta con evidencia comparable suficiente para asignar rangos o preferencias al arquetipo.
 
-**B. Características Psicográficas y Conductuales**
+**B. Patrones de trabajo y supuestos por validar**
 
-- **Personalidad:** Analíticos, orientados a resultados, visionarios, cautelosos con las inversiones de capital pero abiertos a la adopción de tecnologías validadas que demuestren un rápido retorno de inversión (ROI).
-- **Habilidades:** Gestión de presupuestos, planificación estratégica, liderazgo de personal de campo y negociación con proveedores de la cadena de valor láctea o cárnica.
-- **Estilo de Vida:** Dividen su tiempo entre la supervisión estratégica en campo (visitas periódicas a las estancias) y la gestión comercial en zonas urbanas. Valoran el control de sus activos y la tranquilidad de saber que su patrimonio está protegido de forma preventiva.
-- **Marcas e Influencias:** Compran insumos de marcas reconocidas como Zoetis, MSD Animal Health, e influyen sus decisiones a través de gremios ganaderos locales (como la Asociación de Ganaderos del Perú - AGALEP), ferias agropecuarias nacionales y consultores zootecnistas de confianza.
+- **Patrones documentados:** Registros dispersos entre hojas de cálculo y cuadernos, conectividad irregular en potreros y necesidad de consultar información sanitaria, productiva y económica del animal.
+- **Necesidades expresadas:** Registro individual, alertas sanitarias o reproductivas, consulta de costos y operación sin cobertura. Son necesidades declaradas, no prueba de que la propuesta reduzca pérdidas.
+- **Supuestos por validar:** Sensibilidad al precio, retorno de inversión esperado, marcas de insumos, gremios o asesores que influyen en la compra, ferias y canales digitales de adquisición. Las entrevistas no los establecen como patrones comunes.
 
 **C. Evidencia de investigación y fuentes**
 
@@ -400,23 +404,19 @@ Como contexto nacional, la Encuesta Nacional Agropecuaria del INEI identifica al
 **Segmento 2:** Zootecnistas y Médicos Veterinarios
 Este segmento abarca a los especialistas técnicos encargados del diagnóstico preventivo, la atención de brotes de enfermedades, la sincronización reproductiva y la prescripción de tratamientos médicos para el ganado. Son asesores externos clave o personal de planta que requiere de datos cuantitativos precisos, históricos y en tiempo real para optimizar la salud colectiva e individual de los bovinos.
 
-**A. Perfil Demográfico y Geográfico**
+**A. Perfil del segmento: evidencia y límites**
 
-- **Edad:** Entre 28 y 60 años.
-- **Género:** Masculino y femenino.
-- **Nivel Educativo:** Educación universitaria completa y posgrados (Especializaciones, Maestrías) en Medicina Veterinaria, Zootecnia o Reproducción Animal.
-- **Ubicación:** Ciudades intermedias cercanas a los valles ganaderos o residentes en las capitales de región, realizando visitas técnicas programadas o de emergencia a múltiples establos ganaderos.
-- **Ocupación:** Médicos veterinarios independientes, consultores de salud animal, asesores de sanidad de cooperativas o directores de sanidad animal de grandes agropecuarias.
-- **Dispositivos de Preferencia:** Smartphones de gama media-alta, tabletas robustas (con estuches protectores para uso en corrales) y laptops para análisis estadístico de datos y reportes clínicos.
-- **Canales de Interacción Digital:** Correo electrónico, plataformas académicas y científicas (PubMed, ResearchGate), boletines de sanidad agropecuaria (SENASA), aplicaciones web profesionales de gestión de establos y redes sociales enfocadas en la comunidad médica veterinaria.
+- **Ocupación respaldada:** Zootecnistas y médicos veterinarios que realizan atención técnica o clínica de ganado. La muestra incluye perfiles y responsabilidades distintas.
+- **Ubicación observada:** Las entrevistas mencionan Puno, Perú, y trabajo de campo en Perú por un participante ubicado en Chile. No se infiere una distribución geográfica general a partir de estos casos.
+- **Dispositivos observados:** El cuestionario del segmento (3 respuestas) registró una respuesta por cada categoría: smartphone, laptop y solo papel. No se midió preferencia por gama, tableta o sistema operativo.
+- **Edad, género, nivel educativo agregado y canales digitales preferidos:** No hay evidencia comparable suficiente para definirlos como rasgos del arquetipo.
 
-**B. Características Psicográficas y Conductuales**
+**B. Patrones de trabajo y supuestos por validar**
 
-- **Personalidad:** Metódicos, analíticos, orientados a la ciencia de datos, rigurosos con los protocolos de bioseguridad y apasionados por el bienestar animal. Valoran la precisión de los datos biométricos por encima de las estimaciones subjetivas.
-- **Habilidades:** Diagnóstico clínico, análisis de parámetros fisiológicos complejos (temperatura, frecuencia de rumia, nivel de actividad), diseño de calendarios de vacunación, inseminación artificial y gestión de fármacos veterinarios.
-- **Estilo de Vida:** Dinámico y móvil. Viajan frecuentemente entre diferentes establos y estancias ganaderas. Deben estar preparados para responder a emergencias a cualquier hora del día.
-- **Marcas e Influencias:** Influenciados por publicaciones de revistas indexadas especializadas, laboratorios multinacionales (como Boehringer Ingelheim, Elanco, Bayer Sanidad Animal) y colegios médico-veterinarios locales (como el Colegio Médico Veterinario del Perú).
+- **Patrones documentados:** Combinación de actividades de campo y documentación o análisis de oficina; consulta de información clínica y necesidad expresada de mejorar registros y detección de cambios.
+- **Necesidades expresadas:** Alertas, historiales, reportes y acceso a datos biométricos. Las solicitudes concretas de ecógrafos, nutrición o reportes se atribuyen a quienes las mencionaron, no a todos los profesionales.
+- **Supuestos por validar:** Influencia de publicaciones, laboratorios, colegios profesionales, marcas, canales digitales y disponibilidad para responder fuera del horario laboral. Las entrevistas resumidas no establecen estos rasgos como comunes.
 
 **C. Evidencia de investigación**
 
-Las entrevistas del Segmento 2 muestran que los profesionales necesitan consultar historiales clínicos, tratamientos, constantes fisiológicas, rumia, actividad, reproducción y evidencia ecográfica antes o durante la visita al establo. Darwin, Eliseo y Dionisio coincidieron en la necesidad de alertas tempranas, reportes exportables e integración con ecógrafos y sistemas de nutrición. Estos hallazgos provienen de la investigación propia y deben validarse posteriormente con una muestra más amplia antes de convertirse en indicadores estadísticos generales.
+Las entrevistas del Segmento 2 documentan necesidades de consulta de historial clínico y biometría, pero las solicitudes de alertas, reportes e integración varían por participante. Se mantienen como necesidades reportadas y candidatos de diseño; no se presentan como preferencias universales ni como resultados validados. Deben contrastarse con una muestra más amplia.

@@ -1,19 +1,19 @@
 ## Anexo G. Fuentes de diagramas y artefactos versionados
 
 **C4 Model — Workspace Structurizr DSL**<br>
-https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/assets/diagram-sources/structurizr/workspace-ichu-c4.dsl
+[Abrir fuente C4 en GitHub](https://github.com/SmartFarm-8733/Report-SmartFarm/blob/main/report/assets/diagram-sources/structurizr/workspace-ichu-c4.dsl)
 
 **C4 Model — imágenes exportadas**<br>
 System Landscape, Context, Container, Deployment y Components.<br>
-https://github.com/SmartFarm-8733/Report-SmartFarm/tree/main/report/assets/images/diagrams/c4
+[Ver diagramas C4 exportados en GitHub](https://github.com/SmartFarm-8733/Report-SmartFarm/tree/main/report/assets/images/diagrams/c4)
 
 **UML y diseño de base de datos — fuentes PlantUML**<br>
 Clases, context maps y bases de datos.<br>
-https://github.com/SmartFarm-8733/Report-SmartFarm/tree/main/report/assets/diagram-sources/puml
+[Abrir fuentes PlantUML en GitHub](https://github.com/SmartFarm-8733/Report-SmartFarm/tree/main/report/assets/diagram-sources/puml)
 
 **UML y diseño de base de datos — imágenes renderizadas**<br>
 Clases, context maps y esquemas.<br>
-https://github.com/SmartFarm-8733/Report-SmartFarm/tree/main/report/assets/images/diagrams
+[Ver diagramas UML y esquemas en GitHub](https://github.com/SmartFarm-8733/Report-SmartFarm/tree/main/report/assets/images/diagrams)
 
 **Diseño de dispositivos IoT — proyecto editable en Cirkit Designer**<br>
 https://app.cirkitdesigner.com/project/a07ab13c-8ded-4672-a786-deecb40e13c2

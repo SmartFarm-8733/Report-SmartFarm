@@ -71,7 +71,7 @@
 
 <p align="center" style="text-align: center; line-height: 1.5; margin: 18pt 0 0;">
   <strong>Período 202620</strong><br/>
-  <strong>Septiembre 2026</strong>
+  <strong>Octubre 2026</strong>
 </p>
 
 </div>
