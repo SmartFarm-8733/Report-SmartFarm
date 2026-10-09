@@ -2,7 +2,7 @@
 
 Esta sección resume las modificaciones relevantes realizadas al informe durante el ciclo de vida del proyecto. Cada línea corresponde a un único autor.
 
-Actualización al **8 de octubre de 2026**, con base en los cambios integrados en `develop` hasta el commit [`238af37`](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/238af3763c30473c9f6610ff9cd0e2d304b98359). Las fechas corresponden a la zona horaria de Perú (UTC−5).
+Actualización al **8 de octubre de 2026**, con base en los cambios integrados en `develop` hasta el commit [`8eb4f5d`](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/8eb4f5d30490ad24b5b6ba46adfe493101e328a9). El registro incluye las contribuciones TB1 de ese corte y las revisiones de la rama `audit/tb1-report`; las fechas corresponden a la zona horaria de Perú (UTC−5).
 
 | Versión | Fecha | Autor | Descripción de modificación |
 |---|---|---|---|
@@ -64,5 +64,12 @@ Actualización al **8 de octubre de 2026**, con base en los cambios integrados e
 | 0.17.2 | 2026-10-08 | Contreras Leon, Flor de María | Documentación del estado de pruebas manuales, la evidencia de despliegue y la planificación simulada de tareas Jira, diferenciándola de trabajo ejecutado. Evidencia: [9749671](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/9749671). |
 | 0.17.3 | 2026-10-08 | Contreras Leon, Flor de María | Registro del estado de acceso al proyecto Jira y de las solicitudes de incorporación pendientes de aprobación. Evidencia: [c3d1856](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/c3d1856). |
 | 0.18.0 | 2026-10-08 | Contreras Leon, Flor de María | Cierre de la estructura TB1 del Capítulo VI, con evidencias de aplicaciones web, documentación del alcance sin backend y límites de la evidencia de colaboración. Evidencia: [f018fce](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/f018fce). |
+| 0.18.1 | 2026-10-08 | Romero Meza, Jhimy Pool | Ampliación del Ubiquitous Language y del glosario para los dominios de ganadería, salud, monitoreo, analítica, planificación e identidad; revisión de claridad del informe. Evidencia: [1a61c93](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/1a61c93), [43592ed](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/43592ed), [7197296](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/7197296). |
+| 0.18.2 | 2026-10-08 | Arrieta Quispe, Alison Jimena | Corrección de diagramas C4 para alinear iconografía, hosting y despliegue, y retiro de un vínculo de fuente desactualizado. Evidencia: [00f27d5](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/00f27d5), [56ff9f5](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/56ff9f5); integrado mediante [PR #9](https://github.com/SmartFarm-8733/Report-SmartFarm/pull/9). |
+| 0.19.0 | 2026-10-08 | Avalos Cordova, Diego Andres | Incorporación de conclusiones y recomendaciones de TB1, distinguiendo los resultados de diseño y despliegue de las limitaciones de validación e implementación. Evidencia: [7e4673f](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/7e4673f). |
+| 0.19.1 | 2026-10-08 | Avalos Cordova, Diego Andres | Incorporación de referencias oficiales para Angular, Playwright, Vercel e internacionalización web; actualización de las citas y de la configuración técnica verificada de la Web Application. Evidencia: [3ee8e73](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/3ee8e73). |
+| 0.19.2 | 2026-10-08 | Avalos Cordova, Diego Andres | Organización de los recursos digitales de TB1 en el Anexo H y actualización de los índices y referencias de los Capítulos V y VI. Evidencia: [94d40a7](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/94d40a7), [0b60193](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/0b60193). |
+| 0.19.3 | 2026-10-08 | Avalos Cordova, Diego Andres | Registro de las acciones TB1 de los seis integrantes en Student Outcome y actualización de métricas colaborativas, aportes por autor y estado integrado de `develop`. Evidencia: [fc0a7e8](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/fc0a7e8). |
+| 0.19.4 | 2026-10-08 | Avalos Cordova, Diego Andres | Reconciliación del Registro de Versiones con el historial verificable de `develop` y las contribuciones documentadas para TB1. |
 
 <div style="break-after: page; page-break-after: always;"></div>
