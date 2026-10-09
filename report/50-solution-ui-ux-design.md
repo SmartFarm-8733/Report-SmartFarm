@@ -340,4 +340,4 @@ En el alcance definido hoy, **solo el trayecto del collar al Edge está establec
 | Flujo BLE/Wi-Fi hacia Edge y sincronización con la nube | Decisión arquitectónica descrita en los capítulos III y IV; no se implementó ni probó con estos dispositivos. | Technical Stories TS-01–TS-06 y arquitectura de 4.1.3.3. |
 | Lecturas del controlador del agua y presentación de alertas | Contratos y comportamiento propuestos; no se enviaron lecturas reales ni se verificó una alerta de extremo a extremo. | TS-14 y diagramas conceptuales de esta sección. |
 
-El https://app.cirkitdesigner.com/project/a07ab13c-8ded-4672-a786-deecb40e13c2 conserva el lienzo completo. Antes de considerar un prototipo validado, se deben confirmar los componentes y valores contra el presupuesto, sustituir las etiquetas de texto vacías, definir la interfaz Edge–panel, y comprobar alimentación, corriente, aislamiento, protección frente a agua y funcionamiento de la resistencia calefactora.
+El https://app.cirkitdesigner.com/project/a07ab13c-8ded-4672-a786-deecb40e13c2 conserva el lienzo completo. 
