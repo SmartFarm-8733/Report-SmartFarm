@@ -43,31 +43,32 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 0.12.7 | 2026-10-06 | Avalos Cordova, Diego Andres | Reubicación de Student Outcome antes del Capítulo I, corrección de las anclas del índice y de etiquetas HTML en los perfiles de integrantes. |
 | 0.13.0 | 2026-10-06 | Avalos Cordova, Diego Andres | Incorporación de la estructura del Capítulo VI y espacios de TB1 en Student Outcome, colaboración, conclusiones, videos de exposiciones y anexos, sin modificar el Capítulo V. |
 | 0.13.1 | 2026-10-06 | Avalos Cordova, Diego Andres | Incorporación de la estructura vacía del Capítulo V, actualización de sus enlaces en el índice y numeración consecutiva de los apartados de diseño de aplicaciones. |
-| 0.13.2 | 2026-10-06 | Avalos Cordova, Diego Andres | Organicé capítulos, anexos y recursos en `report/`. |
-| 0.14.0 | 2026-10-07 | Avalos Cordova, Diego Andres | Definí la identidad visual y las pautas de accesibilidad del producto. |
-| 0.14.1 | 2026-10-07 | Avalos Cordova, Diego Andres | Organicé la navegación y la arquitectura de información de la aplicación. |
-| 0.14.2 | 2026-10-08 | Contreras Leon, Flor de María | Documenté el diseño conceptual y la validación del dispositivo IoT. |
-| 0.15.0 | 2026-10-08 | Sanchez Arenas, Manuel Angel | Afiné Lean UX, entrevistas, anexos y decisiones de arquitectura. |
-| 0.15.1 | 2026-10-08 | Sanchez Arenas, Manuel Angel | Mejoré la relación entre hallazgos, User Stories y User Personas. |
-| 0.15.2 | 2026-10-08 | Arrieta Quispe, Alison Jimena | Revisé el Big Picture EventStorming y sus capturas. |
-| 0.16.0 | 2026-10-08 | Awad Vargas, Giorgio Marzouk | Revisé las historias de suscripción y facturación. |
-| 0.16.1 | 2026-10-08 | Awad Vargas, Giorgio Marzouk | Precisé las historias técnicas de captura y recepción BLE en Edge. |
-| 0.16.2 | 2026-10-08 | Awad Vargas, Giorgio Marzouk | Afiné las historias de autorización, notificaciones y sincronización. |
-| 0.16.3 | 2026-10-08 | Awad Vargas, Giorgio Marzouk | Añadí requisitos de configuración, alertas locales y sincronización web. |
-| 0.16.4 | 2026-10-08 | Awad Vargas, Giorgio Marzouk | Revisé objetivos de negocio, prioridades y estimaciones del backlog. |
-| 0.16.5 | 2026-10-08 | Awad Vargas, Giorgio Marzouk | Aclaré necesidades, entrevistas e historias del producto. |
-| 0.16.6 | 2026-10-08 | Awad Vargas, Giorgio Marzouk | Actualicé el registro y las acciones de TB1. |
-| 0.17.0 | 2026-10-08 | Avalos Cordova, Diego Andres | Diseñé la experiencia web con wireframes y flujos. |
-| 0.17.1 | 2026-10-08 | Contreras Leon, Flor de María | Documenté la planificación propuesta y el avance de la Landing Page. |
-| 0.17.2 | 2026-10-08 | Contreras Leon, Flor de María | Describí las verificaciones realizadas y el plan de trabajo. |
-| 0.17.3 | 2026-10-08 | Contreras Leon, Flor de María | Actualicé el estado de acceso y organización de Jira. |
-| 0.18.0 | 2026-10-08 | Contreras Leon, Flor de María | Documenté la aplicación web y el alcance de TB1. |
-| 0.18.1 | 2026-10-08 | Romero Meza, Jhimy Pool | Amplié el glosario de los contextos del producto. |
-| 0.18.2 | 2026-10-08 | Arrieta Quispe, Alison Jimena | Ajusté los diagramas C4 y sus referencias. |
-| 0.19.0 | 2026-10-08 | Avalos Cordova, Diego Andres | Redacté las conclusiones y recomendaciones de TB1. |
-| 0.19.1 | 2026-10-08 | Avalos Cordova, Diego Andres | Añadí fuentes oficiales y precisiones técnicas de la aplicación. |
-| 0.19.2 | 2026-10-08 | Avalos Cordova, Diego Andres | Organicé recursos de TB1 en anexos y actualicé los índices. |
-| 0.19.3 | 2026-10-08 | Avalos Cordova, Diego Andres | Resumí los aportes del equipo para Student Outcome. |
-| 0.19.4 | 2026-10-08 | Avalos Cordova, Diego Andres | Ajusté el registro para reflejar el informe actualizado. |
+| 0.13.2 | 2026-10-06 | Avalos Cordova, Diego Andres | Organicé el informe en `report/`, separé capítulos y anexos y ordené allí las imágenes y fuentes de diagramas. |
+| 0.14.0 | 2026-10-07 | Avalos Cordova, Diego Andres | Definí la identidad visual de ICHU con pautas de color, tipografía, componentes y accesibilidad para web, móvil e IoT. |
+| 0.14.1 | 2026-10-07 | Avalos Cordova, Diego Andres | Organicé la navegación por perfiles y definí etiquetas, metadatos, búsqueda y filtros como propuesta de arquitectura de información. |
+| 0.14.2 | 2026-10-08 | Contreras Leon, Flor de María | Documenté el diseño conceptual del dispositivo IoT, sus decisiones de montaje y alimentación, el flujo hacia Edge y las evidencias de validación. |
+| 0.15.0 | 2026-10-08 | Sanchez Arenas, Manuel Angel | Revisé Lean UX para separar objetivos de negocio, resultados del usuario y supuestos por validar; también afiné enlaces y decisiones arquitectónicas. |
+| 0.15.1 | 2026-10-08 | Sanchez Arenas, Manuel Angel | Ajusté la relación entre estrategias e historias, y precisé qué hallazgos provienen de entrevistas y cuáles siguen como hipótesis. |
+| 0.15.2 | 2026-10-08 | Arrieta Quispe, Alison Jimena | Organicé el Big Picture como representación As-Is, corregí eventos y participantes y sustituí los diagramas por capturas del tablero. |
+| 0.16.0 | 2026-10-08 | Awad Vargas, Giorgio Marzouk | Reformulé las historias de suscripción para cubrir el registro, la comparación de costos y el inicio del servicio. |
+| 0.16.1 | 2026-10-08 | Awad Vargas, Giorgio Marzouk | Revisé las historias técnicas de captura para aclarar la comunicación BLE entre el collar y Edge, la confirmación y la prevención de duplicados. |
+| 0.16.2 | 2026-10-08 | Awad Vargas, Giorgio Marzouk | Aclaré los contratos de autorización, notificaciones y sincronización, incluidos sus consumidores y el envío de datos del abrevadero desde Edge. |
+| 0.16.3 | 2026-10-08 | Awad Vargas, Giorgio Marzouk | Añadí requisitos de configuración Edge, alertas y telemetría locales, sincronización móvil e indicadores para la aplicación web. |
+| 0.16.4 | 2026-10-08 | Awad Vargas, Giorgio Marzouk | Revisé objetivos y beneficios, y organicé las prioridades, dependencias y estimaciones propuestas en el Product Backlog. |
+| 0.16.5 | 2026-10-08 | Awad Vargas, Giorgio Marzouk | Afiné el vínculo entre entrevistas, necesidades e historias, diferencié las bajas por muerte y ajusté la descripción arquitectónica del producto. |
+| 0.16.6 | 2026-10-08 | Awad Vargas, Giorgio Marzouk | Actualicé el registro y la sección de colaboración con mis aportes de TB1 y las revisiones realizadas a los requisitos. |
+| 0.17.0 | 2026-10-08 | Avalos Cordova, Diego Andres | Diseñé los apartados web de 5.1 a 5.5 con wireframes, mockups, user flows y wireflows separados; dejé fuera el video de demostración. |
+| 0.17.1 | 2026-10-08 | Contreras Leon, Flor de María | Documenté la configuración del entorno, la planificación propuesta para Sprint 1 y las primeras capturas de implementación de la Landing Page. |
+| 0.17.2 | 2026-10-08 | Contreras Leon, Flor de María | Registré las comprobaciones manuales y el despliegue observado, separando esos resultados de las tareas incluidas solo en la planificación. |
+| 0.17.3 | 2026-10-08 | Contreras Leon, Flor de María | Actualicé la descripción del acceso al proyecto Jira y el estado de las solicitudes para incorporarnos al espacio de trabajo. |
+| 0.18.0 | 2026-10-08 | Contreras Leon, Flor de María | Organicé el contenido TB1 del Capítulo VI alrededor de la aplicación web, su alcance sin backend y las verificaciones disponibles. |
+| 0.18.1 | 2026-10-08 | Romero Meza, Jhimy Pool | Amplié el Ubiquitous Language y el glosario con términos de ganadería, salud, monitoreo, analítica, planificación e identidad. |
+| 0.18.2 | 2026-10-08 | Arrieta Quispe, Alison Jimena | Ajusté la presentación de los diagramas C4 para alinear su iconografía, hosting y despliegue con la arquitectura documentada. |
+| 0.19.0 | 2026-10-08 | Avalos Cordova, Diego Andres | Redacté las conclusiones y recomendaciones de TB1, distinguiendo los resultados de diseño y despliegue de los aspectos por validar. |
+| 0.19.1 | 2026-10-08 | Avalos Cordova, Diego Andres | Añadí fuentes oficiales de Angular, Playwright, Vercel e internacionalización, y aclaré la configuración comprobada de la aplicación web. |
+| 0.19.2 | 2026-10-08 | Avalos Cordova, Diego Andres | Organicé los recursos digitales de los capítulos V y VI en el Anexo H y actualicé los índices y referencias relacionados. |
+| 0.19.3 | 2026-10-08 | Avalos Cordova, Diego Andres | Amplié Student Outcome con los aportes TB1 del equipo y actualicé la descripción de la colaboración y el estado integrado del informe. |
+| 0.19.4 | 2026-10-08 | Avalos Cordova, Diego Andres | Ajusté el registro para reflejar las contribuciones de TB1 y el contenido incorporado en la rama de auditoría. |
+| 0.19.5 | 2026-10-08 | Avalos Cordova, Diego Andres | Amplié las contribuciones de TB1 para describir con mayor claridad el trabajo de cada integrante y del equipo. |
 
 <div style="break-after: page; page-break-after: always;"></div>
