@@ -57,27 +57,30 @@ La reorganización se incorporó mediante el [PR #1](https://github.com/SmartFar
 
 ### Actividad colaborativa
 
-Las siguientes métricas corresponden al historial alcanzable desde `develop` hasta [`238af37`](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/238af3763c30473c9f6610ff9cd0e2d304b98359), con corte al 8 de octubre de 2026. Para el periodo de TB1 se consideran las fechas de los commits desde el 6 de octubre a las 00:00, hora de Perú (UTC−5). El corte precede a esta actualización documental.
+Las siguientes métricas corresponden al historial alcanzable desde `develop` hasta [`8eb4f5d`](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/8eb4f5d30490ad24b5b6ba46adfe493101e328a9), con corte al 8 de octubre de 2026. Para el periodo TB1 se consideran los commits con fecha desde el 6 de octubre a las 00:00 hasta ese corte, hora de Perú (UTC−5). Se excluyen los commits de esta rama de auditoría; las identidades Git alternativas se consolidan bajo el nombre del integrante.
 
 | Métrica | Valor |
 |---|---|
-| Commits sin merge en el periodo de TB1 | 22 |
-| Merges de integración en el periodo de TB1 | 10 |
-| Commits totales del periodo de TB1 | 32 |
-| Commits acumulados del historial | 160 |
+| Commits de contenido (sin merges) en TB1 | 71 |
+| Merges de integración en TB1 | 20 |
+| Commits totales del periodo TB1 | 91 |
+| Commits acumulados del historial | 219 |
 | Periodo observado | 6 al 8 de octubre de 2026 |
-| Artefactos del informe al corte | 5 capítulos con contenido y 1 con estructura; 120 imágenes rasterizadas, 4 SVG y 17 fuentes de diagramas |
+| Ramas temporales integradas en TB1 | 9 |
+| Artefactos del informe al corte | 6 capítulos con contenido; 165 imágenes rasterizadas, 12 SVG y 18 fuentes de diagramas |
 
 | Integrante | Commits sin merge en el periodo | Aporte documentado |
 |---|---|---|
-| Avalos Cordova, Diego Andres | 15 | Reorganización del repositorio, carátula y paginación, estructura de TB1 y desarrollo de las secciones 5.1 y 5.2. |
-| Contreras Leon, Flor de María | 1 | Actualización de las fotografías y referencias de los integrantes. |
-| Sanchez Arenas, Manuel Angel | 2 | Revisión de Lean UX, enlaces, trazabilidad de requisitos y síntesis de la investigación. |
-| Arrieta Quispe, Alison Jimena | 4 | Revisión del Big Picture EventStorming, capturas de sus cinco etapas, redacción y enlaces al tablero. |
+| Avalos Cordova, Diego Andres | 36 | Reorganización del informe y desarrollo de las secciones de diseño web 5.1–5.5. |
+| Romero Meza, Jhimy Pool | 12 | Ampliación del vocabulario del dominio, términos por contexto y revisión de claridad del informe. |
+| Awad Vargas, Giorgio Marzouk | 8 | Revisión de User Stories, Technical Stories, dependencias, prioridades y backlog. |
+| Contreras Leon, Flor de María | 7 | Evidencias de diseño IoT, configuración, planificación y despliegue documentado del Sprint 1. |
+| Arrieta Quispe, Alison Jimena | 6 | Correcciones de C4 y Big Picture EventStorming y actualización de sus referencias. |
+| Sanchez Arenas, Manuel Angel | 2 | Revisión de supuestos, análisis de entrevistas, enlaces y trazabilidad de historias. |
 
 La cantidad de commits refleja actividad versionada y no mide por sí sola el esfuerzo ni la participación total. Los merges se contabilizan por separado; el historial incluye una integración atribuida a una cuenta automatizada. Los aportes de otros integrantes fuera de este periodo y las tareas sin commit propio no se deducen de esta tabla.
 
-El avance integrado corresponde a documentación y diseño. El Capítulo V contiene las guías de estilo y la arquitectura de información; los apartados 5.3 a 5.6 todavía requieren sus artefactos. El Capítulo VI conserva la estructura de configuración, implementación, pruebas y despliegue del Sprint 1, sin evidencias incorporadas en esas secciones.
+Al corte, el Capítulo V incluye guías de estilo, arquitectura de información, wireframes, mockups, wireflows, user flows y el prototipo de la Web Application. El Capítulo VI presenta la configuración de la Landing Page y la Web Application, evidencias de interfaz y despliegues. El alcance documentado no incluye backend; las tareas de Jira se identifican como simuladas y no como un Sprint ejecutado.
 
 ### Evidencias de colaboración y commits
 
@@ -89,11 +92,11 @@ El avance integrado corresponde a documentación y diseño. El Capítulo V conti
 | [PR #7: correcciones generales](https://github.com/SmartFarm-8733/Report-SmartFarm/pull/7) | Lean UX, investigación, requisitos y referencias. |
 | [PR #8: Big Picture EventStorming](https://github.com/SmartFarm-8733/Report-SmartFarm/pull/8) | Modelo As-Is y capturas de FigJam. |
 
-Las capturas de commits de la sección AV1 se conservan como evidencia histórica de esa entrega. Para TB1, los enlaces anteriores permiten revisar autores, fechas, archivos modificados y su integración.
+Las capturas de commits de la sección AV1 se conservan como evidencia histórica de esa entrega. Para TB1, las filas de contribución en [Student Outcome](05-student-outcome.md) y el [Registro de Versiones](02-version-history.md) enlazan los aportes con sus commits y Pull Requests.
 
 ### Corrección de requisitos a partir de la revisión del profesor
 
-El 8 de octubre se creó `fix/user-and-technical-stories` a partir del estado actualizado del informe, conservando `develop` como base de integración. Giorgio Awad registró las correcciones en commits separados por alcance; la autoría corresponde a la identidad Git configurada `GiorgioAwad`. Los seis commits de contenido siguientes y el commit documental que registra estas evidencias permiten revisar qué cambió en cada aporte. Las métricas anteriores conservan su corte histórico en `238af37` y no incluyen esta revisión.
+El 8 de octubre se creó `fix/user-and-technical-stories` a partir del estado actualizado del informe, conservando `develop` como base de integración. Giorgio Awad registró las correcciones en commits separados por alcance; la autoría corresponde a la identidad Git configurada `GiorgioAwad`. Los seis commits de contenido siguientes y el commit documental que registra estas evidencias permiten revisar qué cambió en cada aporte.
 
 | Alcance | Commit | Cambio verificable |
 |---|---|---|
@@ -104,6 +107,6 @@ El 8 de octubre se creó `fix/user-and-technical-stories` a partir del estado ac
 | Impact Mapping y backlog | [a10d064](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/a10d06490b26f5a77830520ba994cb00357649b4) | Reformulación de BG-03 como reducción propuesta del CAC, mortalidad como hipótesis de beneficio del usuario y actualización del backlog a 57 US, 19 TS y 352 SP propuestos, con prioridades y dependencias revisadas. |
 | Consistencia entre capítulos | [eb24b01](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/eb24b0164b653901ffa60e97570180ccae867f01) | Revisión de la evidencia de investigación, distinción de bajas por muerte en US-09 y corrección del texto arquitectónico y de las prioridades competitivas relacionadas con las historias. |
 
-Se verificaron identificadores únicos, criterios Given–When–Then, correspondencia de títulos con el backlog, prioridades relacionadas del Capítulo II, enlaces locales y sumas por sprint. El resultado contiene 76 historias y 352 SP como propuesta para Sprint Planning; no acredita implementación ni cierre de sprints. Las capturas y tableros de Jira y UXPressia y los diagramas de arquitectura de AV1 requieren sincronización con esta especificación. La rama queda preparada para revisión mediante Pull Request hacia `develop`.
+Se verificaron identificadores únicos, criterios Given–When–Then, correspondencia de títulos con el backlog, prioridades relacionadas del Capítulo II, enlaces locales y sumas por sprint. El resultado contiene 76 historias y 352 SP como propuesta para Sprint Planning; no acredita implementación ni cierre de sprints. Las capturas y tableros de Jira y UXPressia y los diagramas de arquitectura de AV1 requieren sincronización con esta especificación. El cambio se integró en `develop` mediante el PR #12, registrado en el merge [`9cae532`](https://github.com/SmartFarm-8733/Report-SmartFarm/commit/9cae5327df3f962a10391867dcd22a7f92a6f7cd).
 
 <div style="break-after: page; page-break-after: always;"></div>
