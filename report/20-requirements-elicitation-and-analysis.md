@@ -444,7 +444,7 @@ Arquetipo del Segmento 1, construido a partir de los patrones identificados en l
 
 [Ficha de User Persona de Cesar Flores en UXPressia](https://uxpressia.com/w/v8FzI/p/JsGGF?tagId=AIZ5N)
 
-La ficha diferencia el uso de smartphone y laptop declarado por Próspero y Meikoll de la configuración de cuatro dispositivos que no está respaldada como patrón común. El rango de 51–200 cabezas y la preferencia por pago anual fijo corresponden a las dos respuestas del cuestionario del segmento, no a todos los predios entrevistados. Las edades, escalas de habilidades y otros detalles ilustrativos del arquetipo no son mediciones de esa muestra.
+La ficha diferencia el uso de smartphone y laptop declarado por Próspero y Meikoll de la configuración de cuatro dispositivos que no está respaldada como patrón común. El rango de 51–200 cabezas y la preferencia por pago anual fijo corresponden a las dos respuestas del cuestionario del segmento, no a todos los predios entrevistados.
 
 **Segmento 2: Zootecnistas y Médicos Veterinarios.** Profesionales orientados al monitoreo biométrico continuo, al diagnóstico clínico temprano y a la revisión de historiales de salud consolidados.
 
@@ -462,7 +462,7 @@ Ambas fichas fueron elaboradas en UXPressia y contemplan datos demográficos, bi
 
 **Lectura de los campos pendientes de validación**
 
-Las fichas actualizadas todavía contienen algunos elementos visuales sin trazabilidad suficiente. Las etiquetas de validación y las siguientes precisiones delimitan su interpretación; no sustituyen la investigación faltante ni permiten dar por concluidas todas las correcciones de esos campos.
+
 
 | Campo de las fichas | Evidencia disponible y corrección de interpretación | Validación pendiente |
 |---|---|---|
