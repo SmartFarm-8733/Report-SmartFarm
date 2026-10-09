@@ -158,7 +158,7 @@ Para visualizar cómo colaboran los contextos en los casos reales del negocio se
 | # | Actor | Actividad | Objeto de trabajo | Destinatario | Contexto |
 |---|---|---|---|---|---|
 | 1 | Visitante | compara | los planes y estima el costo de su hato | Landing Page | Subscription Plans |
-| 2 | Visitante | solicita | una demostración con su contexto productivo | Landing Page | Subscription Plans |
+| 2 | Visitante | inicia | la contratación con el plan y la cantidad de cabezas seleccionados | Landing Page → Web Application | Subscription Plans |
 | 3 | Administrador ganadero | contrata | el plan para su unidad productiva | Subscription Plans | Subscription Plans |
 | 4 | Subscription Plans | solicita | el cobro del periodo | Payment Provider | Subscription Plans |
 | 5 | Payment Provider | confirma | la aceptación del pago | Subscription Plans | Subscription Plans |
