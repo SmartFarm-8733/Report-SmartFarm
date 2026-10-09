@@ -702,4 +702,12 @@ A continuación, se organiza el glosario del dominio distribuido por los *Bounde
 | ------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | **Executive Dashboard**   | Tablero de control ejecutivo | Vista resumida con indicadores cuantitativos consolidada para el propietario (mortalidad, tasa de preñez, distribución por potreros). |
 | **Epidemiological Curve** | Curva epidemiológica         | Representación gráfica del comportamiento y distribución de eventos de enfermedad en el hato a lo largo del tiempo.                   |
-| **Executive Report**      | Reporte ejecutivo            | Informe estructurado exportable en formatos estándar (PDF, Excel) con los registros sanitarios, reproductivos y operativos del hato.  |
+| **Executive Report**      | Reporte ejecutivo            | Informe estructurado exportable en formatos estándar (PDF, Excel) con los registros sanitarios, reproductivos y operativos del hato.  |  
+
+
+### 2.5.9\. Subscriptions &amp; Payment Management Domain
+
+| Término (Inglés)        | Equivalente en Español | Definición y Regla del Dominio                                                                                                        |
+| ----------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **Annual Subscription** | Suscripción anual      | Modalidad de contratación preferida por los ganaderos con tarifa fija por cabeza de ganado monitoreada.                               |
+| **Plan Coverage**       | Cobertura del plan     | Alcance de funcionalidades, almacenamiento histórico y número de dispositivos *Smart Collar* habilitados según la suscripción activa. |
