@@ -134,7 +134,7 @@ El Sprint 1 se orienta a presentar la propuesta de ICHU y habilitar los primeros
     </tr>
     <tr>
       <td>Sprint 1 Goal</td>
-      <td>Permitir a ganaderos y médicos veterinarios conocer ICHU, comparar planes, solicitar una demostración y recorrer los flujos iniciales de acceso, perfil y ficha del animal en la interfaz web.<br/><strong>Métrica de cumplimiento:</strong> las dos interfaces publicadas y navegables, y cobertura de los criterios de aceptación de las 13 historias seleccionadas dentro del alcance frontend.</td>
+      <td>Se presenta la primera version del landing page y la aplicación web, permitiendo a ganaderos y médicos veterinarios conocer ICHU, comparar planes, solicitar una demostración y recorrer los flujos iniciales de acceso, perfil y ficha del animal en la interfaz web.<br/><strong>Métrica de cumplimiento:</strong> las dos interfaces publicadas y navegables, y cobertura de los criterios de aceptación de las 13 historias seleccionadas dentro del alcance frontend.</td>
     </tr>
     <tr>
       <td>Sprint 1 Velocity</td>
