@@ -1,76 +1,79 @@
-<div align="center" style="box-sizing: border-box; width: 100%; max-width: 160mm; height: 254mm; min-height: 0; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: space-between; text-align: center; break-after: page; page-break-after: always; break-inside: avoid; page-break-inside: avoid;">
+<div align="center" style="box-sizing: border-box; width: 100%; max-width: 160mm; height: 254mm; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: space-between; color: #111; text-align: center; break-after: page; page-break-after: always; break-inside: avoid; page-break-inside: avoid;">
 
-<p align="center" style="text-align: center !important; margin: 0 !important; font-size: 11pt !important; line-height: 1 !important;">
+<p align="center" style="margin: 0 !important; line-height: 1 !important;">
   <img src="../assets/images/upc-logo.png" alt="Logo UPC" width="68" style="width: 68px; height: auto;"/>
 </p>
 
-<p align="center" style="text-align: center !important; font-size: 13pt !important; line-height: 1.45 !important; margin: 0 !important;">
-  <strong>Universidad Peruana de Ciencias Aplicadas</strong><br/>
-  Carrera de Ingeniería de Software
-</p>
+<br/>
 
-<p align="center" style="text-align: center !important; font-size: 11.5pt !important; line-height: 1.55 !important; margin: 0 !important;">
-  <strong>1ASI0572</strong><br/>
-  <strong>Desarrollo de Soluciones IoT</strong><br/>
-  NRC<br/>
-  <strong>8733</strong>
-</p>
+<div align="center">
+  <p align="center" style="font-size: 13pt !important; line-height: 1.3 !important; margin: 0 0 6pt !important;">Universidad Peruana de Ciencias Aplicadas</p>
+  <p align="center" style="font-size: 13pt !important; line-height: 1.3 !important; margin: 0 !important;">Carrera de Ingeniería de Software</p>
+</div>
 
-<p align="center" style="text-align: center !important; font-size: 20pt !important; line-height: 1.25 !important; margin: 0 !important;">
+<br/>
+
+<div align="center">
+  <p align="center" style="font-size: 12pt !important; line-height: 1.25 !important; margin: 0 0 8pt !important;"><strong>1ASI0572</strong></p>
+  <p align="center" style="font-size: 12pt !important; line-height: 1.25 !important; margin: 0 0 8pt !important;"><strong>Desarrollo de Soluciones IoT</strong></p>
+  <p align="center" style="font-size: 11.5pt !important; line-height: 1.3 !important; margin: 0 0 8pt !important;">NRC</p>
+  <p align="center" style="font-size: 12pt !important; line-height: 1.25 !important; margin: 0 !important;"><strong>8733</strong></p>
+</div>
+
+<p align="center" style="font-size: 17pt !important; line-height: 1.25 !important; margin: 0 !important;">
   <strong>Informe de Trabajo Final</strong>
 </p>
 
-<p align="center" style="text-align: center !important; font-size: 11.5pt !important; line-height: 1.5 !important; margin: 0 !important;">
-  Docente<br/>
-  <strong>Ángel Augusto Velásquez Núñez</strong>
+<div align="center">
+  <p align="center" style="font-size: 11.5pt !important; line-height: 1.3 !important; margin: 0 0 8pt !important;">Docente</p>
+  <p align="center" style="font-size: 12pt !important; line-height: 1.3 !important; margin: 0 !important;"><strong>Velásquez Núñez, Ángel Augusto</strong></p>
+</div>
+
+<br/>
+
+<div align="center">
+  <p align="center" style="font-size: 11.5pt !important; line-height: 1.3 !important; margin: 0 0 8pt !important;">Equipo</p>
+  <p align="center" style="font-size: 12pt !important; line-height: 1.3 !important; margin: 0 0 8pt !important;"><strong>SmartFarm</strong></p>
+  <p align="center" style="font-size: 11.5pt !important; line-height: 1.3 !important; margin: 0 0 8pt !important;">Proyecto</p>
+  <p align="center" style="font-size: 12pt !important; line-height: 1.3 !important; margin: 0 !important;"><strong>ICHU</strong></p>
+</div>
+
+<br/>
+
+<div align="center">
+  <p align="center" style="font-size: 11.5pt !important; line-height: 1.3 !important; margin: 0 0 8pt !important;"><strong>Integrantes</strong></p>
+  <p align="center" style="font-size: 10.5pt !important; line-height: 1.35 !important; margin: 0 0 5pt !important;">
+    <span style="display: inline-block; width: 27mm; text-align: left;"><strong>Código</strong></span>&emsp;<span style="display: inline-block; width: 82mm; text-align: left;"><strong>Apellidos y Nombres</strong></span>
+  </p>
+  <p align="center" style="font-size: 10.5pt !important; line-height: 1.35 !important; margin: 0 0 3pt !important;">
+    <span style="display: inline-block; width: 27mm; text-align: left;">U202312031</span>&emsp;<span style="display: inline-block; width: 82mm; text-align: left;">Arrieta Quispe, Alison Jimena</span>
+  </p>
+  <p align="center" style="font-size: 10.5pt !important; line-height: 1.35 !important; margin: 0 0 3pt !important;">
+    <span style="display: inline-block; width: 27mm; text-align: left;">U202320574</span>&emsp;<span style="display: inline-block; width: 82mm; text-align: left;">Sanchez Arenas, Manuel Angel</span>
+  </p>
+  <p align="center" style="font-size: 10.5pt !important; line-height: 1.35 !important; margin: 0 0 3pt !important;">
+    <span style="display: inline-block; width: 27mm; text-align: left;">U202323243</span>&emsp;<span style="display: inline-block; width: 82mm; text-align: left;">Contreras Leon, Flor de María</span>
+  </p>
+  <p align="center" style="font-size: 10.5pt !important; line-height: 1.35 !important; margin: 0 0 3pt !important;">
+    <span style="display: inline-block; width: 27mm; text-align: left;">U202320442</span>&emsp;<span style="display: inline-block; width: 82mm; text-align: left;">Awad Vargas, Giorgio Marzouk</span>
+  </p>
+  <p align="center" style="font-size: 10.5pt !important; line-height: 1.35 !important; margin: 0 0 3pt !important;">
+    <span style="display: inline-block; width: 27mm; text-align: left;">U202321510</span>&emsp;<span style="display: inline-block; width: 82mm; text-align: left;">Romero Meza, Jhimy Pool</span>
+  </p>
+  <p align="center" style="font-size: 10.5pt !important; line-height: 1.35 !important; margin: 0 !important;">
+    <span style="display: inline-block; width: 27mm; text-align: left;">U202313922</span>&emsp;<span style="display: inline-block; width: 82mm; text-align: left;">Avalos Cordova, Diego Andres</span>
+  </p>
+</div>
+
+<br/>
+
+<p align="center" style="font-size: 12pt !important; line-height: 1.3 !important; margin: 0 !important;">
+  <strong>Período 202620</strong>
 </p>
 
-<p align="center" style="text-align: center !important; font-size: 11.5pt !important; line-height: 1.5 !important; margin: 0 !important;">
-  Equipo<br/>
-  <strong>SmartFarm</strong><br/>
-  Proyecto<br/>
-  <strong>ICHU</strong>
-</p>
+<br/>
 
-<h2 align="center" style="text-align: center !important; font-size: 13pt !important; line-height: 1.25 !important; margin: 0 !important; color: #202520 !important;">Integrantes</h2>
-
-<table align="center" style="width: 76%; max-width: 120mm; margin: 0 auto !important; border: 0 !important; border-collapse: collapse; table-layout: fixed; font-family: Arial, sans-serif; font-size: 10.5pt !important; line-height: 1.45 !important; page-break-inside: avoid; break-inside: avoid;">
-  <thead>
-    <tr>
-      <th align="center" style="width: 30%; border: 0 !important; padding: 0 8px 4px !important; background: transparent !important; color: #111 !important; text-align: center !important;">Código</th>
-      <th align="center" style="border: 0 !important; padding: 0 8px 4px !important; background: transparent !important; color: #111 !important; text-align: center !important;">Apellidos y nombres</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="center" style="border: 0 !important; padding: 2px 8px !important; text-align: center !important;">U202312031</td>
-      <td align="center" style="border: 0 !important; padding: 2px 8px !important; text-align: center !important;">Arrieta Quispe, Alison Jimena</td>
-    </tr>
-    <tr>
-      <td align="center" style="border: 0 !important; padding: 2px 8px !important; text-align: center !important;">U202320574</td>
-      <td align="center" style="border: 0 !important; padding: 2px 8px !important; text-align: center !important;">Sanchez Arenas, Manuel Angel</td>
-    </tr>
-    <tr>
-      <td align="center" style="border: 0 !important; padding: 2px 8px !important; text-align: center !important;">U202323243</td>
-      <td align="center" style="border: 0 !important; padding: 2px 8px !important; text-align: center !important;">Contreras Leon, Flor de María</td>
-    </tr>
-    <tr>
-      <td align="center" style="border: 0 !important; padding: 2px 8px !important; text-align: center !important;">U202320442</td>
-      <td align="center" style="border: 0 !important; padding: 2px 8px !important; text-align: center !important;">Awad Vargas, Giorgio Marzouk</td>
-    </tr>
-    <tr>
-      <td align="center" style="border: 0 !important; padding: 2px 8px !important; text-align: center !important;">U202321510</td>
-      <td align="center" style="border: 0 !important; padding: 2px 8px !important; text-align: center !important;">Romero Meza, Jhimy Pool</td>
-    </tr>
-    <tr>
-      <td align="center" style="border: 0 !important; padding: 2px 8px !important; text-align: center !important;">U202313922</td>
-      <td align="center" style="border: 0 !important; padding: 2px 8px !important; text-align: center !important;">Avalos Cordova, Diego Andres</td>
-    </tr>
-  </tbody>
-</table>
-
-<p align="center" style="text-align: center !important; font-size: 11.5pt !important; line-height: 1.5 !important; margin: 0 !important;">
-  <strong>Período 202620</strong><br/>
+<p align="center" style="font-size: 12pt !important; line-height: 1.3 !important; margin: 8pt 0 0 !important;">
   <strong>Octubre 2026</strong>
 </p>
 
