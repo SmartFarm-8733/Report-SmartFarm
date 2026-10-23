@@ -173,7 +173,7 @@ Con esta estructura, la entrevista se aborda en tres fases: primero el perfil de
 
 ### 2.2.2. Registro de entrevistas.
 
-**Video editado de las entrevistas:** [Abrir video en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK)
+**Video editado de las entrevistas:** Abrir video en SharePoint ([https://tinyurl.com/22n54ovz](https://tinyurl.com/22n54ovz))
 
 **Criterio de asignación por segmento**
 
@@ -195,7 +195,7 @@ Los resúmenes siguientes registran actividades, problemas, dispositivos y neces
 
 ![Entrevista a Próspero Contreras Flores](assets/images/entrevista-segmento1-prospero-contreras.png)
 
-> **Video: (Inicio: 0:01)** [ver segmento en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK)
+> **Video: (Inicio: 0:01)** ver segmento en SharePoint ([https://tinyurl.com/22n54ovz](https://tinyurl.com/22n54ovz))
 
 > **Resumen:**
 > La entrevista realizada a Próspero Contreras Flores, ganadero ubicado en la región de Apurímac, describe la dinámica operativa y los desafíos clave en la gestión de un predio con aproximadamente 100 cabezas de ganado bajo un régimen de pastoreo extensivo. Actualmente, la administración del inventario y el registro de eventos de salud se realizan de forma rudimentaria mediante hojas de cálculo en Excel y cuadernos de notas, lo que genera vacíos significativos en la trazabilidad médica individual del hato y propicia pérdidas económicas por partos prematuros no supervisados y casos de abigeato (robo de ganado). La infraestructura local presenta una cobertura de internet intermitente (aproximadamente 50% de señal en los potreros), por lo que el productor requiere una herramienta digital multidispositivo (smartphone en campo y laptop en oficina) con capacidad de almacenamiento offline. La solución ideal demandada debe centralizar las fichas clínicas individuales, emitir notificaciones preventivas ajustadas al calendario sanitario andino (vacunación contra carbúnculo, desparasitación), predecir eventos reproductivos (detección de celos y proximidad de partos) y consolidar reportes administrativos de costos y mortalidad bajo un modelo de suscripción anual.
@@ -210,7 +210,7 @@ Los resúmenes siguientes registran actividades, problemas, dispositivos y neces
 
 ![Entrevista a Meikoll Morell Bosa Cárdenas](assets/images/entrevista-segmento1-meikoll-morell.png)
 
-> **Video: (Inicio: 6:01)** [ver segmento en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK)
+> **Video: (Inicio: 6:01)** ver segmento en SharePoint ([https://tinyurl.com/22n54ovz](https://tinyurl.com/22n54ovz))
 
 > **Resumen:**
 > El ingeniero zootecnista Meikoll Morell Bosa Cárdenas, propietario de la Hacienda del Marqués en Pampa de Anta (Cusco), maneja 40 cabezas de ganado Brown Swiss bajo un régimen semi-extensivo, 20 toros en engorde intensivo y caballos peruanos de paso. Su principal canal de control actual consiste en fichas individuales ingresadas en Excel desde su laptop y smartphone, pero identifica que el mayor problema en su gestión es la falta de hábito para registrar las intervenciones inmediatamente después del trabajo de campo, lo que deriva en pérdida de historial clínico y de trazabilidad. Respecto a pérdidas económicas, señala eventos de negligencia en partos y accidentes en equinos, además de vulnerabilidad ante el abigeato, donde la geolocalización por microchip ha fallado por falta de señal en zonas rurales. Para optimizar su toma de decisiones, Meikoll muestra interés en adoptar una solución de software bajo suscripción anual, priorizando que funcione desde el teléfono en modo offline para actualizar datos automáticamente al recuperar conexión. Entre las funciones clave que exige destacan las notificaciones automáticas para campañas sanitarias (dosificación, vacunas y vitaminas), alertas sobre el tiempo y peso estimado en ganadería de engorde, módulos de control de costos por alimento y medicinas por cabeza para evaluar la rentabilidad de los ciclos trimestrales, y la capacidad de adjuntar fotografías de los animales como evidencia del estado físico y respaldo ante robos.
@@ -225,7 +225,7 @@ Los resúmenes siguientes registran actividades, problemas, dispositivos y neces
 
 ![Entrevista a Grober Barrientos Talaverano](assets/images/entrevista-segmento1-grober-barrientos.png)
 
-> **Video: (Inicio: 12:43)** [ver segmento en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK)
+> **Video: (Inicio: 12:43)** ver segmento en SharePoint ([https://tinyurl.com/22n54ovz](https://tinyurl.com/22n54ovz))
 
 > **Resumen:**
 > Grober Barrientos Talaverano, un médico veterinario zootecnista de 34 años. Grober trabaja en el Fundo Agropecuario Yavi Yavi (Cusco), donde se encarga de brindar asistencia técnica en sanidad, manejo, alimentación y registros de ganado. Durante la charla, Grober explicó que manejan animales criollos, cruzados y un lote de 65 cabezas productoras de leche (Brown Swiss y Fleckvieh). Actualmente utiliza Excel en su computadora para llevar sus registros, aunque enfrenta problemas de conectividad intermitente en la zona de pastoreo. Indicó que la principal causa de mortalidad bovina en su zona es el mal de altura en terneros, cuyos primeros signos suelen evidenciarse en la reducción del movimiento y del tiempo de pastoreo. Por ello, destacó que le sería de gran utilidad una plataforma o sistema que registre y alerte sobre variaciones en las constantes fisiológicas (temperatura, frecuencias) y patrones de desplazamiento, además de permitir el filtrado por categorías, el control de costos e inventario y la generación de reportes e historiales de salud, sanidad y reproducción en tiempo real.
@@ -242,7 +242,7 @@ Los resúmenes siguientes registran actividades, problemas, dispositivos y neces
 
 ![Entrevista a Darwin Carbajal Vilca](assets/images/entrevista-segmento2-darwin-carbajal.png)
 
-> **Video: (Inicio: 18:07)** [ver segmento en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK)
+> **Video: (Inicio: 18:07)** ver segmento en SharePoint ([https://tinyurl.com/22n54ovz](https://tinyurl.com/22n54ovz))
 
 > **Resumen:**
 > Darwin Carbajal Vilca, médico veterinario zootecnista y criador de ganado vacuno Brown Swiss en Puno con más de 18 años de experiencia en inseminación artificial, administra el fundo "Flores de Coña" con 26 animales de pedigree y PPC. Su jornada combina labor de campo e inspección en establo en primeras y últimas horas del día con trabajo de escritorio e investigación clínica. En su práctica médica identifica desafíos clave como la detección tardía del celo silencioso, reconocible habitualmente al segundo o tercer día por sangrado vulvar, y el impacto fatal de trastornos metabólicos de rápida evolución como el timpanismo o la intoxicación por ensilado alterado. Para optimizar su gestión, requiere una solución tecnológica integrada que permita registrar historias clínicas digitales en campo para validar fármacos administrados, recibir alertas preventivas sobre caídas en la rumia o alzas térmicas, analizar curvas epidemiológicas a nivel de hato y adjuntar evidencia ecográfica para agilizar los registros de gestación ante ASCRIGAR Perú.
@@ -257,7 +257,7 @@ Los resúmenes siguientes registran actividades, problemas, dispositivos y neces
 
 ![Entrevista a Eliseo Ramírez Mena](assets/images/entrevista-segmento2-eliseo-ramirez.png)
 
-> **Video: (Inicio: 24:01)** [ver segmento en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK)
+> **Video: (Inicio: 24:01)** ver segmento en SharePoint ([https://tinyurl.com/22n54ovz](https://tinyurl.com/22n54ovz))
 
 > **Resumen:**
 > La entrevista expone la rutina laboral y las necesidades tecnológicas de Eliseo Ramírez Mena, bachiller en Medicina Veterinaria y Zootecnia con más de dos años de experiencia en el manejo de ganado vacuno y ovino. Su jornada diaria distribuye la mañana en labores de campo con los animales y la tarde en trabajo de oficina, registro de datos en computadora e impresión de informes para clientes. En el aspecto sanitario y reproductivo, Eliseo enfatiza que los tratamientos dependen del diagnóstico clínico observable, como la variación de temperatura, el apetito, la alteración de rumiación o conductas en celo, y del apoyo de colegas en casos complejos, así como del uso de intervenciones inmediatas ante emergencias metabólicas como el timpanismo gaseoso. Frente a la propuesta de un software y una aplicación móvil veterinaria, el especialista prioriza la utilidad de sincronizar imágenes de ecógrafos para evaluar la gestación en tiempo real desde el celular, la emisión de alertas rojas automáticas cuando decaen las constantes vitales del animal, la automatización de reportes ejecutivos para sustituir el llenado manual en Excel, y la integración de módulos nutricionales que identifiquen deficiencias minerales o de nutrientes en la dieta del ganado.
@@ -272,7 +272,7 @@ Los resúmenes siguientes registran actividades, problemas, dispositivos y neces
 
 ![Entrevista a Dionisio Rodríguez](assets/images/entrevista-segmento2-dionisio-rodriguez.png)
 
-> **Video: (Inicio: 29:32)** [ver segmento en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323243_upc_edu_pe/IQCWBM7VmG-wQpKSMg4lQ3R4ARyUf9668Ua8FlogmvsDBS0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pKyJVK)
+> **Video: (Inicio: 29:32)** ver segmento en SharePoint ([https://tinyurl.com/22n54ovz](https://tinyurl.com/22n54ovz))
 
 > **Resumen:**
 > Esta entrevista explora las necesidades operativas y tecnológicas de Dionisio Rodríguez, zootecnista chileno con trabajo de campo en Perú, para guiar el desarrollo de la plataforma ganadera ICHU de SmartFarm. Rodríguez explica que pasa la mayor parte de su jornada en el terreno registrando datos y fotos en su teléfono inteligente, reservando la computadora de oficina para la elaboración de informes. Para la detección temprana de enfermedades metabólicas o infecciosas y la identificación de celos silenciosos, fundamenta su diagnóstico en el seguimiento continuo de la temperatura corporal, la inactividad, la disminución de la rumia y los cambios de conducta, recurriendo a exámenes de laboratorio solo en casos complejos. En cuanto al diseño de la plataforma, solicita alertas automáticas ante fiebres o partos, reportes exportables a Excel o PDF, e integración directa con equipos de campo como ecógrafos portátiles y software de nutrición para evitar la duplicidad en el registro de información.
@@ -306,7 +306,7 @@ Para complementar las entrevistas en profundidad del Segmento 1, se aplicó un c
 
 *Figura 1. Elaboración propia a partir de los datos recolectados. Startup SmartFarm.*
 
-[Cuestionario ampliado del Segmento 1: Ganaderos](https://drive.google.com/file/d/1WZdTKVgyGmAlKlI4ZXnRhkK2MJL7fO8D/view?usp=sharing)
+Cuestionario ampliado del Segmento 1: Ganaderos ([https://tinyurl.com/2bxh784s](https://tinyurl.com/2bxh784s))
 
 Como muestra el gráfico, el **50% utiliza hojas de cálculo (Excel/Google Sheets) y el 50% restante cuaderno o registro manual**; ningún ganadero emplea software especializado ganadero ni aplicación móvil. Este patrón confirma que el 100% del segmento digitaliza de forma rudimentaria o no digitaliza nada, sin ningún uso de herramientas especializadas. Además, el registro se divide entre lo semi-digital (Excel) y lo totalmente análogo (cuaderno), lo que genera trazabilidad fragmentada. En consecuencia, ICHU debe incorporar una **migración simple desde Excel y cuadernos hacia la ficha digital por animal**, sin exigir competencias técnicas avanzadas a usuarios acostumbrados a registrar en papel.
 
@@ -316,7 +316,7 @@ Como muestra el gráfico, el **50% utiliza hojas de cálculo (Excel/Google Sheet
 
 *Figura 2. Elaboración propia a partir de los datos recolectados. Startup SmartFarm.*
 
-[Cuestionario ampliado del Segmento 1: Ganaderos](https://drive.google.com/file/d/1WZdTKVgyGmAlKlI4ZXnRhkK2MJL7fO8D/view?usp=sharing)
+Cuestionario ampliado del Segmento 1: Ganaderos ([https://tinyurl.com/2bxh784s](https://tinyurl.com/2bxh784s))
 
 El gráfico evidencia una validación total de la propuesta de valor: el **100% de los ganaderos calificó la plataforma centralizada como "Muy útil, mejoraría significativamente mis procesos"**, sin ninguna respuesta neutra o negativa. Este dato porcentual respalda directamente el núcleo del producto ICHU: la centralización del historial de salud, la ubicación y las alertas por animal en un único sistema, frente a la dispersión actual en Excel y cuadernos que los propios entrevistados identifican como su principal debilidad de gestión.
 
@@ -378,7 +378,7 @@ Para complementar las entrevistas en profundidad del Segmento 2, se aplicó un c
 
 *Figura 3. Elaboración propia a partir de los datos recolectados. Startup SmartFarm.*
 
-[Cuestionario ampliado del Segmento 2: Zootecnistas y médicos veterinarios](https://drive.google.com/file/d/15h2MLOWtvMBic0O97VnSMJxAeW9ZpUy2/view?usp=drive_link)
+Cuestionario ampliado del Segmento 2: Zootecnistas y médicos veterinarios ([https://tinyurl.com/28t73nqb](https://tinyurl.com/28t73nqb))
 
 Como muestra el gráfico, los dispositivos de registro se distribuyen de forma exactamente equitativa: **33.3% smartphone, 33.3% laptop y 33.3% registros en papel únicamente**. Ningún profesional emplea tablet ni computadora de escritorio como dispositivo principal. Este patrón porcentual evidencia que un tercio del segmento aún no digitaliza su información clínica, mientras que los dos tercios restantes dependen de dispositivos móviles o portátiles. En consecuencia, la plataforma ICHU debe responder con una **aplicación móvil de primera clase** (compatible con smartphones y laptops) que además ofrezca un proceso de migración simple para trasladar los registros en papel hacia el sistema digital centralizado.
 
@@ -388,7 +388,7 @@ Como muestra el gráfico, los dispositivos de registro se distribuyen de forma e
 
 *Figura 4. Elaboración propia a partir de los datos recolectados. Startup SmartFarm.*
 
-[Cuestionario ampliado del Segmento 2: Zootecnistas y médicos veterinarios](https://drive.google.com/file/d/15h2MLOWtvMBic0O97VnSMJxAeW9ZpUy2/view?usp=drive_link)
+Cuestionario ampliado del Segmento 2: Zootecnistas y médicos veterinarios ([https://tinyurl.com/28t73nqb](https://tinyurl.com/28t73nqb))
 
 Según el gráfico, el **66.7% de los entrevistados califica los registros manuales como moderadamente confiables (50-70% de precisión)** y el **33.3% restante como confiables (70-90% de precisión)**. Es destacable que **ningún profesional los considera muy confiables ni confiables al 100%**, es decir, el 100% reconoce un margen de error de al menos un 10% en la información clínica que hoy sostiene sus decisiones. Este dato porcentual valida directamente la propuesta de valor de ICHU: historias clínicas digitales con trazabilidad completa (qué se aplicó, cuándo y quién), reduciendo riesgos ya observados por los propios entrevistados, como intoxicaciones por dosificación repetida o fallos de preñez por vacunación omitida.
 
@@ -398,7 +398,7 @@ Según el gráfico, el **66.7% de los entrevistados califica los registros manua
 
 *Figura 5. Elaboración propia a partir de los datos recolectados. Startup SmartFarm.*
 
-[Cuestionario ampliado del Segmento 2: Zootecnistas y médicos veterinarios](https://drive.google.com/file/d/15h2MLOWtvMBic0O97VnSMJxAeW9ZpUy2/view?usp=drive_link)
+Cuestionario ampliado del Segmento 2: Zootecnistas y médicos veterinarios ([https://tinyurl.com/28t73nqb](https://tinyurl.com/28t73nqb))
 
 El gráfico evidencia un resultado unánime: el **100% de los entrevistados seleccionó "Todos los anteriores"**, es decir, desea medir de forma continua los **ciclos de rumia y alimentación, la frecuencia cardíaca y respiratoria, los niveles de actividad física diaria y la temperatura corporal continua 24/7**. La unanimidad absoluta del segmento convierte a estos cuatro parámetros en el **núcleo obligatorio de telemetría biométrica** que el collar inteligente de ICHU debe capturar, ya que constituyen variables que la observación manual no logra registrar de manera precisa y sostenida.
 
@@ -442,7 +442,7 @@ Arquetipo del Segmento 1, construido a partir de los patrones identificados en l
 
 ![User Persona Cesar Flores, arquetipo del Segmento 1](assets/images/persona-segmento1-cesar-flores.png)
 
-[Ficha de User Persona de Cesar Flores en UXPressia](https://uxpressia.com/w/v8FzI/p/JsGGF?tagId=AIZ5N)
+Ficha de User Persona de Cesar Flores en UXPressia ([https://tinyurl.com/2yd9eme2](https://tinyurl.com/2yd9eme2))
 
 La ficha diferencia el uso de smartphone y laptop declarado por Próspero y Meikoll de la configuración de cuatro dispositivos que no está respaldada como patrón común. El rango de 51–200 cabezas y la preferencia por pago anual fijo corresponden a las dos respuestas del cuestionario del segmento, no a todos los predios entrevistados.
 
@@ -454,7 +454,7 @@ Arquetipo del Segmento 2, construido a partir de los patrones identificados en l
 
 ![User Persona Leonardo Rosales, arquetipo del Segmento 2](assets/images/persona-segmento2-leonardo-rosales.png)
 
-[Ficha de User Persona de Leonardo Rosales en UXPressia](https://uxpressia.com/w/v8FzI/p/Mq5pD?tagId=AIZ5N)
+Ficha de User Persona de Leonardo Rosales en UXPressia ([https://tinyurl.com/266yhp4g](https://tinyurl.com/266yhp4g))
 
 La ficha sintetiza las entrevistas a Darwin, Eliseo y Dionisio y explicita la variedad de herramientas registrada en las tres respuestas del cuestionario. ASCRIGAR Perú se mantiene como evidencia individual de Darwin para registros de gestación; no se generaliza como marca o influencia compartida. Los objetivos y motivaciones expresan resultados deseados, no efectos clínicos ya comprobados de ICHU.
 
@@ -525,7 +525,7 @@ Ambos mapas fueron elaborados en UXPressia y están vinculados a la ficha de Use
 
 *Figura 6. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
-[User Journey Map de Cesar Flores en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
+User Journey Map de Cesar Flores en UXPressia ([https://uxpressia.com/w/v8FzI/t/AIZ5N](https://uxpressia.com/w/v8FzI/t/AIZ5N))
 
 **User Journey Map As-Is de Leonardo Rosales**
 
@@ -533,7 +533,7 @@ Ambos mapas fueron elaborados en UXPressia y están vinculados a la ficha de Use
 
 *Figura 7. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
-[User Journey Map de Leonardo Rosales en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
+User Journey Map de Leonardo Rosales en UXPressia ([https://uxpressia.com/w/v8FzI/t/AIZ5N](https://uxpressia.com/w/v8FzI/t/AIZ5N))
 
 #### As-Is Mapping
 
@@ -561,7 +561,7 @@ Para la elaboración de los Empathy Maps, el equipo partió de las entrevistas y
 
 ![Empathy Map de Cesar Flores, arquetipo del Segmento 1](assets/images/empathy-map-segmento1-ganadero.jpg)
 
-[Empathy Map del Segmento 1 en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
+Empathy Map del Segmento 1 en UXPressia ([https://uxpressia.com/w/v8FzI/t/AIZ5N](https://uxpressia.com/w/v8FzI/t/AIZ5N))
 
 Se empatiza con un arquetipo de propietario o administrador ganadero. En esta muestra, los predios entrevistados se encuentran en Apurímac y Cusco y los tamaños declarados varían; no se toma la localización ni escala de un solo participante como requisito universal.
 
@@ -575,7 +575,7 @@ Los **Pains comunes documentados** son la fragmentación de registros y la conec
 
 ![Empathy Map de Leonardo Rosales, arquetipo del Segmento 2](assets/images/empathy-map-segmento2-veterinario.jpg)
 
-[Empathy Map del Segmento 2 en UXPressia](https://uxpressia.com/w/v8FzI/t/AIZ5N)
+Empathy Map del Segmento 2 en UXPressia ([https://uxpressia.com/w/v8FzI/t/AIZ5N](https://uxpressia.com/w/v8FzI/t/AIZ5N))
 
 Se empatiza con un arquetipo de zootecnista o médico veterinario que combina atención en campo con análisis y documentación clínica. Las entrevistas describen esta dinámica en Darwin, Eliseo y Dionisio, aunque las herramientas y tareas específicas varían entre ellos.
 
@@ -607,7 +607,7 @@ El inventario sin ordenar contiene 36 eventos candidatos del negocio. Las notas 
 
 *Figura 2.4.1. Exploración caótica: 36 eventos candidatos del negocio redactados en pasado, sin componentes de la solución futura. Fuente: tablero de SmartFarm en FigJam.*
 
-Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
+Tablero de figma del big picture event storming: [https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming)
 
 **Etapa 2 — Ordenamiento temporal**
 
@@ -617,7 +617,7 @@ Los mismos 36 eventos candidatos se organizan en seis carriles del negocio, que 
 
 *Figura 2.4.2. Ordenamiento temporal: ciclo de vida del hato, observaciones durante el pastoreo, intervención sanitaria, reproducción, campañas preventivas y registros en campo e informes. Fuente: tablero de SmartFarm en FigJam.*
 
-Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
+Tablero de figma del big picture event storming: [https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming)
 
 El carril de reproducción ilustra una secuencia exitosa, no una preñez o un parto garantizados. La revisión del historial de medicamentos y el diagnóstico pueden ocurrir en un orden distinto. Los períodos de retiro se aplican únicamente cuando el tratamiento administrado los requiere; las reglas efectivamente utilizadas, los criterios de cierre de campañas y los traspasos de información sobre costos e indicadores se mantienen pendientes de validación. No se define ningún umbral clínico ni política de software.
 
@@ -629,7 +629,7 @@ Las notas amarillas identifican roles del negocio: ganadero propietario, trabaja
 
 *Figura 2.4.3. Personas y medios de apoyo externos: roles actuales, herramientas de apoyo y registro externo de criadores, sin la infraestructura propuesta de ICHU. Fuente: tablero de SmartFarm en FigJam.*
 
-Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
+Tablero de figma del big picture event storming: [https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming)
 
 ASCRIGAR Perú es un participante administrativo externo mencionado en las necesidades de Darwin sobre evidencia para el registro de gestación. No se representa como una integración mediante API que ya exista. La evidencia requerida, la responsabilidad de presentar la documentación y los pasos de aceptación permanecen como preguntas abiertas. Los actores del negocio no se sustituyen por collares, un dispositivo de borde ni un servicio central.
 
@@ -641,7 +641,7 @@ La revisión de la secuencia del negocio vincula cinco eventos de referencia con
 
 *Figura 2.4.4. Problemas y oportunidades: cinco dolores del negocio actual, cinco resultados deseados y cuatro preguntas explícitas de validación. Fuente: tablero de SmartFarm en FigJam.*
 
-Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
+Tablero de figma del big picture event storming: [https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming)
 
 | Evento de referencia | Dolor actual o asunto pendiente | Resultado deseado y evidencia |
 |---|---|---|
@@ -666,7 +666,7 @@ Cuatro eventos pivote en morado marcan cambios en la responsabilidad o en el enf
 
 *Figura 2.4.5. Eventos pivote y áreas de negocio emergentes: cuatro eventos pivote y eventos de apoyo asociados con cinco áreas provisionales del negocio. Fuente: tablero de SmartFarm en FigJam.*
 
-Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
+Tablero de figma del big picture event storming: [https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming)
 
 Las áreas provisionales son **Identificación y ciclo de vida del hato**, **Observación durante el pastoreo y respuesta**, **Salud animal y atención clínica**, **Reproducción y evidencia**, y **Campañas preventivas e informes**. *Campaña sanitaria cerrada* sirve de apoyo a la revisión administrativa, sujeta a la validación de las reglas de cierre. *Animal dado de baja después de un robo* pertenece a la gestión del ciclo de vida del hato, no exclusivamente a la elaboración de informes. El mantenimiento de registros de campo atraviesa estas áreas; no es un servicio de telemetría. Estas agrupaciones son hipótesis de exploración, no un mapa de contextos definitivo, una descomposición de servicios ni una asignación de responsabilidades de software.
 
@@ -683,7 +683,7 @@ La tabla presenta, traducidos al español, los mismos 36 eventos de las etapas 1
 | Campaña sanitaria preventiva (3) | Campaña sanitaria programada; Aplicación preventiva registrada; Campaña sanitaria cerrada. |
 | Registros de campo e informes (5) | Observación de campo registrada; Registro de campo ingresado en hoja de cálculo; Costo consolidado; Indicadores del período calculados; Informe entregado al propietario. |
 
-Tablero de figma del big picture event storming: https://tinyurl.com/BigPictureEventStorming
+Tablero de figma del big picture event storming: [https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming)
 
 ## 2.5. Ubiquitous Language.
 

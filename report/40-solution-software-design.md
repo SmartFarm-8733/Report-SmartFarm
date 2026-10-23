@@ -50,7 +50,7 @@ En la cuarta fase se agruparon los elementos alrededor de los **Aggregates**, en
 
 *Figura 4.1.1. Design-Level EventStorming de SmartFarm: comandos, actores, Domain Events, Policies, Aggregates y Read Models. Elaboración propia.*
 
-[Abrir tablero Miro del Design-Level EventStorming](https://miro.com/welcomeonboard/ekNIcWVQcC9hcG1mM292c2E0RkcwblUxUSttUDFCSmpZMjBTQldxOENSNVdtbTNiWEZQSXRaQWg1UWk4bmpDYjVzNnNHanMrV3J5RDZZc2RaeXNBSDQ4ZWRzaFRaNi9qbXJsUlBtblZobDFOeS9aTGFyK1BJWDNUVGozSUVYSHhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=680912547552)
+Abrir tablero Miro del Design-Level EventStorming ([https://tinyurl.com/25yajtgr](https://tinyurl.com/25yajtgr))
 
 **Hot spots resueltos en esta sesión**
 
@@ -64,19 +64,19 @@ Para identificar los contextos acotados se aplicó la técnica **look-for-pivota
 
 *Estado 1. Identificación de eventos pivote sobre la línea temporal del dominio. Elaboración propia.*
 
-[Abrir tablero Miro de Candidate Context Discovery](https://miro.com/welcomeonboard/ekNIcWVQcC9hcG1mM292c2E0RkcwblUxUSttUDFCSmpZMjBTQldxOENSNVdtbTNiWEZQSXRaQWg1UWk4bmpDYjVzNnNHanMrV3J5RDZZc2RaeXNBSDQ4ZWRzaFRaNi9qbXJsUlBtblZobDFOeS9aTGFyK1BJWDNUVGozSUVYSHhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=680912547552)
+Abrir tablero Miro de Candidate Context Discovery ([https://tinyurl.com/25yajtgr](https://tinyurl.com/25yajtgr))
 
 ![Estado 2 — Boundaries Emerging](assets/images/diagrams/candidate-context-discovery/02-emerging-boundaries.svg)
 
 *Estado 2. Trazado inicial de fronteras emergentes a partir de cambios de responsabilidad y reglas. Elaboración propia.*
 
-[Abrir tablero Miro de Candidate Context Discovery](https://miro.com/welcomeonboard/ekNIcWVQcC9hcG1mM292c2E0RkcwblUxUSttUDFCSmpZMjBTQldxOENSNVdtbTNiWEZQSXRaQWg1UWk4bmpDYjVzNnNHanMrV3J5RDZZc2RaeXNBSDQ4ZWRzaFRaNi9qbXJsUlBtblZobDFOeS9aTGFyK1BJWDNUVGozSUVYSHhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=680912547552)
+Abrir tablero Miro de Candidate Context Discovery ([https://tinyurl.com/25yajtgr](https://tinyurl.com/25yajtgr))
 
 ![Estado 3 — Candidate Contexts](assets/images/diagrams/candidate-context-discovery/03-candidate-contexts.svg)
 
 *Estado 3. Primera partición en contextos candidatos, todavía exploratoria. Elaboración propia.*
 
-[Abrir tablero Miro de Candidate Context Discovery](https://miro.com/welcomeonboard/ekNIcWVQcC9hcG1mM292c2E0RkcwblUxUSttUDFCSmpZMjBTQldxOENSNVdtbTNiWEZQSXRaQWg1UWk4bmpDYjVzNnNHanMrV3J5RDZZc2RaeXNBSDQ4ZWRzaFRaNi9qbXJsUlBtblZobDFOeS9aTGFyK1BJWDNUVGozSUVYSHhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=680912547552)
+Abrir tablero Miro de Candidate Context Discovery ([https://tinyurl.com/25yajtgr](https://tinyurl.com/25yajtgr))
 
 **Eventos pivote y fronteras que revelan**
 
@@ -127,7 +127,7 @@ Para visualizar cómo colaboran los contextos en los casos reales del negocio se
 
 *Figura 10. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
-[Abrir tablero Figma de Domain Message Flows](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+Abrir tablero Figma de Domain Message Flows ([https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming))
 
 **Historia 2. Detección de fiebre durante el pastoreo sin cobertura**
 
@@ -151,7 +151,7 @@ Para visualizar cómo colaboran los contextos en los casos reales del negocio se
 
 *Figura 11. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
-[Abrir tablero Figma de Domain Message Flows](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+Abrir tablero Figma de Domain Message Flows ([https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming))
 
 **Historia 3. Contratación de un plan y habilitación de capacidades**
 
@@ -170,7 +170,7 @@ Para visualizar cómo colaboran los contextos en los casos reales del negocio se
 
 *Figura 12. Elaboración de creación propia por datos recolectados, startup SmartFarm.*
 
-[Abrir tablero Figma de Domain Message Flows](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+Abrir tablero Figma de Domain Message Flows ([https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming))
 
 **Lectura de los flujos**
 
@@ -199,7 +199,7 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 
 *Canvas 1. Bounded Context Canvas de Operations & Monitoring. Elaboración propia.*
 
-[Abrir tablero Figma de los Bounded Context Canvases](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+Abrir tablero Figma de los Bounded Context Canvases ([https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming))
 
 **Canvas 2. Cattle Information**
 
@@ -220,7 +220,7 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 
 *Canvas 2. Bounded Context Canvas de Cattle Information. Elaboración propia.*
 
-[Abrir tablero Figma de los Bounded Context Canvases](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+Abrir tablero Figma de los Bounded Context Canvases ([https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming))
 
 **Canvas 3. IoT Assets**
 
@@ -241,7 +241,7 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 
 *Canvas 3. Bounded Context Canvas de IoT Assets. Elaboración propia.*
 
-[Abrir tablero Figma de los Bounded Context Canvases](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+Abrir tablero Figma de los Bounded Context Canvases ([https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming))
 
 **Canvas 4. Planning**
 
@@ -262,7 +262,7 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 
 *Canvas 4. Bounded Context Canvas de Planning. Elaboración propia.*
 
-[Abrir tablero Figma de los Bounded Context Canvases](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+Abrir tablero Figma de los Bounded Context Canvases ([https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming))
 
 **Canvas 5. Dashboard & Analytics**
 
@@ -283,7 +283,7 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 
 *Canvas 5. Bounded Context Canvas de Dashboard & Analytics. Elaboración propia.*
 
-[Abrir tablero Figma de los Bounded Context Canvases](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+Abrir tablero Figma de los Bounded Context Canvases ([https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming))
 
 **Canvas 6. Identity & Access Management**
 
@@ -304,7 +304,7 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 
 *Canvas 6. Bounded Context Canvas de Identity & Access Management. Elaboración propia.*
 
-[Abrir tablero Figma de los Bounded Context Canvases](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+Abrir tablero Figma de los Bounded Context Canvases ([https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming))
 
 **Canvas 7. Subscription Plans**
 
@@ -325,7 +325,7 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 
 *Canvas 7. Bounded Context Canvas de Subscription Plans. Elaboración propia.*
 
-[Abrir tablero Figma de los Bounded Context Canvases](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+Abrir tablero Figma de los Bounded Context Canvases ([https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming))
 
 **Canvas 8. Profiles, contexto candidato descartado**
 
@@ -339,7 +339,7 @@ Cada contexto candidato se diseñó mediante un Bounded Context Canvas, siguiend
 
 *Canvas 8. Bounded Context Canvas de Profiles, contexto candidato descartado. Elaboración propia.*
 
-[Abrir tablero Figma de los Bounded Context Canvases](https://www.figma.com/board/weAhLf9otmp9sh32i7ke4i/SmartFarm-%E2%80%94-2.4-Big-Picture-EventStorming.jam?node-id=0-1&t=4gtnxsvBNUxUdR76-1)
+Abrir tablero Figma de los Bounded Context Canvases ([https://tinyurl.com/BigPictureEventStorming](https://tinyurl.com/BigPictureEventStorming))
 
 ### 4.1.2. Context Mapping
 

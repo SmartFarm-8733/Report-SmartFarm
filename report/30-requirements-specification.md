@@ -239,7 +239,7 @@ Los Business Goals se formulan siguiendo los criterios SMART y toman como refere
 
 *Figura 9. Impact Map elaborado para AV1. La captura histórica precede a la corrección de US-34 y BG-03; las tablas siguientes contienen la especificación revisada. El tablero y su exportación requieren incorporar esos cambios.*
 
-URL pública del proyecto de UXPressia con las fichas de User Persona y el Impact Map: https://uxpressia.com/w/v8FzI/i/luaWW
+URL pública del proyecto de UXPressia con las fichas de User Persona y el Impact Map: [https://uxpressia.com/w/v8FzI/i/luaWW](https://uxpressia.com/w/v8FzI/i/luaWW)
 
 ### Primer segmento objetivo
 
@@ -426,4 +426,4 @@ El equipo gestiona el Product Backlog en **Jira**, herramienta que se mantendrá
 
 *Figura 8. Captura histórica del backlog en Jira para AV1. La tabla Markdown anterior contiene la revisión de 76 historias; la captura y el board requieren sincronizar títulos, nuevas TS, estimaciones y sprints. Esta corrección del informe no modifica Jira.*
 
-URL del board de Jira con el Product Backlog: https://upc-team-experimentos.atlassian.net/jira/software/projects/SF/boards/35/backlog?visitedUserSeg=true&atlOrigin=eyJpIjoiNDUwMmQ3OWMzNmI2NGRlYWFiNWUxYWZlNjNhOTg0MGIiLCJwIjoiaiJ9
+URL del board de Jira con el Product Backlog: [https://tinyurl.com/25bk4aaf](https://tinyurl.com/25bk4aaf)
