@@ -42,26 +42,8 @@
 
 <div align="center">
   <p align="center" style="font-size: 11.5pt !important; line-height: 1.3 !important; margin: 0 0 8pt !important;"><strong>Integrantes</strong></p>
-  <p align="center" style="font-size: 10.5pt !important; line-height: 1.35 !important; margin: 0 0 5pt !important;">
-    <span style="display: inline-block; width: 27mm; text-align: left;"><strong>Código</strong></span>&emsp;<span style="display: inline-block; width: 82mm; text-align: left;"><strong>Apellidos y Nombres</strong></span>
-  </p>
-  <p align="center" style="font-size: 10.5pt !important; line-height: 1.35 !important; margin: 0 0 3pt !important;">
-    <span style="display: inline-block; width: 27mm; text-align: left;">U202312031</span>&emsp;<span style="display: inline-block; width: 82mm; text-align: left;">Arrieta Quispe, Alison Jimena</span>
-  </p>
-  <p align="center" style="font-size: 10.5pt !important; line-height: 1.35 !important; margin: 0 0 3pt !important;">
-    <span style="display: inline-block; width: 27mm; text-align: left;">U202320574</span>&emsp;<span style="display: inline-block; width: 82mm; text-align: left;">Sanchez Arenas, Manuel Angel</span>
-  </p>
-  <p align="center" style="font-size: 10.5pt !important; line-height: 1.35 !important; margin: 0 0 3pt !important;">
-    <span style="display: inline-block; width: 27mm; text-align: left;">U202323243</span>&emsp;<span style="display: inline-block; width: 82mm; text-align: left;">Contreras Leon, Flor de María</span>
-  </p>
-  <p align="center" style="font-size: 10.5pt !important; line-height: 1.35 !important; margin: 0 0 3pt !important;">
-    <span style="display: inline-block; width: 27mm; text-align: left;">U202320442</span>&emsp;<span style="display: inline-block; width: 82mm; text-align: left;">Awad Vargas, Giorgio Marzouk</span>
-  </p>
-  <p align="center" style="font-size: 10.5pt !important; line-height: 1.35 !important; margin: 0 0 3pt !important;">
-    <span style="display: inline-block; width: 27mm; text-align: left;">U202321510</span>&emsp;<span style="display: inline-block; width: 82mm; text-align: left;">Romero Meza, Jhimy Pool</span>
-  </p>
   <p align="center" style="font-size: 10.5pt !important; line-height: 1.35 !important; margin: 0 !important;">
-    <span style="display: inline-block; width: 27mm; text-align: left;">U202313922</span>&emsp;<span style="display: inline-block; width: 82mm; text-align: left;">Avalos Cordova, Diego Andres</span>
+    <img src="../assets/images/cover-team-members.svg" width="376" style="width: 376px; max-width: 100%; height: auto; color-scheme: light;" alt="Código y apellidos y nombres: U202312031 - Arrieta Quispe, Alison Jimena; U202320574 - Sanchez Arenas, Manuel Angel; U202323243 - Contreras Leon, Flor de María; U202320442 - Awad Vargas, Giorgio Marzouk; U202321510 - Romero Meza, Jhimy Pool; U202313922 - Avalos Cordova, Diego Andres."/>
   </p>
 </div>
 
