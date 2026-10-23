@@ -86,11 +86,66 @@ El Capítulo III asigna trece historias al Sprint 1, con un total estimado de 47
 
 #### 6.2.1.1. Sprint Planning 1
 
-**Objetivo de producto planificado:** comunicar la propuesta de ICHU a los dos segmentos, permitir que los visitantes comprendan los planes y soliciten una demostración, y cubrir el primer flujo de acceso y registro/consulta de animales planteado para la plataforma.
+El Sprint 1 se orienta a presentar la propuesta de ICHU y habilitar los primeros recorridos de la plataforma web para ganaderos y médicos veterinarios.
 
-El alcance proviene del roadmap y la priorización registrados en el Capítulo III. Incluye la Landing Page con internacionalización y accesibilidad, el registro de unidad productiva, el acceso, el perfil profesional y la ficha del animal. La estimación inicial suma 47 puntos de historia; el propio roadmap indica que el equipo debe contrastar la velocidad real al cierre del Sprint 1 antes de ajustar los siguientes sprints.
-
-La fuente consultada no fija aquí las fechas, duración, capacidad comprometida ni el resultado de la reunión de planificación. Estos datos deben añadirse desde el Sprint Backlog vigente en Jira antes de presentar la planificación como acuerdo final del equipo.
+<table>
+  <colgroup>
+    <col style="width: 34%;"/>
+    <col style="width: 66%;"/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th align="left" scope="row" width="34%">Sprint #</th>
+      <td>Sprint 1</td>
+    </tr>
+    <tr>
+      <th align="left" colspan="2">Sprint Planning Background</th>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td>2026-10-02</td>
+    </tr>
+    <tr>
+      <td>Time</td>
+      <td>08:00 PM (hora de Lima, UTC-5)</td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td>Lima, Perú.</td>
+    </tr>
+    <tr>
+      <td>Prepared By</td>
+      <td>Avalos Cordova, Diego Andres</td>
+    </tr>
+    <tr>
+      <td>Attendees (to planning meeting)</td>
+      <td>Arrieta Quispe, Alison Jimena<br/>Sanchez Arenas, Manuel Angel<br/>Contreras Leon, Flor de María<br/>Awad Vargas, Giorgio Marzouk<br/>Avalos Cordova, Diego Andres</td>
+    </tr>
+    <tr>
+      <td>Sprint 0 Review Summary</td>
+      <td>No aplica: es el primer Sprint del proyecto y no existe una revisión de un Sprint anterior.</td>
+    </tr>
+    <tr>
+      <td>Sprint 0 Retrospective Summary</td>
+      <td>No aplica: es el primer Sprint del proyecto y no existe una retrospectiva de un Sprint anterior.</td>
+    </tr>
+    <tr>
+      <th align="left" colspan="2">Sprint Goal &amp; User Stories</th>
+    </tr>
+    <tr>
+      <td>Sprint 1 Goal</td>
+      <td>Permitir a ganaderos y médicos veterinarios conocer ICHU, comparar planes, solicitar una demostración y recorrer los flujos iniciales de acceso, perfil y ficha del animal en la interfaz web.<br/><strong>Métrica de cumplimiento:</strong> las dos interfaces publicadas y navegables, y cobertura de los criterios de aceptación de las 13 historias seleccionadas dentro del alcance frontend.</td>
+    </tr>
+    <tr>
+      <td>Sprint 1 Velocity</td>
+      <td>47 Story Points como capacidad de planificación inicial, a contrastar con los puntos aceptados al cierre del Sprint.</td>
+    </tr>
+    <tr>
+      <td>Sum of Story Points</td>
+      <td>47 Story Points distribuidos en 13 historias del Sprint Backlog 1.</td>
+    </tr>
+  </tbody>
+</table>
 
 #### 6.2.1.2. Aspect Leaders and Collaborators
 
