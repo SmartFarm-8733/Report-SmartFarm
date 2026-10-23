@@ -13,10 +13,10 @@
 [https://tinyurl.com/283uehbo](https://tinyurl.com/283uehbo)
 
 **Solution UI/UX Design**<br>
-[Capítulo V](../50-solution-ui-ux-design.md)
+Capítulo V ([https://tinyurl.com/24vby6wm](https://tinyurl.com/24vby6wm))
 
 **Product Implementation, Validation & Deployment**<br>
-[Capítulo VI](../60-product-implementation-validation-and-deployment.md)
+Capítulo VI ([https://tinyurl.com/29x2tlfv](https://tinyurl.com/29x2tlfv))
 
 **Student Outcome**<br>
 [https://tinyurl.com/24q5qo2k](https://tinyurl.com/24q5qo2k)

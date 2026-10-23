@@ -27,4 +27,4 @@ Versión utilizada para la rama de auditoría, con los Capítulos V y VI integra
 
 **Convenciones de contribución**<br>
 Flujo de ramas, commits, revisión y organización de archivos.<br>
-[CONTRIBUTING.md](../../CONTRIBUTING.md)
+CONTRIBUTING.md ([https://tinyurl.com/2yusurh6](https://tinyurl.com/2yusurh6))

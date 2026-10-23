@@ -191,7 +191,7 @@ La cobertura es compartida: una historia puede habilitar más de un producto. La
 
 **Trazabilidad con los hallazgos de la investigación**
 
-La tabla remite al [registro y análisis de entrevistas del Capítulo II](20-requirements-elicitation-and-analysis.md#222-registro-de-entrevistas). Distingue hallazgos documentados de requisitos propuestos: mencionar un indicador o una integración no demuestra que el prototipo ya lo mida o implemente.
+La tabla remite al registro y análisis de entrevistas del Capítulo II ([https://tinyurl.com/2aem72rp](https://tinyurl.com/2aem72rp)). Distingue hallazgos documentados de requisitos propuestos: mencionar un indicador o una integración no demuestra que el prototipo ya lo mida o implemente.
 
 | Hallazgo de la investigación | Historias que lo atienden |
 |---|---|
